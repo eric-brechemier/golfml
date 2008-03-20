@@ -1,0 +1,17 @@
+Definition of Categories of Golf Data
+
+= Introduction =
+
+The prupose of this document is to list all concepts that will be managed by the Golf Markup Language.
+
+
+= Player =
+
+= Golf Course =
+
+= Round of Golf =
+
+= Tournaments =
+
+= Statistics, Tracking of Progree =
+
