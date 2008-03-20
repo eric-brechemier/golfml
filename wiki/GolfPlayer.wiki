@@ -1,0 +1,10 @@
+Definition of a Player of Golf.
+
+= Introduction =
+
+A Player is a golfer, someone who plays rounds of golf.
+
+
+= Details =
+
+In addition to some personal data, a golfer owns Golf Clubs, Golf Bags, and has Statistics.
