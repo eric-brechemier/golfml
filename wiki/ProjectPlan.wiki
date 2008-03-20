@@ -1,5 +1,5 @@
+#summary Golf Markup Language - Data Exchange format for Golf-related Data.
 #labels Phase-Requirements,Project-Plan
-Golf Markup Language - Data Exchange format for Golf-related Data.
 
 = Project Plan =
 
@@ -25,4 +25,3 @@ The public of these first two phases are individual golfers who want to store in
 == Phase 3: Globalization of Rounds and Notion of Tournament(s) ==
 
   * Ability to record and report scores for a large population of players and record tournament details.
-
