@@ -1,0 +1,11 @@
+#labels Phase-Design,golfml,Golfer
+Definitio of a Player.
+
+= Introduction =
+
+A Player is a golfer.
+
+
+= Details =
+
+In addition to some personal data, a golfer owns Golf Clubs, Golf Bags, and has Statistics.
