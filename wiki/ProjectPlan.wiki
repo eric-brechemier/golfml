@@ -3,15 +3,23 @@ Golf Markup Language - Data Exchange format for Golf-related Data.
 
 = Project Plan =
 
+== Phase 1: Scorecards ==
+
   * Project documentation and planning
   * Definitions, vocabulary and markup conventions
-  * Phase 1: Golf course descrition.
-  * Phase 2: Rounds of golf description.
+  * Golf course descrition.
+  * Rounds of golf description.
 
-After Phase 2, most basic scorecard programs should be able to exchange data for round recording.
+Most basic scorecard programs should be able to exchange data for round recording.
+
+== Phase 2: (Single) Player Statistics and Strokes Details ==
 
 We have plans to further enhance and generalize the recording of golf-related data:
 
-  * Phase 3: Rounds and shots details.
-  * Phase 4: Analytic data regarding statistics.
-  * Phase 5: Globalization of rounds in a notion of Tournament(s)
+  * Rounds and strokes details.
+  * Analytic data and statistics.
+
+
+== Phase 3: Globalization of rounds in a notion of Tournament(s ==
+
+  * Ability to record and report scores for a large population of players and record tournament details.
