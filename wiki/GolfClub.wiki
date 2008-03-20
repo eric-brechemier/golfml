@@ -1,4 +1,4 @@
-Definition of a golf club.
+#summary Definition of a golf club.
 
 = Introduction =
 
