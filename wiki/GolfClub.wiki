@@ -1,0 +1,12 @@
+Definition of a golf club.
+
+= Introduction =
+
+Golf club are used to play golf.
+
+
+= Details =
+
+In a first phase, golf club will be generic instances: Woods, Irons, Utility or Hybrid club, Wedges and Putters.
+
+In a second phase we will record more details about golf clubs: Manufacturers, models...
