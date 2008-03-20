@@ -4,8 +4,12 @@ Definition of Categories of Golf Data
 
 The prupose of this document is to list all concepts that will be managed by the Golf Markup Language.
 
-Playe
+Player
+
 GolfCourse
-Round of Golf
+
+RoundOfGolf
+
 Tournaments
-Statistics, Tracking of Progress
+
+Statistics
