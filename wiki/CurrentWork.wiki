@@ -1,0 +1,4 @@
+Wht we are currently doing.
+
+  * Definitions, scope, vocabulary.
+  * Data Model
