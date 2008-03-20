@@ -1,4 +1,4 @@
-Definition of Categories of Golf Data
+#summary Definition of Categories of Golf Data
 
 = Introduction =
 
