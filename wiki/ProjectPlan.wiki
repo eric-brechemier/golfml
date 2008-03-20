@@ -1,5 +1,5 @@
 #labels Phase-Requirements,Project-Plan
-#Golf Markup Language - Data Exchange format for Golf-related Data.
+Golf Markup Language - Data Exchange format for Golf-related Data.
 
 = Project Plan =
 
