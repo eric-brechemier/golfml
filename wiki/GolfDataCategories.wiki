@@ -4,22 +4,8 @@ Definition of Categories of Golf Data
 
 The prupose of this document is to list all concepts that will be managed by the Golf Markup Language.
 
-
-= Player =
-
-A player is a golfer. We are planning to manage the following information for a player: It's equipment (directly related to its golf game), its statistics, score, and progress.
-
-= Golf Course =
-
-A golf course is a facility when a player can play a 9 or 18 hole round of golf.
-A golf facility can have one or more golf course. A golf course can have 9 or 18 holes and one or more sets of tees.
-
-= Round of Golf =
-
-A round of golf is a 9 or 18 hole game played bya golfer.
-
-= Tournaments =
-
-A tournament is a set of rounds of golf played by golfer according to a set of local rules.
-
-= Statistics, Tracking of Progress =
+Playe
+GolfCourse
+Round of Golf
+Tournaments
+Statistics, Tracking of Progress
