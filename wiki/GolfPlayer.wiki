@@ -1,4 +1,4 @@
-Definition of a Player of Golf.
+#summary Definition of a Player of Golf.
 
 = Introduction =
 
