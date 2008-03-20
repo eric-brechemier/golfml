@@ -19,7 +19,10 @@ We have plans to further enhance and generalize the recording of golf-related da
   * Rounds and strokes details.
   * Analytic data and statistics.
 
+The focus of phase 1 and 2 is to provide a framework to record rounds of golf details and store denormalized statistics.
+The public of these first two phases are individual golfers who want to store information about their game.
 
-== Phase 3: Globalization of rounds in a notion of Tournament(s ==
+== Phase 3: Globalization of Rounds and Notion of Tournament(s) ==
 
   * Ability to record and report scores for a large population of players and record tournament details.
+
