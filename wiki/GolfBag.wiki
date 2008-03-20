@@ -1,4 +1,4 @@
-Definition of a Golf Bag.
+#summary Definition of a Golf Bag.
 
 = Introduction =
 
