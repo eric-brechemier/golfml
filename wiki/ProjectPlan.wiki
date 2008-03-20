@@ -1,4 +1,4 @@
-#summary Golf Markup Language - Data Exchange format for Golf-related Data.
+#summary Golf Markup Language - Data Exchange Format of Golf-Related Data.
 #labels Phase-Requirements,Project-Plan
 
 = Project Plan =
