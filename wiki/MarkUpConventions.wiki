@@ -1,0 +1,13 @@
+#summary Conventions Used in Mark-Up Definitions.
+
+= Introduction =
+
+Add your content here.
+
+= Element and Attribute Names =
+
+We use dash-separated-names rather than firstLetterCapitalizedNames. Just a choice.
+
+= Elements or Attributes =
+
+This is an eternal debate. We will find a consistant approach to this, but there is no rule to impose the use of one over the other.
