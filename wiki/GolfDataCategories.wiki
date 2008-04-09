@@ -1,4 +1,4 @@
-#summary Organisation into Categories of Golf Data
+#summary Golf Data and Vocabulary
 
 = Introduction =
 
