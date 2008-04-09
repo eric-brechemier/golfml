@@ -2,72 +2,85 @@
 
 = Introduction =
 
-The prupose of this document is to list all concepts that will be managed by the Golf Markup Language.
+This document lists all concepts, organized in catagories, managed by the Golf Markup Language.
+
+
 
 == Players ==
 
-Player
+=== Player ===
 
-Equipment
+=== Equipment ===
 
-Club
+=== Club ===
 
-Bag
+=== Bag ===
 
-Statistics Set
+=== Statistics Set ===
 
-Statistic
+=== Statistic ===
+
+
 
 == Rounds of Golf ==
 
-Game
+=== Game ===
 
-Wager
+=== Wager ===
+
+
 
 == Score Card ==
 
-Round Handicap
+=== Round Handicap ===
 
-Hole
+=== Hole === 
 
-Stroke
+=== Stroke ===
+
+
 
 == Golf Courses ==
 
-Course Facility
+=== Course Facility ===
 
-Course
+=== Course ===
 
-Tees
+=== Tees ===
 
-Tee
+=== Tee ===
 
-Mark
+=== Mark ===
+
+
 
 == Tournaments ==
 
-Tournament
+=== Tournament ===
 
-Round
+=== Round ===
+
+
 
 == Generic Data ==
 
-Note
+=== Note ===
 
-Media
+=== Media ===
 
-Weather
+=== Weather ===
 
 
 
 == Static or Reference Data ==
 
-Club Type
+=== Club Type ===
 
-Statistic Type
+=== Statistic Type ===
 
-Position Type
+=== Position Type ===
 
-Game Type
+=== Game Type ===
 
-Wager Type
+=== Wager Type ===
+
