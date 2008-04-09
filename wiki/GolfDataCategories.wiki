@@ -6,22 +6,68 @@ The prupose of this document is to list all concepts that will be managed by the
 
 == Players ==
 
-GolfPlayer
+Player
 
-GolfClub
+Equipment
 
-GolfBag
+Club
 
-PlayerStatistics
+Bag
 
-== Golf Courses ==
+StatisticsSet
 
-GolfCourse
-
-Tee
+Statistic
 
 == Rounds of Golf ==
 
-RoundOfGolf
+Game
 
-GolfTournaments
+Wager
+
+== Score Card ==
+
+RoundHandicap
+
+Hole
+
+Stroke
+
+== Golf Courses ==
+
+Course Facility
+
+Course
+
+Tees
+
+Tee
+
+Mark
+
+== Tournaments ==
+
+Tournament
+
+Round
+
+== Generic Data ==
+
+Note
+
+Media
+
+Weather
+
+
+
+== Static or Reference Data ==
+
+ClubType
+
+StatisticType
+
+PositionType
+
+GameType
+
+WagerType
