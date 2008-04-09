@@ -14,7 +14,7 @@ Club
 
 Bag
 
-StatisticsSet
+Statistics Set
 
 Statistic
 
@@ -26,7 +26,7 @@ Wager
 
 == Score Card ==
 
-RoundHandicap
+Round Handicap
 
 Hole
 
@@ -62,12 +62,12 @@ Weather
 
 == Static or Reference Data ==
 
-ClubType
+Club Type
 
-StatisticType
+Statistic Type
 
-PositionType
+Position Type
 
-GameType
+Game Type
 
-WagerType
+Wager Type
