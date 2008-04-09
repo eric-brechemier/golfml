@@ -20,17 +20,19 @@ Golf Markup Language makes extensive use of ID and IDREF to maintain cross refer
 
 == ID ==
 
-The ID of an element of type _x_ should be prefixed by the object _type_, like this `<x ID="`*`x-`*`1234ab" />`.
+The ID of an element of type _x_ should be prefixed by the object _type_, like this `<`*`club`*` ID="`*`club-`*`1234ab" />`.
 
 == IDREF Elements and Attributes ==
 
 When an element or an attribute refers to a object of type _x_, its name should be _xref_:
 {{{
-<x ID="x-123abc" />
+<club ID="club-123abc" />
 ...
-<y xref="x-123abc" />
+<stroke clubref="club-123abc" >
+...
+</stroke>
 }}}
 or
 {{{
-<xref>x-123abc</xref>
+<clubref>club-123abc</clubref>
 }}}
