@@ -14,7 +14,7 @@ Attribute ID can be capitalized to stand out.
 
 This is an eternal debate. We will find a consistant approach to this, but there is no rule to impose the use of one over the other.
 
-= Notes of ID and IDREF =
+= Notes on ID and IDREF =
 
 Golf Markup Language makes extensive use of ID and IDREF to maintain cross references of data.
 
@@ -29,4 +29,8 @@ When an element or an attribute refers to a object of type _x_, its name should 
 <x ID="x-123abc" />
 ...
 <y xref="x-123abc" />
+}}}
+or
+{{{
+<xref>x-123abc</xref>
 }}}
