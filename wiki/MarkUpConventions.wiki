@@ -2,12 +2,31 @@
 
 = Introduction =
 
-Add your content here.
+A few notes on conventions used.
 
 = Element and Attribute Names =
 
-We use dash-separated-names rather than firstLetterCapitalizedNames. Just a choice.
+We use dash-separated-lower-case-names rather than firstLetterCapitalizedNames. Just a choice.
+
+Attribute ID can be capitalized to stand out.
 
 = Elements or Attributes =
 
 This is an eternal debate. We will find a consistant approach to this, but there is no rule to impose the use of one over the other.
+
+= Notes of ID and IDREF =
+
+Golf Markup Language makes extensive use of ID and IDREF to maintain cross references of data.
+
+== ID ==
+
+The ID of an element of type _x_ should be prefixed by the object _type_, like this `<x ID="`*`x-`*`1234ab" />`.
+
+== IDREF Elements and Attributes ==
+
+When an element or an attribute refers to a object of type _x_, its name should be _xref_:
+{{{
+<x ID="x-123abc" />
+...
+<y xref="x-123abc" />
+}}}
