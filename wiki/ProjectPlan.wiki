@@ -17,6 +17,7 @@ Most basic scorecard programs should be able to exchange data for round recordin
 We have plans to further enhance and generalize the recording of golf-related data:
 
   * Rounds and strokes details.
+  * Multiplayer Rounds and Games.
   * Analytic data and statistics.
 
 The focus of phase 1 and 2 is to provide a framework to record rounds of golf details and store denormalized statistics.
