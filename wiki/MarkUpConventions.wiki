@@ -14,6 +14,32 @@ Attribute ID can be capitalized to stand out.
 
 This is an eternal debate. We will find a consistant approach to this, but there is no rule to impose the use of one over the other.
 
+If an object contains more than one other objects, the choice for elements is obvious. Exemple:
+{{{
+<bag id="bag-123" name="sunday bag">
+  <clubref>club-123</clubref>
+  <clubref>club-234</clubref>
+</bag>
+}}}
+
+But when an object is qualified by a value, it is less evident to decide whether the value is an element or an attribute.
+
+{{{
+<bag id="bag-123" name="sunday bag">
+  ...
+</bag>
+}}}
+and
+{{{
+<bag id="bag-123">
+  <name>sunday bag</name>
+  ...
+</bag>
+}}}
+are both valid.
+
+When the object (`name`) is a qualifier for its parent object, we will use attributes. When the object is a constituant, a sub-object of its parent, we will use elements. In the latter case, `name` is a qualifier for `bag`, we would use it as an attribute.
+
 = Notes on ID and IDREF =
 
 Golf Markup Language makes extensive use of ID and IDREF to maintain cross references of data.
