@@ -30,15 +30,25 @@ But when an object is qualified by a value, it is less evident to decide whether
 </bag>
 }}}
 and
+and
 {{{
 <bag id="bag-123">
   <name>sunday bag</name>
   ...
 </bag>
 }}}
-are both valid.
+are both acceptable.
 
 When the object (`name`) is a qualifier for its parent object, we will use attributes. When the object is a constituant, a sub-object of its parent, we will use elements. In the latter case, `name` is a qualifier for `bag`, we would use it as an attribute.
+
+Finally, we prefer to use elements for data and attributes for meta-data.
+For example, to express the length of a hole:
+{{{
+<length units="yards">
+135
+</length>
+}}}
+Units is clearly meta data on the actual hole length value.
 
 = Notes on ID and IDREF =
 
