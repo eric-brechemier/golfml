@@ -1,4 +1,4 @@
-#summary Definitions of Terms Used in Golf Course Specifications
+#summary Definition of Terms Used in Golf Course Specifications
 
 = Introduction =
 
@@ -51,4 +51,3 @@ Reference Values should be completed and listed in schema or DTD.
 = Problems =
 
 Find a neutral way to specify course “rating” in different systems.
-
