@@ -1,3 +1,6 @@
 #summary Links of Interest for this Project.
 
 [http://www.sportsml.org/ SportML]
+
+SportML is a markup language used to communicate sports results. It is not used for game analysis and statistics collection overtime.
+
