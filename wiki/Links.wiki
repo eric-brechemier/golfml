@@ -2,5 +2,4 @@
 
 [http://www.sportsml.org/ SportML]
 
-SportML is a markup language used to communicate sports results. It is not used for game analysis and statistics collection overtime.
-
+SportML is a markup language used to communicate sports results. It is not used for game record, analysis and statistics collection over time. It has different goals and purposes. However, we refer to it for some its values and reference tables (statistics, weather, etc.)
