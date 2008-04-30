@@ -1,0 +1,54 @@
+#summary Definitions of Terms Used in Golf Course Specifications
+
+= Introduction =
+
+The Golf Courses section of GolfML deals with the static definition of golf courses for scoring purposes.
+
+Entities are organized in a straightforward hierarchy.
+
+
+== Golf Courses ==
+
+All golf courses are organized in “Country Clubs”. A Country Club is a place where we can find find one or more Golf Course(s). A Country Club has some basic identification attributes such as name, address, contact phone number, contact email address, and web site.
+
+Note: I could not come up with another name for a “collection of golf courses at the same location”. Golf Facility...
+
+
+A Golf Course is a set Holes and Tees. A Golf Course contains identification attributes such as name, architect, year it was open, etc.
+
+A Golf Course contains Holes. A Hole is the description of a hole and is common to all Tees. A description of a hole can contain media (photographs, yardage pages...) and landmarks.
+
+A Landmark is a position on a golf hole. The position is qualified by the type of object, and its exact location. Landmark types are limited to a list of valid values. (tee, trap-sand, trap-grass, water, lateral-water, fairway, green, tree, forest, relief, sprinkler head, 200, 150, 100 yards makers...)
+
+The Location is a GPS position coordinate consisting of latitude, longitude, altitude, and precision if available. Location allows for other localization system.
+
+A Surface-mark is an ordered set of 3 or more Locations that define a closed polygon. The closed polygon can be a playing hole limits, limits of a hazard, or of a detailed green.
+
+A Golf Course contains Tees. Tees are a set of 9 or 18 playable holes. Inside Tees, we can either define each individual tee or reference another set of Tees. This allows for 27 holes facilities to define holes and individual tees only once and to compose 18 hole playable rounds by combining sets of 9 tees.
+
+Tees are qualified by a name (or colour), rating information for handicap purposes.
+
+A Tee consist of scorecard data: Par, length, handicap number.
+
+Golf courses and Tees both have an optional start and end date attribute to allow for modifications of the course or of tee locations over time.
+
+
+= Notes =
+
+XML Elements that need to be ordered (like hole numbers, rounds numbers...) must contain an explicit attribute to organize them (like number or hole-number or position...).
+
+
+= Area that needs improvement =
+
+attributes of entities such as:
+# Country Club
+# Golf Course
+# Tees
+# Tee
+
+Reference Values should be completed and listed in schema or DTD.
+
+= Problems =
+
+Find a neutral way to specify course “rating” in different systems.
+
