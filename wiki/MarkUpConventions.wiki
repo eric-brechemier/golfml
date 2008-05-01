@@ -1,4 +1,4 @@
-#summary Conventions Used in Mark-Up Definitions.
+#summary Markup Language Conventions Used in GolfML.
 
 = Introduction =
 
