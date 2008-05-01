@@ -6,7 +6,7 @@ A CountryClub is a place where golfer can find one or more GolfCourse's.
 
 = Attributes =
 
-None.
+id - Unique Identifier.
 
 = Elements =
 
@@ -19,7 +19,12 @@ None.
  # eMail
  # Website
  # Amenities
+ # Notes
 
 == Structural Elements ==
 
  # GolfCourse
+
+= See Also =
+
+[[CommonAttributesAndElements Frequently used elements and attributes]].
