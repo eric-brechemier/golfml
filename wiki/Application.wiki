@@ -1,0 +1,23 @@
+#summary Golf Markup Language Reference: Application.
+
+= Description =
+
+The [[Application]] element is used by individual applications to store application specific data and extensions.
+
+= Attributes =
+
+ # name - Application name. Mandatory.
+ # version - Application version. Optional.
+
+= Elements = 
+
+Any.
+
+Will be ignored by other applications.
+
+Must maintain GolfML Document Specification.
+
+= Notes =
+
+
+= See Also =
