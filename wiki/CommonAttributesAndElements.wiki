@@ -30,6 +30,7 @@ The `media` element refer to a usually graphical piece of information attached t
 The `media` element has the following attributes:
 
  # type - Type of media attached to the parent element. The media types are defined and must be issued from the list of valid media type values. Please refer to the [[Domains Golf Markup Language Reference: Domains and Domain Values]].
+ # mime-type - Multipurpose Internet Mail Extensions (MIME) format of the attached media (See RFC 2046.)
 
 === Child Elements ===
 
