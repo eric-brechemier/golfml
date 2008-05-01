@@ -2,7 +2,7 @@
 
 = Description =
 
-The Qualification element specify the playability and the complexity of a golf course, from a given set of Tees. Golf Course Qualification are established by authorized bodies according to strict methods and measures.
+The Qualification element specify the playability and the complexity of a golf course, from a given set of Tees. Golf Course Qualification are established by authorized bodies according to strict methods and measures. The organization and method used for the qualification process is specified in the handicap-method attribute.
 
 = Attributes =
 
