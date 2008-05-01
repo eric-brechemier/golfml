@@ -42,7 +42,7 @@ This method requires the specification of each individual Tee for each hole of t
 
 The second method for Tees specification uses the following structural elements:
 
- # [[Tees-ref]]
+ # [[TeesRef]]
 
 This method allows to copy a partial information of a previously defined Tees element together with the specification of new elements from each invidual hole.
 
