@@ -8,7 +8,7 @@ The Tee element describe a individual Tee on a golf course.
 
 The element has the following attributes:
 
-# number - Tee number to properly sequence Tee in a Tees structure.
+ # number - Tee number to properly sequence Tee in a Tees structure.
 
 = Elements = 
 
