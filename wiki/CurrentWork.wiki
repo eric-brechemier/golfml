@@ -1,4 +1,0 @@
-#summary What we are currently working on.
-
-  * Definitions, scope, vocabulary.
-  * Data Model
