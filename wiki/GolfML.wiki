@@ -1,24 +1,19 @@
-#summary Golf Markup Language Reference
+#summary The Golf Markup Language - START HERE
 
-= Definition =
+= Introduction =
 
-GolfML is the root element of the Golf Markup Language.
+Welcome to the Golf Markup Language Specification and Example.
 
-= Elements =
 
-GolfML has 4 elements:
+= Information Currently Available =
 
- # [[Players]]
- # GolfCourses
- # Tournaments
- # [[Applications]]
+[[http://code.google.com/p/golfml/wiki/GolfML Golf Markup Language Reference]]
 
-= Attributes =
+[[Units. Golf Markup Language Reference: Units.]]
 
-== Version ==
 
-Version of the definition of Golf Markup Language. Must be 3 integer numbers separated by period.
 
-! Notes
 
-The content of Tournaments is currently undefined.
+
+http://golfml.googlecode.com/files/Golf_icon.png
+
