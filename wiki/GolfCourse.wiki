@@ -8,7 +8,8 @@ A GolfCourse represent a set of playable holes of golf.
 
 The GolfCourse element has the following attributes:
 
-# id - Unique Identifier
+ # id - Unique Identifier
+ #  holes - Number of holes of the course.
 
 = Elements =
 
@@ -26,3 +27,7 @@ The GolfCourse element main contains the following structural elements:
  # [[Media]] - Generic media element related to the golf course.
  # [[Holes]]
  # [[Tees]]
+
+= Notes =
+
+We should limit the number of holes of a course to 9 or 18.
