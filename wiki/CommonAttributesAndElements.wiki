@@ -1,0 +1,34 @@
+#summary Golf Markup Language Reference: Common Attributes And Elements.
+
+= Introduction =
+
+The section lists generic elements and attributes that can be present at several places in the GolfML documents.
+
+= Common Elements =
+
+Common elements can be present in several other elements. 
+
+== Notes ==
+
+The `notes` elements receives all comments, rating, notes and additional information for its parent element.
+
+While some child elements are structured, the GolfML document may contain any addition information inside the note element.
+
+=== Child Elements ===
+
+Notes element may contain the following child elements:
+
+ # rating
+ # comments
+
+
+= Common Attributes =
+
+== Unique Identifiers ==
+
+The attribute `id` is used to identify an element in the GolfML document.
+
+=== Notes ===
+
+We investigate the possibility to switch to [http://www.w3.org/TR/2001/REC-xmlschema-1-20010502/#cIdentity-constraint_Definitions ref/keyref] for identity constraints.
+
