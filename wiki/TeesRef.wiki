@@ -12,6 +12,12 @@ The element has the following attributes:
 
 == Direction Attribute Domain and Domain Values ==
 
+The `direction` attribute indicates which values need to be copied from the referenced set of Tees.
+
+ # front or back - Copy hole length and par information. Hole handicap information need to be supplied for each individual Tee.
+ # both - Copy hole par and handicap information. Hole length information need to be supplied for each individual Tee.
+ # handicap - Copy handicap values from referenced Tees. Hole length and par information need to be supplied for each individual hole.
+
 
 = Elements = 
 
@@ -112,6 +118,21 @@ Definition of 18 Holes courses based on the above 9 Hole courses:
 }}}
 
 The attribute `direction` specified as front or back copies par and distance elements. Individual Tee element complete the definition of Tees with handicap elements only.
+
+Finally, this last example copies some information from a set of Tees (distance and par are copied from Tees sets identified by tees-1b and tees-2b) and some other information from another set of Tees (handicap from Tees set identified by tees-4):
+{{{
+<tees id="tees-5" color="white">
+    <qualification handicap-method="usga">
+        <par>70.8</par>
+        <deviation>136</deviation>
+    </qualification>
+    <tees-ref direction="front">tees-1b</tees-ref>
+    <tees-ref direction="back">tees-2b</tees-ref>
+    <tees-ref direction="handicap">tees-4</tees-ref>
+</tees>
+}}}
+
+This mechanism is designed to avoid the copy of repetitive information from one set of Tees to another.
 
 
 = Notes =
