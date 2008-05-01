@@ -6,8 +6,24 @@ A GolfCourse represent a set of playable holes of golf.
 
 = Attributes =
 
+The GolfCourse element has the following attributes:
+
+# id - Unique Identifier
+
 = Elements =
 
 == Descriptives Elements ==
 
+The GolfCourse element contains the following descriptives elements:
+
+ # Name
+ # Note
+
 == Structural Elements ==
+
+The GolfCourse element main contains the following structural elements:
+
+ # Media - Generic media element related to the golf course.
+ # Holes
+ # Tees
+
