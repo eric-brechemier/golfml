@@ -7,6 +7,7 @@ The [[Application]] element is used by individual applications to store applicat
 = Attributes =
 
  # name - Application name. Mandatory.
+ # display-name - Application Display Name in English language. Mandatory.
  # version - Application version. Optional.
 
 = Elements = 
