@@ -17,6 +17,7 @@ The element has the following attributes:
  # from-date - Date from which the set of Tees can be played.
  #  to-date - Date until which the set of Tees could be played.
 
+
 = Elements = 
 
 == Descriptive Elements ==
@@ -24,6 +25,7 @@ The element has the following attributes:
 The element has the following descriptive elements:
 
  # [[Qualification]]
+
 
 == Structural Elements ==
 
@@ -52,3 +54,4 @@ This method allows to copy a partial information of a previously defined Tees el
 
 
 = See Also =
+
