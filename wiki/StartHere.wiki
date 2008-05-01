@@ -7,9 +7,9 @@ Welcome to the Golf Markup Language Specification and Example.
 
 = Information Currently Available =
 
-[[http://code.google.com/p/golfml/wiki/GolfML Golf Markup Language Reference]]
+[[GolfML Golf Markup Language Reference]]
 
-[[Units. Golf Markup Language Reference: Units.]]
+[[Units Golf Markup Language Reference: Units.]]
 
 
 
