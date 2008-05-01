@@ -15,6 +15,7 @@ A GolfCourse Holes structure contains Hole elements.
 
 == Structural Elements ==
 
- # Hole
+ # Media - Media related to the GolfCourse as a whole, not to a particular hole.
+ # Hole - Description of a Hole on the GolfCourse.
 
 The Holes element contains one Hole element for each hole on its parent GolfCourse.
