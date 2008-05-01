@@ -1,4 +1,4 @@
-#summary GolfML Reference: Golf Courses.
+#summary Golf Markup Language Reference: Golf Courses.
 
 = Definition =
 
