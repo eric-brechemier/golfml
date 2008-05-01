@@ -1,0 +1,34 @@
+#summary Golf Markup Language Reference: Qualification.
+
+= Description =
+
+The Qualification element specify the playability and the complexity of a golf course, from a given set of Tees. Golf Course Qualification are established by authorized bodies according to strict methods and measures.
+
+= Attributes =
+
+The element has the following attributes:
+
+ # handicap-method - Handicap method used to qualify the Tee. The handicap method value is limited to a list of valid values. (See [[Domains Golf Markup Language Reference: Domains and Domain Values]].)
+
+= Elements = 
+
+== Descriptive Elements ==
+
+None
+
+
+== Structural Elements ==
+
+The structural elements of a Qualification depends on the `handicap-method` used.
+
+=== Handicap Method USGA ===
+
+For handicap-method of type usga, the structural elements of the Qualification are:
+
+ # rating - The rating of a golf course, from a given set of tees.
+ # slope - The slope value of a golf course, from a given set of tees.
+
+= Notes =
+
+
+= See Also =
