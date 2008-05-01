@@ -1,0 +1,73 @@
+#summary Golf Markup Language Reference: Statistics.
+
+= Description =
+
+The page defines the statistics that can be stored in the Statistic element.
+
+= Attributes =
+
+The Statistic element has a name attribute that specify the name of the statistic it stores.
+
+= Domain = 
+
+The Statisitic Name attribute is limited to a list of valid values listed below.
+
+= Domain Values =
+
+ # rounds
+ # average
+ # strokes
+ # distance
+ # drives
+
+ # total-birdies
+ # total-eagles
+ # total-rounds
+ # total-strokes
+ # total-holes
+ # total-putts
+ # total-points
+ # total-driving
+ # total-par-or-less
+
+ # birdies
+ # eagles
+ # saves
+ # greens-hit
+ # bunkers
+ # eagle-per-holes-frequency
+ # percentage
+ # long-drive
+ # drive-accuracy
+ # greens-in-regulation-missed
+ # greens-in-regulation-rank
+ # greens-in-regulation-putting
+ # fairways-hit
+ # fairways-possible
+
+ # holes-played
+ # holes-under-par
+ # rounds-under-par
+
+ # scoring-adjustment
+
+ # finishes-top-10
+ # finishes-first-place
+ # finishes-second-place
+
+ # performance-par-3
+ # performance-par-4
+ # performance-par-5
+
+ # money
+ # money-value
+ # points
+ # points-lost
+ # points-gained
+
+
+= Notes =
+
+
+= See Also =
+
