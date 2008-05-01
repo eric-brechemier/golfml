@@ -7,11 +7,18 @@ Welcome to the Golf Markup Language Specification and Example.
 
 = Information Currently Available =
 
-[[GolfML Golf Markup Language Reference]]
+
+[[GolfML Golf Markup Language Reference: GolfML.]]
 
 [[Units Golf Markup Language Reference: Units.]]
 
+[[Domains Golf Markup Language Reference: Domains and Domain Values]]
 
+[[CommonAttributesAndElements Golf Markup Language Reference: Common Attributes And Elements.]]
+
+[[DesignGuidelines GolfML XML Schema Design Guidelines.]]
+
+[[Links Links of Interest for this Project.]]
 
 
 
