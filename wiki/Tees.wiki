@@ -1,0 +1,36 @@
+#summary Golf Markup Language Reference: Tees.
+
+= Description =
+
+The Tees elements contains individual [[Tee]] element for the description of each Tee.
+
+= Attributes =
+
+The element has the following attributes:
+
+ # id
+ # name
+ # gender
+ # length-units
+ # handicap-method
+ # from-date
+ #  to-date
+
+= Elements = 
+
+== Descriptive Elements ==
+
+The element has the following descriptive elements:
+
+ # [[Qualification]]
+
+== Structural Elements ==
+
+The element has the following structural elements:
+
+ #  [[Tee]]
+
+= Notes =
+
+
+= See Also =
