@@ -4,6 +4,7 @@
 
 Some elements and attributes are limited to a list of valid values. This document defines the limits and the lists of values of such elements and attributes.
 
+Please note that none of these list is limited to the currently defined set. Please enter an enhencement request to add valid values to a list to suit your need.
 
 == Domain Elements ==
 
@@ -18,4 +19,15 @@ Media attached to GolfCourse or [[Hole]] or Player contain a `type` attribute th
  # yardage-book
  # map
  # scorecard
+
+=== Handicap Methods ===
+
+The `handicap-method` attribute specify the method used to establish the complexity and playability of a golf course.
+
+Valid values for the `handicap-method` attribute are:
+ # usga
+ # ega
+
+
+= Note =
 
