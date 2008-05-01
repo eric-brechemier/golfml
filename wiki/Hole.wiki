@@ -1,0 +1,20 @@
+#summary Golf Markup Language Reference: Hole.
+
+= Description =
+
+The Hole element describe a playable hole of golf on a course.
+
+= Attributes =
+
+# number - Hole number. Mandatory to properly order holes on a golf course.
+
+= Elements =
+
+== Descriptive Elements ==
+
+== Structural Elements ==
+
+The Hole element has the following structural elements:
+
+ # [[CommonAttributesAndElements Media]] - A Media document related to the particular hole.
+ # [[Placemarks]] - A list of points and polygons for the hole.
