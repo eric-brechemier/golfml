@@ -1,0 +1,21 @@
+#summary Golf Markup Language Reference: Domains and Domain Values
+
+= Introduction =
+
+Some elements and attributes are limited to a list of valid values. This document defines the limits and the lists of values of such elements and attributes.
+
+
+== Domain Elements ==
+
+== Domain Attributes ==
+
+=== Media Types ===
+
+Media attached to GolfCourse or [[Hole]] or Player contain a `type` attribute that qualify the content of the media. Valid values for the Media type attribute are:
+
+ # photograph
+ # yardage-page
+ # yardage-book
+ # map
+ # scorecard
+
