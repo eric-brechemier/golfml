@@ -1,0 +1,34 @@
+#summary Golf Markup Language Reference: Position.
+
+= Description =
+
+The Position element gives the GPS coordinate of a point on the map of the Earth.
+
+
+= Attributes =
+
+None.
+
+
+= Elements = 
+
+== Descriptive Elements ==
+
+None.
+
+
+== Structural Elements ==
+
+The element has the following structural elements:
+
+ # lat - Latitude of the Position element.
+ # lon - Longitude of the Position element.
+ # alt - Altitude of the Position element.
+
+Latitute and Longitude should be expressed in decimal value (no degrees, minutes, seconds) in the WGS84 Global Positioning System.
+
+= Notes =
+
+
+= See Also =
+
