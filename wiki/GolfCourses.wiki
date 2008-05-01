@@ -1,4 +1,4 @@
-#summary Definition of Terms Used in Golf Course Specifications
+#summary GolfML Reference: Golf Courses.
 
 = Definition =
 
