@@ -3,6 +3,9 @@
 = Description =
 
 The Hole element describe a playable hole of golf on a course.
+It contains information common to all [[Tees]].
+
+The Hole element does not contain information about the playable [[Tees]], distances, par, etc.
 
 = Attributes =
 
