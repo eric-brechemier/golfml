@@ -21,7 +21,7 @@ None
 
 The structural elements of a Qualification depends on the `handicap-method` used.
 
-=== Handicap Method USGA ===
+=== Handicap Method:  USGA ===
 
 For handicap-method of type usga, the structural elements of the Qualification are:
 
