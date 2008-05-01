@@ -1,3 +1,5 @@
+#summary Golf Markup Language Reference
+
 = Definition =
 
 GolfML is the root element of the Golf Markup Language.
