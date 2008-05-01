@@ -8,10 +8,10 @@ GolfML is the root element of the Golf Markup Language.
 
 GolfML has 4 elements:
 
-# Players
-# GolfCourses
-# Tournaments
-# Applications
+ # Players
+ # GolfCourses
+ # Tournaments
+ # Applications
 
 = Attributes =
 
@@ -21,4 +21,4 @@ Version of the definition of Golf Markup Language. Must be 3 integer numbers sep
 
 ! Notes
 
-The content of Tournaments is undefined.
+The content of Tournaments is currently undefined.
