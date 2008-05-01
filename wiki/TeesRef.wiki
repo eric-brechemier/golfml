@@ -44,7 +44,7 @@ Definition of a first set of Tees:
 </tees>
 }}}
 
-Definition of a second set of Tees, same par and handicap values, different lengths only:
+Definition of a second set of Tees. TeesRef uses the value `both` for direction: Same _par_ and _handicap_ values, different _lengths_ only.
 {{{
 <tees id="tees-2" color="white">
   <qualification handicap-method="usga">
@@ -117,7 +117,8 @@ Definition of 18 Holes courses based on the above 9 Hole courses:
 </course>
 }}}
 
-The attribute `direction` specified as front or back copies par and distance elements. Individual Tee element complete the definition of Tees with handicap elements only.
+The attribute `direction` specified as `front` or `back` copies _par_ and _distance_ elements. Individual Tee element complete the definition of Tees with _handicap_ elements only.
+
 
 Finally, this last example copies some information from a set of Tees (distance and par are copied from Tees sets identified by tees-1b and tees-2b) and some other information from another set of Tees (handicap from Tees set identified by tees-4):
 {{{
