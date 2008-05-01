@@ -1,4 +1,4 @@
-#summary Golf Markup Language Reference
+#summary Golf Markup Language Reference: GolfML.
 
 = Definition =
 
