@@ -1,0 +1,13 @@
+#summary Golf Markup Langauge Reference: GolfCourse
+
+= Definition =
+
+A GolfCourse represent a set of playable holes of golf.
+
+= Attributes =
+
+= Elements =
+
+== Descriptives Elements ==
+
+== Structural Elements ==
