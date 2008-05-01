@@ -1,0 +1,20 @@
+#summary Golf Markup Langauge Reference: Holes.
+
+= Description =
+
+A GolfCourse Holes structure contains Hole elements.
+
+= Attributes =
+
+# FromDate - Date of first use of the golf holes as described in the element.
+# ToDate - Date of last use of the golf holes as described in the element.
+
+= Elements =
+
+== Descriptive Elements ==
+
+== Structural Elements ==
+
+ # Hole
+
+The Holes element contains one Hole element for each hole on its parent GolfCourse.
