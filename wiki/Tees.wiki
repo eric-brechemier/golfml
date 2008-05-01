@@ -26,9 +26,26 @@ The element has the following descriptive elements:
 
 == Structural Elements ==
 
-The element has the following structural elements:
+The Tees element can be constructed from 2 methods:
+
+ # Specification of each individual Tee element.
+ # Partial copy of another Tees element.
+
+Tees often only differ in hole length. They sometimes also differ in individual hole handicap value and par.
+
+The first method for Tees specification uses the following structural elements:
 
  #  [[Tee]]
+
+This method requires the specification of each individual Tee for each hole of the golf course.
+
+
+The second method for Tees specification uses the following structural elements:
+
+ # [[Tees-ref]]
+
+This method allows to copy a partial information of a previously defined Tees element together with the specification of new elements from each invidual hole.
+
 
 = Notes =
 
