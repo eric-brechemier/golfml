@@ -1,0 +1,53 @@
+#summary Golf Markup Language Reference: TeesRef.
+
+= Description =
+
+The TeesRef element allow to copy information from another set of Tees. The set of  Tees from which the information is copied is specified in the element's value. The information copied over is specified by the `direction` attribute.
+
+= Attributes =
+
+The element has the following attributes:
+
+# direction - An indication of what is copied from the referenced set of Tees.
+
+== Direction Attribute Domain and Domain Values ==
+
+
+= Elements = 
+
+None.
+
+
+= Example of Use =
+
+Definition of a first set of Tees:
+{{{
+<tees id="tees-1" name="Nicklaus" color="black">
+   <tee number="1">
+     <par>4</par>
+     <length>403</length>
+     <handicap>9</handicap>
+   </tee>
+   ...
+</tees>
+}}}
+
+Definition of a second set of Tees, same par and handicap values, different lengths only:
+{{{
+<tees id="tees-2" name="Nicklaus" color="white">
+  <qualification handicap-method="usga">
+    <par>70.8</par>
+    <deviation>136</deviation>
+  </qualification>
+  <tees-ref direction="both">tees-1</tees-ref>
+   <tee number="1">
+     <length>403</length>
+   </tee>
+   ...
+</tees>
+}}}
+
+= Notes =
+
+
+= See Also =
