@@ -8,13 +8,13 @@ The Tees elements contains individual [[Tee]] element for the description of eac
 
 The element has the following attributes:
 
- # id
- # name
- # gender
- # length-units
- # handicap-method
- # from-date
- #  to-date
+ # id - Unique identifier
+ # name - Name or color for the set of Tees.
+ # gender - Gender of the set of Tees. Must be either men or ladies.
+ # length-units - Units used in the specification of each Tee's individual length.
+ # handicap-method - Handicap method used to qualify the Tee. The handicap method value is limited to a list of valid values. (See [[Domains Golf Markup Language Reference: Domains and Domain Values]].)
+ # from-date - Date from which the set of Tees can be played.
+ #  to-date - Date until which the set of Tees could be played.
 
 = Elements = 
 
