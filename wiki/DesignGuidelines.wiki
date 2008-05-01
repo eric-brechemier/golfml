@@ -2,31 +2,36 @@
 
 = Introduction =
 
-Add your content here.
-
+This section introduce conventions use in the Golf Markup Language.
 
 = Elements and Attributes =
 
 Elements and attributes are named used English language common terms and vocabulary.
+In general, use elements for data that will be produced or consumed by an application and attributes for metadata.   
+A good rule of thumb is to use elements for nouns and attributes for adjectives.
+
 
 == Naming Conventions ==
 
 === Elements and Types ===
-Elements and types should be defined using dash ('-') separated words.
+Elements and XML schema types should be defined using dash ('-') separated words.
 Element and type names can be any length. They should be meaningful.
 Example:
 
  * golf-courses
  * tee-time
 
+
 === Attributes ===
+
 Attributes should be defined using dash ('-') separated words.
 Example:
 
  * length-units
  * media-type
 
-=== Plurals ===
-Collections of elements of the same type can be organized into a parent element. The name of the parent element should be a plural form of the children elements.
 
+=== Plurals ===
+
+Collections of elements of the same type can be organized into a parent element. The name of the parent element should be a plural form of the children elements.
 
