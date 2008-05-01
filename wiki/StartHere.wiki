@@ -1,4 +1,4 @@
-#summary The Golf Markup Language - START HERE
+#summary Golf Markup Language
 
 = Introduction =
 
