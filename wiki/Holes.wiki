@@ -6,8 +6,8 @@ A GolfCourse Holes structure contains Hole elements.
 
 = Attributes =
 
-# FromDate - Date of first use of the golf holes as described in the element.
-# ToDate - Date of last use of the golf holes as described in the element.
+ # FromDate - Date of first use of the golf holes as described in the element.
+ # ToDate - Date of last use of the golf holes as described in the element.
 
 = Elements =
 
