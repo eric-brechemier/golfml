@@ -5,9 +5,28 @@
 Add your content here.
 
 
-= Details =
+= Elements and Attributes =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Elements and attributes are named used English language common terms and vocabulary.
+
+== Naming Conventions ==
+
+=== Elements and Types ===
+Elements and types should be defined using dash ('-') separated words.
+Element and type names can be any length. They should be meaningful.
+Example:
+
+ * golf-courses
+ * tee-time
+
+=== Attributes ===
+Attributes should be defined using dash ('-') separated words.
+Example:
+
+ * length-units
+ * media-type
+
+=== Plurals ===
+Collections of elements of the same type can be organized into a parent element. The name of the parent element should be a plural form of the children elements.
+
+
