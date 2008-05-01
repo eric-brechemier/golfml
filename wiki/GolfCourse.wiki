@@ -23,7 +23,6 @@ The GolfCourse element contains the following descriptives elements:
 
 The GolfCourse element main contains the following structural elements:
 
- # Media - Generic media element related to the golf course.
- # Holes
- # Tees
-
+ # [[Media]] - Generic media element related to the golf course.
+ # [[Holes]]
+ # [[Tees]]
