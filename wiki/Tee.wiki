@@ -1,0 +1,32 @@
+#summary Golf Markup Language Reference: Tee.
+
+= Description =
+
+The Tee element describe a individual Tee on a golf course.
+
+= Attributes =
+
+The element has the following attributes:
+
+# number - Tee number to properly sequence Tee in a Tees structure.
+
+= Elements = 
+
+== Descriptive Elements ==
+
+The element has the following descriptive elements:
+
+ # length
+ # handicap
+ # par
+
+
+== Structural Elements ==
+
+None.
+
+
+= Notes =
+
+
+= See Also =
