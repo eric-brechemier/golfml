@@ -1,0 +1,25 @@
+#summary Golf Markup Langauge Reference: CountryClub
+
+= Definition =
+
+A CountryClub is a place where golfer can find one or more GolfCourse's.
+
+= Attributes =
+
+None.
+
+= Elements =
+
+== Descriptive Elements ==
+
+ # Name
+ # Address
+ # Phone
+ # Contact
+ # eMail
+ # Website
+ # Amenities
+
+== Structural Elements ==
+
+ # GolfCourse
