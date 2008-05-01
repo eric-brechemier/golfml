@@ -19,14 +19,19 @@ None
 
 == Structural Elements ==
 
-The structural elements of a Qualification depends on the `handicap-method` used.
+The structural elements of a Qualificationare:
+
+ # par - The expression of the ideal score on the specified course.
+ # deviation - The expression of the difficulty of the course in regard of the ideal score.
+
+The meaning of these parameters depends on the `handicap-method` used.
 
 === Handicap Method:  USGA ===
 
-For handicap-method of type usga, the structural elements of the Qualification are:
+For handicap-method of type usga, the structural elements of the Qualification have the following meaning:
 
- # rating - The rating of a golf course, from a given set of tees.
- # slope - The slope value of a golf course, from a given set of tees.
+ # par - The rating of a golf course, from a given set of tees.
+ # deviation - The slope value of a golf course, from a given set of tees.
 
 = Notes =
 
