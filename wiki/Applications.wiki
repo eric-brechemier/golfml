@@ -1,0 +1,19 @@
+#summary Golf Markup Language Reference: Applications.
+
+= Description =
+
+The Applications element is a container for one or more [[Application]] element.
+
+= Attributes =
+
+None.
+
+= Elements = 
+
+None.
+
+
+= Notes =
+
+
+= See Also =
