@@ -23,7 +23,6 @@ The element has the following structural elements:
 
 # [Gps] - Gps coordinates of the position
 
-Latitute and Longitude should be expressed in decimal value (no degrees, minutes, seconds) in the WGS84 Global Positioning System.
 
 = Notes =
 
