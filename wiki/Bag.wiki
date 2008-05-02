@@ -1,0 +1,34 @@
+#summary Golf Markup Language Reference: Bag.
+
+= Description =
+
+A Golf Bag is a element that allow a [[Player]] to keep track of the clubs used during a round of golf.
+
+
+= Attributes =
+
+The element has the following attributes:
+
+ # id - Unique identifer.
+
+= Elements = 
+
+== Descriptive Elements ==
+
+The element has the following descriptive elements:
+
+ # name
+ # note
+
+== Structural Elements ==
+
+The element has the following structural elements:
+
+ # club-ref - A reference to a [[Club Golf Club]].
+
+= Notes =
+
+
+
+= See Also =
+
