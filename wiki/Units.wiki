@@ -33,6 +33,10 @@ The Gregorian calendar is used.
 
 Time is formated as HH:MM[:SS[.sss]] using the unambiguous 24 hour format. Seconds and fractions of a second are optional.
 
+{{{
+  17:28
+}}}
+
 Duration are expressed as D:H:M[:S[.s]].
 
 = Notes =
