@@ -8,7 +8,7 @@ The Gps element records the position of a point on the surface of Earth.
 
 The element has the following attributes:
 
- # reference - Optional. Referencial System. Currently only WGS84 is supported but other reference system are conceivable.
+ # Reference - Optional. Referencial System. Currently only WGS84 is supported but other reference system are conceivable.
 
 = Elements = 
 
