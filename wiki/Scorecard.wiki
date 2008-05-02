@@ -36,8 +36,8 @@ The PlayedHole element has the following attributes:
 
 The PlayedHole element has the following structuring elements:
 
- # [score] - Record details about the score _after_ a hole is played.
- # [stroke] - Details about a stroke played for this hole.
+ # [Score] - Record details about the score _after_ a hole is played.
+ # [Stroke] - Details about a stroke played for this hole.
 
 
 
