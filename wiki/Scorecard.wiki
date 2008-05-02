@@ -21,20 +21,20 @@ None.
 
 The element has the following structural elements:
 
- # [PlayedHole] - Records details about the hole as played.
+ # PlayedHole - Records details about the hole as played.
 
 
 === Element Details ===
 
-==== hole ====
+==== PlayedHole ====
 
-The Hole element records information about the score of a game of golf and the strokes played.
+The PlayedHole element records information about the score of a game of golf and the strokes played.
 
-The Hole element has the following attributes:
+The PlayedHole element has the following attributes:
 
  # number - Hole number played.
 
-The Hole element has the following structuring elements:
+The PlayedHole element has the following structuring elements:
 
  # [score] - Record details about the score _after_ a hole is played.
  # [stroke] - Details about a stroke played for this hole.
