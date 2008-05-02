@@ -4,23 +4,6 @@
 
 The section lists generic elements and attributes that can be present at several places in the GolfML documents.
 
-= Common Elements =
-
-Common elements can be present in several other elements. 
-
-== Notes ==
-
-The `notes` elements receives all comments, rating, notes and additional information for its parent element.
-
-While some child elements are structured, the GolfML document may contain any addition information inside the note element.
-
-=== Child Elements ===
-
-Notes element may contain the following child elements:
-
- # rating
- # comments
-
 = Common Attributes =
 
 The following attributes are used in several elements. They refer to their parent element.
