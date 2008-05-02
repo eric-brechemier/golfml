@@ -12,6 +12,8 @@ The element has the following attributes:
  # date-computed
  # name - Name of statistic. The name of the statistic used sets the meaning and units used for the value.
 
+The Statistic's name is limited to a list of valid values (See [[StatisiticNameGolf Markup Language Reference: Statistics.]]).
+
 = Elements = 
 
 == Descriptive Elements ==
