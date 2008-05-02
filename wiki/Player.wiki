@@ -21,6 +21,7 @@ The element has the following descriptive elements:
  # phone
  # email
  # note
+ # handicap
 
 == Structural Elements ==
 
