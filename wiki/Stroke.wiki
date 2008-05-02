@@ -21,10 +21,15 @@ The element has the following descriptive elements:
  # Penalty - Penalty enforced before the stroke.
  # ToHole - Distance to hole.
  # AltToHole - Altitude difference to hole.
+ # Result - Stroke result.
+
+The Stroke result is a not structured. Any text, note, or comment can be added. The meaning of the content is left to the user. It can be used to qualify the quality of the shot, its precision, and any textual information.
+
 
 == Structural Elements ==
 
 None.
+
 
 === Element Details ===
 
