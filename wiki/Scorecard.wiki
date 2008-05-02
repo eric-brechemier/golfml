@@ -14,9 +14,7 @@ The element has the following attributes:
 
 == Descriptive Elements ==
 
-The element has the following descriptive elements:
-
- # None.
+None.
 
 
 == Structural Elements ==
