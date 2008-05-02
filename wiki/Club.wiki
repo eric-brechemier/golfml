@@ -1,0 +1,72 @@
+#summary Golf Markup Language Reference: Golf Club.
+
+= Description =
+
+A Golf Club element keeps track of details about a single club of golf owned by a [[Player]].
+
+= Attributes =
+
+The element has the following attributes:
+
+ # id - Unique identifer.
+ # type - Golf club type. Issued from a list a valid values.
+
+== Domains and Domain Values ==
+
+=== Golf Club Type ===
+
+The Golf Club Type specifies the category of golf club.
+
+==== Golf Club Type Domain Values ====
+
+ # wood
+ # iron
+ # wedge
+ # putter
+ # hybrid
+ # utility
+
+= Elements = 
+
+== Descriptive Elements ==
+
+The element has the following descriptive elements:
+
+ # name
+ # loft
+ # lie
+ # bounce
+ # offset
+ # shaft
+ # model
+
+== Element Details ==
+
+=== Shaft ===
+
+The Shaft element is further divised in the following elements:
+
+ # length
+ # material
+ # model
+
+=== Model ===
+
+The Model element is further divised in the following elements:
+
+ # manufacturer
+ # name
+
+The Model element is used in both Golf Club and Shaft elements.
+== Structural Elements ==
+
+The element has the following structural elements:
+
+None. 
+
+= Notes =
+
+
+
+= See Also =
+
