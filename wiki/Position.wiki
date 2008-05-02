@@ -29,3 +29,5 @@ Latitute and Longitude should be expressed in decimal value (no degrees, minutes
 
 
 = See Also =
+
+[Polygon] element - A list of Positon elements.
