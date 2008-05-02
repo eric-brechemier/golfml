@@ -22,8 +22,8 @@ None.
 
 The element has the following structural elements:
 
- # Club
- # Bag
+ # [[Club]]
+ # [[Bag]]
 
 = Notes =
 
