@@ -1,0 +1,32 @@
+#summary Golf Markup Language Reference: Stroke.
+
+= Description =
+
+The Stroke element records information about a stroke played during a round of golf.
+
+= Attributes =
+
+None.
+
+= Elements = 
+
+== Descriptive Elements ==
+
+The element has the following descriptive elements:
+
+ # ClubRef - Reference to the Club of Golf used to play the stroke.
+ # Origin - Position the stroke was played from.
+
+
+== Structural Elements ==
+
+None.
+
+
+= Notes =
+
+
+
+= See Also =
+
+Parent element: [Scorecard PlayedHole].
