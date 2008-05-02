@@ -46,4 +46,4 @@ The Type of Scoring attribute keeps the following scores:
 
 = See Also =
 
-Parent element: .
+Parent element: [Hole].
