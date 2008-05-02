@@ -9,3 +9,5 @@ The section presents example of use of the Golf Markup Language in different cas
  # Simple Scorecard
  # Golf Course with 27 holes of golf, playable either as such or in 3 combinations of 18 holes.
  # Scorecard of a Stableford Round for 4 players.
+
+*These cqse studies are currently being written and tested against our model. They will be available shortly.*
