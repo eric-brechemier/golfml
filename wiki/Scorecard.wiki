@@ -1,0 +1,47 @@
+#summary Golf Markup Language Reference: Scorecard.
+
+= Description =
+
+The Scorecard element collects information about the score(s) of the game of golf played.
+
+= Attributes =
+
+The element has the following attributes:
+
+ # id - Unique identifer.
+
+= Elements = 
+
+== Descriptive Elements ==
+
+The element has the following descriptive elements:
+
+ # None.
+
+
+== Structural Elements ==
+
+The element has the following structural elements:
+
+ # score - The score of a game.
+
+
+
+=== Element Details ===
+
+==== Score ====
+
+The Score element 
+
+
+
+
+
+
+= Notes =
+
+
+
+= See Also =
+
+Parent element: .
