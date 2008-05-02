@@ -6,7 +6,9 @@ The section lists generic elements and attributes that can be present at several
 
 = Common Attributes =
 
-The following attributes are used in several elements. They refer to their parent element.
+The following attributes are used in several elements. They always refer to their parent element.
+
+== Dates ==
 
  # DateFrom - Date of first use of the golf holes as described in the element.
  # DateTo - Date of last use of the golf holes as described in the element.
@@ -15,6 +17,6 @@ The following attributes are used in several elements. They refer to their paren
 
 The attribute `id` is used to identify an element in the GolfML document.
 
-=== Notes ===
+=== Important Notes ===
 
 We investigate the possibility to switch to [http://www.w3.org/TR/2001/REC-xmlschema-1-20010502/#cIdentity-constraint_Definitions ref/keyref] for identity constraints.
