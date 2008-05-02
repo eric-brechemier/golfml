@@ -1,0 +1,63 @@
+#summary Golf Markup Language Reference: Game.
+
+= Description =
+
+The Game element records information about a round of golf and side games.
+
+= Attributes =
+
+The element has the following attributes:
+
+ # id - Unique identifer.
+
+= Elements = 
+
+== Descriptive Elements ==
+
+The element has the following descriptive elements:
+
+ # date
+
+
+== Structural Elements ==
+
+The element has the following structural elements:
+
+ # Wager
+ # Golfer
+ # Team
+ # [[Scorecard]]
+
+=== Element Details ===
+
+==== Wager Element ====
+
+The Wager element keeps track of side games played during a round of golf.
+
+
+==== Golfer Element ====
+
+The Golfer element contains information about all players of the game of golf.
+The Golfer element contains the following elements:
+
+ # Player-ref - The Player of a round of golf.
+ # handicap - The handicap claimed by the Player.
+ # Team-ref - The Team the Player belongs to, is side games requires it.
+
+
+==== Team Element ====
+
+The Team element keeps track of Teams involved in a Game of golf.
+
+The Team element contains the following elements:
+
+ # Golfer-ref - The Golfer of a round of golf which not only contains information regarding the actual person (Player) but also the claimed handicap.
+
+
+= Notes =
+
+
+
+= See Also =
+
+Parent element: .
