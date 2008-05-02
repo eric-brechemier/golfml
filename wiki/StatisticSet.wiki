@@ -1,0 +1,51 @@
+#summary Golf Markup Language Reference: StatisticSet.
+
+= Description =
+
+The  StatisticSet element is a container element for individual [[Statistic]].
+
+Statistics change over time. When computed, they can be limited to a period of time or a set of golf courses. The 
+
+StatisticSet element collects information about the time period, golf course, conditions used and all statistics computer with these parameters.
+
+By keeping StatisticSet over time, it is possible to follow the evolution of statistics over time.
+
+= Attributes =
+
+The element has the following attributes:
+
+ # id - Unique identifer.
+ # date-from
+ # date-to
+
+= Elements = 
+
+== Descriptive Elements ==
+
+The element has the following descriptive elements:
+
+ # restriction
+
+== Element Details ==
+
+=== Restriction ===
+
+The Restriction element is further divised in the following elements:
+
+ # course-ref - A reference to a golf course.
+
+StatisticSet must restraint their data source set to the list of courses referenced in the Restriction/course-ref.
+
+
+== Structural Elements ==
+
+The element has the following structural elements:
+
+ # [[Statistic]] - Individual statistic.
+
+= Notes =
+
+
+
+= See Also =
+
