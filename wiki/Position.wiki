@@ -7,7 +7,7 @@ The Position element gives the GPS coordinate of a point on the map of the Earth
 
 = Attributes =
 
-None.
+ # Number - Optional ordering number of the position in a list.
 
 
 = Elements = 
