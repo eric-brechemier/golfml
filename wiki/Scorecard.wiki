@@ -23,18 +23,23 @@ The element has the following descriptive elements:
 
 The element has the following structural elements:
 
- # score - The score of a game.
-
+ # hole - Records details about the hole as played.
 
 
 === Element Details ===
 
-==== Score ====
+==== hole ====
 
-The Score element 
+The Hole element records information about the score of a game of golf and the strokes played.
 
+The Hole element has the following attributes:
 
+ # number - Hole number played.
 
+The Hole element has the following structuring elements:
+
+ # [score] - Record details about the score _after_ a hole is played.
+ # [stroke] - Details about a stroke played for this hole.
 
 
 
