@@ -1,0 +1,31 @@
+#summary Golf Markup Language Reference: Statistic.
+
+= Description =
+
+The statistic element keep track of an individual statistic.
+
+= Attributes =
+
+The element has the following attributes:
+
+ # id - Unique identifer.
+ # date-computed
+ # name - Name of statistic. The name of the statistic used sets the meaning and units used for the value.
+
+= Elements = 
+
+== Descriptive Elements ==
+
+None.
+
+== Structural Elements ==
+
+None.
+
+= Notes =
+
+
+
+= See Also =
+
+Parent element: StatisticSet.
