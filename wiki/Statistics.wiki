@@ -1,0 +1,34 @@
+#summary Golf Markup Language Reference: Statistics.
+
+= Description =
+
+The Statistics element is a container for StatisticSets.
+
+= Attributes =
+
+The element has the following attributes:
+
+ # id - Unique identifer.
+
+= Elements = 
+
+== Descriptive Elements ==
+
+The element has the following descriptive elements:
+
+None.
+
+
+== Structural Elements ==
+
+The element has the following structural elements:
+
+ # StatisticSet.
+
+= Notes =
+
+
+
+= See Also =
+
+
