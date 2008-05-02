@@ -23,3 +23,5 @@ Must maintain GolfML Document Specification.
 The Application Structure is offered to those applications that want to use a single GolfML Document for data storage.
 
 = See Also =
+
+Parent element: [Applications]
