@@ -44,8 +44,8 @@ Media element may contain the following child elements:
 
 The following attributes are used in several elements. They refer to their parent element.
 
- # FromDate - Date of first use of the golf holes as described in the element.
- # ToDate - Date of last use of the golf holes as described in the element.
+ # DateFrom - Date of first use of the golf holes as described in the element.
+ # DateTo - Date of last use of the golf holes as described in the element.
 
 == Unique Identifiers ==
 
