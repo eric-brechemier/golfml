@@ -1,4 +1,4 @@
-#summary Golf Markup Language Reference: Golf Club.
+#summary Golf Markup Language Reference: (Golf) Club.
 
 = Description =
 
@@ -66,7 +66,24 @@ None.
 
 = Notes =
 
+If an application does not want to keep track of individual golf clubs, it is straightforward to generate a set of generic golf clubs and refer to them throughout the application:
 
+{{{
+<equipment>
+    <club id="club-generic-1w" type="wood" />
+    <club id="club-generic-1h" type="hybrid" />
+    <club id="club-generic-1u" type="utility" />
+    <club id="club-generic-1i" type="iron" />
+    <club id="club-generic-pw" type="wedge" />
+    <club id="club-generic-p" type="putter" />
+    <bag rules="yes">
+        <club-ref>club-generic-1w</club-ref>
+        <club-ref>club-generic-2h</club-ref>
+        <club-ref>club-generic-6i</club-ref>
+        <club-ref>club-generic-pw</club-ref>
+        <club-ref>club-generic-p</club-ref>
+    </bag>
+</equipment>
+}}}
 
 = See Also =
-
