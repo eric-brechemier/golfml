@@ -47,4 +47,4 @@ The Hole element has the following structuring elements:
 
 = See Also =
 
-Parent element: [Golfer].
+Parent element: [Game Golfer].
