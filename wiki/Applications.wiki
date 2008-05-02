@@ -2,7 +2,7 @@
 
 = Description =
 
-The Applications element is a container for one or more [[Application]] element.
+The Applications element is a container for one or more [Application] element.
 
 = Attributes =
 
