@@ -1,0 +1,22 @@
+#summary Golf Markup Language Reference: Notes.
+
+= Definition =
+
+The Notes elements receives all comments, rating, notes and additional information for its parent element.
+
+While some child elements are structured, the GolfML document may contain any addition information inside the note element.
+
+= Elements =
+
+== Descriptive Elements ==
+
+== Structuring Elements ==
+
+Notes element may contain the following structuring elements:
+
+ # Rating
+ # Comments
+
+= Note =
+
+= See Also =
