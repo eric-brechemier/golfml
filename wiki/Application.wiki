@@ -2,7 +2,7 @@
 
 = Description =
 
-The [[Application]] element is used by individual applications to store application specific data and extensions.
+The [Application] element is used by individual applications to store application specific data and extensions.
 
 = Attributes =
 
