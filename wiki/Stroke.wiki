@@ -6,7 +6,9 @@ The Stroke element records information about a stroke played during a round of g
 
 = Attributes =
 
-None.
+The element has the following attribute:
+
+ # number - Position of the stroke in the sequence.
 
 = Elements = 
 
