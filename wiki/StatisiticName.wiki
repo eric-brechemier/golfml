@@ -2,7 +2,7 @@
 
 = Description =
 
-The page defines the statistics that can be stored in the Statistic element.
+The page defines the statistics that can be stored in the [[Statistic]] element.
 
 = Attributes =
 
@@ -70,4 +70,3 @@ The Statisitic Name attribute is limited to a list of valid values listed below.
 
 
 = See Also =
-
