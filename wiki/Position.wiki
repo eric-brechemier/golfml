@@ -14,16 +14,14 @@ None.
 
 == Descriptive Elements ==
 
-None.
+ # Name - Optional name of the position.
 
 
 == Structural Elements ==
 
 The element has the following structural elements:
 
- # lat - Latitude of the Position element.
- # lon - Longitude of the Position element.
- # alt - Altitude of the Position element.
+# [Gps] - Gps coordinates of the position
 
 Latitute and Longitude should be expressed in decimal value (no degrees, minutes, seconds) in the WGS84 Global Positioning System.
 
@@ -31,4 +29,3 @@ Latitute and Longitude should be expressed in decimal value (no degrees, minutes
 
 
 = See Also =
-
