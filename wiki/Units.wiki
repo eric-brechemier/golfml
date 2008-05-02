@@ -18,9 +18,24 @@ To specify that these elements use Imperial units, the attibute `units` must be 
 
 The metric unit used for an element is specified in the definition of the element.
 
+= Date and Time =
+
+== Date ==
+
+Dates have the format DD-MON-YYYY, where DD is a single or double digit day of the month, MON are the first three letter of the month, and YYYY is the 4-digit calendar year. Date are formatted using the English Language.
+The Gregorian calendar is used.
+
+{{{
+  25-DEC-2008
+}}}
+
+== Time ==
+
+Time is formated as HH:MM[:SS[.sss]] using the unambiguous 24 hour format. Seconds and fractions of a second are optional.
+
+Duration are expressed as D:H:M[:S[.s]].
+
 = Notes =
 
 
 = See Also =
-
-
