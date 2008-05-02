@@ -21,7 +21,7 @@ None.
 
 The element has the following structural elements:
 
- # hole - Records details about the hole as played.
+ # [PlayedHole] - Records details about the hole as played.
 
 
 === Element Details ===
