@@ -9,6 +9,7 @@ A list of [Position]s defining a Polygon.
 The element has the following attributes:
 
  # name - Option name for a collection of Position elements.
+ # open - Whether the Polygon is open (value yes, default) or closed (value no).
 
 = Elements = 
 
@@ -25,7 +26,7 @@ The element has the following structural elements:
 
 = Notes =
 
+Polygons can be used to define hole boundaries, or hasards.
 
 
 = See Also =
-
