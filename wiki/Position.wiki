@@ -26,6 +26,19 @@ The element has the following structural elements:
 
 = Notes =
 
+There are other system being used to record the position of the ball on a golf course.
+We are aware of a system that slices the aerial view of a hole of golf in squares and records the approximate position of the ball in this special coordinate system (hole 18, third square from top, fourth from left). In this case, it is conceivable to record as position in a structure as such:
+
+{{{
+<position number="3">
+  <square-location>
+    <hole>18</hole>
+    <x>3</x>
+    <y>4</y>
+  </square-location>
+<position>
+}}}
+
 
 = See Also =
 
