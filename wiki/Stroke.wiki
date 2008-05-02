@@ -19,6 +19,8 @@ The element has the following descriptive elements:
  # ClubRef - Reference to the Club of Golf used to play the stroke.
  # Origin - Position the stroke was played from.
  # Penalty - Penalty enforced before the stroke.
+ # ToHole - Distance to hole.
+ # AltToHole - Altitude difference to hole.
 
 == Structural Elements ==
 
