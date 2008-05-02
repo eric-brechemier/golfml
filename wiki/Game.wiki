@@ -37,11 +37,13 @@ The Wager element keeps track of side games played during a round of golf.
 
 ==== Golfer Element ====
 
-The Golfer element contains information about all players of the game of golf.
+The Golfer element contains information about all players of the game of golf, their claimed handicap, and the the set of Tees they used.
+
 The Golfer element contains the following elements:
 
  # Player-ref - The Player of a round of golf.
  # handicap - The handicap claimed by the Player.
+ # Tees-ref - The set of Tees used by the Player.
  # Team-ref - The Team the Player belongs to, is side games requires it.
 
 
