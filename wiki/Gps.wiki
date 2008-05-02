@@ -21,6 +21,8 @@ The element has the following descriptive elements:
  # alt - Latitude of the point in meters.
  # Precision - Precision of the record in meters.
 
+Latitute and Longitude should be expressed in decimal value (no degrees, minutes, seconds) in the WGS84 Global Positioning System.
+
 
 == Structural Elements ==
 
