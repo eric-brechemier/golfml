@@ -62,4 +62,4 @@ The Team element contains the following elements:
 
 = See Also =
 
-Parent element: .
+Parent element: [[Games]].
