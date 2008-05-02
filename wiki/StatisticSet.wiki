@@ -15,8 +15,8 @@ By keeping StatisticSet over time, it is possible to follow the evolution of sta
 The element has the following attributes:
 
  # id - Unique identifer.
- # date-from
- # date-to
+ # date-from - Start date for data collection in statistics computation.
+ # date-to- End date for data collection in statistics computation.
 
 = Elements = 
 
@@ -48,4 +48,3 @@ The element has the following structural elements:
 
 
 = See Also =
-
