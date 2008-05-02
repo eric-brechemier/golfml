@@ -21,25 +21,6 @@ Notes element may contain the following child elements:
  # rating
  # comments
 
-== Media ==
-
-The `media` element refer to a usually graphical piece of information attached to its parent element.
-
-=== Attributes ===
-
-The `media` element has the following attributes:
-
- # type - Type of media attached to the parent element. The media types are defined and must be issued from the list of valid media type values. Please refer to the [[Domains Golf Markup Language Reference: Domains and Domain Values]].
- # mime-type - Multipurpose Internet Mail Extensions (MIME) format of the attached media (See RFC 2046.)
-
-=== Child Elements ===
-
-Media element may contain the following child elements:
-
- # name - Name or Title of the media
- # location - Location of the media. GolfML does not give any meaning to the value of the `location` element. The value of the location element can be a file name, a xLink pointer, a URL...
-
-
 = Common Attributes =
 
 The following attributes are used in several elements. They refer to their parent element.
