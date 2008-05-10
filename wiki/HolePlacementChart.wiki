@@ -2,7 +2,7 @@
 
 = Description =
 
-The  HolePlacementChart element is a container element for individual [[HolePlacement]].
+The  HolePlacementChart element is a container element for individual HolePlacement.
 
 = Attributes =
 
