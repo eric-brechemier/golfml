@@ -1,0 +1,35 @@
+#summary Golf Markup Language Reference: HolePlacementChart.
+
+= Description =
+
+The  HolePlacementChart element is a container element for individual [[HolePlacement]].
+
+= Attributes =
+
+The element has the following attributes:
+
+ # date-from - Start date for hole placement.
+ # date-to - End date for hole placement.
+
+ # date - Date for hole placement (date-from and date-to are the same).
+
+= Elements = 
+
+== Descriptive Elements ==
+
+None.
+
+
+== Structural Elements ==
+
+The element has the following structural elements:
+
+ # [HolePlacement] - Individual hole placement description.
+
+= Notes =
+
+
+
+= See Also =
+
+HolePlacement.
