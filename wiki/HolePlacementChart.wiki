@@ -33,3 +33,7 @@ The element has the following structural elements:
 = See Also =
 
 HolePlacement.
+
+Example of Hole Placement Chart (Used for modelling):
+
+http://golfml.googlecode.com/files/pnsheet.jpg
