@@ -10,8 +10,10 @@ The element has the following attributes:
 
  # date-from - Start date for hole placement.
  # date-to - End date for hole placement.
-
  # date - Date for hole placement (date-from and date-to are the same).
+ # units - Unit for distance measurement. Usually, hole placement distances are measured in _pace_.
+
+(We shall safely assume that a _pace_, while not officially defined, is equivalent to a yard.)
 
 = Elements = 
 
