@@ -8,7 +8,7 @@ The Player element contains information about a golfer: Personal data, owned equ
 
 The element has the following attributes:
 
-# id - Unique identifier.
+ # id - Unique identifier.
 
 = Elements = 
 
@@ -27,9 +27,13 @@ The element has the following descriptive elements:
 
 The element has the following structural elements:
 
- # [[Equipment]]
- # [[Statistics]]
- # [[Games]]
+ # [Equipment]
+ # [Statistics]
+ # [Games]
+
+= Parent Elements =
+
+ # Players
 
 = Notes =
 
