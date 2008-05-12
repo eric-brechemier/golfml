@@ -9,6 +9,7 @@ The Stroke element records information about a stroke played during a round of g
 The element has the following attribute:
 
  # number - Position of the stroke in the sequence.
+ # time - Optional time of the stroke for rythm calculation purpose.
 
 = Elements = 
 
