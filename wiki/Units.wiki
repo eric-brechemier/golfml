@@ -18,6 +18,10 @@ To specify that these elements use Imperial units, the attibute `units` must be 
 
 The metric unit used for an element is specified in the definition of the element.
 
+= Numeric Values =
+
+Numeric values are expressed using a decimal period and no separators for thousands.
+
 = Date and Time =
 
 == Date ==
