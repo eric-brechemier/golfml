@@ -33,7 +33,7 @@ The element has the following structural elements:
 
 = Parent Elements =
 
- # Players
+ # [Players]
 
 = Notes =
 
