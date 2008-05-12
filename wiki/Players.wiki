@@ -15,7 +15,11 @@ None.
 
 The element has the following structural elements:
 
- #  [[Player]]
+ #  [Player]
+
+= Parent Elements =
+
+# [GolfML]
 
 = Notes =
 
