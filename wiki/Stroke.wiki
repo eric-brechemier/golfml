@@ -17,12 +17,12 @@ The element has the following attribute:
 
 The element has the following descriptive elements:
 
- # ClubRef - Reference to the Club of Golf used to play the stroke.
- # Origin - Position the stroke was played from.
- # Penalty - Penalty enforced before the stroke.
- # ToHole - Distance to hole.
- # AltToHole - Altitude difference to hole.
- # Result - Stroke result.
+ # [ClubRef] - Reference to the Club of Golf used to play the stroke.
+ # [Origin] - Position the stroke was played from.
+ # [Penalty] - Penalty enforced before the stroke.
+ # [ToHole] - Distance to hole.
+ # [AltToHole] - Altitude difference to hole.
+ # [Result] - Stroke result.
 
 The Stroke result is a not structured. Any text, note, or comment can be added. The meaning of the content is left to the user. It can be used to qualify the quality of the shot, its precision, and any textual information.
 
