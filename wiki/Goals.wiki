@@ -1,0 +1,25 @@
+#summary Golf Markup Language: General Goals.
+
+= Introduction =
+
+Add your content here.
+
+
+= Details =
+
+the overall goals from GolfML are summaized in three axis:
+ # Description of golf courses.
+ # Record of golf rounds.
+ # Record of golf tournaments.
+They are described below.
+
+== Description of Golf Courses ==
+
+Golf courses have common elements.
+
+
+== Records of Rounds of Golf ==
+
+
+== Records of Tournaments ==
+
