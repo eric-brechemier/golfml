@@ -25,10 +25,25 @@ A hole of a course is piece of land with hasards, traps, natural obstacle... usu
 
 All these elements should be included in GolfML, in a structured way.
 
+For example, scorecards with hole pars, distances, and handicap indices are modelized in a structure XML document.
 
+Yardage books in electronic form, maps, pictures, videos of hole overview can also be of interest to golfers. GolfML provides a structured way to describe and _reference_ such information.
+
+Hole descriptions with markers, position of hasards or natural obstacle, green shape and sizes, and personal notes,  can also be stored to document holes.
+
+The purpose of this documentation of a golf course is to collect information in a unique, structured, organized document. It is left to the golf application programmer to use or not those structure defined to describe a golf course.
 
 
 == Records of Rounds of Golf ==
+
+Golfers like to record score, notes, and sometimes a lot more information to track the progress of their game. The purpose of this section is to provide a place to collect such information, store it, organize it, and later refer to it to analyze the game.
+
+In addition to score, golfer are able to record the position of the ball after each stroke, information about the club used, notes about the hole or the course
+
+
+GolfML also offers a place to record golf-related belongings such as golf clubs, ball used, contents of golf bags, etc.
+
+
 
 
 == Records of Tournaments ==
