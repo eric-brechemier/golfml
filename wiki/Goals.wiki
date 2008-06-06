@@ -15,11 +15,20 @@ They are described below.
 
 == Description of Golf Courses ==
 
-Golf courses have common elements.
+The description of golf courses consists not only in general data like name, address, contact phone number, email address, and web site, but also in more technical details of interest to the game of golf.
+
+A golf course consists generally of 18 holes. Golfers can play these holes from different starting positions (tees) depending on their skills.
+
+To prepare a round of golf, players usually have access to some reference information provided by the course itself or by specialized companies: Scorecard, general map of the course, but also "yardage" books and even sometimes private notes and drawings.
+
+A hole of a course is piece of land with hasards, traps, natural obstacle... usually marked in drawings or maps. Often, courses also contain distance markers to help the golfer estimate the distance to a target.
+
+All these elements should be included in GolfML, in a structured way.
+
+
 
 
 == Records of Rounds of Golf ==
 
 
 == Records of Tournaments ==
-
