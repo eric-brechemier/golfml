@@ -2,30 +2,25 @@
 
 = Introduction =
 
-Add your content here.
-
-
-= Details =
-
-the overall goals from GolfML are summaized in three axis:
+The goals of GolfML are summaized in three main axis:
  # Description of golf courses.
  # Record of golf rounds.
  # Record of golf tournaments.
 They are described below.
 
-== Description of Golf Courses ==
+= Description of Golf Courses =
 
-The description of golf courses consists not only in general data like name, address, contact phone number, email address, and web site, but also in more technical details of interest to the game of golf.
+The description of golf courses consists not only in general data like name, address, contact phone number, email address, and web site, but also technical details of interest to the game of golf.
 
 A golf course consists generally of 18 holes. Golfers can play these holes from different starting positions (tees) depending on their skills.
 
-To prepare a round of golf, players usually have access to some reference information provided by the course itself or by specialized companies: Scorecard, general map of the course, but also "yardage" books and even sometimes private notes and drawings.
+To prepare a round of golf, players usually have access to some reference information provided by the course itself or by specialized companies or web sites: Scorecard, general map of the course, but also "yardage" books and sometimes notes and drawings.
 
-A hole of a course is piece of land with hasards, traps, natural obstacle... usually marked in drawings or maps. Often, courses also contain distance markers to help the golfer estimate the distance to a target.
+A hole on a course is piece of land with hasards, traps, natural obstacle... usually marked in drawings or maps. Often, courses also contain distance markers to help the golfer estimate the distance to a target.
 
-All these elements should be included in GolfML, in a structured way.
+All these elements should be included in GolfML in a structured way.
 
-For example, scorecards with hole pars, distances, and handicap indices are modelized in a structure XML document.
+For example, scorecards with hole pars, distances, and handicap indices are modelized in a structured XML document.
 
 Yardage books in electronic form, maps, pictures, videos of hole overview can also be of interest to golfers. GolfML provides a structured way to describe and _reference_ such information.
 
@@ -36,9 +31,10 @@ The purpose of this documentation of a golf course is to collect information in 
 Please note that this information is carefully time organized (from-date, to-date) since golf courses, hole layout and traps change over time.
 
 
-== Records of Rounds of Golf ==
 
-Golfers like to record score, notes, and sometimes a lot more information to track the progress of their game. The purpose of this section is to provide a place to collect such information, store it, organize it, and later refer to it to analyze the game.
+= Records of Rounds of Golf =
+
+Golfers like to keep scores, notes, and sometimes more information to track the progress of their game. The purpose of this section is to provide a place to collect such information, store it, organize it, and later refer to it to analyze the game.
 
 In addition to score, golfer are able to record the position of the ball after each stroke, information about the club used, the quality of the shot and its result, notes about the hole or the course.
 
@@ -48,10 +44,10 @@ Often, players like to analyze their games though various statistics. While stat
 
 GolfML offers a structured construct to store statistical information, together with data related to the statistics (period covered, courses used, rounds considered...) and methods used to derive the computed value.
 
-GolfML also offers a place to record golf-related belongings such as golf clubs, ball used, contents of golf bags, etc.
+GolfML also offers a place to record golf-related belongings such as golf clubs, ball used, contents of golf bags, together with additional information (average distance of stroke with each club, brand, model, physical characteristics...)
 
 
-== Records of Tournaments ==
+= Records of Tournaments =
 
 Golfers who play in competitions and tournaments expressed the need to keep tournament specific information, in addition to the above mentioned record of rounds of golf.
 
@@ -60,7 +56,5 @@ Golfers who play in competitions and tournaments expressed the need to keep tour
 The primary goal of GolfML is to record golf-related data from players.
 
 SportML has a section dedicated to the game of golf. SportML is oriented towards the communication of results in sport events. While SportML has features to store information such as player characteristics, statistics, and results of rounds of golf, SportML is not designed to store other golf-related or detailed information about a game. SportML cannot store information about course length, design, marker positions, SportML cannot record details about strokes, ball position, or content of a bag of golf. It was simply not design to record such information.
-
-
 
 
