@@ -10,6 +10,7 @@ The element has the following attributes:
 
  # name - Option name for a collection of Position elements.
  # open - Whether the Polygon is open (value yes, default) or closed (value no).
+ # direction - Direction of polygon: Clockwise or Anticlockwise
 
 = Elements = 
 
@@ -27,6 +28,7 @@ The element has the following structural elements:
 = Notes =
 
 Polygons can be used to define hole boundaries, or hasards.
+The clock wise / anti clock wise direction allow for creation of "holes" in polygon. The peripheral polygon can be described as "clockwise" (plain), and the inner, hollow polygon as "anticlockwise".
 
 
 = See Also =
