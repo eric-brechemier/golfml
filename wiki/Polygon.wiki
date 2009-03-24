@@ -30,5 +30,6 @@ The element has the following structural elements:
 Polygons can be used to define hole boundaries, or hasards.
 The clock wise / anti clock wise direction allow for creation of "holes" in polygon. The peripheral polygon can be described as "clockwise" (plain), and the inner, hollow polygon as "anticlockwise".
 
+http://golfml.googlecode.com/files/direction.png
 
 = See Also =
