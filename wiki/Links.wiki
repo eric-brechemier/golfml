@@ -3,3 +3,7 @@
 [http://www.sportsml.org/ SportML]
 
 SportML is a markup language used to communicate sports results. It is not used for game record, analysis and statistics collection over time. It has different goals and purposes. However, we refer to it for some its values and reference tables (statistics, weather, etc.)
+
+[http://www.microformats.org/ Microformats]
+
+Designed for humans first and machines second, microformats are a set of simple, open data formats built upon existing and widely adopted standards.
