@@ -8,7 +8,7 @@ Welcome to the Golf Markup Language Specification and Example.
 = Information Currently Available =
 
 
-[[CasesStudy	Golf Markup Language Examples and Cases Study]]
+[CasesStudy	Golf Markup Language Examples and Cases Study]
 
 [[DesignGuidelines GolfML XML Schema Design Guidelines]]
 
