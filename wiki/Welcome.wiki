@@ -10,14 +10,14 @@ Welcome to the Golf Markup Language Specification and Example.
 
 [CasesStudy	Golf Markup Language Examples and Cases Study]
 
-[[DesignGuidelines GolfML XML Schema Design Guidelines]]
+[DesignGuidelines GolfML XML Schema Design Guidelines]
 
-[[Units Golf Markup Language Reference: Units]]
+[Units Golf Markup Language Reference: Units]
 
-[[GolfML Golf Markup Language Reference: GolfML]] -- This is the Top Element of the Language.
+[GolfML Golf Markup Language Reference: GolfML] -- This is the Top Element of the Language.
 
-[[CommonAttributesAndElements Golf Markup Language Reference: Common Attributes And Elements]]
+[CommonAttributesAndElements Golf Markup Language Reference: Common Attributes And Elements]
 
-[[Domains Golf Markup Language Reference: Domains and Domain Values]]
+[Domains Golf Markup Language Reference: Domains and Domain Values]
 
-[[Links Links of Interest for this Project]]
+[Links Links of Interest for this Project]
