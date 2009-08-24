@@ -27,11 +27,13 @@ For example, scorecards with hole pars, distances, and handicap indices are mode
 
 Yardage books in electronic form, maps, pictures, videos of hole overview can also be of interest to golfers. GolfML provides a structured way to describe and _reference_ such information.
 
-Hole descriptions with markers, position of hasards or natural obstacle, green shape and sizes, and personal notes,  can also be stored to document holes.
+Hole descriptions with markers, position of hasards or natural obstacle, green shape and sizes, and personal notes,  can also be stored to describe holes.
 
 The purpose of this documentation of a golf course is to collect information in a unique, structured, organized document. It is left to the golf application programmer to use or not those structure defined to describe a golf course.
 
-Please note that this information is carefully time organized (from-date, to-date) since golf courses, hole layout and traps change over time.
+Ultimately, it will be possible to generate documents useful to golfer from these descriptions. For instance, we can generate scorecards from a structured description of a golf course. If geographic information has been entered for a golf course, with markers and polygons that describe fairways, traps, greens, and lakes, it is conceivable to generate a yardage book from the available data. (It is easy to do so in Google Earth for instance.)
+
+Please note that this information is time dependant (from-date, to-date) since golf courses, hole layout and traps change over time.
 
 
 
