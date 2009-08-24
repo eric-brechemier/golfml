@@ -1,0 +1,15 @@
+#summary Golf Markup Language Reference: Domain Values for handicap-method
+
+= Introduction =
+
+The handicap-method attribute is limited to a list of valid values. This document defines the lists of valid values of the handicap-method attributes.
+
+== Handicap Methods ==
+
+Valid values for the handicap-method attribute are:
+
+ # usga
+ # ega
+
+
+= Note =
