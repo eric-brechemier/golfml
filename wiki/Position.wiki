@@ -2,7 +2,9 @@
 
 = Description =
 
-The Position element gives the GPS coordinate of a point on the map of the Earth.
+The Position element gives the position of a point on the map of a golf course.
+
+The Position can be a GPS coordinate or any other coordonate system. If the coordonate is a GPS position, the GPS element must be used.
 
 
 = Attributes =
