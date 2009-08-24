@@ -24,4 +24,4 @@ Welcome to the Golf Markup Language Specification and Example.
 
 
 
-http://golfml.googlecode.com/files/Golf_icon.png
+http://golfml.googlecode.com/files/golfml.png
