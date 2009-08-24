@@ -37,7 +37,7 @@ The Gregorian calendar is used.
 
 Time is formated as HH:MM[:SS[.sss]] using the unambiguous 24 hour format. Seconds and fractions of a second are optional.
 
-Time elements may carry a `timezone` attribute. The `timezone` attribute is a number between +12 and -12 which specifies the time difference with Greenwich Meridian Time.
+Time elements may carry a `timezone` attribute. The `timezone` attribute is a number between +12 and -12 which specifies the time difference with Greenwich Mean Time.
 
 {{{
   17:28
