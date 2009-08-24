@@ -2,10 +2,13 @@
 
 = Introduction =
 
-The goals of GolfML are summaized in three main axis:
+The goals of GolfML are summaized in the following main axis:
  # Description of golf courses.
  # Record of golf rounds.
+
+Later, we may add:
  # Record of golf tournaments.
+
 They are described below.
 
 = Description of Golf Courses =
@@ -56,5 +59,3 @@ Golfers who play in competitions and tournaments expressed the need to keep tour
 The primary goal of GolfML is to record golf-related data from players.
 
 SportML has a section dedicated to the game of golf. SportML is oriented towards the communication of results in sport events. While SportML has features to store information such as player characteristics, statistics, and results of rounds of golf, SportML is not designed to store other golf-related or detailed information about a game. SportML cannot store information about course length, design, marker positions, SportML cannot record details about strokes, ball position, or content of a bag of golf. It was simply not design to record such information.
-
-
