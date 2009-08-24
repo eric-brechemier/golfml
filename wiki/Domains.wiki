@@ -2,32 +2,9 @@
 
 = Introduction =
 
-Some elements and attributes are limited to a list of valid values. This document defines the limits and the lists of values of such elements and attributes.
+Some elements and attributes are limited to a list of valid values. For each element or attribute limited to a list of valid values, there is a document with a list of valid values (LOV).
 
 Please note that none of these list is limited to the currently defined set. Please enter an enhencement request to add valid values to a list to suit your need.
 
-== Domain Elements ==
-
-== Domain Attributes ==
-
-=== Media Types ===
-
-Media attached to GolfCourse or [[Hole]] or Player contain a `type` attribute that qualify the content of the media. Valid values for the Media type attribute are:
-
- # photograph
- # yardage-page
- # yardage-book
- # map
- # scorecard
-
-=== Handicap Methods ===
-
-The `handicap-method` attribute specify the method used to establish the complexity and playability of a golf course.
-
-Valid values for the `handicap-method` attribute are:
- # usga
- # ega
-
 
 = Note =
-
