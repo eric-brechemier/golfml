@@ -1,0 +1,18 @@
+#summary Golf Markup Language Reference: Domain Values for media-type
+
+= Introduction =
+
+The media-type attribute is limited to a list of valid values. This document defines the lists of valid values of the media-type attributes.
+
+== Media Types ==
+
+Media attached to GolfCourse or [[Hole]] or Player contain a `type` attribute that qualify the content of the media. Valid values for the Media type attribute are:
+
+ # photograph
+ # yardage-page
+ # yardage-book
+ # map
+ # scorecard
+
+
+= Note =
