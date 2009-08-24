@@ -6,7 +6,7 @@ The media-type attribute is limited to a list of valid values. This document def
 
 == Media Types ==
 
-Media attached to GolfCourse or [[Hole]] or Player contain a `type` attribute that qualify the content of the media. Valid values for the Media type attribute are:
+Media attached to GolfCourse or [Hole] or Player contain a `type` attribute that qualify the content of the media. Valid values for the Media type attribute are:
 
  # photograph
  # yardage-page
