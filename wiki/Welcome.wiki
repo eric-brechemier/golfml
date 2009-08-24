@@ -21,7 +21,3 @@ Welcome to the Golf Markup Language Specification and Example.
 [[Domains Golf Markup Language Reference: Domains and Domain Values]]
 
 [[Links Links of Interest for this Project]]
-
-
-
-http://golfml.googlecode.com/files/golfml.png
