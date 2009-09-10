@@ -8,7 +8,7 @@ golfml
 
 == Content Model ==
 
-([CountryClub country-club]|[Player player]|[Application application])*
+([CountryClub country-club]|[Player player]|[Application application])`*`
 
 
 == Attributes ==
