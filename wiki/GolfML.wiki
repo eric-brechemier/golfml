@@ -1,24 +1,40 @@
-#summary Golf Markup Language Reference: GolfML.
+#summary Golf Markup Language Reference: golfml.
 
-= Definition =
+= Name =
 
-GolfML is the root element of the Golf Markup Language.
+golfml
 
-= Elements =
+= Synopsis =
 
-GolfML has 4 elements:
+== Content Model ==
 
- # [Players]
- # GolfCourses
- # Tournaments
- # [Applications]
+([CountryClub country-club]|[Player player]|[Application application])*
 
-= Attributes =
 
- # Version
+== Attributes ==
 
-Version of the definition of Golf Markup Language. Must be 3 integer numbers separated by period.
+|| id || type || default ||
+|| version || string || none. ||
+
+= Description =
+
+GolfML is the top most element of the Golf Markup Language
+
+
+== Attributes ==
+
+ # version - Version of the GolfML schema used.
+
+== Parent Elements ==
+
+None.
+
 
 = Notes =
 
-The content of Tournaments is currently undefined.
+
+
+= See Also =
+
+[CountryClub country-club], [Player player], [Application application].
+[Welcome Welcome to the Golf Markup Language].
