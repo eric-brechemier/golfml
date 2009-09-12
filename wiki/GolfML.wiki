@@ -36,5 +36,7 @@ None.
 
 = See Also =
 
-[CountryClub country-club], [Player player], [Application application].
 [Welcome Welcome to the Golf Markup Language].
+
+[CountryClub country-club], [Player player], [Application application].
+.
