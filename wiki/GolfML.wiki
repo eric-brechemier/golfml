@@ -20,10 +20,6 @@ golfml
 
 GolfML is the top most element of the Golf Markup Language.
 
-The XML Namespace should be `http://code.google.com/p/golfml/`.
-
-If the version attribute is not specified, applications should default to the latest version.
-
 
 == Attributes ==
 
@@ -36,6 +32,9 @@ None.
 
 = Notes =
 
+The XML Namespace should be `http://code.google.com/p/golfml/`.
+
+If the version attribute is not specified, applications should default to the latest version.
 
 
 = See Also =
@@ -43,4 +42,15 @@ None.
 [Welcome Welcome to the Golf Markup Language].
 
 [CountryClub country-club], [Player player], [Application application].
-.
+
+= Example =
+
+{{{
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../stylesheets/simple-score.xsl"?>
+<golfml xmlns="http://code.google.com/p/golfml/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    version="0.9">
+    <country-club>
+...
+}}}
