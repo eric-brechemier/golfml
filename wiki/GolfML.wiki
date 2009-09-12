@@ -14,16 +14,20 @@ golfml
 == Attributes ==
 
 || id || type || default ||
-|| version || string || none. ||
+|| version || string || none ||
 
 = Description =
 
-GolfML is the top most element of the Golf Markup Language
+GolfML is the top most element of the Golf Markup Language.
+
+The XML Namespace should be `http://code.google.com/p/golfml/`.
+
+If the version attribute is not specified, applications should default to the latest version.
 
 
 == Attributes ==
 
- # version - Version of the GolfML schema used.
+ # version - Version of the GolfML schema used. Default is the latest version.
 
 == Parent Elements ==
 
