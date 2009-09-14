@@ -37,7 +37,7 @@ Collections of elements of the same type can be organized into a parent element.
 
 = GolfML Schema =
 
-Types are CamelCase.
+Types are `CamelCase `.
 
 Enumeration and list types ends with Enum.
 
