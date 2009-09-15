@@ -1,0 +1,1323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../stylesheets/simple-score.xsl"?>
+<golfml xmlns="http://code.google.com/p/golfml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://code.google.com/p/golfml file:/Users/pierre/Developer/iGolf/golfml/schemas/golfml1.xsd"
+    version="0.9">
+    <country-club>
+        <name>Golf La Bruyère</name>
+        <address>
+        <country code="BE">Belgique</country>
+        <municipality>Sart-Dames-Avelines</municipality>
+        <postal-code>Sart-Dames-Avelines</postal-code>   
+        <street>1 rue Jumerée</street>
+    </address>
+        <contact type="reception">
+            <phone>32-71-877267</phone>
+            <website>http://www.golflabruyere.be/</website>
+        </contact>
+        <amenety type="practice">range</amenety>
+        <amenety type="practice">green</amenety>
+        <golf-course>
+            <name>Golf de la Bruyère</name>
+        				<holes>
+				<hole number="1" name="Hole 1">
+					<placemarks>
+						<poi>
+							<name>Green 1</name>
+							<description> Hole 1 - Start of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.503880</lon>
+									<lat>50.540465</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 1 - Tee Men </description>
+							<position>
+								<position-gps>
+									<lon> 4.499922</lon>
+									<lat>50.543488</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 1 - End of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.504234</lon>
+									<lat>50.540179</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+					</placemarks>
+				</hole>
+				<hole number="2" name="Hole 2">
+					<placemarks>
+						<poi>
+							<name>Green 2</name>
+							<description> Hole 2 - Start of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.503868</lon>
+									<lat>50.543490</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 2 - Fairway Bunker Right </description>
+							<position>
+								<position-gps>
+									<lon> 4.504477</lon>
+									<lat>50.542456</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 2 - End of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.503754</lon>
+									<lat>50.543871</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 2 - Tee Men </description>
+							<position>
+								<position-gps>
+									<lon> 4.505153</lon>
+									<lat>50.541034</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+					</placemarks>
+				</hole>
+				<hole number="3" name="Hole 3">
+					<placemarks>
+						<poi>
+							<name>Green 3</name>
+							<description> Hole 3 - Start of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.502917</lon>
+									<lat>50.544257</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 3 - End of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.502948</lon>
+									<lat>50.544491</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 3 - Tee Men </description>
+							<position>
+								<position-gps>
+									<lon> 4.502623</lon>
+									<lat>50.543384</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+					</placemarks>
+				</hole>
+				<hole number="4" name="Hole 4">
+					<placemarks>
+						<poi>
+							<name>Green 4</name>
+							<description> Hole 4 - Start of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.505370</lon>
+									<lat>50.542257</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 4 - End of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.505525</lon>
+									<lat>50.542057</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 4 - Green Bunker Left </description>
+							<position>
+								<position-gps>
+									<lon> 4.505524</lon>
+									<lat>50.542340</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 4 - Fairway Bunker Left </description>
+							<position>
+								<position-gps>
+									<lon> 4.505343</lon>
+									<lat>50.543300</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 4 - Tee Men </description>
+							<position>
+								<position-gps>
+									<lon> 4.503792</lon>
+									<lat>50.544315</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+					</placemarks>
+				</hole>
+				<hole number="5" name="Hole 5">
+					<placemarks>
+						<poi>
+							<name>Green 5</name>
+							<description> Hole 5 - Start of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.509107</lon>
+									<lat>50.544545</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 5 - End of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.509235</lon>
+									<lat>50.544811</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 5 - Fairway Bunker Right </description>
+							<position>
+								<position-gps>
+									<lon> 4.508265</lon>
+									<lat>50.543482</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 5 - Tee Men </description>
+							<position>
+								<position-gps>
+									<lon> 4.506323</lon>
+									<lat>50.542133</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+					</placemarks>
+				</hole>
+				<hole number="6" name="Hole 6">
+					<placemarks>
+						<poi>
+							<name>Green 6</name>
+							<description> Hole 6 - Start of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.507221</lon>
+									<lat>50.542328</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 6 - Green Bunker Right </description>
+							<position>
+								<position-gps>
+									<lon> 4.507211</lon>
+									<lat>50.542448</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 6 - End of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.506854</lon>
+									<lat>50.542142</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 6 - Dogleg </description>
+							<position>
+								<position-gps>
+									<lon> 4.508800</lon>
+									<lat>50.543021</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 6 - Tee Men </description>
+							<position>
+								<position-gps>
+									<lon> 4.509643</lon>
+									<lat>50.544377</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+					</placemarks>
+				</hole>
+				<hole number="7" name="Hole 7">
+					<placemarks>
+						<poi>
+							<name>Green 7</name>
+							<description> Hole 7 - Start of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.508789</lon>
+									<lat>50.544877</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 7 - End of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.508850</lon>
+									<lat>50.545153</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 7 - Fairway Bunker </description>
+							<position>
+								<position-gps>
+									<lon> 4.507583</lon>
+									<lat>50.543738</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 7 - Tee Men </description>
+							<position>
+								<position-gps>
+									<lon> 4.506086</lon>
+									<lat>50.542376</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+					</placemarks>
+				</hole>
+				<hole number="8" name="Hole 8">
+					<placemarks>
+						<poi>
+							<name>Green 8</name>
+							<description> Hole 8 - Start of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.502942</lon>
+									<lat>50.544932</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 8 - End of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.502406</lon>
+									<lat>50.545051</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 8 - Green Bunker Right </description>
+							<position>
+								<position-gps>
+									<lon> 4.503002</lon>
+									<lat>50.545029</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 8 - Green Bunker Left </description>
+							<position>
+								<position-gps>
+									<lon> 4.502780</lon>
+									<lat>50.544833</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 8 - Fairway Bunker Back </description>
+							<position>
+								<position-gps>
+									<lon> 4.503734</lon>
+									<lat>50.544936</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 8 - Fairway Bunker Front </description>
+							<position>
+								<position-gps>
+									<lon> 4.504159</lon>
+									<lat>50.544932</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 8 - Dogleg </description>
+							<position>
+								<position-gps>
+									<lon> 4.506536</lon>
+									<lat>50.544697</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 8 - Tee Men </description>
+							<position>
+								<position-gps>
+									<lon> 4.508832</lon>
+									<lat>50.545632</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+					</placemarks>
+				</hole>
+				<hole number="9" name="Hole 9">
+					<placemarks>
+						<poi>
+							<name>Green 9</name>
+							<description> Hole 9 - Start of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.501182</lon>
+									<lat>50.543558</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 9 - End of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.501110</lon>
+									<lat>50.543353</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 9 - Green Bunker Right </description>
+							<position>
+								<position-gps>
+									<lon> 4.501072</lon>
+									<lat>50.543595</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 9 - Green Bunker Left </description>
+							<position>
+								<position-gps>
+									<lon> 4.501314</lon>
+									<lat>50.543541</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 9 - Tee Men </description>
+							<position>
+								<position-gps>
+									<lon> 4.501462</lon>
+									<lat>50.544655</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+					</placemarks>
+				</hole>
+				<hole number="10" name="Hole 10">
+					<placemarks>
+						<poi>
+							<name>Green 10</name>
+							<description> Hole 10 - Start of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.495655</lon>
+									<lat>50.546737</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 10 - End of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.495215</lon>
+									<lat>50.546804</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 10 - Fairway Bunker Back </description>
+							<position>
+								<position-gps>
+									<lon> 4.496813</lon>
+									<lat>50.545520</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 10 - Fairway Bunker Left </description>
+							<position>
+								<position-gps>
+									<lon> 4.497089</lon>
+									<lat>50.545303</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 10 - Tee Men </description>
+							<position>
+								<position-gps>
+									<lon> 4.498693</lon>
+									<lat>50.544621</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+					</placemarks>
+				</hole>
+				<hole number="11" name="Hole 11">
+					<placemarks>
+						<poi>
+							<name>Green 11</name>
+							<description> Hole 11 - Start of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.500095</lon>
+									<lat>50.544713</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 11 - End of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.500552</lon>
+									<lat>50.544627</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 11 - Dogleg </description>
+							<position>
+								<position-gps>
+									<lon> 4.499003</lon>
+									<lat>50.544947</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 11 - Tee Men </description>
+							<position>
+								<position-gps>
+									<lon> 4.496471</lon>
+									<lat>50.546692</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+					</placemarks>
+				</hole>
+				<hole number="12" name="Hole 12">
+					<placemarks>
+						<poi>
+							<name>Green 12</name>
+							<description> Hole 12 - Start of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.499045</lon>
+									<lat>50.545713</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 12 - End of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.498715</lon>
+									<lat>50.545897</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 12 - Tee Men </description>
+							<position>
+								<position-gps>
+									<lon> 4.500860</lon>
+									<lat>50.544812</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+					</placemarks>
+				</hole>
+				<hole number="13" name="Hole 13">
+					<placemarks>
+						<poi>
+							<name>Green 13</name>
+							<description> Hole 13 - Start of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.497085</lon>
+									<lat>50.547580</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 13 - End of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.496662</lon>
+									<lat>50.547577</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 13 - Dogleg </description>
+							<position>
+								<position-gps>
+									<lon> 4.498245</lon>
+									<lat>50.547230</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 13 - Tee Men </description>
+							<position>
+								<position-gps>
+									<lon> 4.499754</lon>
+									<lat>50.545900</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+					</placemarks>
+				</hole>
+				<hole number="14" name="Hole 14">
+					<placemarks>
+						<poi>
+							<name>Green 14</name>
+							<description> Hole 14 - Start of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.501183</lon>
+									<lat>50.545389</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 14 - End of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.501406</lon>
+									<lat>50.545139</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 14 - Dogleg </description>
+							<position>
+								<position-gps>
+									<lon> 4.500797</lon>
+									<lat>50.546647</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 14 - Tee Men </description>
+							<position>
+								<position-gps>
+									<lon> 4.498950</lon>
+									<lat>50.547765</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+					</placemarks>
+				</hole>
+				<hole number="15" name="Hole 15">
+					<placemarks>
+						<poi>
+							<name>Green 15</name>
+							<description> Hole 15 - Start of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.506221</lon>
+									<lat>50.545525</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 15 - End of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.506574</lon>
+									<lat>50.545351</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 15 - Dogleg </description>
+							<position>
+								<position-gps>
+									<lon> 4.505062</lon>
+									<lat>50.546092</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 15 - Tee Men </description>
+							<position>
+								<position-gps>
+									<lon> 4.502601</lon>
+									<lat>50.545689</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+					</placemarks>
+				</hole>
+				<hole number="16" name="Hole 16">
+					<placemarks>
+						<poi>
+							<name>Green 16</name>
+							<description> Hole 16 - Start of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.503190</lon>
+									<lat>50.545453</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 16 - End of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.502770</lon>
+									<lat>50.545484</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 16 - Tee Men </description>
+							<position>
+								<position-gps>
+									<lon> 4.505577</lon>
+									<lat>50.545055</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+					</placemarks>
+				</hole>
+				<hole number="17" name="Hole 17">
+					<placemarks>
+						<poi>
+							<name>Green 17</name>
+							<description> Hole 17 - Start of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.504405</lon>
+									<lat>50.540961</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 17 - End of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.504694</lon>
+									<lat>50.540716</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 17 - Fairway Bunker </description>
+							<position>
+								<position-gps>
+									<lon> 4.504340</lon>
+									<lat>50.541241</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 17 - Tee Men </description>
+							<position>
+								<position-gps>
+									<lon> 4.501769</lon>
+									<lat>50.544733</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 17 - Dogleg </description>
+							<position>
+								<position-gps>
+									<lon> 4.502140</lon>
+									<lat>50.543077</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+					</placemarks>
+				</hole>
+				<hole number="18" name="Hole 18">
+					<placemarks>
+						<poi>
+							<name>Green 18</name>
+							<description> Hole 18 - Start of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.500189</lon>
+									<lat>50.542549</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 18 - End of Green </description>
+							<position>
+								<position-gps>
+									<lon> 4.499886</lon>
+									<lat>50.542778</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+						<poi>
+							<name/>
+							<description> Hole 18 - Tee Men </description>
+							<position>
+								<position-gps>
+									<lon> 4.503467</lon>
+									<lat>50.540167</lat>
+									<alt>0 </alt>
+								</position-gps>
+							</position>
+						</poi>
+					</placemarks>
+				</hole>
+			</holes>
+            <tee-set name="Forward" color="blue" gender="gentlemen">
+                <qualification>
+                    <qualification-usga>
+                        <rating>72.0</rating>
+                        <slope>113</slope>
+                    </qualification-usga>
+                </qualification>
+                <tee number="1">
+                    <par>5</par>
+                    <handicap-stroke>12</handicap-stroke>
+                    <length>470</length>
+                </tee>
+                <tee number="2">
+                    <par>4</par>
+                    <handicap-stroke>10</handicap-stroke>
+                    <length>304</length>
+                </tee>
+                <tee number="3">
+                    <par>3</par>
+                    <handicap-stroke>18</handicap-stroke>
+                    <length>121</length>
+                </tee>
+                <tee number="4">
+                    <par>4</par>
+                    <handicap-stroke>16</handicap-stroke>
+                    <length>300</length>
+                </tee>
+                <tee number="5">
+                    <par>4</par>
+                    <handicap-stroke>8</handicap-stroke>
+                    <length>338</length>
+                </tee>
+                <tee number="6">
+                    <par>4</par>
+                    <handicap-stroke>6</handicap-stroke>
+                    <length>314</length>
+                </tee>
+                <tee number="7">
+                    <par>4</par>
+                    <handicap-stroke>2</handicap-stroke>
+                    <length>371</length>
+                </tee>
+                <tee number="8">
+                    <par>5</par>
+                    <handicap-stroke>4</handicap-stroke>
+                    <length>479</length>
+                </tee>
+                <tee number="9">
+                    <par>3</par>
+                    <handicap-stroke>14</handicap-stroke>
+
+                    <length>143</length>
+                </tee>
+                <tee number="10">
+                    <par>4</par>
+                    <handicap-stroke>5</handicap-stroke>
+                    <length>337</length>
+                </tee>
+                <tee number="11">
+                    <par>5</par>
+                    <handicap-stroke>15</handicap-stroke>
+                    <length>436</length>
+                </tee>
+                <tee number="12">
+                    <par>3</par>
+                    <handicap-stroke>11</handicap-stroke>
+                    <length>185</length>
+                </tee>
+                <tee number="13">
+                    <par>4</par>
+                    <handicap-stroke>7</handicap-stroke>
+                    <length>316</length>
+                </tee>
+                <tee number="14">
+                    <par>4</par>
+                    <handicap-stroke>1</handicap-stroke>
+                    <length>388</length>
+                </tee>
+                <tee number="15">
+                    <par>4</par>
+                    <handicap-stroke>17</handicap-stroke>
+                    <length>305</length>
+                </tee>
+                <tee number="16">
+                    <par>3</par>
+                    <handicap-stroke>9</handicap-stroke>
+                    <length>194</length>
+                </tee>
+                <tee number="17">
+                    <par>5</par>
+                    <handicap-stroke>13</handicap-stroke>
+                    <length>497</length>
+                </tee>
+                <tee number="18">
+                    <par>4</par>
+                    <handicap-stroke>3</handicap-stroke>
+                    <length>395</length>
+                </tee>
+            </tee-set>
+        </golf-course>
+    </country-club>
+    
+    <player gender="gentlemen">
+        <name>Pierre Mareschal</name>
+        <date-of-birth>1963-10-08</date-of-birth>
+        <current-handicap handicap-system="EGA">28.6</current-handicap>
+        <address>
+            <country code="BE">Belgique</country>
+            <postal-code>7090</postal-code>
+        </address>
+        <contact type="mobile">
+            <phone>32-477523235</phone>
+            <email>pierre.mareschal@gmail.com</email>
+        </contact>
+    	
+    	<equipment-list>
+    		<golf-club type="driver">
+    			<manufacturer>Ping</manufacturer>
+    			<model>G2</model>
+    			<submodel>10.5°</submodel>
+    			<number>1</number>
+    		</golf-club>
+    		<golf-club type="wood">
+    			<manufacturer>Ping</manufacturer>
+    			<model>G2</model>
+    			<submodel>15°</submodel>
+    			<number>3</number>
+    		</golf-club>    	
+    		<golf-club type="wood">
+    			<manufacturer>Ping</manufacturer>
+    			<model>G2</model>
+    			<submodel>17°</submodel>
+    			<number>5</number>
+    		</golf-club>
+    		<golf-club type="hybrid">
+    			<manufacturer>Nickent Golf</manufacturer>
+    			<model>3DX Ironwoods</model>
+    			<submodel>#5 26°</submodel>
+    			<number>5</number>
+    		</golf-club>
+    		<golf-club type="utility">
+    			<manufacturer>Nickent Golf</manufacturer>
+    			<model>3DX Utility Fairway Woods</model>
+    			<submodel>#5 19°</submodel>
+    			<number>5</number>
+    		</golf-club>
+    		<golf-club type="hybrid">
+    			<manufacturer>Nickent Golf</manufacturer>
+    			<model>3DX Ironwoods</model>
+    			<submodel>#3 20°</submodel>
+    			<number>3</number>
+    		</golf-club>
+    		
+    		<golf-club type="iron">
+    			<manufacturer>Cobra</manufacturer>
+    			<model>S9</model>
+    			<submodel>men-regular</submodel>
+    			<number>4</number>
+    		</golf-club>
+    		<golf-club type="iron">
+    			<manufacturer>Cobra</manufacturer>
+    			<model>S9</model>
+    			<submodel>men-regular</submodel>
+    			<number>5</number>
+    		</golf-club>
+    		<golf-club type="iron">
+    			<manufacturer>Cobra</manufacturer>
+    			<model>S9</model>
+    			<submodel>men-regular</submodel>
+    			<number>6</number>
+    		</golf-club>
+    		<golf-club type="iron">
+    			<manufacturer>Cobra</manufacturer>
+    			<model>S9</model>
+    			<submodel>men-regular</submodel>
+    			<number>7</number>
+    		</golf-club>
+    		<golf-club type="iron">
+    			<manufacturer>Cobra</manufacturer>
+    			<model>S9</model>
+    			<submodel>men-regular</submodel>
+    			<number>8</number>
+    		</golf-club>
+    		<golf-club type="iron">
+    			<manufacturer>Cobra</manufacturer>
+    			<model>S9</model>
+    			<submodel>men-regular</submodel>
+    			<number>9</number>
+    		</golf-club>
+    		
+    		<golf-club type="wedge">
+    			<manufacturer>Cobra</manufacturer>
+    			<model>S9</model>
+    			<submodel>regular</submodel>
+    			<number>P</number>
+    		</golf-club>
+    		<golf-club type="wedge">
+    			<manufacturer>Cobra</manufacturer>
+    			<model>S9</model>
+    			<submodel>men-regular</submodel>
+    			<number>G</number>
+    		</golf-club>
+    		
+    		<golf-club type="wedge">
+    			<manufacturer>Titleist</manufacturer>
+    			<model>Vokey</model>
+    			<submodel>regular</submodel>
+    			<number>G</number>
+    			<loft>52</loft>
+    		</golf-club>
+    		<golf-club type="wedge">
+    			<manufacturer>Titleist</manufacturer>
+    			<model>Vokey</model>
+    			<submodel>regular</submodel>
+    			<number>S</number>
+    			<loft>56</loft>
+    		</golf-club>
+    		<golf-club type="wedge">
+    			<manufacturer>Titleist</manufacturer>
+    			<model>Vokey</model>
+    			<submodel>regular</submodel>
+    			<number>L</number>
+    			<loft>60</loft>
+    		</golf-club>
+    		
+    		
+    		<golf-club type="putter">
+    			<manufacturer>Odyssey</manufacturer>
+    			<model>White Hot</model>
+    			<submodel>#5 CS</submodel>
+    		</golf-club>
+    		
+    		<golf-club type="putter">
+    			<manufacturer>Adamsgolf</manufacturer>
+    			<model>gt 3</model>
+    			<submodel>gt 3</submodel>
+    		</golf-club>
+    		
+    		<equipment type="ball">
+    			<name>Ball</name>
+    			<manufacturer>Pinnacle</manufacturer>
+    			<model>Exception</model>
+    		</equipment>
+
+    	</equipment-list>
+
+		<golf-bag>
+			<name>Standard</name>
+					
+			<golf-club-ref>
+				<golf-club.manufacturer>Ping</golf-club.manufacturer>
+				<golf-club.model>G2</golf-club.model>
+				<golf-club.submodel>10.5°</golf-club.submodel>
+				<golf-club.number>1</golf-club.number>
+			</golf-club-ref>
+			<golf-club-ref>
+				<golf-club.manufacturer>Ping</golf-club.manufacturer>
+				<golf-club.model>G2</golf-club.model>
+				<golf-club.submodel>15°</golf-club.submodel>
+				<golf-club.number>3</golf-club.number>
+			</golf-club-ref>    
+			<golf-club-ref>
+				<golf-club.manufacturer>Ping</golf-club.manufacturer>
+				<golf-club.model>G2</golf-club.model>
+				<golf-club.submodel>17°</golf-club.submodel>
+				<golf-club.number>5</golf-club.number>
+			</golf-club-ref>
+			
+			<golf-club-ref>
+				<golf-club.manufacturer>Nickent Golf</golf-club.manufacturer>
+				<golf-club.model>3DX Ironwoods</golf-club.model>
+				<golf-club.submodel>#5 26°</golf-club.submodel>
+				<golf-club.number>5</golf-club.number>
+			</golf-club-ref>
+			
+			<golf-club-ref>
+				<golf-club.manufacturer>Cobra</golf-club.manufacturer>
+				<golf-club.model>S9</golf-club.model>
+				<golf-club.submodel>men-regular</golf-club.submodel>
+				<golf-club.number>45</golf-club.number>
+			</golf-club-ref>
+			<golf-club-ref>
+				<golf-club.manufacturer>Cobra</golf-club.manufacturer>
+				<golf-club.model>S9</golf-club.model>
+				<golf-club.submodel>men-regular</golf-club.submodel>
+				<golf-club.number>6</golf-club.number>
+			</golf-club-ref>
+			<golf-club-ref>
+				<golf-club.manufacturer>Cobra</golf-club.manufacturer>
+				<golf-club.model>S9</golf-club.model>
+				<golf-club.submodel>men-regular</golf-club.submodel>
+				<golf-club.number>7</golf-club.number>
+			</golf-club-ref>
+			<golf-club-ref>
+				<golf-club.manufacturer>Cobra</golf-club.manufacturer>
+				<golf-club.model>S9</golf-club.model>
+				<golf-club.submodel>men-regular</golf-club.submodel>
+				<golf-club.number>8</golf-club.number>
+			</golf-club-ref>
+			<golf-club-ref>
+				<golf-club.manufacturer>Cobra</golf-club.manufacturer>
+				<golf-club.model>S9</golf-club.model>
+				<golf-club.submodel>men-regular</golf-club.submodel>
+				<golf-club.number>9</golf-club.number>
+			</golf-club-ref>
+			
+			<golf-club-ref>
+				<golf-club.manufacturer>Cobra</golf-club.manufacturer>
+				<golf-club.model>S9</golf-club.model>
+				<golf-club.submodel>regular</golf-club.submodel>
+				<golf-club.number>P</golf-club.number>
+			</golf-club-ref>
+			
+			<golf-club-ref>
+				<golf-club.manufacturer>Titleist</golf-club.manufacturer>
+				<golf-club.model>Vokey</golf-club.model>
+				<golf-club.submodel>regular</golf-club.submodel>
+				<golf-club.number>G</golf-club.number>
+			</golf-club-ref>
+			<golf-club-ref>
+				<golf-club.manufacturer>Titleist</golf-club.manufacturer>
+				<golf-club.model>Vokey</golf-club.model>
+				<golf-club.submodel>regular</golf-club.submodel>
+				<golf-club.number>S</golf-club.number>
+			</golf-club-ref>
+			<golf-club-ref>
+				<golf-club.manufacturer>Titleist</golf-club.manufacturer>
+				<golf-club.model>Vokey</golf-club.model>
+				<golf-club.submodel>regular</golf-club.submodel>
+				<golf-club.number>L</golf-club.number>
+			</golf-club-ref>
+			
+			<golf-club-ref>
+				<golf-club.manufacturer>Odyssey</golf-club.manufacturer>
+				<golf-club.model>White Hot</golf-club.model>
+				<golf-club.submodel>#5 CS</golf-club.submodel>
+				<golf-club.number>0</golf-club.number>
+			</golf-club-ref>
+			
+			<equipment type="ball">
+				<name>Ball</name>
+				<manufacturer>Pinnacle</manufacturer>
+				<model>Exception</model>
+			</equipment>
+		</golf-bag>
+    	
+    	<round>
+            <weather wind="Calm">Chilly but no rain</weather>
+            <date>2009-08-20T08:13:51.0Z</date>
+            <scorecard>
+                <tees>
+                    <country-club.name>Golf La Bruyère</country-club.name>
+                    <country-club.address.country.iso3166>BE</country-club.address.country.iso3166>
+                    <country-club.address.postal-code>Sart-Dames-Avelines</country-club.address.postal-code>
+                    <country-club.golf-course.name>Golf de la Bruyère</country-club.golf-course.name>
+                    <country-club.golf-course.tee-set.name>Forward</country-club.golf-course.tee-set.name>
+                </tees>
+            	
+                <handicap>28.6</handicap>
+                <handicap-strokes>28</handicap-strokes>
+            	
+            	<golf-bag-ref>
+            		<player.name>Pierre Mareschal</player.name>
+            		<player.date-of-birth>1963-10-08</player.date-of-birth>
+            		<player.golf-bag.name>Standard</player.golf-bag.name>
+            	</golf-bag-ref>
+
+            	<score>
+                    <hole number="1"><strokes>5</strokes><putts>2</putts></hole>
+                    <hole number="2"><strokes>5</strokes><putts>2</putts></hole>
+                    <hole number="3"><strokes>5</strokes><putts>2</putts></hole>
+                    <hole number="4"><strokes>5</strokes><putts>2</putts></hole>
+                    <hole number="5"><strokes>5</strokes><putts>2</putts></hole>
+                    <hole number="6"><strokes>5</strokes><putts>2</putts></hole>
+                    <hole number="7"><strokes>5</strokes><putts>2</putts></hole>
+                    <hole number="8"><strokes>5</strokes><putts>2</putts></hole>
+                    <hole number="9"><strokes>5</strokes><putts>2</putts></hole>
+                    <hole number="10"><strokes>5</strokes><putts>2</putts></hole>
+                    <hole number="11"><strokes>5</strokes><putts>2</putts></hole>
+                    <hole number="12"><strokes>5</strokes><putts>2</putts></hole>
+                    <hole number="13"><strokes>5</strokes><putts>2</putts></hole>
+                    <hole number="14"><strokes>5</strokes><putts>2</putts></hole>
+                    <hole number="15"><strokes>5</strokes><putts>2</putts></hole>
+                    <hole number="16"><strokes>5</strokes><putts>2</putts></hole>
+                    <hole number="17"><strokes>5</strokes><putts>2</putts></hole>
+                    <hole number="18"><strokes>5</strokes><putts>2</putts></hole>
+                </score>
+            </scorecard>
+        </round>
+    </player>
+</golfml>
