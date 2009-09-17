@@ -1,0 +1,35 @@
+		<table cellpadding="3" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td class="NavBarCell1" width="70%" colspan="2">
+					<table cellspacing="3" cellpadding="0" border="0">
+						<tr valign="top" align="center">
+							<td bgcolor="#EEEEFF" class="NavBarCell1">
+								<a href="../../schema-summary.html"><font class="NavBarFont1"><b>Overview</b></font></a>&nbsp;
+							</td>
+							<td bgcolor="#EEEEFF" class="NavBarCell1">
+								<a href="../index.html"><font class="NavBarFont1"><b>Namespace</b></font></a>&nbsp;
+							</td>
+							<td class="NavBarCell1Rev" bgcolor="#EEEEFF">
+								<font class="NavBarFont1Rev"><b>Component</b></font>&nbsp;
+							</td>
+							<td bgcolor="#EEEEFF" class="NavBarCell1">
+								<a href="../../index-all.html"><font class="NavBarFont1"><b>Index</b></font></a>&nbsp;
+							</td>
+							<td bgcolor="#EEEEFF" class="NavBarCell1">
+								<a href="../../help-doc.html"><font class="NavBarFont1"><b>Help</b></font></a>&nbsp;
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td rowspan="3" valign="top" align="right"></td>
+			</tr>
+			<tr>
+				<td class="NavBarCell2">
+					<font size="-2">DETAILS:&nbsp;<a href="#documentation"><b>DOCUMENTATION</b></a>&nbsp;|&nbsp;<a href="#elements"><b>ELEMENTS</b></a>&nbsp;|&nbsp;<a href="#attributes"><b>ATTRIBUTES</b></a>&nbsp;|&nbsp;<a href="#source"><b>SOURCE</b></a></font>
+				</td>
+				<td class="NavBarCell2">
+					<font size="-2"><a target="_top" href="../../index.html"><b>FRAMES</b></a>&nbsp;|&nbsp;<a target="_top" href="#"><b>NO&nbsp;FRAMES</b></a></font>
+				</td>
+			</tr>
+		</table>
+		<hr>
