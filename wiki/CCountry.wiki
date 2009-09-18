@@ -57,7 +57,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CAddress.html Address]
+    	[CAddress Address]
 ----
     
 ----
