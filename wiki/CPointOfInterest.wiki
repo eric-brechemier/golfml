@@ -42,8 +42,13 @@ anyType
 
 === Attributes ===
 
-|| Name || Description || Type || Use || Default || Fixed || Form ||
-        || number ||   || xs:nonNegativeInteger || optional ||  ||  || unqualified |||| orientation ||   || [SOrientationEnum golfml:OrientationEnum] || optional ||  ||  || unqualified |||| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified |||| subtype ||   || xs:string || optional ||  ||  || unqualified |||| type ||   || [SGolfCourseAreaTypeEnum golfml:GolfCourseAreaTypeEnum] || optional ||  ||  || unqualified ||
+|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| number ||   || xs:nonNegativeInteger || optional ||  ||  || unqualified ||
+|| orientation ||   || [SOrientationEnum golfml:OrientationEnum] || optional ||  ||  || unqualified ||
+|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
+|| subtype ||   || xs:string || optional ||  ||  || unqualified ||
+|| type ||   || [SGolfCourseAreaTypeEnum golfml:GolfCourseAreaTypeEnum] || optional ||  ||  || unqualified ||
+
 
 ===  Local Usage ===
 

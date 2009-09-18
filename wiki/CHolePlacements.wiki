@@ -39,8 +39,9 @@ anyType
 
 === Attributes ===
 
-|| Name || Description || Type || Use || Default || Fixed || Form ||
-        || date ||   || xs:date || optional ||  ||  || unqualified ||
+|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| date ||   || xs:date || optional ||  ||  || unqualified ||
+
 
 ===  Local Usage ===
 

@@ -44,8 +44,9 @@ anyType
 
 === Attributes ===
 
-|| Name || Description || Type || Use || Default || Fixed || Form ||
-        || type ||  				Type of piece of equipment to organise them in categories: Training devices, clubs, balls...			 || [SEquipmentTypeEnum golfml:EquipmentTypeEnum] || optional ||  ||  || unqualified ||
+|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| type ||  				Type of piece of equipment to organise them in categories: Training devices, clubs, balls...			 || [SEquipmentTypeEnum golfml:EquipmentTypeEnum] || optional ||  ||  || unqualified ||
+
 
 ===  Local Usage ===
 

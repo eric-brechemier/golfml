@@ -35,8 +35,9 @@ anyType
 
 === Attributes ===
 
-|| Name || Description || Type || Use || Default || Fixed || Form ||
-        || rule ||  Rule number indicating the violation || xs:string || optional ||  ||  || unqualified ||
+|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| rule ||  Rule number indicating the violation || xs:string || optional ||  ||  || unqualified ||
+
 
 ===  Local Usage ===
 

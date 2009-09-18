@@ -41,8 +41,10 @@ anyType
 
 === Attributes ===
 
-|| Name || Description || Type || Use || Default || Fixed || Form ||
-        || other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified |||| type ||   || [SStatisticCollectionTypesEnum golfml:StatisticCollectionTypesEnum] || required ||  ||  || unqualified ||
+|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
+|| type ||   || [SStatisticCollectionTypesEnum golfml:StatisticCollectionTypesEnum] || required ||  ||  || unqualified ||
+
 
 ===  Local Usage ===
 

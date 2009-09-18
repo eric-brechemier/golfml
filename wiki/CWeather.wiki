@@ -37,8 +37,10 @@ anyType
 
 === Attributes ===
 
-|| Name || Description || Type || Use || Default || Fixed || Form ||
-        || other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified |||| wind ||   || [SWindEnum golfml:WindEnum] || optional ||  ||  || unqualified ||
+|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
+|| wind ||   || [SWindEnum golfml:WindEnum] || optional ||  ||  || unqualified ||
+
 
 ===  Local Usage ===
 

@@ -54,8 +54,9 @@ anyType
 
 === Attributes ===
 
-|| Name || Description || Type || Use || Default || Fixed || Form ||
-        || gender ||  Gender of the player || [SGender golfml:Gender] || required ||  ||  || unqualified ||
+|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| gender ||  Gender of the player || [SGender golfml:Gender] || required ||  ||  || unqualified ||
+
 
 ===  Local Usage ===
 

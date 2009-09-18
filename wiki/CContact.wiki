@@ -42,8 +42,10 @@ anyType
 
 === Attributes ===
 
-|| Name || Description || Type || Use || Default || Fixed || Form ||
-        || other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified |||| type ||  Qualification of a contact || [SContactTypeEnum golfml:ContactTypeEnum] || optional ||  ||  || unqualified ||
+|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
+|| type ||  Qualification of a contact || [SContactTypeEnum golfml:ContactTypeEnum] || optional ||  ||  || unqualified ||
+
 
 ===  Local Usage ===
 

@@ -35,8 +35,11 @@ anyType
 
 === Attributes ===
 
-|| Name || Description || Type || Use || Default || Fixed || Form ||
-        || created ||   || xs:dateTime || optional ||  ||  || unqualified |||| updated ||   || xs:dateTime || optional ||  ||  || unqualified |||| version ||   || xs:string || optional ||  ||  || unqualified ||
+|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| created ||   || xs:dateTime || optional ||  ||  || unqualified ||
+|| updated ||   || xs:dateTime || optional ||  ||  || unqualified ||
+|| version ||   || xs:string || optional ||  ||  || unqualified ||
+
 
 ===  Local Usage ===
 

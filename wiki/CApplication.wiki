@@ -39,8 +39,11 @@ anyType
 
 === Attributes ===
 
-|| Name || Description || Type || Use || Default || Fixed || Form ||
-        || dotname ||  Name of the application in a reverse internet host name or a Java package and class style || xs:string || required ||  ||  || unqualified |||| name ||  Name of the application that stores data in the application container || xs:string || optional ||  ||  || unqualified |||| version ||  Version of the application that stored data in this container || xs:string || optional ||  ||  || unqualified ||
+|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| dotname ||  Name of the application in a reverse internet host name or a Java package and class style || xs:string || required ||  ||  || unqualified ||
+|| name ||  Name of the application that stores data in the application container || xs:string || optional ||  ||  || unqualified ||
+|| version ||  Version of the application that stored data in this container || xs:string || optional ||  ||  || unqualified ||
+
 
 ===  Local Usage ===
 

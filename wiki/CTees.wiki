@@ -42,8 +42,14 @@ anyType
 
 === Attributes ===
 
-|| Name || Description || Type || Use || Default || Fixed || Form ||
-        || colour ||   || xs:string || optional ||  ||  || unqualified |||| date-from ||   || xs:date || optional ||  ||  || unqualified |||| date-to ||   || xs:date || optional ||  ||  || unqualified |||| gender ||   || [SGolfingGender golfml:GolfingGender] || optional ||  ||  || unqualified |||| name ||   || xs:string || required ||  ||  || unqualified |||| units ||   || [SUnitOfLengthWithUnitsEnum golfml:UnitOfLengthWithUnitsEnum] || optional ||  ||  || unqualified ||
+|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| colour ||   || xs:string || optional ||  ||  || unqualified ||
+|| date-from ||   || xs:date || optional ||  ||  || unqualified ||
+|| date-to ||   || xs:date || optional ||  ||  || unqualified ||
+|| gender ||   || [SGolfingGender golfml:GolfingGender] || optional ||  ||  || unqualified ||
+|| name ||   || xs:string || required ||  ||  || unqualified ||
+|| units ||   || [SUnitOfLengthWithUnitsEnum golfml:UnitOfLengthWithUnitsEnum] || optional ||  ||  || unqualified ||
+
 
 ===  Local Usage ===
 

@@ -43,8 +43,9 @@ anyType
 
 === Attributes ===
 
-|| Name || Description || Type || Use || Default || Fixed || Form ||
-        || number ||   || xs:nonNegativeInteger || required ||  ||  || unqualified ||
+|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| number ||   || xs:nonNegativeInteger || required ||  ||  || unqualified ||
+
 
 ===  Local Usage ===
 
