@@ -1,56 +1,10 @@
-#summary Golf Markup Language Reference: golfml.
+#summary Golf Markup Language Reference
 
-= Name =
+The Golf Markup Language aims at providing a vendor neutral data format for the exchange of golf-related data.
 
-golfml
+Data includes both
 
-= Synopsis =
+# Golf course descriptions with name, address, contact information, location, available courses, tees, facilties, etc.
+# Player informations such as scores, statistics, and golfing equipment
 
-== Content Model ==
-
-([CountryClub country-club]|[Player player]|[Application application])`*`
-
-
-== Attributes ==
-
-|| id || type || default ||
-|| version || string || none ||
-
-= Description =
-
-GolfML is the top most element of the Golf Markup Language.
-
-
-== Attributes ==
-
- # version - Version of the GolfML schema used. Default is the latest version.
-
-== Parent Elements ==
-
-None.
-
-
-= Notes =
-
-The XML Namespace should be `http://code.google.com/p/golfml/`.
-
-If the version attribute is not specified, applications should default to the latest version.
-
-
-= See Also =
-
-[Welcome Welcome to the Golf Markup Language].
-
-[CountryClub country-club], [Player player], [Application application].
-
-= Example =
-
-{{{
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="../stylesheets/simple-score.xsl"?>
-<golfml xmlns="http://code.google.com/p/golfml/"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    version="0.9">
-    <country-club>
-...
-}}}
+[Welcome Start Here]
