@@ -1,0 +1,41 @@
+#summary Golf Markup Language Documentation: group MediaChoice.
+
+== Name ==
+
+MediaChoice (group)
+
+  	
+
+===  Documentation ===
+        
+			A media is either embedded in the golfml document or a URI (link) to it.
+			We currently removed the ability to store media inside a golfml document for performance purposes
+			and to limit the size of golfml document.
+			Embedded storage of media in golfml document should be limited to small size items such as vector logo
+			and small images.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+            (url | content) 
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| xs:base64Binary || content ||  Base64-coded content of the media. ||
+|| xs:anyURI || url ||  					Location of the media.				 ||
+
+===  Local Usage ===
+
+    	[CMedia.html Media]
+----
+    
+----
+        

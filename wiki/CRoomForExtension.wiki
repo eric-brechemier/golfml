@@ -1,0 +1,65 @@
+#summary Golf Markup Language Documentation: complexType RoomForExtension.
+
+== Name ==
+
+RoomForExtension (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--RoomForExtension (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Local type for 'any' content. Room for different applications and systems to store their private data.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  other = xs:string>  (
+    _any element from any namespace_
+    )  </...>
+}}}
+----
+          
+
+=== Attribute Summary ===
+        
+|| xs:string || `other` ||  				Used to qualify the content of the Any element.			 ||
+
+=== Attribute Detail ===
+      
+
+==== other ====
+
+      
+				Used to qualify the content of the Any element.
+			
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CHolePlacement.html HolePlacement], [CHoleQualification.html HoleQualification], [CPosition.html Position], [CRound.html Round]
+----
+    
+----
+        

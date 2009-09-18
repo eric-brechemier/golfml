@@ -1,0 +1,80 @@
+#summary Golf Markup Language Documentation: complexType Weather.
+
+== Name ==
+
+Weather (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--Weather (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Store weather condition during play.
+			It contains an optional attribute named wind to specify wind condition during play.
+			
+			See also: SportML has a normalisation of weather types.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  other = xs:string  wind = [SWindEnum.html WindEnum.html]>string</...>
+}}}
+----
+          
+
+=== Attribute Summary ===
+        
+|| xs:string || `other` ||  				Alternate value for an attribute.			 ||
+|| [SWindEnum.html golfml:WindEnum] || `wind` ||   ||
+
+=== Attribute Detail ===
+      
+
+==== other ====
+
+      
+				Alternate value for an attribute.
+			
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+==== wind ====
+
+      
+=====  Type: =====
+
+          [SWindEnum.html golfml:WindEnum]
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CRound.html Round]
+----
+    
+----
+        

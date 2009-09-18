@@ -1,0 +1,50 @@
+#summary Golf Markup Language Documentation: complexType GolfBag.
+
+== Name ==
+
+GolfBag (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--GolfBag (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			A golf bag can contain either golf clubs or references to them when they are
+			in equipement-list elements.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...>  (name, bag-ref?, (golf-club-ref | golf-club){1,14} , equipment`*`  )</...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [CREF_GolfBag.html golfml:REF_GolfBag] || [CREF_GolfBag.html bag-ref] ||  					Reference to the golf bag used for the round from the pieces of equipement.				 ||
+|| [CEquipment.html golfml:Equipment] || [CEquipment.html equipment] ||  					Other piece of equipment used in bag: Balls, tees, apparel, gloves...				 ||
+|| [CGolfClub.html golfml:GolfClub] || [CGolfClub.html golf-club] ||  						Definition of a golf club owned by the player.					 ||
+|| [CREF_GolfClub.html golfml:REF_GolfClub] || [CREF_GolfClub.html golf-club-ref] ||  						Reference to a golf club in the player's equipment list.					 ||
+|| xs:string || name ||  					Name of a golf bag used to identify it.				 ||
+
+===  Local Usage ===
+
+    	[CPlayer.html Player]
+----
+    
+----
+        

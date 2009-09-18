@@ -1,0 +1,41 @@
+#summary Golf Markup Language Documentation: complexType CountryClubChoice.
+
+== Name ==
+
+CountryClubChoice (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--CountryClubChoice (restriction)
+}}}
+----
+    
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...>  (name | country-club) </...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [CREF_GolfCourse.html golfml:REF_GolfCourse] || [CREF_GolfCourse.html country-club] ||   ||
+|| xs:string || name ||   ||
+
+===  Local Usage ===
+
+    	[CPlayer.html Player]
+----
+    
+----
+        

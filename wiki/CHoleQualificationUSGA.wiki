@@ -1,0 +1,46 @@
+#summary Golf Markup Language Documentation: complexType HoleQualificationUSGA.
+
+== Name ==
+
+HoleQualificationUSGA (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--HoleQualificationUSGA (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+				Qualify a golf course played from a set of tees according to the USGA rules.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...>  (rating ; slope) </...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [SCourseRating.html golfml:CourseRating] || [SCourseRating.html rating] ||  					Course rating of a set of tees according to USGA specifications.				 ||
+|| [SCourseSlope.html golfml:CourseSlope] || [SCourseSlope.html slope] ||  					Slope of a set of tees according to USGA specifications.				 ||
+
+===  Local Usage ===
+
+    	[CHoleQualification.html HoleQualification]
+----
+    
+----
+        

@@ -1,0 +1,46 @@
+#summary Golf Markup Language Documentation: complexType EquipmentList.
+
+== Name ==
+
+EquipmentList (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--EquipmentList (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			List golf belongings of a player.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...>  (golf-club | equipment)`*` </...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [CEquipment.html golfml:Equipment] || [CEquipment.html equipment] ||  					Piece of golfing equipment owned by a player.				 ||
+|| [CGolfClub.html golfml:GolfClub] || [CGolfClub.html golf-club] ||  					Golf club owned by a player.				 ||
+
+===  Local Usage ===
+
+    	[CPlayer.html Player]
+----
+    
+----
+        

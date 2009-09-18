@@ -1,0 +1,85 @@
+#summary Golf Markup Language Documentation: attributeGroup MediaTypeAttributes.
+
+== Name ==
+
+MediaTypeAttributes (attributeGroup)
+
+  	
+
+===  Documentation ===
+        
+				Group of common attributes used to characterise a media associated with either a country-club, a golf-course,
+				or a hole, anywhere a media is accepted.
+				The first attribute describe what the media content is, the second attribute is usable by computer
+				and reprents the technical file format used.
+			
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+            content-type = xs:string  other = xs:string  type = [SMediaTypeEnum.html MediaTypeEnum.html]
+}}}
+----
+          
+
+=== Attribute Summary ===
+        
+|| xs:string || `content-type` ||   ||
+|| xs:string || `other` ||  				Alternate value for an attribute.			 ||
+|| [SMediaTypeEnum.html golfml:MediaTypeEnum] || `type` ||   ||
+
+=== Attribute Detail ===
+      
+
+==== content-type ====
+
+      
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+==== other ====
+
+      
+				Alternate value for an attribute.
+			
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+==== type ====
+
+      
+=====  Type: =====
+
+          [SMediaTypeEnum.html golfml:MediaTypeEnum]
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CMedia.html Media]
+----
+    
+----
+        

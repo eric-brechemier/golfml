@@ -1,0 +1,78 @@
+#summary Golf Markup Language Documentation: complexType PlayerHandicap.
+
+== Name ==
+
+PlayerHandicap (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--PlayerHandicap (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Type to specify a player's handicap. The mandatory attribute specify the method used to compute
+			the handicap.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  handicap-system = [SHandicapSystemEnum.html HandicapSystemEnum.html]  other = xs:string>FloatWithOneFractionalNumber</...>
+}}}
+----
+          
+
+=== Attribute Summary ===
+        
+|| [SHandicapSystemEnum.html golfml:HandicapSystemEnum] || `handicap-system` ||   ||
+|| xs:string || `other` ||  				Alternate value for an attribute.			 ||
+
+=== Attribute Detail ===
+      
+
+==== handicap-system ====
+
+      
+=====  Type: =====
+
+          [SHandicapSystemEnum.html golfml:HandicapSystemEnum]
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+==== other ====
+
+      
+				Alternate value for an attribute.
+			
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CPlayer.html Player]
+----
+    
+----
+        

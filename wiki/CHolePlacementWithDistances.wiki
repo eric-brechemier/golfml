@@ -1,0 +1,69 @@
+#summary Golf Markup Language Documentation: complexType HolePlacementWithDistances.
+
+== Name ==
+
+HolePlacementWithDistances (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--HolePlacementWithDistances (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+				Description of the placement on the hole on the surface of the green in a precise,
+				tournament fashion, which includes length and width of the green and distance of
+				the hole from 2 edges of the green.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  number = [SOneToEighteen.html OneToEighteen.html]>  (green-length, green-width, hole-distance{2,2}  )</...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [CLengthWithUnits.html golfml:LengthWithUnits] || [CLengthWithUnits.html green-length] ||  					Length of green.				 ||
+|| [CLengthWithUnits.html golfml:LengthWithUnits] || [CLengthWithUnits.html green-width] ||  					Width of green.				 ||
+|| [CHoleDistanceOnGreen.html golfml:HoleDistanceOnGreen] || [CHoleDistanceOnGreen.html hole-distance] ||  					Distance of hole from edge of green.				 ||      
+
+=== Attribute Summary ===
+        
+|| [SOneToEighteen.html golfml:OneToEighteen] || `number` ||   ||
+
+=== Attribute Detail ===
+      
+
+==== number ====
+
+      
+=====  Type: =====
+
+          [SOneToEighteen.html golfml:OneToEighteen]
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CHolePlacement.html HolePlacement]
+----
+    
+----
+        

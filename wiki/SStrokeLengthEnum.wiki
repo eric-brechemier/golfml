@@ -1,0 +1,35 @@
+#summary Golf Markup Language Documentation: simpleType StrokeLengthEnum.
+
+== Name ==
+
+StrokeLengthEnum (simpleType)
+
+  	
+
+===  Super Types ===
+{{{
+string
+  |
+  +--StrokeLengthEnum (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			List of values to specify stroke length in shot quality description.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          ('short' | 'middle' | 'long')
+}}}
+----
+    
+----
+        

@@ -1,0 +1,104 @@
+#summary Golf Markup Language Documentation: complexType Media.
+
+== Name ==
+
+Media (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--Media (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			A media is a piece of multi-media information attached to either a country-club, a golf-course, a hole, a player,
+			or a round of golf. Example of such media are:
+			* country-club: Picture of club house, access map.
+			* golf-course: scenic pictures of holes, yardage book...
+			* hole: yardage page, pin placement chart...
+			* player: picture, scan of official golf card...
+			* round of golf: souvenir of a memorable golfing moment...
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  content-type = xs:string  other = xs:string  type = [SMediaTypeEnum.html MediaTypeEnum.html]>  (name, description?, (url | content)   )</...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| xs:base64Binary || content ||  Base64-coded content of the media. ||
+|| xs:string || description ||  					Description of the media.				 ||
+|| xs:string || name ||  					Name of the media.				 ||
+|| xs:anyURI || url ||  					Location of the media.				 ||      
+
+=== Attribute Summary ===
+        
+|| xs:string || `content-type` ||   ||
+|| xs:string || `other` ||  				Alternate value for an attribute.			 ||
+|| [SMediaTypeEnum.html golfml:MediaTypeEnum] || `type` ||   ||
+
+=== Attribute Detail ===
+      
+
+==== content-type ====
+
+      
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+==== other ====
+
+      
+				Alternate value for an attribute.
+			
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+==== type ====
+
+      
+=====  Type: =====
+
+          [SMediaTypeEnum.html golfml:MediaTypeEnum]
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CCountryClub.html CountryClub], [CGolfCourse.html GolfCourse], [CHole.html Hole], [CPlayer.html Player]
+----
+    
+----
+        

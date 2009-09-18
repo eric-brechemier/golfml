@@ -1,0 +1,39 @@
+#summary Golf Markup Language Documentation: group ID_GolfCourse.
+
+== Name ==
+
+ID_GolfCourse (group)
+
+  	
+
+===  Documentation ===
+        
+			Identifying elements for a golf course. Used in foreign keys.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+            (country-club.name, country-club.address.country.iso3166, country-club.address.postal-code, country-club.golf-course.name  )
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [SISO3166CountryCodeEnum.html golfml:ISO3166CountryCodeEnum] || [SISO3166CountryCodeEnum.html country-club.address.country.iso3166] ||   ||
+|| xs:string || country-club.address.postal-code ||   ||
+|| xs:string || country-club.golf-course.name ||   ||
+|| xs:string || country-club.name ||   ||
+
+===  Local Usage ===
+
+    	[GID_Tees.html ID_Tees], [CREF_GolfCourse.html REF_GolfCourse]
+----
+    
+----
+        

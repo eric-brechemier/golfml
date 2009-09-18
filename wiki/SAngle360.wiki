@@ -1,0 +1,35 @@
+#summary Golf Markup Language Documentation: simpleType Angle360.
+
+== Name ==
+
+Angle360 (simpleType)
+
+  	
+
+===  Super Types ===
+{{{
+double
+  |
+  +--Angle360 (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+				Angle between -360 and 360 degrees.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          inclusive lower bound: -360inclusive upper bound: 360
+}}}
+----
+    
+----
+        

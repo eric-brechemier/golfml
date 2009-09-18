@@ -1,0 +1,41 @@
+#summary Golf Markup Language Documentation: simpleType CourseSlope.
+
+== Name ==
+
+CourseSlope (simpleType)
+
+  	
+
+===  Super Types ===
+{{{
+positiveInteger
+  |
+  +--CourseSlope (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Type to specify a golf course difficulty for handicap calculation.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          inclusive lower bound: 55inclusive upper bound: 155
+}}}
+----
+    
+
+===  Local Usage ===
+
+    	[CHoleQualificationUSGA.html HoleQualificationUSGA]
+----
+    
+----
+        

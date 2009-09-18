@@ -1,0 +1,52 @@
+#summary Golf Markup Language Documentation: complexType Round.
+
+== Name ==
+
+Round (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--Round (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Details about a round of golf: Location of the flags on greens (usually called pin sheet),
+			weather conditions, date of the round, opponenents and partners, and the scorecard.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...>  (hole-placement?, weather?, foursome?, game?, wager?, date, scorecard  )</...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| xs:dateTime || date ||  					Date and time of the round.				 ||
+|| [CFourSome.html golfml:FourSome] || [CFourSome.html foursome] ||  					Player information for the round of golf.				 ||
+|| [CGolfGame.html golfml:GolfGame] || [CGolfGame.html game] ||  					Information about the game(s) played during the round of golf.				 ||
+|| [CHolePlacements.html golfml:HolePlacements] || [CHolePlacements.html hole-placement] ||  					Placement of holes for the round of golf.				 ||
+|| [CScorecard.html golfml:Scorecard] || [CScorecard.html scorecard] ||  					Scorecard of the round for the player.				 ||
+|| [CRoomForExtension.html golfml:RoomForExtension] || [CRoomForExtension.html wager] ||  					Information about the wagers during the round of golf.				 ||
+|| [CWeather.html golfml:Weather] || [CWeather.html weather] ||  					Weather information for the round of golf.				 ||
+
+===  Local Usage ===
+
+    	[CPlayer.html Player]
+----
+    
+----
+        

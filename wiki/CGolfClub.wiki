@@ -1,0 +1,78 @@
+#summary Golf Markup Language Documentation: complexType GolfClub.
+
+== Name ==
+
+GolfClub (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--GolfClub (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Descriptive elements for a golf club.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  
+            *type = [SGolfClubTypeEnum.html GolfClubTypeEnum.html]*
+          >  (manufacturer, model, submodel, number?, serial?, loft?, lie?, weight?, swing-weight?, shaft?  )</...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [SAngle90.html golfml:Angle90] || [SAngle90.html lie] ||  					Lie of the golf club.				 ||
+|| [SAngle90.html golfml:Angle90] || [SAngle90.html loft] ||  					Loft of the golf club.				 ||
+|| xs:string || manufacturer ||  					Manufacturer of a golf club.				 ||
+|| xs:string || model ||  					Model of a golf club.				 ||
+|| xs:string || number ||  					Number or name of a club in a set.				 ||
+|| xs:string || serial ||  					Serial number of the golf club.				 ||
+|| [CShaft.html golfml:Shaft] || [CShaft.html shaft] ||  					Shaft of the golf club.				 ||
+|| xs:string || submodel ||  					Sub model or type of a golf club.				 ||
+|| [SSwingWeight.html golfml:SwingWeight] || [SSwingWeight.html swing-weight] ||  					Swing weight of the golf club.				 ||
+|| xs:float || weight ||  					Weight of the golf club.				 ||      
+
+=== Attribute Summary ===
+        
+|| [SGolfClubTypeEnum.html golfml:GolfClubTypeEnum] || `type` ||  				Type of golf club.			 ||
+
+=== Attribute Detail ===
+      
+
+==== type ====
+
+      
+				Type of golf club.
+			
+=====  Type: =====
+
+          [SGolfClubTypeEnum.html golfml:GolfClubTypeEnum]
+=====  Use: =====
+        required
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CEquipmentList.html EquipmentList], [CGolfBag.html GolfBag], [CStrokeDetail.html StrokeDetail]
+----
+    
+----
+        

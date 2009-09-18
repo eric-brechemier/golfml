@@ -1,0 +1,45 @@
+#summary Golf Markup Language Documentation: complexType Score.
+
+== Name ==
+
+Score (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--Score (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Type used to record 1 to 18 HoleScores.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...>  hole{1,18}  </...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [CHoleScore.html golfml:HoleScore] || [CHoleScore.html hole] ||  					Detail of score for one hole.				 ||
+
+===  Local Usage ===
+
+    	[CScorecard.html Scorecard]
+----
+    
+----
+        

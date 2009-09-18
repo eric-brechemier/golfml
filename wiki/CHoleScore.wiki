@@ -1,0 +1,73 @@
+#summary Golf Markup Language Documentation: complexType HoleScore.
+
+== Name ==
+
+HoleScore (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--HoleScore (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Records detailed hole score information.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  number = [SOneToEighteen.html OneToEighteen.html]>  (strokes, points?, putts?, money?, penalties?, stroke`*`, statistics?  )</...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| xs:integer || money ||  					Money earned or loss on hole in wagers.				 ||
+|| [CPenalty.html golfml:Penalty] || [CPenalty.html penalties] ||  					Total number of penalty strokes.				 ||
+|| xs:nonNegativeInteger || points ||  					Total number of points for hole.				 ||
+|| xs:nonNegativeInteger || putts ||  					Number of putts, from the green.				 ||
+|| [CHoleStatistics.html golfml:HoleStatistics] || [CHoleStatistics.html statistics] ||  					Denormalised statistics for hole.				 ||
+|| [CStrokeDetail.html golfml:StrokeDetail] || [CStrokeDetail.html stroke] ||  					Detail of each stroke.				 ||
+|| xs:positiveInteger || strokes ||  					Total number of strokes for hole, including penalties.				 ||      
+
+=== Attribute Summary ===
+        
+|| [SOneToEighteen.html golfml:OneToEighteen] || `number` ||  				Order number of hole.			 ||
+
+=== Attribute Detail ===
+      
+
+==== number ====
+
+      
+				Order number of hole.
+			
+=====  Type: =====
+
+          [SOneToEighteen.html golfml:OneToEighteen]
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CScore.html Score]
+----
+    
+----
+        

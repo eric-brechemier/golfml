@@ -1,0 +1,127 @@
+#summary Golf Markup Language Documentation: complexType PointOfInterest.
+
+== Name ==
+
+PointOfInterest (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--PointOfInterest (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Point of interest on a golf course.
+			A point of interest contains a name, the coordinate of the point, a specification of its type limited to a list
+			of valid values, and an optional orientation in respect to the point.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  number = xs:nonNegativeInteger  orientation = [SOrientationEnum.html OrientationEnum.html]  other = xs:string  subtype = xs:string  type = [SGolfCourseAreaTypeEnum.html GolfCourseAreaTypeEnum.html]>  (name? ; description? ; position) </...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| xs:string || description ||  					Description of a point of interest.				 ||
+|| xs:string || name ||  					Name of point of interest.				 ||
+|| [CPosition.html golfml:Position] || [CPosition.html position] ||  					Coordinate of a point of interest.				 ||      
+
+=== Attribute Summary ===
+        
+|| xs:nonNegativeInteger || `number` ||   ||
+|| [SOrientationEnum.html golfml:OrientationEnum] || `orientation` ||   ||
+|| xs:string || `other` ||  				Alternate value for an attribute.			 ||
+|| xs:string || `subtype` ||   ||
+|| [SGolfCourseAreaTypeEnum.html golfml:GolfCourseAreaTypeEnum] || `type` ||   ||
+
+=== Attribute Detail ===
+      
+
+==== number ====
+
+      
+=====  Type: =====
+
+          xs:nonNegativeInteger
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+==== orientation ====
+
+      
+=====  Type: =====
+
+          [SOrientationEnum.html golfml:OrientationEnum]
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+==== other ====
+
+      
+				Alternate value for an attribute.
+			
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+==== subtype ====
+
+      
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+==== type ====
+
+      
+=====  Type: =====
+
+          [SGolfCourseAreaTypeEnum.html golfml:GolfCourseAreaTypeEnum]
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CPlacemarks.html Placemarks]
+----
+    
+----
+        

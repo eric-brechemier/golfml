@@ -1,0 +1,49 @@
+#summary Golf Markup Language Documentation: attributeGroup Other.
+
+== Name ==
+
+Other (attributeGroup)
+
+  	
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+            other = xs:string
+}}}
+----
+          
+
+=== Attribute Summary ===
+        
+|| xs:string || `other` ||  				Alternate value for an attribute.			 ||
+
+=== Attribute Detail ===
+      
+
+==== other ====
+
+      
+				Alternate value for an attribute.
+			
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CAmenety.html Amenety], [CAreaOfInterest.html AreaOfInterest], [CContact.html Contact], [CGolfGame.html GolfGame], [AMediaTypeAttributes.html MediaTypeAttributes], [CPlayerHandicap.html PlayerHandicap], [CPointOfInterest.html PointOfInterest], [CStatistics.html Statistics], [CWeather.html Weather]
+----
+    
+----
+        

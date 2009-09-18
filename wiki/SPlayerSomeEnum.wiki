@@ -1,0 +1,41 @@
+#summary Golf Markup Language Documentation: simpleType PlayerSomeEnum.
+
+== Name ==
+
+PlayerSomeEnum (simpleType)
+
+  	
+
+===  Super Types ===
+{{{
+string
+  |
+  +--PlayerSomeEnum (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+				Qualify a golfer in a two, three, or four some.
+			
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          ('partner' | 'competitor')
+}}}
+----
+    
+
+===  Local Usage ===
+
+    	[CPlayerSome.html PlayerSome]
+----
+    
+----
+        

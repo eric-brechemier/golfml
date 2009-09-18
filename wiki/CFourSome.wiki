@@ -1,0 +1,45 @@
+#summary Golf Markup Language Documentation: complexType FourSome.
+
+== Name ==
+
+FourSome (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--FourSome (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			A FourSome type is used to store up to three additional player names who play the same round of golf.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...>  player-some{0,3}  </...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [CPlayerSome.html golfml:PlayerSome] || [CPlayerSome.html player-some] ||  											Qualification of the player on the 2,3,4 some.					 ||
+
+===  Local Usage ===
+
+    	[CRound.html Round]
+----
+    
+----
+        

@@ -1,0 +1,63 @@
+#summary Golf Markup Language Documentation: complexType LengthWithUnits.
+
+== Name ==
+
+LengthWithUnits (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--LengthWithUnits (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+				Length of an object and its unit of measure.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  units = [SUnitOfLengthWithUnitsEnum.html UnitOfLengthWithUnitsEnum.html] : meters>Length</...>
+}}}
+----
+          
+
+=== Attribute Summary ===
+        
+|| [SUnitOfLengthWithUnitsEnum.html golfml:UnitOfLengthWithUnitsEnum] || `units` ||   ||
+
+=== Attribute Detail ===
+      
+
+==== units ====
+
+      
+=====  Type: =====
+
+          [SUnitOfLengthWithUnitsEnum.html golfml:UnitOfLengthWithUnitsEnum]
+=====  Default: =====
+		meters
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CHoleDistanceOnGreen.html HoleDistanceOnGreen], [CHolePlacementWithDistances.html HolePlacementWithDistances], [CHoleStatistics.html HoleStatistics], [CShaft.html Shaft], [CTee.html Tee]
+----
+    
+----
+        

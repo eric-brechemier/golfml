@@ -1,0 +1,52 @@
+#summary Golf Markup Language Documentation: complexType Scorecard.
+
+== Name ==
+
+Scorecard (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--Scorecard (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			A Scorecard contains scoring information for a round of golf: Tees used (reference to them),
+			handicap used by the player for this round and consecutive strokes allowed (depending on the tees rating and slope),
+			golf bag used by the player, and finally score.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...>  (tees, handicap?, handicap-strokes?, golf-bag-ref?, summary?, score  )</...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [CREF_GolfBag.html golfml:REF_GolfBag] || [CREF_GolfBag.html golf-bag-ref] ||  					Reference to the golf bag used for the round of golf.				 ||
+|| xs:float || handicap ||  					Handicap used for the round of golf.				 ||
+|| xs:integer || handicap-strokes ||  					Denormalisation: Number of strokes received for the round.				 ||
+|| [CScore.html golfml:Score] || [CScore.html score] ||  					Detailed information about the score for the round of golf.				 ||
+|| [CRoundSummary.html golfml:RoundSummary] || [CRoundSummary.html summary] ||  Denormalisation: Basic statistics for the round of golf. ||
+|| [CREF_Tees.html golfml:REF_Tees] || [CREF_Tees.html tees] ||  					Reference to tee set used for the round of golf.				 ||
+
+===  Local Usage ===
+
+    	[CRound.html Round]
+----
+    
+----
+        

@@ -1,0 +1,41 @@
+#summary Golf Markup Language Documentation: simpleType CourseRating.
+
+== Name ==
+
+CourseRating (simpleType)
+
+  	
+
+===  Super Types ===
+{{{
+float
+  |
+  +--CourseRating (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Type to specify the golf course rating for handicap calculation.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          inclusive lower bound: 3inclusive upper bound: 90
+}}}
+----
+    
+
+===  Local Usage ===
+
+    	[CHoleQualificationUSGA.html HoleQualificationUSGA]
+----
+    
+----
+        

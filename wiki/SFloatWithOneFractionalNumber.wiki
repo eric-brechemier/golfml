@@ -1,0 +1,46 @@
+#summary Golf Markup Language Documentation: simpleType FloatWithOneFractionalNumber.
+
+== Name ==
+
+FloatWithOneFractionalNumber (simpleType)
+
+  	
+
+===  Super Types ===
+{{{
+float
+  |
+  +--FloatWithOneFractionalNumber (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Type to specify the player handicap (maximum of one digit after the decimal period).
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          
+{{{
+        ^[-+]?[0-9]\d{0,2}(\.\d{1,1})?$
+}}}
+      
+    
+}}}
+----
+    
+
+===  Local Usage ===
+
+    	[CPlayerHandicap.html PlayerHandicap]
+----
+    
+----
+        

@@ -1,0 +1,91 @@
+#summary Golf Markup Language Documentation: complexType PlayerSome.
+
+== Name ==
+
+PlayerSome (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--PlayerSome (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Identify partners and opponents during a round of golf.
+			PlayerSome must have a player entry in the golfml document. (The player's name, gender, and date of birth is the only mandatory information.)
+			Scorecards of other players are stored in their player element.
+			Round date and time and foursome elements can be used to reconstruct the 2,3,4 some of a multiplayer round.
+			Attributes type and team help identify players as partners or opponents and organise teams.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  team = xs:string  type = [SPlayerSomeEnum.html PlayerSomeEnum.html]>  (player.name, player.date-of-birth  )</...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| xs:date || player.date-of-birth ||   ||
+|| xs:string || player.name ||   ||      
+
+=== Attribute Summary ===
+        
+|| xs:string || `team` ||  Name of the team this player was a member of. ||
+|| [SPlayerSomeEnum.html golfml:PlayerSomeEnum] || `type` ||  				Qualification of the player on the 2,3,4 some.			 ||
+
+=== Attribute Detail ===
+      
+
+==== team ====
+
+      
+				Name of the team this player was a member of. For example, if 4 players are playing 2 against 2, the foursome would be:
+					
+					
+					
+			
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+==== type ====
+
+      
+				Qualification of the player on the 2,3,4 some.
+			
+=====  Type: =====
+
+          [SPlayerSomeEnum.html golfml:PlayerSomeEnum]
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CFourSome.html FourSome]
+----
+    
+----
+        

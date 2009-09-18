@@ -1,0 +1,39 @@
+#summary Golf Markup Language Documentation: group ID_GolfClub.
+
+== Name ==
+
+ID_GolfClub (group)
+
+  	
+
+===  Documentation ===
+        
+			Identifying elements for a golf club as used in foreign keys.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+            (golf-club.manufacturer, golf-club.model, golf-club.submodel, golf-club.number  )
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| xs:string || golf-club.manufacturer ||   ||
+|| xs:string || golf-club.model ||   ||
+|| xs:string || golf-club.number ||   ||
+|| xs:string || golf-club.submodel ||   ||
+
+===  Local Usage ===
+
+    	[CREF_GolfClub.html REF_GolfClub]
+----
+    
+----
+        

@@ -1,0 +1,41 @@
+#summary Golf Markup Language Documentation: simpleType HandicapStroke.
+
+== Name ==
+
+HandicapStroke (simpleType)
+
+  	
+
+===  Super Types ===
+{{{
+positiveInteger
+  |
+  +--HandicapStroke (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Type for elements specifying Handicap stroke information.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          inclusive lower bound: 1inclusive upper bound: 18
+}}}
+----
+    
+
+===  Local Usage ===
+
+    	[CTee.html Tee]
+----
+    
+----
+        

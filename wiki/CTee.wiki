@@ -1,0 +1,67 @@
+#summary Golf Markup Language Documentation: complexType Tee.
+
+== Name ==
+
+Tee (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--Tee (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+				Description of a hole played from a set of tee.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  number = [SOneToEighteen.html OneToEighteen.html]>  (par, handicap-stroke, length{0,2}  )</...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [SHandicapStroke.html golfml:HandicapStroke] || [SHandicapStroke.html handicap-stroke] ||  					Relative difficulty level of the hole for this set of tees.				 ||
+|| [CLengthWithUnits.html golfml:LengthWithUnits] || [CLengthWithUnits.html length] ||  Length of the hole from the set of tees. ||
+|| [SPar.html golfml:Par] || [SPar.html par] ||  					Par score for the hole.				 ||      
+
+=== Attribute Summary ===
+        
+|| [SOneToEighteen.html golfml:OneToEighteen] || `number` ||   ||
+
+=== Attribute Detail ===
+      
+
+==== number ====
+
+      
+=====  Type: =====
+
+          [SOneToEighteen.html golfml:OneToEighteen]
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CTees.html Tees]
+----
+    
+----
+        

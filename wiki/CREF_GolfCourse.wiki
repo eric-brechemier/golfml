@@ -1,0 +1,43 @@
+#summary Golf Markup Language Documentation: complexType REF_GolfCourse.
+
+== Name ==
+
+REF_GolfCourse (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--REF_GolfCourse (restriction)
+}}}
+----
+    
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...>  (country-club.name, country-club.address.country.iso3166, country-club.address.postal-code, country-club.golf-course.name  )</...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [SISO3166CountryCodeEnum.html golfml:ISO3166CountryCodeEnum] || [SISO3166CountryCodeEnum.html country-club.address.country.iso3166] ||   ||
+|| xs:string || country-club.address.postal-code ||   ||
+|| xs:string || country-club.golf-course.name ||   ||
+|| xs:string || country-club.name ||   ||
+
+===  Local Usage ===
+
+    	[CCollection.html Collection], [CCountryClubChoice.html CountryClubChoice]
+----
+    
+----
+        

@@ -1,0 +1,65 @@
+#summary Golf Markup Language Documentation: complexType Penalty.
+
+== Name ==
+
+Penalty (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--Penalty (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Type used to record penalty stroke and help identify the reason of the penalty.
+			An optional rule attribute can be used to store the rule breached.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  rule = xs:string>positiveInteger</...>
+}}}
+----
+          
+
+=== Attribute Summary ===
+        
+|| xs:string || `rule` ||  Rule number indicating the violation. ||
+
+=== Attribute Detail ===
+      
+
+==== rule ====
+
+      
+						Rule number indicating the violation.
+						Example: rule="USGA:26-1/19:Water Hazard"
+					
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CHoleScore.html HoleScore], [CRoundSummary.html RoundSummary]
+----
+    
+----
+        

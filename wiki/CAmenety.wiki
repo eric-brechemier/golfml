@@ -1,0 +1,79 @@
+#summary Golf Markup Language Documentation: complexType Amenety.
+
+== Name ==
+
+Amenety (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--Amenety (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Amenety available at the country club premises.
+			Ameneties have a type attribute to help identify the amenety.
+			LATER: May be store the position (gps or other) inside the amenety.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  other = xs:string  type = [SAmenetyTypeEnum.html AmenetyTypeEnum.html]>string</...>
+}}}
+----
+          
+
+=== Attribute Summary ===
+        
+|| xs:string || `other` ||  				Alternate value for an attribute.			 ||
+|| [SAmenetyTypeEnum.html golfml:AmenetyTypeEnum] || `type` ||   ||
+
+=== Attribute Detail ===
+      
+
+==== other ====
+
+      
+				Alternate value for an attribute.
+			
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+==== type ====
+
+      
+=====  Type: =====
+
+          [SAmenetyTypeEnum.html golfml:AmenetyTypeEnum]
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CCountryClub.html CountryClub]
+----
+    
+----
+        

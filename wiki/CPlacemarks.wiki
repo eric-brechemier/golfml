@@ -1,0 +1,46 @@
+#summary Golf Markup Language Documentation: complexType Placemarks.
+
+== Name ==
+
+Placemarks (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--Placemarks (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Placemarks is a collection of points and/or areas of interest.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...>  (poi | aoi)`*` </...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [CAreaOfInterest.html golfml:AreaOfInterest] || [CAreaOfInterest.html aoi] ||  					Area of interest.				 ||
+|| [CPointOfInterest.html golfml:PointOfInterest] || [CPointOfInterest.html poi] ||  					Point of interest.				 ||
+
+===  Local Usage ===
+
+    	[CHole.html Hole]
+----
+    
+----
+        

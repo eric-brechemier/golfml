@@ -1,0 +1,90 @@
+#summary Golf Markup Language Documentation: complexType Version.
+
+== Name ==
+
+Version (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--Version (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Allow for version tracking on a single element with meta-data.
+			Element content should consists of version comments.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  created = xs:dateTime  updated = xs:dateTime  version = xs:string>string</...>
+}}}
+----
+          
+
+=== Attribute Summary ===
+        
+|| xs:dateTime || `created` ||   ||
+|| xs:dateTime || `updated` ||   ||
+|| xs:string || `version` ||   ||
+
+=== Attribute Detail ===
+      
+
+==== created ====
+
+      
+=====  Type: =====
+
+          xs:dateTime
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+==== updated ====
+
+      
+=====  Type: =====
+
+          xs:dateTime
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+==== version ====
+
+      
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CCountryClub.html CountryClub], [CGolfCourse.html GolfCourse], [Egolfml.html golfml], [CTees.html Tees]
+----
+    
+----
+        

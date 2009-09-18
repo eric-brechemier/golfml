@@ -1,0 +1,139 @@
+#summary Golf Markup Language Documentation: complexType Tees.
+
+== Name ==
+
+Tees (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--Tees (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+				Set of tees from which a golf course can be played.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  colour = xs:string  date-from = xs:date  date-to = xs:date  gender = [SGolfingGender.html GolfingGender.html]  
+            *name = xs:string*
+            units = [SUnitOfLengthWithUnitsEnum.html UnitOfLengthWithUnitsEnum.html]>  (qualification, tee{1,18}, version`*`  )</...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [CHoleQualification.html golfml:HoleQualification] || [CHoleQualification.html qualification] ||  					Qualification of the hole for handicaping purposes.				 ||
+|| [CTee.html golfml:Tee] || [CTee.html tee] ||  Description of a single hole. ||
+|| [CVersion.html golfml:Version] || [CVersion.html version] ||  					Records tee set modifications over time.				 ||      
+
+=== Attribute Summary ===
+        
+|| xs:string || `colour` ||   ||
+|| xs:date || `date-from` ||   ||
+|| xs:date || `date-to` ||   ||
+|| [SGolfingGender.html golfml:GolfingGender] || `gender` ||   ||
+|| xs:string || `name` ||   ||
+|| [SUnitOfLengthWithUnitsEnum.html golfml:UnitOfLengthWithUnitsEnum] || `units` ||   ||
+
+=== Attribute Detail ===
+      
+
+==== colour ====
+
+      
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+==== date-from ====
+
+      
+=====  Type: =====
+
+          xs:date
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+==== date-to ====
+
+      
+=====  Type: =====
+
+          xs:date
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+==== gender ====
+
+      
+=====  Type: =====
+
+          [SGolfingGender.html golfml:GolfingGender]
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+==== name ====
+
+      
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        required
+=====  Form: =====
+		unqualified
+----
+  
+
+==== units ====
+
+      
+=====  Type: =====
+
+          [SUnitOfLengthWithUnitsEnum.html golfml:UnitOfLengthWithUnitsEnum]
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CGolfCourse.html GolfCourse]
+----
+    
+----
+        

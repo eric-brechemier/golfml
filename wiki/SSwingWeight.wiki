@@ -1,0 +1,46 @@
+#summary Golf Markup Language Documentation: simpleType SwingWeight.
+
+== Name ==
+
+SwingWeight (simpleType)
+
+  	
+
+===  Super Types ===
+{{{
+string
+  |
+  +--SwingWeight (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+				Swing weight of a club of golf.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          
+{{{
+        [B-E][0-9]
+}}}
+      
+    
+}}}
+----
+    
+
+===  Local Usage ===
+
+    	[CGolfClub.html GolfClub]
+----
+    
+----
+        

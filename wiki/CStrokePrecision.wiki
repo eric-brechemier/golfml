@@ -1,0 +1,68 @@
+#summary Golf Markup Language Documentation: complexType StrokePrecision.
+
+== Name ==
+
+StrokePrecision (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--StrokePrecision (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Elements to quantify the precision and quality of a stroke in two directions:
+			Front/Back for stroke length, and Left/Right for stroke direction.
+			Elements values are constrained between -2 and +2.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  type = xs:string>  (front-back, left-right  )?</...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [SStrokePrecisionValue.html golfml:StrokePrecisionValue] || [SStrokePrecisionValue.html front-back] ||  					Precision of a stroke relative to the distance.				 ||
+|| [SStrokePrecisionValue.html golfml:StrokePrecisionValue] || [SStrokePrecisionValue.html left-right] ||  					Precision of a stroke relative to the direction.				 ||      
+
+=== Attribute Summary ===
+        
+|| xs:string || `type` ||   ||
+
+=== Attribute Detail ===
+      
+
+==== type ====
+
+      
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CStrokeDetail.html StrokeDetail]
+----
+    
+----
+        

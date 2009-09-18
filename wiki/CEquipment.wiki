@@ -1,0 +1,73 @@
+#summary Golf Markup Language Documentation: complexType Equipment.
+
+== Name ==
+
+Equipment (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--Equipment (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Descriptive elements for golf equipment. Golf clubs should be described using the GolfClub type.
+			Other pieces of golf equipment should use the Equipment type: Golf bags, ball, apparel, training aids...
+			A attribute named type help describe the equipment.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  type = [SEquipmentTypeEnum.html EquipmentTypeEnum.html]>  (name, manufacturer, model, submodel?, serial?  )</...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| xs:string || manufacturer ||  					Manufacturer of equipment.				 ||
+|| xs:string || model ||  					Model of equipment.				 ||
+|| xs:string || name ||  					Name or description of equipment.				 ||
+|| xs:string || serial ||  					Serial number of equipment.				 ||
+|| xs:string || submodel ||  					Submodel or type of equipment.				 ||      
+
+=== Attribute Summary ===
+        
+|| [SEquipmentTypeEnum.html golfml:EquipmentTypeEnum] || `type` ||  				Type of piece of equipment to organise them in categories: Training devices, clubs, balls...			 ||
+
+=== Attribute Detail ===
+      
+
+==== type ====
+
+      
+				Type of piece of equipment to organise them in categories: Training devices, clubs, balls...
+			
+=====  Type: =====
+
+          [SEquipmentTypeEnum.html golfml:EquipmentTypeEnum]
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CEquipmentList.html EquipmentList], [CGolfBag.html GolfBag]
+----
+    
+----
+        

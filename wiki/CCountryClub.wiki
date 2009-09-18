@@ -1,0 +1,54 @@
+#summary Golf Markup Language Documentation: complexType CountryClub.
+
+== Name ==
+
+CountryClub (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--CountryClub (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			A country-club is a place where we can find one or more golf courses at the same location.
+			Examples are your municipal golf course, a 9 hole pitch and putt, a 36 or more hole golf courses,
+			golf resorts, etc.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...>  (name, address, contact`*`, amenety`*`, note`*`, media`*`, golf-course+, version`*`  )</...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [CAddress.html golfml:Address] || [CAddress.html address] ||  					Address of the country club or golf course.				 ||
+|| [CAmenety.html golfml:Amenety] || [CAmenety.html amenety] ||  Amenety available at the contry club. ||
+|| [CContact.html golfml:Contact] || [CContact.html contact] ||  Contact for the golf course. ||
+|| [CGolfCourse.html golfml:GolfCourse] || [CGolfCourse.html golf-course] ||  					Description of one golf course at the country club.				 ||
+|| [CMedia.html golfml:Media] || [CMedia.html media] ||  Media for the country club. ||
+|| xs:string || name ||  					Name of the country club.				 ||
+|| [CNote.html golfml:Note] || [CNote.html note] ||  					Note about the country club.				 ||
+|| [CVersion.html golfml:Version] || [CVersion.html version] ||   ||
+
+===  Local Usage ===
+
+    	[Egolfml.html golfml]
+----
+    
+----
+        

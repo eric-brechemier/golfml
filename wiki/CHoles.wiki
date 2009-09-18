@@ -1,0 +1,45 @@
+#summary Golf Markup Language Documentation: complexType Holes.
+
+== Name ==
+
+Holes (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--Holes (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			The Holes element groups 1 to 18 Hole descriptions.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...>  hole{0,18}  </...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [CHole.html golfml:Hole] || [CHole.html hole] ||  					Collection of 1 to 18 holes of golf.				 ||
+
+===  Local Usage ===
+
+    	[CGolfCourse.html GolfCourse]
+----
+    
+----
+        

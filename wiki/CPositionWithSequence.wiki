@@ -1,0 +1,70 @@
+#summary Golf Markup Language Documentation: complexType PositionWithSequence.
+
+== Name ==
+
+PositionWithSequence (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--[CPosition.html Position] (restriction)
+       |
+       +--PositionWithSequence (extension)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Coordinate of a point in a list of points (polygon).
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  
+            *number = xs:nonNegativeInteger*
+          >  (position-gps | position-other) </...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [CPositionGPS.html golfml:PositionGPS] || [CPositionGPS.html position-gps] ||  					GPS coordinate of a point.				 ||
+|| [CRoomForExtension.html golfml:RoomForExtension] || [CRoomForExtension.html position-other] ||  					Coordinate of a point in an arbitraty unit system.				 ||      
+
+=== Attribute Summary ===
+        
+|| xs:nonNegativeInteger || `number` ||   ||
+
+=== Attribute Detail ===
+      
+
+==== number ====
+
+      
+=====  Type: =====
+
+          xs:nonNegativeInteger
+=====  Use: =====
+        required
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CAreaOfInterest.html AreaOfInterest]
+----
+    
+----
+        

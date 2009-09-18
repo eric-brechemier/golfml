@@ -1,0 +1,68 @@
+#summary Golf Markup Language Documentation: complexType Note.
+
+== Name ==
+
+Note (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--Note (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Generic type for addition of comments and/or rating.
+			The text of the note is localised to a xml language.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  rating = [SRating.html Rating.html]>  comment+  </...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [CLocalisedText.html golfml:LocalisedText] || [CLocalisedText.html comment] ||  					Localised, textual comment about the parent entitiy.				 ||      
+
+=== Attribute Summary ===
+        
+|| [SRating.html golfml:Rating] || `rating` ||  Simple rating of the parent entitiy. ||
+
+=== Attribute Detail ===
+      
+
+==== rating ====
+
+      
+				Simple rating of the parent entitiy. Always optional.
+			
+=====  Type: =====
+
+          [SRating.html golfml:Rating]
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CCountryClub.html CountryClub], [CGolfCourse.html GolfCourse], [CHole.html Hole], [CPlayer.html Player], [CStrokeDetail.html StrokeDetail]
+----
+    
+----
+        

@@ -1,0 +1,87 @@
+#summary Golf Markup Language Documentation: complexType Hole.
+
+== Name ==
+
+Hole (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--Hole (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Description of a hole on a course: Media (photographs, videos, sketches...), notes and/or placemarks.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  name = xs:string  
+            *number = [SOneToEighteen.html OneToEighteen.html]*
+          >  (media | note | placemarks)`*` </...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [CMedia.html golfml:Media] || [CMedia.html media] ||  					Associated media: Picture, video, document, link...				 ||
+|| [CNote.html golfml:Note] || [CNote.html note] ||  					Localised note or comment about the hole.				 ||
+|| [CPlacemarks.html golfml:Placemarks] || [CPlacemarks.html placemarks] ||  					List of places worth of interest on the hole.				 ||      
+
+=== Attribute Summary ===
+        
+|| xs:string || `name` ||  Name of hole. ||
+|| [SOneToEighteen.html golfml:OneToEighteen] || `number` ||  Hole number. ||
+
+=== Attribute Detail ===
+      
+
+==== name ====
+
+      
+				Name of hole. Some golf courses name all holes on a course.
+			
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+==== number ====
+
+      
+				Hole number. Mandatory.
+			
+=====  Type: =====
+
+          [SOneToEighteen.html golfml:OneToEighteen]
+=====  Use: =====
+        required
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CHoles.html Holes]
+----
+    
+----
+        

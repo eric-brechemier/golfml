@@ -1,0 +1,83 @@
+#summary Golf Markup Language Documentation: element golfml.
+
+== Name ==
+
+golfml (element)
+
+  	
+
+===  Documentation ===
+        
+			golfml is the main element of the language. It is the unique element exposed for reuse.
+			A golfml element can contain any number of the following elements:
+			* country-club: To describe a country club, golf course, tee length...
+			* player: To store a player's golf carrier: Scorecards, rounds played, statistics...
+			* application: To store  application specific items not relevant to country clubs or players such
+						 as application preferences, etc.
+			* version: Any comment or note about the version of the golfml document.
+		
+				Primary key to uniquely identify a country club world wide.
+			
+				Primary key to uniquely identify a set of tees world wide.
+			
+				Primary key to uniquely identify a golfer.
+			
+	   			Primary key to uniquely identify a golf bag of a player.
+	   		
+	   			Primary key to uniquely identify a golf club.
+	   		
+	   			Key to uniquely identify an application.
+	   		
+	   			Reference to a player in the 2,3,4 some.
+	   		
+	   			Reference to set of tees used for the round of golf.
+	   			Note: The set of tees used unambiguously identify the country club and the golf course. 
+	   		
+				Reference to a golf bag used in a round.
+			
+				Reference to a golf club in the bag.
+			
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <golfml  version = xs:string>  (country-club | player | application | version)`*` </golfml>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [CApplication.html golfml:Application] || [CApplication.html application] ||  						Room for non-golfml application storage.					 ||
+|| [CCountryClub.html golfml:CountryClub] || [CCountryClub.html country-club] ||  						Country club defined and used in this document.					 ||
+|| [CPlayer.html golfml:Player] || [CPlayer.html player] ||  						Player  in this document.					 ||
+|| [CVersion.html golfml:Version] || [CVersion.html version] ||  						Room for version information about the file.					 ||      
+
+=== Attribute Summary ===
+        
+|| xs:string || `version` ||  Version of the golfml language used. ||
+
+=== Attribute Detail ===
+      
+
+==== version ====
+
+      
+				   Version of the golfml language used. Optional, in which case the latest version is used.
+				   It is advised to always specify the version.
+			   
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+----
+        

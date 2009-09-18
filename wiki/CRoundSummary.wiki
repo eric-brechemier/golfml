@@ -1,0 +1,50 @@
+#summary Golf Markup Language Documentation: complexType RoundSummary.
+
+== Name ==
+
+RoundSummary (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--RoundSummary (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Stores denormalized score for the round of golf.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...>  (strokes, points?, putts?, money?, penalties?, statistic`*`  )</...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| xs:nonNegativeInteger || money ||  					Denormalisation: Total money earned or loss during the round of golf.				 ||
+|| [CPenalty.html golfml:Penalty] || [CPenalty.html penalties] ||  					Denormalisation: Total number of penalty strokes during the round of golf.				 ||
+|| xs:nonNegativeInteger || points ||  					Denormalisation: Total number of points for the round of golf.				 ||
+|| xs:nonNegativeInteger || putts ||  					Denormalisation: Total number of putts for the round of golf.				 ||
+|| [CStatisticValue.html golfml:StatisticValue] || [CStatisticValue.html statistic] ||  					Denormalisation: Statistic for the round of golf.				 ||
+|| xs:positiveInteger || strokes ||  					Denormalisation: Total number of strokes for the round of golf.				 ||
+
+===  Local Usage ===
+
+    	[CScorecard.html Scorecard]
+----
+    
+----
+        

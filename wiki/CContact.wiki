@@ -1,0 +1,88 @@
+#summary Golf Markup Language Documentation: complexType Contact.
+
+== Name ==
+
+Contact (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--Contact (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Contact type for country-club and players.
+			The contact has a attribute named type to help identify the contact in a list.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  other = xs:string  type = [SContactTypeEnum.html ContactTypeEnum.html]>  (name? ; phone? ; email? ; website?) </...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| xs:string || email ||  					Electronic mail address of contact.				 ||
+|| xs:string || name ||  					Name or description of contact.				 ||
+|| [SPhoneNumber.html golfml:PhoneNumber] || [SPhoneNumber.html phone] ||  Telephone number of contact. ||
+|| xs:anyURI || website ||  					Internet web site URL of contact.				 ||      
+
+=== Attribute Summary ===
+        
+|| xs:string || `other` ||  				Alternate value for an attribute.			 ||
+|| [SContactTypeEnum.html golfml:ContactTypeEnum] || `type` ||  Qualification of a contact. ||
+
+=== Attribute Detail ===
+      
+
+==== other ====
+
+      
+				Alternate value for an attribute.
+			
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+==== type ====
+
+      
+				Qualification of a contact. For country clubs, the qualification can be the reservation desk, the bar, the corporate facility's main number...
+				For player, the contact type can be his or her home, work or mobile telephone number, home or work address...
+			
+=====  Type: =====
+
+          [SContactTypeEnum.html golfml:ContactTypeEnum]
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CCountryClub.html CountryClub], [CPlayer.html Player]
+----
+    
+----
+        

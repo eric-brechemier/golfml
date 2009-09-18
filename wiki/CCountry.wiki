@@ -1,0 +1,64 @@
+#summary Golf Markup Language Documentation: complexType Country.
+
+== Name ==
+
+Country (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--Country (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Country name in address element.
+			A country element must include an unambiguous country ISO 3166 2 letter code.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  
+            *code = [SISO3166CountryCodeEnum.html ISO3166CountryCodeEnum.html]*
+          >string</...>
+}}}
+----
+          
+
+=== Attribute Summary ===
+        
+|| [SISO3166CountryCodeEnum.html golfml:ISO3166CountryCodeEnum] || `code` ||   ||
+
+=== Attribute Detail ===
+      
+
+==== code ====
+
+      
+=====  Type: =====
+
+          [SISO3166CountryCodeEnum.html golfml:ISO3166CountryCodeEnum]
+=====  Use: =====
+        required
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CAddress.html Address]
+----
+    
+----
+        

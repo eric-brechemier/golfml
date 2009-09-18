@@ -1,0 +1,35 @@
+#summary Golf Markup Language Documentation: simpleType GolfingDirectionEnum.
+
+== Name ==
+
+GolfingDirectionEnum (simpleType)
+
+  	
+
+===  Super Types ===
+{{{
+string
+  |
+  +--GolfingDirectionEnum (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			List of values to specify golfing direction on a 18 hole golf course.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          ('front' | 'back')
+}}}
+----
+    
+----
+        

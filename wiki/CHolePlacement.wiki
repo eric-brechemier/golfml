@@ -1,0 +1,46 @@
+#summary Golf Markup Language Documentation: complexType HolePlacement.
+
+== Name ==
+
+HolePlacement (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--HolePlacement (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+				Description of the placement on the hole on the surface of the green.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...>  (distances | coordinates) </...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [CRoomForExtension.html golfml:RoomForExtension] || [CRoomForExtension.html coordinates] ||  Description of the placement on the hole on the surface of the green with an alternate localisation system. ||
+|| [CHolePlacementWithDistances.html golfml:HolePlacementWithDistances] || [CHolePlacementWithDistances.html distances] ||  					Position of hole relative to the edges of the green.				 ||
+
+===  Local Usage ===
+
+    	[CHolePlacements.html HolePlacements]
+----
+    
+----
+        

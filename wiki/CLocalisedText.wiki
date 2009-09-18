@@ -1,0 +1,63 @@
+#summary Golf Markup Language Documentation: complexType LocalisedText.
+
+== Name ==
+
+LocalisedText (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--LocalisedText (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Simple type to add language information on comments and notes.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  lang = xs:language : en>string</...>
+}}}
+----
+          
+
+=== Attribute Summary ===
+        
+|| xs:language || `lang` ||   ||
+
+=== Attribute Detail ===
+      
+
+==== lang ====
+
+      
+=====  Type: =====
+
+          xs:language
+=====  Default: =====
+		en
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CNote.html Note]
+----
+    
+----
+        

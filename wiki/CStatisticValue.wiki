@@ -1,0 +1,63 @@
+#summary Golf Markup Language Documentation: complexType StatisticValue.
+
+== Name ==
+
+StatisticValue (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--StatisticValue (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+				Numeric value for a statistic. The name of the statistics is mandatory.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  
+            *name = xs:string*
+          >double</...>
+}}}
+----
+          
+
+=== Attribute Summary ===
+        
+|| xs:string || `name` ||   ||
+
+=== Attribute Detail ===
+      
+
+==== name ====
+
+      
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        required
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CRoundSummary.html RoundSummary], [CStatistics.html Statistics]
+----
+    
+----
+        

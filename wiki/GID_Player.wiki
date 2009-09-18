@@ -1,0 +1,37 @@
+#summary Golf Markup Language Documentation: group ID_Player.
+
+== Name ==
+
+ID_Player (group)
+
+  	
+
+===  Documentation ===
+        
+			Identifying elements for a player, used in foreign keys.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+            (player.name, player.date-of-birth  )
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| xs:date || player.date-of-birth ||   ||
+|| xs:string || player.name ||   ||
+
+===  Local Usage ===
+
+    	[GID_GolfBag.html ID_GolfBag], [CREF_Player.html REF_Player]
+----
+    
+----
+        

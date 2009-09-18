@@ -1,0 +1,41 @@
+#summary Golf Markup Language Documentation: simpleType Angle90.
+
+== Name ==
+
+Angle90 (simpleType)
+
+  	
+
+===  Super Types ===
+{{{
+double
+  |
+  +--Angle90 (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+				Angle between -90 and 90 degrees.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          inclusive lower bound: -90inclusive upper bound: 90.0
+}}}
+----
+    
+
+===  Local Usage ===
+
+    	[CGolfClub.html GolfClub], [CPositionGPS.html PositionGPS]
+----
+    
+----
+        

@@ -1,0 +1,72 @@
+#summary Golf Markup Language Documentation: complexType Shaft.
+
+== Name ==
+
+Shaft (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--Shaft (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Descriptive elements for the shaft of a golf club.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  type = [SGolfClubTypeEnum.html GolfClubTypeEnum.html]>  (manufacturer, model, submodel?, length?, weight?, tip?  )</...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [CLengthWithUnits.html golfml:LengthWithUnits] || [CLengthWithUnits.html length] ||  					Length of a shaft.				 ||
+|| xs:string || manufacturer ||  					Manufacturer of a shaft.				 ||
+|| xs:string || model ||  					Model of a shaft.				 ||
+|| xs:string || submodel ||  					Sub-model or type of a model of a shaft.				 ||
+|| xs:string || tip ||  					Type of tip of the shaft.				 ||
+|| xs:float || weight ||  					Weight of a shaft.				 ||      
+
+=== Attribute Summary ===
+        
+|| [SGolfClubTypeEnum.html golfml:GolfClubTypeEnum] || `type` ||  				Type of golf club for the shaft.			 ||
+
+=== Attribute Detail ===
+      
+
+==== type ====
+
+      
+				Type of golf club for the shaft.
+			
+=====  Type: =====
+
+          [SGolfClubTypeEnum.html golfml:GolfClubTypeEnum]
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CGolfClub.html GolfClub]
+----
+    
+----
+        

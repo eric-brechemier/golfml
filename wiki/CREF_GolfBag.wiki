@@ -1,0 +1,42 @@
+#summary Golf Markup Language Documentation: complexType REF_GolfBag.
+
+== Name ==
+
+REF_GolfBag (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--REF_GolfBag (restriction)
+}}}
+----
+    
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...>  ((player.name, player.date-of-birth), player.golf-bag.name  )</...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| xs:date || player.date-of-birth ||   ||
+|| xs:string || player.golf-bag.name ||   ||
+|| xs:string || player.name ||   ||
+
+===  Local Usage ===
+
+    	[CGolfBag.html GolfBag], [CScorecard.html Scorecard]
+----
+    
+----
+        

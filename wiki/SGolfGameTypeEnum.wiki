@@ -1,0 +1,41 @@
+#summary Golf Markup Language Documentation: simpleType GolfGameTypeEnum.
+
+== Name ==
+
+GolfGameTypeEnum (simpleType)
+
+  	
+
+===  Super Types ===
+{{{
+string
+  |
+  +--GolfGameTypeEnum (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+				Game played during the round of golf.
+			
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          ('stroke-play' | 'match-play' | 'stableford' | 'bingo-bango-bongo' | 'skin' | 'other')
+}}}
+----
+    
+
+===  Local Usage ===
+
+    	[CGolfGame.html GolfGame]
+----
+    
+----
+        

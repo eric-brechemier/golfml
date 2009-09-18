@@ -1,0 +1,63 @@
+#summary Golf Markup Language Documentation: complexType Altitude.
+
+== Name ==
+
+Altitude (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--Altitude (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+				Altitude of a point. Use mode attribute to determine semantics.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  
+            *mode = [SAltitudeModeEnum.html AltitudeModeEnum.html]*
+          >double</...>
+}}}
+----
+          
+
+=== Attribute Summary ===
+        
+|| [SAltitudeModeEnum.html golfml:AltitudeModeEnum] || `mode` ||   ||
+
+=== Attribute Detail ===
+      
+
+==== mode ====
+
+      
+=====  Type: =====
+
+          [SAltitudeModeEnum.html golfml:AltitudeModeEnum]
+=====  Use: =====
+        required
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CPositionGPS.html PositionGPS]
+----
+    
+----
+        

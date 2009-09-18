@@ -1,0 +1,66 @@
+#summary Golf Markup Language Documentation: complexType HolePlacements.
+
+== Name ==
+
+HolePlacements (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--HolePlacements (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+				Description of the placement on holes on greens.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  date = xs:date>  (name, hole-placement{1,18}  )</...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [CHolePlacement.html golfml:HolePlacement] || [CHolePlacement.html hole-placement] ||  					Placement of a hole on a green.				 ||
+|| xs:string || name ||  					Identifying name for hole placement.				 ||      
+
+=== Attribute Summary ===
+        
+|| xs:date || `date` ||   ||
+
+=== Attribute Detail ===
+      
+
+==== date ====
+
+      
+=====  Type: =====
+
+          xs:date
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CRound.html Round]
+----
+    
+----
+        

@@ -1,0 +1,106 @@
+#summary Golf Markup Language Documentation: complexType Application.
+
+== Name ==
+
+Application (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--Application (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			The application element is provided to store application private data that cannot be stored in golfml.
+			The content of an application element is ignored by other golfml applications.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  
+            *dotname = xs:string*
+            name = xs:string  version = xs:string>  (
+    _any element from any namespace_
+    )  </...>
+}}}
+----
+          
+
+=== Attribute Summary ===
+        
+|| xs:string || `dotname` ||  Name of the application in a reverse internet host name or a Java package and class style. ||
+|| xs:string || `name` ||  Name of the application that stores data in the application container. ||
+|| xs:string || `version` ||  Version of the application that stored data in this container. ||
+
+=== Attribute Detail ===
+      
+
+==== dotname ====
+
+      
+				Name of the application in a reverse internet host name or a Java package and class style. Used by the application only.
+				Mandatory. Must be unique among all application names stored in an golfml document.
+				
+				Example: "com.company.golf.scorecardapp".
+			
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        required
+=====  Form: =====
+		unqualified
+----
+  
+
+==== name ====
+
+      
+				Name of the application that stores data in the application container.
+				Example: "GolfML Scorecard Application".
+			
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+==== version ====
+
+      
+				Version of the application that stored data in this container. Used by the application only.
+
+				Example: "1.2.3456".
+			
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[Egolfml.html golfml]
+----
+    
+----
+        

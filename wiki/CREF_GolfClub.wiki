@@ -1,0 +1,43 @@
+#summary Golf Markup Language Documentation: complexType REF_GolfClub.
+
+== Name ==
+
+REF_GolfClub (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--REF_GolfClub (restriction)
+}}}
+----
+    
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...>  (golf-club.manufacturer, golf-club.model, golf-club.submodel, golf-club.number  )</...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| xs:string || golf-club.manufacturer ||   ||
+|| xs:string || golf-club.model ||   ||
+|| xs:string || golf-club.number ||   ||
+|| xs:string || golf-club.submodel ||   ||
+
+===  Local Usage ===
+
+    	[CGolfBag.html GolfBag]
+----
+    
+----
+        

@@ -1,0 +1,41 @@
+#summary Golf Markup Language Documentation: simpleType OneToEighteen.
+
+== Name ==
+
+OneToEighteen (simpleType)
+
+  	
+
+===  Super Types ===
+{{{
+positiveInteger
+  |
+  +--OneToEighteen (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Type to to restrict a value to an integer between 1 and 18.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          inclusive lower bound: 1inclusive upper bound: 18
+}}}
+----
+    
+
+===  Local Usage ===
+
+    	[CHole.html Hole], [CHolePlacementWithDistances.html HolePlacementWithDistances], [CHoleScore.html HoleScore], [CTee.html Tee]
+----
+    
+----
+        

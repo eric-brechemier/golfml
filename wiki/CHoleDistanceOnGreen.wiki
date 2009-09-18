@@ -1,0 +1,67 @@
+#summary Golf Markup Language Documentation: complexType HoleDistanceOnGreen.
+
+== Name ==
+
+HoleDistanceOnGreen (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--HoleDistanceOnGreen (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+				Distance from edge of green. From attribute specify which edge the distance is measured from.
+				Unit attribute can be used to specify alternate unit system such as 'paces'.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  
+            *from = [SOrientationEnum.html OrientationEnum.html]*
+          >LengthWithUnits</...>
+}}}
+----
+          
+
+=== Attribute Summary ===
+        
+|| [SOrientationEnum.html golfml:OrientationEnum] || `from` ||  Edge of green the distance is taken from. ||
+
+=== Attribute Detail ===
+      
+
+==== from ====
+
+      
+						Edge of green the distance is taken from.
+						Mandatory since it is not possible to determinite which where the distance is taken from without this information.
+					
+=====  Type: =====
+
+          [SOrientationEnum.html golfml:OrientationEnum]
+=====  Use: =====
+        required
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CHolePlacementWithDistances.html HolePlacementWithDistances]
+----
+    
+----
+        

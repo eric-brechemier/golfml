@@ -1,0 +1,41 @@
+#summary Golf Markup Language Documentation: simpleType GolfClubTypeEnum.
+
+== Name ==
+
+GolfClubTypeEnum (simpleType)
+
+  	
+
+===  Super Types ===
+{{{
+string
+  |
+  +--GolfClubTypeEnum (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+				List of types of golf clubs.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          ('wood' | 'iron' | 'wedge' | 'putter' | 'driver' | 'hybrid' | 'utility' | 'other')
+}}}
+----
+    
+
+===  Local Usage ===
+
+    	[CGolfClub.html GolfClub], [CShaft.html Shaft]
+----
+    
+----
+        

@@ -1,0 +1,77 @@
+#summary Golf Markup Language Documentation: complexType GolfGame.
+
+== Name ==
+
+GolfGame (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--GolfGame (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Game played during the round of golf.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  other = xs:string  type = [SGolfGameTypeEnum.html GolfGameTypeEnum.html]>string</...>
+}}}
+----
+          
+
+=== Attribute Summary ===
+        
+|| xs:string || `other` ||  				Alternate value for an attribute.			 ||
+|| [SGolfGameTypeEnum.html golfml:GolfGameTypeEnum] || `type` ||   ||
+
+=== Attribute Detail ===
+      
+
+==== other ====
+
+      
+				Alternate value for an attribute.
+			
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+==== type ====
+
+      
+=====  Type: =====
+
+          [SGolfGameTypeEnum.html golfml:GolfGameTypeEnum]
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CRound.html Round]
+----
+    
+----
+        

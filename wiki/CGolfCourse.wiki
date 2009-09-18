@@ -1,0 +1,51 @@
+#summary Golf Markup Language Documentation: complexType GolfCourse.
+
+== Name ==
+
+GolfCourse (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--GolfCourse (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+			Description of a course: Mmedia (photographs, videos, sketches...), notes, holes and tee-set.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...>  (name, architect?, (media | note)`*` , holes?, tee-set+, version`*`  )</...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| xs:string || architect ||  					Architect(s) of the golf course.				 ||
+|| [CHoles.html golfml:Holes] || [CHoles.html holes] ||  					Description of the individual holes.				 ||
+|| [CMedia.html golfml:Media] || [CMedia.html media] ||  						Medias associated with the golf course.					 ||
+|| xs:string || name ||  Name of a tee set. ||
+|| [CNote.html golfml:Note] || [CNote.html note] ||  						Notes and comments associated with the golf course.					 ||
+|| [CTees.html golfml:Tees] || [CTees.html tee-set] ||  					Description of a tee set for the golf course.				 ||
+|| [CVersion.html golfml:Version] || [CVersion.html version] ||  					Records history of the golf course.				 ||
+
+===  Local Usage ===
+
+    	[CCountryClub.html CountryClub]
+----
+    
+----
+        

@@ -1,0 +1,84 @@
+#summary Golf Markup Language Documentation: complexType Statistics.
+
+== Name ==
+
+Statistics (complexType)
+
+  	
+
+===  Super Types ===
+{{{
+anyType
+  |
+  +--Statistics (restriction)
+}}}
+----
+    
+
+===  Documentation ===
+        
+				List of statistics computed over the same type.
+		
+  	
+===  Properties ===
+
+  	This component is not nillable.
+---- 	
+        
+===  Model ===
+{{{
+          <...  other = xs:string  
+            *type = [SStatisticCollectionTypesEnum.html StatisticCollectionTypesEnum.html]*
+          >  (collection, value+  )</...>
+}}}
+----
+    
+
+=== Nested Element Summary ===
+        
+|| [CCollection.html golfml:Collection] || [CCollection.html collection] ||  Information regarding the collection of the statistic. ||
+|| [CStatisticValue.html golfml:StatisticValue] || [CStatisticValue.html value] ||  						Value of a statistic computed for the supplied collection type.					 ||      
+
+=== Attribute Summary ===
+        
+|| xs:string || `other` ||  				Alternate value for an attribute.			 ||
+|| [SStatisticCollectionTypesEnum.html golfml:StatisticCollectionTypesEnum] || `type` ||   ||
+
+=== Attribute Detail ===
+      
+
+==== other ====
+
+      
+				Alternate value for an attribute.
+			
+=====  Type: =====
+
+          xs:string
+=====  Use: =====
+        optional
+=====  Form: =====
+		unqualified
+----
+  
+
+==== type ====
+
+      
+=====  Type: =====
+
+          [SStatisticCollectionTypesEnum.html golfml:StatisticCollectionTypesEnum]
+=====  Use: =====
+        required
+=====  Form: =====
+		unqualified
+----
+  
+
+===  Local Usage ===
+
+    	[CPlayer.html Player]
+----
+    
+----
+        
