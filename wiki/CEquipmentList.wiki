@@ -26,9 +26,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...>  (golf-club | equipment)`*` </...>
-}}}
+
+	<...>  ([CGolfClub golf-club] | [CEquipment equipment])`*` </...>
+
 ----
     
 

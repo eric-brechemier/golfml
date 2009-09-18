@@ -29,9 +29,9 @@ string
 ---- 	
         
 ===  Model ===
-{{{
-          ('USGA' | 'EGA' | 'other')
-}}}
+
+	('USGA' | 'EGA' | 'other')
+
 ----
     
 

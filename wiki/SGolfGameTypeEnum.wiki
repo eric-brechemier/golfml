@@ -26,9 +26,9 @@ string
 ---- 	
         
 ===  Model ===
-{{{
-          ('stroke-play' | 'match-play' | 'stableford' | 'bingo-bango-bongo' | 'skin' | 'other')
-}}}
+
+	('stroke-play' | 'match-play' | 'stableford' | 'bingo-bango-bongo' | 'skin' | 'other')
+
 ----
     
 

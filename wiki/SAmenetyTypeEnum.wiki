@@ -26,9 +26,9 @@ string
 ---- 	
         
 ===  Model ===
-{{{
-          ('practice' | 'store' | 'food' | 'corporate' | 'golfers' | 'bathroom' | 'water' | 'other')
-}}}
+
+	('practice' | 'store' | 'food' | 'corporate' | 'golfers' | 'bathroom' | 'water' | 'other')
+
 ----
     
 

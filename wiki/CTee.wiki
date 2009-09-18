@@ -26,9 +26,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  number = [SOneToEighteen OneToEighteen.html]>  (par, handicap-stroke, length{0,2}  )</...>
-}}}
+
+	<...  number = [SOneToEighteen OneToEighteen]>  ([SPar par], [SHandicapStroke handicap-stroke], [CLengthWithUnits length]{0,2}  )</...>
+
 ----
     
 

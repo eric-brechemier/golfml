@@ -26,9 +26,9 @@ string
 ---- 	
         
 ===  Model ===
-{{{
-          ('photograph' | 'video' | 'hole-fly-over' | 'hole-presentation' | 'hole-yardage' | 'yardage-book' | 'course-map' | 'google-earth' | 'other')
-}}}
+
+	('photograph' | 'video' | 'hole-fly-over' | 'hole-presentation' | 'hole-yardage' | 'yardage-book' | 'course-map' | 'google-earth' | 'other')
+
 ----
     
 

@@ -27,9 +27,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...>  (position-gps | position-other) </...>
-}}}
+
+	<...>  ([CPositionGPS position-gps] | [CRoomForExtension position-other]) </...>
+
 ----
     
 

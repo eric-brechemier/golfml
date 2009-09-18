@@ -28,9 +28,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...>  (tees, handicap?, handicap-strokes?, golf-bag-ref?, summary?, score  )</...>
-}}}
+
+	<...>  ([CREF_Tees tees], handicap?, handicap-strokes?, [CREF_GolfBag golf-bag-ref]?, [CRoundSummary summary]?, [CScore score]  )</...>
+
 ----
     
 

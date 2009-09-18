@@ -17,9 +17,9 @@
 ---- 	
         
 ===  Model ===
-{{{
-            ((player.name, player.date-of-birth), player.golf-bag.name  )
-}}}
+
+	  ((player.name, player.date-of-birth), player.golf-bag.name  )
+
 ----
     
 

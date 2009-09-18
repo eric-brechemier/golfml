@@ -41,9 +41,9 @@ string
 ---- 	
         
 ===  Model ===
-{{{
-          ('metric' | 'imperial')
-}}}
+
+	('metric' | 'imperial')
+
 ----
     
 ----

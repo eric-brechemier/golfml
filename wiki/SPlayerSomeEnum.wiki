@@ -26,9 +26,9 @@ string
 ---- 	
         
 ===  Model ===
-{{{
-          ('partner' | 'competitor')
-}}}
+
+	('partner' | 'competitor')
+
 ----
     
 

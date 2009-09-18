@@ -28,9 +28,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  type = xs:string>  (front-back, left-right  )?</...>
-}}}
+
+	<...  type = xs:string>  ([SStrokePrecisionValue front-back], [SStrokePrecisionValue left-right]  )?</...>
+
 ----
     
 

@@ -26,9 +26,9 @@ string
 ---- 	
         
 ===  Model ===
-{{{
-          ('short' | 'middle' | 'long')
-}}}
+
+	('short' | 'middle' | 'long')
+
 ----
     
 ----

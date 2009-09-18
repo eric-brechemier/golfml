@@ -32,9 +32,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  content-type = xs:string  other = xs:string  type = [SMediaTypeEnum MediaTypeEnum.html]>  (name, description?, (url | content)   )</...>
-}}}
+
+	<...  content-type = xs:string  other = xs:string  type = [SMediaTypeEnum MediaTypeEnum]>  (name, description?, (url | content)   )</...>
+
 ----
     
 

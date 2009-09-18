@@ -30,9 +30,9 @@ string
 ---- 	
         
 ===  Model ===
-{{{
-          ('round' | 'course' | 'duration' | 'other')
-}}}
+
+	('round' | 'course' | 'duration' | 'other')
+
 ----
     
 

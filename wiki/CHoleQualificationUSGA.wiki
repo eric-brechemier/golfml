@@ -26,9 +26,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...>  (rating ; slope) </...>
-}}}
+
+	<...>  ([SCourseRating rating] ; [SCourseSlope slope]) </...>
+
 ----
     
 

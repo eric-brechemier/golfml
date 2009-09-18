@@ -26,9 +26,9 @@ string
 ---- 	
         
 ===  Model ===
-{{{
-          ('none' | 'calm' | 'light breeze' | 'breeze' | 'strong breeze' | 'high wind' | 'storm' | 'other')
-}}}
+
+	('none' | 'calm' | 'light breeze' | 'breeze' | 'strong breeze' | 'high wind' | 'storm' | 'other')
+
 ----
     
 

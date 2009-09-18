@@ -30,9 +30,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  number = xs:nonNegativeInteger  other = xs:string  type = [SGolfCourseAreaTypeEnum GolfCourseAreaTypeEnum.html]>  (name, description?, position{2,*}  )</...>
-}}}
+
+	<...  number = xs:nonNegativeInteger  other = xs:string  type = [SGolfCourseAreaTypeEnum GolfCourseAreaTypeEnum]>  (name, description?, [CPositionWithSequence position]{2,*}  )</...>
+
 ----
     
 

@@ -26,9 +26,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...>  (name, value  )</...>
-}}}
+
+	<...>  (name, value  )</...>
+
 ----
     
 

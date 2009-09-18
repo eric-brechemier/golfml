@@ -26,9 +26,9 @@ double
 ---- 	
         
 ===  Model ===
-{{{
-          inclusive lower bound: -360inclusive upper bound: 360
-}}}
+
+	inclusive lower bound: -360inclusive upper bound: 360
+
 ----
     
 ----

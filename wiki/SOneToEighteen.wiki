@@ -26,9 +26,9 @@ positiveInteger
 ---- 	
         
 ===  Model ===
-{{{
-          inclusive lower bound: 1inclusive upper bound: 18
-}}}
+
+	inclusive lower bound: 1inclusive upper bound: 18
+
 ----
     
 

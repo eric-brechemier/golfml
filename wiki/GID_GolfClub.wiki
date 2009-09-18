@@ -17,9 +17,9 @@
 ---- 	
         
 ===  Model ===
-{{{
-            (golf-club.manufacturer, golf-club.model, golf-club.submodel, golf-club.number  )
-}}}
+
+	  (golf-club.manufacturer, golf-club.model, golf-club.submodel, golf-club.number  )
+
 ----
     
 

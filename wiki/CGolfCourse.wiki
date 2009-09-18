@@ -26,9 +26,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...>  (name, architect?, (media | note)`*` , holes?, tee-set+, version`*`  )</...>
-}}}
+
+	<...>  (name, architect?, ([CMedia media] | [CNote note])`*` , [CHoles holes]?, [CTees tee-set]+, [CVersion version]`*`  )</...>
+
 ----
     
 

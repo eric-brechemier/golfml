@@ -27,9 +27,9 @@ nonNegativeInteger
 ---- 	
         
 ===  Model ===
-{{{
-          inclusive upper bound: 5
-}}}
+
+	inclusive upper bound: 5
+
 ----
     
 

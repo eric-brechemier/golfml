@@ -27,9 +27,9 @@ string
 ---- 	
         
 ===  Model ===
-{{{
-          ('meters' | 'yards' | 'feet' | 'paces')
-}}}
+
+	('meters' | 'yards' | 'feet' | 'paces')
+
 ----
     
 

@@ -21,9 +21,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...>  (player.name, player.date-of-birth  )</...>
-}}}
+
+	<...>  (player.name, player.date-of-birth  )</...>
+
 ----
     
 

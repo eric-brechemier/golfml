@@ -26,11 +26,11 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  other = xs:string  
-            *type = [SStatisticCollectionTypesEnum StatisticCollectionTypesEnum.html]*
-          >  (collection, value+  )</...>
-}}}
+
+	<...  other = xs:string  
+            *type = [SStatisticCollectionTypesEnum StatisticCollectionTypesEnum]*
+          >  ([CCollection collection], [CStatisticValue value]+  )</...>
+
 ----
     
 

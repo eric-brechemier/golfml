@@ -26,9 +26,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  number = [SOneToEighteen OneToEighteen.html]>  (strokes, points?, putts?, money?, penalties?, stroke`*`, statistics?  )</...>
-}}}
+
+	<...  number = [SOneToEighteen OneToEighteen]>  (strokes, points?, putts?, money?, [CPenalty penalties]?, [CStrokeDetail stroke]`*`, [CHoleStatistics statistics]?  )</...>
+
 ----
     
 

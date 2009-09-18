@@ -26,9 +26,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...>  (fairway, green-in-regulation, driving-distance, approach-to-hole  )</...>
-}}}
+
+	<...>  (fairway, green-in-regulation, [CLengthWithUnits driving-distance], [CLengthWithUnits approach-to-hole]  )</...>
+
 ----
     
 

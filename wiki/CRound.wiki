@@ -27,9 +27,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...>  (hole-placement?, weather?, foursome?, game?, wager?, date, scorecard  )</...>
-}}}
+
+	<...>  ([CHolePlacements hole-placement]?, [CWeather weather]?, [CFourSome foursome]?, [CGolfGame game]?, [CRoomForExtension wager]?, date, [CScorecard scorecard]  )</...>
+
 ----
     
 

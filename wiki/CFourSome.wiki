@@ -26,9 +26,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...>  player-some{0,3}  </...>
-}}}
+
+	<...>  [CPlayerSome player-some]{0,3}  </...>
+
 ----
     
 

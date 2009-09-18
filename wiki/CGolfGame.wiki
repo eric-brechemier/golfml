@@ -26,9 +26,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  other = xs:string  type = [SGolfGameTypeEnum GolfGameTypeEnum.html]>string</...>
-}}}
+
+	<...  other = xs:string  type = [SGolfGameTypeEnum GolfGameTypeEnum]>[Sstring string]</...>
+
 ----
           
 

@@ -12,9 +12,9 @@
 ---- 	
         
 ===  Model ===
-{{{
-            other = xs:string
-}}}
+
+	  other = xs:string
+
 ----
           
 

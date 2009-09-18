@@ -27,9 +27,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  rule = xs:string>positiveInteger</...>
-}}}
+
+	<...  rule = xs:string>[SpositiveInteger positiveInteger]</...>
+
 ----
           
 

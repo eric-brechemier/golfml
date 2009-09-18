@@ -26,9 +26,9 @@ string
 ---- 	
         
 ===  Model ===
-{{{
-          ('club-house' | 'reception' | 'restaurant' | 'reservation' | 'management' | 'technical' | 'corporate' | 'home' | 'work' | 'mobile' | 'other')
-}}}
+
+	('club-house' | 'reception' | 'restaurant' | 'reservation' | 'management' | 'technical' | 'corporate' | 'home' | 'work' | 'mobile' | 'other')
+
 ----
     
 

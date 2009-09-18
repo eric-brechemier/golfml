@@ -29,11 +29,11 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  
-            *gender = [SGender Gender.html]*
-          >  (name, date-of-birth, current-handicap?, address`*`, contact`*`, home-country-club?, note?, media?, equipment-list?, golf-bag`*`, round`*`, statistics`*`  )</...>
-}}}
+
+	<...  
+            *gender = [SGender Gender]*
+          >  (name, date-of-birth, [CPlayerHandicap current-handicap]?, [CAddress address]`*`, [CContact contact]`*`, [CCountryClubChoice home-country-club]?, [CNote note]?, [CMedia media]?, [CEquipmentList equipment-list]?, [CGolfBag golf-bag]`*`, [CRound round]`*`, [CStatistics statistics]`*`  )</...>
+
 ----
     
 

@@ -26,9 +26,9 @@ string
 ---- 	
         
 ===  Model ===
-{{{
-          ('gentlemen' | 'ladies')
-}}}
+
+	('gentlemen' | 'ladies')
+
 ----
     
 

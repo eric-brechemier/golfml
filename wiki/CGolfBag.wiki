@@ -27,9 +27,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...>  (name, bag-ref?, (golf-club-ref | golf-club){1,14} , equipment`*`  )</...>
-}}}
+
+	<...>  (name, [CREF_GolfBag bag-ref]?, ([CREF_GolfClub golf-club-ref] | [CGolfClub golf-club]){1,14} , [CEquipment equipment]`*`  )</...>
+
 ----
     
 

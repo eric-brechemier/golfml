@@ -28,9 +28,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...>  (country ; municipality? ; postal-code ; region? ; street?) </...>
-}}}
+
+	<...>  ([CCountry country] ; municipality? ; postal-code ; region? ; street?) </...>
+
 ----
     
 

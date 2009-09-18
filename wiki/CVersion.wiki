@@ -27,9 +27,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  created = xs:dateTime  updated = xs:dateTime  version = xs:string>string</...>
-}}}
+
+	<...  created = xs:dateTime  updated = xs:dateTime  version = xs:string>[Sstring string]</...>
+
 ----
           
 

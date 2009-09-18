@@ -27,9 +27,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  rating = [SRating Rating.html]>  comment+  </...>
-}}}
+
+	<...  rating = [SRating Rating]>  [CLocalisedText comment]+  </...>
+
 ----
     
 

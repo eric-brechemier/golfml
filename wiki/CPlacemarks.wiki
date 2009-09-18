@@ -26,9 +26,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...>  (poi | aoi)`*` </...>
-}}}
+
+	<...>  ([CPointOfInterest poi] | [CAreaOfInterest aoi])`*` </...>
+
 ----
     
 

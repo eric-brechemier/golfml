@@ -27,11 +27,11 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  
-            *from = [SOrientationEnum OrientationEnum.html]*
-          >LengthWithUnits</...>
-}}}
+
+	<...  
+            *from = [SOrientationEnum OrientationEnum]*
+          >[SLengthWithUnits LengthWithUnits]</...>
+
 ----
           
 

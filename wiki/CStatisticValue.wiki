@@ -26,11 +26,11 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  
+
+	<...  
             *name = xs:string*
-          >double</...>
-}}}
+          >[Sdouble double]</...>
+
 ----
           
 

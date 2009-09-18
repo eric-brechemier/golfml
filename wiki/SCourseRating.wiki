@@ -26,9 +26,9 @@ float
 ---- 	
         
 ===  Model ===
-{{{
-          inclusive lower bound: 3inclusive upper bound: 90
-}}}
+
+	inclusive lower bound: 3inclusive upper bound: 90
+
 ----
     
 

@@ -20,9 +20,9 @@
 ---- 	
         
 ===  Model ===
-{{{
-            content-type = xs:string  other = xs:string  type = [SMediaTypeEnum MediaTypeEnum.html]
-}}}
+
+	  content-type = xs:string  other = xs:string  type = [SMediaTypeEnum MediaTypeEnum]
+
 ----
           
 

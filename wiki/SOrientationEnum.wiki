@@ -28,9 +28,9 @@ string
 ---- 	
         
 ===  Model ===
-{{{
-          ('front' | 'middle' | 'back' | 'left' | 'center' | 'right')
-}}}
+
+	('front' | 'middle' | 'back' | 'left' | 'center' | 'right')
+
 ----
     
 

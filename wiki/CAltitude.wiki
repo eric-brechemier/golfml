@@ -26,11 +26,11 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  
-            *mode = [SAltitudeModeEnum AltitudeModeEnum.html]*
-          >double</...>
-}}}
+
+	<...  
+            *mode = [SAltitudeModeEnum AltitudeModeEnum]*
+          >[Sdouble double]</...>
+
 ----
           
 

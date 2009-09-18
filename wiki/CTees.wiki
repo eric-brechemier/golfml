@@ -26,11 +26,11 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  colour = xs:string  date-from = xs:date  date-to = xs:date  gender = [SGolfingGender GolfingGender.html]  
+
+	<...  colour = xs:string  date-from = xs:date  date-to = xs:date  gender = [SGolfingGender GolfingGender]  
             *name = xs:string*
-            units = [SUnitOfLengthWithUnitsEnum UnitOfLengthWithUnitsEnum.html]>  (qualification, tee{1,18}, version`*`  )</...>
-}}}
+            units = [SUnitOfLengthWithUnitsEnum UnitOfLengthWithUnitsEnum]>  ([CHoleQualification qualification], [CTee tee]{1,18}, [CVersion version]`*`  )</...>
+
 ----
     
 

@@ -27,13 +27,13 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  
+
+	<...  
             *dotname = xs:string*
             name = xs:string  version = xs:string>  (
     _any element from any namespace_
     )  </...>
-}}}
+
 ----
           
 

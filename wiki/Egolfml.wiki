@@ -44,9 +44,9 @@
 ---- 	
         
 ===  Model ===
-{{{
-          <golfml  version = xs:string>  (country-club | player | application | version)`*` </golfml>
-}}}
+
+	<[Egolfml golfml]  version = xs:string>  ([CCountryClub country-club] | [CPlayer player] | [CApplication application] | [CVersion version])`*` [Egolfml </golfml>]
+
 ----
     
 

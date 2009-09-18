@@ -26,9 +26,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  drop = xs:boolean  number = xs:nonNegativeInteger>  (position?, time?, golf-club?, landing?, precision?, distance?, distance-to-hole?, comment?  )</...>
-}}}
+
+	<...  drop = xs:boolean  number = xs:nonNegativeInteger>  ([CPosition position]?, time?, [CGolfClub golf-club]?, [SGolfCourseAreaTypeEnum landing]?, [CStrokePrecision precision]?, distance?, distance-to-hole?, [CNote comment]?  )</...>
+
 ----
     
 

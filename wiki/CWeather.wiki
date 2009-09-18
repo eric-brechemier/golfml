@@ -29,9 +29,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  other = xs:string  wind = [SWindEnum WindEnum.html]>string</...>
-}}}
+
+	<...  other = xs:string  wind = [SWindEnum WindEnum]>[Sstring string]</...>
+
 ----
           
 

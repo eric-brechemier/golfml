@@ -21,9 +21,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...>  (country-club.name, country-club.address.country.iso3166, country-club.address.postal-code, country-club.golf-course.name  )</...>
-}}}
+
+	<...>  (country-club.name, [SISO3166CountryCodeEnum country-club.address.country.iso3166], country-club.address.postal-code, country-club.golf-course.name  )</...>
+
 ----
     
 

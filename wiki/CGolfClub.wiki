@@ -26,11 +26,11 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  
-            *type = [SGolfClubTypeEnum GolfClubTypeEnum.html]*
-          >  (manufacturer, model, submodel, number?, serial?, loft?, lie?, weight?, swing-weight?, shaft?  )</...>
-}}}
+
+	<...  
+            *type = [SGolfClubTypeEnum GolfClubTypeEnum]*
+          >  (manufacturer, model, submodel, number?, serial?, [SAngle90 loft]?, [SAngle90 lie]?, weight?, [SSwingWeight swing-weight]?, [CShaft shaft]?  )</...>
+
 ----
     
 

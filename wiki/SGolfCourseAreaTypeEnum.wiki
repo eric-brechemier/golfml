@@ -26,9 +26,9 @@ string
 ---- 	
         
 ===  Model ===
-{{{
-          ('tee' | 'fairway' | 'green' | 'fringe' | 'tree' | 'trees' | 'bush' | 'semi-rough' | 'rough' | 'heavy-rough' | 'trap' | 'greenside-trap' | 'fairway-trap' | 'front-water' | 'water' | 'bunker' | 'lateral-water' | 'path' | 'building' | 'obstruction' | 'out-of-bound' | 'hole-contour' | 'aim' | 'marker' | 'sprinkler' | 'other')
-}}}
+
+	('tee' | 'fairway' | 'green' | 'fringe' | 'tree' | 'trees' | 'bush' | 'semi-rough' | 'rough' | 'heavy-rough' | 'trap' | 'greenside-trap' | 'fairway-trap' | 'front-water' | 'water' | 'bunker' | 'lateral-water' | 'path' | 'building' | 'obstruction' | 'out-of-bound' | 'hole-contour' | 'aim' | 'marker' | 'sprinkler' | 'other')
+
 ----
     
 

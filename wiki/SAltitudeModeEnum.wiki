@@ -27,9 +27,9 @@ string
 ---- 	
         
 ===  Model ===
-{{{
-          ('relativeToSeaFloor' | 'clampToSeaFloor' | 'relativeToGround' | 'clampToGround' | 'absolute')
-}}}
+
+	('relativeToSeaFloor' | 'clampToSeaFloor' | 'relativeToGround' | 'clampToGround' | 'absolute')
+
 ----
     
 

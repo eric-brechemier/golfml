@@ -30,9 +30,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...>  (date-from?, date-to?, round?, golf-course?  )</...>
-}}}
+
+	<...>  (date-from?, date-to?, round?, [CREF_GolfCourse golf-course]?  )</...>
+
 ----
     
 

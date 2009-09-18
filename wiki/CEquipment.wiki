@@ -28,9 +28,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  type = [SEquipmentTypeEnum EquipmentTypeEnum.html]>  (name, manufacturer, model, submodel?, serial?  )</...>
-}}}
+
+	<...  type = [SEquipmentTypeEnum EquipmentTypeEnum]>  (name, manufacturer, model, submodel?, serial?  )</...>
+
 ----
     
 

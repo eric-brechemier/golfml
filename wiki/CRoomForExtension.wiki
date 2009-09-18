@@ -26,11 +26,11 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  other = xs:string>  (
+
+	<...  other = xs:string>  (
     _any element from any namespace_
     )  </...>
-}}}
+
 ----
           
 

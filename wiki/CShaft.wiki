@@ -26,9 +26,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  type = [SGolfClubTypeEnum GolfClubTypeEnum.html]>  (manufacturer, model, submodel?, length?, weight?, tip?  )</...>
-}}}
+
+	<...  type = [SGolfClubTypeEnum GolfClubTypeEnum]>  (manufacturer, model, submodel?, [CLengthWithUnits length]?, weight?, tip?  )</...>
+
 ----
     
 

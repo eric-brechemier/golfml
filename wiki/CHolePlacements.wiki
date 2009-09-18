@@ -26,9 +26,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  date = xs:date>  (name, hole-placement{1,18}  )</...>
-}}}
+
+	<...  date = xs:date>  (name, [CHolePlacement hole-placement]{1,18}  )</...>
+
 ----
     
 

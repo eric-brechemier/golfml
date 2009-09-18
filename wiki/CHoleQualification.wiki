@@ -26,9 +26,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...>  (qualification-usga | qualification-other) </...>
-}}}
+
+	<...>  ([CHoleQualificationUSGA qualification-usga] | [CRoomForExtension qualification-other]) </...>
+
 ----
     
 

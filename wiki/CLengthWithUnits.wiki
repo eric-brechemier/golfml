@@ -26,9 +26,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  units = [SUnitOfLengthWithUnitsEnum UnitOfLengthWithUnitsEnum.html] : meters>Length</...>
-}}}
+
+	<...  units = [SUnitOfLengthWithUnitsEnum UnitOfLengthWithUnitsEnum] : meters>[SLength Length]</...>
+
 ----
           
 

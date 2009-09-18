@@ -26,9 +26,9 @@ string
 ---- 	
         
 ===  Model ===
-{{{
-          ('front' | 'back')
-}}}
+
+	('front' | 'back')
+
 ----
     
 ----

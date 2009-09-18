@@ -26,9 +26,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...>  (distances | coordinates) </...>
-}}}
+
+	<...>  ([CHolePlacementWithDistances distances] | [CRoomForExtension coordinates]) </...>
+
 ----
     
 

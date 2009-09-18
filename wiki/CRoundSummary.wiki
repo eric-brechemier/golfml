@@ -26,9 +26,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...>  (strokes, points?, putts?, money?, penalties?, statistic`*`  )</...>
-}}}
+
+	<...>  (strokes, points?, putts?, money?, [CPenalty penalties]?, [CStatisticValue statistic]`*`  )</...>
+
 ----
     
 

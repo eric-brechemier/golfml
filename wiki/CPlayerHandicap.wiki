@@ -27,9 +27,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  handicap-system = [SHandicapSystemEnum HandicapSystemEnum.html]  other = xs:string>FloatWithOneFractionalNumber</...>
-}}}
+
+	<...  handicap-system = [SHandicapSystemEnum HandicapSystemEnum]  other = xs:string>[SFloatWithOneFractionalNumber FloatWithOneFractionalNumber]</...>
+
 ----
           
 

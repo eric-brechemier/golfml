@@ -28,9 +28,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  number = [SOneToEighteen OneToEighteen.html]>  (green-length, green-width, hole-distance{2,2}  )</...>
-}}}
+
+	<...  number = [SOneToEighteen OneToEighteen]>  ([CLengthWithUnits green-length], [CLengthWithUnits green-width], [CHoleDistanceOnGreen hole-distance]{2,2}  )</...>
+
 ----
     
 

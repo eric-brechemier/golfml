@@ -21,9 +21,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...>  (name | country-club) </...>
-}}}
+
+	<...>  (name | [CREF_GolfCourse country-club]) </...>
+
 ----
     
 

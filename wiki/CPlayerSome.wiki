@@ -30,9 +30,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  team = xs:string  type = [SPlayerSomeEnum PlayerSomeEnum.html]>  (player.name, player.date-of-birth  )</...>
-}}}
+
+	<...  team = xs:string  type = [SPlayerSomeEnum PlayerSomeEnum]>  (player.name, player.date-of-birth  )</...>
+
 ----
     
 

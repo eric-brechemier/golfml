@@ -26,9 +26,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  lang = xs:language : en>string</...>
-}}}
+
+	<...  lang = xs:language : en>[Sstring string]</...>
+
 ----
           
 

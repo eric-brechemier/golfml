@@ -26,9 +26,9 @@ string
 ---- 	
         
 ===  Model ===
-{{{
-          ('wood' | 'iron' | 'wedge' | 'putter' | 'driver' | 'hybrid' | 'utility' | 'other')
-}}}
+
+	('wood' | 'iron' | 'wedge' | 'putter' | 'driver' | 'hybrid' | 'utility' | 'other')
+
 ----
     
 

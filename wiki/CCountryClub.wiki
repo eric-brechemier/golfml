@@ -28,9 +28,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...>  (name, address, contact`*`, amenety`*`, note`*`, media`*`, golf-course+, version`*`  )</...>
-}}}
+
+	<...>  (name, [CAddress address], [CContact contact]`*`, [CAmenety amenety]`*`, [CNote note]`*`, [CMedia media]`*`, [CGolfCourse golf-course]+, [CVersion version]`*`  )</...>
+
 ----
     
 

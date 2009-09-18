@@ -28,9 +28,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  other = xs:string  type = [SAmenetyTypeEnum AmenetyTypeEnum.html]>string</...>
-}}}
+
+	<...  other = xs:string  type = [SAmenetyTypeEnum AmenetyTypeEnum]>[Sstring string]</...>
+
 ----
           
 

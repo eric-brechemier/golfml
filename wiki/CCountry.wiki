@@ -27,11 +27,11 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  
-            *code = [SISO3166CountryCodeEnum ISO3166CountryCodeEnum.html]*
-          >string</...>
-}}}
+
+	<...  
+            *code = [SISO3166CountryCodeEnum ISO3166CountryCodeEnum]*
+          >[Sstring string]</...>
+
 ----
           
 

@@ -28,9 +28,9 @@ anyType
 ---- 	
         
 ===  Model ===
-{{{
-          <...  number = xs:nonNegativeInteger  orientation = [SOrientationEnum OrientationEnum.html]  other = xs:string  subtype = xs:string  type = [SGolfCourseAreaTypeEnum GolfCourseAreaTypeEnum.html]>  (name? ; description? ; position) </...>
-}}}
+
+	<...  number = xs:nonNegativeInteger  orientation = [SOrientationEnum OrientationEnum]  other = xs:string  subtype = xs:string  type = [SGolfCourseAreaTypeEnum GolfCourseAreaTypeEnum]>  (name? ; description? ; [CPosition position]) </...>
+
 ----
     
 
