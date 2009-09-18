@@ -41,6 +41,6 @@ anyType
 
     	[CHole Hole]
 ----
-    
+    <xs:complexType name="Placemarks">  <xs:choice maxOccurs="unbounded" minOccurs="0">    <xs:element name="poi" type="golfml:PointOfInterest">    </xs:element>    <xs:element name="aoi" type="golfml:AreaOfInterest">    </xs:element>  </xs:choice></xs:complexType>
 ----
         

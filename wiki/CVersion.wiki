@@ -33,58 +33,18 @@ anyType
 ----
           
 
-=== Attribute Summary ===
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
         
-|| xs:dateTime || `created` ||   ||
-|| xs:dateTime || `updated` ||   ||
-|| xs:string || `version` ||   ||
-
-=== Attribute Detail ===
-      
-
-==== created ====
-
-      
-=====  Type: =====
-
-          xs:dateTime
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
-
-==== updated ====
-
-      
-=====  Type: =====
-
-          xs:dateTime
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
-
-==== version ====
-
-      
-=====  Type: =====
-
-          xs:string
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
+|| created ||   || xs:dateTime || optional ||  ||  || unqualified ||
+|| updated ||   || xs:dateTime || optional ||  ||  || unqualified ||
+|| version ||   || xs:string || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CCountryClub CountryClub], [CGolfCourse GolfCourse], [Egolfml golfml], [CTees Tees]
 ----
-    
+    <xs:complexType name="Version">  <xs:simpleContent>    <xs:extension base="xs:string">      <xs:attribute name="version" type="xs:string"/>      <xs:attribute name="created" type="xs:dateTime"/>      <xs:attribute name="updated" type="xs:dateTime"/>    </xs:extension>  </xs:simpleContent></xs:complexType>
 ----
         

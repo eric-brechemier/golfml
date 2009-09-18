@@ -33,33 +33,16 @@ anyType
 ----
           
 
-=== Attribute Summary ===
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
         
-|| xs:string || `rule` ||  Rule number indicating the violation. ||
-
-=== Attribute Detail ===
-      
-
-==== rule ====
-
-      
-						Rule number indicating the violation.
-						Example: rule="USGA:26-1/19:Water Hazard"
-					
-=====  Type: =====
-
-          xs:string
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
+|| rule ||  Rule number indicating the violation || xs:string || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CHoleScore HoleScore], [CRoundSummary RoundSummary]
 ----
-    
+    <xs:complexType name="Penalty">  <xs:simpleContent>    <xs:extension base="xs:positiveInteger">      <xs:attribute name="rule" type="xs:string">      </xs:attribute>    </xs:extension>  </xs:simpleContent></xs:complexType>
 ----
         

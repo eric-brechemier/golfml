@@ -38,6 +38,6 @@ string
 
     	[CHoleDistanceOnGreen HoleDistanceOnGreen], [CPointOfInterest PointOfInterest]
 ----
-    
+    <xs:simpleType name="OrientationEnum">  <xs:restriction base="xs:string">    <xs:enumeration value="front"/>    <xs:enumeration value="middle"/>    <xs:enumeration value="back"/>    <xs:enumeration value="left"/>    <xs:enumeration value="center"/>    <xs:enumeration value="right"/>  </xs:restriction></xs:simpleType>
 ----
         

@@ -41,30 +41,16 @@ anyType
 || [CPositionGPS golfml:PositionGPS] || [CPositionGPS position-gps] ||  					GPS coordinate of a point.				 ||
 || [CRoomForExtension golfml:RoomForExtension] || [CRoomForExtension position-other] ||  					Coordinate of a point in an arbitraty unit system.				 ||      
 
-=== Attribute Summary ===
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
         
-|| xs:nonNegativeInteger || `number` ||   ||
-
-=== Attribute Detail ===
-      
-
-==== number ====
-
-      
-=====  Type: =====
-
-          xs:nonNegativeInteger
-=====  Use: =====
-        required
-=====  Form: =====
-		unqualified
-----
-  
+|| number ||   || xs:nonNegativeInteger || required ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CAreaOfInterest AreaOfInterest]
 ----
-    
+    <xs:complexType name="PositionWithSequence">  <xs:complexContent>    <xs:extension base="golfml:Position">      <xs:attribute name="number" type="xs:nonNegativeInteger" use="required"/>    </xs:extension>  </xs:complexContent></xs:complexType>
 ----
         

@@ -40,6 +40,6 @@ string
 
     	[CStatistics Statistics]
 ----
-    
+    <xs:simpleType name="StatisticCollectionTypesEnum">  <xs:restriction base="xs:string">    <xs:enumeration value="round"/>    <xs:enumeration value="course"/>    <xs:enumeration value="duration"/>    <xs:enumeration value="other"/>  </xs:restriction></xs:simpleType>
 ----
         

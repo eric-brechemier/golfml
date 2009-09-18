@@ -32,32 +32,16 @@ anyType
 ----
           
 
-=== Attribute Summary ===
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
         
-|| [SUnitOfLengthWithUnitsEnum golfml:UnitOfLengthWithUnitsEnum] || `units` ||   ||
-
-=== Attribute Detail ===
-      
-
-==== units ====
-
-      
-=====  Type: =====
-
-          [SUnitOfLengthWithUnitsEnum golfml:UnitOfLengthWithUnitsEnum]
-=====  Default: =====
-		meters
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
+|| units ||   || [SUnitOfLengthWithUnitsEnum golfml:UnitOfLengthWithUnitsEnum] || optional || meters ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CHoleDistanceOnGreen HoleDistanceOnGreen], [CHolePlacementWithDistances HolePlacementWithDistances], [CHoleStatistics HoleStatistics], [CShaft Shaft], [CTee Tee]
 ----
-    
+    <xs:complexType name="LengthWithUnits">  <xs:simpleContent>    <xs:extension base="golfml:Length">      <xs:attribute default="meters" name="units" type="golfml:UnitOfLengthWithUnitsEnum"/>    </xs:extension>  </xs:simpleContent></xs:complexType>
 ----
         

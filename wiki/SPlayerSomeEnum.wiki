@@ -36,6 +36,6 @@ string
 
     	[CPlayerSome PlayerSome]
 ----
-    
+    <xs:simpleType name="PlayerSomeEnum">  <xs:restriction base="xs:string">    <xs:enumeration value="partner"/>    <xs:enumeration value="competitor"/>  </xs:restriction></xs:simpleType>
 ----
         

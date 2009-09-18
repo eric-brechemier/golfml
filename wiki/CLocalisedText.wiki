@@ -32,32 +32,16 @@ anyType
 ----
           
 
-=== Attribute Summary ===
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
         
-|| xs:language || `lang` ||   ||
-
-=== Attribute Detail ===
-      
-
-==== lang ====
-
-      
-=====  Type: =====
-
-          xs:language
-=====  Default: =====
-		en
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
+|| lang ||   || xs:language || optional || en ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CNote Note]
 ----
-    
+    <xs:complexType name="LocalisedText">  <xs:simpleContent>    <xs:extension base="xs:string">      <xs:attribute default="en" name="lang" type="xs:language"/>    </xs:extension>  </xs:simpleContent></xs:complexType>
 ----
         

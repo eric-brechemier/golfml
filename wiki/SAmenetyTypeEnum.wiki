@@ -36,6 +36,6 @@ string
 
     	[CAmenety Amenety]
 ----
-    
+    <xs:simpleType name="AmenetyTypeEnum">  <xs:restriction base="xs:string">    <xs:enumeration value="practice"/>    <xs:enumeration value="store"/>    <xs:enumeration value="food"/>    <xs:enumeration value="corporate"/>    <xs:enumeration value="golfers"/>    <xs:enumeration value="bathroom"/>    <xs:enumeration value="water"/>    <xs:enumeration value="other"/>  </xs:restriction></xs:simpleType>
 ----
         

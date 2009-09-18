@@ -37,70 +37,18 @@ anyType
 ----
           
 
-=== Attribute Summary ===
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
         
-|| xs:string || `dotname` ||  Name of the application in a reverse internet host name or a Java package and class style. ||
-|| xs:string || `name` ||  Name of the application that stores data in the application container. ||
-|| xs:string || `version` ||  Version of the application that stored data in this container. ||
-
-=== Attribute Detail ===
-      
-
-==== dotname ====
-
-      
-				Name of the application in a reverse internet host name or a Java package and class style. Used by the application only.
-				Mandatory. Must be unique among all application names stored in an golfml document.
-				
-				Example: "com.company.golf.scorecardapp".
-			
-=====  Type: =====
-
-          xs:string
-=====  Use: =====
-        required
-=====  Form: =====
-		unqualified
-----
-  
-
-==== name ====
-
-      
-				Name of the application that stores data in the application container.
-				Example: "GolfML Scorecard Application".
-			
-=====  Type: =====
-
-          xs:string
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
-
-==== version ====
-
-      
-				Version of the application that stored data in this container. Used by the application only.
-
-				Example: "1.2.3456".
-			
-=====  Type: =====
-
-          xs:string
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
+|| dotname ||  Name of the application in a reverse internet host name or a Java package and class style || xs:string || required ||  ||  || unqualified ||
+|| name ||  Name of the application that stores data in the application container || xs:string || optional ||  ||  || unqualified ||
+|| version ||  Version of the application that stored data in this container || xs:string || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[Egolfml golfml]
 ----
-    
+    <xs:complexType name="Application">  <xs:sequence>    <xs:any/>  </xs:sequence>  <xs:attribute name="name" type="xs:string">  </xs:attribute>  <xs:attribute name="version" type="xs:string">  </xs:attribute>  <xs:attribute name="dotname" type="xs:string" use="required">  </xs:attribute></xs:complexType>
 ----
         

@@ -37,10 +37,10 @@ anyType
 === Nested Element Summary ===
         
 || [CAddress golfml:Address] || [CAddress address] ||  					Address of the country club or golf course.				 ||
-|| [CAmenety golfml:Amenety] || [CAmenety amenety] ||  Amenety available at the contry club. ||
-|| [CContact golfml:Contact] || [CContact contact] ||  Contact for the golf course. ||
+|| [CAmenety golfml:Amenety] || [CAmenety amenety] ||  Amenety available at the contry club ||
+|| [CContact golfml:Contact] || [CContact contact] ||  Contact for the golf course ||
 || [CGolfCourse golfml:GolfCourse] || [CGolfCourse golf-course] ||  					Description of one golf course at the country club.				 ||
-|| [CMedia golfml:Media] || [CMedia media] ||  Media for the country club. ||
+|| [CMedia golfml:Media] || [CMedia media] ||  Media for the country club ||
 || xs:string || name ||  					Name of the country club.				 ||
 || [CNote golfml:Note] || [CNote note] ||  					Note about the country club.				 ||
 || [CVersion golfml:Version] || [CVersion version] ||   ||
@@ -49,6 +49,6 @@ anyType
 
     	[Egolfml golfml]
 ----
-    
+    <xs:complexType name="CountryClub">  <xs:sequence>    <xs:element name="name" type="xs:string">    </xs:element>    <xs:element name="address" type="golfml:Address">    </xs:element>    <xs:element maxOccurs="unbounded" minOccurs="0" name="contact" type="golfml:Contact">    </xs:element>    <xs:element maxOccurs="unbounded" minOccurs="0" name="amenety" type="golfml:Amenety">    </xs:element>    <xs:element maxOccurs="unbounded" minOccurs="0" name="note" type="golfml:Note">    </xs:element>    <xs:element maxOccurs="unbounded" minOccurs="0" name="media" type="golfml:Media">    </xs:element>    <xs:element maxOccurs="unbounded" name="golf-course" type="golfml:GolfCourse">    </xs:element>    <xs:element maxOccurs="unbounded" minOccurs="0" name="version" type="golfml:Version"/>  </xs:sequence></xs:complexType>
 ----
         

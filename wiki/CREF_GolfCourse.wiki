@@ -38,6 +38,6 @@ anyType
 
     	[CCollection Collection], [CCountryClubChoice CountryClubChoice]
 ----
-    
+    <xs:complexType name="REF_GolfCourse">  <xs:group ref="golfml:ID_GolfCourse"/></xs:complexType>
 ----
         

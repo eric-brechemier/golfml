@@ -47,6 +47,6 @@ anyType
 
     	[CStatistics Statistics]
 ----
-    
+    <xs:complexType name="Collection">  <xs:sequence>    <xs:element minOccurs="0" name="date-from" type="xs:date">    </xs:element>    <xs:element minOccurs="0" name="date-to" type="xs:date">    </xs:element>    <xs:element minOccurs="0" name="round" type="xs:date">    </xs:element>    <xs:element minOccurs="0" name="golf-course" type="golfml:REF_GolfCourse">    </xs:element>  </xs:sequence></xs:complexType>
 ----
         

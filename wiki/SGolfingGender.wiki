@@ -36,6 +36,6 @@ string
 
     	[CTees Tees]
 ----
-    
+    <xs:simpleType name="GolfingGender">  <xs:restriction base="xs:string">    <xs:enumeration value="gentlemen"/>    <xs:enumeration value="ladies"/>  </xs:restriction></xs:simpleType>
 ----
         

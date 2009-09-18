@@ -34,30 +34,16 @@ anyType
 ----
           
 
-=== Attribute Summary ===
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
         
-|| [SAltitudeModeEnum golfml:AltitudeModeEnum] || `mode` ||   ||
-
-=== Attribute Detail ===
-      
-
-==== mode ====
-
-      
-=====  Type: =====
-
-          [SAltitudeModeEnum golfml:AltitudeModeEnum]
-=====  Use: =====
-        required
-=====  Form: =====
-		unqualified
-----
-  
+|| mode ||   || [SAltitudeModeEnum golfml:AltitudeModeEnum] || required ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CPositionGPS PositionGPS]
 ----
-    
+    <xs:complexType name="Altitude">  <xs:simpleContent>    <xs:extension base="xs:double">      <xs:attribute name="mode" type="golfml:AltitudeModeEnum" use="required"/>    </xs:extension>  </xs:simpleContent></xs:complexType>
 ----
         

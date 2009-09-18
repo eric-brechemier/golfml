@@ -36,6 +36,6 @@ float
 
     	[CHoleQualificationUSGA HoleQualificationUSGA]
 ----
-    
+    <xs:simpleType name="CourseRating">  <xs:restriction base="xs:float">    <xs:minInclusive value="3"/>    <xs:maxInclusive value="90"/>  </xs:restriction></xs:simpleType>
 ----
         

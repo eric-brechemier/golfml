@@ -42,32 +42,16 @@ anyType
 || [CStrokeDetail golfml:StrokeDetail] || [CStrokeDetail stroke] ||  					Detail of each stroke.				 ||
 || xs:positiveInteger || strokes ||  					Total number of strokes for hole, including penalties.				 ||      
 
-=== Attribute Summary ===
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
         
-|| [SOneToEighteen golfml:OneToEighteen] || `number` ||  				Order number of hole.			 ||
-
-=== Attribute Detail ===
-      
-
-==== number ====
-
-      
-				Order number of hole.
-			
-=====  Type: =====
-
-          [SOneToEighteen golfml:OneToEighteen]
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
+|| number ||  				Order number of hole.			 || [SOneToEighteen golfml:OneToEighteen] || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CScore Score]
 ----
-    
+    <xs:complexType name="HoleScore">  <xs:sequence>    <xs:element name="strokes" type="xs:positiveInteger">    </xs:element>    <xs:element minOccurs="0" name="points" type="xs:nonNegativeInteger">    </xs:element>    <xs:element minOccurs="0" name="putts" type="xs:nonNegativeInteger">    </xs:element>    <xs:element minOccurs="0" name="money" type="xs:integer">    </xs:element>    <xs:element minOccurs="0" name="penalties" type="golfml:Penalty">    </xs:element>    <xs:element maxOccurs="unbounded" minOccurs="0" name="stroke" type="golfml:StrokeDetail">    </xs:element>    <xs:element minOccurs="0" name="statistics" type="golfml:HoleStatistics">    </xs:element>  </xs:sequence>  <xs:attribute name="number" type="golfml:OneToEighteen">  </xs:attribute></xs:complexType>
 ----
         

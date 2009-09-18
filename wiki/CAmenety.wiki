@@ -34,46 +34,17 @@ anyType
 ----
           
 
-=== Attribute Summary ===
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
         
-|| xs:string || `other` ||  				Alternate value for an attribute.			 ||
-|| [SAmenetyTypeEnum golfml:AmenetyTypeEnum] || `type` ||   ||
-
-=== Attribute Detail ===
-      
-
-==== other ====
-
-      
-				Alternate value for an attribute.
-			
-=====  Type: =====
-
-          xs:string
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
-
-==== type ====
-
-      
-=====  Type: =====
-
-          [SAmenetyTypeEnum golfml:AmenetyTypeEnum]
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
+|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
+|| type ||   || [SAmenetyTypeEnum golfml:AmenetyTypeEnum] || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CCountryClub CountryClub]
 ----
-    
+    <xs:complexType name="Amenety">  <xs:simpleContent>    <xs:extension base="xs:string">      <xs:attribute name="type" type="golfml:AmenetyTypeEnum"/>      <xs:attributeGroup ref="golfml:Other"/>    </xs:extension>  </xs:simpleContent></xs:complexType>
 ----
         

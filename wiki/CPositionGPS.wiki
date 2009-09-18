@@ -34,7 +34,7 @@ anyType
 
 === Nested Element Summary ===
         
-|| [CAltitude golfml:Altitude] || [CAltitude alt] ||  Altitude of a GPS position expressed as a float value. ||
+|| [CAltitude golfml:Altitude] || [CAltitude alt] ||  Altitude of a GPS position expressed as a float value ||
 || [SAngle90 golfml:Angle90] || [SAngle90 lat] ||  					Latitude of the GPS position expressed as a float value between -90° (South Pole) to +90° (North Pole).				 ||
 || [SAngle180 golfml:Angle180] || [SAngle180 lon] ||  					Longitude in the GPS position expressed as a float value between -180° for longitude West of Greenwich					to +180° for longitude East of Greenwich.				 ||
 
@@ -42,6 +42,6 @@ anyType
 
     	[CPosition Position]
 ----
-    
+    <xs:complexType name="PositionGPS">  <xs:all>    <xs:element name="lat" type="golfml:Angle90">    </xs:element>    <xs:element name="lon" type="golfml:Angle180">    </xs:element>    <xs:element name="alt" type="golfml:Altitude">    </xs:element>  </xs:all></xs:complexType>
 ----
         

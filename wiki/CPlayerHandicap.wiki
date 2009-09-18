@@ -33,46 +33,17 @@ anyType
 ----
           
 
-=== Attribute Summary ===
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
         
-|| [SHandicapSystemEnum golfml:HandicapSystemEnum] || `handicap-system` ||   ||
-|| xs:string || `other` ||  				Alternate value for an attribute.			 ||
-
-=== Attribute Detail ===
-      
-
-==== handicap-system ====
-
-      
-=====  Type: =====
-
-          [SHandicapSystemEnum golfml:HandicapSystemEnum]
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
-
-==== other ====
-
-      
-				Alternate value for an attribute.
-			
-=====  Type: =====
-
-          xs:string
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
+|| handicap-system ||   || [SHandicapSystemEnum golfml:HandicapSystemEnum] || optional ||  ||  || unqualified ||
+|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CPlayer Player]
 ----
-    
+    <xs:complexType name="PlayerHandicap">  <xs:simpleContent>    <xs:extension base="golfml:FloatWithOneFractionalNumber">      <xs:attribute name="handicap-system" type="golfml:HandicapSystemEnum"/>      <xs:attributeGroup ref="golfml:Other"/>    </xs:extension>  </xs:simpleContent></xs:complexType>
 ----
         

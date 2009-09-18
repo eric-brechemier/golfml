@@ -35,6 +35,6 @@
 
     	[CREF_Tees REF_Tees]
 ----
-    
+    <xs:group name="ID_Tees">  <xs:sequence>    <xs:group ref="golfml:ID_GolfCourse"/>    <xs:element name="country-club.golf-course.tee-set.name" type="xs:string"/>  </xs:sequence></xs:group>
 ----
         

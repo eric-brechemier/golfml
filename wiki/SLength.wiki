@@ -36,6 +36,6 @@ double
 
     	[CLengthWithUnits LengthWithUnits]
 ----
-    
+    <xs:simpleType name="Length">  <xs:restriction base="xs:double">    <xs:minInclusive value="0"/>    <xs:maxInclusive value="1000"/>  </xs:restriction></xs:simpleType>
 ----
         

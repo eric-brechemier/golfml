@@ -29,13 +29,13 @@
 
 === Nested Element Summary ===
         
-|| xs:base64Binary || content ||  Base64-coded content of the media. ||
+|| xs:base64Binary || content ||  Base64-coded content of the media ||
 || xs:anyURI || url ||  					Location of the media.				 ||
 
 ===  Local Usage ===
 
     	[CMedia Media]
 ----
-    
+    <xs:group name="MediaChoice">  <xs:choice>    <xs:element name="url" type="xs:anyURI">    </xs:element>    <xs:element name="content" type="xs:base64Binary">    </xs:element>  </xs:choice></xs:group>
 ----
         

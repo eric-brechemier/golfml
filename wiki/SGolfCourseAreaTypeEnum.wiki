@@ -36,6 +36,6 @@ string
 
     	[CAreaOfInterest AreaOfInterest], [CPointOfInterest PointOfInterest], [CStrokeDetail StrokeDetail]
 ----
-    
+    <xs:simpleType name="GolfCourseAreaTypeEnum">  <xs:restriction base="xs:string">    <xs:enumeration value="tee"/>    <xs:enumeration value="fairway"/>    <xs:enumeration value="green"/>    <xs:enumeration value="fringe"/>    <xs:enumeration value="tree"/>    <xs:enumeration value="trees"/>    <xs:enumeration value="bush"/>    <xs:enumeration value="semi-rough"/>    <xs:enumeration value="rough"/>    <xs:enumeration value="heavy-rough"/>    <xs:enumeration value="trap"/>    <xs:enumeration value="greenside-trap"/>    <xs:enumeration value="fairway-trap"/>    <xs:enumeration value="front-water"/>    <xs:enumeration value="water"/>    <xs:enumeration value="bunker"/>    <xs:enumeration value="lateral-water"/>    <xs:enumeration value="path"/>    <xs:enumeration value="building"/>    <xs:enumeration value="obstruction"/>    <xs:enumeration value="out-of-bound"/>    <xs:enumeration value="hole-contour"/>    <xs:enumeration value="aim"/>    <xs:enumeration value="marker"/>    <xs:enumeration value="sprinkler"/>    <xs:enumeration value="other"/>  </xs:restriction></xs:simpleType>
 ----
         

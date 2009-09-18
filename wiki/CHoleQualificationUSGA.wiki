@@ -41,6 +41,6 @@ anyType
 
     	[CHoleQualification HoleQualification]
 ----
-    
+    <xs:complexType name="HoleQualificationUSGA">  <xs:all>    <xs:element name="rating" type="golfml:CourseRating">    </xs:element>    <xs:element name="slope" type="golfml:CourseSlope">    </xs:element>  </xs:all></xs:complexType>
 ----
         

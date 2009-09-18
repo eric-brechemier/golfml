@@ -37,52 +37,20 @@ anyType
         
 || xs:string || email ||  					Electronic mail address of contact.				 ||
 || xs:string || name ||  					Name or description of contact.				 ||
-|| [SPhoneNumber golfml:PhoneNumber] || [SPhoneNumber phone] ||  Telephone number of contact. ||
+|| [SPhoneNumber golfml:PhoneNumber] || [SPhoneNumber phone] ||  Telephone number of contact ||
 || xs:anyURI || website ||  					Internet web site URL of contact.				 ||      
 
-=== Attribute Summary ===
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
         
-|| xs:string || `other` ||  				Alternate value for an attribute.			 ||
-|| [SContactTypeEnum golfml:ContactTypeEnum] || `type` ||  Qualification of a contact. ||
-
-=== Attribute Detail ===
-      
-
-==== other ====
-
-      
-				Alternate value for an attribute.
-			
-=====  Type: =====
-
-          xs:string
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
-
-==== type ====
-
-      
-				Qualification of a contact. For country clubs, the qualification can be the reservation desk, the bar, the corporate facility's main number...
-				For player, the contact type can be his or her home, work or mobile telephone number, home or work address...
-			
-=====  Type: =====
-
-          [SContactTypeEnum golfml:ContactTypeEnum]
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
+|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
+|| type ||  Qualification of a contact || [SContactTypeEnum golfml:ContactTypeEnum] || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CCountryClub CountryClub], [CPlayer Player]
 ----
-    
+    <xs:complexType name="Contact">  <xs:all>    <xs:element minOccurs="0" name="name" type="xs:string">    </xs:element>    <xs:element minOccurs="0" name="phone" type="golfml:PhoneNumber">    </xs:element>    <xs:element minOccurs="0" name="email" type="xs:string">    </xs:element>    <xs:element minOccurs="0" name="website" type="xs:anyURI">    </xs:element>  </xs:all>  <xs:attribute name="type" type="golfml:ContactTypeEnum">  </xs:attribute>  <xs:attributeGroup ref="golfml:Other"/></xs:complexType>
 ----
         

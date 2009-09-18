@@ -40,13 +40,13 @@ anyType
 || xs:float || handicap ||  					Handicap used for the round of golf.				 ||
 || xs:integer || handicap-strokes ||  					Denormalisation: Number of strokes received for the round.				 ||
 || [CScore golfml:Score] || [CScore score] ||  					Detailed information about the score for the round of golf.				 ||
-|| [CRoundSummary golfml:RoundSummary] || [CRoundSummary summary] ||  Denormalisation: Basic statistics for the round of golf. ||
+|| [CRoundSummary golfml:RoundSummary] || [CRoundSummary summary] ||  Denormalisation: Basic statistics for the round of golf ||
 || [CREF_Tees golfml:REF_Tees] || [CREF_Tees tees] ||  					Reference to tee set used for the round of golf.				 ||
 
 ===  Local Usage ===
 
     	[CRound Round]
 ----
-    
+    <xs:complexType name="Scorecard">  <xs:sequence>    <xs:element name="tees" type="golfml:REF_Tees">    </xs:element>    <xs:element minOccurs="0" name="handicap" type="xs:float">    </xs:element>    <xs:element minOccurs="0" name="handicap-strokes" type="xs:integer">    </xs:element>    <xs:element minOccurs="0" name="golf-bag-ref" type="golfml:REF_GolfBag">    </xs:element>    <xs:element minOccurs="0" name="summary" type="golfml:RoundSummary">    </xs:element>    <xs:element name="score" type="golfml:Score">    </xs:element>  </xs:sequence></xs:complexType>
 ----
         

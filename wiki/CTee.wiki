@@ -35,33 +35,19 @@ anyType
 === Nested Element Summary ===
         
 || [SHandicapStroke golfml:HandicapStroke] || [SHandicapStroke handicap-stroke] ||  					Relative difficulty level of the hole for this set of tees.				 ||
-|| [CLengthWithUnits golfml:LengthWithUnits] || [CLengthWithUnits length] ||  Length of the hole from the set of tees. ||
+|| [CLengthWithUnits golfml:LengthWithUnits] || [CLengthWithUnits length] ||  Length of the hole from the set of tees ||
 || [SPar golfml:Par] || [SPar par] ||  					Par score for the hole.				 ||      
 
-=== Attribute Summary ===
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
         
-|| [SOneToEighteen golfml:OneToEighteen] || `number` ||   ||
-
-=== Attribute Detail ===
-      
-
-==== number ====
-
-      
-=====  Type: =====
-
-          [SOneToEighteen golfml:OneToEighteen]
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
+|| number ||   || [SOneToEighteen golfml:OneToEighteen] || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CTees Tees]
 ----
-    
+    <xs:complexType name="Tee">  <xs:sequence>    <xs:element name="par" type="golfml:Par">    </xs:element>    <xs:element name="handicap-stroke" type="golfml:HandicapStroke">    </xs:element>    <xs:element maxOccurs="2" minOccurs="0" name="length" type="golfml:LengthWithUnits">    </xs:element>  </xs:sequence>  <xs:attribute name="number" type="golfml:OneToEighteen"/></xs:complexType>
 ----
         

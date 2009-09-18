@@ -36,6 +36,6 @@ string
 
     	[CEquipment Equipment]
 ----
-    
+    <xs:simpleType name="EquipmentTypeEnum">  <xs:restriction base="xs:string">    <xs:enumeration value="driver"/>    <xs:enumeration value="wood"/>    <xs:enumeration value="iron"/>    <xs:enumeration value="wedge"/>    <xs:enumeration value="putter"/>    <xs:enumeration value="ball"/>    <xs:enumeration value="bag"/>    <xs:enumeration value="trolley"/>    <xs:enumeration value="training-aid"/>    <xs:enumeration value="shoes"/>    <xs:enumeration value="gloves"/>    <xs:enumeration value="apparel"/>    <xs:enumeration value="other"/>  </xs:restriction></xs:simpleType>
 ----
         

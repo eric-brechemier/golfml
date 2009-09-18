@@ -40,48 +40,17 @@ anyType
 || [CNote golfml:Note] || [CNote note] ||  					Localised note or comment about the hole.				 ||
 || [CPlacemarks golfml:Placemarks] || [CPlacemarks placemarks] ||  					List of places worth of interest on the hole.				 ||      
 
-=== Attribute Summary ===
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
         
-|| xs:string || `name` ||  Name of hole. ||
-|| `[SOneToEighteen golfml:OneToEighteen]` || `number` ||  Hole number. ||
-
-=== Attribute Detail ===
-      
-
-==== name ====
-
-      
-				Name of hole. Some golf courses name all holes on a course.
-			
-=====  Type: =====
-
-          xs:string
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
-
-==== number ====
-
-      
-				Hole number. Mandatory.
-			
-=====  Type: =====
-
-          [SOneToEighteen golfml:OneToEighteen]
-=====  Use: =====
-        required
-=====  Form: =====
-		unqualified
-----
-  
+|| name ||  Name of hole || xs:string || optional ||  ||  || unqualified ||
+|| number ||  Hole number || [SOneToEighteen golfml:OneToEighteen] || required ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CHoles Holes]
 ----
-    
+    <xs:complexType name="Hole">  <xs:choice maxOccurs="unbounded" minOccurs="0">    <xs:element name="media" type="golfml:Media">    </xs:element>    <xs:element name="note" type="golfml:Note">    </xs:element>    <xs:element name="placemarks" type="golfml:Placemarks">    </xs:element>  </xs:choice>  <xs:attribute name="number" type="golfml:OneToEighteen" use="required">  </xs:attribute>  <xs:attribute name="name" type="xs:string">  </xs:attribute></xs:complexType>
 ----
         

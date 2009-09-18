@@ -49,6 +49,6 @@ anyType
 
     	[CPointOfInterest PointOfInterest], [CPositionWithSequence PositionWithSequence], [CStrokeDetail StrokeDetail]
 ----
-    
+    <xs:complexType name="Position">  <xs:choice>    <xs:element name="position-gps" type="golfml:PositionGPS">    </xs:element>    <xs:element name="position-other" type="golfml:RoomForExtension">    </xs:element>  </xs:choice></xs:complexType>
 ----
         

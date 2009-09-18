@@ -37,6 +37,6 @@ nonNegativeInteger
 
     	[CNote Note]
 ----
-    
+    <xs:simpleType name="Rating">  <xs:restriction base="xs:nonNegativeInteger">    <xs:maxInclusive value="5"/>  </xs:restriction></xs:simpleType>
 ----
         

@@ -26,60 +26,18 @@
 ----
           
 
-=== Attribute Summary ===
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
         
-|| xs:string || `content-type` ||   ||
-|| xs:string || `other` ||  				Alternate value for an attribute.			 ||
-|| [SMediaTypeEnum golfml:MediaTypeEnum] || `type` ||   ||
-
-=== Attribute Detail ===
-      
-
-==== content-type ====
-
-      
-=====  Type: =====
-
-          xs:string
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
-
-==== other ====
-
-      
-				Alternate value for an attribute.
-			
-=====  Type: =====
-
-          xs:string
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
-
-==== type ====
-
-      
-=====  Type: =====
-
-          [SMediaTypeEnum golfml:MediaTypeEnum]
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
+|| content-type ||   || xs:string || optional ||  ||  || unqualified ||
+|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
+|| type ||   || [SMediaTypeEnum golfml:MediaTypeEnum] || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CMedia Media]
 ----
-    
+    <xs:attributeGroup name="MediaTypeAttributes">  <xs:attribute name="type" type="golfml:MediaTypeEnum"/>  <xs:attribute name="content-type" type="xs:string"/>  <xs:attributeGroup ref="golfml:Other"/></xs:attributeGroup>
 ----
         

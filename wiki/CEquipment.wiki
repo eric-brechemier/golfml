@@ -42,32 +42,16 @@ anyType
 || xs:string || serial ||  					Serial number of equipment.				 ||
 || xs:string || submodel ||  					Submodel or type of equipment.				 ||      
 
-=== Attribute Summary ===
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
         
-|| [SEquipmentTypeEnum golfml:EquipmentTypeEnum] || `type` ||  				Type of piece of equipment to organise them in categories: Training devices, clubs, balls...			 ||
-
-=== Attribute Detail ===
-      
-
-==== type ====
-
-      
-				Type of piece of equipment to organise them in categories: Training devices, clubs, balls...
-			
-=====  Type: =====
-
-          [SEquipmentTypeEnum golfml:EquipmentTypeEnum]
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
+|| type ||  				Type of piece of equipment to organise them in categories: Training devices, clubs, balls...			 || [SEquipmentTypeEnum golfml:EquipmentTypeEnum] || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CEquipmentList EquipmentList], [CGolfBag GolfBag]
 ----
-    
+    <xs:complexType name="Equipment">  <xs:sequence>    <xs:element name="name" type="xs:string">    </xs:element>    <xs:element name="manufacturer" type="xs:string">    </xs:element>    <xs:element name="model" type="xs:string">    </xs:element>    <xs:element minOccurs="0" name="submodel" type="xs:string">    </xs:element>    <xs:element minOccurs="0" name="serial" type="xs:string">    </xs:element>  </xs:sequence>  <xs:attribute name="type" type="golfml:EquipmentTypeEnum">  </xs:attribute></xs:complexType>
 ----
         

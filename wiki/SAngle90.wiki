@@ -36,6 +36,6 @@ double
 
     	[CGolfClub GolfClub], [CPositionGPS PositionGPS]
 ----
-    
+    <xs:simpleType name="Angle90">  <xs:restriction base="xs:double">    <xs:minInclusive value="-90"/>    <xs:maxInclusive value="90.0"/>  </xs:restriction></xs:simpleType>
 ----
         

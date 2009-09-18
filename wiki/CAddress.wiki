@@ -36,16 +36,16 @@ anyType
 
 === Nested Element Summary ===
         
-|| [CCountry golfml:Country] || [CCountry country] ||  Country of address. ||
+|| [CCountry golfml:Country] || [CCountry country] ||  Country of address ||
 || xs:string || municipality ||  					Municipality of address.				 ||
-|| xs:string || postal-code ||  Postal code of the address. ||
-|| xs:string || region ||  Region of an address. ||
+|| xs:string || postal-code ||  Postal code of the address ||
+|| xs:string || region ||  Region of an address ||
 || xs:string || street ||  					Street name and number of address.				 ||
 
 ===  Local Usage ===
 
     	[CCountryClub CountryClub], [CPlayer Player]
 ----
-    
+    <xs:complexType name="Address">  <xs:all>    <xs:element name="country" type="golfml:Country">    </xs:element>    <xs:element minOccurs="0" name="municipality" type="xs:string">    </xs:element>    <xs:element name="postal-code" type="xs:string">    </xs:element>    <xs:element minOccurs="0" name="region" type="xs:string">    </xs:element>    <xs:element minOccurs="0" name="street" type="xs:string">    </xs:element>  </xs:all></xs:complexType>
 ----
         

@@ -36,6 +36,6 @@ positiveInteger
 
     	[CTee Tee]
 ----
-    
+    <xs:simpleType name="Par">  <xs:restriction base="xs:positiveInteger">    <xs:minInclusive value="3"/>    <xs:maxInclusive value="9"/>  </xs:restriction></xs:simpleType>
 ----
         

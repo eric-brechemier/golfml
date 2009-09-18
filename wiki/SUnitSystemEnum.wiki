@@ -45,6 +45,6 @@ string
 	('metric' | 'imperial')
 
 ----
-    
+    <xs:simpleType name="UnitSystemEnum">  <xs:restriction base="xs:string">    <xs:enumeration value="metric"/>    <xs:enumeration value="imperial"/>  </xs:restriction></xs:simpleType>
 ----
         

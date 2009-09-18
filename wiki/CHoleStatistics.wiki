@@ -34,7 +34,7 @@ anyType
 
 === Nested Element Summary ===
         
-|| [CLengthWithUnits golfml:LengthWithUnits] || [CLengthWithUnits approach-to-hole] ||  Distance left to hole when ball landed on green. ||
+|| [CLengthWithUnits golfml:LengthWithUnits] || [CLengthWithUnits approach-to-hole] ||  Distance left to hole when ball landed on green ||
 || [CLengthWithUnits golfml:LengthWithUnits] || [CLengthWithUnits driving-distance] ||  					Driving distance.				 ||
 || xs:boolean || fairway ||  					Fairway hit.				 ||
 || xs:boolean || green-in-regulation ||  					Green reached in regulation.				 ||
@@ -43,6 +43,6 @@ anyType
 
     	[CHoleScore HoleScore]
 ----
-    
+    <xs:complexType name="HoleStatistics">  <xs:sequence>    <xs:element name="fairway" type="xs:boolean">    </xs:element>    <xs:element name="green-in-regulation" type="xs:boolean">    </xs:element>    <xs:element name="driving-distance" type="golfml:LengthWithUnits">    </xs:element>    <xs:element name="approach-to-hole" type="golfml:LengthWithUnits">    </xs:element>  </xs:sequence></xs:complexType>
 ----
         

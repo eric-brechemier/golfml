@@ -18,32 +18,16 @@
 ----
           
 
-=== Attribute Summary ===
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
         
-|| xs:string || `other` ||  				Alternate value for an attribute.			 ||
-
-=== Attribute Detail ===
-      
-
-==== other ====
-
-      
-				Alternate value for an attribute.
-			
-=====  Type: =====
-
-          xs:string
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
+|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CAmenety Amenety], [CAreaOfInterest AreaOfInterest], [CContact Contact], [CGolfGame GolfGame], [AMediaTypeAttributes MediaTypeAttributes], [CPlayerHandicap PlayerHandicap], [CPointOfInterest PointOfInterest], [CStatistics Statistics], [CWeather Weather]
 ----
-    
+    <xs:attributeGroup name="Other">  <xs:attribute name="other" type="xs:string">  </xs:attribute></xs:attributeGroup>
 ----
         

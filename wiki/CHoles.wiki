@@ -40,6 +40,6 @@ anyType
 
     	[CGolfCourse GolfCourse]
 ----
-    
+    <xs:complexType name="Holes">  <xs:sequence>    <xs:element maxOccurs="18" minOccurs="0" name="hole" type="golfml:Hole">    </xs:element>  </xs:sequence></xs:complexType>
 ----
         

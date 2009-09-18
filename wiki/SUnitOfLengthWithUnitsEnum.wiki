@@ -37,6 +37,6 @@ string
 
     	[CLengthWithUnits LengthWithUnits], [CTees Tees]
 ----
-    
+    <xs:simpleType name="UnitOfLengthWithUnitsEnum">  <xs:restriction base="xs:string">    <xs:enumeration value="meters"/>    <xs:enumeration value="yards"/>    <xs:enumeration value="feet"/>    <xs:enumeration value="paces"/>  </xs:restriction></xs:simpleType>
 ----
         

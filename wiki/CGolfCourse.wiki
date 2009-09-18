@@ -37,7 +37,7 @@ anyType
 || xs:string || architect ||  					Architect(s) of the golf course.				 ||
 || [CHoles golfml:Holes] || [CHoles holes] ||  					Description of the individual holes.				 ||
 || [CMedia golfml:Media] || [CMedia media] ||  						Medias associated with the golf course.					 ||
-|| xs:string || name ||  Name of a tee set. ||
+|| xs:string || name ||  Name of a tee set ||
 || [CNote golfml:Note] || [CNote note] ||  						Notes and comments associated with the golf course.					 ||
 || [CTees golfml:Tees] || [CTees tee-set] ||  					Description of a tee set for the golf course.				 ||
 || [CVersion golfml:Version] || [CVersion version] ||  					Records history of the golf course.				 ||
@@ -46,6 +46,6 @@ anyType
 
     	[CCountryClub CountryClub]
 ----
-    
+    <xs:complexType name="GolfCourse">  <xs:sequence>    <xs:element name="name" type="xs:string">    </xs:element>    <xs:element minOccurs="0" name="architect" type="xs:string">    </xs:element>    <xs:choice maxOccurs="unbounded" minOccurs="0">      <xs:element name="media" type="golfml:Media">      </xs:element>      <xs:element name="note" type="golfml:Note">      </xs:element>    </xs:choice>    <xs:element minOccurs="0" name="holes" type="golfml:Holes">    </xs:element>    <xs:element maxOccurs="unbounded" name="tee-set" type="golfml:Tees">    </xs:element>    <xs:element maxOccurs="unbounded" minOccurs="0" name="version" type="golfml:Version">    </xs:element>  </xs:sequence></xs:complexType>
 ----
         

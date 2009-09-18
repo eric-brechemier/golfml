@@ -41,6 +41,6 @@ string
 
     	[CGolfClub GolfClub]
 ----
-    
+    <xs:simpleType name="SwingWeight">  <xs:restriction base="xs:string">    <xs:pattern value="[B-E][0-9]"/>  </xs:restriction></xs:simpleType>
 ----
         

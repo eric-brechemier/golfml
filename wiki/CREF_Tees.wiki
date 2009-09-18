@@ -39,6 +39,6 @@ anyType
 
     	[CScorecard Scorecard]
 ----
-    
+    <xs:complexType name="REF_Tees">  <xs:group ref="golfml:ID_Tees"/></xs:complexType>
 ----
         

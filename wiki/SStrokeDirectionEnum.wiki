@@ -30,6 +30,6 @@ string
 	('left' | 'center' | 'right')
 
 ----
-    
+    <xs:simpleType name="StrokeDirectionEnum">  <xs:restriction base="xs:string">    <xs:enumeration value="left"/>    <xs:enumeration value="center"/>    <xs:enumeration value="right"/>  </xs:restriction></xs:simpleType>
 ----
         

@@ -36,6 +36,6 @@ string
 
     	[CGolfGame GolfGame]
 ----
-    
+    <xs:simpleType name="GolfGameTypeEnum">  <xs:restriction base="xs:string">    <xs:enumeration value="stroke-play"/>    <xs:enumeration value="match-play"/>    <xs:enumeration value="stableford"/>    <xs:enumeration value="bingo-bango-bongo"/>    <xs:enumeration value="skin"/>    <xs:enumeration value="other"/>  </xs:restriction></xs:simpleType>
 ----
         

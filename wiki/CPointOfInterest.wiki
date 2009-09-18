@@ -40,88 +40,20 @@ anyType
 || xs:string || name ||  					Name of point of interest.				 ||
 || [CPosition golfml:Position] || [CPosition position] ||  					Coordinate of a point of interest.				 ||      
 
-=== Attribute Summary ===
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
         
-|| xs:nonNegativeInteger || `number` ||   ||
-|| [SOrientationEnum golfml:OrientationEnum] || `orientation` ||   ||
-|| xs:string || `other` ||  				Alternate value for an attribute.			 ||
-|| xs:string || `subtype` ||   ||
-|| [SGolfCourseAreaTypeEnum golfml:GolfCourseAreaTypeEnum] || `type` ||   ||
-
-=== Attribute Detail ===
-      
-
-==== number ====
-
-      
-=====  Type: =====
-
-          xs:nonNegativeInteger
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
-
-==== orientation ====
-
-      
-=====  Type: =====
-
-          [SOrientationEnum golfml:OrientationEnum]
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
-
-==== other ====
-
-      
-				Alternate value for an attribute.
-			
-=====  Type: =====
-
-          xs:string
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
-
-==== subtype ====
-
-      
-=====  Type: =====
-
-          xs:string
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
-
-==== type ====
-
-      
-=====  Type: =====
-
-          [SGolfCourseAreaTypeEnum golfml:GolfCourseAreaTypeEnum]
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
+|| number ||   || xs:nonNegativeInteger || optional ||  ||  || unqualified ||
+|| orientation ||   || [SOrientationEnum golfml:OrientationEnum] || optional ||  ||  || unqualified ||
+|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
+|| subtype ||   || xs:string || optional ||  ||  || unqualified ||
+|| type ||   || [SGolfCourseAreaTypeEnum golfml:GolfCourseAreaTypeEnum] || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CPlacemarks Placemarks]
 ----
-    
+    <xs:complexType name="PointOfInterest">  <xs:all>    <xs:element minOccurs="0" name="name" type="xs:string">    </xs:element>    <xs:element minOccurs="0" name="description" type="xs:string">    </xs:element>    <xs:element name="position" type="golfml:Position">    </xs:element>  </xs:all>  <xs:attribute name="number" type="xs:nonNegativeInteger"/>  <xs:attribute name="type" type="golfml:GolfCourseAreaTypeEnum"/>  <xs:attribute name="subtype" type="xs:string"/>  <xs:attribute name="orientation" type="golfml:OrientationEnum"/>  <xs:attributeGroup ref="golfml:Other"/></xs:complexType>
 ----
         

@@ -30,6 +30,6 @@ string
 	('front' | 'back')
 
 ----
-    
+    <xs:simpleType name="GolfingDirectionEnum">  <xs:restriction base="xs:string">    <xs:enumeration value="front"/>    <xs:enumeration value="back"/>  </xs:restriction></xs:simpleType>
 ----
         

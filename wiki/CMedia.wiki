@@ -40,65 +40,23 @@ anyType
 
 === Nested Element Summary ===
         
-|| xs:base64Binary || content ||  Base64-coded content of the media. ||
+|| xs:base64Binary || content ||  Base64-coded content of the media ||
 || xs:string || description ||  					Description of the media.				 ||
 || xs:string || name ||  					Name of the media.				 ||
 || xs:anyURI || url ||  					Location of the media.				 ||      
 
-=== Attribute Summary ===
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
         
-|| xs:string || `content-type` ||   ||
-|| xs:string || `other` ||  				Alternate value for an attribute.			 ||
-|| [SMediaTypeEnum golfml:MediaTypeEnum] || `type` ||   ||
-
-=== Attribute Detail ===
-      
-
-==== content-type ====
-
-      
-=====  Type: =====
-
-          xs:string
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
-
-==== other ====
-
-      
-				Alternate value for an attribute.
-			
-=====  Type: =====
-
-          xs:string
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
-
-==== type ====
-
-      
-=====  Type: =====
-
-          [SMediaTypeEnum golfml:MediaTypeEnum]
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
+|| content-type ||   || xs:string || optional ||  ||  || unqualified ||
+|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
+|| type ||   || [SMediaTypeEnum golfml:MediaTypeEnum] || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CCountryClub CountryClub], [CGolfCourse GolfCourse], [CHole Hole], [CPlayer Player]
 ----
-    
+    <xs:complexType name="Media">  <xs:sequence>    <xs:element name="name" type="xs:string">    </xs:element>    <xs:element minOccurs="0" name="description" type="xs:string">    </xs:element>    <xs:group ref="golfml:MediaChoice"/>  </xs:sequence>  <xs:attributeGroup ref="golfml:MediaTypeAttributes"/></xs:complexType>
 ----
         

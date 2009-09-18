@@ -41,43 +41,27 @@ anyType
         
 || [CAddress golfml:Address] || [CAddress address] ||  					Address of the player.				 ||
 || [CContact golfml:Contact] || [CContact contact] ||  					Contact information of the player.				 ||
-|| [CPlayerHandicap golfml:PlayerHandicap] || [CPlayerHandicap current-handicap] ||  Denormalisation of the current handicap of the player. ||
+|| [CPlayerHandicap golfml:PlayerHandicap] || [CPlayerHandicap current-handicap] ||  Denormalisation of the current handicap of the player ||
 || xs:date || date-of-birth ||  					Date of birth of player, used to uniquely identify him.				 ||
 || [CEquipmentList golfml:EquipmentList] || [CEquipmentList equipment-list] ||  					List of equipement owned by the player.				 ||
 || [CGolfBag golfml:GolfBag] || [CGolfBag golf-bag] ||  					Collection of at most 14 golf clubs.				 ||
 || [CCountryClubChoice golfml:CountryClubChoice] || [CCountryClubChoice home-country-club] ||  					Main country club of the player.				 ||
-|| [CMedia golfml:Media] || [CMedia media] ||  Media associated with the player. ||
+|| [CMedia golfml:Media] || [CMedia media] ||  Media associated with the player ||
 || xs:string || name ||  					Name of the player.				 ||
 || [CNote golfml:Note] || [CNote note] ||  					Note associated with the player.				 ||
 || [CRound golfml:Round] || [CRound round] ||  					A round of golf played by the player.				 ||
 || [CStatistics golfml:Statistics] || [CStatistics statistics] ||  					A set of statistical data associated with the player.				 ||      
 
-=== Attribute Summary ===
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
         
-|| [SGender golfml:Gender] || `gender` ||  Gender of the player. ||
-
-=== Attribute Detail ===
-      
-
-==== gender ====
-
-      
-				Gender of the player. Limited to gentlemen or ladies.
-			
-=====  Type: =====
-
-          [SGender golfml:Gender]
-=====  Use: =====
-        required
-=====  Form: =====
-		unqualified
-----
-  
+|| gender ||  Gender of the player || [SGender golfml:Gender] || required ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[Egolfml golfml]
 ----
-    
+    <xs:complexType name="Player">  <xs:sequence>    <xs:element name="name" type="xs:string">    </xs:element>    <xs:element name="date-of-birth" type="xs:date">    </xs:element>    <xs:element minOccurs="0" name="current-handicap" type="golfml:PlayerHandicap">    </xs:element>    <xs:element maxOccurs="unbounded" minOccurs="0" name="address" type="golfml:Address">    </xs:element>    <xs:element maxOccurs="unbounded" minOccurs="0" name="contact" type="golfml:Contact">    </xs:element>    <xs:element minOccurs="0" name="home-country-club" type="golfml:CountryClubChoice">    </xs:element>    <xs:element minOccurs="0" name="note" type="golfml:Note">    </xs:element>    <xs:element minOccurs="0" name="media" type="golfml:Media">    </xs:element>    <xs:element minOccurs="0" name="equipment-list" type="golfml:EquipmentList">    </xs:element>    <xs:element maxOccurs="unbounded" minOccurs="0" name="golf-bag" type="golfml:GolfBag">    </xs:element>    <xs:element maxOccurs="unbounded" minOccurs="0" name="round" type="golfml:Round">    </xs:element>    <xs:element maxOccurs="unbounded" minOccurs="0" name="statistics" type="golfml:Statistics">    </xs:element>  </xs:sequence>  <xs:attribute name="gender" type="golfml:Gender" use="required">  </xs:attribute></xs:complexType>
 ----
         

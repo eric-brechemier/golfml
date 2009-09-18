@@ -30,6 +30,6 @@ anyType
 === Nested Element Summary ===
         
 || xs:date || player.date-of-birth ||   ||
-|| xs:string || player.name ||   ||
+|| xs:string || player.name ||   ||<xs:complexType name="REF_Player">  <xs:group ref="golfml:ID_Player"/></xs:complexType>
 ----
         

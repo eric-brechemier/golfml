@@ -39,30 +39,16 @@ anyType
 || [SStrokePrecisionValue golfml:StrokePrecisionValue] || [SStrokePrecisionValue front-back] ||  					Precision of a stroke relative to the distance.				 ||
 || [SStrokePrecisionValue golfml:StrokePrecisionValue] || [SStrokePrecisionValue left-right] ||  					Precision of a stroke relative to the direction.				 ||      
 
-=== Attribute Summary ===
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
         
-|| xs:string || `type` ||   ||
-
-=== Attribute Detail ===
-      
-
-==== type ====
-
-      
-=====  Type: =====
-
-          xs:string
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
+|| type ||   || xs:string || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CStrokeDetail StrokeDetail]
 ----
-    
+    <xs:complexType name="StrokePrecision">  <xs:sequence minOccurs="0">    <xs:element name="front-back" type="golfml:StrokePrecisionValue">    </xs:element>    <xs:element name="left-right" type="golfml:StrokePrecisionValue">    </xs:element>  </xs:sequence>  <xs:attribute name="type" type="xs:string"/></xs:complexType>
 ----
         

@@ -30,6 +30,6 @@ string
 	('short' | 'middle' | 'long')
 
 ----
-    
+    <xs:simpleType name="StrokeLengthEnum">  <xs:restriction base="xs:string">    <xs:enumeration value="short"/>    <xs:enumeration value="middle"/>    <xs:enumeration value="long"/>  </xs:restriction></xs:simpleType>
 ----
         

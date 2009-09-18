@@ -30,6 +30,6 @@ double
 	inclusive lower bound: -360inclusive upper bound: 360
 
 ----
-    
+    <xs:simpleType name="Angle360">  <xs:restriction base="xs:double">    <xs:minInclusive value="-360"/>    <xs:maxInclusive value="360"/>  </xs:restriction></xs:simpleType>
 ----
         

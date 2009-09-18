@@ -37,30 +37,16 @@ anyType
 || [CHolePlacement golfml:HolePlacement] || [CHolePlacement hole-placement] ||  					Placement of a hole on a green.				 ||
 || xs:string || name ||  					Identifying name for hole placement.				 ||      
 
-=== Attribute Summary ===
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
         
-|| xs:date || `date` ||   ||
-
-=== Attribute Detail ===
-      
-
-==== date ====
-
-      
-=====  Type: =====
-
-          xs:date
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
+|| date ||   || xs:date || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CRound Round]
 ----
-    
+    <xs:complexType name="HolePlacements">  <xs:sequence>    <xs:element name="name" type="xs:string">    </xs:element>    <xs:element maxOccurs="18" name="hole-placement" type="golfml:HolePlacement">    </xs:element>  </xs:sequence>  <xs:attribute name="date" type="xs:date"/></xs:complexType>
 ----
         

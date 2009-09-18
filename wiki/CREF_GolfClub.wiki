@@ -38,6 +38,6 @@ anyType
 
     	[CGolfBag GolfBag]
 ----
-    
+    <xs:complexType name="REF_GolfClub">  <xs:group ref="golfml:ID_GolfClub"/></xs:complexType>
 ----
         

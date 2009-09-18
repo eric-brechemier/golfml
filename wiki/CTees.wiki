@@ -37,103 +37,24 @@ anyType
 === Nested Element Summary ===
         
 || [CHoleQualification golfml:HoleQualification] || [CHoleQualification qualification] ||  					Qualification of the hole for handicaping purposes.				 ||
-|| [CTee golfml:Tee] || [CTee tee] ||  Description of a single hole. ||
+|| [CTee golfml:Tee] || [CTee tee] ||  Description of a single hole ||
 || [CVersion golfml:Version] || [CVersion version] ||  					Records tee set modifications over time.				 ||      
 
-=== Attribute Summary ===
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
         
-|| xs:string || `colour` ||   ||
-|| xs:date || `date-from` ||   ||
-|| xs:date || `date-to` ||   ||
-|| [SGolfingGender golfml:GolfingGender] || `gender` ||   ||
-|| xs:string || `name` ||   ||
-|| [SUnitOfLengthWithUnitsEnum golfml:UnitOfLengthWithUnitsEnum] || `units` ||   ||
-
-=== Attribute Detail ===
-      
-
-==== colour ====
-
-      
-=====  Type: =====
-
-          xs:string
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
-
-==== date-from ====
-
-      
-=====  Type: =====
-
-          xs:date
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
-
-==== date-to ====
-
-      
-=====  Type: =====
-
-          xs:date
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
-
-==== gender ====
-
-      
-=====  Type: =====
-
-          [SGolfingGender golfml:GolfingGender]
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
-
-==== name ====
-
-      
-=====  Type: =====
-
-          xs:string
-=====  Use: =====
-        required
-=====  Form: =====
-		unqualified
-----
-  
-
-==== units ====
-
-      
-=====  Type: =====
-
-          [SUnitOfLengthWithUnitsEnum golfml:UnitOfLengthWithUnitsEnum]
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
+|| colour ||   || xs:string || optional ||  ||  || unqualified ||
+|| date-from ||   || xs:date || optional ||  ||  || unqualified ||
+|| date-to ||   || xs:date || optional ||  ||  || unqualified ||
+|| gender ||   || [SGolfingGender golfml:GolfingGender] || optional ||  ||  || unqualified ||
+|| name ||   || xs:string || required ||  ||  || unqualified ||
+|| units ||   || [SUnitOfLengthWithUnitsEnum golfml:UnitOfLengthWithUnitsEnum] || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CGolfCourse GolfCourse]
 ----
-    
+    <xs:complexType name="Tees">  <xs:sequence>    <xs:element name="qualification" type="golfml:HoleQualification">    </xs:element>    <xs:element maxOccurs="18" name="tee" type="golfml:Tee">    </xs:element>    <xs:element maxOccurs="unbounded" minOccurs="0" name="version" type="golfml:Version">    </xs:element>  </xs:sequence>  <xs:attribute name="date-from" type="xs:date"/>  <xs:attribute name="date-to" type="xs:date"/>  <xs:attribute name="name" type="xs:string" use="required"/>  <xs:attribute name="colour" type="xs:string"/>  <xs:attribute name="gender" type="golfml:GolfingGender"/>  <xs:attribute name="units" type="golfml:UnitOfLengthWithUnitsEnum"/></xs:complexType>
 ----
         

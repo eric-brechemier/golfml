@@ -40,30 +40,16 @@ anyType
 || [CLengthWithUnits golfml:LengthWithUnits] || [CLengthWithUnits green-width] ||  					Width of green.				 ||
 || [CHoleDistanceOnGreen golfml:HoleDistanceOnGreen] || [CHoleDistanceOnGreen hole-distance] ||  					Distance of hole from edge of green.				 ||      
 
-=== Attribute Summary ===
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
         
-|| [SOneToEighteen golfml:OneToEighteen] || `number` ||   ||
-
-=== Attribute Detail ===
-      
-
-==== number ====
-
-      
-=====  Type: =====
-
-          [SOneToEighteen golfml:OneToEighteen]
-=====  Use: =====
-        optional
-=====  Form: =====
-		unqualified
-----
-  
+|| number ||   || [SOneToEighteen golfml:OneToEighteen] || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CHolePlacement HolePlacement]
 ----
-    
+    <xs:complexType name="HolePlacementWithDistances">  <xs:sequence>    <xs:element name="green-length" type="golfml:LengthWithUnits">    </xs:element>    <xs:element name="green-width" type="golfml:LengthWithUnits">    </xs:element>    <xs:element maxOccurs="2" minOccurs="2" name="hole-distance" type="golfml:HoleDistanceOnGreen">    </xs:element>  </xs:sequence>  <xs:attribute name="number" type="golfml:OneToEighteen"/></xs:complexType>
 ----
         
