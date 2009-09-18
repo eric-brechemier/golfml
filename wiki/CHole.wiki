@@ -43,7 +43,7 @@ anyType
 === Attribute Summary ===
         
 || xs:string || `name` ||  Name of hole. ||
-|| [SOneToEighteen golfml:OneToEighteen] || `number` ||  Hole number. ||
+|| `[SOneToEighteen golfml:OneToEighteen]` || `number` ||  Hole number. ||
 
 === Attribute Detail ===
       
