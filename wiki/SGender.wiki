@@ -2,7 +2,7 @@
 
 == Name ==
 
-Gender (simpleType)
+*[SGender Gender]*
 
   	
 

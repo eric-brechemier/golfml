@@ -2,7 +2,7 @@
 
 == Name ==
 
-HandicapStroke (simpleType)
+*[SHandicapStroke HandicapStroke]*
 
   	
 

@@ -2,7 +2,7 @@
 
 == Name ==
 
-GolfGameTypeEnum (simpleType)
+*[SGolfGameTypeEnum GolfGameTypeEnum]*
 
   	
 

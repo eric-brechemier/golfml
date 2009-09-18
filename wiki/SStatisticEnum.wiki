@@ -2,7 +2,7 @@
 
 == Name ==
 
-StatisticEnum (simpleType)
+*[SStatisticEnum StatisticEnum]*
 
   	
 

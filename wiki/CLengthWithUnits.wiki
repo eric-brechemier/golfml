@@ -2,7 +2,7 @@
 
 == Name ==
 
-LengthWithUnits (complexType)
+*[CLengthWithUnits LengthWithUnits]*
 
   	
 

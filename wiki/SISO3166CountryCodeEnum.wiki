@@ -2,7 +2,7 @@
 
 == Name ==
 
-ISO3166CountryCodeEnum (simpleType)
+*[SISO3166CountryCodeEnum ISO3166CountryCodeEnum]*
 
   	
 

@@ -2,7 +2,7 @@
 
 == Name ==
 
-StrokeDirectionEnum (simpleType)
+*[SStrokeDirectionEnum StrokeDirectionEnum]*
 
   	
 

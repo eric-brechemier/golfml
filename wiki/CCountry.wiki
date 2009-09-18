@@ -2,7 +2,7 @@
 
 == Name ==
 
-Country (complexType)
+*[CCountry Country]*
 
   	
 

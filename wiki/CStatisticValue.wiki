@@ -2,7 +2,7 @@
 
 == Name ==
 
-StatisticValue (complexType)
+*[CStatisticValue StatisticValue]*
 
   	
 

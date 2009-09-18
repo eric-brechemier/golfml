@@ -2,7 +2,7 @@
 
 == Name ==
 
-Score (complexType)
+*[CScore Score]*
 
   	
 

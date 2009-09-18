@@ -2,7 +2,7 @@
 
 == Name ==
 
-GolfingDirectionEnum (simpleType)
+*[SGolfingDirectionEnum GolfingDirectionEnum]*
 
   	
 

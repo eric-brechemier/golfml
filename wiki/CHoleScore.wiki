@@ -2,7 +2,7 @@
 
 == Name ==
 
-HoleScore (complexType)
+*[CHoleScore HoleScore]*
 
   	
 

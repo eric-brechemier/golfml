@@ -2,7 +2,7 @@
 
 == Name ==
 
-Statistics (complexType)
+*[CStatistics Statistics]*
 
   	
 

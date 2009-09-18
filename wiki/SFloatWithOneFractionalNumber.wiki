@@ -2,7 +2,7 @@
 
 == Name ==
 
-FloatWithOneFractionalNumber (simpleType)
+*[SFloatWithOneFractionalNumber FloatWithOneFractionalNumber]*
 
   	
 

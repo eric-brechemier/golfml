@@ -2,7 +2,7 @@
 
 == Name ==
 
-Address (complexType)
+*[CAddress Address]*
 
   	
 

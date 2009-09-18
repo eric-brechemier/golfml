@@ -2,7 +2,7 @@
 
 == Name ==
 
-Angle360 (simpleType)
+*[SAngle360 Angle360]*
 
   	
 

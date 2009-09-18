@@ -2,7 +2,7 @@
 
 == Name ==
 
-Collection (complexType)
+*[CCollection Collection]*
 
   	
 

@@ -2,7 +2,7 @@
 
 == Name ==
 
-Equipment (complexType)
+*[CEquipment Equipment]*
 
   	
 

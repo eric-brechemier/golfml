@@ -2,7 +2,7 @@
 
 == Name ==
 
-Note (complexType)
+*[CNote Note]*
 
   	
 

@@ -2,7 +2,7 @@
 
 == Name ==
 
-FourSome (complexType)
+*[CFourSome FourSome]*
 
   	
 

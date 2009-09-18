@@ -2,7 +2,7 @@
 
 == Name ==
 
-REF_Player (complexType)
+*[CREF_Player REF_Player]*
 
   	
 

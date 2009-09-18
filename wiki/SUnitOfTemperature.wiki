@@ -2,7 +2,7 @@
 
 == Name ==
 
-UnitOfTemperature (simpleType)
+*[SUnitOfTemperature UnitOfTemperature]*
 
   	
 

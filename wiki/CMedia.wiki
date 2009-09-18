@@ -2,7 +2,7 @@
 
 == Name ==
 
-Media (complexType)
+*[CMedia Media]*
 
   	
 

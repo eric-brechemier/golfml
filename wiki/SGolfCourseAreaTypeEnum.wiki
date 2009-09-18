@@ -2,7 +2,7 @@
 
 == Name ==
 
-GolfCourseAreaTypeEnum (simpleType)
+*[SGolfCourseAreaTypeEnum GolfCourseAreaTypeEnum]*
 
   	
 

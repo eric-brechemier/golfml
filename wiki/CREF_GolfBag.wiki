@@ -2,7 +2,7 @@
 
 == Name ==
 
-REF_GolfBag (complexType)
+*[CREF_GolfBag REF_GolfBag]*
 
   	
 

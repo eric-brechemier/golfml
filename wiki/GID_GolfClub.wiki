@@ -2,7 +2,7 @@
 
 == Name ==
 
-ID_GolfClub (group)
+*[GID_GolfClub ID_GolfClub]*
 
   	
 

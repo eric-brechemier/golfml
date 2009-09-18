@@ -2,7 +2,7 @@
 
 == Name ==
 
-HolePlacements (complexType)
+*[CHolePlacements HolePlacements]*
 
   	
 

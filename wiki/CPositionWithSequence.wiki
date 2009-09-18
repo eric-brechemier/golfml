@@ -2,7 +2,7 @@
 
 == Name ==
 
-PositionWithSequence (complexType)
+*[CPositionWithSequence PositionWithSequence]*
 
   	
 

@@ -2,7 +2,7 @@
 
 == Name ==
 
-PointOfInterest (complexType)
+*[CPointOfInterest PointOfInterest]*
 
   	
 

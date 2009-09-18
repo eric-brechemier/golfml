@@ -2,7 +2,7 @@
 
 == Name ==
 
-UnitOfLengthWithUnitsEnum (simpleType)
+*[SUnitOfLengthWithUnitsEnum UnitOfLengthWithUnitsEnum]*
 
   	
 

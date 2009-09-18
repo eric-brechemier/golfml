@@ -2,7 +2,7 @@
 
 == Name ==
 
-ID_Player (group)
+*[GID_Player ID_Player]*
 
   	
 

@@ -2,7 +2,7 @@
 
 == Name ==
 
-GolfingGender (simpleType)
+*[SGolfingGender GolfingGender]*
 
   	
 

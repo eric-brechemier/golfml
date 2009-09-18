@@ -2,7 +2,7 @@
 
 == Name ==
 
-CountryClub (complexType)
+*[CCountryClub CountryClub]*
 
   	
 

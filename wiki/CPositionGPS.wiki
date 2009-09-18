@@ -2,7 +2,7 @@
 
 == Name ==
 
-PositionGPS (complexType)
+*[CPositionGPS PositionGPS]*
 
   	
 

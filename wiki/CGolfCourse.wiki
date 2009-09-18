@@ -2,7 +2,7 @@
 
 == Name ==
 
-GolfCourse (complexType)
+*[CGolfCourse GolfCourse]*
 
   	
 

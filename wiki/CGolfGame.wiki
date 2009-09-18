@@ -2,7 +2,7 @@
 
 == Name ==
 
-GolfGame (complexType)
+*[CGolfGame GolfGame]*
 
   	
 

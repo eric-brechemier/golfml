@@ -2,7 +2,7 @@
 
 == Name ==
 
-ID_GolfBag (group)
+*[GID_GolfBag ID_GolfBag]*
 
   	
 

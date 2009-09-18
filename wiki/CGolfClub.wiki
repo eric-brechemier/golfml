@@ -2,7 +2,7 @@
 
 == Name ==
 
-GolfClub (complexType)
+*[CGolfClub GolfClub]*
 
   	
 

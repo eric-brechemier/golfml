@@ -2,7 +2,7 @@
 
 == Name ==
 
-WindEnum (simpleType)
+*[SWindEnum WindEnum]*
 
   	
 

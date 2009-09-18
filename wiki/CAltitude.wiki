@@ -2,7 +2,7 @@
 
 == Name ==
 
-Altitude (complexType)
+*[CAltitude Altitude]*
 
   	
 

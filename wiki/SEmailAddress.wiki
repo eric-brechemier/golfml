@@ -2,7 +2,7 @@
 
 == Name ==
 
-EmailAddress (simpleType)
+*[SEmailAddress EmailAddress]*
 
   	
 

@@ -2,7 +2,7 @@
 
 == Name ==
 
-REF_GolfCourse (complexType)
+*[CREF_GolfCourse REF_GolfCourse]*
 
   	
 

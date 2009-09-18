@@ -2,7 +2,7 @@
 
 == Name ==
 
-UnitSystemEnum (simpleType)
+*[SUnitSystemEnum UnitSystemEnum]*
 
   	
 

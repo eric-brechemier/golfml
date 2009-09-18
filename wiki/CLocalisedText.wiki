@@ -2,7 +2,7 @@
 
 == Name ==
 
-LocalisedText (complexType)
+*[CLocalisedText LocalisedText]*
 
   	
 

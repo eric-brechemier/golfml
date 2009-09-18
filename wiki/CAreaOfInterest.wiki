@@ -2,7 +2,7 @@
 
 == Name ==
 
-AreaOfInterest (complexType)
+*[CAreaOfInterest AreaOfInterest]*
 
   	
 

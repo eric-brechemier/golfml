@@ -2,7 +2,7 @@
 
 == Name ==
 
-OneToEighteen (simpleType)
+*[SOneToEighteen OneToEighteen]*
 
   	
 

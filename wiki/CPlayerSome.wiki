@@ -2,7 +2,7 @@
 
 == Name ==
 
-PlayerSome (complexType)
+*[CPlayerSome PlayerSome]*
 
   	
 

@@ -2,7 +2,7 @@
 
 == Name ==
 
-HandicapSystemEnum (simpleType)
+*[SHandicapSystemEnum HandicapSystemEnum]*
 
   	
 

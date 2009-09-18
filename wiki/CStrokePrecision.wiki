@@ -2,7 +2,7 @@
 
 == Name ==
 
-StrokePrecision (complexType)
+*[CStrokePrecision StrokePrecision]*
 
   	
 

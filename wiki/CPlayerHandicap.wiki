@@ -2,7 +2,7 @@
 
 == Name ==
 
-PlayerHandicap (complexType)
+*[CPlayerHandicap PlayerHandicap]*
 
   	
 

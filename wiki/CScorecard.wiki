@@ -2,7 +2,7 @@
 
 == Name ==
 
-Scorecard (complexType)
+*[CScorecard Scorecard]*
 
   	
 

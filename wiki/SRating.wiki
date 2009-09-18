@@ -2,7 +2,7 @@
 
 == Name ==
 
-Rating (simpleType)
+*[SRating Rating]*
 
   	
 

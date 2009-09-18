@@ -2,7 +2,7 @@
 
 == Name ==
 
-StrokeDetail (complexType)
+*[CStrokeDetail StrokeDetail]*
 
   	
 

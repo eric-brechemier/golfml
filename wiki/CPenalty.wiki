@@ -2,7 +2,7 @@
 
 == Name ==
 
-Penalty (complexType)
+*[CPenalty Penalty]*
 
   	
 

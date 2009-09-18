@@ -2,7 +2,7 @@
 
 == Name ==
 
-CourseRating (simpleType)
+*[SCourseRating CourseRating]*
 
   	
 

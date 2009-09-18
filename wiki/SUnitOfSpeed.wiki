@@ -2,7 +2,7 @@
 
 == Name ==
 
-UnitOfSpeed (simpleType)
+*[SUnitOfSpeed UnitOfSpeed]*
 
   	
 

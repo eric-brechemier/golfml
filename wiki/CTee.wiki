@@ -2,7 +2,7 @@
 
 == Name ==
 
-Tee (complexType)
+*[CTee Tee]*
 
   	
 

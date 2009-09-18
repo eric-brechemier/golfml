@@ -2,7 +2,7 @@
 
 == Name ==
 
-PhoneNumber (simpleType)
+*[SPhoneNumber PhoneNumber]*
 
   	
 

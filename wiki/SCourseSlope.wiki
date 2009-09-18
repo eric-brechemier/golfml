@@ -2,7 +2,7 @@
 
 == Name ==
 
-CourseSlope (simpleType)
+*[SCourseSlope CourseSlope]*
 
   	
 

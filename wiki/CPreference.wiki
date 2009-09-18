@@ -2,7 +2,7 @@
 
 == Name ==
 
-Preference (complexType)
+*[CPreference Preference]*
 
   	
 

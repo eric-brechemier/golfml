@@ -2,7 +2,7 @@
 
 == Name ==
 
-RoomForExtension (complexType)
+*[CRoomForExtension RoomForExtension]*
 
   	
 

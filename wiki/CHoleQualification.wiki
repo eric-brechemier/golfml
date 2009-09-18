@@ -2,7 +2,7 @@
 
 == Name ==
 
-HoleQualification (complexType)
+*[CHoleQualification HoleQualification]*
 
   	
 

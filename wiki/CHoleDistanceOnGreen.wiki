@@ -2,7 +2,7 @@
 
 == Name ==
 
-HoleDistanceOnGreen (complexType)
+*[CHoleDistanceOnGreen HoleDistanceOnGreen]*
 
   	
 
