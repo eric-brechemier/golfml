@@ -27,14 +27,14 @@ anyType
         
 ===  Model ===
 {{{
-          <...  type = [SGolfClubTypeEnum.html GolfClubTypeEnum.html]>  (manufacturer, model, submodel?, length?, weight?, tip?  )</...>
+          <...  type = [SGolfClubTypeEnum GolfClubTypeEnum.html]>  (manufacturer, model, submodel?, length?, weight?, tip?  )</...>
 }}}
 ----
     
 
 === Nested Element Summary ===
         
-|| [CLengthWithUnits.html golfml:LengthWithUnits] || [CLengthWithUnits.html length] ||  					Length of a shaft.				 ||
+|| [CLengthWithUnits golfml:LengthWithUnits] || [CLengthWithUnits length] ||  					Length of a shaft.				 ||
 || xs:string || manufacturer ||  					Manufacturer of a shaft.				 ||
 || xs:string || model ||  					Model of a shaft.				 ||
 || xs:string || submodel ||  					Sub-model or type of a model of a shaft.				 ||
@@ -43,7 +43,7 @@ anyType
 
 === Attribute Summary ===
         
-|| [SGolfClubTypeEnum.html golfml:GolfClubTypeEnum] || `type` ||  				Type of golf club for the shaft.			 ||
+|| [SGolfClubTypeEnum golfml:GolfClubTypeEnum] || `type` ||  				Type of golf club for the shaft.			 ||
 
 === Attribute Detail ===
       
@@ -55,7 +55,7 @@ anyType
 			
 =====  Type: =====
 
-          [SGolfClubTypeEnum.html golfml:GolfClubTypeEnum]
+          [SGolfClubTypeEnum golfml:GolfClubTypeEnum]
 =====  Use: =====
         optional
 =====  Form: =====
@@ -65,7 +65,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CGolfClub.html GolfClub]
+    	[CGolfClub GolfClub]
 ----
     
 ----

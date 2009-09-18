@@ -35,7 +35,7 @@ string
 
 ===  Local Usage ===
 
-    	[CLengthWithUnits.html LengthWithUnits], [CTees.html Tees]
+    	[CLengthWithUnits LengthWithUnits], [CTees Tees]
 ----
     
 ----

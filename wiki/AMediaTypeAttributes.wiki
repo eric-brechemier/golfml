@@ -21,7 +21,7 @@ MediaTypeAttributes (attributeGroup)
         
 ===  Model ===
 {{{
-            content-type = xs:string  other = xs:string  type = [SMediaTypeEnum.html MediaTypeEnum.html]
+            content-type = xs:string  other = xs:string  type = [SMediaTypeEnum MediaTypeEnum.html]
 }}}
 ----
           
@@ -30,7 +30,7 @@ MediaTypeAttributes (attributeGroup)
         
 || xs:string || `content-type` ||   ||
 || xs:string || `other` ||  				Alternate value for an attribute.			 ||
-|| [SMediaTypeEnum.html golfml:MediaTypeEnum] || `type` ||   ||
+|| [SMediaTypeEnum golfml:MediaTypeEnum] || `type` ||   ||
 
 === Attribute Detail ===
       
@@ -68,7 +68,7 @@ MediaTypeAttributes (attributeGroup)
       
 =====  Type: =====
 
-          [SMediaTypeEnum.html golfml:MediaTypeEnum]
+          [SMediaTypeEnum golfml:MediaTypeEnum]
 =====  Use: =====
         optional
 =====  Form: =====
@@ -78,7 +78,7 @@ MediaTypeAttributes (attributeGroup)
 
 ===  Local Usage ===
 
-    	[CMedia.html Media]
+    	[CMedia Media]
 ----
     
 ----

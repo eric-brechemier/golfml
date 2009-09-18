@@ -36,8 +36,8 @@ anyType
 
 === Nested Element Summary ===
         
-|| [SStrokePrecisionValue.html golfml:StrokePrecisionValue] || [SStrokePrecisionValue.html front-back] ||  					Precision of a stroke relative to the distance.				 ||
-|| [SStrokePrecisionValue.html golfml:StrokePrecisionValue] || [SStrokePrecisionValue.html left-right] ||  					Precision of a stroke relative to the direction.				 ||      
+|| [SStrokePrecisionValue golfml:StrokePrecisionValue] || [SStrokePrecisionValue front-back] ||  					Precision of a stroke relative to the distance.				 ||
+|| [SStrokePrecisionValue golfml:StrokePrecisionValue] || [SStrokePrecisionValue left-right] ||  					Precision of a stroke relative to the direction.				 ||      
 
 === Attribute Summary ===
         
@@ -61,7 +61,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CStrokeDetail.html StrokeDetail]
+    	[CStrokeDetail StrokeDetail]
 ----
     
 ----

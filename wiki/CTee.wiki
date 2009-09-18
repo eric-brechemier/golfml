@@ -27,20 +27,20 @@ anyType
         
 ===  Model ===
 {{{
-          <...  number = [SOneToEighteen.html OneToEighteen.html]>  (par, handicap-stroke, length{0,2}  )</...>
+          <...  number = [SOneToEighteen OneToEighteen.html]>  (par, handicap-stroke, length{0,2}  )</...>
 }}}
 ----
     
 
 === Nested Element Summary ===
         
-|| [SHandicapStroke.html golfml:HandicapStroke] || [SHandicapStroke.html handicap-stroke] ||  					Relative difficulty level of the hole for this set of tees.				 ||
-|| [CLengthWithUnits.html golfml:LengthWithUnits] || [CLengthWithUnits.html length] ||  Length of the hole from the set of tees. ||
-|| [SPar.html golfml:Par] || [SPar.html par] ||  					Par score for the hole.				 ||      
+|| [SHandicapStroke golfml:HandicapStroke] || [SHandicapStroke handicap-stroke] ||  					Relative difficulty level of the hole for this set of tees.				 ||
+|| [CLengthWithUnits golfml:LengthWithUnits] || [CLengthWithUnits length] ||  Length of the hole from the set of tees. ||
+|| [SPar golfml:Par] || [SPar par] ||  					Par score for the hole.				 ||      
 
 === Attribute Summary ===
         
-|| [SOneToEighteen.html golfml:OneToEighteen] || `number` ||   ||
+|| [SOneToEighteen golfml:OneToEighteen] || `number` ||   ||
 
 === Attribute Detail ===
       
@@ -50,7 +50,7 @@ anyType
       
 =====  Type: =====
 
-          [SOneToEighteen.html golfml:OneToEighteen]
+          [SOneToEighteen golfml:OneToEighteen]
 =====  Use: =====
         optional
 =====  Form: =====
@@ -60,7 +60,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CTees.html Tees]
+    	[CTees Tees]
 ----
     
 ----

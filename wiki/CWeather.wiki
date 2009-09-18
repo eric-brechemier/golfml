@@ -30,7 +30,7 @@ anyType
         
 ===  Model ===
 {{{
-          <...  other = xs:string  wind = [SWindEnum.html WindEnum.html]>string</...>
+          <...  other = xs:string  wind = [SWindEnum WindEnum.html]>string</...>
 }}}
 ----
           
@@ -38,7 +38,7 @@ anyType
 === Attribute Summary ===
         
 || xs:string || `other` ||  				Alternate value for an attribute.			 ||
-|| [SWindEnum.html golfml:WindEnum] || `wind` ||   ||
+|| [SWindEnum golfml:WindEnum] || `wind` ||   ||
 
 === Attribute Detail ===
       
@@ -63,7 +63,7 @@ anyType
       
 =====  Type: =====
 
-          [SWindEnum.html golfml:WindEnum]
+          [SWindEnum golfml:WindEnum]
 =====  Use: =====
         optional
 =====  Form: =====
@@ -73,7 +73,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CRound.html Round]
+    	[CRound Round]
 ----
     
 ----

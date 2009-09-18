@@ -34,11 +34,11 @@ anyType
 
 === Nested Element Summary ===
         
-|| [CHole.html golfml:Hole] || [CHole.html hole] ||  					Collection of 1 to 18 holes of golf.				 ||
+|| [CHole golfml:Hole] || [CHole hole] ||  					Collection of 1 to 18 holes of golf.				 ||
 
 ===  Local Usage ===
 
-    	[CGolfCourse.html GolfCourse]
+    	[CGolfCourse GolfCourse]
 ----
     
 ----

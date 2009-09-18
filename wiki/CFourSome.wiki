@@ -34,11 +34,11 @@ anyType
 
 === Nested Element Summary ===
         
-|| [CPlayerSome.html golfml:PlayerSome] || [CPlayerSome.html player-some] ||  											Qualification of the player on the 2,3,4 some.					 ||
+|| [CPlayerSome golfml:PlayerSome] || [CPlayerSome player-some] ||  											Qualification of the player on the 2,3,4 some.					 ||
 
 ===  Local Usage ===
 
-    	[CRound.html Round]
+    	[CRound Round]
 ----
     
 ----

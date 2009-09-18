@@ -28,7 +28,7 @@ anyType
 ===  Model ===
 {{{
           <...  name = xs:string  
-            *number = [SOneToEighteen.html OneToEighteen.html]*
+            *number = [SOneToEighteen OneToEighteen.html]*
           >  (media | note | placemarks)`*` </...>
 }}}
 ----
@@ -36,14 +36,14 @@ anyType
 
 === Nested Element Summary ===
         
-|| [CMedia.html golfml:Media] || [CMedia.html media] ||  					Associated media: Picture, video, document, link...				 ||
-|| [CNote.html golfml:Note] || [CNote.html note] ||  					Localised note or comment about the hole.				 ||
-|| [CPlacemarks.html golfml:Placemarks] || [CPlacemarks.html placemarks] ||  					List of places worth of interest on the hole.				 ||      
+|| [CMedia golfml:Media] || [CMedia media] ||  					Associated media: Picture, video, document, link...				 ||
+|| [CNote golfml:Note] || [CNote note] ||  					Localised note or comment about the hole.				 ||
+|| [CPlacemarks golfml:Placemarks] || [CPlacemarks placemarks] ||  					List of places worth of interest on the hole.				 ||      
 
 === Attribute Summary ===
         
 || xs:string || `name` ||  Name of hole. ||
-|| [SOneToEighteen.html golfml:OneToEighteen] || `number` ||  Hole number. ||
+|| [SOneToEighteen golfml:OneToEighteen] || `number` ||  Hole number. ||
 
 === Attribute Detail ===
       
@@ -70,7 +70,7 @@ anyType
 			
 =====  Type: =====
 
-          [SOneToEighteen.html golfml:OneToEighteen]
+          [SOneToEighteen golfml:OneToEighteen]
 =====  Use: =====
         required
 =====  Form: =====
@@ -80,7 +80,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CHoles.html Holes]
+    	[CHoles Holes]
 ----
     
 ----

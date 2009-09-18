@@ -33,7 +33,7 @@ anyType
         
 ===  Model ===
 {{{
-          <...  content-type = xs:string  other = xs:string  type = [SMediaTypeEnum.html MediaTypeEnum.html]>  (name, description?, (url | content)   )</...>
+          <...  content-type = xs:string  other = xs:string  type = [SMediaTypeEnum MediaTypeEnum.html]>  (name, description?, (url | content)   )</...>
 }}}
 ----
     
@@ -49,7 +49,7 @@ anyType
         
 || xs:string || `content-type` ||   ||
 || xs:string || `other` ||  				Alternate value for an attribute.			 ||
-|| [SMediaTypeEnum.html golfml:MediaTypeEnum] || `type` ||   ||
+|| [SMediaTypeEnum golfml:MediaTypeEnum] || `type` ||   ||
 
 === Attribute Detail ===
       
@@ -87,7 +87,7 @@ anyType
       
 =====  Type: =====
 
-          [SMediaTypeEnum.html golfml:MediaTypeEnum]
+          [SMediaTypeEnum golfml:MediaTypeEnum]
 =====  Use: =====
         optional
 =====  Form: =====
@@ -97,7 +97,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CCountryClub.html CountryClub], [CGolfCourse.html GolfCourse], [CHole.html Hole], [CPlayer.html Player]
+    	[CCountryClub CountryClub], [CGolfCourse GolfCourse], [CHole Hole], [CPlayer Player]
 ----
     
 ----

@@ -34,7 +34,7 @@ string
 
 ===  Local Usage ===
 
-    	[CGolfClub.html GolfClub], [CShaft.html Shaft]
+    	[CGolfClub GolfClub], [CShaft Shaft]
 ----
     
 ----

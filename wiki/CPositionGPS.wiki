@@ -34,13 +34,13 @@ anyType
 
 === Nested Element Summary ===
         
-|| [CAltitude.html golfml:Altitude] || [CAltitude.html alt] ||  Altitude of a GPS position expressed as a float value. ||
-|| [SAngle90.html golfml:Angle90] || [SAngle90.html lat] ||  					Latitude of the GPS position expressed as a float value between -90° (South Pole) to +90° (North Pole).				 ||
-|| [SAngle180.html golfml:Angle180] || [SAngle180.html lon] ||  					Longitude in the GPS position expressed as a float value between -180° for longitude West of Greenwich					to +180° for longitude East of Greenwich.				 ||
+|| [CAltitude golfml:Altitude] || [CAltitude alt] ||  Altitude of a GPS position expressed as a float value. ||
+|| [SAngle90 golfml:Angle90] || [SAngle90 lat] ||  					Latitude of the GPS position expressed as a float value between -90° (South Pole) to +90° (North Pole).				 ||
+|| [SAngle180 golfml:Angle180] || [SAngle180 lon] ||  					Longitude in the GPS position expressed as a float value between -180° for longitude West of Greenwich					to +180° for longitude East of Greenwich.				 ||
 
 ===  Local Usage ===
 
-    	[CPosition.html Position]
+    	[CPosition Position]
 ----
     
 ----

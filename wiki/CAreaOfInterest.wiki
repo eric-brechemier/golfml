@@ -31,7 +31,7 @@ anyType
         
 ===  Model ===
 {{{
-          <...  number = xs:nonNegativeInteger  other = xs:string  type = [SGolfCourseAreaTypeEnum.html GolfCourseAreaTypeEnum.html]>  (name, description?, position{2,*}  )</...>
+          <...  number = xs:nonNegativeInteger  other = xs:string  type = [SGolfCourseAreaTypeEnum GolfCourseAreaTypeEnum.html]>  (name, description?, position{2,*}  )</...>
 }}}
 ----
     
@@ -40,13 +40,13 @@ anyType
         
 || xs:string || description ||  					Description of an area of interest.				 ||
 || xs:string || name ||  					Name of an area of interest.				 ||
-|| [CPositionWithSequence.html golfml:PositionWithSequence] || [CPositionWithSequence.html position] ||  Position of a point of the polygon that forms the area of interest. ||      
+|| [CPositionWithSequence golfml:PositionWithSequence] || [CPositionWithSequence position] ||  Position of a point of the polygon that forms the area of interest. ||      
 
 === Attribute Summary ===
         
 || xs:nonNegativeInteger || `number` ||  Position of the area of interest in a list of areas of interest. ||
 || xs:string || `other` ||  				Alternate value for an attribute.			 ||
-|| [SGolfCourseAreaTypeEnum.html golfml:GolfCourseAreaTypeEnum] || `type` ||  				Type of area of interest.			 ||
+|| [SGolfCourseAreaTypeEnum golfml:GolfCourseAreaTypeEnum] || `type` ||  				Type of area of interest.			 ||
 
 === Attribute Detail ===
       
@@ -89,7 +89,7 @@ anyType
 			
 =====  Type: =====
 
-          [SGolfCourseAreaTypeEnum.html golfml:GolfCourseAreaTypeEnum]
+          [SGolfCourseAreaTypeEnum golfml:GolfCourseAreaTypeEnum]
 =====  Use: =====
         optional
 =====  Form: =====
@@ -99,7 +99,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CPlacemarks.html Placemarks]
+    	[CPlacemarks Placemarks]
 ----
     
 ----

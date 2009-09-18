@@ -39,7 +39,7 @@ float
 
 ===  Local Usage ===
 
-    	[CPlayerHandicap.html PlayerHandicap]
+    	[CPlayerHandicap PlayerHandicap]
 ----
     
 ----

@@ -58,7 +58,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CHolePlacement.html HolePlacement], [CHoleQualification.html HoleQualification], [CPosition.html Position], [CRound.html Round]
+    	[CHolePlacement HolePlacement], [CHoleQualification HoleQualification], [CPosition Position], [CRound Round]
 ----
     
 ----

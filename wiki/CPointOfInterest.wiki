@@ -29,7 +29,7 @@ anyType
         
 ===  Model ===
 {{{
-          <...  number = xs:nonNegativeInteger  orientation = [SOrientationEnum.html OrientationEnum.html]  other = xs:string  subtype = xs:string  type = [SGolfCourseAreaTypeEnum.html GolfCourseAreaTypeEnum.html]>  (name? ; description? ; position) </...>
+          <...  number = xs:nonNegativeInteger  orientation = [SOrientationEnum OrientationEnum.html]  other = xs:string  subtype = xs:string  type = [SGolfCourseAreaTypeEnum GolfCourseAreaTypeEnum.html]>  (name? ; description? ; position) </...>
 }}}
 ----
     
@@ -38,15 +38,15 @@ anyType
         
 || xs:string || description ||  					Description of a point of interest.				 ||
 || xs:string || name ||  					Name of point of interest.				 ||
-|| [CPosition.html golfml:Position] || [CPosition.html position] ||  					Coordinate of a point of interest.				 ||      
+|| [CPosition golfml:Position] || [CPosition position] ||  					Coordinate of a point of interest.				 ||      
 
 === Attribute Summary ===
         
 || xs:nonNegativeInteger || `number` ||   ||
-|| [SOrientationEnum.html golfml:OrientationEnum] || `orientation` ||   ||
+|| [SOrientationEnum golfml:OrientationEnum] || `orientation` ||   ||
 || xs:string || `other` ||  				Alternate value for an attribute.			 ||
 || xs:string || `subtype` ||   ||
-|| [SGolfCourseAreaTypeEnum.html golfml:GolfCourseAreaTypeEnum] || `type` ||   ||
+|| [SGolfCourseAreaTypeEnum golfml:GolfCourseAreaTypeEnum] || `type` ||   ||
 
 === Attribute Detail ===
       
@@ -69,7 +69,7 @@ anyType
       
 =====  Type: =====
 
-          [SOrientationEnum.html golfml:OrientationEnum]
+          [SOrientationEnum golfml:OrientationEnum]
 =====  Use: =====
         optional
 =====  Form: =====
@@ -110,7 +110,7 @@ anyType
       
 =====  Type: =====
 
-          [SGolfCourseAreaTypeEnum.html golfml:GolfCourseAreaTypeEnum]
+          [SGolfCourseAreaTypeEnum golfml:GolfCourseAreaTypeEnum]
 =====  Use: =====
         optional
 =====  Form: =====
@@ -120,7 +120,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CPlacemarks.html Placemarks]
+    	[CPlacemarks Placemarks]
 ----
     
 ----

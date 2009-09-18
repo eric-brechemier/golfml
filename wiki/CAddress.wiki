@@ -36,7 +36,7 @@ anyType
 
 === Nested Element Summary ===
         
-|| [CCountry.html golfml:Country] || [CCountry.html country] ||  Country of address. ||
+|| [CCountry golfml:Country] || [CCountry country] ||  Country of address. ||
 || xs:string || municipality ||  					Municipality of address.				 ||
 || xs:string || postal-code ||  Postal code of the address. ||
 || xs:string || region ||  Region of an address. ||
@@ -44,7 +44,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CCountryClub.html CountryClub], [CPlayer.html Player]
+    	[CCountryClub CountryClub], [CPlayer Player]
 ----
     
 ----

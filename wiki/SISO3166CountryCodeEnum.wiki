@@ -34,7 +34,7 @@ string
 
 ===  Local Usage ===
 
-    	[CCountry.html Country], [GID_GolfCourse.html ID_GolfCourse]
+    	[CCountry Country], [GID_GolfCourse ID_GolfCourse]
 ----
     
 ----

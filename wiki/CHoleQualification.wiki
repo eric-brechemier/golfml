@@ -34,12 +34,12 @@ anyType
 
 === Nested Element Summary ===
         
-|| [CRoomForExtension.html golfml:RoomForExtension] || [CRoomForExtension.html qualification-other] ||  						Qualify a golf course played from a set of tees according to a non-USGA golfing authority.					 ||
-|| [CHoleQualificationUSGA.html golfml:HoleQualificationUSGA] || [CHoleQualificationUSGA.html qualification-usga] ||  						Qualify a golf course played from a set of tees according to the USGA rules.					 ||
+|| [CRoomForExtension golfml:RoomForExtension] || [CRoomForExtension qualification-other] ||  						Qualify a golf course played from a set of tees according to a non-USGA golfing authority.					 ||
+|| [CHoleQualificationUSGA golfml:HoleQualificationUSGA] || [CHoleQualificationUSGA qualification-usga] ||  						Qualify a golf course played from a set of tees according to the USGA rules.					 ||
 
 ===  Local Usage ===
 
-    	[CTees.html Tees]
+    	[CTees Tees]
 ----
     
 ----

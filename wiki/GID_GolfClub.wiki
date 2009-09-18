@@ -32,7 +32,7 @@ ID_GolfClub (group)
 
 ===  Local Usage ===
 
-    	[CREF_GolfClub.html REF_GolfClub]
+    	[CREF_GolfClub REF_GolfClub]
 ----
     
 ----

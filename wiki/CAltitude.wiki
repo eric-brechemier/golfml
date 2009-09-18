@@ -28,7 +28,7 @@ anyType
 ===  Model ===
 {{{
           <...  
-            *mode = [SAltitudeModeEnum.html AltitudeModeEnum.html]*
+            *mode = [SAltitudeModeEnum AltitudeModeEnum.html]*
           >double</...>
 }}}
 ----
@@ -36,7 +36,7 @@ anyType
 
 === Attribute Summary ===
         
-|| [SAltitudeModeEnum.html golfml:AltitudeModeEnum] || `mode` ||   ||
+|| [SAltitudeModeEnum golfml:AltitudeModeEnum] || `mode` ||   ||
 
 === Attribute Detail ===
       
@@ -46,7 +46,7 @@ anyType
       
 =====  Type: =====
 
-          [SAltitudeModeEnum.html golfml:AltitudeModeEnum]
+          [SAltitudeModeEnum golfml:AltitudeModeEnum]
 =====  Use: =====
         required
 =====  Form: =====
@@ -56,7 +56,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CPositionGPS.html PositionGPS]
+    	[CPositionGPS PositionGPS]
 ----
     
 ----

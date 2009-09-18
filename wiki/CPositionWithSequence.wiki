@@ -10,7 +10,7 @@ PositionWithSequence (complexType)
 {{{
 anyType
   |
-  +--[CPosition.html Position] (restriction)
+  +--[CPosition Position] (restriction)
        |
        +--PositionWithSequence (extension)
 }}}
@@ -38,8 +38,8 @@ anyType
 
 === Nested Element Summary ===
         
-|| [CPositionGPS.html golfml:PositionGPS] || [CPositionGPS.html position-gps] ||  					GPS coordinate of a point.				 ||
-|| [CRoomForExtension.html golfml:RoomForExtension] || [CRoomForExtension.html position-other] ||  					Coordinate of a point in an arbitraty unit system.				 ||      
+|| [CPositionGPS golfml:PositionGPS] || [CPositionGPS position-gps] ||  					GPS coordinate of a point.				 ||
+|| [CRoomForExtension golfml:RoomForExtension] || [CRoomForExtension position-other] ||  					Coordinate of a point in an arbitraty unit system.				 ||      
 
 === Attribute Summary ===
         
@@ -63,7 +63,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CAreaOfInterest.html AreaOfInterest]
+    	[CAreaOfInterest AreaOfInterest]
 ----
     
 ----

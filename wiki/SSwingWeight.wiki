@@ -39,7 +39,7 @@ string
 
 ===  Local Usage ===
 
-    	[CGolfClub.html GolfClub]
+    	[CGolfClub GolfClub]
 ----
     
 ----

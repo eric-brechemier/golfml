@@ -56,7 +56,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CNote.html Note]
+    	[CNote Note]
 ----
     
 ----

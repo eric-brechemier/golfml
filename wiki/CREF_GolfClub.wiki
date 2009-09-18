@@ -36,7 +36,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CGolfBag.html GolfBag]
+    	[CGolfBag GolfBag]
 ----
     
 ----

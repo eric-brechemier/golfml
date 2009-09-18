@@ -56,7 +56,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CRoundSummary.html RoundSummary], [CStatistics.html Statistics]
+    	[CRoundSummary RoundSummary], [CStatistics Statistics]
 ----
     
 ----

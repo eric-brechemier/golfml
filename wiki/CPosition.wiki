@@ -35,19 +35,19 @@ anyType
 
 === Nested Element Summary ===
         
-|| [CPositionGPS.html golfml:PositionGPS] || [CPositionGPS.html position-gps] ||  					GPS coordinate of a point.				 ||
-|| [CRoomForExtension.html golfml:RoomForExtension] || [CRoomForExtension.html position-other] ||  					Coordinate of a point in an arbitraty unit system.				 ||
+|| [CPositionGPS golfml:PositionGPS] || [CPositionGPS position-gps] ||  					GPS coordinate of a point.				 ||
+|| [CRoomForExtension golfml:RoomForExtension] || [CRoomForExtension position-other] ||  					Coordinate of a point in an arbitraty unit system.				 ||
 
 ===  Sub Types ===
 {{{
-    	[CPosition.html {http://code.google.com/p/golfml}Position] (restriction)  |    +--[CPositionWithSequence.html {http://code.google.com/p/golfml}PositionWithSequence] (extension)
+    	[CPosition {http://code.google.com/p/golfml}Position] (restriction)  |    +--[CPositionWithSequence {http://code.google.com/p/golfml}PositionWithSequence] (extension)
 }}}
 ----
     
 
 ===  Local Usage ===
 
-    	[CPointOfInterest.html PointOfInterest], [CPositionWithSequence.html PositionWithSequence], [CStrokeDetail.html StrokeDetail]
+    	[CPointOfInterest PointOfInterest], [CPositionWithSequence PositionWithSequence], [CStrokeDetail StrokeDetail]
 ----
     
 ----

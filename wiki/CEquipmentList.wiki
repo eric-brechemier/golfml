@@ -34,12 +34,12 @@ anyType
 
 === Nested Element Summary ===
         
-|| [CEquipment.html golfml:Equipment] || [CEquipment.html equipment] ||  					Piece of golfing equipment owned by a player.				 ||
-|| [CGolfClub.html golfml:GolfClub] || [CGolfClub.html golf-club] ||  					Golf club owned by a player.				 ||
+|| [CEquipment golfml:Equipment] || [CEquipment equipment] ||  					Piece of golfing equipment owned by a player.				 ||
+|| [CGolfClub golfml:GolfClub] || [CGolfClub golf-club] ||  					Golf club owned by a player.				 ||
 
 ===  Local Usage ===
 
-    	[CPlayer.html Player]
+    	[CPlayer Player]
 ----
     
 ----

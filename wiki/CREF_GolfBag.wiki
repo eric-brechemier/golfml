@@ -35,7 +35,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CGolfBag.html GolfBag], [CScorecard.html Scorecard]
+    	[CGolfBag GolfBag], [CScorecard Scorecard]
 ----
     
 ----

@@ -34,7 +34,7 @@ string
 
 ===  Local Usage ===
 
-    	[CPlayer.html Player]
+    	[CPlayer Player]
 ----
     
 ----

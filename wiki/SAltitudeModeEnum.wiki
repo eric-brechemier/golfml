@@ -35,7 +35,7 @@ string
 
 ===  Local Usage ===
 
-    	[CAltitude.html Altitude]
+    	[CAltitude Altitude]
 ----
     
 ----

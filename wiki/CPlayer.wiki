@@ -31,7 +31,7 @@ anyType
 ===  Model ===
 {{{
           <...  
-            *gender = [SGender.html Gender.html]*
+            *gender = [SGender Gender.html]*
           >  (name, date-of-birth, current-handicap?, address`*`, contact`*`, home-country-club?, note?, media?, equipment-list?, golf-bag`*`, round`*`, statistics`*`  )</...>
 }}}
 ----
@@ -39,22 +39,22 @@ anyType
 
 === Nested Element Summary ===
         
-|| [CAddress.html golfml:Address] || [CAddress.html address] ||  					Address of the player.				 ||
-|| [CContact.html golfml:Contact] || [CContact.html contact] ||  					Contact information of the player.				 ||
-|| [CPlayerHandicap.html golfml:PlayerHandicap] || [CPlayerHandicap.html current-handicap] ||  Denormalisation of the current handicap of the player. ||
+|| [CAddress golfml:Address] || [CAddress address] ||  					Address of the player.				 ||
+|| [CContact golfml:Contact] || [CContact contact] ||  					Contact information of the player.				 ||
+|| [CPlayerHandicap golfml:PlayerHandicap] || [CPlayerHandicap current-handicap] ||  Denormalisation of the current handicap of the player. ||
 || xs:date || date-of-birth ||  					Date of birth of player, used to uniquely identify him.				 ||
-|| [CEquipmentList.html golfml:EquipmentList] || [CEquipmentList.html equipment-list] ||  					List of equipement owned by the player.				 ||
-|| [CGolfBag.html golfml:GolfBag] || [CGolfBag.html golf-bag] ||  					Collection of at most 14 golf clubs.				 ||
-|| [CCountryClubChoice.html golfml:CountryClubChoice] || [CCountryClubChoice.html home-country-club] ||  					Main country club of the player.				 ||
-|| [CMedia.html golfml:Media] || [CMedia.html media] ||  Media associated with the player. ||
+|| [CEquipmentList golfml:EquipmentList] || [CEquipmentList equipment-list] ||  					List of equipement owned by the player.				 ||
+|| [CGolfBag golfml:GolfBag] || [CGolfBag golf-bag] ||  					Collection of at most 14 golf clubs.				 ||
+|| [CCountryClubChoice golfml:CountryClubChoice] || [CCountryClubChoice home-country-club] ||  					Main country club of the player.				 ||
+|| [CMedia golfml:Media] || [CMedia media] ||  Media associated with the player. ||
 || xs:string || name ||  					Name of the player.				 ||
-|| [CNote.html golfml:Note] || [CNote.html note] ||  					Note associated with the player.				 ||
-|| [CRound.html golfml:Round] || [CRound.html round] ||  					A round of golf played by the player.				 ||
-|| [CStatistics.html golfml:Statistics] || [CStatistics.html statistics] ||  					A set of statistical data associated with the player.				 ||      
+|| [CNote golfml:Note] || [CNote note] ||  					Note associated with the player.				 ||
+|| [CRound golfml:Round] || [CRound round] ||  					A round of golf played by the player.				 ||
+|| [CStatistics golfml:Statistics] || [CStatistics statistics] ||  					A set of statistical data associated with the player.				 ||      
 
 === Attribute Summary ===
         
-|| [SGender.html golfml:Gender] || `gender` ||  Gender of the player. ||
+|| [SGender golfml:Gender] || `gender` ||  Gender of the player. ||
 
 === Attribute Detail ===
       
@@ -66,7 +66,7 @@ anyType
 			
 =====  Type: =====
 
-          [SGender.html golfml:Gender]
+          [SGender golfml:Gender]
 =====  Use: =====
         required
 =====  Form: =====
@@ -76,7 +76,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[Egolfml.html golfml]
+    	[Egolfml golfml]
 ----
     
 ----

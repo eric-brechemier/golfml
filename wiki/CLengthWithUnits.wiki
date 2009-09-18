@@ -27,14 +27,14 @@ anyType
         
 ===  Model ===
 {{{
-          <...  units = [SUnitOfLengthWithUnitsEnum.html UnitOfLengthWithUnitsEnum.html] : meters>Length</...>
+          <...  units = [SUnitOfLengthWithUnitsEnum UnitOfLengthWithUnitsEnum.html] : meters>Length</...>
 }}}
 ----
           
 
 === Attribute Summary ===
         
-|| [SUnitOfLengthWithUnitsEnum.html golfml:UnitOfLengthWithUnitsEnum] || `units` ||   ||
+|| [SUnitOfLengthWithUnitsEnum golfml:UnitOfLengthWithUnitsEnum] || `units` ||   ||
 
 === Attribute Detail ===
       
@@ -44,7 +44,7 @@ anyType
       
 =====  Type: =====
 
-          [SUnitOfLengthWithUnitsEnum.html golfml:UnitOfLengthWithUnitsEnum]
+          [SUnitOfLengthWithUnitsEnum golfml:UnitOfLengthWithUnitsEnum]
 =====  Default: =====
 		meters
 =====  Use: =====
@@ -56,7 +56,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CHoleDistanceOnGreen.html HoleDistanceOnGreen], [CHolePlacementWithDistances.html HolePlacementWithDistances], [CHoleStatistics.html HoleStatistics], [CShaft.html Shaft], [CTee.html Tee]
+    	[CHoleDistanceOnGreen HoleDistanceOnGreen], [CHolePlacementWithDistances HolePlacementWithDistances], [CHoleStatistics HoleStatistics], [CShaft Shaft], [CTee Tee]
 ----
     
 ----

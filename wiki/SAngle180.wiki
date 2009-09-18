@@ -34,7 +34,7 @@ double
 
 ===  Local Usage ===
 
-    	[CPositionGPS.html PositionGPS]
+    	[CPositionGPS PositionGPS]
 ----
     
 ----

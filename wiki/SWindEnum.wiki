@@ -34,7 +34,7 @@ string
 
 ===  Local Usage ===
 
-    	[CWeather.html Weather]
+    	[CWeather Weather]
 ----
     
 ----

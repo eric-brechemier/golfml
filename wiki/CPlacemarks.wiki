@@ -34,12 +34,12 @@ anyType
 
 === Nested Element Summary ===
         
-|| [CAreaOfInterest.html golfml:AreaOfInterest] || [CAreaOfInterest.html aoi] ||  					Area of interest.				 ||
-|| [CPointOfInterest.html golfml:PointOfInterest] || [CPointOfInterest.html poi] ||  					Point of interest.				 ||
+|| [CAreaOfInterest golfml:AreaOfInterest] || [CAreaOfInterest aoi] ||  					Area of interest.				 ||
+|| [CPointOfInterest golfml:PointOfInterest] || [CPointOfInterest poi] ||  					Point of interest.				 ||
 
 ===  Local Usage ===
 
-    	[CHole.html Hole]
+    	[CHole Hole]
 ----
     
 ----

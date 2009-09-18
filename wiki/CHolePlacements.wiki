@@ -34,7 +34,7 @@ anyType
 
 === Nested Element Summary ===
         
-|| [CHolePlacement.html golfml:HolePlacement] || [CHolePlacement.html hole-placement] ||  					Placement of a hole on a green.				 ||
+|| [CHolePlacement golfml:HolePlacement] || [CHolePlacement hole-placement] ||  					Placement of a hole on a green.				 ||
 || xs:string || name ||  					Identifying name for hole placement.				 ||      
 
 === Attribute Summary ===
@@ -59,7 +59,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CRound.html Round]
+    	[CRound Round]
 ----
     
 ----

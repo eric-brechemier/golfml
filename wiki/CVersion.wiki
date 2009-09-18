@@ -83,7 +83,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CCountryClub.html CountryClub], [CGolfCourse.html GolfCourse], [Egolfml.html golfml], [CTees.html Tees]
+    	[CCountryClub CountryClub], [CGolfCourse GolfCourse], [Egolfml golfml], [CTees Tees]
 ----
     
 ----

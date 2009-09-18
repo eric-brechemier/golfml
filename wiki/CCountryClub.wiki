@@ -36,18 +36,18 @@ anyType
 
 === Nested Element Summary ===
         
-|| [CAddress.html golfml:Address] || [CAddress.html address] ||  					Address of the country club or golf course.				 ||
-|| [CAmenety.html golfml:Amenety] || [CAmenety.html amenety] ||  Amenety available at the contry club. ||
-|| [CContact.html golfml:Contact] || [CContact.html contact] ||  Contact for the golf course. ||
-|| [CGolfCourse.html golfml:GolfCourse] || [CGolfCourse.html golf-course] ||  					Description of one golf course at the country club.				 ||
-|| [CMedia.html golfml:Media] || [CMedia.html media] ||  Media for the country club. ||
+|| [CAddress golfml:Address] || [CAddress address] ||  					Address of the country club or golf course.				 ||
+|| [CAmenety golfml:Amenety] || [CAmenety amenety] ||  Amenety available at the contry club. ||
+|| [CContact golfml:Contact] || [CContact contact] ||  Contact for the golf course. ||
+|| [CGolfCourse golfml:GolfCourse] || [CGolfCourse golf-course] ||  					Description of one golf course at the country club.				 ||
+|| [CMedia golfml:Media] || [CMedia media] ||  Media for the country club. ||
 || xs:string || name ||  					Name of the country club.				 ||
-|| [CNote.html golfml:Note] || [CNote.html note] ||  					Note about the country club.				 ||
-|| [CVersion.html golfml:Version] || [CVersion.html version] ||   ||
+|| [CNote golfml:Note] || [CNote note] ||  					Note about the country club.				 ||
+|| [CVersion golfml:Version] || [CVersion version] ||   ||
 
 ===  Local Usage ===
 
-    	[Egolfml.html golfml]
+    	[Egolfml golfml]
 ----
     
 ----

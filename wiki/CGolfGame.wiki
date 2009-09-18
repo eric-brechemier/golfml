@@ -27,7 +27,7 @@ anyType
         
 ===  Model ===
 {{{
-          <...  other = xs:string  type = [SGolfGameTypeEnum.html GolfGameTypeEnum.html]>string</...>
+          <...  other = xs:string  type = [SGolfGameTypeEnum GolfGameTypeEnum.html]>string</...>
 }}}
 ----
           
@@ -35,7 +35,7 @@ anyType
 === Attribute Summary ===
         
 || xs:string || `other` ||  				Alternate value for an attribute.			 ||
-|| [SGolfGameTypeEnum.html golfml:GolfGameTypeEnum] || `type` ||   ||
+|| [SGolfGameTypeEnum golfml:GolfGameTypeEnum] || `type` ||   ||
 
 === Attribute Detail ===
       
@@ -60,7 +60,7 @@ anyType
       
 =====  Type: =====
 
-          [SGolfGameTypeEnum.html golfml:GolfGameTypeEnum]
+          [SGolfGameTypeEnum golfml:GolfGameTypeEnum]
 =====  Use: =====
         optional
 =====  Form: =====
@@ -70,7 +70,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CRound.html Round]
+    	[CRound Round]
 ----
     
 ----

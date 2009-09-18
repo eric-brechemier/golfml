@@ -34,7 +34,7 @@ double
 
 ===  Local Usage ===
 
-    	[CGolfClub.html GolfClub], [CPositionGPS.html PositionGPS]
+    	[CGolfClub GolfClub], [CPositionGPS PositionGPS]
 ----
     
 ----

@@ -29,7 +29,7 @@ anyType
 ===  Model ===
 {{{
           <...  
-            *from = [SOrientationEnum.html OrientationEnum.html]*
+            *from = [SOrientationEnum OrientationEnum.html]*
           >LengthWithUnits</...>
 }}}
 ----
@@ -37,7 +37,7 @@ anyType
 
 === Attribute Summary ===
         
-|| [SOrientationEnum.html golfml:OrientationEnum] || `from` ||  Edge of green the distance is taken from. ||
+|| [SOrientationEnum golfml:OrientationEnum] || `from` ||  Edge of green the distance is taken from. ||
 
 === Attribute Detail ===
       
@@ -50,7 +50,7 @@ anyType
 					
 =====  Type: =====
 
-          [SOrientationEnum.html golfml:OrientationEnum]
+          [SOrientationEnum golfml:OrientationEnum]
 =====  Use: =====
         required
 =====  Form: =====
@@ -60,7 +60,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CHolePlacementWithDistances.html HolePlacementWithDistances]
+    	[CHolePlacementWithDistances HolePlacementWithDistances]
 ----
     
 ----

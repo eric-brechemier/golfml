@@ -34,14 +34,14 @@ anyType
 
 === Nested Element Summary ===
         
-|| [CLengthWithUnits.html golfml:LengthWithUnits] || [CLengthWithUnits.html approach-to-hole] ||  Distance left to hole when ball landed on green. ||
-|| [CLengthWithUnits.html golfml:LengthWithUnits] || [CLengthWithUnits.html driving-distance] ||  					Driving distance.				 ||
+|| [CLengthWithUnits golfml:LengthWithUnits] || [CLengthWithUnits approach-to-hole] ||  Distance left to hole when ball landed on green. ||
+|| [CLengthWithUnits golfml:LengthWithUnits] || [CLengthWithUnits driving-distance] ||  					Driving distance.				 ||
 || xs:boolean || fairway ||  					Fairway hit.				 ||
 || xs:boolean || green-in-regulation ||  					Green reached in regulation.				 ||
 
 ===  Local Usage ===
 
-    	[CHoleScore.html HoleScore]
+    	[CHoleScore HoleScore]
 ----
     
 ----

@@ -34,11 +34,11 @@ anyType
 
 === Nested Element Summary ===
         
-|| [CHoleScore.html golfml:HoleScore] || [CHoleScore.html hole] ||  					Detail of score for one hole.				 ||
+|| [CHoleScore golfml:HoleScore] || [CHoleScore hole] ||  					Detail of score for one hole.				 ||
 
 ===  Local Usage ===
 
-    	[CScorecard.html Scorecard]
+    	[CScorecard Scorecard]
 ----
     
 ----

@@ -34,13 +34,13 @@ anyType
 
 === Nested Element Summary ===
         
-|| [CNote.html golfml:Note] || [CNote.html comment] ||  Comment about the stroke. ||
+|| [CNote golfml:Note] || [CNote comment] ||  Comment about the stroke. ||
 || xs:double || distance ||  											Distance of the stroke.					 ||
 || xs:double || distance-to-hole ||  											Distance left to the hole BEFORE the stroke.					 ||
-|| [CGolfClub.html golfml:GolfClub] || [CGolfClub.html golf-club] ||  					Golf club used for stroke.				 ||
-|| [SGolfCourseAreaTypeEnum.html golfml:GolfCourseAreaTypeEnum] || [SGolfCourseAreaTypeEnum.html landing] ||  					Information on landing are of stroke.				 ||
-|| [CPosition.html golfml:Position] || [CPosition.html position] ||  					Position FROM where the stroke take place.				 ||
-|| [CStrokePrecision.html golfml:StrokePrecision] || [CStrokePrecision.html precision] ||  					Information on the precision of the stroke regarding distance and direction.				 ||
+|| [CGolfClub golfml:GolfClub] || [CGolfClub golf-club] ||  					Golf club used for stroke.				 ||
+|| [SGolfCourseAreaTypeEnum golfml:GolfCourseAreaTypeEnum] || [SGolfCourseAreaTypeEnum landing] ||  					Information on landing are of stroke.				 ||
+|| [CPosition golfml:Position] || [CPosition position] ||  					Position FROM where the stroke take place.				 ||
+|| [CStrokePrecision golfml:StrokePrecision] || [CStrokePrecision precision] ||  					Information on the precision of the stroke regarding distance and direction.				 ||
 || xs:dateTime || time ||  					Time of stroke.				 ||      
 
 === Attribute Summary ===
@@ -83,7 +83,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CHoleScore.html HoleScore]
+    	[CHoleScore HoleScore]
 ----
     
 ----

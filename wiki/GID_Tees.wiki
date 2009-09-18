@@ -25,7 +25,7 @@ ID_Tees (group)
 
 === Nested Element Summary ===
         
-|| [SISO3166CountryCodeEnum.html golfml:ISO3166CountryCodeEnum] || [SISO3166CountryCodeEnum.html country-club.address.country.iso3166] ||   ||
+|| [SISO3166CountryCodeEnum golfml:ISO3166CountryCodeEnum] || [SISO3166CountryCodeEnum country-club.address.country.iso3166] ||   ||
 || xs:string || country-club.address.postal-code ||   ||
 || xs:string || country-club.golf-course.name ||   ||
 || xs:string || country-club.golf-course.tee-set.name ||   ||
@@ -33,7 +33,7 @@ ID_Tees (group)
 
 ===  Local Usage ===
 
-    	[CREF_Tees.html REF_Tees]
+    	[CREF_Tees REF_Tees]
 ----
     
 ----

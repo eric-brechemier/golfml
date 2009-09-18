@@ -29,7 +29,7 @@ anyType
 ===  Model ===
 {{{
           <...  
-            *code = [SISO3166CountryCodeEnum.html ISO3166CountryCodeEnum.html]*
+            *code = [SISO3166CountryCodeEnum ISO3166CountryCodeEnum.html]*
           >string</...>
 }}}
 ----
@@ -37,7 +37,7 @@ anyType
 
 === Attribute Summary ===
         
-|| [SISO3166CountryCodeEnum.html golfml:ISO3166CountryCodeEnum] || `code` ||   ||
+|| [SISO3166CountryCodeEnum golfml:ISO3166CountryCodeEnum] || `code` ||   ||
 
 === Attribute Detail ===
       
@@ -47,7 +47,7 @@ anyType
       
 =====  Type: =====
 
-          [SISO3166CountryCodeEnum.html golfml:ISO3166CountryCodeEnum]
+          [SISO3166CountryCodeEnum golfml:ISO3166CountryCodeEnum]
 =====  Use: =====
         required
 =====  Form: =====

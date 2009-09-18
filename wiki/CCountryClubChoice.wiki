@@ -29,12 +29,12 @@ anyType
 
 === Nested Element Summary ===
         
-|| [CREF_GolfCourse.html golfml:REF_GolfCourse] || [CREF_GolfCourse.html country-club] ||   ||
+|| [CREF_GolfCourse golfml:REF_GolfCourse] || [CREF_GolfCourse country-club] ||   ||
 || xs:string || name ||   ||
 
 ===  Local Usage ===
 
-    	[CPlayer.html Player]
+    	[CPlayer Player]
 ----
     
 ----

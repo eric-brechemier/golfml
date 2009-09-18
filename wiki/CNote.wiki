@@ -28,18 +28,18 @@ anyType
         
 ===  Model ===
 {{{
-          <...  rating = [SRating.html Rating.html]>  comment+  </...>
+          <...  rating = [SRating Rating.html]>  comment+  </...>
 }}}
 ----
     
 
 === Nested Element Summary ===
         
-|| [CLocalisedText.html golfml:LocalisedText] || [CLocalisedText.html comment] ||  					Localised, textual comment about the parent entitiy.				 ||      
+|| [CLocalisedText golfml:LocalisedText] || [CLocalisedText comment] ||  					Localised, textual comment about the parent entitiy.				 ||      
 
 === Attribute Summary ===
         
-|| [SRating.html golfml:Rating] || `rating` ||  Simple rating of the parent entitiy. ||
+|| [SRating golfml:Rating] || `rating` ||  Simple rating of the parent entitiy. ||
 
 === Attribute Detail ===
       
@@ -51,7 +51,7 @@ anyType
 			
 =====  Type: =====
 
-          [SRating.html golfml:Rating]
+          [SRating golfml:Rating]
 =====  Use: =====
         optional
 =====  Form: =====
@@ -61,7 +61,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CCountryClub.html CountryClub], [CGolfCourse.html GolfCourse], [CHole.html Hole], [CPlayer.html Player], [CStrokeDetail.html StrokeDetail]
+    	[CCountryClub CountryClub], [CGolfCourse GolfCourse], [CHole Hole], [CPlayer Player], [CStrokeDetail StrokeDetail]
 ----
     
 ----

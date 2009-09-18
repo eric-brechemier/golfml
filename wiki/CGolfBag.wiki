@@ -35,15 +35,15 @@ anyType
 
 === Nested Element Summary ===
         
-|| [CREF_GolfBag.html golfml:REF_GolfBag] || [CREF_GolfBag.html bag-ref] ||  					Reference to the golf bag used for the round from the pieces of equipement.				 ||
-|| [CEquipment.html golfml:Equipment] || [CEquipment.html equipment] ||  					Other piece of equipment used in bag: Balls, tees, apparel, gloves...				 ||
-|| [CGolfClub.html golfml:GolfClub] || [CGolfClub.html golf-club] ||  						Definition of a golf club owned by the player.					 ||
-|| [CREF_GolfClub.html golfml:REF_GolfClub] || [CREF_GolfClub.html golf-club-ref] ||  						Reference to a golf club in the player's equipment list.					 ||
+|| [CREF_GolfBag golfml:REF_GolfBag] || [CREF_GolfBag bag-ref] ||  					Reference to the golf bag used for the round from the pieces of equipement.				 ||
+|| [CEquipment golfml:Equipment] || [CEquipment equipment] ||  					Other piece of equipment used in bag: Balls, tees, apparel, gloves...				 ||
+|| [CGolfClub golfml:GolfClub] || [CGolfClub golf-club] ||  						Definition of a golf club owned by the player.					 ||
+|| [CREF_GolfClub golfml:REF_GolfClub] || [CREF_GolfClub golf-club-ref] ||  						Reference to a golf club in the player's equipment list.					 ||
 || xs:string || name ||  					Name of a golf bag used to identify it.				 ||
 
 ===  Local Usage ===
 
-    	[CPlayer.html Player]
+    	[CPlayer Player]
 ----
     
 ----

@@ -34,7 +34,7 @@ double
 
 ===  Local Usage ===
 
-    	[CLengthWithUnits.html LengthWithUnits]
+    	[CLengthWithUnits LengthWithUnits]
 ----
     
 ----

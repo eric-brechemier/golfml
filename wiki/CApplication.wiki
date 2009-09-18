@@ -99,7 +99,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[Egolfml.html golfml]
+    	[Egolfml golfml]
 ----
     
 ----

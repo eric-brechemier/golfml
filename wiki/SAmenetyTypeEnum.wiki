@@ -34,7 +34,7 @@ string
 
 ===  Local Usage ===
 
-    	[CAmenety.html Amenety]
+    	[CAmenety Amenety]
 ----
     
 ----

@@ -27,7 +27,7 @@ anyType
         
 ===  Model ===
 {{{
-          <...  number = [SOneToEighteen.html OneToEighteen.html]>  (strokes, points?, putts?, money?, penalties?, stroke`*`, statistics?  )</...>
+          <...  number = [SOneToEighteen OneToEighteen.html]>  (strokes, points?, putts?, money?, penalties?, stroke`*`, statistics?  )</...>
 }}}
 ----
     
@@ -35,16 +35,16 @@ anyType
 === Nested Element Summary ===
         
 || xs:integer || money ||  					Money earned or loss on hole in wagers.				 ||
-|| [CPenalty.html golfml:Penalty] || [CPenalty.html penalties] ||  					Total number of penalty strokes.				 ||
+|| [CPenalty golfml:Penalty] || [CPenalty penalties] ||  					Total number of penalty strokes.				 ||
 || xs:nonNegativeInteger || points ||  					Total number of points for hole.				 ||
 || xs:nonNegativeInteger || putts ||  					Number of putts, from the green.				 ||
-|| [CHoleStatistics.html golfml:HoleStatistics] || [CHoleStatistics.html statistics] ||  					Denormalised statistics for hole.				 ||
-|| [CStrokeDetail.html golfml:StrokeDetail] || [CStrokeDetail.html stroke] ||  					Detail of each stroke.				 ||
+|| [CHoleStatistics golfml:HoleStatistics] || [CHoleStatistics statistics] ||  					Denormalised statistics for hole.				 ||
+|| [CStrokeDetail golfml:StrokeDetail] || [CStrokeDetail stroke] ||  					Detail of each stroke.				 ||
 || xs:positiveInteger || strokes ||  					Total number of strokes for hole, including penalties.				 ||      
 
 === Attribute Summary ===
         
-|| [SOneToEighteen.html golfml:OneToEighteen] || `number` ||  				Order number of hole.			 ||
+|| [SOneToEighteen golfml:OneToEighteen] || `number` ||  				Order number of hole.			 ||
 
 === Attribute Detail ===
       
@@ -56,7 +56,7 @@ anyType
 			
 =====  Type: =====
 
-          [SOneToEighteen.html golfml:OneToEighteen]
+          [SOneToEighteen golfml:OneToEighteen]
 =====  Use: =====
         optional
 =====  Form: =====
@@ -66,7 +66,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CScore.html Score]
+    	[CScore Score]
 ----
     
 ----

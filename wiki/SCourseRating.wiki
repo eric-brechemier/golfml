@@ -34,7 +34,7 @@ float
 
 ===  Local Usage ===
 
-    	[CHoleQualificationUSGA.html HoleQualificationUSGA]
+    	[CHoleQualificationUSGA HoleQualificationUSGA]
 ----
     
 ----

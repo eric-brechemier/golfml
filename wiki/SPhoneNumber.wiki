@@ -63,7 +63,7 @@ string
 
 ===  Local Usage ===
 
-    	[CContact.html Contact]
+    	[CContact Contact]
 ----
     
 ----

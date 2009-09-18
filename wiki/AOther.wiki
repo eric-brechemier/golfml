@@ -42,7 +42,7 @@ Other (attributeGroup)
 
 ===  Local Usage ===
 
-    	[CAmenety.html Amenety], [CAreaOfInterest.html AreaOfInterest], [CContact.html Contact], [CGolfGame.html GolfGame], [AMediaTypeAttributes.html MediaTypeAttributes], [CPlayerHandicap.html PlayerHandicap], [CPointOfInterest.html PointOfInterest], [CStatistics.html Statistics], [CWeather.html Weather]
+    	[CAmenety Amenety], [CAreaOfInterest AreaOfInterest], [CContact Contact], [CGolfGame GolfGame], [AMediaTypeAttributes MediaTypeAttributes], [CPlayerHandicap PlayerHandicap], [CPointOfInterest PointOfInterest], [CStatistics Statistics], [CWeather Weather]
 ----
     
 ----

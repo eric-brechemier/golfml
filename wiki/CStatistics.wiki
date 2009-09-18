@@ -28,7 +28,7 @@ anyType
 ===  Model ===
 {{{
           <...  other = xs:string  
-            *type = [SStatisticCollectionTypesEnum.html StatisticCollectionTypesEnum.html]*
+            *type = [SStatisticCollectionTypesEnum StatisticCollectionTypesEnum.html]*
           >  (collection, value+  )</...>
 }}}
 ----
@@ -36,13 +36,13 @@ anyType
 
 === Nested Element Summary ===
         
-|| [CCollection.html golfml:Collection] || [CCollection.html collection] ||  Information regarding the collection of the statistic. ||
-|| [CStatisticValue.html golfml:StatisticValue] || [CStatisticValue.html value] ||  						Value of a statistic computed for the supplied collection type.					 ||      
+|| [CCollection golfml:Collection] || [CCollection collection] ||  Information regarding the collection of the statistic. ||
+|| [CStatisticValue golfml:StatisticValue] || [CStatisticValue value] ||  						Value of a statistic computed for the supplied collection type.					 ||      
 
 === Attribute Summary ===
         
 || xs:string || `other` ||  				Alternate value for an attribute.			 ||
-|| [SStatisticCollectionTypesEnum.html golfml:StatisticCollectionTypesEnum] || `type` ||   ||
+|| [SStatisticCollectionTypesEnum golfml:StatisticCollectionTypesEnum] || `type` ||   ||
 
 === Attribute Detail ===
       
@@ -67,7 +67,7 @@ anyType
       
 =====  Type: =====
 
-          [SStatisticCollectionTypesEnum.html golfml:StatisticCollectionTypesEnum]
+          [SStatisticCollectionTypesEnum golfml:StatisticCollectionTypesEnum]
 =====  Use: =====
         required
 =====  Form: =====
@@ -77,7 +77,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CPlayer.html Player]
+    	[CPlayer Player]
 ----
     
 ----

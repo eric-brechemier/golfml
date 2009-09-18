@@ -28,7 +28,7 @@ anyType
         
 ===  Model ===
 {{{
-          <...  other = xs:string  type = [SContactTypeEnum.html ContactTypeEnum.html]>  (name? ; phone? ; email? ; website?) </...>
+          <...  other = xs:string  type = [SContactTypeEnum ContactTypeEnum.html]>  (name? ; phone? ; email? ; website?) </...>
 }}}
 ----
     
@@ -37,13 +37,13 @@ anyType
         
 || xs:string || email ||  					Electronic mail address of contact.				 ||
 || xs:string || name ||  					Name or description of contact.				 ||
-|| [SPhoneNumber.html golfml:PhoneNumber] || [SPhoneNumber.html phone] ||  Telephone number of contact. ||
+|| [SPhoneNumber golfml:PhoneNumber] || [SPhoneNumber phone] ||  Telephone number of contact. ||
 || xs:anyURI || website ||  					Internet web site URL of contact.				 ||      
 
 === Attribute Summary ===
         
 || xs:string || `other` ||  				Alternate value for an attribute.			 ||
-|| [SContactTypeEnum.html golfml:ContactTypeEnum] || `type` ||  Qualification of a contact. ||
+|| [SContactTypeEnum golfml:ContactTypeEnum] || `type` ||  Qualification of a contact. ||
 
 === Attribute Detail ===
       
@@ -71,7 +71,7 @@ anyType
 			
 =====  Type: =====
 
-          [SContactTypeEnum.html golfml:ContactTypeEnum]
+          [SContactTypeEnum golfml:ContactTypeEnum]
 =====  Use: =====
         optional
 =====  Form: =====
@@ -81,7 +81,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CCountryClub.html CountryClub], [CPlayer.html Player]
+    	[CCountryClub CountryClub], [CPlayer Player]
 ----
     
 ----

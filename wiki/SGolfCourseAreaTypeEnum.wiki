@@ -34,7 +34,7 @@ string
 
 ===  Local Usage ===
 
-    	[CAreaOfInterest.html AreaOfInterest], [CPointOfInterest.html PointOfInterest], [CStrokeDetail.html StrokeDetail]
+    	[CAreaOfInterest AreaOfInterest], [CPointOfInterest PointOfInterest], [CStrokeDetail StrokeDetail]
 ----
     
 ----

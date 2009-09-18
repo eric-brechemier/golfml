@@ -29,7 +29,7 @@ anyType
         
 ===  Model ===
 {{{
-          <...  other = xs:string  type = [SAmenetyTypeEnum.html AmenetyTypeEnum.html]>string</...>
+          <...  other = xs:string  type = [SAmenetyTypeEnum AmenetyTypeEnum.html]>string</...>
 }}}
 ----
           
@@ -37,7 +37,7 @@ anyType
 === Attribute Summary ===
         
 || xs:string || `other` ||  				Alternate value for an attribute.			 ||
-|| [SAmenetyTypeEnum.html golfml:AmenetyTypeEnum] || `type` ||   ||
+|| [SAmenetyTypeEnum golfml:AmenetyTypeEnum] || `type` ||   ||
 
 === Attribute Detail ===
       
@@ -62,7 +62,7 @@ anyType
       
 =====  Type: =====
 
-          [SAmenetyTypeEnum.html golfml:AmenetyTypeEnum]
+          [SAmenetyTypeEnum golfml:AmenetyTypeEnum]
 =====  Use: =====
         optional
 =====  Form: =====
@@ -72,7 +72,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CCountryClub.html CountryClub]
+    	[CCountryClub CountryClub]
 ----
     
 ----

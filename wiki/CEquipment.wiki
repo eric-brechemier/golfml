@@ -29,7 +29,7 @@ anyType
         
 ===  Model ===
 {{{
-          <...  type = [SEquipmentTypeEnum.html EquipmentTypeEnum.html]>  (name, manufacturer, model, submodel?, serial?  )</...>
+          <...  type = [SEquipmentTypeEnum EquipmentTypeEnum.html]>  (name, manufacturer, model, submodel?, serial?  )</...>
 }}}
 ----
     
@@ -44,7 +44,7 @@ anyType
 
 === Attribute Summary ===
         
-|| [SEquipmentTypeEnum.html golfml:EquipmentTypeEnum] || `type` ||  				Type of piece of equipment to organise them in categories: Training devices, clubs, balls...			 ||
+|| [SEquipmentTypeEnum golfml:EquipmentTypeEnum] || `type` ||  				Type of piece of equipment to organise them in categories: Training devices, clubs, balls...			 ||
 
 === Attribute Detail ===
       
@@ -56,7 +56,7 @@ anyType
 			
 =====  Type: =====
 
-          [SEquipmentTypeEnum.html golfml:EquipmentTypeEnum]
+          [SEquipmentTypeEnum golfml:EquipmentTypeEnum]
 =====  Use: =====
         optional
 =====  Form: =====
@@ -66,7 +66,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CEquipmentList.html EquipmentList], [CGolfBag.html GolfBag]
+    	[CEquipmentList EquipmentList], [CGolfBag GolfBag]
 ----
     
 ----

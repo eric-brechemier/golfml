@@ -36,16 +36,16 @@ anyType
 
 === Nested Element Summary ===
         
-|| [CREF_GolfBag.html golfml:REF_GolfBag] || [CREF_GolfBag.html golf-bag-ref] ||  					Reference to the golf bag used for the round of golf.				 ||
+|| [CREF_GolfBag golfml:REF_GolfBag] || [CREF_GolfBag golf-bag-ref] ||  					Reference to the golf bag used for the round of golf.				 ||
 || xs:float || handicap ||  					Handicap used for the round of golf.				 ||
 || xs:integer || handicap-strokes ||  					Denormalisation: Number of strokes received for the round.				 ||
-|| [CScore.html golfml:Score] || [CScore.html score] ||  					Detailed information about the score for the round of golf.				 ||
-|| [CRoundSummary.html golfml:RoundSummary] || [CRoundSummary.html summary] ||  Denormalisation: Basic statistics for the round of golf. ||
-|| [CREF_Tees.html golfml:REF_Tees] || [CREF_Tees.html tees] ||  					Reference to tee set used for the round of golf.				 ||
+|| [CScore golfml:Score] || [CScore score] ||  					Detailed information about the score for the round of golf.				 ||
+|| [CRoundSummary golfml:RoundSummary] || [CRoundSummary summary] ||  Denormalisation: Basic statistics for the round of golf. ||
+|| [CREF_Tees golfml:REF_Tees] || [CREF_Tees tees] ||  					Reference to tee set used for the round of golf.				 ||
 
 ===  Local Usage ===
 
-    	[CRound.html Round]
+    	[CRound Round]
 ----
     
 ----

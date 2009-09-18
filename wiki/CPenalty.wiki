@@ -58,7 +58,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CHoleScore.html HoleScore], [CRoundSummary.html RoundSummary]
+    	[CHoleScore HoleScore], [CRoundSummary RoundSummary]
 ----
     
 ----

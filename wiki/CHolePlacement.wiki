@@ -34,12 +34,12 @@ anyType
 
 === Nested Element Summary ===
         
-|| [CRoomForExtension.html golfml:RoomForExtension] || [CRoomForExtension.html coordinates] ||  Description of the placement on the hole on the surface of the green with an alternate localisation system. ||
-|| [CHolePlacementWithDistances.html golfml:HolePlacementWithDistances] || [CHolePlacementWithDistances.html distances] ||  					Position of hole relative to the edges of the green.				 ||
+|| [CRoomForExtension golfml:RoomForExtension] || [CRoomForExtension coordinates] ||  Description of the placement on the hole on the surface of the green with an alternate localisation system. ||
+|| [CHolePlacementWithDistances golfml:HolePlacementWithDistances] || [CHolePlacementWithDistances distances] ||  					Position of hole relative to the edges of the green.				 ||
 
 ===  Local Usage ===
 
-    	[CHolePlacements.html HolePlacements]
+    	[CHolePlacements HolePlacements]
 ----
     
 ----

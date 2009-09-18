@@ -28,7 +28,7 @@ anyType
 ===  Model ===
 {{{
           <...  
-            *type = [SGolfClubTypeEnum.html GolfClubTypeEnum.html]*
+            *type = [SGolfClubTypeEnum GolfClubTypeEnum.html]*
           >  (manufacturer, model, submodel, number?, serial?, loft?, lie?, weight?, swing-weight?, shaft?  )</...>
 }}}
 ----
@@ -36,20 +36,20 @@ anyType
 
 === Nested Element Summary ===
         
-|| [SAngle90.html golfml:Angle90] || [SAngle90.html lie] ||  					Lie of the golf club.				 ||
-|| [SAngle90.html golfml:Angle90] || [SAngle90.html loft] ||  					Loft of the golf club.				 ||
+|| [SAngle90 golfml:Angle90] || [SAngle90 lie] ||  					Lie of the golf club.				 ||
+|| [SAngle90 golfml:Angle90] || [SAngle90 loft] ||  					Loft of the golf club.				 ||
 || xs:string || manufacturer ||  					Manufacturer of a golf club.				 ||
 || xs:string || model ||  					Model of a golf club.				 ||
 || xs:string || number ||  					Number or name of a club in a set.				 ||
 || xs:string || serial ||  					Serial number of the golf club.				 ||
-|| [CShaft.html golfml:Shaft] || [CShaft.html shaft] ||  					Shaft of the golf club.				 ||
+|| [CShaft golfml:Shaft] || [CShaft shaft] ||  					Shaft of the golf club.				 ||
 || xs:string || submodel ||  					Sub model or type of a golf club.				 ||
-|| [SSwingWeight.html golfml:SwingWeight] || [SSwingWeight.html swing-weight] ||  					Swing weight of the golf club.				 ||
+|| [SSwingWeight golfml:SwingWeight] || [SSwingWeight swing-weight] ||  					Swing weight of the golf club.				 ||
 || xs:float || weight ||  					Weight of the golf club.				 ||      
 
 === Attribute Summary ===
         
-|| [SGolfClubTypeEnum.html golfml:GolfClubTypeEnum] || `type` ||  				Type of golf club.			 ||
+|| [SGolfClubTypeEnum golfml:GolfClubTypeEnum] || `type` ||  				Type of golf club.			 ||
 
 === Attribute Detail ===
       
@@ -61,7 +61,7 @@ anyType
 			
 =====  Type: =====
 
-          [SGolfClubTypeEnum.html golfml:GolfClubTypeEnum]
+          [SGolfClubTypeEnum golfml:GolfClubTypeEnum]
 =====  Use: =====
         required
 =====  Form: =====
@@ -71,7 +71,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CEquipmentList.html EquipmentList], [CGolfBag.html GolfBag], [CStrokeDetail.html StrokeDetail]
+    	[CEquipmentList EquipmentList], [CGolfBag GolfBag], [CStrokeDetail StrokeDetail]
 ----
     
 ----

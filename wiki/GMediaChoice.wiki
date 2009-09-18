@@ -34,7 +34,7 @@ MediaChoice (group)
 
 ===  Local Usage ===
 
-    	[CMedia.html Media]
+    	[CMedia Media]
 ----
     
 ----

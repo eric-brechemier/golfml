@@ -52,10 +52,10 @@ golfml (element)
 
 === Nested Element Summary ===
         
-|| [CApplication.html golfml:Application] || [CApplication.html application] ||  						Room for non-golfml application storage.					 ||
-|| [CCountryClub.html golfml:CountryClub] || [CCountryClub.html country-club] ||  						Country club defined and used in this document.					 ||
-|| [CPlayer.html golfml:Player] || [CPlayer.html player] ||  						Player  in this document.					 ||
-|| [CVersion.html golfml:Version] || [CVersion.html version] ||  						Room for version information about the file.					 ||      
+|| [CApplication golfml:Application] || [CApplication application] ||  						Room for non-golfml application storage.					 ||
+|| [CCountryClub golfml:CountryClub] || [CCountryClub country-club] ||  						Country club defined and used in this document.					 ||
+|| [CPlayer golfml:Player] || [CPlayer player] ||  						Player  in this document.					 ||
+|| [CVersion golfml:Version] || [CVersion version] ||  						Room for version information about the file.					 ||      
 
 === Attribute Summary ===
         

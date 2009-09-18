@@ -34,12 +34,12 @@ anyType
 
 === Nested Element Summary ===
         
-|| [SCourseRating.html golfml:CourseRating] || [SCourseRating.html rating] ||  					Course rating of a set of tees according to USGA specifications.				 ||
-|| [SCourseSlope.html golfml:CourseSlope] || [SCourseSlope.html slope] ||  					Slope of a set of tees according to USGA specifications.				 ||
+|| [SCourseRating golfml:CourseRating] || [SCourseRating rating] ||  					Course rating of a set of tees according to USGA specifications.				 ||
+|| [SCourseSlope golfml:CourseSlope] || [SCourseSlope slope] ||  					Slope of a set of tees according to USGA specifications.				 ||
 
 ===  Local Usage ===
 
-    	[CHoleQualification.html HoleQualification]
+    	[CHoleQualification HoleQualification]
 ----
     
 ----

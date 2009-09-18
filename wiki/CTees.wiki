@@ -27,27 +27,27 @@ anyType
         
 ===  Model ===
 {{{
-          <...  colour = xs:string  date-from = xs:date  date-to = xs:date  gender = [SGolfingGender.html GolfingGender.html]  
+          <...  colour = xs:string  date-from = xs:date  date-to = xs:date  gender = [SGolfingGender GolfingGender.html]  
             *name = xs:string*
-            units = [SUnitOfLengthWithUnitsEnum.html UnitOfLengthWithUnitsEnum.html]>  (qualification, tee{1,18}, version`*`  )</...>
+            units = [SUnitOfLengthWithUnitsEnum UnitOfLengthWithUnitsEnum.html]>  (qualification, tee{1,18}, version`*`  )</...>
 }}}
 ----
     
 
 === Nested Element Summary ===
         
-|| [CHoleQualification.html golfml:HoleQualification] || [CHoleQualification.html qualification] ||  					Qualification of the hole for handicaping purposes.				 ||
-|| [CTee.html golfml:Tee] || [CTee.html tee] ||  Description of a single hole. ||
-|| [CVersion.html golfml:Version] || [CVersion.html version] ||  					Records tee set modifications over time.				 ||      
+|| [CHoleQualification golfml:HoleQualification] || [CHoleQualification qualification] ||  					Qualification of the hole for handicaping purposes.				 ||
+|| [CTee golfml:Tee] || [CTee tee] ||  Description of a single hole. ||
+|| [CVersion golfml:Version] || [CVersion version] ||  					Records tee set modifications over time.				 ||      
 
 === Attribute Summary ===
         
 || xs:string || `colour` ||   ||
 || xs:date || `date-from` ||   ||
 || xs:date || `date-to` ||   ||
-|| [SGolfingGender.html golfml:GolfingGender] || `gender` ||   ||
+|| [SGolfingGender golfml:GolfingGender] || `gender` ||   ||
 || xs:string || `name` ||   ||
-|| [SUnitOfLengthWithUnitsEnum.html golfml:UnitOfLengthWithUnitsEnum] || `units` ||   ||
+|| [SUnitOfLengthWithUnitsEnum golfml:UnitOfLengthWithUnitsEnum] || `units` ||   ||
 
 === Attribute Detail ===
       
@@ -96,7 +96,7 @@ anyType
       
 =====  Type: =====
 
-          [SGolfingGender.html golfml:GolfingGender]
+          [SGolfingGender golfml:GolfingGender]
 =====  Use: =====
         optional
 =====  Form: =====
@@ -122,7 +122,7 @@ anyType
       
 =====  Type: =====
 
-          [SUnitOfLengthWithUnitsEnum.html golfml:UnitOfLengthWithUnitsEnum]
+          [SUnitOfLengthWithUnitsEnum golfml:UnitOfLengthWithUnitsEnum]
 =====  Use: =====
         optional
 =====  Form: =====
@@ -132,7 +132,7 @@ anyType
 
 ===  Local Usage ===
 
-    	[CGolfCourse.html GolfCourse]
+    	[CGolfCourse GolfCourse]
 ----
     
 ----

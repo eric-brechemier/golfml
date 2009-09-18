@@ -38,7 +38,7 @@ string
 
 ===  Local Usage ===
 
-    	[CStatistics.html Statistics]
+    	[CStatistics Statistics]
 ----
     
 ----

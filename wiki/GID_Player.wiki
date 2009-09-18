@@ -30,7 +30,7 @@ ID_Player (group)
 
 ===  Local Usage ===
 
-    	[GID_GolfBag.html ID_GolfBag], [CREF_Player.html REF_Player]
+    	[GID_GolfBag ID_GolfBag], [CREF_Player REF_Player]
 ----
     
 ----

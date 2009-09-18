@@ -34,7 +34,7 @@ string
 
 ===  Local Usage ===
 
-    	[CTees.html Tees]
+    	[CTees Tees]
 ----
     
 ----

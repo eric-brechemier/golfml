@@ -37,7 +37,7 @@ string
 
 ===  Local Usage ===
 
-    	[CPlayerHandicap.html PlayerHandicap]
+    	[CPlayerHandicap PlayerHandicap]
 ----
     
 ----
