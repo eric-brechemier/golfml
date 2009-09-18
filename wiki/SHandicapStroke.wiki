@@ -23,8 +23,8 @@ positiveInteger
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	inclusive lower bound: 1inclusive upper bound: 18
@@ -36,6 +36,4 @@ positiveInteger
 
     	[CTee Tee]
 ----
-    <xs:simpleType name="HandicapStroke">  <xs:restriction base="xs:positiveInteger">    <xs:minInclusive value="1"/>    <xs:maxInclusive value="18"/>  </xs:restriction></xs:simpleType>
-----
-        
+    

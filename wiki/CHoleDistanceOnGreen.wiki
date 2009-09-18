@@ -24,8 +24,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...  
@@ -38,13 +38,10 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-        
-|| from ||  Edge of green the distance is taken from || [SOrientationEnum golfml:OrientationEnum] || required ||  ||  || unqualified ||
+        || from ||  Edge of green the distance is taken from || [SOrientationEnum golfml:OrientationEnum] || required ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CHolePlacementWithDistances HolePlacementWithDistances]
 ----
-    <xs:complexType name="HoleDistanceOnGreen">  <xs:simpleContent>    <xs:extension base="golfml:LengthWithUnits">      <xs:attribute name="from" type="golfml:OrientationEnum" use="required">      </xs:attribute>    </xs:extension>  </xs:simpleContent></xs:complexType>
-----
-        
+    

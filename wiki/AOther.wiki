@@ -9,8 +9,8 @@
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	  other = xs:string
@@ -21,13 +21,10 @@
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-        
-|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
+        || other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CAmenety Amenety], [CAreaOfInterest AreaOfInterest], [CContact Contact], [CGolfGame GolfGame], [AMediaTypeAttributes MediaTypeAttributes], [CPlayerHandicap PlayerHandicap], [CPointOfInterest PointOfInterest], [CStatistics Statistics], [CWeather Weather]
 ----
-    <xs:attributeGroup name="Other">  <xs:attribute name="other" type="xs:string">  </xs:attribute></xs:attributeGroup>
-----
-        
+    

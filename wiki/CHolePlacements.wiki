@@ -23,8 +23,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...  date = xs:date>  (name, [CHolePlacement hole-placement]{1,18}  )</...>
@@ -40,13 +40,10 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-        
-|| date ||   || xs:date || optional ||  ||  || unqualified ||
+        || date ||   || xs:date || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CRound Round]
 ----
-    <xs:complexType name="HolePlacements">  <xs:sequence>    <xs:element name="name" type="xs:string">    </xs:element>    <xs:element maxOccurs="18" name="hole-placement" type="golfml:HolePlacement">    </xs:element>  </xs:sequence>  <xs:attribute name="date" type="xs:date"/></xs:complexType>
-----
-        
+    

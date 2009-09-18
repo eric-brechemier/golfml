@@ -23,8 +23,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...>  ([CGolfClub golf-club] | [CEquipment equipment])`*` </...>
@@ -41,6 +41,4 @@ anyType
 
     	[CPlayer Player]
 ----
-    <xs:complexType name="EquipmentList">  <xs:choice maxOccurs="unbounded" minOccurs="0">    <xs:element name="golf-club" type="golfml:GolfClub">    </xs:element>    <xs:element name="equipment" type="golfml:Equipment">    </xs:element>  </xs:choice></xs:complexType>
-----
-        
+    

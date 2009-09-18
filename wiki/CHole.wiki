@@ -23,8 +23,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...  name = xs:string  
@@ -43,14 +43,10 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-        
-|| name ||  Name of hole || xs:string || optional ||  ||  || unqualified ||
-|| number ||  Hole number || [SOneToEighteen golfml:OneToEighteen] || required ||  ||  || unqualified ||
+        || name ||  Name of hole || xs:string || optional ||  ||  || unqualified |||| number ||  Hole number || [SOneToEighteen golfml:OneToEighteen] || required ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CHoles Holes]
 ----
-    <xs:complexType name="Hole">  <xs:choice maxOccurs="unbounded" minOccurs="0">    <xs:element name="media" type="golfml:Media">    </xs:element>    <xs:element name="note" type="golfml:Note">    </xs:element>    <xs:element name="placemarks" type="golfml:Placemarks">    </xs:element>  </xs:choice>  <xs:attribute name="number" type="golfml:OneToEighteen" use="required">  </xs:attribute>  <xs:attribute name="name" type="xs:string">  </xs:attribute></xs:complexType>
-----
-        
+    

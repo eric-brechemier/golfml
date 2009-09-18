@@ -23,13 +23,11 @@ string
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	('m/s' | 'kmh' | 'mph')
 
 ----
-    <xs:simpleType name="UnitOfSpeed">  <xs:restriction base="xs:string">    <xs:enumeration value="m/s"/>    <xs:enumeration value="kmh"/>    <xs:enumeration value="mph"/>  </xs:restriction></xs:simpleType>
-----
-        
+    

@@ -27,8 +27,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...  team = xs:string  type = [SPlayerSomeEnum PlayerSomeEnum]>  (player.name, player.date-of-birth  )</...>
@@ -44,14 +44,10 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-        
-|| team ||  Name of the team this player was a member of || xs:string || optional ||  ||  || unqualified ||
-|| type ||  				Qualification of the player on the 2,3,4 some.			 || [SPlayerSomeEnum golfml:PlayerSomeEnum] || optional ||  ||  || unqualified ||
+        || team ||  Name of the team this player was a member of || xs:string || optional ||  ||  || unqualified |||| type ||  				Qualification of the player on the 2,3,4 some.			 || [SPlayerSomeEnum golfml:PlayerSomeEnum] || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CFourSome FourSome]
 ----
-    <xs:complexType name="PlayerSome">  <xs:sequence>    <xs:element name="player.name" type="xs:string"/>    <xs:element name="player.date-of-birth" type="xs:date"/>  </xs:sequence>  <xs:attribute name="type" type="golfml:PlayerSomeEnum">  </xs:attribute>  <xs:attribute name="team" type="xs:string">  </xs:attribute></xs:complexType>
-----
-        
+    

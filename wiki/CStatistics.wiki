@@ -23,8 +23,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...  other = xs:string  
@@ -42,14 +42,10 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-        
-|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
-|| type ||   || [SStatisticCollectionTypesEnum golfml:StatisticCollectionTypesEnum] || required ||  ||  || unqualified ||
+        || other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified |||| type ||   || [SStatisticCollectionTypesEnum golfml:StatisticCollectionTypesEnum] || required ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CPlayer Player]
 ----
-    <xs:complexType name="Statistics">  <xs:sequence>    <xs:element name="collection" type="golfml:Collection">    </xs:element>    <xs:element maxOccurs="unbounded" name="value" type="golfml:StatisticValue">    </xs:element>  </xs:sequence>  <xs:attribute name="type" type="golfml:StatisticCollectionTypesEnum" use="required"/>  <xs:attributeGroup ref="golfml:Other"/></xs:complexType>
-----
-        
+    

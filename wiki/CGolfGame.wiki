@@ -23,8 +23,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...  other = xs:string  type = [SGolfGameTypeEnum GolfGameTypeEnum]>[Sstring string]</...>
@@ -35,14 +35,10 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-        
-|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
-|| type ||   || [SGolfGameTypeEnum golfml:GolfGameTypeEnum] || optional ||  ||  || unqualified ||
+        || other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified |||| type ||   || [SGolfGameTypeEnum golfml:GolfGameTypeEnum] || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CRound Round]
 ----
-    <xs:complexType name="GolfGame">  <xs:simpleContent>    <xs:extension base="xs:string">      <xs:attribute name="type" type="golfml:GolfGameTypeEnum"/>      <xs:attributeGroup ref="golfml:Other"/>    </xs:extension>  </xs:simpleContent></xs:complexType>
-----
-        
+    

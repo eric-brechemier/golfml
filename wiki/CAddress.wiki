@@ -25,8 +25,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...>  ([CCountry country] ; municipality? ; postal-code ; region? ; street?) </...>
@@ -46,6 +46,4 @@ anyType
 
     	[CCountryClub CountryClub], [CPlayer Player]
 ----
-    <xs:complexType name="Address">  <xs:all>    <xs:element name="country" type="golfml:Country">    </xs:element>    <xs:element minOccurs="0" name="municipality" type="xs:string">    </xs:element>    <xs:element name="postal-code" type="xs:string">    </xs:element>    <xs:element minOccurs="0" name="region" type="xs:string">    </xs:element>    <xs:element minOccurs="0" name="street" type="xs:string">    </xs:element>  </xs:all></xs:complexType>
-----
-        
+    

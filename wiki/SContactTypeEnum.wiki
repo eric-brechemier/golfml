@@ -23,8 +23,8 @@ string
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	('club-house' | 'reception' | 'restaurant' | 'reservation' | 'management' | 'technical' | 'corporate' | 'home' | 'work' | 'mobile' | 'other')
@@ -36,6 +36,4 @@ string
 
     	[CContact Contact]
 ----
-    <xs:simpleType name="ContactTypeEnum">  <xs:restriction base="xs:string">    <xs:enumeration value="club-house"/>    <xs:enumeration value="reception"/>    <xs:enumeration value="restaurant"/>    <xs:enumeration value="reservation"/>    <xs:enumeration value="management"/>    <xs:enumeration value="technical"/>    <xs:enumeration value="corporate"/>    <xs:enumeration value="home"/>    <xs:enumeration value="work"/>    <xs:enumeration value="mobile"/>    <xs:enumeration value="other"/>  </xs:restriction></xs:simpleType>
-----
-        
+    

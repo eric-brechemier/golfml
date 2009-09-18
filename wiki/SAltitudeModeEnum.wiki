@@ -24,8 +24,8 @@ string
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	('relativeToSeaFloor' | 'clampToSeaFloor' | 'relativeToGround' | 'clampToGround' | 'absolute')
@@ -37,6 +37,4 @@ string
 
     	[CAltitude Altitude]
 ----
-    <xs:simpleType name="AltitudeModeEnum">  <xs:restriction base="xs:string">    <xs:enumeration value="relativeToSeaFloor"/>    <xs:enumeration value="clampToSeaFloor"/>    <xs:enumeration value="relativeToGround"/>    <xs:enumeration value="clampToGround"/>    <xs:enumeration value="absolute"/>  </xs:restriction></xs:simpleType>
-----
-        
+    

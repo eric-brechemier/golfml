@@ -25,8 +25,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...  type = xs:string>  ([SStrokePrecisionValue front-back], [SStrokePrecisionValue left-right]  )?</...>
@@ -42,13 +42,10 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-        
-|| type ||   || xs:string || optional ||  ||  || unqualified ||
+        || type ||   || xs:string || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CStrokeDetail StrokeDetail]
 ----
-    <xs:complexType name="StrokePrecision">  <xs:sequence minOccurs="0">    <xs:element name="front-back" type="golfml:StrokePrecisionValue">    </xs:element>    <xs:element name="left-right" type="golfml:StrokePrecisionValue">    </xs:element>  </xs:sequence>  <xs:attribute name="type" type="xs:string"/></xs:complexType>
-----
-        
+    

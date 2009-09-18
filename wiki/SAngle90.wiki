@@ -23,8 +23,8 @@ double
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	inclusive lower bound: -90inclusive upper bound: 90.0
@@ -36,6 +36,4 @@ double
 
     	[CGolfClub GolfClub], [CPositionGPS PositionGPS]
 ----
-    <xs:simpleType name="Angle90">  <xs:restriction base="xs:double">    <xs:minInclusive value="-90"/>    <xs:maxInclusive value="90.0"/>  </xs:restriction></xs:simpleType>
-----
-        
+    

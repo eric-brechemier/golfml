@@ -24,8 +24,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...  other = xs:string  type = [SContactTypeEnum ContactTypeEnum]>  (name? ; [SPhoneNumber phone]? ; email? ; website?) </...>
@@ -43,14 +43,10 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-        
-|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
-|| type ||  Qualification of a contact || [SContactTypeEnum golfml:ContactTypeEnum] || optional ||  ||  || unqualified ||
+        || other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified |||| type ||  Qualification of a contact || [SContactTypeEnum golfml:ContactTypeEnum] || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CCountryClub CountryClub], [CPlayer Player]
 ----
-    <xs:complexType name="Contact">  <xs:all>    <xs:element minOccurs="0" name="name" type="xs:string">    </xs:element>    <xs:element minOccurs="0" name="phone" type="golfml:PhoneNumber">    </xs:element>    <xs:element minOccurs="0" name="email" type="xs:string">    </xs:element>    <xs:element minOccurs="0" name="website" type="xs:anyURI">    </xs:element>  </xs:all>  <xs:attribute name="type" type="golfml:ContactTypeEnum">  </xs:attribute>  <xs:attributeGroup ref="golfml:Other"/></xs:complexType>
-----
-        
+    

@@ -23,13 +23,11 @@ double
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	inclusive lower bound: 0.0inclusive upper bound: 90.0
 
 ----
-    <xs:simpleType name="Anglepos90">  <xs:restriction base="xs:double">    <xs:minInclusive value="0.0"/>    <xs:maxInclusive value="90.0"/>  </xs:restriction></xs:simpleType>
-----
-        
+    

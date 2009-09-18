@@ -41,8 +41,8 @@
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<[Egolfml golfml]  version = xs:string>  ([CCountryClub country-club] | [CPlayer player] | [CApplication application] | [CVersion version])`*` [Egolfml </golfml>]
@@ -60,7 +60,4 @@
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-        
-|| version ||  Version of the golfml language used || xs:string || optional ||  ||  || unqualified ||<xs:element name="golfml">  <xs:complexType>    <xs:choice maxOccurs="unbounded" minOccurs="0">      <xs:element name="country-club" type="golfml:CountryClub">      </xs:element>      <xs:element name="player" type="golfml:Player">      </xs:element>      <xs:element name="application" type="golfml:Application">      </xs:element>      <xs:element name="version" type="golfml:Version">      </xs:element>    </xs:choice>    <xs:attribute name="version" type="xs:string">    </xs:attribute>  </xs:complexType>  <xs:key name="PK_CountryClub">    <xs:selector xpath="./country-club"/>    <xs:field xpath="address/country/@iso3166"/>    <xs:field xpath="address/postal-code"/>    <xs:field xpath="name"/>  </xs:key>  <xs:key name="PK_Tees">    <xs:selector xpath="country-club"/>    <xs:field xpath="address/country/@iso3166"/>    <xs:field xpath="address/postal-code"/>    <xs:field xpath="name"/>    <xs:field xpath="golf-course/name"/>    <xs:field xpath="golf-course/tee-set/@name"/>  </xs:key>  <xs:key name="PK_Player">    <xs:selector xpath="player"/>    <xs:field xpath="name"/>    <xs:field xpath="date-of-birth"/>  </xs:key>  <xs:key name="PK_GolfBag">    <xs:selector xpath="player"/>    <xs:field xpath="name"/>    <xs:field xpath="date-of-birth"/>    <xs:field xpath="golf-bag/name"/>  </xs:key>  <xs:key name="PK_GolfClub">    <xs:selector xpath="player/equipement-list/golf-club"/>    <xs:field xpath="manufacturer"/>    <xs:field xpath="model"/>    <xs:field xpath="submodel"/>    <xs:field xpath="number"/>  </xs:key>  <xs:unique name="PK_Application">    <xs:selector xpath="application"/>    <xs:field xpath="@dotname"/>  </xs:unique>  <xs:keyref name="FK_FoursomePlayer" refer="golfml:PK_Player">    <xs:selector xpath="player/round/foursome/player-some"/>    <xs:field xpath="player.name"/>    <xs:field xpath="player.date-of-birth"/>  </xs:keyref>  <xs:keyref name="FK_ScorecardTees" refer="golfml:PK_Tees">    <xs:selector xpath="player/round/scorecard/tees"/>    <xs:field xpath="country-club.name"/>    <xs:field xpath="country-club.address.country.iso3166"/>    <xs:field xpath="country-club.address.postal-code"/>    <xs:field xpath="country-club.golf-course.name"/>    <xs:field xpath="country-club.golf-course.tee-set.name"/>  </xs:keyref>  <xs:keyref name="FK_RoundGolfBag" refer="golfml:PK_GolfBag">    <xs:selector xpath="player/round/golf-bag"/>    <xs:field xpath="player.name"/>    <xs:field xpath="player.date-of-birth"/>    <xs:field xpath="player.golf-bag.name"/>  </xs:keyref>  <xs:keyref name="FK_GolfBagGolfClub" refer="golfml:PK_GolfClub">    <xs:selector xpath="player/golf-bag/golf-club-ref"/>    <xs:field xpath="golf-club.manufacturer"/>    <xs:field xpath="golf-club.model"/>    <xs:field xpath="golf-club.submodel"/>    <xs:field xpath="golf-club.number"/>  </xs:keyref>  <xs:keyref name="FK_StrokeGolfClub" refer="golfml:PK_GolfClub">    <xs:selector xpath="player/scorecard/score/hole/stroke/golf-club"/>    <xs:field xpath="golf-club.manufacturer"/>    <xs:field xpath="golf-club.model"/>    <xs:field xpath="golf-club.submodel"/>    <xs:field xpath="golf-club.number"/>  </xs:keyref></xs:element>
-----
-        
+        || version ||  Version of the golfml language used || xs:string || optional ||  ||  || unqualified ||

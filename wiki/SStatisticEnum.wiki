@@ -23,13 +23,11 @@ string
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	('Official World Golf Ranking' | 'PGA Championship Points' | 'Scoring Average (adjusted)' | 'Scoring Average (actual)' | 'Scoring Average Before Cut' | 'Scoring Average 3rd Round' | 'Scoring Average Final Round' | 'Birdies (Total)' | 'Birdies (Average)' | 'Birdies (Conversion %)' | 'Eagles (Total)' | 'Eagles (Holes per)' | 'Par Breakers' | 'Par 3 Performance' | 'Par 4 Performance' | 'Par 5 Performance' | 'Driving Distance' | 'Driving Accuracy' | 'Longest Drive' | 'Total Driving' | 'Greens in Regulation' | 'Sand Saves' | 'Scrambling' | 'Putts Per Round' | 'Putts Per GIR' | 'Money Leaders' | 'World Money List' | 'Career Earnings (TOUR Members)' | 'Career Earnings (All Players)' | 'Non-Member Earnings' | 'Top 10 Finishes' | 'All-Around Ranking' | 'Ball Striking' | 'Bounce Back' | 'Consecutive # of Cuts' | 'other')
 
 ----
-    <xs:simpleType name="StatisticEnum">  <xs:restriction base="xs:string">    <xs:enumeration value="Official World Golf Ranking"/>    <xs:enumeration value="PGA Championship Points"/>    <xs:enumeration value="Scoring Average (adjusted)"/>    <xs:enumeration value="Scoring Average (actual)"/>    <xs:enumeration value="Scoring Average Before Cut"/>    <xs:enumeration value="Scoring Average 3rd Round"/>    <xs:enumeration value="Scoring Average Final Round"/>    <xs:enumeration value="Birdies (Total)"/>    <xs:enumeration value="Birdies (Average)"/>    <xs:enumeration value="Birdies (Conversion %)"/>    <xs:enumeration value="Eagles (Total)"/>    <xs:enumeration value="Eagles (Holes per)"/>    <xs:enumeration value="Par Breakers"/>    <xs:enumeration value="Par 3 Performance"/>    <xs:enumeration value="Par 4 Performance"/>    <xs:enumeration value="Par 5 Performance"/>    <xs:enumeration value="Driving Distance"/>    <xs:enumeration value="Driving Accuracy"/>    <xs:enumeration value="Longest Drive"/>    <xs:enumeration value="Total Driving"/>    <xs:enumeration value="Greens in Regulation"/>    <xs:enumeration value="Sand Saves"/>    <xs:enumeration value="Scrambling"/>    <xs:enumeration value="Putts Per Round"/>    <xs:enumeration value="Putts Per GIR"/>    <xs:enumeration value="Money Leaders"/>    <xs:enumeration value="World Money List"/>    <xs:enumeration value="Career Earnings (TOUR Members)"/>    <xs:enumeration value="Career Earnings (All Players)"/>    <xs:enumeration value="Non-Member Earnings"/>    <xs:enumeration value="Top 10 Finishes"/>    <xs:enumeration value="All-Around Ranking"/>    <xs:enumeration value="Ball Striking"/>    <xs:enumeration value="Bounce Back"/>    <xs:enumeration value="Consecutive # of Cuts"/>    <xs:enumeration value="other"/>  </xs:restriction></xs:simpleType>
-----
-        
+    

@@ -14,8 +14,8 @@
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	  (golf-club.manufacturer, golf-club.model, golf-club.submodel, golf-club.number  )
@@ -34,6 +34,4 @@
 
     	[CREF_GolfClub REF_GolfClub]
 ----
-    <xs:group name="ID_GolfClub">  <xs:sequence>    <xs:element name="golf-club.manufacturer" type="xs:string"/>    <xs:element name="golf-club.model" type="xs:string"/>    <xs:element name="golf-club.submodel" type="xs:string"/>    <xs:element name="golf-club.number" type="xs:string"/>  </xs:sequence></xs:group>
-----
-        
+    

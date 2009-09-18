@@ -17,8 +17,8 @@
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	  content-type = xs:string  other = xs:string  type = [SMediaTypeEnum MediaTypeEnum]
@@ -29,15 +29,10 @@
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-        
-|| content-type ||   || xs:string || optional ||  ||  || unqualified ||
-|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
-|| type ||   || [SMediaTypeEnum golfml:MediaTypeEnum] || optional ||  ||  || unqualified ||
+        || content-type ||   || xs:string || optional ||  ||  || unqualified |||| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified |||| type ||   || [SMediaTypeEnum golfml:MediaTypeEnum] || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CMedia Media]
 ----
-    <xs:attributeGroup name="MediaTypeAttributes">  <xs:attribute name="type" type="golfml:MediaTypeEnum"/>  <xs:attribute name="content-type" type="xs:string"/>  <xs:attributeGroup ref="golfml:Other"/></xs:attributeGroup>
-----
-        
+    

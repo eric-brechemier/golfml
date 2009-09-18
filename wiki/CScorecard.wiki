@@ -25,8 +25,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...>  ([CREF_Tees tees], handicap?, handicap-strokes?, [CREF_GolfBag golf-bag-ref]?, [CRoundSummary summary]?, [CScore score]  )</...>
@@ -47,6 +47,4 @@ anyType
 
     	[CRound Round]
 ----
-    <xs:complexType name="Scorecard">  <xs:sequence>    <xs:element name="tees" type="golfml:REF_Tees">    </xs:element>    <xs:element minOccurs="0" name="handicap" type="xs:float">    </xs:element>    <xs:element minOccurs="0" name="handicap-strokes" type="xs:integer">    </xs:element>    <xs:element minOccurs="0" name="golf-bag-ref" type="golfml:REF_GolfBag">    </xs:element>    <xs:element minOccurs="0" name="summary" type="golfml:RoundSummary">    </xs:element>    <xs:element name="score" type="golfml:Score">    </xs:element>  </xs:sequence></xs:complexType>
-----
-        
+    

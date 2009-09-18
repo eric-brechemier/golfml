@@ -29,8 +29,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...  content-type = xs:string  other = xs:string  type = [SMediaTypeEnum MediaTypeEnum]>  (name, description?, (url | content)   )</...>
@@ -48,15 +48,10 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-        
-|| content-type ||   || xs:string || optional ||  ||  || unqualified ||
-|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
-|| type ||   || [SMediaTypeEnum golfml:MediaTypeEnum] || optional ||  ||  || unqualified ||
+        || content-type ||   || xs:string || optional ||  ||  || unqualified |||| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified |||| type ||   || [SMediaTypeEnum golfml:MediaTypeEnum] || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CCountryClub CountryClub], [CGolfCourse GolfCourse], [CHole Hole], [CPlayer Player]
 ----
-    <xs:complexType name="Media">  <xs:sequence>    <xs:element name="name" type="xs:string">    </xs:element>    <xs:element minOccurs="0" name="description" type="xs:string">    </xs:element>    <xs:group ref="golfml:MediaChoice"/>  </xs:sequence>  <xs:attributeGroup ref="golfml:MediaTypeAttributes"/></xs:complexType>
-----
-        
+    

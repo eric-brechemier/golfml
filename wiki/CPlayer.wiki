@@ -26,8 +26,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...  
@@ -55,13 +55,10 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-        
-|| gender ||  Gender of the player || [SGender golfml:Gender] || required ||  ||  || unqualified ||
+        || gender ||  Gender of the player || [SGender golfml:Gender] || required ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[Egolfml golfml]
 ----
-    <xs:complexType name="Player">  <xs:sequence>    <xs:element name="name" type="xs:string">    </xs:element>    <xs:element name="date-of-birth" type="xs:date">    </xs:element>    <xs:element minOccurs="0" name="current-handicap" type="golfml:PlayerHandicap">    </xs:element>    <xs:element maxOccurs="unbounded" minOccurs="0" name="address" type="golfml:Address">    </xs:element>    <xs:element maxOccurs="unbounded" minOccurs="0" name="contact" type="golfml:Contact">    </xs:element>    <xs:element minOccurs="0" name="home-country-club" type="golfml:CountryClubChoice">    </xs:element>    <xs:element minOccurs="0" name="note" type="golfml:Note">    </xs:element>    <xs:element minOccurs="0" name="media" type="golfml:Media">    </xs:element>    <xs:element minOccurs="0" name="equipment-list" type="golfml:EquipmentList">    </xs:element>    <xs:element maxOccurs="unbounded" minOccurs="0" name="golf-bag" type="golfml:GolfBag">    </xs:element>    <xs:element maxOccurs="unbounded" minOccurs="0" name="round" type="golfml:Round">    </xs:element>    <xs:element maxOccurs="unbounded" minOccurs="0" name="statistics" type="golfml:Statistics">    </xs:element>  </xs:sequence>  <xs:attribute name="gender" type="golfml:Gender" use="required">  </xs:attribute></xs:complexType>
-----
-        
+    

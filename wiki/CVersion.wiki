@@ -24,8 +24,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...  created = xs:dateTime  updated = xs:dateTime  version = xs:string>[Sstring string]</...>
@@ -36,15 +36,10 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-        
-|| created ||   || xs:dateTime || optional ||  ||  || unqualified ||
-|| updated ||   || xs:dateTime || optional ||  ||  || unqualified ||
-|| version ||   || xs:string || optional ||  ||  || unqualified ||
+        || created ||   || xs:dateTime || optional ||  ||  || unqualified |||| updated ||   || xs:dateTime || optional ||  ||  || unqualified |||| version ||   || xs:string || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CCountryClub CountryClub], [CGolfCourse GolfCourse], [Egolfml golfml], [CTees Tees]
 ----
-    <xs:complexType name="Version">  <xs:simpleContent>    <xs:extension base="xs:string">      <xs:attribute name="version" type="xs:string"/>      <xs:attribute name="created" type="xs:dateTime"/>      <xs:attribute name="updated" type="xs:dateTime"/>    </xs:extension>  </xs:simpleContent></xs:complexType>
-----
-        
+    

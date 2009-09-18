@@ -23,8 +23,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...  drop = xs:boolean  number = xs:nonNegativeInteger>  ([CPosition position]?, time?, [CGolfClub golf-club]?, [SGolfCourseAreaTypeEnum landing]?, [CStrokePrecision precision]?, distance?, distance-to-hole?, [CNote comment]?  )</...>
@@ -46,14 +46,10 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-        
-|| drop ||  				Boolean flag indicating if the stroke was a drop.			 || xs:boolean || optional ||  ||  || unqualified ||
-|| number ||  				Order number of the stroke playing the hole.			 || xs:nonNegativeInteger || optional ||  ||  || unqualified ||
+        || drop ||  				Boolean flag indicating if the stroke was a drop.			 || xs:boolean || optional ||  ||  || unqualified |||| number ||  				Order number of the stroke playing the hole.			 || xs:nonNegativeInteger || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CHoleScore HoleScore]
 ----
-    <xs:complexType name="StrokeDetail">  <xs:sequence>    <xs:element minOccurs="0" name="position" type="golfml:Position">    </xs:element>    <xs:element minOccurs="0" name="time" type="xs:dateTime">    </xs:element>    <xs:element minOccurs="0" name="golf-club" type="golfml:GolfClub">    </xs:element>    <xs:element minOccurs="0" name="landing" type="golfml:GolfCourseAreaTypeEnum">    </xs:element>    <xs:element minOccurs="0" name="precision" type="golfml:StrokePrecision">    </xs:element>    <xs:element minOccurs="0" name="distance" type="xs:double">    </xs:element>    <xs:element minOccurs="0" name="distance-to-hole" type="xs:double">    </xs:element>    <xs:element minOccurs="0" name="comment" type="golfml:Note">    </xs:element>  </xs:sequence>  <xs:attribute name="number" type="xs:nonNegativeInteger">  </xs:attribute>  <xs:attribute name="drop" type="xs:boolean">  </xs:attribute></xs:complexType>
-----
-        
+    

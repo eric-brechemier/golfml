@@ -23,8 +23,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...  
@@ -37,13 +37,10 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-        
-|| name ||   || xs:string || required ||  ||  || unqualified ||
+        || name ||   || xs:string || required ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CRoundSummary RoundSummary], [CStatistics Statistics]
 ----
-    <xs:complexType name="StatisticValue">  <xs:simpleContent>    <xs:extension base="xs:double">      <xs:attribute name="name" type="xs:string" use="required"/>    </xs:extension>  </xs:simpleContent></xs:complexType>
-----
-        
+    

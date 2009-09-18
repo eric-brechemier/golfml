@@ -23,8 +23,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...>  (fairway, green-in-regulation, [CLengthWithUnits driving-distance], [CLengthWithUnits approach-to-hole]  )</...>
@@ -43,6 +43,4 @@ anyType
 
     	[CHoleScore HoleScore]
 ----
-    <xs:complexType name="HoleStatistics">  <xs:sequence>    <xs:element name="fairway" type="xs:boolean">    </xs:element>    <xs:element name="green-in-regulation" type="xs:boolean">    </xs:element>    <xs:element name="driving-distance" type="golfml:LengthWithUnits">    </xs:element>    <xs:element name="approach-to-hole" type="golfml:LengthWithUnits">    </xs:element>  </xs:sequence></xs:complexType>
-----
-        
+    

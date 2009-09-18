@@ -24,8 +24,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...>  (name, [CREF_GolfBag bag-ref]?, ([CREF_GolfClub golf-club-ref] | [CGolfClub golf-club]){1,14} , [CEquipment equipment]`*`  )</...>
@@ -45,6 +45,4 @@ anyType
 
     	[CPlayer Player]
 ----
-    <xs:complexType name="GolfBag">  <xs:sequence>    <xs:element name="name" type="xs:string">    </xs:element>    <xs:element minOccurs="0" name="bag-ref" type="golfml:REF_GolfBag">    </xs:element>    <xs:choice maxOccurs="14" minOccurs="1">      <xs:element name="golf-club-ref" type="golfml:REF_GolfClub">      </xs:element>      <xs:element name="golf-club" type="golfml:GolfClub">      </xs:element>    </xs:choice>    <xs:element maxOccurs="unbounded" minOccurs="0" name="equipment" type="golfml:Equipment">    </xs:element>  </xs:sequence></xs:complexType>
-----
-        
+    

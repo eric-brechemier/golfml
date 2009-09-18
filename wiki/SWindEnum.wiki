@@ -23,8 +23,8 @@ string
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	('none' | 'calm' | 'light breeze' | 'breeze' | 'strong breeze' | 'high wind' | 'storm' | 'other')
@@ -36,6 +36,4 @@ string
 
     	[CWeather Weather]
 ----
-    <xs:simpleType name="WindEnum">  <xs:restriction base="xs:string">    <xs:enumeration value="none"/>    <xs:enumeration value="calm"/>    <xs:enumeration value="light breeze"/>    <xs:enumeration value="breeze"/>    <xs:enumeration value="strong breeze"/>    <xs:enumeration value="high wind"/>    <xs:enumeration value="storm"/>    <xs:enumeration value="other"/>  </xs:restriction></xs:simpleType>
-----
-        
+    

@@ -23,8 +23,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...>  (strokes, points?, putts?, money?, [CPenalty penalties]?, [CStatisticValue statistic]`*`  )</...>
@@ -45,6 +45,4 @@ anyType
 
     	[CScorecard Scorecard]
 ----
-    <xs:complexType name="RoundSummary">  <xs:sequence>    <xs:element name="strokes" type="xs:positiveInteger">    </xs:element>    <xs:element minOccurs="0" name="points" type="xs:nonNegativeInteger">    </xs:element>    <xs:element minOccurs="0" name="putts" type="xs:nonNegativeInteger">    </xs:element>    <xs:element minOccurs="0" name="money" type="xs:nonNegativeInteger">    </xs:element>    <xs:element minOccurs="0" name="penalties" type="golfml:Penalty">    </xs:element>    <xs:element maxOccurs="unbounded" minOccurs="0" name="statistic" type="golfml:StatisticValue">    </xs:element>  </xs:sequence></xs:complexType>
-----
-        
+    

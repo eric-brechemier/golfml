@@ -24,8 +24,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...>  ([CHolePlacements hole-placement]?, [CWeather weather]?, [CFourSome foursome]?, [CGolfGame game]?, [CRoomForExtension wager]?, date, [CScorecard scorecard]  )</...>
@@ -47,6 +47,4 @@ anyType
 
     	[CPlayer Player]
 ----
-    <xs:complexType name="Round">  <xs:sequence>    <xs:element minOccurs="0" name="hole-placement" type="golfml:HolePlacements">    </xs:element>    <xs:element minOccurs="0" name="weather" type="golfml:Weather">    </xs:element>    <xs:element minOccurs="0" name="foursome" type="golfml:FourSome">    </xs:element>    <xs:element minOccurs="0" name="game" type="golfml:GolfGame">    </xs:element>    <xs:element minOccurs="0" name="wager" type="golfml:RoomForExtension">    </xs:element>    <xs:element name="date" type="xs:dateTime">    </xs:element>    <xs:element maxOccurs="1" name="scorecard" type="golfml:Scorecard">    </xs:element>  </xs:sequence></xs:complexType>
-----
-        
+    

@@ -23,8 +23,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...>  ([CHolePlacementWithDistances distances] | [CRoomForExtension coordinates]) </...>
@@ -41,6 +41,4 @@ anyType
 
     	[CHolePlacements HolePlacements]
 ----
-    <xs:complexType name="HolePlacement">  <xs:choice>    <xs:element name="distances" type="golfml:HolePlacementWithDistances">    </xs:element>    <xs:element name="coordinates" type="golfml:RoomForExtension">    </xs:element>  </xs:choice></xs:complexType>
-----
-        
+    

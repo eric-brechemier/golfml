@@ -23,8 +23,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...>  [CHoleScore hole]{1,18}  </...>
@@ -40,6 +40,4 @@ anyType
 
     	[CScorecard Scorecard]
 ----
-    <xs:complexType name="Score">  <xs:sequence>    <xs:element maxOccurs="18" name="hole" type="golfml:HoleScore">    </xs:element>  </xs:sequence></xs:complexType>
-----
-        
+    

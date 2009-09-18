@@ -14,8 +14,8 @@
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	  (country-club.name, [SISO3166CountryCodeEnum country-club.address.country.iso3166], country-club.address.postal-code, country-club.golf-course.name  )
@@ -34,6 +34,4 @@
 
     	[GID_Tees ID_Tees], [CREF_GolfCourse REF_GolfCourse]
 ----
-    <xs:group name="ID_GolfCourse">  <xs:sequence>    <xs:element name="country-club.name" type="xs:string"/>    <xs:element name="country-club.address.country.iso3166" type="golfml:ISO3166CountryCodeEnum"/>    <xs:element name="country-club.address.postal-code" type="xs:string"/>    <xs:element name="country-club.golf-course.name" type="xs:string"/>  </xs:sequence></xs:group>
-----
-        
+    

@@ -18,8 +18,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...>  ((player.name, player.date-of-birth), player.golf-bag.name  )</...>
@@ -37,6 +37,4 @@ anyType
 
     	[CGolfBag GolfBag], [CScorecard Scorecard]
 ----
-    <xs:complexType name="REF_GolfBag">  <xs:group ref="golfml:ID_GolfBag"/></xs:complexType>
-----
-        
+    

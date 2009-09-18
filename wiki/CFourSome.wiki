@@ -23,8 +23,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...>  [CPlayerSome player-some]{0,3}  </...>
@@ -40,6 +40,4 @@ anyType
 
     	[CRound Round]
 ----
-    <xs:complexType name="FourSome">  <xs:sequence>    <xs:element maxOccurs="3" minOccurs="0" name="player-some" type="golfml:PlayerSome">    </xs:element>  </xs:sequence></xs:complexType>
-----
-        
+    

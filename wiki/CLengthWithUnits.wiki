@@ -23,8 +23,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...  units = [SUnitOfLengthWithUnitsEnum UnitOfLengthWithUnitsEnum] : meters>[SLength Length]</...>
@@ -35,13 +35,10 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-        
-|| units ||   || [SUnitOfLengthWithUnitsEnum golfml:UnitOfLengthWithUnitsEnum] || optional || meters ||  || unqualified ||
+        || units ||   || [SUnitOfLengthWithUnitsEnum golfml:UnitOfLengthWithUnitsEnum] || optional || meters ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CHoleDistanceOnGreen HoleDistanceOnGreen], [CHolePlacementWithDistances HolePlacementWithDistances], [CHoleStatistics HoleStatistics], [CShaft Shaft], [CTee Tee]
 ----
-    <xs:complexType name="LengthWithUnits">  <xs:simpleContent>    <xs:extension base="golfml:Length">      <xs:attribute default="meters" name="units" type="golfml:UnitOfLengthWithUnitsEnum"/>    </xs:extension>  </xs:simpleContent></xs:complexType>
-----
-        
+    

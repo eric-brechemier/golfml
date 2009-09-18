@@ -26,8 +26,8 @@ string
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	('USGA' | 'EGA' | 'other')
@@ -39,6 +39,4 @@ string
 
     	[CPlayerHandicap PlayerHandicap]
 ----
-    <xs:simpleType name="HandicapSystemEnum">  <xs:restriction base="xs:string">    <xs:enumeration value="USGA"/>    <xs:enumeration value="EGA"/>    <xs:enumeration value="other"/>  </xs:restriction></xs:simpleType>
-----
-        
+    

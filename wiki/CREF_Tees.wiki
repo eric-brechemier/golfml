@@ -18,8 +18,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...>  ((country-club.name, [SISO3166CountryCodeEnum country-club.address.country.iso3166], country-club.address.postal-code, country-club.golf-course.name), country-club.golf-course.tee-set.name  )</...>
@@ -39,6 +39,4 @@ anyType
 
     	[CScorecard Scorecard]
 ----
-    <xs:complexType name="REF_Tees">  <xs:group ref="golfml:ID_Tees"/></xs:complexType>
-----
-        
+    

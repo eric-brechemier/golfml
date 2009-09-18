@@ -23,8 +23,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...  
@@ -50,13 +50,10 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-        
-|| type ||  				Type of golf club.			 || [SGolfClubTypeEnum golfml:GolfClubTypeEnum] || required ||  ||  || unqualified ||
+        || type ||  				Type of golf club.			 || [SGolfClubTypeEnum golfml:GolfClubTypeEnum] || required ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CEquipmentList EquipmentList], [CGolfBag GolfBag], [CStrokeDetail StrokeDetail]
 ----
-    <xs:complexType name="GolfClub">  <xs:sequence>    <xs:element name="manufacturer" type="xs:string">    </xs:element>    <xs:element name="model" type="xs:string">    </xs:element>    <xs:element name="submodel" type="xs:string">    </xs:element>    <xs:element minOccurs="0" name="number" type="xs:string">    </xs:element>    <xs:element minOccurs="0" name="serial" type="xs:string">    </xs:element>    <xs:element minOccurs="0" name="loft" type="golfml:Angle90">    </xs:element>    <xs:element minOccurs="0" name="lie" type="golfml:Angle90">    </xs:element>    <xs:element minOccurs="0" name="weight" type="xs:float">    </xs:element>    <xs:element minOccurs="0" name="swing-weight" type="golfml:SwingWeight">    </xs:element>    <xs:element minOccurs="0" name="shaft" type="golfml:Shaft">    </xs:element>  </xs:sequence>  <xs:attribute name="type" type="golfml:GolfClubTypeEnum" use="required">  </xs:attribute></xs:complexType>
-----
-        
+    

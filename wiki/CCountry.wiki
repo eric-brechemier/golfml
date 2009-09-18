@@ -24,8 +24,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...  
@@ -38,13 +38,10 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-        
-|| code ||   || [SISO3166CountryCodeEnum golfml:ISO3166CountryCodeEnum] || required ||  ||  || unqualified ||
+        || code ||   || [SISO3166CountryCodeEnum golfml:ISO3166CountryCodeEnum] || required ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CAddress Address]
 ----
-    <xs:complexType name="Country">  <xs:simpleContent>    <xs:extension base="xs:string">      <xs:attribute name="code" type="golfml:ISO3166CountryCodeEnum" use="required"/>    </xs:extension>  </xs:simpleContent></xs:complexType>
-----
-        
+    

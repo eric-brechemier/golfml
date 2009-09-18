@@ -23,8 +23,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...>  (name, value  )</...>
@@ -35,6 +35,4 @@ anyType
 === Nested Element Summary ===
         
 || xs:string || name ||  					Name of a preference value.				 ||
-|| xs:string || value ||  					Value of a preference.				 ||<xs:complexType name="Preference">  <xs:sequence>    <xs:element name="name" type="xs:string">    </xs:element>    <xs:element name="value" type="xs:string">    </xs:element>  </xs:sequence></xs:complexType>
-----
-        
+|| xs:string || value ||  					Value of a preference.				 ||

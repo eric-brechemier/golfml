@@ -23,8 +23,8 @@ positiveInteger
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	inclusive lower bound: 55inclusive upper bound: 155
@@ -36,6 +36,4 @@ positiveInteger
 
     	[CHoleQualificationUSGA HoleQualificationUSGA]
 ----
-    <xs:simpleType name="CourseSlope">  <xs:restriction base="xs:positiveInteger">    <xs:minInclusive value="55"/>    <xs:maxInclusive value="155"/>  </xs:restriction></xs:simpleType>
-----
-        
+    

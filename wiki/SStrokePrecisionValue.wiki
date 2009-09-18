@@ -24,8 +24,8 @@ integer
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	inclusive lower bound: -2inclusive upper bound: 2
@@ -37,6 +37,4 @@ integer
 
     	[CStrokePrecision StrokePrecision]
 ----
-    <xs:simpleType name="StrokePrecisionValue">  <xs:restriction base="xs:integer">    <xs:minInclusive value="-2"/>    <xs:maxInclusive value="2"/>  </xs:restriction></xs:simpleType>
-----
-        
+    

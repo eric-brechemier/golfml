@@ -23,8 +23,8 @@ float
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	
@@ -41,6 +41,4 @@ float
 
     	[CPlayerHandicap PlayerHandicap]
 ----
-    <xs:simpleType name="FloatWithOneFractionalNumber">  <xs:restriction base="xs:float">    <xs:pattern value="^[-+]?[0-9]\d{0,2}(\.\d{1,1})?$"/>  </xs:restriction></xs:simpleType>
-----
-        
+    

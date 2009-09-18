@@ -23,8 +23,8 @@ string
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	('wood' | 'iron' | 'wedge' | 'putter' | 'driver' | 'hybrid' | 'utility' | 'other')
@@ -36,6 +36,4 @@ string
 
     	[CGolfClub GolfClub], [CShaft Shaft]
 ----
-    <xs:simpleType name="GolfClubTypeEnum">  <xs:restriction base="xs:string">    <xs:enumeration value="wood"/>    <xs:enumeration value="iron"/>    <xs:enumeration value="wedge"/>    <xs:enumeration value="putter"/>    <xs:enumeration value="driver"/>    <xs:enumeration value="hybrid"/>    <xs:enumeration value="utility"/>    <xs:enumeration value="other"/>  </xs:restriction></xs:simpleType>
-----
-        
+    

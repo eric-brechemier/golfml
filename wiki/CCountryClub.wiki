@@ -25,8 +25,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...>  (name, [CAddress address], [CContact contact]`*`, [CAmenety amenety]`*`, [CNote note]`*`, [CMedia media]`*`, [CGolfCourse golf-course]+, [CVersion version]`*`  )</...>
@@ -49,6 +49,4 @@ anyType
 
     	[Egolfml golfml]
 ----
-    <xs:complexType name="CountryClub">  <xs:sequence>    <xs:element name="name" type="xs:string">    </xs:element>    <xs:element name="address" type="golfml:Address">    </xs:element>    <xs:element maxOccurs="unbounded" minOccurs="0" name="contact" type="golfml:Contact">    </xs:element>    <xs:element maxOccurs="unbounded" minOccurs="0" name="amenety" type="golfml:Amenety">    </xs:element>    <xs:element maxOccurs="unbounded" minOccurs="0" name="note" type="golfml:Note">    </xs:element>    <xs:element maxOccurs="unbounded" minOccurs="0" name="media" type="golfml:Media">    </xs:element>    <xs:element maxOccurs="unbounded" name="golf-course" type="golfml:GolfCourse">    </xs:element>    <xs:element maxOccurs="unbounded" minOccurs="0" name="version" type="golfml:Version"/>  </xs:sequence></xs:complexType>
-----
-        
+    

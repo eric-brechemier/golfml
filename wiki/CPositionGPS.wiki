@@ -23,8 +23,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...>  ([SAngle90 lat] ; [SAngle180 lon] ; [CAltitude alt]) </...>
@@ -42,6 +42,4 @@ anyType
 
     	[CPosition Position]
 ----
-    <xs:complexType name="PositionGPS">  <xs:all>    <xs:element name="lat" type="golfml:Angle90">    </xs:element>    <xs:element name="lon" type="golfml:Angle180">    </xs:element>    <xs:element name="alt" type="golfml:Altitude">    </xs:element>  </xs:all></xs:complexType>
-----
-        
+    

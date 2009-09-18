@@ -24,8 +24,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...  rating = [SRating Rating]>  [CLocalisedText comment]+  </...>
@@ -40,13 +40,10 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-        
-|| rating ||  Simple rating of the parent entitiy || [SRating golfml:Rating] || optional ||  ||  || unqualified ||
+        || rating ||  Simple rating of the parent entitiy || [SRating golfml:Rating] || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CCountryClub CountryClub], [CGolfCourse GolfCourse], [CHole Hole], [CPlayer Player], [CStrokeDetail StrokeDetail]
 ----
-    <xs:complexType name="Note">  <xs:sequence>    <xs:element maxOccurs="unbounded" name="comment" type="golfml:LocalisedText">    </xs:element>  </xs:sequence>  <xs:attribute name="rating" type="golfml:Rating">  </xs:attribute></xs:complexType>
-----
-        
+    

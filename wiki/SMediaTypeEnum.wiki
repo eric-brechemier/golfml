@@ -23,8 +23,8 @@ string
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	('photograph' | 'video' | 'hole-fly-over' | 'hole-presentation' | 'hole-yardage' | 'yardage-book' | 'course-map' | 'google-earth' | 'other')
@@ -36,6 +36,4 @@ string
 
     	[AMediaTypeAttributes MediaTypeAttributes]
 ----
-    <xs:simpleType name="MediaTypeEnum">  <xs:restriction base="xs:string">    <xs:enumeration value="photograph"/>    <xs:enumeration value="video"/>    <xs:enumeration value="hole-fly-over"/>    <xs:enumeration value="hole-presentation"/>    <xs:enumeration value="hole-yardage"/>    <xs:enumeration value="yardage-book"/>    <xs:enumeration value="course-map"/>    <xs:enumeration value="google-earth"/>    <xs:enumeration value="other"/>  </xs:restriction></xs:simpleType>
-----
-        
+    

@@ -18,8 +18,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...>  (name | [CREF_GolfCourse country-club]) </...>
@@ -36,6 +36,4 @@ anyType
 
     	[CPlayer Player]
 ----
-    <xs:complexType name="CountryClubChoice">  <xs:choice>    <xs:element name="name" type="xs:string"/>    <xs:element name="country-club" type="golfml:REF_GolfCourse"/>  </xs:choice></xs:complexType>
-----
-        
+    

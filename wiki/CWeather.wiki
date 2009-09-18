@@ -26,8 +26,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...  other = xs:string  wind = [SWindEnum WindEnum]>[Sstring string]</...>
@@ -38,14 +38,10 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-        
-|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
-|| wind ||   || [SWindEnum golfml:WindEnum] || optional ||  ||  || unqualified ||
+        || other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified |||| wind ||   || [SWindEnum golfml:WindEnum] || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CRound Round]
 ----
-    <xs:complexType name="Weather">  <xs:simpleContent>    <xs:extension base="xs:string">      <xs:attribute name="wind" type="golfml:WindEnum"/>      <xs:attributeGroup ref="golfml:Other"/>    </xs:extension>  </xs:simpleContent></xs:complexType>
-----
-        
+    

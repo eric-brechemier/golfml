@@ -23,8 +23,8 @@ double
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	inclusive lower bound: -180inclusive upper bound: 180
@@ -36,6 +36,4 @@ double
 
     	[CPositionGPS PositionGPS]
 ----
-    <xs:simpleType name="Angle180">  <xs:restriction base="xs:double">    <xs:minInclusive value="-180"/>    <xs:maxInclusive value="180"/>  </xs:restriction></xs:simpleType>
-----
-        
+    

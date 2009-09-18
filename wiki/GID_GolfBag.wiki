@@ -14,8 +14,8 @@
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	  ((player.name, player.date-of-birth), player.golf-bag.name  )
@@ -33,6 +33,4 @@
 
     	[CREF_GolfBag REF_GolfBag]
 ----
-    <xs:group name="ID_GolfBag">  <xs:sequence>    <xs:group ref="golfml:ID_Player"/>    <xs:element name="player.golf-bag.name" type="xs:string"/>  </xs:sequence></xs:group>
-----
-        
+    

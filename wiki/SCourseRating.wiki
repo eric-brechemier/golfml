@@ -23,8 +23,8 @@ float
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	inclusive lower bound: 3inclusive upper bound: 90
@@ -36,6 +36,4 @@ float
 
     	[CHoleQualificationUSGA HoleQualificationUSGA]
 ----
-    <xs:simpleType name="CourseRating">  <xs:restriction base="xs:float">    <xs:minInclusive value="3"/>    <xs:maxInclusive value="90"/>  </xs:restriction></xs:simpleType>
-----
-        
+    

@@ -23,8 +23,8 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
----- 	
-        
+----
+    
 ===  Model ===
 
 	<...  other = xs:string>  (
@@ -37,13 +37,10 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-        
-|| other ||  				Qualifies the content of the Any element.			 || xs:string || optional ||  ||  || unqualified ||
+        || other ||  				Qualifies the content of the Any element.			 || xs:string || optional ||  ||  || unqualified ||
 
 ===  Local Usage ===
 
     	[CHolePlacement HolePlacement], [CHoleQualification HoleQualification], [CPosition Position], [CRound Round]
 ----
-    <xs:complexType name="RoomForExtension">  <xs:sequence>    <xs:any/>  </xs:sequence>  <xs:attribute name="other" type="xs:string">  </xs:attribute></xs:complexType>
-----
-        
+    
