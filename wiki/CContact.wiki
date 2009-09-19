@@ -12,7 +12,7 @@ anyType
   |
   +--Contact (restriction)
 }}}
-----
+
     
 
 ===  Documentation ===
@@ -24,13 +24,13 @@ anyType
 ===  Properties ===
 
   	This component is not nillable.
-----
+
     
 ===  Model ===
 
 	<...  other = xs:string  type = [SContactTypeEnum ContactTypeEnum]>  (name? ; [SPhoneNumber phone]? ; email? ; website?) </...>
 
-----
+
     
 
 === Nested Element Summary ===
@@ -50,5 +50,5 @@ anyType
 ===  Local Usage ===
 
     	[CCountryClub CountryClub], [CPlayer Player]
-----
+
     
