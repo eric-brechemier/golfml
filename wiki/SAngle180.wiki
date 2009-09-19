@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SAngle180 Angle180]*
-
-  	
+[SAngle180 Angle180]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ double
         
 				Angle between -180 and 180 degrees.
 		
+----
   	
 ===  Properties ===
 
@@ -30,10 +29,9 @@ double
 	inclusive lower bound: -180inclusive upper bound: 180
 
 ----
-    
+
+  	
 
 ===  Local Usage ===
 
     	[CPositionGPS PositionGPS]
-----
-    

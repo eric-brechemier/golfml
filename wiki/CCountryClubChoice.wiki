@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CCountryClubChoice CountryClubChoice]*
-
-  	
+[CCountryClubChoice CountryClubChoice]
 
 ===  Super Types ===
 {{{
@@ -14,6 +12,7 @@ anyType
 }}}
 ----
     
+----
   	
 ===  Properties ===
 
@@ -22,18 +21,23 @@ anyType
     
 ===  Model ===
 
-	<...>  (name | [CREF_GolfCourse country-club]) </...>
+	<...>
+            ( name | [CREF_GolfCourse country-club] ) 
+  </...>
 
 ----
-    
 
+  	
 === Nested Element Summary ===
-        
-|| [CREF_GolfCourse golfml:REF_GolfCourse] || [CREF_GolfCourse country-club] ||   ||
-|| xs:string || name ||   ||
+
+|| Name || Description || Type ||
+|| [CREF_GolfCourse country-club] ||   || [CREF_GolfCourse golfml:REF_GolfCourse] ||
+|| name ||   || xs:string ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CPlayer Player]
-----
-    

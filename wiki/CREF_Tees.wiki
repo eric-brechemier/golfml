@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CREF_Tees REF_Tees]*
-
-  	
+[CREF_Tees REF_Tees]
 
 ===  Super Types ===
 {{{
@@ -14,6 +12,7 @@ anyType
 }}}
 ----
     
+----
   	
 ===  Properties ===
 
@@ -22,21 +21,26 @@ anyType
     
 ===  Model ===
 
-	<...>  ((country-club.name, [SISO3166CountryCodeEnum country-club.address.country.iso3166], country-club.address.postal-code, country-club.golf-course.name), country-club.golf-course.tee-set.name  )</...>
+	<...>
+            ( ( country-club.name, [SISO3166CountryCodeEnum country-club.address.country.iso3166], country-club.address.postal-code, country-club.golf-course.name ), country-club.golf-course.tee-set.name   )
+  </...>
 
 ----
-    
 
+  	
 === Nested Element Summary ===
-        
-|| [SISO3166CountryCodeEnum golfml:ISO3166CountryCodeEnum] || [SISO3166CountryCodeEnum country-club.address.country.iso3166] ||   ||
-|| xs:string || country-club.address.postal-code ||   ||
-|| xs:string || country-club.golf-course.name ||   ||
-|| xs:string || country-club.golf-course.tee-set.name ||   ||
-|| xs:string || country-club.name ||   ||
+
+|| Name || Description || Type ||
+|| [SISO3166CountryCodeEnum country-club.address.country.iso3166] ||   || [SISO3166CountryCodeEnum golfml:ISO3166CountryCodeEnum] ||
+|| country-club.address.postal-code ||   || xs:string ||
+|| country-club.golf-course.name ||   || xs:string ||
+|| country-club.golf-course.tee-set.name ||   || xs:string ||
+|| country-club.name ||   || xs:string ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CScorecard Scorecard]
-----
-    

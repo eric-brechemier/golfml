@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SUnitOfSpeed UnitOfSpeed]*
-
-  	
+[SUnitOfSpeed UnitOfSpeed]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ string
         
 			Units of speed for SI or imperial system.
 		
+----
   	
 ===  Properties ===
 
@@ -27,7 +26,8 @@ string
     
 ===  Model ===
 
-	('m/s' | 'kmh' | 'mph')
+	( 'm/s' | 'kmh' | 'mph' )
 
 ----
-    
+
+  	

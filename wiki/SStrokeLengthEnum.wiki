@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SStrokeLengthEnum StrokeLengthEnum]*
-
-  	
+[SStrokeLengthEnum StrokeLengthEnum]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ string
         
 			List of values to specify stroke length in shot quality description.
 		
+----
   	
 ===  Properties ===
 
@@ -27,7 +26,8 @@ string
     
 ===  Model ===
 
-	('short' | 'middle' | 'long')
+	( 'short' | 'middle' | 'long' )
 
 ----
-    
+
+  	

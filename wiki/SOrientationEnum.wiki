@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SOrientationEnum OrientationEnum]*
-
-  	
+[SOrientationEnum OrientationEnum]
 
 ===  Super Types ===
 {{{
@@ -21,6 +19,7 @@ string
 			Example: Point of interest is of type "green" and orientation of the point is "front"
 					 to specify the front or start of the green.
 		
+----
   	
 ===  Properties ===
 
@@ -29,13 +28,12 @@ string
     
 ===  Model ===
 
-	('front' | 'middle' | 'back' | 'left' | 'center' | 'right')
+	( 'front' | 'middle' | 'back' | 'left' | 'center' | 'right' )
 
 ----
-    
+
+  	
 
 ===  Local Usage ===
 
     	[CHoleDistanceOnGreen HoleDistanceOnGreen], [CPointOfInterest PointOfInterest]
-----
-    

@@ -2,17 +2,14 @@
 
 == Name ==
 
-*[AMediaTypeAttributes MediaTypeAttributes]*
-
-  	
+[AMediaTypeAttributes MediaTypeAttributes]
 
 ===  Documentation ===
         
 				Group of common attributes used to characterise a media associated with either a country-club, a golf-course,
 				or a hole, anywhere a media is accepted.
-				The first attribute describe what the media content is, the second attribute is usable by computer
-				and reprents the technical file format used.
 			
+----
   	
 ===  Properties ===
 
@@ -21,21 +18,19 @@
     
 ===  Model ===
 
-	  content-type = xs:string  other = xs:string  type = [SMediaTypeEnum MediaTypeEnum]
+	  `content-type`=xs:string  `other`=xs:string  `type`=[SMediaTypeEnum MediaTypeEnum]
 
 ----
-          
 
+  	      
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-|| content-type ||   || xs:string || optional ||  ||  || unqualified ||
+    	|| content-type ||  Technical type of the media (MIME (Multipurpose Internet Mail Extensions) type of the media || xs:string || optional ||  ||  || unqualified ||
 || other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
-|| type ||   || [SMediaTypeEnum golfml:MediaTypeEnum] || optional ||  ||  || unqualified ||
+|| type ||  				Type of information conveyed by the media: Photograph, video, yardage book, scan of scorecard, scan of golf card, map...			 || [SMediaTypeEnum golfml:MediaTypeEnum] || optional ||  ||  || unqualified ||
 
 
 ===  Local Usage ===
 
     	[CMedia Media]
-----
-    

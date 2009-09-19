@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SGolfingDirectionEnum GolfingDirectionEnum]*
-
-  	
+[SGolfingDirectionEnum GolfingDirectionEnum]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ string
         
 			List of values to specify golfing direction on a 18 hole golf course.
 		
+----
   	
 ===  Properties ===
 
@@ -27,7 +26,8 @@ string
     
 ===  Model ===
 
-	('front' | 'back')
+	( 'front' | 'back' )
 
 ----
-    
+
+  	

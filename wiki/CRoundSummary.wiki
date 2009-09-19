@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CRoundSummary RoundSummary]*
-
-  	
+[CRoundSummary RoundSummary]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ anyType
         
 			Stores denormalized score for the round of golf.
 		
+----
   	
 ===  Properties ===
 
@@ -27,22 +26,27 @@ anyType
     
 ===  Model ===
 
-	<...>  (strokes, points?, putts?, money?, [CPenalty penalties]?, [CStatisticValue statistic]`*`  )</...>
+	<...>
+            ( strokes, points?, putts?, money?, [CPenalty penalties]?, [CStatisticValue statistic]`*`   )
+  </...>
 
 ----
-    
 
+  	
 === Nested Element Summary ===
-        
-|| xs:nonNegativeInteger || money ||  					Denormalisation: Total money earned or loss during the round of golf.				 ||
-|| [CPenalty golfml:Penalty] || [CPenalty penalties] ||  					Denormalisation: Total number of penalty strokes during the round of golf.				 ||
-|| xs:nonNegativeInteger || points ||  					Denormalisation: Total number of points for the round of golf.				 ||
-|| xs:nonNegativeInteger || putts ||  					Denormalisation: Total number of putts for the round of golf.				 ||
-|| [CStatisticValue golfml:StatisticValue] || [CStatisticValue statistic] ||  					Denormalisation: Statistic for the round of golf.				 ||
-|| xs:positiveInteger || strokes ||  					Denormalisation: Total number of strokes for the round of golf.				 ||
+
+|| Name || Description || Type ||
+|| money ||  					Denormalisation: Total money earned or loss during the round of golf.				 || xs:nonNegativeInteger ||
+|| [CPenalty penalties] ||  					Denormalisation: Total number of penalty strokes during the round of golf.				 || [CPenalty golfml:Penalty] ||
+|| points ||  					Denormalisation: Total number of points for the round of golf.				 || xs:nonNegativeInteger ||
+|| putts ||  					Denormalisation: Total number of putts for the round of golf.				 || xs:nonNegativeInteger ||
+|| [CStatisticValue statistic] ||  					Denormalisation: Statistic for the round of golf.				 || [CStatisticValue golfml:StatisticValue] ||
+|| strokes ||  					Denormalisation: Total number of strokes for the round of golf.				 || xs:positiveInteger ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CScorecard Scorecard]
-----
-    

@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SUnitSystemEnum UnitSystemEnum]*
-
-  	
+[SUnitSystemEnum UnitSystemEnum]
 
 ===  Super Types ===
 {{{
@@ -34,6 +32,7 @@ string
 				456
 			
 		
+----
   	
 ===  Properties ===
 
@@ -42,7 +41,8 @@ string
     
 ===  Model ===
 
-	('metric' | 'imperial')
+	( 'metric' | 'imperial' )
 
 ----
-    
+
+  	

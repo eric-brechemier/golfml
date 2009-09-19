@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SUnitOfTemperature UnitOfTemperature]*
-
-  	
+[SUnitOfTemperature UnitOfTemperature]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ string
         
 			Units of temperature for SI or imperial system.
 		
+----
   	
 ===  Properties ===
 
@@ -27,7 +26,8 @@ string
     
 ===  Model ===
 
-	('C' | 'F')
+	( 'C' | 'F' )
 
 ----
-    
+
+  	

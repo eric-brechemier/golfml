@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CGolfGame GolfGame]*
-
-  	
+[CGolfGame GolfGame]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ anyType
         
 			Game played during the round of golf.
 		
+----
   	
 ===  Properties ===
 
@@ -27,20 +26,20 @@ anyType
     
 ===  Model ===
 
-	<...  other = xs:string  type = [SGolfGameTypeEnum GolfGameTypeEnum]>[Sstring string]</...>
+	<...  `other`=xs:string  `type`=[SGolfGameTypeEnum GolfGameTypeEnum]>
+          [Sstring string]
+  </...>
 
 ----
-          
 
+  	      
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
+    	|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
 || type ||   || [SGolfGameTypeEnum golfml:GolfGameTypeEnum] || optional ||  ||  || unqualified ||
 
 
 ===  Local Usage ===
 
     	[CRound Round]
-----
-    

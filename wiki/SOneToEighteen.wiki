@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SOneToEighteen OneToEighteen]*
-
-  	
+[SOneToEighteen OneToEighteen]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ positiveInteger
         
 			Type to to restrict a value to an integer between 1 and 18.
 		
+----
   	
 ===  Properties ===
 
@@ -30,10 +29,9 @@ positiveInteger
 	inclusive lower bound: 1inclusive upper bound: 18
 
 ----
-    
+
+  	
 
 ===  Local Usage ===
 
     	[CHole Hole], [CHolePlacementWithDistances HolePlacementWithDistances], [CHoleScore HoleScore], [CTee Tee]
-----
-    

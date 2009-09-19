@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CLocalisedText LocalisedText]*
-
-  	
+[CLocalisedText LocalisedText]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ anyType
         
 			Simple type to add language information on comments and notes.
 		
+----
   	
 ===  Properties ===
 
@@ -27,19 +26,19 @@ anyType
     
 ===  Model ===
 
-	<...  lang = xs:language : en>[Sstring string]</...>
+	<...  `lang`=xs:language : en>
+          [Sstring string]
+  </...>
 
 ----
-          
 
+  	      
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-|| lang ||   || xs:language || optional || en ||  || unqualified ||
+    	|| lang ||   || xs:language || optional || en ||  || unqualified ||
 
 
 ===  Local Usage ===
 
     	[CNote Note]
-----
-    

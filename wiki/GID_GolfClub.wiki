@@ -2,14 +2,13 @@
 
 == Name ==
 
-*[GID_GolfClub ID_GolfClub]*
-
-  	
+[GID_GolfClub ID_GolfClub]
 
 ===  Documentation ===
         
 			Identifying elements for a golf club as used in foreign keys.
 		
+----
   	
 ===  Properties ===
 
@@ -18,20 +17,23 @@
     
 ===  Model ===
 
-	  (golf-club.manufacturer, golf-club.model, golf-club.submodel, golf-club.number  )
+	  ( golf-club.manufacturer, golf-club.model, golf-club.submodel, golf-club.number   )
 
 ----
-    
 
+  	
 === Nested Element Summary ===
-        
-|| xs:string || golf-club.manufacturer ||   ||
-|| xs:string || golf-club.model ||   ||
-|| xs:string || golf-club.number ||   ||
-|| xs:string || golf-club.submodel ||   ||
+
+|| Name || Description || Type ||
+|| golf-club.manufacturer ||   || xs:string ||
+|| golf-club.model ||   || xs:string ||
+|| golf-club.number ||   || xs:string ||
+|| golf-club.submodel ||   || xs:string ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CREF_GolfClub REF_GolfClub]
-----
-    

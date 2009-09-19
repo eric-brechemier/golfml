@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SPlayerSomeEnum PlayerSomeEnum]*
-
-  	
+[SPlayerSomeEnum PlayerSomeEnum]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ string
         
 				Qualify a golfer in a two, three, or four some.
 			
+----
   	
 ===  Properties ===
 
@@ -27,13 +26,12 @@ string
     
 ===  Model ===
 
-	('partner' | 'competitor')
+	( 'partner' | 'competitor' )
 
 ----
-    
+
+  	
 
 ===  Local Usage ===
 
     	[CPlayerSome PlayerSome]
-----
-    

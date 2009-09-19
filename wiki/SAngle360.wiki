@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SAngle360 Angle360]*
-
-  	
+[SAngle360 Angle360]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ double
         
 				Angle between -360 and 360 degrees.
 		
+----
   	
 ===  Properties ===
 
@@ -30,4 +29,5 @@ double
 	inclusive lower bound: -360inclusive upper bound: 360
 
 ----
-    
+
+  	

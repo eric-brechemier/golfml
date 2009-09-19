@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SFloatWithOneFractionalNumber FloatWithOneFractionalNumber]*
-
-  	
+[SFloatWithOneFractionalNumber FloatWithOneFractionalNumber]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ float
         
 			Type to specify the player handicap (maximum of one digit after the decimal period).
 		
+----
   	
 ===  Properties ===
 
@@ -35,10 +34,9 @@ float
     
 
 ----
-    
+
+  	
 
 ===  Local Usage ===
 
     	[CPlayerHandicap PlayerHandicap]
-----
-    

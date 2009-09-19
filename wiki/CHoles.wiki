@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CHoles Holes]*
-
-  	
+[CHoles Holes]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ anyType
         
 			The Holes element groups 1 to 18 Hole descriptions.
 		
+----
   	
 ===  Properties ===
 
@@ -27,17 +26,22 @@ anyType
     
 ===  Model ===
 
-	<...>  [CHole hole]{0,18}  </...>
+	<...>
+            [CHole hole]{0,18}  
+  </...>
 
 ----
-    
 
+  	
 === Nested Element Summary ===
-        
-|| [CHole golfml:Hole] || [CHole hole] ||  					Collection of 1 to 18 holes of golf.				 ||
+
+|| Name || Description || Type ||
+|| [CHole hole] ||  					Collection of 1 to 18 holes of golf.				 || [CHole golfml:Hole] ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CGolfCourse GolfCourse]
-----
-    

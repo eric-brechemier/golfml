@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CScore Score]*
-
-  	
+[CScore Score]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ anyType
         
 			Type used to record 1 to 18 HoleScores.
 		
+----
   	
 ===  Properties ===
 
@@ -27,17 +26,22 @@ anyType
     
 ===  Model ===
 
-	<...>  [CHoleScore hole]{1,18}  </...>
+	<...>
+            [CHoleScore hole]{1,18}  
+  </...>
 
 ----
-    
 
+  	
 === Nested Element Summary ===
-        
-|| [CHoleScore golfml:HoleScore] || [CHoleScore hole] ||  					Detail of score for one hole.				 ||
+
+|| Name || Description || Type ||
+|| [CHoleScore hole] ||  					Detail of score for one hole.				 || [CHoleScore golfml:HoleScore] ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CScorecard Scorecard]
-----
-    

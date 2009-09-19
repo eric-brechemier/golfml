@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CGolfClub GolfClub]*
-
-  	
+[CGolfClub GolfClub]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ anyType
         
 			Descriptive elements for a golf club.
 		
+----
   	
 ===  Properties ===
 
@@ -28,33 +27,37 @@ anyType
 ===  Model ===
 
 	<...  
-            *type = [SGolfClubTypeEnum GolfClubTypeEnum]*
-          >  (manufacturer, model, submodel, number?, serial?, [SAngle90 loft]?, [SAngle90 lie]?, weight?, [SSwingWeight swing-weight]?, [CShaft shaft]?  )</...>
+            *`type`=[SGolfClubTypeEnum GolfClubTypeEnum]*
+          >
+            ( manufacturer, model, submodel, number?, serial?, [SAngle90 loft]?, [SAngle90 lie]?, weight?, [SSwingWeight swing-weight]?, [CShaft shaft]?   )
+  </...>
 
 ----
-    
 
-=== Nested Element Summary ===
-        
-|| [SAngle90 golfml:Angle90] || [SAngle90 lie] ||  					Lie of the golf club.				 ||
-|| [SAngle90 golfml:Angle90] || [SAngle90 loft] ||  					Loft of the golf club.				 ||
-|| xs:string || manufacturer ||  					Manufacturer of a golf club.				 ||
-|| xs:string || model ||  					Model of a golf club.				 ||
-|| xs:string || number ||  					Number or name of a club in a set.				 ||
-|| xs:string || serial ||  					Serial number of the golf club.				 ||
-|| [CShaft golfml:Shaft] || [CShaft shaft] ||  					Shaft of the golf club.				 ||
-|| xs:string || submodel ||  					Sub model or type of a golf club.				 ||
-|| [SSwingWeight golfml:SwingWeight] || [SSwingWeight swing-weight] ||  					Swing weight of the golf club.				 ||
-|| xs:float || weight ||  					Weight of the golf club.				 ||      
-
+  	      
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-|| type ||  				Type of golf club.			 || [SGolfClubTypeEnum golfml:GolfClubTypeEnum] || required ||  ||  || unqualified ||
+    	|| type ||  				Type of golf club.			 || [SGolfClubTypeEnum golfml:GolfClubTypeEnum] || required ||  ||  || unqualified ||
 
+=== Nested Element Summary ===
+
+|| Name || Description || Type ||
+|| [SAngle90 lie] ||  					Lie of the golf club.				 || [SAngle90 golfml:Angle90] ||
+|| [SAngle90 loft] ||  					Loft of the golf club.				 || [SAngle90 golfml:Angle90] ||
+|| manufacturer ||  					Manufacturer of a golf club.				 || xs:string ||
+|| model ||  					Model of a golf club.				 || xs:string ||
+|| number ||  					Number or name of a club in a set.				 || xs:string ||
+|| serial ||  					Serial number of the golf club.				 || xs:string ||
+|| [CShaft shaft] ||  					Shaft of the golf club.				 || [CShaft golfml:Shaft] ||
+|| submodel ||  					Sub model or type of a golf club.				 || xs:string ||
+|| [SSwingWeight swing-weight] ||  					Swing weight of the golf club.				 || [SSwingWeight golfml:SwingWeight] ||
+|| weight ||  					Weight of the golf club.				 || xs:float ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CEquipmentList EquipmentList], [CGolfBag GolfBag], [CStrokeDetail StrokeDetail]
-----
-    

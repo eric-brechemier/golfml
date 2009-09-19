@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CPreference Preference]*
-
-  	
+[CPreference Preference]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ anyType
         
 			Preference to store name/value pairs.
 		
+----
   	
 ===  Properties ===
 
@@ -27,12 +26,19 @@ anyType
     
 ===  Model ===
 
-	<...>  (name, value  )</...>
+	<...>
+            ( name, value   )
+  </...>
 
 ----
-    
 
+  	
 === Nested Element Summary ===
-        
-|| xs:string || name ||  					Name of a preference value.				 ||
-|| xs:string || value ||  					Value of a preference.				 ||
+
+|| Name || Description || Type ||
+|| name ||  					Name of a preference value.				 || xs:string ||
+|| value ||  					Value of a preference.				 || xs:string ||
+
+    	
+----
+  	

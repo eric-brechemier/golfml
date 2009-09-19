@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SCourseRating CourseRating]*
-
-  	
+[SCourseRating CourseRating]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ float
         
 			Type to specify the golf course rating for handicap calculation.
 		
+----
   	
 ===  Properties ===
 
@@ -30,10 +29,9 @@ float
 	inclusive lower bound: 3inclusive upper bound: 90
 
 ----
-    
+
+  	
 
 ===  Local Usage ===
 
     	[CHoleQualificationUSGA HoleQualificationUSGA]
-----
-    

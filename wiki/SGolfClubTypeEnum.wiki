@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SGolfClubTypeEnum GolfClubTypeEnum]*
-
-  	
+[SGolfClubTypeEnum GolfClubTypeEnum]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ string
         
 				List of types of golf clubs.
 		
+----
   	
 ===  Properties ===
 
@@ -27,13 +26,12 @@ string
     
 ===  Model ===
 
-	('wood' | 'iron' | 'wedge' | 'putter' | 'driver' | 'hybrid' | 'utility' | 'other')
+	( 'wood' | 'iron' | 'wedge' | 'putter' | 'driver' | 'hybrid' | 'utility' | 'other' )
 
 ----
-    
+
+  	
 
 ===  Local Usage ===
 
     	[CGolfClub GolfClub], [CShaft Shaft]
-----
-    

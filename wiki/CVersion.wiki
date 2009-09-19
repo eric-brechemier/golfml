@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CVersion Version]*
-
-  	
+[CVersion Version]
 
 ===  Super Types ===
 {{{
@@ -20,6 +18,7 @@ anyType
 			Allow for version tracking on a single element with meta-data.
 			Element content should consists of version comments.
 		
+----
   	
 ===  Properties ===
 
@@ -28,15 +27,17 @@ anyType
     
 ===  Model ===
 
-	<...  created = xs:dateTime  updated = xs:dateTime  version = xs:string>[Sstring string]</...>
+	<...  `created`=xs:dateTime  `updated`=xs:dateTime  `version`=xs:string>
+          [Sstring string]
+  </...>
 
 ----
-          
 
+  	      
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-|| created ||   || xs:dateTime || optional ||  ||  || unqualified ||
+    	|| created ||   || xs:dateTime || optional ||  ||  || unqualified ||
 || updated ||   || xs:dateTime || optional ||  ||  || unqualified ||
 || version ||   || xs:string || optional ||  ||  || unqualified ||
 
@@ -44,5 +45,3 @@ anyType
 ===  Local Usage ===
 
     	[CCountryClub CountryClub], [CGolfCourse GolfCourse], [Egolfml golfml], [CTees Tees]
-----
-    

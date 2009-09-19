@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CEquipmentList EquipmentList]*
-
-  	
+[CEquipmentList EquipmentList]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ anyType
         
 			List golf belongings of a player.
 		
+----
   	
 ===  Properties ===
 
@@ -27,18 +26,23 @@ anyType
     
 ===  Model ===
 
-	<...>  ([CGolfClub golf-club] | [CEquipment equipment])`*` </...>
+	<...>
+            ( [CGolfClub golf-club] | [CEquipment equipment] )`*` 
+  </...>
 
 ----
-    
 
+  	
 === Nested Element Summary ===
-        
-|| [CEquipment golfml:Equipment] || [CEquipment equipment] ||  					Piece of golfing equipment owned by a player.				 ||
-|| [CGolfClub golfml:GolfClub] || [CGolfClub golf-club] ||  					Golf club owned by a player.				 ||
+
+|| Name || Description || Type ||
+|| [CEquipment equipment] ||  					Piece of golfing equipment owned by a player.				 || [CEquipment golfml:Equipment] ||
+|| [CGolfClub golf-club] ||  					Golf club owned by a player.				 || [CGolfClub golfml:GolfClub] ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CPlayer Player]
-----
-    

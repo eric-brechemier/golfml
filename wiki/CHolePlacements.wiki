@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CHolePlacements HolePlacements]*
-
-  	
+[CHolePlacements HolePlacements]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ anyType
         
 				Description of the placement on holes on greens.
 		
+----
   	
 ===  Properties ===
 
@@ -27,24 +26,28 @@ anyType
     
 ===  Model ===
 
-	<...  date = xs:date>  (name, [CHolePlacement hole-placement]{1,18}  )</...>
+	<...  `date`=xs:date>
+            ( name, [CHolePlacement hole-placement]{1,18}   )
+  </...>
 
 ----
-    
 
-=== Nested Element Summary ===
-        
-|| [CHolePlacement golfml:HolePlacement] || [CHolePlacement hole-placement] ||  					Placement of a hole on a green.				 ||
-|| xs:string || name ||  					Identifying name for hole placement.				 ||      
-
+  	      
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-|| date ||   || xs:date || optional ||  ||  || unqualified ||
+    	|| date ||  				Date hole placement is valid.			 || xs:date || optional ||  ||  || unqualified ||
 
+=== Nested Element Summary ===
+
+|| Name || Description || Type ||
+|| [CHolePlacement hole-placement] ||  					Placement of a hole on a green.				 || [CHolePlacement golfml:HolePlacement] ||
+|| name ||  					Identifying name for hole placement.				 || xs:string ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CRound Round]
-----
-    

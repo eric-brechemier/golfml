@@ -2,9 +2,8 @@
 
 == Name ==
 
-*[AOther Other]*
-
-  	
+[AOther Other]
+----
   	
 ===  Properties ===
 
@@ -13,19 +12,17 @@
     
 ===  Model ===
 
-	  other = xs:string
+	  `other`=xs:string
 
 ----
-          
 
+  	      
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
+    	|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
 
 
 ===  Local Usage ===
 
     	[CAmenety Amenety], [CAreaOfInterest AreaOfInterest], [CContact Contact], [CGolfGame GolfGame], [AMediaTypeAttributes MediaTypeAttributes], [CPlayerHandicap PlayerHandicap], [CPointOfInterest PointOfInterest], [CStatistics Statistics], [CWeather Weather]
-----
-    

@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CPositionWithSequence PositionWithSequence]*
-
-  	
+[CPositionWithSequence PositionWithSequence]
 
 ===  Super Types ===
 {{{
@@ -21,6 +19,7 @@ anyType
         
 			Coordinate of a point in a list of points (polygon).
 		
+----
   	
 ===  Properties ===
 
@@ -30,25 +29,29 @@ anyType
 ===  Model ===
 
 	<...  
-            *number = xs:nonNegativeInteger*
-          >  ([CPositionGPS position-gps] | [CRoomForExtension position-other]) </...>
+            *`number`=xs:nonNegativeInteger*
+          >
+            ( [CPositionGPS position-gps] | [CRoomForExtension position-other] ) 
+  </...>
 
 ----
-    
 
-=== Nested Element Summary ===
-        
-|| [CPositionGPS golfml:PositionGPS] || [CPositionGPS position-gps] ||  					GPS coordinate of a point.				 ||
-|| [CRoomForExtension golfml:RoomForExtension] || [CRoomForExtension position-other] ||  					Coordinate of a point in an arbitraty unit system.				 ||      
-
+  	      
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-|| number ||   || xs:nonNegativeInteger || required ||  ||  || unqualified ||
+    	|| number ||   || xs:nonNegativeInteger || required ||  ||  || unqualified ||
 
+=== Nested Element Summary ===
+
+|| Name || Description || Type ||
+|| [CPositionGPS position-gps] ||  					GPS coordinate of a point.				 || [CPositionGPS golfml:PositionGPS] ||
+|| [CRoomForExtension position-other] ||  					Coordinate of a point in an arbitraty unit system.				 || [CRoomForExtension golfml:RoomForExtension] ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CAreaOfInterest AreaOfInterest]
-----
-    

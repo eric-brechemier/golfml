@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CGolfBag GolfBag]*
-
-  	
+[CGolfBag GolfBag]
 
 ===  Super Types ===
 {{{
@@ -20,6 +18,7 @@ anyType
 			A golf bag can contain either golf clubs or references to them when they are
 			in equipement-list elements.
 		
+----
   	
 ===  Properties ===
 
@@ -28,21 +27,26 @@ anyType
     
 ===  Model ===
 
-	<...>  (name, [CREF_GolfBag bag-ref]?, ([CREF_GolfClub golf-club-ref] | [CGolfClub golf-club]){1,14} , [CEquipment equipment]`*`  )</...>
+	<...>
+            ( name, [CREF_GolfBag bag-ref]?, ( [CREF_GolfClub golf-club-ref] | [CGolfClub golf-club] ){1,14} , [CEquipment equipment]`*`   )
+  </...>
 
 ----
-    
 
+  	
 === Nested Element Summary ===
-        
-|| [CREF_GolfBag golfml:REF_GolfBag] || [CREF_GolfBag bag-ref] ||  					Reference to the golf bag used for the round from the pieces of equipement.				 ||
-|| [CEquipment golfml:Equipment] || [CEquipment equipment] ||  					Other piece of equipment used in bag: Balls, tees, apparel, gloves...				 ||
-|| [CGolfClub golfml:GolfClub] || [CGolfClub golf-club] ||  						Definition of a golf club owned by the player.					 ||
-|| [CREF_GolfClub golfml:REF_GolfClub] || [CREF_GolfClub golf-club-ref] ||  						Reference to a golf club in the player's equipment list.					 ||
-|| xs:string || name ||  					Name of a golf bag used to identify it.				 ||
+
+|| Name || Description || Type ||
+|| [CREF_GolfBag bag-ref] ||  					Reference to the golf bag used for the round from the pieces of equipement.				 || [CREF_GolfBag golfml:REF_GolfBag] ||
+|| [CEquipment equipment] ||  					Other piece of equipment used in bag: Balls, tees, apparel, gloves...				 || [CEquipment golfml:Equipment] ||
+|| [CGolfClub golf-club] ||  						Definition of a golf club owned by the player.					 || [CGolfClub golfml:GolfClub] ||
+|| [CREF_GolfClub golf-club-ref] ||  						Reference to a golf club in the player's equipment list.					 || [CREF_GolfClub golfml:REF_GolfClub] ||
+|| name ||  					Name of a golf bag used to identify it.				 || xs:string ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CPlayer Player]
-----
-    

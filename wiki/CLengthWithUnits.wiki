@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CLengthWithUnits LengthWithUnits]*
-
-  	
+[CLengthWithUnits LengthWithUnits]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ anyType
         
 				Length of an object and its unit of measure.
 		
+----
   	
 ===  Properties ===
 
@@ -27,19 +26,19 @@ anyType
     
 ===  Model ===
 
-	<...  units = [SUnitOfLengthWithUnitsEnum UnitOfLengthWithUnitsEnum] : meters>[SLength Length]</...>
+	<...  `units`=[SUnitOfLengthWithUnitsEnum UnitOfLengthWithUnitsEnum] : meters>
+          [SLength Length]
+  </...>
 
 ----
-          
 
+  	      
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-|| units ||   || [SUnitOfLengthWithUnitsEnum golfml:UnitOfLengthWithUnitsEnum] || optional || meters ||  || unqualified ||
+    	|| units ||   || [SUnitOfLengthWithUnitsEnum golfml:UnitOfLengthWithUnitsEnum] || optional || meters ||  || unqualified ||
 
 
 ===  Local Usage ===
 
     	[CHoleDistanceOnGreen HoleDistanceOnGreen], [CHolePlacementWithDistances HolePlacementWithDistances], [CHoleStatistics HoleStatistics], [CShaft Shaft], [CTee Tee]
-----
-    

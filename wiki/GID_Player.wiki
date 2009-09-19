@@ -2,14 +2,13 @@
 
 == Name ==
 
-*[GID_Player ID_Player]*
-
-  	
+[GID_Player ID_Player]
 
 ===  Documentation ===
         
 			Identifying elements for a player, used in foreign keys.
 		
+----
   	
 ===  Properties ===
 
@@ -18,18 +17,21 @@
     
 ===  Model ===
 
-	  (player.name, player.date-of-birth  )
+	  ( player.name, player.date-of-birth   )
 
 ----
-    
 
+  	
 === Nested Element Summary ===
-        
-|| xs:date || player.date-of-birth ||   ||
-|| xs:string || player.name ||   ||
+
+|| Name || Description || Type ||
+|| player.date-of-birth ||   || xs:date ||
+|| player.name ||   || xs:string ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[GID_GolfBag ID_GolfBag], [CREF_Player REF_Player]
-----
-    

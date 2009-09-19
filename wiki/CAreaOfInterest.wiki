@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CAreaOfInterest AreaOfInterest]*
-
-  	
+[CAreaOfInterest AreaOfInterest]
 
 ===  Super Types ===
 {{{
@@ -23,6 +21,7 @@ anyType
 			
 			Note: An AreaOfInterest can be a line (example: Out-of-bound line along a hole).
 		
+----
   	
 ===  Properties ===
 
@@ -31,27 +30,31 @@ anyType
     
 ===  Model ===
 
-	<...  number = xs:nonNegativeInteger  other = xs:string  type = [SGolfCourseAreaTypeEnum GolfCourseAreaTypeEnum]>  (name, description?, [CPositionWithSequence position]{2,*}  )</...>
+	<...  `number`=xs:nonNegativeInteger  `other`=xs:string  `type`=[SGolfCourseAreaTypeEnum GolfCourseAreaTypeEnum]>
+            ( name, description?, [CPositionWithSequence position]{2,*}   )
+  </...>
 
 ----
-    
 
-=== Nested Element Summary ===
-        
-|| xs:string || description ||  					Description of an area of interest.				 ||
-|| xs:string || name ||  					Name of an area of interest.				 ||
-|| [CPositionWithSequence golfml:PositionWithSequence] || [CPositionWithSequence position] ||  Position of a point of the polygon that forms the area of interest ||      
-
+  	      
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-|| number ||  Position of the area of interest in a list of areas of interest || xs:nonNegativeInteger || optional ||  ||  || unqualified ||
+    	|| number ||  Position of the area of interest in a list of areas of interest || xs:nonNegativeInteger || optional ||  ||  || unqualified ||
 || other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
 || type ||  				Type of area of interest.			 || [SGolfCourseAreaTypeEnum golfml:GolfCourseAreaTypeEnum] || optional ||  ||  || unqualified ||
 
+=== Nested Element Summary ===
+
+|| Name || Description || Type ||
+|| description ||  					Description of an area of interest.				 || xs:string ||
+|| name ||  					Name of an area of interest.				 || xs:string ||
+|| [CPositionWithSequence position] ||  Position of a point of the polygon that forms the area of interest || [CPositionWithSequence golfml:PositionWithSequence] ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CPlacemarks Placemarks]
-----
-    

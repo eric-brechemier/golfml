@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[GMediaChoice MediaChoice]*
-
-  	
+[GMediaChoice MediaChoice]
 
 ===  Documentation ===
         
@@ -14,6 +12,7 @@
 			Embedded storage of media in golfml document should be limited to small size items such as vector logo
 			and small images.
 		
+----
   	
 ===  Properties ===
 
@@ -22,18 +21,21 @@
     
 ===  Model ===
 
-	  (url | content) 
+	  ( url | content ) 
 
 ----
-    
 
+  	
 === Nested Element Summary ===
-        
-|| xs:base64Binary || content ||  Base64-coded content of the media ||
-|| xs:anyURI || url ||  					Location of the media.				 ||
+
+|| Name || Description || Type ||
+|| content ||  Base64-coded content of the media || xs:base64Binary ||
+|| url ||  					Location of the media.				 || xs:anyURI ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CMedia Media]
-----
-    

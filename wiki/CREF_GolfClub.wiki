@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CREF_GolfClub REF_GolfClub]*
-
-  	
+[CREF_GolfClub REF_GolfClub]
 
 ===  Super Types ===
 {{{
@@ -14,6 +12,7 @@ anyType
 }}}
 ----
     
+----
   	
 ===  Properties ===
 
@@ -22,20 +21,25 @@ anyType
     
 ===  Model ===
 
-	<...>  (golf-club.manufacturer, golf-club.model, golf-club.submodel, golf-club.number  )</...>
+	<...>
+            ( golf-club.manufacturer, golf-club.model, golf-club.submodel, golf-club.number   )
+  </...>
 
 ----
-    
 
+  	
 === Nested Element Summary ===
-        
-|| xs:string || golf-club.manufacturer ||   ||
-|| xs:string || golf-club.model ||   ||
-|| xs:string || golf-club.number ||   ||
-|| xs:string || golf-club.submodel ||   ||
+
+|| Name || Description || Type ||
+|| golf-club.manufacturer ||   || xs:string ||
+|| golf-club.model ||   || xs:string ||
+|| golf-club.number ||   || xs:string ||
+|| golf-club.submodel ||   || xs:string ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CGolfBag GolfBag]
-----
-    

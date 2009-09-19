@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SAnglepos90 Anglepos90]*
-
-  	
+[SAnglepos90 Anglepos90]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ double
         
 				Angle between 0 and 90 degrees.
 		
+----
   	
 ===  Properties ===
 
@@ -30,4 +29,5 @@ double
 	inclusive lower bound: 0.0inclusive upper bound: 90.0
 
 ----
-    
+
+  	

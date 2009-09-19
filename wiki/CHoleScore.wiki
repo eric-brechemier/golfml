@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CHoleScore HoleScore]*
-
-  	
+[CHoleScore HoleScore]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ anyType
         
 			Records detailed hole score information.
 		
+----
   	
 ===  Properties ===
 
@@ -27,29 +26,33 @@ anyType
     
 ===  Model ===
 
-	<...  number = [SOneToEighteen OneToEighteen]>  (strokes, points?, putts?, money?, [CPenalty penalties]?, [CStrokeDetail stroke]`*`, [CHoleStatistics statistics]?  )</...>
+	<...  `number`=[SOneToEighteen OneToEighteen]>
+            ( strokes, points?, putts?, money?, [CPenalty penalties]?, [CStrokeDetail stroke]`*`, [CHoleStatistics statistics]?   )
+  </...>
 
 ----
-    
 
-=== Nested Element Summary ===
-        
-|| xs:integer || money ||  					Money earned or loss on hole in wagers.				 ||
-|| [CPenalty golfml:Penalty] || [CPenalty penalties] ||  					Total number of penalty strokes.				 ||
-|| xs:nonNegativeInteger || points ||  					Total number of points for hole.				 ||
-|| xs:nonNegativeInteger || putts ||  					Number of putts, from the green.				 ||
-|| [CHoleStatistics golfml:HoleStatistics] || [CHoleStatistics statistics] ||  					Denormalised statistics for hole.				 ||
-|| [CStrokeDetail golfml:StrokeDetail] || [CStrokeDetail stroke] ||  					Detail of each stroke.				 ||
-|| xs:positiveInteger || strokes ||  					Total number of strokes for hole, including penalties.				 ||      
-
+  	      
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-|| number ||  				Order number of hole.			 || [SOneToEighteen golfml:OneToEighteen] || optional ||  ||  || unqualified ||
+    	|| number ||  				Order number of hole.			 || [SOneToEighteen golfml:OneToEighteen] || optional ||  ||  || unqualified ||
 
+=== Nested Element Summary ===
+
+|| Name || Description || Type ||
+|| money ||  					Money earned or loss on hole in wagers.				 || xs:integer ||
+|| [CPenalty penalties] ||  					Total number of penalty strokes.				 || [CPenalty golfml:Penalty] ||
+|| points ||  					Total number of points for hole.				 || xs:nonNegativeInteger ||
+|| putts ||  					Number of putts, from the green.				 || xs:nonNegativeInteger ||
+|| [CHoleStatistics statistics] ||  					Denormalised statistics for hole.				 || [CHoleStatistics golfml:HoleStatistics] ||
+|| [CStrokeDetail stroke] ||  					Detail of each stroke.				 || [CStrokeDetail golfml:StrokeDetail] ||
+|| strokes ||  					Total number of strokes for hole, including penalties.				 || xs:positiveInteger ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CScore Score]
-----
-    

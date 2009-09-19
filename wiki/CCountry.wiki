@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CCountry Country]*
-
-  	
+[CCountry Country]
 
 ===  Super Types ===
 {{{
@@ -20,6 +18,7 @@ anyType
 			Country name in address element.
 			A country element must include an unambiguous country ISO 3166 2 letter code.
 		
+----
   	
 ===  Properties ===
 
@@ -29,20 +28,20 @@ anyType
 ===  Model ===
 
 	<...  
-            *code = [SISO3166CountryCodeEnum ISO3166CountryCodeEnum]*
-          >[Sstring string]</...>
+            *`code`=[SISO3166CountryCodeEnum ISO3166CountryCodeEnum]*
+          >
+          [Sstring string]
+  </...>
 
 ----
-          
 
+  	      
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-|| code ||   || [SISO3166CountryCodeEnum golfml:ISO3166CountryCodeEnum] || required ||  ||  || unqualified ||
+    	|| code ||   || [SISO3166CountryCodeEnum golfml:ISO3166CountryCodeEnum] || required ||  ||  || unqualified ||
 
 
 ===  Local Usage ===
 
     	[CAddress Address]
-----
-    

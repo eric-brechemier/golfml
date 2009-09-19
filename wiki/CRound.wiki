@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CRound Round]*
-
-  	
+[CRound Round]
 
 ===  Super Types ===
 {{{
@@ -20,6 +18,7 @@ anyType
 			Details about a round of golf: Location of the flags on greens (usually called pin sheet),
 			weather conditions, date of the round, opponenents and partners, and the scorecard.
 		
+----
   	
 ===  Properties ===
 
@@ -28,23 +27,28 @@ anyType
     
 ===  Model ===
 
-	<...>  ([CHolePlacements hole-placement]?, [CWeather weather]?, [CFourSome foursome]?, [CGolfGame game]?, [CRoomForExtension wager]?, date, [CScorecard scorecard]  )</...>
+	<...>
+            ( [CHolePlacements hole-placement]?, [CWeather weather]?, [CFourSome foursome]?, [CGolfGame game]?, [CRoomForExtension wager]?, date, [CScorecard scorecard]   )
+  </...>
 
 ----
-    
 
+  	
 === Nested Element Summary ===
-        
-|| xs:dateTime || date ||  					Date and time of the round.				 ||
-|| [CFourSome golfml:FourSome] || [CFourSome foursome] ||  					Player information for the round of golf.				 ||
-|| [CGolfGame golfml:GolfGame] || [CGolfGame game] ||  					Information about the game(s) played during the round of golf.				 ||
-|| [CHolePlacements golfml:HolePlacements] || [CHolePlacements hole-placement] ||  					Placement of holes for the round of golf.				 ||
-|| [CScorecard golfml:Scorecard] || [CScorecard scorecard] ||  					Scorecard of the round for the player.				 ||
-|| [CRoomForExtension golfml:RoomForExtension] || [CRoomForExtension wager] ||  					Information about the wagers during the round of golf.				 ||
-|| [CWeather golfml:Weather] || [CWeather weather] ||  					Weather information for the round of golf.				 ||
+
+|| Name || Description || Type ||
+|| date ||  					Date and time of the round.				 || xs:dateTime ||
+|| [CFourSome foursome] ||  					Player information for the round of golf.				 || [CFourSome golfml:FourSome] ||
+|| [CGolfGame game] ||  					Information about the game(s) played during the round of golf.				 || [CGolfGame golfml:GolfGame] ||
+|| [CHolePlacements hole-placement] ||  					Placement of holes for the round of golf.				 || [CHolePlacements golfml:HolePlacements] ||
+|| [CScorecard scorecard] ||  					Scorecard of the round for the player.				 || [CScorecard golfml:Scorecard] ||
+|| [CRoomForExtension wager] ||  					Information about the wagers during the round of golf.				 || [CRoomForExtension golfml:RoomForExtension] ||
+|| [CWeather weather] ||  					Weather information for the round of golf.				 || [CWeather golfml:Weather] ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CPlayer Player]
-----
-    

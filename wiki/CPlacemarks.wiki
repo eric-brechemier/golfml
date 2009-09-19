@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CPlacemarks Placemarks]*
-
-  	
+[CPlacemarks Placemarks]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ anyType
         
 			Placemarks is a collection of points and/or areas of interest.
 		
+----
   	
 ===  Properties ===
 
@@ -27,18 +26,23 @@ anyType
     
 ===  Model ===
 
-	<...>  ([CPointOfInterest poi] | [CAreaOfInterest aoi])`*` </...>
+	<...>
+            ( [CPointOfInterest poi] | [CAreaOfInterest aoi] )`*` 
+  </...>
 
 ----
-    
 
+  	
 === Nested Element Summary ===
-        
-|| [CAreaOfInterest golfml:AreaOfInterest] || [CAreaOfInterest aoi] ||  					Area of interest.				 ||
-|| [CPointOfInterest golfml:PointOfInterest] || [CPointOfInterest poi] ||  					Point of interest.				 ||
+
+|| Name || Description || Type ||
+|| [CAreaOfInterest aoi] ||  					Area of interest.				 || [CAreaOfInterest golfml:AreaOfInterest] ||
+|| [CPointOfInterest poi] ||  					Point of interest.				 || [CPointOfInterest golfml:PointOfInterest] ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CHole Hole]
-----
-    

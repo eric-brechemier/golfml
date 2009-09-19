@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CREF_GolfBag REF_GolfBag]*
-
-  	
+[CREF_GolfBag REF_GolfBag]
 
 ===  Super Types ===
 {{{
@@ -14,6 +12,7 @@ anyType
 }}}
 ----
     
+----
   	
 ===  Properties ===
 
@@ -22,19 +21,24 @@ anyType
     
 ===  Model ===
 
-	<...>  ((player.name, player.date-of-birth), player.golf-bag.name  )</...>
+	<...>
+            ( ( player.name, player.date-of-birth ), player.golf-bag.name   )
+  </...>
 
 ----
-    
 
+  	
 === Nested Element Summary ===
-        
-|| xs:date || player.date-of-birth ||   ||
-|| xs:string || player.golf-bag.name ||   ||
-|| xs:string || player.name ||   ||
+
+|| Name || Description || Type ||
+|| player.date-of-birth ||   || xs:date ||
+|| player.golf-bag.name ||   || xs:string ||
+|| player.name ||   || xs:string ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CGolfBag GolfBag], [CScorecard Scorecard]
-----
-    

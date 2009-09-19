@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SLength Length]*
-
-  	
+[SLength Length]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ double
         
 				Length of an object. Limited to 1000 units of length.
 		
+----
   	
 ===  Properties ===
 
@@ -30,10 +29,9 @@ double
 	inclusive lower bound: 0inclusive upper bound: 1000
 
 ----
-    
+
+  	
 
 ===  Local Usage ===
 
     	[CLengthWithUnits LengthWithUnits]
-----
-    

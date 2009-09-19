@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SHandicapSystemEnum HandicapSystemEnum]*
-
-  	
+[SHandicapSystemEnum HandicapSystemEnum]
 
 ===  Super Types ===
 {{{
@@ -22,6 +20,7 @@ string
 			Before using "other" and specify the other handicaping system, application designer
 			should ask the golfml design team to add their system in the list of handicaping system.
 		
+----
   	
 ===  Properties ===
 
@@ -30,13 +29,12 @@ string
     
 ===  Model ===
 
-	('USGA' | 'EGA' | 'other')
+	( 'USGA' | 'EGA' | 'other' )
 
 ----
-    
+
+  	
 
 ===  Local Usage ===
 
     	[CPlayerHandicap PlayerHandicap]
-----
-    

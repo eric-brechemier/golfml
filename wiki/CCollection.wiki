@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CCollection Collection]*
-
-  	
+[CCollection Collection]
 
 ===  Super Types ===
 {{{
@@ -23,6 +21,7 @@ anyType
 				* for all rounds played between two dates: the date-from and date-to element specify the time frame.
 				* for any combination of the above constraints: elements can be combined.						
 			
+----
   	
 ===  Properties ===
 
@@ -31,20 +30,25 @@ anyType
     
 ===  Model ===
 
-	<...>  (date-from?, date-to?, round?, [CREF_GolfCourse golf-course]?  )</...>
+	<...>
+            ( date-from?, date-to?, round?, [CREF_GolfCourse golf-course]?   )
+  </...>
 
 ----
-    
 
+  	
 === Nested Element Summary ===
-        
-|| xs:date || date-from ||  					Start date for the collection of statistical calculation.				 ||
-|| xs:date || date-to ||  					End date for the collection of statistical calculation.				 ||
-|| [CREF_GolfCourse golfml:REF_GolfCourse] || [CREF_GolfCourse golf-course] ||  					Golf course used for statistical calculation.				 ||
-|| xs:date || round ||  					Date of a round of golf used for statistical calculation.				 ||
+
+|| Name || Description || Type ||
+|| date-from ||  					Start date for the collection of statistical calculation.				 || xs:date ||
+|| date-to ||  					End date for the collection of statistical calculation.				 || xs:date ||
+|| [CREF_GolfCourse golf-course] ||  					Golf course used for statistical calculation.				 || [CREF_GolfCourse golfml:REF_GolfCourse] ||
+|| round ||  					Date of a round of golf used for statistical calculation.				 || xs:date ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CStatistics Statistics]
-----
-    

@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CNote Note]*
-
-  	
+[CNote Note]
 
 ===  Super Types ===
 {{{
@@ -20,6 +18,7 @@ anyType
 			Generic type for addition of comments and/or rating.
 			The text of the note is localised to a xml language.
 		
+----
   	
 ===  Properties ===
 
@@ -28,23 +27,27 @@ anyType
     
 ===  Model ===
 
-	<...  rating = [SRating Rating]>  [CLocalisedText comment]+  </...>
+	<...  `rating`=[SRating Rating]>
+            [CLocalisedText comment]+  
+  </...>
 
 ----
-    
 
-=== Nested Element Summary ===
-        
-|| [CLocalisedText golfml:LocalisedText] || [CLocalisedText comment] ||  					Localised, textual comment about the parent entitiy.				 ||      
-
+  	      
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-|| rating ||  Simple rating of the parent entitiy || [SRating golfml:Rating] || optional ||  ||  || unqualified ||
+    	|| rating ||  Simple rating of the parent entitiy || [SRating golfml:Rating] || optional ||  ||  || unqualified ||
 
+=== Nested Element Summary ===
+
+|| Name || Description || Type ||
+|| [CLocalisedText comment] ||  					Localised, textual comment about the parent entitiy.				 || [CLocalisedText golfml:LocalisedText] ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CCountryClub CountryClub], [CGolfCourse GolfCourse], [CHole Hole], [CPlayer Player], [CStrokeDetail StrokeDetail]
-----
-    

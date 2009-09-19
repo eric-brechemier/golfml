@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SStatisticCollectionTypesEnum StatisticCollectionTypesEnum]*
-
-  	
+[SStatisticCollectionTypesEnum StatisticCollectionTypesEnum]
 
 ===  Super Types ===
 {{{
@@ -23,6 +21,7 @@ string
 				* for all rounds played between two dates (example: annual statistics)
 				* for any combination of the above constraints.
 		
+----
   	
 ===  Properties ===
 
@@ -31,13 +30,12 @@ string
     
 ===  Model ===
 
-	('round' | 'course' | 'duration' | 'other')
+	( 'round' | 'course' | 'duration' | 'other' )
 
 ----
-    
+
+  	
 
 ===  Local Usage ===
 
     	[CStatistics Statistics]
-----
-    

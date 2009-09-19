@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CStrokeDetail StrokeDetail]*
-
-  	
+[CStrokeDetail StrokeDetail]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ anyType
         
 			Elements used to record details about a golf stroke.
 		
+----
   	
 ===  Properties ===
 
@@ -27,31 +26,35 @@ anyType
     
 ===  Model ===
 
-	<...  drop = xs:boolean  number = xs:nonNegativeInteger>  ([CPosition position]?, time?, [CGolfClub golf-club]?, [SGolfCourseAreaTypeEnum landing]?, [CStrokePrecision precision]?, distance?, distance-to-hole?, [CNote comment]?  )</...>
+	<...  `drop`=xs:boolean  `number`=xs:nonNegativeInteger>
+            ( [CPosition position]?, time?, [CGolfClub golf-club]?, [SGolfCourseAreaTypeEnum landing]?, [CStrokePrecision precision]?, distance?, distance-to-hole?, [CNote comment]?   )
+  </...>
 
 ----
-    
 
-=== Nested Element Summary ===
-        
-|| [CNote golfml:Note] || [CNote comment] ||  Comment about the stroke ||
-|| xs:double || distance ||  											Distance of the stroke.					 ||
-|| xs:double || distance-to-hole ||  											Distance left to the hole BEFORE the stroke.					 ||
-|| [CGolfClub golfml:GolfClub] || [CGolfClub golf-club] ||  					Golf club used for stroke.				 ||
-|| [SGolfCourseAreaTypeEnum golfml:GolfCourseAreaTypeEnum] || [SGolfCourseAreaTypeEnum landing] ||  					Information on landing are of stroke.				 ||
-|| [CPosition golfml:Position] || [CPosition position] ||  					Position FROM where the stroke take place.				 ||
-|| [CStrokePrecision golfml:StrokePrecision] || [CStrokePrecision precision] ||  					Information on the precision of the stroke regarding distance and direction.				 ||
-|| xs:dateTime || time ||  					Time of stroke.				 ||      
-
+  	      
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-|| drop ||  				Boolean flag indicating if the stroke was a drop.			 || xs:boolean || optional ||  ||  || unqualified ||
+    	|| drop ||  				Boolean flag indicating if the stroke was a drop.			 || xs:boolean || optional ||  ||  || unqualified ||
 || number ||  				Order number of the stroke playing the hole.			 || xs:nonNegativeInteger || optional ||  ||  || unqualified ||
 
+=== Nested Element Summary ===
+
+|| Name || Description || Type ||
+|| [CNote comment] ||  Comment about the stroke || [CNote golfml:Note] ||
+|| distance ||  											Distance of the stroke.					 || xs:double ||
+|| distance-to-hole ||  											Distance left to the hole BEFORE the stroke.					 || xs:double ||
+|| [CGolfClub golf-club] ||  					Golf club used for stroke.				 || [CGolfClub golfml:GolfClub] ||
+|| [SGolfCourseAreaTypeEnum landing] ||  					Information on landing are of stroke.				 || [SGolfCourseAreaTypeEnum golfml:GolfCourseAreaTypeEnum] ||
+|| [CPosition position] ||  					Position FROM where the stroke take place.				 || [CPosition golfml:Position] ||
+|| [CStrokePrecision precision] ||  					Information on the precision of the stroke regarding distance and direction.				 || [CStrokePrecision golfml:StrokePrecision] ||
+|| time ||  					Time of stroke.				 || xs:dateTime ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CHoleScore HoleScore]
-----
-    

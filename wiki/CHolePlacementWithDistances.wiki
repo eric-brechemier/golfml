@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CHolePlacementWithDistances HolePlacementWithDistances]*
-
-  	
+[CHolePlacementWithDistances HolePlacementWithDistances]
 
 ===  Super Types ===
 {{{
@@ -21,6 +19,7 @@ anyType
 				tournament fashion, which includes length and width of the green and distance of
 				the hole from 2 edges of the green.
 		
+----
   	
 ===  Properties ===
 
@@ -29,25 +28,29 @@ anyType
     
 ===  Model ===
 
-	<...  number = [SOneToEighteen OneToEighteen]>  ([CLengthWithUnits green-length], [CLengthWithUnits green-width], [CHoleDistanceOnGreen hole-distance]{2,2}  )</...>
+	<...  `number`=[SOneToEighteen OneToEighteen]>
+            ( [CLengthWithUnits green-length], [CLengthWithUnits green-width], [CHoleDistanceOnGreen hole-distance]{2,2}   )
+  </...>
 
 ----
-    
 
-=== Nested Element Summary ===
-        
-|| [CLengthWithUnits golfml:LengthWithUnits] || [CLengthWithUnits green-length] ||  					Length of green.				 ||
-|| [CLengthWithUnits golfml:LengthWithUnits] || [CLengthWithUnits green-width] ||  					Width of green.				 ||
-|| [CHoleDistanceOnGreen golfml:HoleDistanceOnGreen] || [CHoleDistanceOnGreen hole-distance] ||  					Distance of hole from edge of green.				 ||      
-
+  	      
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-|| number ||   || [SOneToEighteen golfml:OneToEighteen] || optional ||  ||  || unqualified ||
+    	|| number ||   || [SOneToEighteen golfml:OneToEighteen] || optional ||  ||  || unqualified ||
 
+=== Nested Element Summary ===
+
+|| Name || Description || Type ||
+|| [CLengthWithUnits green-length] ||  					Length of green.				 || [CLengthWithUnits golfml:LengthWithUnits] ||
+|| [CLengthWithUnits green-width] ||  					Width of green.				 || [CLengthWithUnits golfml:LengthWithUnits] ||
+|| [CHoleDistanceOnGreen hole-distance] ||  					Distance of hole from edge of green.				 || [CHoleDistanceOnGreen golfml:HoleDistanceOnGreen] ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CHolePlacement HolePlacement]
-----
-    

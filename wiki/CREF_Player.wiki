@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CREF_Player REF_Player]*
-
-  	
+[CREF_Player REF_Player]
 
 ===  Super Types ===
 {{{
@@ -14,6 +12,7 @@ anyType
 }}}
 ----
     
+----
   	
 ===  Properties ===
 
@@ -22,12 +21,19 @@ anyType
     
 ===  Model ===
 
-	<...>  (player.name, player.date-of-birth  )</...>
+	<...>
+            ( player.name, player.date-of-birth   )
+  </...>
 
 ----
-    
 
+  	
 === Nested Element Summary ===
-        
-|| xs:date || player.date-of-birth ||   ||
-|| xs:string || player.name ||   ||
+
+|| Name || Description || Type ||
+|| player.date-of-birth ||   || xs:date ||
+|| player.name ||   || xs:string ||
+
+    	
+----
+  	

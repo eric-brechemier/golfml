@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SGolfingGender GolfingGender]*
-
-  	
+[SGolfingGender GolfingGender]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ string
         
 			List of values used to specify the gender of a set of tees.
 		
+----
   	
 ===  Properties ===
 
@@ -27,13 +26,12 @@ string
     
 ===  Model ===
 
-	('gentlemen' | 'ladies')
+	( 'gentlemen' | 'ladies' )
 
 ----
-    
+
+  	
 
 ===  Local Usage ===
 
     	[CTees Tees]
-----
-    

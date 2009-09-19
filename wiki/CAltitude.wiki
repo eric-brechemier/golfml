@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CAltitude Altitude]*
-
-  	
+[CAltitude Altitude]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ anyType
         
 				Altitude of a point. Use mode attribute to determine semantics.
 		
+----
   	
 ===  Properties ===
 
@@ -28,20 +27,20 @@ anyType
 ===  Model ===
 
 	<...  
-            *mode = [SAltitudeModeEnum AltitudeModeEnum]*
-          >[Sdouble double]</...>
+            *`mode`=[SAltitudeModeEnum AltitudeModeEnum]*
+          >
+          [Sdouble double]
+  </...>
 
 ----
-          
 
+  	      
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-|| mode ||   || [SAltitudeModeEnum golfml:AltitudeModeEnum] || required ||  ||  || unqualified ||
+    	|| mode ||   || [SAltitudeModeEnum golfml:AltitudeModeEnum] || required ||  ||  || unqualified ||
 
 
 ===  Local Usage ===
 
     	[CPositionGPS PositionGPS]
-----
-    

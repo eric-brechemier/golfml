@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SWindEnum WindEnum]*
-
-  	
+[SWindEnum WindEnum]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ string
         
 			List of values for wind condition during play.
 		
+----
   	
 ===  Properties ===
 
@@ -27,13 +26,12 @@ string
     
 ===  Model ===
 
-	('none' | 'calm' | 'light breeze' | 'breeze' | 'strong breeze' | 'high wind' | 'storm' | 'other')
+	( 'none' | 'calm' | 'light breeze' | 'breeze' | 'strong breeze' | 'high wind' | 'storm' | 'other' )
 
 ----
-    
+
+  	
 
 ===  Local Usage ===
 
     	[CWeather Weather]
-----
-    

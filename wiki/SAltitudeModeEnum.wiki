@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SAltitudeModeEnum AltitudeModeEnum]*
-
-  	
+[SAltitudeModeEnum AltitudeModeEnum]
 
 ===  Super Types ===
 {{{
@@ -20,6 +18,7 @@ string
 				KML/Google Earth "altitude mode".
 				See also: http://code.google.com/intl/en/apis/kml/documentation/altitudemode.html.
 		
+----
   	
 ===  Properties ===
 
@@ -28,13 +27,12 @@ string
     
 ===  Model ===
 
-	('relativeToSeaFloor' | 'clampToSeaFloor' | 'relativeToGround' | 'clampToGround' | 'absolute')
+	( 'relativeToSeaFloor' | 'clampToSeaFloor' | 'relativeToGround' | 'clampToGround' | 'absolute' )
 
 ----
-    
+
+  	
 
 ===  Local Usage ===
 
     	[CAltitude Altitude]
-----
-    

@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SGender Gender]*
-
-  	
+[SGender Gender]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ string
         
 			List of values used to specify the gender of a golfer.
 		
+----
   	
 ===  Properties ===
 
@@ -27,13 +26,12 @@ string
     
 ===  Model ===
 
-	('male' | 'female')
+	( 'male' | 'female' )
 
 ----
-    
+
+  	
 
 ===  Local Usage ===
 
     	[CPlayer Player]
-----
-    

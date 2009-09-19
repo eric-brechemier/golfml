@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SAngle90 Angle90]*
-
-  	
+[SAngle90 Angle90]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ double
         
 				Angle between -90 and 90 degrees.
 		
+----
   	
 ===  Properties ===
 
@@ -30,10 +29,9 @@ double
 	inclusive lower bound: -90inclusive upper bound: 90.0
 
 ----
-    
+
+  	
 
 ===  Local Usage ===
 
     	[CGolfClub GolfClub], [CPositionGPS PositionGPS]
-----
-    

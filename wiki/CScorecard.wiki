@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CScorecard Scorecard]*
-
-  	
+[CScorecard Scorecard]
 
 ===  Super Types ===
 {{{
@@ -21,6 +19,7 @@ anyType
 			handicap used by the player for this round and consecutive strokes allowed (depending on the tees rating and slope),
 			golf bag used by the player, and finally score.
 		
+----
   	
 ===  Properties ===
 
@@ -29,22 +28,27 @@ anyType
     
 ===  Model ===
 
-	<...>  ([CREF_Tees tees], handicap?, handicap-strokes?, [CREF_GolfBag golf-bag-ref]?, [CRoundSummary summary]?, [CScore score]  )</...>
+	<...>
+            ( [CREF_Tees tees], handicap?, handicap-strokes?, [CREF_GolfBag golf-bag-ref]?, [CRoundSummary summary]?, [CScore score]   )
+  </...>
 
 ----
-    
 
+  	
 === Nested Element Summary ===
-        
-|| [CREF_GolfBag golfml:REF_GolfBag] || [CREF_GolfBag golf-bag-ref] ||  					Reference to the golf bag used for the round of golf.				 ||
-|| xs:float || handicap ||  					Handicap used for the round of golf.				 ||
-|| xs:integer || handicap-strokes ||  					Denormalisation: Number of strokes received for the round.				 ||
-|| [CScore golfml:Score] || [CScore score] ||  					Detailed information about the score for the round of golf.				 ||
-|| [CRoundSummary golfml:RoundSummary] || [CRoundSummary summary] ||  Denormalisation: Basic statistics for the round of golf ||
-|| [CREF_Tees golfml:REF_Tees] || [CREF_Tees tees] ||  					Reference to tee set used for the round of golf.				 ||
+
+|| Name || Description || Type ||
+|| [CREF_GolfBag golf-bag-ref] ||  					Reference to the golf bag used for the round of golf.				 || [CREF_GolfBag golfml:REF_GolfBag] ||
+|| handicap ||  					Handicap used for the round of golf.				 || xs:float ||
+|| handicap-strokes ||  					Denormalisation: Number of strokes received for the round.				 || xs:integer ||
+|| [CScore score] ||  					Detailed information about the score for the round of golf.				 || [CScore golfml:Score] ||
+|| [CRoundSummary summary] ||  Denormalisation: Basic statistics for the round of golf || [CRoundSummary golfml:RoundSummary] ||
+|| [CREF_Tees tees] ||  					Reference to tee set used for the round of golf.				 || [CREF_Tees golfml:REF_Tees] ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CRound Round]
-----
-    

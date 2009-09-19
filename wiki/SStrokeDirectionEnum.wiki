@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SStrokeDirectionEnum StrokeDirectionEnum]*
-
-  	
+[SStrokeDirectionEnum StrokeDirectionEnum]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ string
         
 			List of values to specify stroke direction in shot quality description.
 		
+----
   	
 ===  Properties ===
 
@@ -27,7 +26,8 @@ string
     
 ===  Model ===
 
-	('left' | 'center' | 'right')
+	( 'left' | 'center' | 'right' )
 
 ----
-    
+
+  	

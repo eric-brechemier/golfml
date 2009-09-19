@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SPhoneNumber PhoneNumber]*
-
-  	
+[SPhoneNumber PhoneNumber]
 
 ===  Super Types ===
 {{{
@@ -43,6 +41,7 @@ string
 				
 				It should not start with a + sign and there should be no space to separate numbers.
 			
+----
   	
 ===  Properties ===
 
@@ -59,10 +58,9 @@ string
     
 
 ----
-    
+
+  	
 
 ===  Local Usage ===
 
     	[CContact Contact]
-----
-    

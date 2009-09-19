@@ -2,53 +2,56 @@
 
 == Name ==
 
-*[CContact Contact]*
+[CContact Contact]
 
-  	
-----
 ===  Super Types ===
 {{{
 anyType
   |
   +--Contact (restriction)
 }}}
-
-    
 ----
+    
+
 ===  Documentation ===
         
 			Contact type for country-club and players.
 			The contact has a attribute named type to help identify the contact in a list.
 		
 ----
+  	
 ===  Properties ===
 
   	This component is not nillable.
-
 ----
+    
 ===  Model ===
 
-	<...  `other`=xs:string  `type`=[SContactTypeEnum ContactTypeEnum]>  ( name? ; [SPhoneNumber phone]? ; email? ; website? ) </...>
+	<...  `other`=xs:string  `type`=[SContactTypeEnum ContactTypeEnum]>
+            ( name? ; [SPhoneNumber phone]? ; email? ; website? ) 
+  </...>
 
-
-    
 ----
+
+  	      
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
+    	|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
 || type ||  Qualification of a contact || [SContactTypeEnum golfml:ContactTypeEnum] || optional ||  ||  || unqualified ||
 
 === Nested Element Summary ===
-        
-|| xs:string || email ||  					Electronic mail address of contact.				 ||
-|| xs:string || name ||  					Name or description of contact.				 ||
-|| [SPhoneNumber golfml:PhoneNumber] || [SPhoneNumber phone] ||  Telephone number of contact ||
-|| xs:anyURI || website ||  					Internet web site URL of contact.				 ||      
 
+|| Name || Description || Type ||
+|| email ||  					Electronic mail address of contact.				 || xs:string ||
+|| name ||  					Name or description of contact.				 || xs:string ||
+|| [SPhoneNumber phone] ||  Telephone number of contact || [SPhoneNumber golfml:PhoneNumber] ||
+|| website ||  					Internet web site URL of contact.				 || xs:anyURI ||
+
+    	
 ----
+  	
+
 ===  Local Usage ===
 
     	[CCountryClub CountryClub], [CPlayer Player]
-
-    

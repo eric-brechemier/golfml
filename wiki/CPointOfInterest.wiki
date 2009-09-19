@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CPointOfInterest PointOfInterest]*
-
-  	
+[CPointOfInterest PointOfInterest]
 
 ===  Super Types ===
 {{{
@@ -21,6 +19,7 @@ anyType
 			A point of interest contains a name, the coordinate of the point, a specification of its type limited to a list
 			of valid values, and an optional orientation in respect to the point.
 		
+----
   	
 ===  Properties ===
 
@@ -29,29 +28,33 @@ anyType
     
 ===  Model ===
 
-	<...  number = xs:nonNegativeInteger  orientation = [SOrientationEnum OrientationEnum]  other = xs:string  subtype = xs:string  type = [SGolfCourseAreaTypeEnum GolfCourseAreaTypeEnum]>  (name? ; description? ; [CPosition position]) </...>
+	<...  `number`=xs:nonNegativeInteger  `orientation`=[SOrientationEnum OrientationEnum]  `other`=xs:string  `subtype`=xs:string  `type`=[SGolfCourseAreaTypeEnum GolfCourseAreaTypeEnum]>
+            ( name? ; description? ; [CPosition position] ) 
+  </...>
 
 ----
-    
 
-=== Nested Element Summary ===
-        
-|| xs:string || description ||  					Description of a point of interest.				 ||
-|| xs:string || name ||  					Name of point of interest.				 ||
-|| [CPosition golfml:Position] || [CPosition position] ||  					Coordinate of a point of interest.				 ||      
-
+  	      
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-|| number ||   || xs:nonNegativeInteger || optional ||  ||  || unqualified ||
+    	|| number ||   || xs:nonNegativeInteger || optional ||  ||  || unqualified ||
 || orientation ||   || [SOrientationEnum golfml:OrientationEnum] || optional ||  ||  || unqualified ||
 || other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
 || subtype ||   || xs:string || optional ||  ||  || unqualified ||
 || type ||   || [SGolfCourseAreaTypeEnum golfml:GolfCourseAreaTypeEnum] || optional ||  ||  || unqualified ||
 
+=== Nested Element Summary ===
+
+|| Name || Description || Type ||
+|| description ||  					Description of a point of interest.				 || xs:string ||
+|| name ||  					Name of point of interest.				 || xs:string ||
+|| [CPosition position] ||  					Coordinate of a point of interest.				 || [CPosition golfml:Position] ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CPlacemarks Placemarks]
-----
-    

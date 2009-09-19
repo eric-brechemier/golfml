@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CAmenety Amenety]*
-
-  	
+[CAmenety Amenety]
 
 ===  Super Types ===
 {{{
@@ -21,6 +19,7 @@ anyType
 			Ameneties have a type attribute to help identify the amenety.
 			LATER: May be store the position (gps or other) inside the amenety.
 		
+----
   	
 ===  Properties ===
 
@@ -29,20 +28,20 @@ anyType
     
 ===  Model ===
 
-	<...  other = xs:string  type = [SAmenetyTypeEnum AmenetyTypeEnum]>[Sstring string]</...>
+	<...  `other`=xs:string  `type`=[SAmenetyTypeEnum AmenetyTypeEnum]>
+          [Sstring string]
+  </...>
 
 ----
-          
 
+  	      
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
+    	|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
 || type ||   || [SAmenetyTypeEnum golfml:AmenetyTypeEnum] || optional ||  ||  || unqualified ||
 
 
 ===  Local Usage ===
 
     	[CCountryClub CountryClub]
-----
-    

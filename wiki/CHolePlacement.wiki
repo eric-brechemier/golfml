@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CHolePlacement HolePlacement]*
-
-  	
+[CHolePlacement HolePlacement]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ anyType
         
 				Description of the placement on the hole on the surface of the green.
 		
+----
   	
 ===  Properties ===
 
@@ -27,18 +26,23 @@ anyType
     
 ===  Model ===
 
-	<...>  ([CHolePlacementWithDistances distances] | [CRoomForExtension coordinates]) </...>
+	<...>
+            ( [CHolePlacementWithDistances distances] | [CRoomForExtension coordinates] ) 
+  </...>
 
 ----
-    
 
+  	
 === Nested Element Summary ===
-        
-|| [CRoomForExtension golfml:RoomForExtension] || [CRoomForExtension coordinates] ||  Description of the placement on the hole on the surface of the green with an alternate localisation system ||
-|| [CHolePlacementWithDistances golfml:HolePlacementWithDistances] || [CHolePlacementWithDistances distances] ||  					Position of hole relative to the edges of the green.				 ||
+
+|| Name || Description || Type ||
+|| [CRoomForExtension coordinates] ||  Description of the placement on the hole on the surface of the green with an alternate localisation system || [CRoomForExtension golfml:RoomForExtension] ||
+|| [CHolePlacementWithDistances distances] ||  					Position of hole relative to the edges of the green.				 || [CHolePlacementWithDistances golfml:HolePlacementWithDistances] ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CHolePlacements HolePlacements]
-----
-    

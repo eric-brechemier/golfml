@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SAmenetyTypeEnum AmenetyTypeEnum]*
-
-  	
+[SAmenetyTypeEnum AmenetyTypeEnum]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ string
         
 				List of value to document facilities available at the country club premises.
 			
+----
   	
 ===  Properties ===
 
@@ -27,13 +26,12 @@ string
     
 ===  Model ===
 
-	('practice' | 'store' | 'food' | 'corporate' | 'golfers' | 'bathroom' | 'water' | 'other')
+	( 'practice' | 'store' | 'food' | 'corporate' | 'golfers' | 'bathroom' | 'water' | 'other' )
 
 ----
-    
+
+  	
 
 ===  Local Usage ===
 
     	[CAmenety Amenety]
-----
-    

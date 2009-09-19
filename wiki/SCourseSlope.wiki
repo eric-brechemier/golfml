@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SCourseSlope CourseSlope]*
-
-  	
+[SCourseSlope CourseSlope]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ positiveInteger
         
 			Type to specify a golf course difficulty for handicap calculation.
 		
+----
   	
 ===  Properties ===
 
@@ -30,10 +29,9 @@ positiveInteger
 	inclusive lower bound: 55inclusive upper bound: 155
 
 ----
-    
+
+  	
 
 ===  Local Usage ===
 
     	[CHoleQualificationUSGA HoleQualificationUSGA]
-----
-    

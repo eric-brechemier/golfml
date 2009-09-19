@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CPosition Position]*
-
-  	
+[CPosition Position]
 
 ===  Super Types ===
 {{{
@@ -20,6 +18,7 @@ anyType
 			Coordinate of a point. The coordinate of a point can be either a GPS coordinate or
 			coordinates in any specific system.
 		
+----
   	
 ===  Properties ===
 
@@ -28,19 +27,26 @@ anyType
     
 ===  Model ===
 
-	<...>  ([CPositionGPS position-gps] | [CRoomForExtension position-other]) </...>
+	<...>
+            ( [CPositionGPS position-gps] | [CRoomForExtension position-other] ) 
+  </...>
 
 ----
-    
 
+  	
 === Nested Element Summary ===
-        
-|| [CPositionGPS golfml:PositionGPS] || [CPositionGPS position-gps] ||  					GPS coordinate of a point.				 ||
-|| [CRoomForExtension golfml:RoomForExtension] || [CRoomForExtension position-other] ||  					Coordinate of a point in an arbitraty unit system.				 ||
+
+|| Name || Description || Type ||
+|| [CPositionGPS position-gps] ||  					GPS coordinate of a point.				 || [CPositionGPS golfml:PositionGPS] ||
+|| [CRoomForExtension position-other] ||  					Coordinate of a point in an arbitraty unit system.				 || [CRoomForExtension golfml:RoomForExtension] ||
+
+    	
+----
+  	
 
 ===  Sub Types ===
 {{{
-[CPosition {http://code.google.com/p/golfml}Position] (restriction)  |    +--[CPositionWithSequence {http://code.google.com/p/golfml}PositionWithSequence] (extension)
+[CPosition {http://code.google.com/p/golfml}Position] (restriction )  |    +--[CPositionWithSequence {http://code.google.com/p/golfml}PositionWithSequence] (extension )
 }}}
 ----
     
@@ -48,5 +54,3 @@ anyType
 ===  Local Usage ===
 
     	[CPointOfInterest PointOfInterest], [CPositionWithSequence PositionWithSequence], [CStrokeDetail StrokeDetail]
-----
-    

@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CMedia Media]*
-
-  	
+[CMedia Media]
 
 ===  Super Types ===
 {{{
@@ -25,6 +23,7 @@ anyType
 			* player: picture, scan of official golf card...
 			* round of golf: souvenir of a memorable golfing moment...
 		
+----
   	
 ===  Properties ===
 
@@ -33,28 +32,32 @@ anyType
     
 ===  Model ===
 
-	<...  content-type = xs:string  other = xs:string  type = [SMediaTypeEnum MediaTypeEnum]>  (name, description?, (url | content)   )</...>
+	<...  `content-type`=xs:string  `other`=xs:string  `type`=[SMediaTypeEnum MediaTypeEnum]>
+            ( name, description?, ( url | content )    )
+  </...>
 
 ----
-    
 
-=== Nested Element Summary ===
-        
-|| xs:base64Binary || content ||  Base64-coded content of the media ||
-|| xs:string || description ||  					Description of the media.				 ||
-|| xs:string || name ||  					Name of the media.				 ||
-|| xs:anyURI || url ||  					Location of the media.				 ||      
-
+  	      
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-|| content-type ||   || xs:string || optional ||  ||  || unqualified ||
+    	|| content-type ||  Technical type of the media (MIME (Multipurpose Internet Mail Extensions) type of the media || xs:string || optional ||  ||  || unqualified ||
 || other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
-|| type ||   || [SMediaTypeEnum golfml:MediaTypeEnum] || optional ||  ||  || unqualified ||
+|| type ||  				Type of information conveyed by the media: Photograph, video, yardage book, scan of scorecard, scan of golf card, map...			 || [SMediaTypeEnum golfml:MediaTypeEnum] || optional ||  ||  || unqualified ||
 
+=== Nested Element Summary ===
+
+|| Name || Description || Type ||
+|| content ||  Base64-coded content of the media || xs:base64Binary ||
+|| description ||  					Description of the media.				 || xs:string ||
+|| name ||  					Name of the media.				 || xs:string ||
+|| url ||  					Location of the media.				 || xs:anyURI ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CCountryClub CountryClub], [CGolfCourse GolfCourse], [CHole Hole], [CPlayer Player]
-----
-    

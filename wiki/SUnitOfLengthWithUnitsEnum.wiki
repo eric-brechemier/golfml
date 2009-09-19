@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SUnitOfLengthWithUnitsEnum UnitOfLengthWithUnitsEnum]*
-
-  	
+[SUnitOfLengthWithUnitsEnum UnitOfLengthWithUnitsEnum]
 
 ===  Super Types ===
 {{{
@@ -20,6 +18,7 @@ string
 			List of acceptable values for units of length using either SI or imperial units.
 			The uncommon 'pace' unit is traditionnaly used for hole location sheets.
 		
+----
   	
 ===  Properties ===
 
@@ -28,13 +27,12 @@ string
     
 ===  Model ===
 
-	('meters' | 'yards' | 'feet' | 'paces')
+	( 'meters' | 'yards' | 'feet' | 'paces' )
 
 ----
-    
+
+  	
 
 ===  Local Usage ===
 
     	[CLengthWithUnits LengthWithUnits], [CTees Tees]
-----
-    

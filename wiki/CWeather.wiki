@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CWeather Weather]*
-
-  	
+[CWeather Weather]
 
 ===  Super Types ===
 {{{
@@ -22,6 +20,7 @@ anyType
 			
 			See also: SportML has a normalisation of weather types.
 		
+----
   	
 ===  Properties ===
 
@@ -30,20 +29,20 @@ anyType
     
 ===  Model ===
 
-	<...  other = xs:string  wind = [SWindEnum WindEnum]>[Sstring string]</...>
+	<...  `other`=xs:string  `wind`=[SWindEnum WindEnum]>
+          [Sstring string]
+  </...>
 
 ----
-          
 
+  	      
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
+    	|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
 || wind ||   || [SWindEnum golfml:WindEnum] || optional ||  ||  || unqualified ||
 
 
 ===  Local Usage ===
 
     	[CRound Round]
-----
-    

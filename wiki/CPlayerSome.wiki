@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CPlayerSome PlayerSome]*
-
-  	
+[CPlayerSome PlayerSome]
 
 ===  Super Types ===
 {{{
@@ -23,6 +21,7 @@ anyType
 			Round date and time and foursome elements can be used to reconstruct the 2,3,4 some of a multiplayer round.
 			Attributes type and team help identify players as partners or opponents and organise teams.
 		
+----
   	
 ===  Properties ===
 
@@ -31,25 +30,29 @@ anyType
     
 ===  Model ===
 
-	<...  team = xs:string  type = [SPlayerSomeEnum PlayerSomeEnum]>  (player.name, player.date-of-birth  )</...>
+	<...  `team`=xs:string  `type`=[SPlayerSomeEnum PlayerSomeEnum]>
+            ( player.name, player.date-of-birth   )
+  </...>
 
 ----
-    
 
-=== Nested Element Summary ===
-        
-|| xs:date || player.date-of-birth ||   ||
-|| xs:string || player.name ||   ||      
-
+  	      
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-|| team ||  Name of the team this player was a member of || xs:string || optional ||  ||  || unqualified ||
+    	|| team ||  Name of the team this player was a member of || xs:string || optional ||  ||  || unqualified ||
 || type ||  				Qualification of the player on the 2,3,4 some.			 || [SPlayerSomeEnum golfml:PlayerSomeEnum] || optional ||  ||  || unqualified ||
 
+=== Nested Element Summary ===
+
+|| Name || Description || Type ||
+|| player.date-of-birth ||   || xs:date ||
+|| player.name ||   || xs:string ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CFourSome FourSome]
-----
-    

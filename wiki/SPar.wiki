@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SPar Par]*
-
-  	
+[SPar Par]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ positiveInteger
         
 			Type for elements specifying Par information.
 		
+----
   	
 ===  Properties ===
 
@@ -30,10 +29,9 @@ positiveInteger
 	inclusive lower bound: 3inclusive upper bound: 9
 
 ----
-    
+
+  	
 
 ===  Local Usage ===
 
     	[CTee Tee]
-----
-    

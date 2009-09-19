@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SGolfGameTypeEnum GolfGameTypeEnum]*
-
-  	
+[SGolfGameTypeEnum GolfGameTypeEnum]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ string
         
 				Game played during the round of golf.
 			
+----
   	
 ===  Properties ===
 
@@ -27,13 +26,12 @@ string
     
 ===  Model ===
 
-	('stroke-play' | 'match-play' | 'stableford' | 'bingo-bango-bongo' | 'skin' | 'other')
+	( 'stroke-play' | 'match-play' | 'stableford' | 'bingo-bango-bongo' | 'skin' | 'other' )
 
 ----
-    
+
+  	
 
 ===  Local Usage ===
 
     	[CGolfGame GolfGame]
-----
-    

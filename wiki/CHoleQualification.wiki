@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CHoleQualification HoleQualification]*
-
-  	
+[CHoleQualification HoleQualification]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ anyType
         
 				Qualify a golf course played from a set of tees.
 			
+----
   	
 ===  Properties ===
 
@@ -27,18 +26,23 @@ anyType
     
 ===  Model ===
 
-	<...>  ([CHoleQualificationUSGA qualification-usga] | [CRoomForExtension qualification-other]) </...>
+	<...>
+            ( [CHoleQualificationUSGA qualification-usga] | [CRoomForExtension qualification-other] ) 
+  </...>
 
 ----
-    
 
+  	
 === Nested Element Summary ===
-        
-|| [CRoomForExtension golfml:RoomForExtension] || [CRoomForExtension qualification-other] ||  						Qualify a golf course played from a set of tees according to a non-USGA golfing authority.					 ||
-|| [CHoleQualificationUSGA golfml:HoleQualificationUSGA] || [CHoleQualificationUSGA qualification-usga] ||  						Qualify a golf course played from a set of tees according to the USGA rules.					 ||
+
+|| Name || Description || Type ||
+|| [CRoomForExtension qualification-other] ||  						Qualify a golf course played from a set of tees according to a non-USGA golfing authority.					 || [CRoomForExtension golfml:RoomForExtension] ||
+|| [CHoleQualificationUSGA qualification-usga] ||  						Qualify a golf course played from a set of tees according to the USGA rules.					 || [CHoleQualificationUSGA golfml:HoleQualificationUSGA] ||
+
+    	
+----
+  	
 
 ===  Local Usage ===
 
     	[CTees Tees]
-----
-    

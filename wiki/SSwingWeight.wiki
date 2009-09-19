@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SSwingWeight SwingWeight]*
-
-  	
+[SSwingWeight SwingWeight]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ string
         
 				Swing weight of a club of golf.
 		
+----
   	
 ===  Properties ===
 
@@ -35,10 +34,9 @@ string
     
 
 ----
-    
+
+  	
 
 ===  Local Usage ===
 
     	[CGolfClub GolfClub]
-----
-    

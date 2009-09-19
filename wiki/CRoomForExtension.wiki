@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[CRoomForExtension RoomForExtension]*
-
-  	
+[CRoomForExtension RoomForExtension]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ anyType
         
 			Local type for 'any' content. Room for different applications and systems to store their private data.
 		
+----
   	
 ===  Properties ===
 
@@ -27,21 +26,21 @@ anyType
     
 ===  Model ===
 
-	<...  other = xs:string>  (
+	<...  `other`=xs:string>
+            ( 
     _any element from any namespace_
-    )  </...>
+     )  
+  </...>
 
 ----
-          
 
+  	      
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-|| other ||  				Qualifies the content of the Any element.			 || xs:string || optional ||  ||  || unqualified ||
+    	|| other ||  				Qualifies the content of the Any element.			 || xs:string || optional ||  ||  || unqualified ||
 
 
 ===  Local Usage ===
 
     	[CHolePlacement HolePlacement], [CHoleQualification HoleQualification], [CPosition Position], [CRound Round]
-----
-    

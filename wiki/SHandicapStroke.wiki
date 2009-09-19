@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SHandicapStroke HandicapStroke]*
-
-  	
+[SHandicapStroke HandicapStroke]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ positiveInteger
         
 			Type for elements specifying Handicap stroke information.
 		
+----
   	
 ===  Properties ===
 
@@ -30,10 +29,9 @@ positiveInteger
 	inclusive lower bound: 1inclusive upper bound: 18
 
 ----
-    
+
+  	
 
 ===  Local Usage ===
 
     	[CTee Tee]
-----
-    

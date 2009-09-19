@@ -2,9 +2,7 @@
 
 == Name ==
 
-*[SMediaTypeEnum MediaTypeEnum]*
-
-  	
+[SMediaTypeEnum MediaTypeEnum]
 
 ===  Super Types ===
 {{{
@@ -19,6 +17,7 @@ string
         
 			List of values for types of media used in golfml.
 		
+----
   	
 ===  Properties ===
 
@@ -27,13 +26,12 @@ string
     
 ===  Model ===
 
-	('photograph' | 'video' | 'hole-fly-over' | 'hole-presentation' | 'hole-yardage' | 'yardage-book' | 'course-map' | 'google-earth' | 'other')
+	( 'photograph' | 'video' | 'hole-fly-over' | 'hole-presentation' | 'hole-yardage' | 'yardage-book' | 'course-map' | 'google-earth' | 'other' )
 
 ----
-    
+
+  	
 
 ===  Local Usage ===
 
     	[AMediaTypeAttributes MediaTypeAttributes]
-----
-    
