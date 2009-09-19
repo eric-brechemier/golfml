@@ -5,7 +5,7 @@
 *[CContact Contact]*
 
   	
-
+----
 ===  Super Types ===
 {{{
 anyType
@@ -14,7 +14,7 @@ anyType
 }}}
 
     
------
+----
 ===  Documentation ===
         
 			Contact type for country-club and players.
@@ -33,18 +33,18 @@ anyType
 
     
 ----
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
+|| type ||  Qualification of a contact || [SContactTypeEnum golfml:ContactTypeEnum] || optional ||  ||  || unqualified ||
+
 === Nested Element Summary ===
         
 || xs:string || email ||  					Electronic mail address of contact.				 ||
 || xs:string || name ||  					Name or description of contact.				 ||
 || [SPhoneNumber golfml:PhoneNumber] || [SPhoneNumber phone] ||  Telephone number of contact ||
 || xs:anyURI || website ||  					Internet web site URL of contact.				 ||      
-
-=== Attributes ===
-
-|| Name || Description || Type || Use || Default || Fixed || Form ||
-|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
-|| type ||  Qualification of a contact || [SContactTypeEnum golfml:ContactTypeEnum] || optional ||  ||  || unqualified ||
 
 ----
 ===  Local Usage ===
