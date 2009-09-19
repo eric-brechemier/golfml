@@ -26,9 +26,7 @@ anyType
     
 ===  Model ===
 
-	<...  `colour`=xs:string  `date-from`=xs:date  `date-to`=xs:date  `gender`=[SGolfingGender GolfingGender]  
-            *`name`=xs:string*
-            `units`=[SUnitOfLengthWithUnitsEnum UnitOfLengthWithUnitsEnum]>
+	<...  `colour`=xs:string  `date-from`=xs:date  `date-to`=xs:date  `gender`=[SGolfingGender GolfingGender]  `name`=xs:string>
             ( [CHoleQualification qualification], [CTee tee]{1,18}, [CVersion version]`*`   )
   </...>
 
@@ -38,12 +36,11 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-    	|| colour ||   || xs:string || optional ||  ||  || unqualified ||
-|| date-from ||   || xs:date || optional ||  ||  || unqualified ||
-|| date-to ||   || xs:date || optional ||  ||  || unqualified ||
-|| gender ||   || [SGolfingGender golfml:GolfingGender] || optional ||  ||  || unqualified ||
-|| name ||   || xs:string || required ||  ||  || unqualified ||
-|| units ||   || [SUnitOfLengthWithUnitsEnum golfml:UnitOfLengthWithUnitsEnum] || optional ||  ||  || unqualified ||
+    	|| colour ||  				Color of tee set.			 || xs:string || optional ||  ||  || unqualified ||
+|| date-from ||  				Start date of validity of tee set.			 || xs:date || optional ||  ||  || unqualified ||
+|| date-to ||  				End date of validity of tee set.			 || xs:date || optional ||  ||  || unqualified ||
+|| gender ||  				"Gender" of tee set for handicaping purpose.			 || [SGolfingGender golfml:GolfingGender] || optional ||  ||  || unqualified ||
+|| name ||  Name of the tee set || xs:string || required ||  ||  || unqualified ||
 
 === Nested Element Summary ===
 

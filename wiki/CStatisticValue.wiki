@@ -26,9 +26,7 @@ anyType
     
 ===  Model ===
 
-	<...  
-            *`name`=xs:string*
-          >
+	<...  `name`=xs:string>
           [Sdouble double]
   </...>
 

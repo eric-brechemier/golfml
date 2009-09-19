@@ -35,4 +35,4 @@ string
 
 ===  Local Usage ===
 
-    	[CLengthWithUnits LengthWithUnits], [CTees Tees]
+    	[CLengthWithUnits LengthWithUnits]

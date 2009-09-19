@@ -27,9 +27,7 @@ anyType
     
 ===  Model ===
 
-	<...  
-            *`from`=[SOrientationEnum OrientationEnum]*
-          >
+	<...  `from`=[SOrientationEnum OrientationEnum]>
           [SLengthWithUnits LengthWithUnits]
   </...>
 

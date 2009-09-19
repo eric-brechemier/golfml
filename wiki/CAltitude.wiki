@@ -26,9 +26,7 @@ anyType
     
 ===  Model ===
 
-	<...  
-            *`mode`=[SAltitudeModeEnum AltitudeModeEnum]*
-          >
+	<...  `mode`=[SAltitudeModeEnum AltitudeModeEnum]>
           [Sdouble double]
   </...>
 

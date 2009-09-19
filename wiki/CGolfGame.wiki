@@ -37,7 +37,7 @@ anyType
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
     	|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
-|| type ||   || [SGolfGameTypeEnum golfml:GolfGameTypeEnum] || optional ||  ||  || unqualified ||
+|| type ||  						Type of golf game played.					 || [SGolfGameTypeEnum golfml:GolfGameTypeEnum] || optional ||  ||  || unqualified ||
 
 
 ===  Local Usage ===

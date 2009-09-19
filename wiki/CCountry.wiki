@@ -27,9 +27,7 @@ anyType
     
 ===  Model ===
 
-	<...  
-            *`code`=[SISO3166CountryCodeEnum ISO3166CountryCodeEnum]*
-          >
+	<...  `code`=[SISO3166CountryCodeEnum ISO3166CountryCodeEnum]>
           [Sstring string]
   </...>
 

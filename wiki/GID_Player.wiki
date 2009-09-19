@@ -6,7 +6,7 @@
 
 ===  Documentation ===
         
-			Identifying elements for a player, used in foreign keys.
+			Identifying elements for a player. Used in foreign keys.
 		
 ----
   	
@@ -34,4 +34,4 @@
 
 ===  Local Usage ===
 
-    	[GID_GolfBag ID_GolfBag], [CREF_Player REF_Player]
+    	[GID_GolfBag ID_GolfBag], [CPlayerSome PlayerSome], [CREF_Player REF_Player]

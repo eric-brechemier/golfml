@@ -37,6 +37,11 @@
 			
 				Reference to a golf club in the bag.
 			
+	   			Reference to a golf club used for a stroke.
+	   			Currently, the reference points to a golf club owned by the player.
+	   			Formally, the golf club should point an item in the golf bag used for the round of golf.
+	   			We do not enforce this relationship to allow for practice rounds and more flexibility.
+	   		
 ----
   	
 ===  Properties ===

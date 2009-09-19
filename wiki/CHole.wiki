@@ -26,9 +26,7 @@ anyType
     
 ===  Model ===
 
-	<...  `name`=xs:string  
-            *`number`=[SOneToEighteen OneToEighteen]*
-          >
+	<...  `name`=xs:string  `number`=[SOneToEighteen OneToEighteen]>
             ( [CMedia media] | [CNote note] | [CPlacemarks placemarks] )`*` 
   </...>
 

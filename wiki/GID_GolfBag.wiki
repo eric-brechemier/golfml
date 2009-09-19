@@ -6,7 +6,7 @@
 
 ===  Documentation ===
         
-			Identifying elements for a golf bag, used in foreign keys.
+			Identifying elements for a golf bag. Used in foreign keys.
 		
 ----
   	

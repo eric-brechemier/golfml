@@ -26,9 +26,7 @@ anyType
     
 ===  Model ===
 
-	<...  `other`=xs:string  
-            *`type`=[SStatisticCollectionTypesEnum StatisticCollectionTypesEnum]*
-          >
+	<...  `other`=xs:string  `type`=[SStatisticCollectionTypesEnum StatisticCollectionTypesEnum]>
             ( [CCollection collection], [CStatisticValue value]+   )
   </...>
 

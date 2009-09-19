@@ -7,6 +7,8 @@
 ===  Documentation ===
         
 				List of elements to uniquely identify a set of tees from which a round of golf can be played.
+				Elements includes those necessary to identify a golf course, and a set of tees.
+				Used in foreign keys.
 		
 ----
   	

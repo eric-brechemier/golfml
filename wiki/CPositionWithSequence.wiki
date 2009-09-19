@@ -28,9 +28,7 @@ anyType
     
 ===  Model ===
 
-	<...  
-            *`number`=xs:nonNegativeInteger*
-          >
+	<...  `number`=xs:nonNegativeInteger>
             ( [CPositionGPS position-gps] | [CRoomForExtension position-other] ) 
   </...>
 

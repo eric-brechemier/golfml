@@ -31,7 +31,7 @@ anyType
 ===  Model ===
 
 	<...  `team`=xs:string  `type`=[SPlayerSomeEnum PlayerSomeEnum]>
-            ( player.name, player.date-of-birth   )
+            ( player.name, player.date-of-birth )  
   </...>
 
 ----

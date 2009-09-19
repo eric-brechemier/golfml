@@ -26,9 +26,7 @@ anyType
     
 ===  Model ===
 
-	<...  
-            *`type`=[SGolfClubTypeEnum GolfClubTypeEnum]*
-          >
+	<...  `type`=[SGolfClubTypeEnum GolfClubTypeEnum]>
             ( manufacturer, model, submodel, number?, serial?, [SAngle90 loft]?, [SAngle90 lie]?, weight?, [SSwingWeight swing-weight]?, [CShaft shaft]?   )
   </...>
 
