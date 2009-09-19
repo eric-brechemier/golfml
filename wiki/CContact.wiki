@@ -25,7 +25,7 @@ anyType
 
   	This component is not nillable.
 
-----    
+----
 ===  Model ===
 
 	<...  other = xs:string  type = [SContactTypeEnum ContactTypeEnum]>  (name? ; [SPhoneNumber phone]? ; email? ; website?) </...>
