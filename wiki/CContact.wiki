@@ -28,7 +28,7 @@ anyType
 ----
 ===  Model ===
 
-	<...  other = xs:string  type = [SContactTypeEnum ContactTypeEnum]>  ( name? ; [SPhoneNumber phone]? ; email? ; website? ) </...>
+	<...  `other`=xs:string  `type`=[SContactTypeEnum ContactTypeEnum]>  ( name? ; [SPhoneNumber phone]? ; email? ; website? ) </...>
 
 
     
