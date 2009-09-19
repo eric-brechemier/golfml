@@ -14,25 +14,25 @@ anyType
 }}}
 
     
-
+-----
 ===  Documentation ===
         
 			Contact type for country-club and players.
 			The contact has a attribute named type to help identify the contact in a list.
 		
-  	
+----
 ===  Properties ===
 
   	This component is not nillable.
 
-    
+----    
 ===  Model ===
 
 	<...  other = xs:string  type = [SContactTypeEnum ContactTypeEnum]>  (name? ; [SPhoneNumber phone]? ; email? ; website?) </...>
 
 
     
-
+----
 === Nested Element Summary ===
         
 || xs:string || email ||  					Electronic mail address of contact.				 ||
@@ -46,7 +46,7 @@ anyType
 || other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
 || type ||  Qualification of a contact || [SContactTypeEnum golfml:ContactTypeEnum] || optional ||  ||  || unqualified ||
 
-
+----
 ===  Local Usage ===
 
     	[CCountryClub CountryClub], [CPlayer Player]
