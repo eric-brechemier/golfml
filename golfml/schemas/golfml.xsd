@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../stylesheets/genwiki.xsl"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		   xmlns:golfml="http://code.google.com/p/golfml"
 		   targetNamespace="http://code.google.com/p/golfml"
@@ -26,7 +27,7 @@
 	HISTORY
 	   
 		Version 0.9: AUG-2009: Initial version. Work in progress.
-
+		
 
 	SEE ALSO
 		
@@ -65,7 +66,19 @@
 		When a fixed enumeration is requested, there is always a special value "other"
 		and either a "other" attribute or element to specify alternate values.
 		
-  -->
+		Documentation
+		
+		Note: Sep 18 2009
+		We decided to host the project on Google Code.
+		Since Google Code favor the use of a wiki style documentation, we build a quick documentation generator from this XML Schema document.
+		The generator generates a single file per element, type or group formatted according to Google Code's Wiki formatting.
+		Therefore, comments in annotation and documentation should be formatted accordingly to transfer smoothly to Google Code's Wiki area.
+		
+-->
+	
+	<xs:annotation><xs:documentation xml:lang="en">
+		Golf Markup Language
+	</xs:documentation></xs:annotation>
    
 <!-- =================================================================
 	 B A S E  T Y P E S
@@ -144,10 +157,19 @@
 		</xs:sequence>
 		<xs:attribute name="other" type="xs:string">
 			<xs:annotation><xs:documentation xml:lang="en">
-				Used to qualify the content of the Any element.
+				Qualifies the content of the Any element.
 			</xs:documentation></xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
+	
+	
+	<xs:attributeGroup name="RemoteGolfML">
+		<xs:attribute name="remote-golfml-url" type="xs:anyURI">
+			<xs:annotation><xs:documentation xml:lang="en">
+				URL of remote GolfML document used for references.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
 	
 	
 	<xs:attributeGroup name="Other">
@@ -587,12 +609,19 @@
 			<xs:documentation xml:lang="en">
 				Group of common attributes used to characterise a media associated with either a country-club, a golf-course,
 				or a hole, anywhere a media is accepted.
-				The first attribute describe what the media content is, the second attribute is usable by computer
-				and reprents the technical file format used.
 			</xs:documentation>
 		</xs:annotation>
-		<xs:attribute name="type" type="golfml:MediaTypeEnum"/>
-		<xs:attribute name="content-type" type="xs:string"/> <!-- Should be limited to valid content-types? -->
+		<xs:attribute name="type" type="golfml:MediaTypeEnum">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Type of information conveyed by the media: Photograph, video, yardage book, scan of scorecard, scan of golf card, map...
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="content-type" type="xs:string"> <!-- Should be limited to valid content-types? -->
+			<xs:annotation><xs:documentation xml:lang="en">
+				Technical type of the media (MIME (Multipurpose Internet Mail Extensions) type of the media.
+				Example: video/mpeg, text/xml...
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
 		<xs:attributeGroup ref="golfml:Other"/>
 	</xs:attributeGroup>
 	
@@ -613,7 +642,8 @@
 			<xs:element name="content" type="xs:base64Binary">
 				<xs:annotation><xs:documentation xml:lang="en">
 					<!-- PROBLEM: Shall we accept image content in golfml file? File could be quite large and clumpsy to process... -->
-					Base64-coded content of the media. Use of content embedded in golfml document is discouraged.
+					Base64-coded content of the media. Use of content embedded in golfml document is discouraged and should be limited
+					to small media files (less than 2000 bytes).
 				</xs:documentation></xs:annotation>
 			</xs:element>
 		</xs:choice>
@@ -667,7 +697,26 @@
 		</xs:simpleContent>
 	</xs:complexType>
 
-
+	<xs:complexType name="Note">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Generic type for addition of comments and/or rating.
+			The text of the note is localised to a xml language.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="comment" type="golfml:LocalisedText" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Localised, textual comment about the parent entitiy.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="rating" type="golfml:Rating">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Simple rating of the parent entitiy. Always optional.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	
+	
 	<!-- Geographical types (Copied from KML 2.1) -->
 	
 	<xs:simpleType name="Anglepos90">
@@ -1133,13 +1182,56 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
+	
+	<xs:complexType name="Collection" >
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				Information regarding the collection of the statistic (meta data).
+				* for a single round: the round element specify the date of the round.
+				* for all rounds played on the same course: the golf-course element specify the golf course.
+				* for all rounds played between two dates: the date-from and date-to element specify the time frame.
+				* for any combination of the above constraints: elements can be combined.						
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="date-from" type="xs:date" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Start date for the collection of statistical calculation.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="date-to" type="xs:date" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					End date for the collection of statistical calculation.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="round" type="xs:date" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Date of a round of golf used for statistical calculation.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="golf-course" type="golfml:REF_GolfCourse" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Golf course used for statistical calculation.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<!-- may be we should allow another any element for extension of other statistics calculation:
+				<xs:element name="statistics-parameters" type="golfml:RoomForExtension">
+				<xs:annotation><xs:documentation xml:lang="en">
+				Any other statistical parameters.
+				</xs:documentation></xs:annotation>
+				</xs:element>	
+			-->
+		</xs:sequence>
+	</xs:complexType>
+
+	
 		
 	<xs:complexType name="Statistics">
 		<xs:annotation><xs:documentation xml:lang="en">
 				List of statistics computed over the same type.
 		</xs:documentation></xs:annotation>
 		<xs:sequence>
-			<xs:element name="collection" >
+			<xs:element name="collection" type="golfml:Collection">
 				<xs:annotation>
 					<xs:documentation xml:lang="en">
 						Information regarding the collection of the statistic.
@@ -1149,31 +1241,6 @@
 						* for any combination of the above constraints: elements can be combined.						
 					</xs:documentation>
 				</xs:annotation>
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element name="date-from" type="xs:date" minOccurs="0">
-							<xs:annotation><xs:documentation xml:lang="en">
-								Start date for the collection of statistical calculation.
-							</xs:documentation></xs:annotation>
-						</xs:element>
-						<xs:element name="date-to" type="xs:date" minOccurs="0">
-							<xs:annotation><xs:documentation xml:lang="en">
-								End date for the collection of statistical calculation.
-							</xs:documentation></xs:annotation>
-						</xs:element>
-						<xs:element name="round" type="xs:date" minOccurs="0">
-							<xs:annotation><xs:documentation xml:lang="en">
-								Date of a round of golf used for statistical calculation.
-							</xs:documentation></xs:annotation>
-						</xs:element>
-						<xs:element name="golf-course" type="golfml:ID_GolfCourse" minOccurs="0">
-							<xs:annotation><xs:documentation xml:lang="en">
-								Golf course used for statistical calculation.
-							</xs:documentation></xs:annotation>
-						</xs:element>
-						<!-- may be we should allow another any element for extension? -->
-					</xs:sequence>
-				</xs:complexType>
 			</xs:element>
 			<xs:element name="value" type="golfml:StatisticValue" maxOccurs="unbounded">
 				<xs:annotation>
@@ -1190,19 +1257,6 @@
 	
 	<!-- Country clubs -->
 	
-	<xs:simpleType name="CountryClubFacilitiesTypeEnum">
-		<xs:annotation><xs:documentation xml:lang="en">
-			List of values to document a point of interest on a golf course.
-		</xs:documentation></xs:annotation>
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="bathroom"/>
-			<xs:enumeration value="water"/>
-			<xs:enumeration value="bar"/>
-			<xs:enumeration value="other"/>
-		</xs:restriction>
-	</xs:simpleType>
-	
-	
 	<xs:simpleType name="AmenetyTypeEnum">
 		<xs:annotation>
 			<xs:documentation xml:lang="en">
@@ -1215,6 +1269,8 @@
 			<xs:enumeration value="food"/>
 			<xs:enumeration value="corporate"/>
 			<xs:enumeration value="golfers"/>
+			<xs:enumeration value="bathroom"/>
+			<xs:enumeration value="water"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -1334,25 +1390,48 @@
 				</xs:documentation></xs:annotation>
 			</xs:element>
 		</xs:sequence>
-		<xs:attribute name="date-from" type="xs:date"/>
-		<xs:attribute name="date-to" type="xs:date"/>
-		<xs:attribute name="name" type="xs:string" use="required"/> <!-- used in PK_Tees -->
-		<xs:attribute name="colour" type="xs:string"/>
-		<xs:attribute name="gender" type="golfml:GolfingGender"/>
-		<xs:attribute name="units" type="golfml:UnitOfLengthWithUnitsEnum"/>
+		<xs:attribute name="date-from" type="xs:date">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Start date of validity of tee set.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="date-to" type="xs:date">
+			<xs:annotation><xs:documentation xml:lang="en">
+				End date of validity of tee set.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="name" type="xs:string" use="required"> <!-- used in PK_Tees -->
+			<xs:annotation><xs:documentation xml:lang="en">
+				Name of the tee set. If no name exist, use color indicator.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="colour" type="xs:string">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Color of tee set.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="gender" type="golfml:GolfingGender">
+			<xs:annotation><xs:documentation xml:lang="en">
+				"Gender" of tee set for handicaping purpose.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 	
-	<xs:complexType name="ID_Tees">
+	<xs:group name="ID_Tees">
 		<xs:annotation><xs:documentation xml:lang="en">
 				List of elements to uniquely identify a set of tees from which a round of golf can be played.
+				Elements includes those necessary to identify a golf course, and a set of tees.
+				Used in foreign keys.
 		</xs:documentation></xs:annotation>
 		<xs:sequence>
-			<xs:element name="country-club.name" type="xs:string"/>
-			<xs:element name="country-club.address.country.iso3166" type="golfml:ISO3166CountryCodeEnum"/>
-			<xs:element name="country-club.address.postal-code" type="xs:string"/>
-			<xs:element name="country-club.golf-course.name" type="xs:string"/>
+			<xs:group ref="golfml:ID_GolfCourse"/>
 			<xs:element name="country-club.golf-course.tee-set.name" type="xs:string"/>
 		</xs:sequence>
+	</xs:group>
+	
+	<xs:complexType name="REF_Tees">
+		<xs:group ref="golfml:ID_Tees"/>
+		<xs:attributeGroup ref="golfml:RemoteGolfML"/>
 	</xs:complexType>
 
 	
@@ -1442,7 +1521,11 @@
 				</xs:documentation></xs:annotation>
 			</xs:element>
 		</xs:sequence>
-		<xs:attribute name="date" type="xs:date"/>
+		<xs:attribute name="date" type="xs:date">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Date hole placement is valid.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 	
 	 
@@ -1584,25 +1667,6 @@
 	
 
 	<!-- Miscellaneous -->
-	<xs:complexType name="Note">
-		<xs:annotation><xs:documentation xml:lang="en">
-			Generic type for addition of comments and/or rating.
-			The text of the note is localised to a xml language.
-		</xs:documentation></xs:annotation>
-		<xs:sequence>
-			<xs:element name="comment" type="golfml:LocalisedText" maxOccurs="unbounded">
-				<xs:annotation><xs:documentation xml:lang="en">
-					Localised, textual comment about the parent entitiy.
-				</xs:documentation></xs:annotation>
-			</xs:element>
-			<xs:element name="rating" type="golfml:Rating">
-				<xs:annotation><xs:documentation xml:lang="en">
-					Simple rating of the parent entitiy. Always optional.
-				</xs:documentation></xs:annotation>
-			</xs:element>
-		</xs:sequence>
-	</xs:complexType>
-	   
 	<xs:complexType name="Preference">
 		<xs:annotation><xs:documentation xml:lang="en">
 			Preference to store name/value pairs.
@@ -1647,6 +1711,7 @@
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
 				<xs:attribute name="wind" type="golfml:WindEnum"/>
+				<xs:attributeGroup ref="golfml:Other"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -1713,6 +1778,11 @@
 					Name of a tee set. Mandatory since it is used to uniquely identify this set of tees on a golf course.
 				</xs:documentation></xs:annotation>
 			</xs:element>
+			<xs:element name="architect" type="xs:string" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Architect(s) of the golf course.
+				</xs:documentation></xs:annotation>
+			</xs:element>
 			<xs:choice minOccurs="0" maxOccurs="unbounded">
 				<xs:element name="media" type="golfml:Media">
 					<xs:annotation><xs:documentation xml:lang="en">
@@ -1744,7 +1814,7 @@
 	</xs:complexType>
 
 
-	<xs:complexType name="ID_GolfCourse">
+	<xs:group name="ID_GolfCourse">
 		<xs:annotation><xs:documentation xml:lang="en">
 			Identifying elements for a golf course. Used in foreign keys.
 		</xs:documentation></xs:annotation>
@@ -1754,14 +1824,19 @@
 			<xs:element name="country-club.address.postal-code" type="xs:string"/>
 			<xs:element name="country-club.golf-course.name" type="xs:string"/>
 		</xs:sequence>
-	</xs:complexType>
+	</xs:group>
 	
+	<xs:complexType name="REF_GolfCourse">
+		<xs:group ref="golfml:ID_GolfCourse"/>
+		<xs:attributeGroup ref="golfml:RemoteGolfML"/>
+	</xs:complexType>
 	
 	<!-- Country Club -->
 	<xs:complexType name="Amenety">
 		<xs:annotation><xs:documentation xml:lang="en">
 			Amenety available at the country club premises.
 			Ameneties have a type attribute to help identify the amenety.
+			LATER: May be store the position (gps or other) inside the amenety.
 		</xs:documentation></xs:annotation> 	
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
@@ -1928,9 +2003,9 @@
 		</xs:attribute>
 	</xs:complexType>
 	
-	<xs:complexType name="ID_GolfClub">
+	<xs:group name="ID_GolfClub">
 		<xs:annotation><xs:documentation xml:lang="en">
-			Identifying elements for a golf club as used in foreign keys.
+			Identifying elements for a golf club. Used in foreign keys.
 		</xs:documentation></xs:annotation>  	
 		<xs:sequence>
 			<xs:element name="golf-club.manufacturer" type="xs:string"/>
@@ -1939,6 +2014,11 @@
 			<xs:element name="golf-club.number" type="xs:string"/>
 			<!-- xs:element name="serial" type="xs:string"/ -->
 		</xs:sequence>
+	</xs:group>
+	
+	<xs:complexType name="REF_GolfClub">
+		<xs:group ref="golfml:ID_GolfClub"/>
+		<xs:attributeGroup ref="golfml:RemoteGolfML"/>
 	</xs:complexType>
 	
 	<xs:complexType name="GolfBag">
@@ -1952,13 +2032,13 @@
 					Name of a golf bag used to identify it.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="bag-ref" type="golfml:ID_GolfBag" minOccurs="0">
+			<xs:element name="bag-ref" type="golfml:REF_GolfBag" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Reference to the golf bag used for the round from the pieces of equipement.
 				</xs:documentation></xs:annotation>
 			</xs:element>
 			<xs:choice minOccurs="1" maxOccurs="14">
-				<xs:element name="golf-club-ref" type="golfml:ID_GolfClub">
+				<xs:element name="golf-club-ref" type="golfml:REF_GolfClub">
 					<xs:annotation><xs:documentation xml:lang="en">
 						Reference to a golf club in the player's equipment list.
 					</xs:documentation></xs:annotation>
@@ -2115,14 +2195,9 @@
 					</xs:documentation></xs:annotation>
 				</xs:documentation></xs:annotation>				
 			</xs:element>
-			<xs:element name="comment" type="golfml:LocalisedText" minOccurs="0">
+			<xs:element name="comment" type="golfml:Note" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
-					Comment about the stroke.
-				</xs:documentation></xs:annotation>
-			</xs:element>
-			<xs:element name="rating" type="golfml:Rating" minOccurs="0">
-				<xs:annotation><xs:documentation xml:lang="en">
-					Rating of the stroke.
+					Comment about the stroke. Comment contains a rating attribute to rate the stroke (0-5).
 				</xs:documentation></xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -2290,7 +2365,7 @@
 			golf bag used by the player, and finally score.
 		</xs:documentation></xs:annotation>
 		<xs:sequence>
-			<xs:element name="tees" type="golfml:ID_Tees">
+			<xs:element name="tees" type="golfml:REF_Tees">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Reference to tee set used for the round of golf.
 				</xs:documentation></xs:annotation>
@@ -2305,7 +2380,7 @@
 					Denormalisation: Number of strokes received for the round.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="golf-bag-ref" type="golfml:ID_GolfBag" minOccurs="0">
+			<xs:element name="golf-bag-ref" type="golfml:REF_GolfBag" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Reference to the golf bag used for the round of golf.
 				</xs:documentation></xs:annotation>
@@ -2346,7 +2421,12 @@
 		</xs:documentation></xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
-				<xs:attribute name="updated" type="golfml:GolfGameTypeEnum"/>
+				<xs:attribute name="type" type="golfml:GolfGameTypeEnum">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Type of golf game played.
+					</xs:documentation></xs:annotation>
+				</xs:attribute>
+				<xs:attributeGroup ref="golfml:Other"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -2373,8 +2453,7 @@
 			Attributes type and team help identify players as partners or opponents and organise teams.
 		</xs:documentation></xs:annotation>
 		<xs:sequence>
-			<xs:element name="player.name" type="xs:string"/>
-			<xs:element name="player.date-of-birth" type="xs:date"/>
+			<xs:group ref="golfml:ID_Player"/>
 		</xs:sequence>
 		<xs:attribute name="type" type="golfml:PlayerSomeEnum">
 			<xs:annotation><xs:documentation xml:lang="en">
@@ -2384,9 +2463,11 @@
 		<xs:attribute name="team" type="xs:string">
 			<xs:annotation><xs:documentation xml:lang="en">
 				Name of the team this player was a member of. For example, if 4 players are playing 2 against 2, the foursome would be:
+			    {{{
 					<player-some type="parner" team="a"/>
 					<player-some type="competitor" team="b"/>
 					<player-some type="competitor" team="b"/>
+				}}}
 			</xs:documentation></xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
@@ -2449,6 +2530,25 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+	
+	<xs:complexType name="CountryClubChoice">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Choice to specify the main country club of a player. The player can either simply enter the name of the country-club or
+			a formal reference to a country-club in the golfml document.
+		</xs:documentation></xs:annotation>
+		<xs:choice>
+			<xs:element name="name" type="xs:string">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Name of the home country club of a player.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="country-club" type="golfml:REF_GolfCourse">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Reference to the home country club of the player in the golfml document, defined as a country-club element.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
 
 
 	<!-- =============================
@@ -2479,17 +2579,17 @@
 					Value to be used in the next round of golf.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="address" type="golfml:Address" minOccurs="0">
+			<xs:element name="address" type="golfml:Address" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Address of the player.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="contact" type="golfml:Contact" minOccurs="0">
+			<xs:element name="contact" type="golfml:Contact" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Contact information of the player.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="home-country-club" type="xs:string" minOccurs="0">
+			<xs:element name="home-country-club" type="golfml:CountryClubChoice" minOccurs="0">
 				<!-- Should be a link to a valid golf course... (may be later?) -->
 				<xs:annotation><xs:documentation xml:lang="en">
 					Main country club of the player.
@@ -2538,25 +2638,34 @@
 		</xs:attribute>
 	</xs:complexType>
 	
-	<xs:complexType name="ID_Player">
+	<xs:group name="ID_Player">
 		<xs:annotation><xs:documentation xml:lang="en">
-			Identifying elements for a player, used in foreign keys.
+			Identifying elements for a player. Used in foreign keys.
 		</xs:documentation></xs:annotation>
 		<xs:sequence>
 			<xs:element name="player.name" type="xs:string"/>
 			<xs:element name="player.date-of-birth" type="xs:date"/>
 		</xs:sequence>
+	</xs:group>
+	
+	<xs:complexType name="REF_Player">
+		<xs:group ref="golfml:ID_Player"/>
+		<xs:attributeGroup ref="golfml:RemoteGolfML"/>
 	</xs:complexType>
 	
-	<xs:complexType name="ID_GolfBag">
+	<xs:group name="ID_GolfBag">
 		<xs:annotation><xs:documentation xml:lang="en">
-			Identifying elements for a golf bag, used in foreign keys.
+			Identifying elements for a golf bag. Used in foreign keys.
 		</xs:documentation></xs:annotation>
 		<xs:sequence>
-			<xs:element name="player.name" type="xs:string"/>
-			<xs:element name="player.date-of-birth" type="xs:date"/>
+			<xs:group ref="golfml:ID_Player"/>
 			<xs:element name="player.golf-bag.name" type="xs:string"/>
 		</xs:sequence>
+	</xs:group>
+	
+	<xs:complexType name="REF_GolfBag">
+		<xs:group ref="golfml:ID_GolfBag"/>
+		<xs:attributeGroup ref="golfml:RemoteGolfML"/>
 	</xs:complexType>
 	
 
@@ -2573,9 +2682,11 @@
 			A golfml element can contain any number of the following elements:
 			* country-club: To describe a country club, golf course, tee length...
 			* player: To store a player's golf carrier: Scorecards, rounds played, statistics...
-			* application: To store  application specific items not relevant to country clubs or players such
-						 as application preferences, etc.
+			* application: To store  application specific items not relevant to country clubs or players such as application preferences, etc.
 			* version: Any comment or note about the version of the golfml document.
+			Golfml main element also contains several primary keys for cross-reference of elements
+			inside the document, and one unique key to garantee the unicity of one element (application)
+			accross golfml document instances.
 		</xs:documentation></xs:annotation>
 		<xs:complexType>
 			<xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -2726,9 +2837,12 @@
 	   	</xs:keyref>
 	   	
 	   	<xs:keyref refer="golfml:PK_GolfClub" name="FK_StrokeGolfClub">
-	   		<!-- should point to golf-club-ref in golf-bag used for round rather than equipment-list but too difficult
-	   			 to manage because it requires the presence of a golf-bag-ref in a round if stroke details are recorded.
-	   		  -->
+	   		<xs:annotation><xs:documentation xml:lang="en">
+	   			Reference to a golf club used for a stroke.
+	   			Currently, the reference points to a golf club owned by the player.
+	   			Formally, the golf club should point an item in the golf bag used for the round of golf.
+	   			We do not enforce this relationship to allow for practice rounds and more flexibility.
+	   		</xs:documentation></xs:annotation>
 			<xs:selector xpath="player/scorecard/score/hole/stroke/golf-club"/>
 			<xs:field xpath="golf-club.manufacturer"/>
 			<xs:field xpath="golf-club.model"/>
