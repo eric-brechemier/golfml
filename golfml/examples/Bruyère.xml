@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="../stylesheets/simple-score.xsl"?>
 <golfml xmlns="http://code.google.com/p/golfml"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://code.google.com/p/golfml file:/Users/pierre/Developer/iGolf/golfml/schemas/golfml1.xsd"
+    xsi:schemaLocation="http://code.google.com/p/golfml ../schemas/golfml.xsd"
     version="0.9">
     <country-club>
         <name>Golf La Bruyère</name>
@@ -930,7 +930,7 @@
 					</placemarks>
 				</hole>
 			</holes>
-            <tee-set name="Forward" color="blue" gender="gentlemen">
+            <tee-set name="Forward" colour="blue" gender="gentlemen">
                 <qualification>
                     <qualification-usga>
                         <rating>72.0</rating>
@@ -1032,16 +1032,16 @@
         </golf-course>
     </country-club>
     
-    <player gender="gentlemen">
-        <name>Pierre Mareschal</name>
-        <date-of-birth>1963-10-08</date-of-birth>
+    <player gender="male">
+        <name>Good Golfer</name>
+        <date-of-birth>1963-01-01</date-of-birth>
         <current-handicap handicap-system="EGA">28.6</current-handicap>
         <address>
             <country code="BE">Belgique</country>
-            <postal-code>7090</postal-code>
+            <postal-code>1234</postal-code>
         </address>
         <contact type="mobile">
-            <phone>32-477523235</phone>
+            <phone>32-1234567890</phone>
             <email>pierre.mareschal@gmail.com</email>
         </contact>
     	
@@ -1177,8 +1177,7 @@
     	</equipment-list>
 
 		<golf-bag>
-			<name>Standard</name>
-					
+			<name>Standard</name>					
 			<golf-club-ref>
 				<golf-club.manufacturer>Ping</golf-club.manufacturer>
 				<golf-club.model>G2</golf-club.model>
@@ -1277,7 +1276,7 @@
 		</golf-bag>
     	
     	<round>
-            <weather wind="Calm">Chilly but no rain</weather>
+            <weather wind="calm">Chilly but no rain</weather>
             <date>2009-08-20T08:13:51.0Z</date>
             <scorecard>
                 <tees>
@@ -1298,24 +1297,24 @@
             	</golf-bag-ref>
 
             	<score>
-                    <hole number="1"><strokes>5</strokes><putts>2</putts></hole>
+                    <hole number="1"><strokes>7</strokes><putts>2</putts></hole>
                     <hole number="2"><strokes>5</strokes><putts>2</putts></hole>
-                    <hole number="3"><strokes>5</strokes><putts>2</putts></hole>
-                    <hole number="4"><strokes>5</strokes><putts>2</putts></hole>
-                    <hole number="5"><strokes>5</strokes><putts>2</putts></hole>
+                    <hole number="3"><strokes>3</strokes><putts>1</putts></hole>
+                    <hole number="4"><strokes>6</strokes><putts>2</putts></hole>
+                    <hole number="5"><strokes>7</strokes><putts>3</putts></hole>
                     <hole number="6"><strokes>5</strokes><putts>2</putts></hole>
-                    <hole number="7"><strokes>5</strokes><putts>2</putts></hole>
-                    <hole number="8"><strokes>5</strokes><putts>2</putts></hole>
-                    <hole number="9"><strokes>5</strokes><putts>2</putts></hole>
-                    <hole number="10"><strokes>5</strokes><putts>2</putts></hole>
-                    <hole number="11"><strokes>5</strokes><putts>2</putts></hole>
-                    <hole number="12"><strokes>5</strokes><putts>2</putts></hole>
+                    <hole number="7"><strokes>6</strokes><putts>2</putts></hole>
+                    <hole number="8"><strokes>7</strokes><putts>3</putts></hole>
+                    <hole number="9"><strokes>4</strokes><putts>2</putts></hole>
+                    <hole number="10"><strokes>8</strokes><putts>2</putts></hole>
+                    <hole number="11"><strokes>5</strokes><putts>1</putts></hole>
+                    <hole number="12"><strokes>4</strokes><putts>2</putts></hole>
                     <hole number="13"><strokes>5</strokes><putts>2</putts></hole>
-                    <hole number="14"><strokes>5</strokes><putts>2</putts></hole>
-                    <hole number="15"><strokes>5</strokes><putts>2</putts></hole>
-                    <hole number="16"><strokes>5</strokes><putts>2</putts></hole>
-                    <hole number="17"><strokes>5</strokes><putts>2</putts></hole>
-                    <hole number="18"><strokes>5</strokes><putts>2</putts></hole>
+                    <hole number="14"><strokes>6</strokes><putts>1</putts></hole>
+                    <hole number="15"><strokes>4</strokes><putts>2</putts></hole>
+                    <hole number="16"><strokes>4</strokes><putts>2</putts></hole>
+                    <hole number="17"><strokes>7</strokes><putts>2</putts></hole>
+                    <hole number="18"><strokes>5</strokes><putts>3</putts></hole>
                 </score>
             </scorecard>
         </round>

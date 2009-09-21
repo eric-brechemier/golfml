@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="../stylesheets/static-course.xsl"?>
 <golfml xmlns="http://code.google.com/p/golfml"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://code.google.com/p/golfml file:/Users/pierre/Developer/iGolf/golfml/schemas/golfml1.xsd"
+    xsi:schemaLocation="http://code.google.com/p/golfml ../schemas/golfml.xsd"
     version="0.9">
     <country-club>
         <name>Golf De Dieppe-Pourville</name>
@@ -146,7 +146,7 @@
         		</hole>
         	</holes>
 
-        	<tee-set date-from="2008-01-01" name="Noirs" color="black" gender="gentlemen">
+        	<tee-set date-from="2008-01-01" name="Noirs" colour="black" gender="gentlemen">
                 <qualification>
                     <qualification-usga>
                         <rating>71.8</rating>
@@ -155,8 +155,8 @@
                 </qualification>
                 <tee number="1">
                     <par>4</par>
-                    <length>358</length>
                     <handicap-stroke>15</handicap-stroke>
+                	<length>358</length>
                 </tee>
                 <tee number="2">
                     <par>3</par>
@@ -245,7 +245,7 @@
                     <length>309</length>
                 </tee>
             </tee-set>
-            <tee-set date-from="2008-01-01" name="Blancs" color="white" gender="gentlemen">
+            <tee-set date-from="2008-01-01" name="Blancs" colour="white" gender="gentlemen">
                 <qualification>
                     <qualification-usga>
                         <rating>71.2</rating>
@@ -343,7 +343,7 @@
                     <length>308</length>
                 </tee>
             </tee-set>
-            <tee-set name="Jaunes" color="yellow" gender="gentlemen">
+            <tee-set name="Jaunes" colour="yellow" gender="gentlemen">
                 <qualification>
                     <qualification-usga>
                         <rating>70.0</rating>
@@ -441,7 +441,7 @@
                     <length>300</length>
                 </tee>
             </tee-set>
-            <tee-set name="Bleus" color="blue" gender="women">
+            <tee-set name="Bleus" colour="blue" gender="ladies">
                 <qualification>
                     <qualification-usga>
                         <rating>72.5</rating>
@@ -539,7 +539,7 @@
                     <length>264</length>
                 </tee>
             </tee-set>
-            <tee-set name="Rouges" color="red" gender="women">
+            <tee-set name="Rouges" colour="red" gender="ladies">
                 <qualification>
                     <qualification-usga>
                         <rating>71.1</rating>

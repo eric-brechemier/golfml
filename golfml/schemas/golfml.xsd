@@ -13,17 +13,6 @@
 		XML Schema definition of a valid Golf Markup Language document.
 		
 
-	TABLE OF CONTENTS
-	
-		1. TYPES
-			1.1. Units
-			1.2. Base Types
-
-		2. STRUCTURES
-			2.1. Structure Types
-			2.2. Base Element
-		
-	   
 	HISTORY
 	   
 		Version 0.9: AUG-2009: Initial version. Work in progress.
@@ -43,25 +32,36 @@
 		- 
 		
 		2. Naming conventions
-		Types are CamelCase.
-		Enumeration and list types ends with Enum.
-		Relational keys are prefixed with PK_ and FK_, identifier are prefixed with ID_
+
+		Type names are CamelCase: Example: GolfCourse.
 		
+		Element names are dash separated words. Example: golf-course.
+		
+		Enumeration and list types ends with Enum.
+		
+		Relational keys are prefixed with PK_ and FK_, identifier groups are prefixed ID_ and identifier elements with REF_
+		
+
 		3. Rooms for alternatives
+		
 		The following hooks are provided to plug in alternative methods of storing information.
 		- Positions
 		A position is a point on a golf course. golfml offers the GPS localisation of the point but alternative scheme can be used.
 		For instance, some systems use a local grid map and store (x,y) coordinates to locate point of interest.
+
 		- Course qualification
 		A course qualification is a measure of the complexity of a course. The most common system use a course index value and a slope value.
 		We provided room for alternate systems.
+		
 		- Hole placement
 		A hole placement is the position of the hole on the green. Official tour use "pin sheet" to locate hole using "paces"
 		from the edge of the green.
 		We allow for alternate system here as well. Some golf courses use simpler horizontal, vertical or grid division of the green
 		and references to where the hole is located using those grids.
+		
 		- Applications
 		Any application that uses golfml as a data foirmat can use the application element to store application specific information and data.
+		
 		- Lists of values
 		When a fixed enumeration is requested, there is always a special value "other"
 		and either a "other" attribute or element to specify alternate values.
@@ -99,11 +99,12 @@
 			different unit systems for the same object.
 			
 			Example:
-
+{{{
 			<tee number="18">
 				<length units="meters">417</length>
 				<length units="yards">456</length>
 			</tee>
+}}}
 		</xs:documentation></xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="metric"/>
@@ -779,7 +780,7 @@
 		</xs:documentation></xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="xs:double">
-				<xs:attribute name="mode" type="golfml:AltitudeModeEnum" use="required"/>
+				<xs:attribute name="mode" type="golfml:AltitudeModeEnum" use="optional" default="absolute"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -1091,7 +1092,7 @@
 			Type to specify the player handicap (maximum of one digit after the decimal period).
 		</xs:documentation></xs:annotation>
 		<xs:restriction base="xs:float">
-			<xs:pattern value="^[-+]?[0-9]\d{0,2}(\.\d{1,1})?$"></xs:pattern>
+			<xs:pattern value="[-+]?[0-9]{0,2}(\.[0-9]{1,1})?"></xs:pattern>
 		</xs:restriction>
 	</xs:simpleType>
 	

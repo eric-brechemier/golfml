@@ -2,7 +2,7 @@
 <golfml xmlns="http://code.google.com/p/golfml"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:g="http://code.google.com/p/golfml"
-	xsi:schemaLocation="http://code.google.com/p/golfml file:/Users/pierre/Developer/iGolf/golfml/schemas/golfml1.xsd"
+	xsi:schemaLocation="http://code.google.com/p/golfml ../schemas/golfml.xsd"
 	version="0.9">
 	<country-club>
 		<name>Golf du Château de la Tournette</name>
@@ -199,16 +199,16 @@
 					<length units="yards">369</length>
 				</tee>
 				<tee number="11">
+					<par>4</par>
 					<handicap-stroke>8</handicap-stroke>
 					<length units="meters">367</length>
 					<length units="yards">401</length>
-					<par>4</par>
 				</tee>
 				<tee number="12">
+					<par>5</par>
 					<handicap-stroke>14</handicap-stroke>
 					<length units="meters">500</length>
 					<length units="yards">547</length>
-					<par>5</par>
 				</tee>
 				<tee number="13">
 					<par>3</par>
