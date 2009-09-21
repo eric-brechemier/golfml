@@ -38,8 +38,10 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-    	|| other ||  				Qualifies the content of the Any element.			 || xs:string || optional ||  ||  || unqualified ||
+|| other ||  				Qualifies the content of the Any element.			 || xs:string || optional ||  ||  || unqualified ||
 
+
+----
 
 ===  Local Usage ===
 

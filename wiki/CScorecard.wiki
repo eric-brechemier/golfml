@@ -45,9 +45,8 @@ anyType
 || [CRoundSummary summary] ||  Denormalisation: Basic statistics for the round of golf || [CRoundSummary golfml:RoundSummary] ||
 || [CREF_Tees tees] ||  					Reference to tee set used for the round of golf.				 || [CREF_Tees golfml:REF_Tees] ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

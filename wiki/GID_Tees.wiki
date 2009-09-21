@@ -33,9 +33,8 @@
 || country-club.golf-course.tee-set.name ||   || xs:string ||
 || country-club.name ||   || xs:string ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

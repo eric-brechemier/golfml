@@ -41,9 +41,8 @@ anyType
 || fairway ||  					Fairway hit.				 || xs:boolean ||
 || green-in-regulation ||  					Green reached in regulation.				 || xs:boolean ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

@@ -40,19 +40,18 @@ anyType
 || [CPositionGPS position-gps] ||  					GPS coordinate of a point.				 || [CPositionGPS golfml:PositionGPS] ||
 || [CRoomForExtension position-other] ||  					Coordinate of a point in an arbitraty unit system.				 || [CRoomForExtension golfml:RoomForExtension] ||
 
-    	
-----
-  	
 
 ===  Sub Types ===
 {{{
-[CPosition Position] (restriction )
-    |
-    +--[CPositionWithSequence PositionWithSequence] (extension )
-}}}
+[CPosition Position] (restriction)
+  |  
+  +--[CPositionWithSequence PositionWithSequence] (extension)
 
+}}}
 ----
     
+
+----
 
 ===  Local Usage ===
 

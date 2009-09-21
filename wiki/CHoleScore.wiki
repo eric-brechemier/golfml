@@ -36,7 +36,7 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-    	|| number ||  				Order number of hole.			 || [SOneToEighteen golfml:OneToEighteen] || optional ||  ||  || unqualified ||
+|| number ||  				Order number of hole.			 || [SOneToEighteen golfml:OneToEighteen] || optional ||  ||  || unqualified ||
 
 === Nested Element Summary ===
 
@@ -49,9 +49,8 @@ anyType
 || [CStrokeDetail stroke] ||  					Detail of each stroke.				 || [CStrokeDetail golfml:StrokeDetail] ||
 || strokes ||  					Total number of strokes for hole, including penalties.				 || xs:positiveInteger ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

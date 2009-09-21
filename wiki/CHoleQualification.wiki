@@ -39,9 +39,8 @@ anyType
 || [CRoomForExtension qualification-other] ||  						Qualify a golf course played from a set of tees according to a non-USGA golfing authority.					 || [CRoomForExtension golfml:RoomForExtension] ||
 || [CHoleQualificationUSGA qualification-usga] ||  						Qualify a golf course played from a set of tees according to the USGA rules.					 || [CHoleQualificationUSGA golfml:HoleQualificationUSGA] ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

@@ -39,9 +39,8 @@ anyType
 || [SCourseRating rating] ||  					Course rating of a set of tees according to USGA specifications.				 || [SCourseRating golfml:CourseRating] ||
 || [SCourseSlope slope] ||  					Slope of a set of tees according to USGA specifications.				 || [SCourseSlope golfml:CourseSlope] ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

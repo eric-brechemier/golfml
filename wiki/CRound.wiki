@@ -45,9 +45,8 @@ anyType
 || [CRoomForExtension wager] ||  					Information about the wagers during the round of golf.				 || [CRoomForExtension golfml:RoomForExtension] ||
 || [CWeather weather] ||  					Weather information for the round of golf.				 || [CWeather golfml:Weather] ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

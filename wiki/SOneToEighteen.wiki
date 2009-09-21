@@ -32,6 +32,8 @@ positiveInteger
 
   	
 
+----
+
 ===  Local Usage ===
 
     	[CHole Hole], [CHolePlacementWithDistances HolePlacementWithDistances], [CHoleScore HoleScore], [CTee Tee]

@@ -20,8 +20,10 @@
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-    	|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
+|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
 
+
+----
 
 ===  Local Usage ===
 

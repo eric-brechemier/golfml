@@ -28,9 +28,8 @@
 || player.date-of-birth ||   || xs:date ||
 || player.name ||   || xs:string ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

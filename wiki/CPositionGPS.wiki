@@ -40,9 +40,8 @@ anyType
 || [SAngle90 lat] ||  					Latitude of the GPS position expressed as a float value between -90° (South Pole) to +90° (North Pole).				 || [SAngle90 golfml:Angle90] ||
 || [SAngle180 lon] ||  					Longitude in the GPS position expressed as a float value between -180° for longitude West of Greenwich					to +180° for longitude East of Greenwich.				 || [SAngle180 golfml:Angle180] ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

@@ -44,9 +44,8 @@ anyType
 || region ||  Region of an address || xs:string ||
 || street ||  					Street name and number of address.				 || xs:string ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

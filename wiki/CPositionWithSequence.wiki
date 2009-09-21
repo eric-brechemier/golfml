@@ -38,7 +38,7 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-    	|| number ||   || xs:nonNegativeInteger || required ||  ||  || unqualified ||
+|| number ||   || xs:nonNegativeInteger || required ||  ||  || unqualified ||
 
 === Nested Element Summary ===
 
@@ -46,9 +46,8 @@ anyType
 || [CPositionGPS position-gps] ||  					GPS coordinate of a point.				 || [CPositionGPS golfml:PositionGPS] ||
 || [CRoomForExtension position-other] ||  					Coordinate of a point in an arbitraty unit system.				 || [CRoomForExtension golfml:RoomForExtension] ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

@@ -32,6 +32,8 @@ string
 
   	
 
+----
+
 ===  Local Usage ===
 
     	[CGolfClub GolfClub], [CShaft Shaft]

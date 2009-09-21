@@ -39,9 +39,8 @@ anyType
 || [CEquipment equipment] ||  					Piece of golfing equipment owned by a player.				 || [CEquipment golfml:Equipment] ||
 || [CGolfClub golf-club] ||  					Golf club owned by a player.				 || [CGolfClub golfml:GolfClub] ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

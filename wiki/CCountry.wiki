@@ -37,8 +37,10 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-    	|| code ||   || [SISO3166CountryCodeEnum golfml:ISO3166CountryCodeEnum] || required ||  ||  || unqualified ||
+|| code ||   || [SISO3166CountryCodeEnum golfml:ISO3166CountryCodeEnum] || required ||  ||  || unqualified ||
 
+
+----
 
 ===  Local Usage ===
 

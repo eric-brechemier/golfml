@@ -37,16 +37,15 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-    	|| rating ||  Simple rating of the parent entitiy || [SRating golfml:Rating] || optional ||  ||  || unqualified ||
+|| rating ||  Simple rating of the parent entitiy || [SRating golfml:Rating] || optional ||  ||  || unqualified ||
 
 === Nested Element Summary ===
 
 || Name || Description || Type ||
 || [CLocalisedText comment] ||  					Localised, textual comment about the parent entitiy.				 || [CLocalisedText golfml:LocalisedText] ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

@@ -32,9 +32,8 @@
 || content ||  Base64-coded content of the media || xs:base64Binary ||
 || url ||  					Location of the media.				 || xs:anyURI ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

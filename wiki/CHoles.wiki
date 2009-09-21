@@ -38,9 +38,8 @@ anyType
 || Name || Description || Type ||
 || [CHole hole] ||  					Collection of 1 to 18 holes of golf.				 || [CHole golfml:Hole] ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

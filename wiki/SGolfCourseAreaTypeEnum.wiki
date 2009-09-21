@@ -32,6 +32,8 @@ string
 
   	
 
+----
+
 ===  Local Usage ===
 
     	[CAreaOfInterest AreaOfInterest], [CPointOfInterest PointOfInterest], [CStrokeDetail StrokeDetail]

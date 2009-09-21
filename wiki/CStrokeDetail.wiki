@@ -36,7 +36,7 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-    	|| drop ||  				Boolean flag indicating if the stroke was a drop.			 || xs:boolean || optional ||  ||  || unqualified ||
+|| drop ||  				Boolean flag indicating if the stroke was a drop.			 || xs:boolean || optional ||  ||  || unqualified ||
 || number ||  				Order number of the stroke playing the hole.			 || xs:nonNegativeInteger || optional ||  ||  || unqualified ||
 
 === Nested Element Summary ===
@@ -51,9 +51,8 @@ anyType
 || [CStrokePrecision precision] ||  					Information on the precision of the stroke regarding distance and direction.				 || [CStrokePrecision golfml:StrokePrecision] ||
 || time ||  					Time of stroke.				 || xs:dateTime ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

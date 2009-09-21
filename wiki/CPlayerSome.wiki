@@ -40,7 +40,7 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-    	|| team ||  Name of the team this player was a member of || xs:string || optional ||  ||  || unqualified ||
+|| team ||  Name of the team this player was a member of || xs:string || optional ||  ||  || unqualified ||
 || type ||  				Qualification of the player on the 2,3,4 some.			 || [SPlayerSomeEnum golfml:PlayerSomeEnum] || optional ||  ||  || unqualified ||
 
 === Nested Element Summary ===
@@ -49,9 +49,8 @@ anyType
 || player.date-of-birth ||   || xs:date ||
 || player.name ||   || xs:string ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

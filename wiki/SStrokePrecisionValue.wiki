@@ -33,6 +33,8 @@ integer
 
   	
 
+----
+
 ===  Local Usage ===
 
     	[CStrokePrecision StrokePrecision]

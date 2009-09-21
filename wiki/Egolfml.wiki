@@ -60,7 +60,7 @@
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-    	|| version ||  Version of the golfml language used || xs:string || optional ||  ||  || unqualified ||
+|| version ||  Version of the golfml language used || xs:string || optional ||  ||  || unqualified ||
 
 === Nested Element Summary ===
 
@@ -69,7 +69,3 @@
 || [CCountryClub country-club] ||  						Country club defined and used in this document.					 || [CCountryClub golfml:CountryClub] ||
 || [CPlayer player] ||  						Player  in this document.					 || [CPlayer golfml:Player] ||
 || [CVersion version] ||  						Room for version information about the file.					 || [CVersion golfml:Version] ||
-
-    	
-----
-  	

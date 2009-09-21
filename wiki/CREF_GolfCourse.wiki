@@ -21,13 +21,18 @@ anyType
     
 ===  Model ===
 
-	<...>
+	<...  `remote-golfml-url`=xs:anyURI>
             ( country-club.name, [SISO3166CountryCodeEnum country-club.address.country.iso3166], country-club.address.postal-code, country-club.golf-course.name   )
   </...>
 
 ----
 
-  	
+  	      
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| remote-golfml-url ||  				URL of remote GolfML document used for references.			 || xs:anyURI || optional ||  ||  || unqualified ||
+
 === Nested Element Summary ===
 
 || Name || Description || Type ||
@@ -36,9 +41,8 @@ anyType
 || country-club.golf-course.name ||   || xs:string ||
 || country-club.name ||   || xs:string ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

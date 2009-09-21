@@ -36,7 +36,7 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-    	|| number ||   || [SOneToEighteen golfml:OneToEighteen] || optional ||  ||  || unqualified ||
+|| number ||   || [SOneToEighteen golfml:OneToEighteen] || optional ||  ||  || unqualified ||
 
 === Nested Element Summary ===
 
@@ -45,9 +45,8 @@ anyType
 || [CLengthWithUnits length] ||  Length of the hole from the set of tees || [CLengthWithUnits golfml:LengthWithUnits] ||
 || [SPar par] ||  					Par score for the hole.				 || [SPar golfml:Par] ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

@@ -38,7 +38,7 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-    	|| number ||   || [SOneToEighteen golfml:OneToEighteen] || optional ||  ||  || unqualified ||
+|| number ||   || [SOneToEighteen golfml:OneToEighteen] || optional ||  ||  || unqualified ||
 
 === Nested Element Summary ===
 
@@ -47,9 +47,8 @@ anyType
 || [CLengthWithUnits green-width] ||  					Width of green.				 || [CLengthWithUnits golfml:LengthWithUnits] ||
 || [CHoleDistanceOnGreen hole-distance] ||  					Distance of hole from edge of green.				 || [CHoleDistanceOnGreen golfml:HoleDistanceOnGreen] ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

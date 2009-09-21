@@ -43,9 +43,8 @@ anyType
 || [CREF_GolfClub golf-club-ref] ||  						Reference to a golf club in the player's equipment list.					 || [CREF_GolfClub golfml:REF_GolfClub] ||
 || name ||  					Name of a golf bag used to identify it.				 || xs:string ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

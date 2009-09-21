@@ -44,9 +44,8 @@ anyType
 || [CTees tee-set] ||  					Description of a tee set for the golf course.				 || [CTees golfml:Tees] ||
 || [CVersion version] ||  					Records history of the golf course.				 || [CVersion golfml:Version] ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

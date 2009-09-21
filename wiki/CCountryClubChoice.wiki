@@ -40,9 +40,8 @@ anyType
 || [CREF_GolfCourse country-club] ||  					Reference to the home country club of the player in the golfml document, defined as a country-club element.				 || [CREF_GolfCourse golfml:REF_GolfCourse] ||
 || name ||  					Name of the home country club of a player.				 || xs:string ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

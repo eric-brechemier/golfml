@@ -45,9 +45,8 @@ anyType
 || [CREF_GolfCourse golf-course] ||  					Golf course used for statistical calculation.				 || [CREF_GolfCourse golfml:REF_GolfCourse] ||
 || round ||  					Date of a round of golf used for statistical calculation.				 || xs:date ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

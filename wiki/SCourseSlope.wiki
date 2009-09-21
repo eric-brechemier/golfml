@@ -32,6 +32,8 @@ positiveInteger
 
   	
 
+----
+
 ===  Local Usage ===
 
     	[CHoleQualificationUSGA HoleQualificationUSGA]

@@ -36,8 +36,10 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-    	|| mode ||   || [SAltitudeModeEnum golfml:AltitudeModeEnum] || required ||  ||  || unqualified ||
+|| mode ||   || [SAltitudeModeEnum golfml:AltitudeModeEnum] || required ||  ||  || unqualified ||
 
+
+----
 
 ===  Local Usage ===
 

@@ -38,7 +38,3 @@ anyType
 || Name || Description || Type ||
 || name ||  					Name of a preference value.				 || xs:string ||
 || value ||  					Value of a preference.				 || xs:string ||
-
-    	
-----
-  	

@@ -36,6 +36,8 @@ string
 
   	
 
+----
+
 ===  Local Usage ===
 
     	[CStatistics Statistics]

@@ -29,9 +29,8 @@
 || player.golf-bag.name ||   || xs:string ||
 || player.name ||   || xs:string ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

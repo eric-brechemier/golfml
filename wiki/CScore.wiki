@@ -38,9 +38,8 @@ anyType
 || Name || Description || Type ||
 || [CHoleScore hole] ||  					Detail of score for one hole.				 || [CHoleScore golfml:HoleScore] ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

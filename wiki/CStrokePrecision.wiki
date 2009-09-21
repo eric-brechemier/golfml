@@ -38,7 +38,7 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-    	|| type ||   || xs:string || optional ||  ||  || unqualified ||
+|| type ||   || xs:string || optional ||  ||  || unqualified ||
 
 === Nested Element Summary ===
 
@@ -46,9 +46,8 @@ anyType
 || [SStrokePrecisionValue front-back] ||  					Precision of a stroke relative to the distance.				 || [SStrokePrecisionValue golfml:StrokePrecisionValue] ||
 || [SStrokePrecisionValue left-right] ||  					Precision of a stroke relative to the direction.				 || [SStrokePrecisionValue golfml:StrokePrecisionValue] ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

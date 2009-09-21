@@ -39,7 +39,7 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-    	|| gender ||  Gender of the player || [SGender golfml:Gender] || required ||  ||  || unqualified ||
+|| gender ||  Gender of the player || [SGender golfml:Gender] || required ||  ||  || unqualified ||
 
 === Nested Element Summary ===
 
@@ -57,9 +57,8 @@ anyType
 || [CRound round] ||  					A round of golf played by the player.				 || [CRound golfml:Round] ||
 || [CStatistics statistics] ||  					A set of statistical data associated with the player.				 || [CStatistics golfml:Statistics] ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

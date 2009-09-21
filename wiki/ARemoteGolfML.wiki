@@ -1,0 +1,30 @@
+#summary Golf Markup Language Documentation: attributeGroup RemoteGolfML.
+
+== Name ==
+
+[ARemoteGolfML RemoteGolfML]
+----
+  	
+===  Properties ===
+
+  	This component is not nillable.
+----
+    
+===  Model ===
+
+	  `remote-golfml-url`=xs:anyURI
+
+----
+
+  	      
+=== Attributes ===
+
+|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| remote-golfml-url ||  				URL of remote GolfML document used for references.			 || xs:anyURI || optional ||  ||  || unqualified ||
+
+
+----
+
+===  Local Usage ===
+
+    	[CREF_GolfBag REF_GolfBag], [CREF_GolfClub REF_GolfClub], [CREF_GolfCourse REF_GolfCourse], [CREF_Player REF_Player], [CREF_Tees REF_Tees]

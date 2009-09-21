@@ -39,9 +39,8 @@ anyType
 || [CAreaOfInterest aoi] ||  					Area of interest.				 || [CAreaOfInterest golfml:AreaOfInterest] ||
 || [CPointOfInterest poi] ||  					Point of interest.				 || [CPointOfInterest golfml:PointOfInterest] ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

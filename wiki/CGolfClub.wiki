@@ -36,7 +36,7 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-    	|| type ||  				Type of golf club.			 || [SGolfClubTypeEnum golfml:GolfClubTypeEnum] || required ||  ||  || unqualified ||
+|| type ||  				Type of golf club.			 || [SGolfClubTypeEnum golfml:GolfClubTypeEnum] || required ||  ||  || unqualified ||
 
 === Nested Element Summary ===
 
@@ -52,9 +52,8 @@ anyType
 || [SSwingWeight swing-weight] ||  					Swing weight of the golf club.				 || [SSwingWeight golfml:SwingWeight] ||
 || weight ||  					Weight of the golf club.				 || xs:float ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

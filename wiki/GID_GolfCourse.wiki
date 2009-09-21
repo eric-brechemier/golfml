@@ -30,9 +30,8 @@
 || country-club.golf-course.name ||   || xs:string ||
 || country-club.name ||   || xs:string ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

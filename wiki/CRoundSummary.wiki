@@ -43,9 +43,8 @@ anyType
 || [CStatisticValue statistic] ||  					Denormalisation: Statistic for the round of golf.				 || [CStatisticValue golfml:StatisticValue] ||
 || strokes ||  					Denormalisation: Total number of strokes for the round of golf.				 || xs:positiveInteger ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

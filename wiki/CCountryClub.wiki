@@ -47,9 +47,8 @@ anyType
 || [CNote note] ||  					Note about the country club.				 || [CNote golfml:Note] ||
 || [CVersion version] ||   || [CVersion golfml:Version] ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

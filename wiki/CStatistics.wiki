@@ -36,7 +36,7 @@ anyType
 === Attributes ===
 
 || Name || Description || Type || Use || Default || Fixed || Form ||
-    	|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
+|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
 || type ||   || [SStatisticCollectionTypesEnum golfml:StatisticCollectionTypesEnum] || required ||  ||  || unqualified ||
 
 === Nested Element Summary ===
@@ -45,9 +45,8 @@ anyType
 || [CCollection collection] ||  Information regarding the collection of the statistic || [CCollection golfml:Collection] ||
 || [CStatisticValue value] ||  						Value of a statistic computed for the supplied collection type.					 || [CStatisticValue golfml:StatisticValue] ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 

@@ -30,9 +30,8 @@
 || golf-club.number ||   || xs:string ||
 || golf-club.submodel ||   || xs:string ||
 
-    	
+
 ----
-  	
 
 ===  Local Usage ===
 
