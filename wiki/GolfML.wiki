@@ -4,7 +4,7 @@ The Golf Markup Language aims at providing a vendor neutral data format for the 
 
 Data includes both
 
-# Golf course descriptions with name, address, contact information, location, available courses, tees, facilties, etc.
-# Player informations such as scores, statistics, and golfing equipment
+ # Golf course descriptions with name, address, contact information, location, available courses, tees, facilties, etc.
+ # Player informations such as scores, statistics, and golfing equipment
 
 [Welcome Start Here]
