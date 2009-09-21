@@ -41,6 +41,8 @@ anyType
 || [CRoomForExtension position-other] ||  					Coordinate of a point in an arbitraty unit system.				 || [CRoomForExtension golfml:RoomForExtension] ||
 
 
+----
+
 ===  Sub Types ===
 {{{
 [CPosition Position] (restriction)
