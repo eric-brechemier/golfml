@@ -46,8 +46,11 @@ anyType
 
 ===  Sub Types ===
 {{{
-[CPosition {http://code.google.com/p/golfml}Position] (restriction )  |    +--[CPositionWithSequence {http://code.google.com/p/golfml}PositionWithSequence] (extension )
+[CPosition Position] (restriction )
+    |
+    +--[CPositionWithSequence PositionWithSequence] (extension )
 }}}
+
 ----
     
 
