@@ -1,0 +1,17 @@
+#summary Generating Google Code Wiki-Style Documentation from XML Schema Annotation/Documentation
+
+= Introduction =
+
+xml2wiki is a XSL style sheet designed to build Google Code Wiki-style documentation directly from XML Schema annotation and documentation elements.
+
+
+= Details =
+
+The excellent xframe framework allows for automatic HTML documentation generation from XML Schema annotation and documentation elements.
+
+A debug option of xframe allow for generation of an intermediate XML documentation format which contains not only pre-formatted elements (such as source code) but also all structural information such as parent and children elements, attributes, types, etc.
+
+xml2wiki.xsl stylesheet available in the source code repository of golfml allows for generation of Google Code Wiki Style documentation from this XML documentation format.
+
+The xml2wiki.xsl stylesheet is the same style sheet as the one provided in xframe (called xml2html.xsl) but has been modified to generate wiki-style text rather than HTML.
+
