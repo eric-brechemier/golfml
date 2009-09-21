@@ -2,7 +2,8 @@
 
 = Introduction =
 
-This section introduce conventions use in the Golf Markup Language and its definition.
+This section introduce conventions used in the Golf Markup Language and its definition.
+
 
 = GolfML Document =
 
@@ -14,8 +15,10 @@ A good rule of thumb is to use elements for nouns and attributes for adjectives.
 == Naming Conventions ==
 
 === Elements and Types ===
+
 Elements and XML schema types should be defined using dash ('-') separated words.
 Element and type names can be any length. They should be meaningful.
+
 Example:
 
  * golf-courses
@@ -35,10 +38,22 @@ Example:
 
 Collections of elements of the same type can be organized into a parent element. The name of the parent element should be a plural form of the children elements.
 
+
 = GolfML Schema =
 
-Types are `CamelCase `.
+XML Schema types are `CamelCase `.
+Example:
+
+ * GolfCourse
+ * MediaType
 
 Enumeration and list types ends with Enum.
+Example:
 
-Relational keys are prefixed with PK_ and FK_, identifier are prefixed with ID_
+ * MediaTypeEnum
+
+Relational keys are prefixed with PK_ and FK_, identifier are prefixed with ID_ and references to identifiers are prefixed with REF_
+
+== Root Element ==
+
+There is a single, unique top-level element called [Egolfml golfml].
