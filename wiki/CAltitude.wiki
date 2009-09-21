@@ -3,44 +3,41 @@
 == Name ==
 
 [CAltitude Altitude]
-
 ===  Super Types ===
 {{{
 anyType
   |
   +--Altitude (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 				Altitude of a point. Use mode attribute to determine semantics.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	<...  `mode`=[SAltitudeModeEnum AltitudeModeEnum]>
           [Sdouble double]
   </...>
-
 ----
-
-  	      
+  		      
 === Attributes ===
 
-|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
 || mode ||   || [SAltitudeModeEnum golfml:AltitudeModeEnum] || required ||  ||  || unqualified ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[CPositionGPS PositionGPS]

@@ -3,46 +3,44 @@
 == Name ==
 
 [CPosition Position]
-
 ===  Super Types ===
 {{{
 anyType
   |
   +--Position (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 			Coordinate of a point. The coordinate of a point can be either a GPS coordinate or
 			coordinates in any specific system.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	<...>
             ( [CPositionGPS position-gps] | [CRoomForExtension position-other] ) 
   </...>
-
 ----
+  		
+=== Nested Elements ===
 
-  	
-=== Nested Element Summary ===
-
-|| Name || Description || Type ||
+|| *Name* || *Description* || *Type* ||
 || [CPositionGPS position-gps] ||  					GPS coordinate of a point.				 || [CPositionGPS golfml:PositionGPS] ||
 || [CRoomForExtension position-other] ||  					Coordinate of a point in an arbitraty unit system.				 || [CRoomForExtension golfml:RoomForExtension] ||
 
-
 ----
-
+  		
 ===  Sub Types ===
 {{{
 [CPosition Position] (restriction)
@@ -52,9 +50,5 @@ anyType
 }}}
 ----
     
-
-----
-
 ===  Local Usage ===
-
     	[CPointOfInterest PointOfInterest], [CPositionWithSequence PositionWithSequence], [CStrokeDetail StrokeDetail]

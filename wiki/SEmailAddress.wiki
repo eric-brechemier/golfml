@@ -3,27 +3,28 @@
 == Name ==
 
 [SEmailAddress EmailAddress]
-
 ===  Super Types ===
 {{{
 string
   |
   +--EmailAddress (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 				Valid email address.
 			
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	
@@ -32,7 +33,3 @@ string
 }}}
       
     
-
-----
-
-  	

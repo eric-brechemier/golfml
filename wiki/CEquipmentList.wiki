@@ -3,45 +3,42 @@
 == Name ==
 
 [CEquipmentList EquipmentList]
-
 ===  Super Types ===
 {{{
 anyType
   |
   +--EquipmentList (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 			List golf belongings of a player.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	<...>
             ( [CGolfClub golf-club] | [CEquipment equipment] )`*` 
   </...>
-
 ----
+  		
+=== Nested Elements ===
 
-  	
-=== Nested Element Summary ===
-
-|| Name || Description || Type ||
+|| *Name* || *Description* || *Type* ||
 || [CEquipment equipment] ||  					Piece of golfing equipment owned by a player.				 || [CEquipment golfml:Equipment] ||
 || [CGolfClub golf-club] ||  					Golf club owned by a player.				 || [CGolfClub golfml:GolfClub] ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[CPlayer Player]

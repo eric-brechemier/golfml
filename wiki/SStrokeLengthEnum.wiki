@@ -3,31 +3,28 @@
 == Name ==
 
 [SStrokeLengthEnum StrokeLengthEnum]
-
 ===  Super Types ===
 {{{
 string
   |
   +--StrokeLengthEnum (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 			List of values to specify stroke length in shot quality description.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	( 'short' | 'middle' | 'long' )
-
-----
-
-  	

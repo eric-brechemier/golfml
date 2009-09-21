@@ -3,35 +3,34 @@
 == Name ==
 
 [GID_GolfBag ID_GolfBag]
-
+----
+  	
 ===  Documentation ===
+
         
 			Identifying elements for a golf bag. Used in foreign keys.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	  ( ( player.name, player.date-of-birth ), player.golf-bag.name   )
-
 ----
+  		
+=== Nested Elements ===
 
-  	
-=== Nested Element Summary ===
-
-|| Name || Description || Type ||
+|| *Name* || *Description* || *Type* ||
 || player.date-of-birth ||   || xs:date ||
 || player.golf-bag.name ||   || xs:string ||
 || player.name ||   || xs:string ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[CREF_GolfBag REF_GolfBag]

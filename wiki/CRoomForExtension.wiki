@@ -3,27 +3,28 @@
 == Name ==
 
 [CRoomForExtension RoomForExtension]
-
 ===  Super Types ===
 {{{
 anyType
   |
   +--RoomForExtension (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 			Local type for 'any' content. Room for different applications and systems to store their private data.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	<...  `other`=xs:string>
@@ -31,18 +32,14 @@ anyType
     _any element from any namespace_
      )  
   </...>
-
 ----
-
-  	      
+  		      
 === Attributes ===
 
-|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
 || other ||  				Qualifies the content of the Any element.			 || xs:string || optional ||  ||  || unqualified ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[CHolePlacement HolePlacement], [CHoleQualification HoleQualification], [CPosition Position], [CRound Round]

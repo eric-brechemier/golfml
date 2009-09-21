@@ -3,45 +3,42 @@
 == Name ==
 
 [CPlacemarks Placemarks]
-
 ===  Super Types ===
 {{{
 anyType
   |
   +--Placemarks (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 			Placemarks is a collection of points and/or areas of interest.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	<...>
             ( [CPointOfInterest poi] | [CAreaOfInterest aoi] )`*` 
   </...>
-
 ----
+  		
+=== Nested Elements ===
 
-  	
-=== Nested Element Summary ===
-
-|| Name || Description || Type ||
+|| *Name* || *Description* || *Type* ||
 || [CAreaOfInterest aoi] ||  					Area of interest.				 || [CAreaOfInterest golfml:AreaOfInterest] ||
 || [CPointOfInterest poi] ||  					Point of interest.				 || [CPointOfInterest golfml:PointOfInterest] ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[CHole Hole]

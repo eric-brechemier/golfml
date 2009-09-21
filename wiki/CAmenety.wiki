@@ -3,47 +3,44 @@
 == Name ==
 
 [CAmenety Amenety]
-
 ===  Super Types ===
 {{{
 anyType
   |
   +--Amenety (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 			Amenety available at the country club premises.
 			Ameneties have a type attribute to help identify the amenety.
 			LATER: May be store the position (gps or other) inside the amenety.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	<...  `other`=xs:string  `type`=[SAmenetyTypeEnum AmenetyTypeEnum]>
           [Sstring string]
   </...>
-
 ----
-
-  	      
+  		      
 === Attributes ===
 
-|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
 || other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
 || type ||   || [SAmenetyTypeEnum golfml:AmenetyTypeEnum] || optional ||  ||  || unqualified ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[CCountryClub CountryClub]

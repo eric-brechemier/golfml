@@ -3,38 +3,31 @@
 == Name ==
 
 [SRating Rating]
-
 ===  Super Types ===
 {{{
 nonNegativeInteger
   |
   +--Rating (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 			The rating type defines a standard, generic, evaluation criteria for golfml entities.
 			Rating is limited to 0 to 5 "stars".
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	inclusive upper bound: 5
-
-----
-
-  	
-
-----
-
 ===  Local Usage ===
-
     	[CNote Note]

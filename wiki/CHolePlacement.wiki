@@ -3,45 +3,42 @@
 == Name ==
 
 [CHolePlacement HolePlacement]
-
 ===  Super Types ===
 {{{
 anyType
   |
   +--HolePlacement (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 				Description of the placement on the hole on the surface of the green.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	<...>
             ( [CHolePlacementWithDistances distances] | [CRoomForExtension coordinates] ) 
   </...>
-
 ----
+  		
+=== Nested Elements ===
 
-  	
-=== Nested Element Summary ===
-
-|| Name || Description || Type ||
+|| *Name* || *Description* || *Type* ||
 || [CRoomForExtension coordinates] ||  Description of the placement on the hole on the surface of the green with an alternate localisation system || [CRoomForExtension golfml:RoomForExtension] ||
 || [CHolePlacementWithDistances distances] ||  					Position of hole relative to the edges of the green.				 || [CHolePlacementWithDistances golfml:HolePlacementWithDistances] ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[CHolePlacements HolePlacements]

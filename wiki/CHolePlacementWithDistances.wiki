@@ -3,53 +3,50 @@
 == Name ==
 
 [CHolePlacementWithDistances HolePlacementWithDistances]
-
 ===  Super Types ===
 {{{
 anyType
   |
   +--HolePlacementWithDistances (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 				Description of the placement on the hole on the surface of the green in a precise,
 				tournament fashion, which includes length and width of the green and distance of
 				the hole from 2 edges of the green.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	<...  `number`=[SOneToEighteen OneToEighteen]>
             ( [CLengthWithUnits green-length], [CLengthWithUnits green-width], [CHoleDistanceOnGreen hole-distance]{2,2}   )
   </...>
-
 ----
-
-  	      
+  		      
 === Attributes ===
 
-|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
 || number ||   || [SOneToEighteen golfml:OneToEighteen] || optional ||  ||  || unqualified ||
 
-=== Nested Element Summary ===
+=== Nested Elements ===
 
-|| Name || Description || Type ||
+|| *Name* || *Description* || *Type* ||
 || [CLengthWithUnits green-length] ||  					Length of green.				 || [CLengthWithUnits golfml:LengthWithUnits] ||
 || [CLengthWithUnits green-width] ||  					Width of green.				 || [CLengthWithUnits golfml:LengthWithUnits] ||
 || [CHoleDistanceOnGreen hole-distance] ||  					Distance of hole from edge of green.				 || [CHoleDistanceOnGreen golfml:HoleDistanceOnGreen] ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[CHolePlacement HolePlacement]

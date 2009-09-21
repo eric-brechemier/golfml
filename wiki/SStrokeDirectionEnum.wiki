@@ -3,31 +3,28 @@
 == Name ==
 
 [SStrokeDirectionEnum StrokeDirectionEnum]
-
 ===  Super Types ===
 {{{
 string
   |
   +--StrokeDirectionEnum (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 			List of values to specify stroke direction in shot quality description.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	( 'left' | 'center' | 'right' )
-
-----
-
-  	

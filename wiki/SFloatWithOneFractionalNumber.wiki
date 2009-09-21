@@ -3,27 +3,28 @@
 == Name ==
 
 [SFloatWithOneFractionalNumber FloatWithOneFractionalNumber]
-
 ===  Super Types ===
 {{{
 float
   |
   +--FloatWithOneFractionalNumber (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 			Type to specify the player handicap (maximum of one digit after the decimal period).
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	
@@ -32,13 +33,5 @@ float
 }}}
       
     
-
-----
-
-  	
-
-----
-
 ===  Local Usage ===
-
     	[CPlayerHandicap PlayerHandicap]

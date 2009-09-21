@@ -3,36 +3,35 @@
 == Name ==
 
 [GID_GolfCourse ID_GolfCourse]
-
+----
+  	
 ===  Documentation ===
+
         
 			Identifying elements for a golf course. Used in foreign keys.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	  ( country-club.name, [SISO3166CountryCodeEnum country-club.address.country.iso3166], country-club.address.postal-code, country-club.golf-course.name   )
-
 ----
+  		
+=== Nested Elements ===
 
-  	
-=== Nested Element Summary ===
-
-|| Name || Description || Type ||
+|| *Name* || *Description* || *Type* ||
 || [SISO3166CountryCodeEnum country-club.address.country.iso3166] ||   || [SISO3166CountryCodeEnum golfml:ISO3166CountryCodeEnum] ||
 || country-club.address.postal-code ||   || xs:string ||
 || country-club.golf-course.name ||   || xs:string ||
 || country-club.name ||   || xs:string ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[GID_Tees ID_Tees], [CREF_GolfCourse REF_GolfCourse]

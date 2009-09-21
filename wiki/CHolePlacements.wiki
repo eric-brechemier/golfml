@@ -3,50 +3,47 @@
 == Name ==
 
 [CHolePlacements HolePlacements]
-
 ===  Super Types ===
 {{{
 anyType
   |
   +--HolePlacements (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 				Description of the placement on holes on greens.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	<...  `date`=xs:date>
             ( name, [CHolePlacement hole-placement]{1,18}   )
   </...>
-
 ----
-
-  	      
+  		      
 === Attributes ===
 
-|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
 || date ||  				Date hole placement is valid.			 || xs:date || optional ||  ||  || unqualified ||
 
-=== Nested Element Summary ===
+=== Nested Elements ===
 
-|| Name || Description || Type ||
+|| *Name* || *Description* || *Type* ||
 || [CHolePlacement hole-placement] ||  					Placement of a hole on a green.				 || [CHolePlacement golfml:HolePlacement] ||
 || name ||  					Identifying name for hole placement.				 || xs:string ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[CRound Round]

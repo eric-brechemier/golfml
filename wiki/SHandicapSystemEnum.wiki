@@ -3,17 +3,17 @@
 == Name ==
 
 [SHandicapSystemEnum HandicapSystemEnum]
-
 ===  Super Types ===
 {{{
 string
   |
   +--HandicapSystemEnum (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 			List of valid values for handicap method or systems.
 			
@@ -21,22 +21,15 @@ string
 			should ask the golfml design team to add their system in the list of handicaping system.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	( 'USGA' | 'EGA' | 'other' )
-
-----
-
-  	
-
-----
-
 ===  Local Usage ===
-
     	[CPlayerHandicap PlayerHandicap]

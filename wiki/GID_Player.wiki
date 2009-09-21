@@ -3,34 +3,33 @@
 == Name ==
 
 [GID_Player ID_Player]
-
+----
+  	
 ===  Documentation ===
+
         
 			Identifying elements for a player. Used in foreign keys.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	  ( player.name, player.date-of-birth   )
-
 ----
+  		
+=== Nested Elements ===
 
-  	
-=== Nested Element Summary ===
-
-|| Name || Description || Type ||
+|| *Name* || *Description* || *Type* ||
 || player.date-of-birth ||   || xs:date ||
 || player.name ||   || xs:string ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[GID_GolfBag ID_GolfBag], [CPlayerSome PlayerSome], [CREF_Player REF_Player]

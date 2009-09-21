@@ -3,27 +3,28 @@
 == Name ==
 
 [SSwingWeight SwingWeight]
-
 ===  Super Types ===
 {{{
 string
   |
   +--SwingWeight (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 				Swing weight of a club of golf.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	
@@ -32,13 +33,5 @@ string
 }}}
       
     
-
-----
-
-  	
-
-----
-
 ===  Local Usage ===
-
     	[CGolfClub GolfClub]

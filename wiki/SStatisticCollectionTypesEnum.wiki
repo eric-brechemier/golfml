@@ -3,17 +3,17 @@
 == Name ==
 
 [SStatisticCollectionTypesEnum StatisticCollectionTypesEnum]
-
 ===  Super Types ===
 {{{
 string
   |
   +--StatisticCollectionTypesEnum (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 				List of methods used to compute statistics. Statistics can be accumulated
 				* for a single round (example: greens-in-regulation, fairway-hits...)
@@ -22,22 +22,15 @@ string
 				* for any combination of the above constraints.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	( 'round' | 'course' | 'duration' | 'other' )
-
-----
-
-  	
-
-----
-
 ===  Local Usage ===
-
     	[CStatistics Statistics]

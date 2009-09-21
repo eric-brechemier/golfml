@@ -3,47 +3,44 @@
 == Name ==
 
 [CHoleStatistics HoleStatistics]
-
 ===  Super Types ===
 {{{
 anyType
   |
   +--HoleStatistics (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 			Type used to record basic hole statistics such as fairway hits and greens in regulation.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	<...>
             ( fairway, green-in-regulation, [CLengthWithUnits driving-distance], [CLengthWithUnits approach-to-hole]   )
   </...>
-
 ----
+  		
+=== Nested Elements ===
 
-  	
-=== Nested Element Summary ===
-
-|| Name || Description || Type ||
+|| *Name* || *Description* || *Type* ||
 || [CLengthWithUnits approach-to-hole] ||  Distance left to hole when ball landed on green || [CLengthWithUnits golfml:LengthWithUnits] ||
 || [CLengthWithUnits driving-distance] ||  					Driving distance.				 || [CLengthWithUnits golfml:LengthWithUnits] ||
 || fairway ||  					Fairway hit.				 || xs:boolean ||
 || green-in-regulation ||  					Green reached in regulation.				 || xs:boolean ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[CHoleScore HoleScore]

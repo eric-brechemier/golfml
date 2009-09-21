@@ -3,45 +3,42 @@
 == Name ==
 
 [CHoleQualificationUSGA HoleQualificationUSGA]
-
 ===  Super Types ===
 {{{
 anyType
   |
   +--HoleQualificationUSGA (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 				Qualify a golf course played from a set of tees according to the USGA rules.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	<...>
             ( [SCourseRating rating] ; [SCourseSlope slope] ) 
   </...>
-
 ----
+  		
+=== Nested Elements ===
 
-  	
-=== Nested Element Summary ===
-
-|| Name || Description || Type ||
+|| *Name* || *Description* || *Type* ||
 || [SCourseRating rating] ||  					Course rating of a set of tees according to USGA specifications.				 || [SCourseRating golfml:CourseRating] ||
 || [SCourseSlope slope] ||  					Slope of a set of tees according to USGA specifications.				 || [SCourseSlope golfml:CourseSlope] ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[CHoleQualification HoleQualification]

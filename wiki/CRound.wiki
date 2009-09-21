@@ -3,40 +3,39 @@
 == Name ==
 
 [CRound Round]
-
 ===  Super Types ===
 {{{
 anyType
   |
   +--Round (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 			Details about a round of golf: Location of the flags on greens (usually called pin sheet),
 			weather conditions, date of the round, opponenents and partners, and the scorecard.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	<...>
             ( [CHolePlacements hole-placement]?, [CWeather weather]?, [CFourSome foursome]?, [CGolfGame game]?, [CRoomForExtension wager]?, date, [CScorecard scorecard]   )
   </...>
-
 ----
+  		
+=== Nested Elements ===
 
-  	
-=== Nested Element Summary ===
-
-|| Name || Description || Type ||
+|| *Name* || *Description* || *Type* ||
 || date ||  					Date and time of the round.				 || xs:dateTime ||
 || [CFourSome foursome] ||  					Player information for the round of golf.				 || [CFourSome golfml:FourSome] ||
 || [CGolfGame game] ||  					Information about the game(s) played during the round of golf.				 || [CGolfGame golfml:GolfGame] ||
@@ -45,9 +44,7 @@ anyType
 || [CRoomForExtension wager] ||  					Information about the wagers during the round of golf.				 || [CRoomForExtension golfml:RoomForExtension] ||
 || [CWeather weather] ||  					Weather information for the round of golf.				 || [CWeather golfml:Weather] ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[CPlayer Player]

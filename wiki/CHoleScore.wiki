@@ -3,44 +3,43 @@
 == Name ==
 
 [CHoleScore HoleScore]
-
 ===  Super Types ===
 {{{
 anyType
   |
   +--HoleScore (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 			Records detailed hole score information.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	<...  `number`=[SOneToEighteen OneToEighteen]>
             ( strokes, points?, putts?, money?, [CPenalty penalties]?, [CStrokeDetail stroke]`*`, [CHoleStatistics statistics]?   )
   </...>
-
 ----
-
-  	      
+  		      
 === Attributes ===
 
-|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
 || number ||  				Order number of hole.			 || [SOneToEighteen golfml:OneToEighteen] || optional ||  ||  || unqualified ||
 
-=== Nested Element Summary ===
+=== Nested Elements ===
 
-|| Name || Description || Type ||
+|| *Name* || *Description* || *Type* ||
 || money ||  					Money earned or loss on hole in wagers.				 || xs:integer ||
 || [CPenalty penalties] ||  					Total number of penalty strokes.				 || [CPenalty golfml:Penalty] ||
 || points ||  					Total number of points for hole.				 || xs:nonNegativeInteger ||
@@ -49,9 +48,7 @@ anyType
 || [CStrokeDetail stroke] ||  					Detail of each stroke.				 || [CStrokeDetail golfml:StrokeDetail] ||
 || strokes ||  					Total number of strokes for hole, including penalties.				 || xs:positiveInteger ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[CScore Score]

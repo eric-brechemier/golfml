@@ -3,41 +3,40 @@
 == Name ==
 
 [CScorecard Scorecard]
-
 ===  Super Types ===
 {{{
 anyType
   |
   +--Scorecard (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 			A Scorecard contains scoring information for a round of golf: Tees used (reference to them),
 			handicap used by the player for this round and consecutive strokes allowed (depending on the tees rating and slope),
 			golf bag used by the player, and finally score.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	<...>
             ( [CREF_Tees tees], handicap?, handicap-strokes?, [CREF_GolfBag golf-bag-ref]?, [CRoundSummary summary]?, [CScore score]   )
   </...>
-
 ----
+  		
+=== Nested Elements ===
 
-  	
-=== Nested Element Summary ===
-
-|| Name || Description || Type ||
+|| *Name* || *Description* || *Type* ||
 || [CREF_GolfBag golf-bag-ref] ||  					Reference to the golf bag used for the round of golf.				 || [CREF_GolfBag golfml:REF_GolfBag] ||
 || handicap ||  					Handicap used for the round of golf.				 || xs:float ||
 || handicap-strokes ||  					Denormalisation: Number of strokes received for the round.				 || xs:integer ||
@@ -45,9 +44,7 @@ anyType
 || [CRoundSummary summary] ||  Denormalisation: Basic statistics for the round of golf || [CRoundSummary golfml:RoundSummary] ||
 || [CREF_Tees tees] ||  					Reference to tee set used for the round of golf.				 || [CREF_Tees golfml:REF_Tees] ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[CRound Round]

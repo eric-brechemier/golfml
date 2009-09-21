@@ -3,41 +3,40 @@
 == Name ==
 
 [CCountryClub CountryClub]
-
 ===  Super Types ===
 {{{
 anyType
   |
   +--CountryClub (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 			A country-club is a place where we can find one or more golf courses at the same location.
 			Examples are your municipal golf course, a 9 hole pitch and putt, a 36 or more hole golf courses,
 			golf resorts, etc.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	<...>
             ( name, [CAddress address], [CContact contact]`*`, [CAmenety amenety]`*`, [CNote note]`*`, [CMedia media]`*`, [CGolfCourse golf-course]+, [CVersion version]`*`   )
   </...>
-
 ----
+  		
+=== Nested Elements ===
 
-  	
-=== Nested Element Summary ===
-
-|| Name || Description || Type ||
+|| *Name* || *Description* || *Type* ||
 || [CAddress address] ||  					Address of the country club or golf course.				 || [CAddress golfml:Address] ||
 || [CAmenety amenety] ||  Amenety available at the contry club || [CAmenety golfml:Amenety] ||
 || [CContact contact] ||  Contact for the golf course || [CContact golfml:Contact] ||
@@ -47,9 +46,7 @@ anyType
 || [CNote note] ||  					Note about the country club.				 || [CNote golfml:Note] ||
 || [CVersion version] ||   || [CVersion golfml:Version] ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[Egolfml golfml]

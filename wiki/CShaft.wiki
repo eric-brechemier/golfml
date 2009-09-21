@@ -3,44 +3,43 @@
 == Name ==
 
 [CShaft Shaft]
-
 ===  Super Types ===
 {{{
 anyType
   |
   +--Shaft (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 			Descriptive elements for the shaft of a golf club.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	<...  `type`=[SGolfClubTypeEnum GolfClubTypeEnum]>
             ( manufacturer, model, submodel?, [CLengthWithUnits length]?, weight?, tip?   )
   </...>
-
 ----
-
-  	      
+  		      
 === Attributes ===
 
-|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
 || type ||  				Type of golf club for the shaft.			 || [SGolfClubTypeEnum golfml:GolfClubTypeEnum] || optional ||  ||  || unqualified ||
 
-=== Nested Element Summary ===
+=== Nested Elements ===
 
-|| Name || Description || Type ||
+|| *Name* || *Description* || *Type* ||
 || [CLengthWithUnits length] ||  					Length of a shaft.				 || [CLengthWithUnits golfml:LengthWithUnits] ||
 || manufacturer ||  					Manufacturer of a shaft.				 || xs:string ||
 || model ||  					Model of a shaft.				 || xs:string ||
@@ -48,9 +47,7 @@ anyType
 || tip ||  					Type of tip of the shaft.				 || xs:string ||
 || weight ||  					Weight of a shaft.				 || xs:float ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[CGolfClub GolfClub]

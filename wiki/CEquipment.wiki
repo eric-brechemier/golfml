@@ -3,55 +3,52 @@
 == Name ==
 
 [CEquipment Equipment]
-
 ===  Super Types ===
 {{{
 anyType
   |
   +--Equipment (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 			Descriptive elements for golf equipment. Golf clubs should be described using the GolfClub type.
 			Other pieces of golf equipment should use the Equipment type: Golf bags, ball, apparel, training aids...
 			A attribute named type help describe the equipment.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	<...  `type`=[SEquipmentTypeEnum EquipmentTypeEnum]>
             ( name, manufacturer, model, submodel?, serial?   )
   </...>
-
 ----
-
-  	      
+  		      
 === Attributes ===
 
-|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
 || type ||  				Type of piece of equipment to organise them in categories: Training devices, clubs, balls...			 || [SEquipmentTypeEnum golfml:EquipmentTypeEnum] || optional ||  ||  || unqualified ||
 
-=== Nested Element Summary ===
+=== Nested Elements ===
 
-|| Name || Description || Type ||
+|| *Name* || *Description* || *Type* ||
 || manufacturer ||  					Manufacturer of equipment.				 || xs:string ||
 || model ||  					Model of equipment.				 || xs:string ||
 || name ||  					Name or description of equipment.				 || xs:string ||
 || serial ||  					Serial number of equipment.				 || xs:string ||
 || submodel ||  					Submodel or type of equipment.				 || xs:string ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[CEquipmentList EquipmentList], [CGolfBag GolfBag]

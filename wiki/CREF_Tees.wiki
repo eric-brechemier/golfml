@@ -3,48 +3,43 @@
 == Name ==
 
 [CREF_Tees REF_Tees]
-
 ===  Super Types ===
 {{{
 anyType
   |
   +--REF_Tees (restriction)
 }}}
-----
     
 ----
+  	
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	<...  `remote-golfml-url`=xs:anyURI>
             ( ( country-club.name, [SISO3166CountryCodeEnum country-club.address.country.iso3166], country-club.address.postal-code, country-club.golf-course.name ), country-club.golf-course.tee-set.name   )
   </...>
-
 ----
-
-  	      
+  		      
 === Attributes ===
 
-|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
 || remote-golfml-url ||  				URL of remote GolfML document used for references.			 || xs:anyURI || optional ||  ||  || unqualified ||
 
-=== Nested Element Summary ===
+=== Nested Elements ===
 
-|| Name || Description || Type ||
+|| *Name* || *Description* || *Type* ||
 || [SISO3166CountryCodeEnum country-club.address.country.iso3166] ||   || [SISO3166CountryCodeEnum golfml:ISO3166CountryCodeEnum] ||
 || country-club.address.postal-code ||   || xs:string ||
 || country-club.golf-course.name ||   || xs:string ||
 || country-club.golf-course.tee-set.name ||   || xs:string ||
 || country-club.name ||   || xs:string ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[CScorecard Scorecard]

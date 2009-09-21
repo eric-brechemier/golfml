@@ -3,37 +3,30 @@
 == Name ==
 
 [SGolfClubTypeEnum GolfClubTypeEnum]
-
 ===  Super Types ===
 {{{
 string
   |
   +--GolfClubTypeEnum (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 				List of types of golf clubs.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	( 'wood' | 'iron' | 'wedge' | 'putter' | 'driver' | 'hybrid' | 'utility' | 'other' )
-
-----
-
-  	
-
-----
-
 ===  Local Usage ===
-
     	[CGolfClub GolfClub], [CShaft Shaft]

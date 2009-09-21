@@ -3,17 +3,17 @@
 == Name ==
 
 [SPhoneNumber PhoneNumber]
-
 ===  Super Types ===
 {{{
 string
   |
   +--PhoneNumber (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 				Full international telephone number is up to 15 digits long.
 				The country code is up to 3 digits long. The area code is
@@ -42,12 +42,13 @@ string
 				It should not start with a + sign and there should be no space to separate numbers.
 			
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	
@@ -56,13 +57,5 @@ string
 }}}
       
     
-
-----
-
-  	
-
-----
-
 ===  Local Usage ===
-
     	[CContact Contact]

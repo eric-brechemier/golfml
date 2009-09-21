@@ -3,8 +3,10 @@
 == Name ==
 
 [Egolfml golfml]
-
+----
+  	
 ===  Documentation ===
+
         
 			golfml is the main element of the language. It is the unique element exposed for reuse.
 			A golfml element can contain any number of the following elements:
@@ -12,8 +14,8 @@
 			* player: To store a player's golf carrier: Scorecards, rounds played, statistics...
 			* application: To store  application specific items not relevant to country clubs or players such as application preferences, etc.
 			* version: Any comment or note about the version of the golfml document.
-			Golfml main element also contains 4 primary keys for cross-reference of elements
-			inside the document, and one unique key to garantee the unicity of one element
+			Golfml main element also contains several primary keys for cross-reference of elements
+			inside the document, and one unique key to garantee the unicity of one element (application)
 			accross golfml document instances.
 		
 				Primary key to uniquely identify a country club world wide.
@@ -43,29 +45,31 @@
 	   			We do not enforce this relationship to allow for practice rounds and more flexibility.
 	   		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	<[Egolfml golfml]  `version`=xs:string>
             ( [CCountryClub country-club] | [CPlayer player] | [CApplication application] | [CVersion version] )`*` [Egolfml </golfml>]
-
 ----
-
-  	      
+  		      
 === Attributes ===
 
-|| Name || Description || Type || Use || Default || Fixed || Form ||
+|| *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
 || version ||  Version of the golfml language used || xs:string || optional ||  ||  || unqualified ||
 
-=== Nested Element Summary ===
+=== Nested Elements ===
 
-|| Name || Description || Type ||
+|| *Name* || *Description* || *Type* ||
 || [CApplication application] ||  						Room for non-golfml application storage.					 || [CApplication golfml:Application] ||
 || [CCountryClub country-club] ||  						Country club defined and used in this document.					 || [CCountryClub golfml:CountryClub] ||
 || [CPlayer player] ||  						Player  in this document.					 || [CPlayer golfml:Player] ||
 || [CVersion version] ||  						Room for version information about the file.					 || [CVersion golfml:Version] ||
+
+----
+  		

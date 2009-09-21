@@ -3,17 +3,17 @@
 == Name ==
 
 [CCollection Collection]
-
 ===  Super Types ===
 {{{
 anyType
   |
   +--Collection (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 				Information regarding the collection of the statistic (meta data).
 				* for a single round: the round element specify the date of the round.
@@ -22,32 +22,29 @@ anyType
 				* for any combination of the above constraints: elements can be combined.						
 			
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	<...>
             ( date-from?, date-to?, round?, [CREF_GolfCourse golf-course]?   )
   </...>
-
 ----
+  		
+=== Nested Elements ===
 
-  	
-=== Nested Element Summary ===
-
-|| Name || Description || Type ||
+|| *Name* || *Description* || *Type* ||
 || date-from ||  					Start date for the collection of statistical calculation.				 || xs:date ||
 || date-to ||  					End date for the collection of statistical calculation.				 || xs:date ||
 || [CREF_GolfCourse golf-course] ||  					Golf course used for statistical calculation.				 || [CREF_GolfCourse golfml:REF_GolfCourse] ||
 || round ||  					Date of a round of golf used for statistical calculation.				 || xs:date ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[CStatistics Statistics]

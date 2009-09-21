@@ -3,39 +3,38 @@
 == Name ==
 
 [CRoundSummary RoundSummary]
-
 ===  Super Types ===
 {{{
 anyType
   |
   +--RoundSummary (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 			Stores denormalized score for the round of golf.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	<...>
             ( strokes, points?, putts?, money?, [CPenalty penalties]?, [CStatisticValue statistic]`*`   )
   </...>
-
 ----
+  		
+=== Nested Elements ===
 
-  	
-=== Nested Element Summary ===
-
-|| Name || Description || Type ||
+|| *Name* || *Description* || *Type* ||
 || money ||  					Denormalisation: Total money earned or loss during the round of golf.				 || xs:nonNegativeInteger ||
 || [CPenalty penalties] ||  					Denormalisation: Total number of penalty strokes during the round of golf.				 || [CPenalty golfml:Penalty] ||
 || points ||  					Denormalisation: Total number of points for the round of golf.				 || xs:nonNegativeInteger ||
@@ -43,9 +42,7 @@ anyType
 || [CStatisticValue statistic] ||  					Denormalisation: Statistic for the round of golf.				 || [CStatisticValue golfml:StatisticValue] ||
 || strokes ||  					Denormalisation: Total number of strokes for the round of golf.				 || xs:positiveInteger ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[CScorecard Scorecard]

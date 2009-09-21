@@ -3,44 +3,41 @@
 == Name ==
 
 [CFourSome FourSome]
-
 ===  Super Types ===
 {{{
 anyType
   |
   +--FourSome (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 			A FourSome type is used to store up to three additional player names who play the same round of golf.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	<...>
             [CPlayerSome player-some]{0,3}  
   </...>
-
 ----
+  		
+=== Nested Elements ===
 
-  	
-=== Nested Element Summary ===
-
-|| Name || Description || Type ||
+|| *Name* || *Description* || *Type* ||
 || [CPlayerSome player-some] ||  											Qualification of the player on the 2,3,4 some.					 || [CPlayerSome golfml:PlayerSome] ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[CRound Round]

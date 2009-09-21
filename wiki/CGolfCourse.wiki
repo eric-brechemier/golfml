@@ -3,39 +3,38 @@
 == Name ==
 
 [CGolfCourse GolfCourse]
-
 ===  Super Types ===
 {{{
 anyType
   |
   +--GolfCourse (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 			Description of a course: Mmedia (photographs, videos, sketches...), notes, holes and tee-set.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	<...>
             ( name, architect?, ( [CMedia media] | [CNote note] )`*` , [CHoles holes]?, [CTees tee-set]+, [CVersion version]`*`   )
   </...>
-
 ----
+  		
+=== Nested Elements ===
 
-  	
-=== Nested Element Summary ===
-
-|| Name || Description || Type ||
+|| *Name* || *Description* || *Type* ||
 || architect ||  					Architect(s) of the golf course.				 || xs:string ||
 || [CHoles holes] ||  					Description of the individual holes.				 || [CHoles golfml:Holes] ||
 || [CMedia media] ||  						Medias associated with the golf course.					 || [CMedia golfml:Media] ||
@@ -44,9 +43,7 @@ anyType
 || [CTees tee-set] ||  					Description of a tee set for the golf course.				 || [CTees golfml:Tees] ||
 || [CVersion version] ||  					Records history of the golf course.				 || [CVersion golfml:Version] ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[CCountryClub CountryClub]

@@ -3,31 +3,28 @@
 == Name ==
 
 [SStatisticEnum StatisticEnum]
-
 ===  Super Types ===
 {{{
 string
   |
   +--StatisticEnum (restriction)
 }}}
-----
     
-
+----
+  	
 ===  Documentation ===
+
         
 				List of statistics that can be computed for a player or a golf course.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	( 'Official World Golf Ranking' | 'PGA Championship Points' | 'Scoring Average (adjusted)' | 'Scoring Average (actual)' | 'Scoring Average Before Cut' | 'Scoring Average 3rd Round' | 'Scoring Average Final Round' | 'Birdies (Total)' | 'Birdies (Average)' | 'Birdies (Conversion %)' | 'Eagles (Total)' | 'Eagles (Holes per)' | 'Par Breakers' | 'Par 3 Performance' | 'Par 4 Performance' | 'Par 5 Performance' | 'Driving Distance' | 'Driving Accuracy' | 'Longest Drive' | 'Total Driving' | 'Greens in Regulation' | 'Sand Saves' | 'Scrambling' | 'Putts Per Round' | 'Putts Per GIR' | 'Money Leaders' | 'World Money List' | 'Career Earnings (TOUR Members)' | 'Career Earnings (All Players)' | 'Non-Member Earnings' | 'Top 10 Finishes' | 'All-Around Ranking' | 'Ball Striking' | 'Bounce Back' | 'Consecutive # of Cuts' | 'other' )
-
-----
-
-  	

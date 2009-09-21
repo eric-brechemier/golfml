@@ -3,36 +3,35 @@
 == Name ==
 
 [GID_GolfClub ID_GolfClub]
-
+----
+  	
 ===  Documentation ===
+
         
 			Identifying elements for a golf club. Used in foreign keys.
 		
 ----
+      
   	
 ===  Properties ===
 
   	This component is not nillable.
 ----
-    
+  	
 ===  Model ===
 
 	  ( golf-club.manufacturer, golf-club.model, golf-club.submodel, golf-club.number   )
-
 ----
+  		
+=== Nested Elements ===
 
-  	
-=== Nested Element Summary ===
-
-|| Name || Description || Type ||
+|| *Name* || *Description* || *Type* ||
 || golf-club.manufacturer ||   || xs:string ||
 || golf-club.model ||   || xs:string ||
 || golf-club.number ||   || xs:string ||
 || golf-club.submodel ||   || xs:string ||
 
-
 ----
-
+  		
 ===  Local Usage ===
-
     	[CREF_GolfClub REF_GolfClub]
