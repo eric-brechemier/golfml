@@ -42,3 +42,8 @@ CPlayer.wiki
 
 to be included in Google Code Wiki.
 A couple of XSL template take care of renaming element, types, and attributes accordingly.
+
+= Notes =
+
+The xml2wiki.xsl stylesheet has been customized to generate Wiki-style documentation for the golfml project.
+It is not a full implementation of the original xml2html.xsl stylesheet. For instance, the raw source code element is not formatted to Wiki style. But the xml2wiki.xsl stylesheet can certainly be used to extend to further requirements.
