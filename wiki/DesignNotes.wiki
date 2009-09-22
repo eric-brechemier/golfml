@@ -1,10 +1,12 @@
-#summary One-sentence summary of this page.
+#summary Notes and comments about decisions in the design process
 
 = Introduction =
 
-= Grouping Elements =
 
-Since XML Schema leaves us with choice, all and sequence to compose elements, we sometimes added an intermediate element to better control cardinality and still offer full flexibily for order of appearance of elements.
+
+= Grouping of elements =
+
+Since XML Schema leaves us with `choice`, `all` and `sequence` to compose elements, we sometimes added an intermediate element to better control cardinality and still offer full flexibily for order of appearance of elements.
 
 For example, instead of
 {{{
