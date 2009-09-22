@@ -19,21 +19,21 @@ The secret of easy yardage book creation resides in conventions used to speed up
 {{{
   |
   +- Country Club Name
-      |
+  |   |
       +- Golf Course Name
-            |
-            +- Hole 1
-                  |
-                  +O Green
-                  +O Tee Black
-                  +O Fairway
-                  +O Green-side bunker
-                  +O Tree
-                     ...
-            +- Hole 2
-                  |
-                  +- (...) Placemarks and polygons for second hole
-                     ...
+      |     |
+      |     +- Hole 1
+      |     |    |
+      |     |    +O Green
+      |     |    +O Tee Black
+      |     |    +O Fairway
+      |     |    +O Green-side bunker
+      |     |    +O Tree
+      |     |       ...
+      |     +- Hole 2
+      |     |     |
+      |           +- (...) Placemarks and polygons for second hole
+      |        ...
       +- Golf Course No 2 Name
             |
             +- Hole 1
@@ -44,7 +44,9 @@ The secret of easy yardage book creation resides in conventions used to speed up
       ...
 }}}
 
-This design accomodates for several country clubs, hosting one or more golf courses.
+This design accomodates for several country clubs, hosting one or more golf courses. It also permits to group objects per hole for easy identification.
+
+Please note that Google Earth also allows you to color-code polygons (fill and stroke colors, opacity...), and choose different icons for placemarks. This information is not used or stored for GolfML.
 
 The name of polygons and placement is also important. To be automagically recognized, the polygon or placemark name should contain the following string:
 
