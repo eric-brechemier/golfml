@@ -7,7 +7,7 @@ The goals of GolfML are summaized in the following main axis:
  # Record of golf rounds.
 
 Later, we may add:
- # Record of golf tournaments.
+ * Record of golf tournaments.
 
 They are described below.
 
