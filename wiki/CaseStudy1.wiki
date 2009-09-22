@@ -92,4 +92,4 @@ Finally, using the golfml2svg.xsl stylesheet, you can transform the GolfML docum
 
 The [http://code.google.com/p/golfml/downloads/list Download area] of the GolfML project contains some sample graphics.
 
-The [http://code.google.com/p/golfml/source/checkoutSource Code area] contains XSL transformation sheets.
+The [http://code.google.com/p/golfml/source/checkout Source Code area] contains XSL transformation sheets.
