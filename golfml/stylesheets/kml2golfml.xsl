@@ -8,14 +8,15 @@
     
     DESCRIPTION
     
-    Transformation sheet for kml structured document to golfml hole description.
+    	Transformation sheet for kml structured document to golfml hole description.
      
       
-     VERSION
+	VERSION
      	$Revision$
      	
-     HISTORY
-     	Sep 2009: Created.
+     	
+	HISTORY
+    	Sep 2009: Created.
      	
 	-->
 	
@@ -25,7 +26,7 @@
 		<xsl:element name="golfml">
 
 			<xsl:attribute name="xmlns:xsi">http://www.w3.org/2001/XMLSchema-instance</xsl:attribute>
-			<xsl:attribute name="xsi:schemaLocation">http://code.google.com/p/golfml file:/Users/pierre/Developer/iGolf/golfml/schemas/golfml1.xsd</xsl:attribute>
+			<xsl:attribute name="xsi:schemaLocation">http://code.google.com/p/golfml ../schemas/golfml1.xsd</xsl:attribute>
 			<xsl:attribute name="version">0.9</xsl:attribute>
 			
 			<xsl:apply-templates select="kml:Folder" mode="golf-club"/>

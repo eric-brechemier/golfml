@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<xsl:stylesheet version="1.0"
+<xsl:stylesheet
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	version="1.0"
 	xmlns="http://code.google.com/p/golfml"
 	xmlns:kml="http://earth.google.com/kml/2.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	>
 	<!-- mgskml2golfml.xsl
     
     DESCRIPTION
     
-    Mobile Golf Scorer course positions to GolfML transformation style sheet
-     
+    	Mobile Golf Scorer course positions to GolfML transformation style sheet
+   
       
      VERSION
      	$Revision$
-     	
+  
+  
      HISTORY
-     	Aug 2009: Created with MGS Version 1.40.
-     	
+     	Aug 2009: Created with MGS Version 1.40.     	
 -->
 
 	<xsl:template match="/kml:kml/kml:Folder">
@@ -25,7 +27,7 @@
 		</xsl:processing-instruction>
 		<xsl:element name="golfml">
 			<xsl:attribute name="xmlns:xsi">http://www.w3.org/2001/XMLSchema-instance</xsl:attribute>
-			<xsl:attribute name="xsi:schemaLocation">http://code.google.com/p/golfml file:/Users/pierre/Developer/iGolf/golfml/schemas/golfml1.xsd</xsl:attribute>
+			<xsl:attribute name="xsi:schemaLocation">http://code.google.com/p/golfml ../schemas/golfml.xsd</xsl:attribute>
 			<xsl:attribute name="version">0.9</xsl:attribute>
 
 			<xsl:element name="country-club">

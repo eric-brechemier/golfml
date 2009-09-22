@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<xsl:stylesheet version="1.0" xmlns:g="http://code.google.com/p/golfml"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:g="http://code.google.com/p/golfml"
+	>
 	<!-- mgs2golfml.xsl
     
     DESCRIPTION
@@ -21,18 +25,23 @@
      	Aug 2009: Created with MGS Version 1.40.
      	
 -->
-
+	<xsl:output method="xml" indent="yes"/>
+	
 	<xsl:template match="/">
-		<golfml xmlns="http://code.google.com/p/golfml"
-			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-			xsi:schemaLocation="http://code.google.com/p/golfml file:/Users/pierre/Developer/iGolf/golfml/schemas/golfml1.xsd"
-			version="0.9">
-			
+		<xsl:element name="golfml">
+			<xsl:attribute name="xmlns">http://code.google.com/p/golfml</xsl:attribute>
+			<xsl:attribute name="xsi:schemaLocation"><xsl:text>http://code.google.com/p/golfml ../../schemas/golfml.xsd</xsl:text></xsl:attribute>
+			<xsl:attribute name="xmlns:xsi">http://www.w3.org/2001/XMLSchema-instance</xsl:attribute>
+			<xsl:attribute name="version">0.9</xsl:attribute>
+
 			<xsl:apply-templates select="GOLFCOURSE"/>
 
-			<xsl:apply-templates select="GOLFCOURSE/GOLFROUND"/>
+			<xsl:apply-templates select="GOLFCOURSE/GOLFROUND">
+				<xsl:with-param name="country-club-name" select="GOLFCOURSE/NAME"/>
+				<xsl:with-param name="country-club-city" select="GOLFCOURSE/CITY"/>
+			</xsl:apply-templates>
 
-		</golfml>
+		</xsl:element>
 	</xsl:template>
 
 	<xsl:template match="GOLFCOURSE">
@@ -65,7 +74,7 @@
 				</xsl:element>
 				<xsl:apply-templates select="GOLFCOURSETEES/GOLFCOURSETEE"/>
 			</xsl:element>
-
+			
 		</xsl:element>
 	</xsl:template>
 
@@ -110,29 +119,38 @@
 		</xsl:element>
 	</xsl:template>
 
-	<xsl:template match="GOLFROUND">
-		<xsl:for-each select="GOLFROUNDPLAYER">
-			<xsl:call-template name="Player">
-				<xsl:with-param name="golf-course"><xsl:value-of select="GOLFROUNDCOURSE"/></xsl:with-param>
-				<xsl:with-param name="round-date"><xsl:value-of select="GOLFROUNDDATEYYYYMMDD"/></xsl:with-param>
-			</xsl:call-template>
-		</xsl:for-each>
-	</xsl:template>
 
-	<xsl:template name="Player">
-		<xsl:param name="golf-course"/>
+	<xsl:template match="GOLFROUND">
+		<xsl:param name="country-club-name"/>
+		<xsl:param name="country-club-city"/>
+		
+		<xsl:apply-templates select="GOLFROUNDPLAYER">
+			<xsl:with-param name="country-club-name" select="$country-club-name"/>
+			<xsl:with-param name="country-club-city" select="$country-club-city"/>
+			<xsl:with-param name="golf-course-name" select="GOLFROUNDCOURSE"/>
+			<xsl:with-param name="round-date" select="GOLFROUNDDATEYYYYMMDD"/>
+		</xsl:apply-templates>	
+	</xsl:template>
+	
+	
+	<xsl:template match="GOLFROUNDPLAYER">
+		<xsl:param name="country-club-name"/>
+		<xsl:param name="country-club-city"/>
+		<xsl:param name="golf-course-name"/>
 		<xsl:param name="round-date"/>
+		
 		<xsl:element name="player">
 			<xsl:attribute name="gender">
 				<xsl:if test="GENDER = 'Male'">gentlemen</xsl:if>
-				<xsl:if test="GENDER = 'Female'">women</xsl:if>
+				<xsl:if test="GENDER = 'Female'">ladies</xsl:if>
 			</xsl:attribute>
 			<xsl:element name="name">
-				<xsl:value-of select="FIRSTNAME"/>
-				<xsl:value-of select="LASTNAME"/>
+				<xsl:if test="NAME"><xsl:value-of select="NAME"/></xsl:if>
+				<xsl:if test="LASTNAME">
+					<xsl:value-of select="FIRSTNAME"/>
+					<xsl:value-of select="LASTNAME"/>
+				</xsl:if>
 			</xsl:element>
-			<xsl:element name="date-of-birth">2000-01-01</xsl:element>
-			<!-- mandatory in golfml, not supplied by MGS -->
 			<xsl:element name="contact">
 				<xsl:attribute name="type">home</xsl:attribute>
 				<xsl:element name="phone">
@@ -144,22 +162,27 @@
 			</xsl:element>
 			<xsl:element name="home-country-club">
 				<xsl:value-of select="CLUBATTACHED"/>
-			</xsl:element>
+			</xsl:element>	
+			<xsl:element name="date-of-birth">2000-01-01</xsl:element> <!-- mandatory in golfml, not supplied by MGS -->
 
 			<xsl:element name="round">
 				<xsl:element name="date">
-					<xsl:value-of select="$round-date"/>
+					<xsl:value-of select="concat($round-date,'T00:00:00')"/>
 				</xsl:element>
 				<xsl:element name="scorecard">
 					<xsl:element name="tees">
 						<xsl:element name="country-club.name">
-							<xsl:value-of select="$golf-course"/>
+							<xsl:value-of select="$country-club-name"/>
 						</xsl:element>
 						<!-- mandatory in golfml, not supplied by MGS -->
-						<xsl:element name="country-club.address.country.iso3166"/>
-						<xsl:element name="country-club.address.postal-code"/>
+						<xsl:element name="country-club.address.country.iso3166">
+							<xsl:value-of select="string('XX')"/>
+						</xsl:element>
+						<xsl:element name="country-club.address.postal-code">
+							<xsl:value-of select="$country-club-city"/>
+						</xsl:element>
 						<xsl:element name="country-club.golf-course.name">
-							<xsl:value-of select="$golf-course"/>
+							<xsl:value-of select="$golf-course-name"/>
 						</xsl:element>
 						<xsl:element name="country-club.golf-course.tee-set.name">
 							<xsl:value-of select="TEE"/>
@@ -168,9 +191,10 @@
 					<xsl:element name="handicap-strokes">
 						<xsl:value-of select="HCP"/>
 					</xsl:element>
-				</xsl:element>
 
-				<xsl:apply-templates select="GOLFROUNDRESULTS"/>
+					<xsl:apply-templates select="GOLFROUNDRESULTS"/>
+
+				</xsl:element>
 
 			</xsl:element>
 		</xsl:element>
@@ -200,7 +224,7 @@
 				<xsl:element name="fairway">
 					<xsl:value-of select="ROUNDHOLEFWH"/>
 				</xsl:element>
-				<xsl:element name="greens-in-regulation">
+				<xsl:element name="green-in-regulation">
 					<xsl:value-of select="ROUNDHOLEGIR"/>
 				</xsl:element>
 			</xsl:element>
