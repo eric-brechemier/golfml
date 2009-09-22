@@ -38,7 +38,7 @@ anyType
 || colour ||  				Color of tee set.			 || xs:string || optional ||  ||  || unqualified ||
 || date-from ||  				Start date of validity of tee set.			 || xs:date || optional ||  ||  || unqualified ||
 || date-to ||  				End date of validity of tee set.			 || xs:date || optional ||  ||  || unqualified ||
-|| gender ||  				"Gender" of tee set for handicaping purpose.			 || [SGolfingGender golfml:GolfingGender] || optional ||  ||  || unqualified ||
+|| gender ||  				"Gender" of tee set for handicaping purpose.			 || [SGolfingGender golfml:GolfingGender] || required ||  ||  || unqualified ||
 || name ||  Name of the tee set || xs:string || required ||  ||  || unqualified ||
 
 === Nested Elements ===

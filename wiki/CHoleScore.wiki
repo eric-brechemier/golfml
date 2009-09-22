@@ -28,7 +28,7 @@ anyType
 ===  Model ===
 
 	<...  `number`=[SOneToEighteen OneToEighteen]>
-            ( strokes, points?, putts?, money?, [CPenalty penalties]?, [CStrokeDetail stroke]`*`, [CHoleStatistics statistics]?   )
+            ( strokes ; points? ; putts? ; money? ; [CPenalty penalties]? ; [CStrokes stroke-detail]? ; [CHoleStatistics statistics]? ) 
   </...>
 ----
   		      
@@ -45,7 +45,7 @@ anyType
 || points ||  					Total number of points for hole.				 || xs:nonNegativeInteger ||
 || putts ||  					Number of putts, from the green.				 || xs:nonNegativeInteger ||
 || [CHoleStatistics statistics] ||  					Denormalised statistics for hole.				 || [CHoleStatistics golfml:HoleStatistics] ||
-|| [CStrokeDetail stroke] ||  					Detail of each stroke.				 || [CStrokeDetail golfml:StrokeDetail] ||
+|| [CStrokes stroke-detail] ||  					Detail of each stroke.				 || [CStrokes golfml:Strokes] ||
 || strokes ||  					Total number of strokes for hole, including penalties.				 || xs:positiveInteger ||
 
 ----

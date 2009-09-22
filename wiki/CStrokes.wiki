@@ -1,0 +1,36 @@
+#summary Golf Markup Language Documentation: complexType Strokes.
+
+== Name ==
+
+[CStrokes Strokes]
+===  Super Types ===
+{{{
+anyType
+  |
+  +--Strokes (restriction)
+}}}
+    
+----
+  	
+  	
+===  Properties ===
+
+  	This component is not nillable.
+----
+  	
+===  Model ===
+
+	<...>
+            [CStrokeDetail stroke]`*`  
+  </...>
+----
+  		
+=== Nested Elements ===
+
+|| *Name* || *Description* || *Type* ||
+|| [CStrokeDetail stroke] ||  					Detail of each stroke.				 || [CStrokeDetail golfml:StrokeDetail] ||
+
+----
+  		
+===  Local Usage ===
+    	[CHoleScore HoleScore]

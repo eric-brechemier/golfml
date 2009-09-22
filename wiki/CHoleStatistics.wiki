@@ -16,6 +16,7 @@ anyType
 
         
 			Type used to record basic hole statistics such as fairway hits and greens in regulation.
+			All elements are optional.
 		
 ----
       
@@ -28,7 +29,7 @@ anyType
 ===  Model ===
 
 	<...>
-            ( fairway, green-in-regulation, [CLengthWithUnits driving-distance], [CLengthWithUnits approach-to-hole]   )
+            ( fairway? ; green-in-regulation? ; [CLengthWithUnits driving-distance]? ; [CLengthWithUnits approach-to-hole]? ) 
   </...>
 ----
   		
