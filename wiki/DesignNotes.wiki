@@ -31,4 +31,4 @@ we added a container element such as:
 </hole>
 }}}
 
-The stroke-detail element is not required in GolfML but its added construnct allows for better cardinality control of the parent element (a `all` construct).
+The `stroke-detail` element is not required in GolfML but its added construnct allows for better cardinality control of the parent element (a `all` construct). On the `hole` element, we can request a `all` construct, with optional `stroke-detail`, and inside the `stroke-detail` element, we require one or more stroke.
