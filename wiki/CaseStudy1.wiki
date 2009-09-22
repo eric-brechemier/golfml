@@ -12,9 +12,9 @@ The first step is to collect information about the golf course: Name, address, a
 
 == Design in Google Earth ==
 
-Spot the golf course in Google Earth. Start drawing polygons around elements of the golf course.
+Spot the golf course in Google Earth. Start drawing polygons around elements of the golf course: Fairways, greens, buildings, bunkers, lake, woods...
 
-The secret of easy yardage book design resides in conventions used to speed up and automate conversions between data format. We recommend using the following folder structure for Google Earth:
+The secret of easy yardage book creation resides in conventions used to speed up and automate conversions between data format. We recommend using the following folder structure for Google Earth:
 
 {{{
   |
@@ -48,13 +48,13 @@ This design accomodates for several country clubs, hosting one or more golf cour
 
 The name of polygons and placement is also important. To be automagically recognized, the polygon or placemark name should contain the following string:
 
-|| *Name contains* || *Recognized as *||
+|| *Name contains* || *Recognized as* ||
 || tee || tee ||
 || fairway || fairway ||
 || green || green ||
 || fringe || fringe ||
-|| tree || tree ||
 || trees || trees ||
+|| tree || tree ||
 || bush || bush ||
 || semi || semi-rough ||
 || rough || rough ||
