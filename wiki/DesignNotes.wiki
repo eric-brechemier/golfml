@@ -1,0 +1,32 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+= Grouping Elements =
+
+Since XML Schema leaves us with choice, all and sequence to compose elements, we sometimes added an intermediate element to better control cardinality and still offer full flexibily for order of appearance of elements.
+
+For example, instead of
+{{{
+<hole>
+ ...
+  <stroke (detail) />
+  <stroke (detail) />
+  <stroke (detail) />
+ ...
+</hole>
+}}}
+we added a container element such as:
+{{{
+<hole>
+ ...
+  <stroke-detail>
+    <stroke (detail) />
+    <stroke (detail) />
+    <stroke (detail) />
+  </stroke-detail>
+ ...
+</hole>
+}}}
+
+The stroke-detail element is not required in GolfML but its added construnct allows for better cardinality control of the parent element (a `all` construct).
