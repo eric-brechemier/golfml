@@ -41,19 +41,27 @@ Collections of elements of the same type can be organized into a parent element.
 
 = GolfML Schema =
 
-XML Schema types are `CamelCase `.
+== XML Schema Constructs ==
+
+The name of XML Schema types, attributeGroups, groups, etc. are `CamelCase `.
+
 Example:
 
  * GolfCourse
  * MediaType
 
-Enumeration and list types ends with Enum.
+== Special Types ==
+
+*Enumeration* and *list* types ends with Enum.
+
 Example:
 
  * MediaTypeEnum
 
-Relational keys are prefixed with PK_ and FK_, identifier are prefixed with ID_ and references to identifiers are prefixed with REF_
+*Relational keys* are prefixed with PK_ and FK_, *identifier* are prefixed with ID_ and *references to identifiers* are prefixed with REF_
 
 == Root Element ==
 
 There is a single, unique top-level element called [Egolfml golfml].
+
+(The GolfML XML Schema is designed according to the "venitian blinds" design pattern.)
