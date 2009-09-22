@@ -1,0 +1,77 @@
+#summary Case Study 1: Design of a yardage book with Google Earth
+
+= Introduction =
+
+The purpose of this project is to design a professional looking yardage book and scorecard for a golf course.
+
+= Procedure =
+
+== Collect Information ==
+
+The first step is to collect information about the golf course: Name, address, and contact information such as telephone number.
+
+== Design in Google Earth ==
+
+Spot the golf course in Google Earth. Start drawing polygons around elements of the golf course.
+
+The secret of easy yardage book design resides in conventions used to speed up and automate conversions between data format. We recommend using the following folder structure for Google Earth:
+
+{{{
+  |
+  +- Country Club Name
+      |
+      +- Golf Course Name
+            |
+            +- Hole 1
+                  |
+                  +O Green
+                  +O Tee Black
+                  +O Fairway
+                  +O Green-side bunker
+                  +O Tree
+                     ...
+            +- Hole 2
+                  |
+                  +- (...) Placemarks and polygons for second hole
+                     ...
+      +- Golf Course No 2 Name
+            |
+            +- Hole 1
+               ...
+  |
+  +- Another Country Club Name
+      |
+      ...
+}}}
+
+This design accomodates for several country clubs, hosting one or more golf courses.
+
+The name of polygons and placement is also important. To be automagically recognized, the polygon or placemark name should contain the following string:
+
+|| *Name contains* || *Recognized as *||
+|| tee || tee ||
+|| fairway || fairway ||
+|| green || green ||
+|| fringe || fringe ||
+|| tree || tree ||
+|| trees || trees ||
+|| bush || bush ||
+|| semi || semi-rough ||
+|| rough || rough ||
+|| heavy || heavy-rough ||
+|| trap || trap ||
+|| bunker || trap ||
+|| greenside || greenside-trap ||
+|| fairway-trap || fairway-trap ||
+|| front || front-water ||
+|| water || water ||
+|| lateral || lateral-water ||
+|| path || path ||
+|| building || building ||
+|| construction || building ||
+|| obstruction || obstruction ||
+|| out-of-bound || out-of-bound ||
+|| oob || out-of-bound ||
+|| contour || hole-contour ||
+|| aim || aim ||
+|| dogleg || aim ||
