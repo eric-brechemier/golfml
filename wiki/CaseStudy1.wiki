@@ -75,3 +75,21 @@ The name of polygons and placement is also important. To be automagically recogn
 || contour || hole-contour ||
 || aim || aim ||
 || dogleg || aim ||
+
+In Google Earth, save the country club folder to a KML file.
+
+== Transformation to GolfML ==
+
+Using the sample kml2golfml.xsl style sheet, simply transform the KML file.
+
+The result of the transformation will be a simple GolfML document with some missing information.
+
+Using a text or an XML editor, you can add the missing information: Address, contact information, and more important, information from a scorecard: Tee sets, pars, yardages, and handicaping information.
+
+== Transformation to SVG ==
+
+Finally, using the golfml2svg.xsl stylesheet, you can transform the GolfML document to one or more XML SVG files with the resulting images.
+
+The [http://code.google.com/p/golfml/downloads/list Download area] of the GolfML project contains some sample graphics.
+
+The [http://code.google.com/p/golfml/source/checkoutSource Code area] contains XSL transformation sheets.
