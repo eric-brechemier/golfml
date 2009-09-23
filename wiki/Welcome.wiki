@@ -7,11 +7,12 @@ Welcome to the Golf Markup Language Specification and Example.
 
 = Information Currently Available =
 
+[Goals GolfML Design Goals]
 
 [CasesStudy	Golf Markup Language Examples and Cases Study]
 
 [DesignGuidelines GolfML XML Schema Design Guidelines]
 
-[Egolfml GolfML] -- This is the Top Element of the Language.
+[Egolfml GolfML] -- This is the Top Element of the Golf Markup Language, the entry point for reference information.
 
 [Links Links of Interest for this Project]
