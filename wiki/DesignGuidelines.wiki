@@ -65,3 +65,7 @@ Example:
 There is a single, unique top-level element called [Egolfml golfml].
 
 (The GolfML XML Schema is designed according to the "venitian blinds" design pattern.)
+
+= See Also =
+
+[DesignNotes Comments about the design of GolfML XML Schema]
