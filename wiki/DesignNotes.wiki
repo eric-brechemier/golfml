@@ -98,5 +98,5 @@ When a fixed enumeration is requested, there is always a special value "other" a
 {{{
 <handicap handicap-system="other" other="GGA">
   72
-</handicap >
+</handicap>
 }}}
