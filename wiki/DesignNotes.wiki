@@ -32,3 +32,58 @@ we added a container element such as:
 }}}
 
 The `stroke-detail` element is not required in GolfML but its added construnct allows for better cardinality control of the parent element (a `all` construct). On the `hole` element, we can request a `all` construct, with optional `stroke-detail`, and inside the `stroke-detail` element, we require one or more stroke.
+
+= Room for Alternatives =
+		
+The following hooks are provided to plug in alternative methods of storing information.
+
+== Positions ==
+A position is a point on a golf course. golfml offers the GPS localisation of the point but alternative scheme can be used.
+For instance, some systems use a local grid map and store (x,y) coordinates to locate point of interest.
+
+{{{
+<position>
+  <position-other>
+    <x>24</x>
+    <>49</y>
+    <z>178</z>
+  </position-other>
+</position>
+}}}
+
+
+== Course qualification ==
+
+A course qualification is a measure of the complexity of a course. The most common system use a course index value and a slope value. We provided room for alternate systems.
+
+{{{
+<qualification>
+  <qualification-other>
+    <slopy>1.24</slopy>
+    <perfect>72</perfect>
+  </qualification-other>
+</qualification>
+}}}
+		
+== Hole placement ==
+
+A hole placement is the position of the hole on the green. Official tour use "pin sheet" to locate hole using "paces" from the edge of the green.
+We allow for alternate system here as well. Some golf courses use simpler horizontal, vertical or grid division of the green and references to where the hole is located using those grids.
+
+{{{
+<position>
+  <position-other>
+    <x>24</x>
+    <>49</y>
+    <z>178</z>
+  </position-other>
+</position>
+}}}
+
+== Applications ==
+
+Any application that uses golfml as a data foirmat can use the application element to store application specific information and data.
+		
+== Lists of values ==
+
+When a fixed enumeration is requested, there is always a special value "other" and either a "other" attribute or element to specify alternate values.
