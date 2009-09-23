@@ -71,19 +71,26 @@ A hole placement is the position of the hole on the green. Official tour use "pi
 We allow for alternate system here as well. Some golf courses use simpler horizontal, vertical or grid division of the green and references to where the hole is located using those grids.
 
 {{{
-<position>
-  <position-other>
-    <x>24</x>
-    <>49</y>
-    <z>178</z>
-  </position-other>
-</position>
+<hole-placement>
+  <coordinate>
+    <green-part>C</green-part>
+  </coordinate >
+</hole-placement>
 }}}
 
 == Applications ==
 
 Any application that uses golfml as a data foirmat can use the application element to store application specific information and data.
-		
+
+{{
+<application dotname="com.scorecard.app" name="scorecard application">
+  <preference>
+    <unit-system>C</unit-system >
+  </preference>
+</application>
+}}}
+
+	
 == Lists of values ==
 
 When a fixed enumeration is requested, there is always a special value "other" and either a "other" attribute or element to specify alternate values.
