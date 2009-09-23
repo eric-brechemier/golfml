@@ -94,3 +94,9 @@ Any application that uses golfml as a data foirmat can use the application eleme
 == Lists of values ==
 
 When a fixed enumeration is requested, there is always a special value "other" and either a "other" attribute or element to specify alternate values.
+
+{{{
+<handicap handicap-system="other" other="GGA">
+  72
+</handicap >
+}}}
