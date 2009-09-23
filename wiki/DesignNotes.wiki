@@ -82,7 +82,7 @@ We allow for alternate system here as well. Some golf courses use simpler horizo
 
 Any application that uses golfml as a data foirmat can use the application element to store application specific information and data.
 
-{{
+{{{
 <application dotname="com.scorecard.app" name="scorecard application">
   <preference>
     <unit-system>C</unit-system >
