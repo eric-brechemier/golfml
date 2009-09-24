@@ -25,4 +25,4 @@ Compact image for hyperlinks, for instance when serving a GolfML document:
 
 http://golfml.googlecode.com/files/golfml-microformat.png
 
-http://golfml.googlecode.com/files/golfml-microformat-ball.png
+[http://code.google.com/p/golfml/source/browse/#svn/golfml/examples/instances http://golfml.googlecode.com/files/golfml-microformat-ball.png] Download GolfML sample document [http://code.google.com/p/golfml/source/browse/#svn/golfml/examples/instances here].
