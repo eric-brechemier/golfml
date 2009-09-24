@@ -1,0 +1,28 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+To favor GolfML expansion, please use the information provided on this site.
+
+
+= Details =
+
+== Hyper links ==
+
+Use the following link to refer to this project.
+
+Project's main page: `http://code.google.com/p/golfml/`
+
+Information about the project: `http://code.google.com/p/golfml/wiki/Welcome`
+
+== Logos ==
+
+GolfML Logo:
+
+http://golfml.googlecode.com/files/golfml.png
+
+Compact image for hyperlinks, for instance when serving a GolfML document:
+
+http://golfml.googlecode.com/files/golfml-microformat.png
+
+http://golfml.googlecode.com/files/golfml-microformat-ball.png
