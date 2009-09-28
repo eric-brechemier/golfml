@@ -48,7 +48,7 @@ This design accomodates for several country clubs, hosting one or more golf cour
 
 Please note that Google Earth also allows you to color-code polygons (fill and stroke colors, opacity...), and choose different icons for placemarks. This information is not used or stored for GolfML.
 
-The name of polygons and placement is also important. To be automagically recognized, the polygon or placemark name should contain the following string:
+The name of polygons and placemark is also important. To be automagically recognized, the polygon or placemark name should contain the following string:
 
 || *Name contains* || *Recognized as* ||
 || tee || tee ||
