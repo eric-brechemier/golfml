@@ -14,7 +14,7 @@ To illustrate the usefulness and the purpose of the golfml data format, we also 
 Prints a standard scorecard for a golf course, with or without score information for up to four players.
 
 
-== golfML2svg ==
+== golfml2svg ==
 
 This prototype stylesheet format the geographic information of a single hole to a SVG drawing.
 
