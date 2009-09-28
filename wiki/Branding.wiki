@@ -26,3 +26,11 @@ Compact image for hyperlinks, for instance when serving a GolfML document:
 http://golfml.googlecode.com/files/golfml-microformat.png
 
 [http://code.google.com/p/golfml/source/browse/#svn/golfml/examples/instances http://golfml.googlecode.com/files/golfml-microformat-ball.png] Download GolfML sample document [http://code.google.com/p/golfml/source/browse/#svn/golfml/examples/instances here].
+
+= Description =
+
+Here is a suggestion for a short explanation of golfml, to be used in pop-up window or baloon help:
+
+    GolfML is a text-based data format used to exchange golf data between applications and web sites.
+    Golf course information such as scorecard and yardage books, or golf round scores
+    and statistics are the most common information carried by golfml.
