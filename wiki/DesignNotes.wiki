@@ -46,7 +46,6 @@ For instance, some systems use a local grid map and store (x,y) coordinates to l
   <position-other>
     <x>24</x>
     <>49</y>
-    <z>178</z>
   </position-other>
 </position>
 }}}
@@ -85,7 +84,7 @@ Any application that uses golfml as a data foirmat can use the application eleme
 {{{
 <application dotname="com.scorecard.app" name="scorecard application">
   <preference>
-    <unit-system>C</unit-system >
+    <unit-system>metric</unit-system >
   </preference>
 </application>
 }}}
