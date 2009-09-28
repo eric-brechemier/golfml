@@ -46,12 +46,12 @@ Example:
 
 == XML Schema Constructs ==
 
-The name of XML Schema types, attributeGroups, groups, etc. are `CamelCase `.
+The name of XML Schema types, attributeGroups, groups, etc. are `CamelCase ` to easily differenciate them from elements.
 
 Example:
 
- * GolfCourse
- * MediaType
+ * GolfCourse is a type for golf-course elements
+ * MediaType is a type for media-type elements
 
 == Special Types ==
 
