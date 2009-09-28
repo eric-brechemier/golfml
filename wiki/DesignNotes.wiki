@@ -84,7 +84,8 @@ Any application that uses golfml as a data foirmat can use the application eleme
 {{{
 <application dotname="com.scorecard.app" name="scorecard application">
   <preference>
-    <unit-system>metric</unit-system >
+    <unit-system>metric</unit-system>
+    <handicap-method>EGA</handicap-method>
   </preference>
 </application>
 }}}
