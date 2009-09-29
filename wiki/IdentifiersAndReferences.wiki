@@ -15,6 +15,8 @@ GolfML needs to uniquely identify the following entities:
 
 A golf course should be defined once and for all other GolfML document instances.
 
+=== Golf Courses ===
+
 To insure uniqueness of golf courses, we build a identifier on the following unambiguous attributes:
 
  # Country: We use the ISO 3166 2 letter code to uniquely identify the country where the golf course is located.
@@ -26,3 +28,4 @@ To identify a precise set of tees for a round of golf, the following identifier 
 
  # Tee set name: The name of the set of tees used to play the round from. If sets of tees have no names, colours shuold be used instead.
 
+=== Players ===
