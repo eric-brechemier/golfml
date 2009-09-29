@@ -7,12 +7,13 @@ List of issues.
 
 = SVG =
 
-XML to SVG through a simple, single stylesheet is not easy because of the limitation of "pure" stylesheets.
-Stylesheets operator do not include Math operators.
-
 == Projection ==
 
 The golfml2svg.xsl stylesheet does not perform a projection from the lat/log sphere to a surface.
+
+XML to SVG through a simple, single stylesheet is not easy because of the limitation of "pure" stylesheets.
+Stylesheets operator do not include Math operators.
+
 
 == Altitude ==
 
