@@ -29,3 +29,15 @@ To identify a precise set of tees for a round of golf, the following identifier 
  # Tee set name: The name of the set of tees used to play the round from. If sets of tees have no names, colours shuold be used instead.
 
 === Players ===
+
+Golfers are uniquely identified by the following combination:
+
+ # Name: The full name of the golfer
+ # Date of birth: Date of birth of the golfer.
+
+=== Other Elements ===
+
+Inside a GolfML document, we use the following identifiers:
+
+ # Golf clubs: A golf club is a complex description of a club to play golf with all its technical and commercial information.
+ # Golf bag: A golf bag is a collection of golfing equipment that includes not only golf clubs but also balls, apparel, etc.
