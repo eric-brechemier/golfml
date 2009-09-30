@@ -22,6 +22,12 @@ The secret of easy yardage book creation resides in conventions used to speed up
   |   |
       +- Golf Course Name
       |     |
+      |     +- Facilities
+      |     |    |
+      |     |    +O Club house
+      |     |    +O Practice area
+      |     |    ...
+      |     |    |
       |     +- Hole 1
       |     |    |
       |     |    +O Green
@@ -36,6 +42,8 @@ The secret of easy yardage book creation resides in conventions used to speed up
       |        ...
       +- Golf Course No 2 Name
             |
+      |     +- Facilities
+      |     |    
             +- Hole 1
                ...
   |
