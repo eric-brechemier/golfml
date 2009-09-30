@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: complexType Application.
+#summary Golf Markup Language Reference: complexType Application.
 
 == Name ==
 

@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: simpleType EquipmentTypeEnum.
+#summary Golf Markup Language Reference: simpleType EquipmentTypeEnum.
 
 == Name ==
 

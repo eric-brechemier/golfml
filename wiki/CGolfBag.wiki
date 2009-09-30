@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: complexType GolfBag.
+#summary Golf Markup Language Reference: complexType GolfBag.
 
 == Name ==
 

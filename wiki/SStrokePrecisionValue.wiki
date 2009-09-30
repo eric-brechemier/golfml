@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: simpleType StrokePrecisionValue.
+#summary Golf Markup Language Reference: simpleType StrokePrecisionValue.
 
 == Name ==
 

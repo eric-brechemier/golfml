@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: complexType HoleQualification.
+#summary Golf Markup Language Reference: complexType HoleQualification.
 
 == Name ==
 

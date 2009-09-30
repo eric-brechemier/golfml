@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: attributeGroup Other.
+#summary Golf Markup Language Reference: attributeGroup Other.
 
 == Name ==
 

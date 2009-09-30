@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: complexType Country.
+#summary Golf Markup Language Reference: complexType Country.
 
 == Name ==
 

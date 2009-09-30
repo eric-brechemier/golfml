@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: simpleType ISO3166CountryCodeEnum.
+#summary Golf Markup Language Reference: simpleType ISO3166CountryCodeEnum.
 
 == Name ==
 

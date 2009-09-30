@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: complexType FourSome.
+#summary Golf Markup Language Reference: complexType FourSome.
 
 == Name ==
 

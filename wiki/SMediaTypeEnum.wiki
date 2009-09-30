@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: simpleType MediaTypeEnum.
+#summary Golf Markup Language Reference: simpleType MediaTypeEnum.
 
 == Name ==
 

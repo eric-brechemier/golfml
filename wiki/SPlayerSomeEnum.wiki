@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: simpleType PlayerSomeEnum.
+#summary Golf Markup Language Reference: simpleType PlayerSomeEnum.
 
 == Name ==
 

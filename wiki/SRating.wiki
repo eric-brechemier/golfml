@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: simpleType Rating.
+#summary Golf Markup Language Reference: simpleType Rating.
 
 == Name ==
 

@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: simpleType AltitudeModeEnum.
+#summary Golf Markup Language Reference: simpleType AltitudeModeEnum.
 
 == Name ==
 

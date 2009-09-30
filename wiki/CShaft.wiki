@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: complexType Shaft.
+#summary Golf Markup Language Reference: complexType Shaft.
 
 == Name ==
 

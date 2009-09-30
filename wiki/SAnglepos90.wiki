@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: simpleType Anglepos90.
+#summary Golf Markup Language Reference: simpleType Anglepos90.
 
 == Name ==
 

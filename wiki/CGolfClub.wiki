@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: complexType GolfClub.
+#summary Golf Markup Language Reference: complexType GolfClub.
 
 == Name ==
 

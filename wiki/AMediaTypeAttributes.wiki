@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: attributeGroup MediaTypeAttributes.
+#summary Golf Markup Language Reference: attributeGroup MediaTypeAttributes.
 
 == Name ==
 

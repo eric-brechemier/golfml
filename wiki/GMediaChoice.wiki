@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: group MediaChoice.
+#summary Golf Markup Language Reference: group MediaChoice.
 
 == Name ==
 

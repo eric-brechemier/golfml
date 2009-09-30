@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: simpleType OneToEighteen.
+#summary Golf Markup Language Reference: simpleType OneToEighteen.
 
 == Name ==
 

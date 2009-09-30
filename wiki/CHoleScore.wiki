@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: complexType HoleScore.
+#summary Golf Markup Language Reference: complexType HoleScore.
 
 == Name ==
 

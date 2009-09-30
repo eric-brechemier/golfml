@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: complexType Collection.
+#summary Golf Markup Language Reference: complexType Collection.
 
 == Name ==
 

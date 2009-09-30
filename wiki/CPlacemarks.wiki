@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: complexType Placemarks.
+#summary Golf Markup Language Reference: complexType Placemarks.
 
 == Name ==
 
@@ -41,4 +41,4 @@ anyType
 ----
   		
 ===  Local Usage ===
-    	[CHole Hole]
+    	[CFacilities Facilities], [CHole Hole]

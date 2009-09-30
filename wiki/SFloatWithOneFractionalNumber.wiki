@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: simpleType FloatWithOneFractionalNumber.
+#summary Golf Markup Language Reference: simpleType FloatWithOneFractionalNumber.
 
 == Name ==
 

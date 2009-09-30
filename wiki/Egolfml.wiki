@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: element golfml.
+#summary Golf Markup Language Reference: element golfml.
 
 == Name ==
 
@@ -17,6 +17,7 @@
 			Golfml main element also contains several primary keys for cross-reference of elements
 			inside the document, and one unique key to garantee the unicity of one element (application)
 			accross golfml document instances.
+			(See also: IdentifiersAndReferences )
 		
 				Primary key to uniquely identify a country club world wide.
 			

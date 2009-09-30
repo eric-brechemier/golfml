@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: complexType PositionWithSequence.
+#summary Golf Markup Language Reference: complexType PositionWithSequence.
 
 == Name ==
 

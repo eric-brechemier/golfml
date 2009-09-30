@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: simpleType HandicapSystemEnum.
+#summary Golf Markup Language Reference: simpleType HandicapSystemEnum.
 
 == Name ==
 

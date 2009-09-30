@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: simpleType StatisticEnum.
+#summary Golf Markup Language Reference: simpleType StatisticEnum.
 
 == Name ==
 

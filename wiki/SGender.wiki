@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: simpleType Gender.
+#summary Golf Markup Language Reference: simpleType Gender.
 
 == Name ==
 

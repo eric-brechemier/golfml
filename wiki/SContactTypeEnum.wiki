@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: simpleType ContactTypeEnum.
+#summary Golf Markup Language Reference: simpleType ContactTypeEnum.
 
 == Name ==
 

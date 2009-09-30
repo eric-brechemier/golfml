@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: simpleType GolfingDirectionEnum.
+#summary Golf Markup Language Reference: simpleType GolfingDirectionEnum.
 
 == Name ==
 

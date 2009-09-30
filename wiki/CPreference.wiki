@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: complexType Preference.
+#summary Golf Markup Language Reference: complexType Preference.
 
 == Name ==
 

@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: complexType Media.
+#summary Golf Markup Language Reference: complexType Media.
 
 == Name ==
 
@@ -56,4 +56,4 @@ anyType
 ----
   		
 ===  Local Usage ===
-    	[CCountryClub CountryClub], [CGolfCourse GolfCourse], [CHole Hole], [CPlayer Player]
+    	[CCountryClub CountryClub], [CFacilities Facilities], [CGolfCourse GolfCourse], [CHole Hole], [CPlayer Player]

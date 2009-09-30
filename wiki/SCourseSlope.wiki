@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: simpleType CourseSlope.
+#summary Golf Markup Language Reference: simpleType CourseSlope.
 
 == Name ==
 

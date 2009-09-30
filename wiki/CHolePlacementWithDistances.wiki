@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: complexType HolePlacementWithDistances.
+#summary Golf Markup Language Reference: complexType HolePlacementWithDistances.
 
 == Name ==
 

@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: simpleType StrokeDirectionEnum.
+#summary Golf Markup Language Reference: simpleType StrokeDirectionEnum.
 
 == Name ==
 

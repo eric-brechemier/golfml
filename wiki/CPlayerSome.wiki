@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: complexType PlayerSome.
+#summary Golf Markup Language Reference: complexType PlayerSome.
 
 == Name ==
 

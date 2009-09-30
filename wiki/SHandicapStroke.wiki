@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: simpleType HandicapStroke.
+#summary Golf Markup Language Reference: simpleType HandicapStroke.
 
 == Name ==
 

@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: group ID_Tees.
+#summary Golf Markup Language Reference: group ID_Tees.
 
 == Name ==
 

@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: complexType StatisticValue.
+#summary Golf Markup Language Reference: complexType StatisticValue.
 
 == Name ==
 

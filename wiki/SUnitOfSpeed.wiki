@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: simpleType UnitOfSpeed.
+#summary Golf Markup Language Reference: simpleType UnitOfSpeed.
 
 == Name ==
 

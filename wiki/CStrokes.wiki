@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: complexType Strokes.
+#summary Golf Markup Language Reference: complexType Strokes.
 
 == Name ==
 
@@ -21,7 +21,7 @@ anyType
 ===  Model ===
 
 	<...>
-            [CStrokeDetail stroke]`*`  
+            [CStrokeDetail stroke]+  
   </...>
 ----
   		

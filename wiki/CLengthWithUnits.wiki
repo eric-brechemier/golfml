@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: complexType LengthWithUnits.
+#summary Golf Markup Language Reference: complexType LengthWithUnits.
 
 == Name ==
 

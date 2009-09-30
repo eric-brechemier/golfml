@@ -1,13 +1,13 @@
-#summary Golf Markup Language Reference: complexType Hole.
+#summary Golf Markup Language Reference: complexType Facilities.
 
 == Name ==
 
-[CHole Hole]
+[CFacilities Facilities]
 ===  Super Types ===
 {{{
 anyType
   |
-  +--Hole (restriction)
+  +--Facilities (restriction)
 }}}
     
 ----
@@ -15,7 +15,7 @@ anyType
 ===  Documentation ===
 
         
-			Description of a hole on a course: Media (photographs, videos, sketches...), notes and/or placemarks.
+			Description of a course: Media (photographs, videos, sketches...), notes and/or placemarks.
 		
 ----
       
@@ -27,17 +27,11 @@ anyType
   	
 ===  Model ===
 
-	<...  `name`=xs:string  `number`=[SOneToEighteen OneToEighteen]>
+	<...>
             ( [CMedia media] | [CNote note] | [CPlacemarks placemarks] )`*` 
   </...>
 ----
-  		      
-=== Attributes ===
-
-|| *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
-|| name ||  Name of hole || xs:string || optional ||  ||  || unqualified ||
-|| number ||  Hole number || [SOneToEighteen golfml:OneToEighteen] || required ||  ||  || unqualified ||
-
+  		
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||

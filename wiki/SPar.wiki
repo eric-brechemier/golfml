@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: simpleType Par.
+#summary Golf Markup Language Reference: simpleType Par.
 
 == Name ==
 

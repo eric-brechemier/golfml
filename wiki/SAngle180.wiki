@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: simpleType Angle180.
+#summary Golf Markup Language Reference: simpleType Angle180.
 
 == Name ==
 

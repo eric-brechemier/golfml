@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: attributeGroup RemoteGolfML.
+#summary Golf Markup Language Reference: attributeGroup RemoteGolfML.
 
 == Name ==
 

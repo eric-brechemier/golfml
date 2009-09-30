@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: simpleType PhoneNumber.
+#summary Golf Markup Language Reference: simpleType PhoneNumber.
 
 == Name ==
 

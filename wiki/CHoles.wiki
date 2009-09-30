@@ -1,4 +1,4 @@
-#summary Golf Markup Language Documentation: complexType Holes.
+#summary Golf Markup Language Reference: complexType Holes.
 
 == Name ==
 
@@ -28,13 +28,14 @@ anyType
 ===  Model ===
 
 	<...>
-            [CHole hole]{0,18}  
+            ( [CFacilities facilities]?, [CHole hole]{0,18}   )
   </...>
 ----
   		
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
+|| [CFacilities facilities] ||  Container elements for placemarks that are not specific to a hole || [CFacilities golfml:Facilities] ||
 || [CHole hole] ||  					Collection of 1 to 18 holes of golf.				 || [CHole golfml:Hole] ||
 
 ----
