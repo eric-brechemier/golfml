@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <?xml-stylesheet href="../stylesheets/golfml.css" type="text/css"?>
-<xsl:stylesheet
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	version="2.0"
-	xmlns="http://www.w3.org/2000/svg"
-	xmlns:g="http://code.google.com/p/golfml"
-	xmlns:xlink="http://www.w3.org/1999/xlink"
-	>
-	<!-- golfml2svg.xsl
-    
-	DESCRIPTION
-    
-		GolfML hole description to SVG graphics.
-		Works either for a single hole or for an entire golf course (1 to 18 holes).
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+				xmlns:xs="http://www.w3.org/2001/XMLSchema"
+				version="2.0"
+				xmlns="http://www.w3.org/2000/svg"
+				xmlns:g="http://code.google.com/p/golfml"
+				xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+<!-- golfml2svg.xsl
+
+DESCRIPTION
+
+	GolfML hole description to SVG graphics.
+	Works either for a single hole or for an entire golf course (1 to 18 holes).
+ 
+  
+VERSION
+	$Revision$
      
-      
-     VERSION
-     	$Revision$
-     	
-     HISTORY
-     	Sep 2009: Created.
-     	
-	-->
+HISTORY
+    Sep 2009: Created.
+     
+-->
 	
 	<xsl:output method="xml" version="1.0" indent="yes"/>
 	
@@ -39,34 +38,74 @@
 	<xsl:param name="compassy"><xsl:value-of select="50"/></xsl:param>
 	<!-- mode=course|hole, generate a single SVG file for the entire course, or one for each hole -->
 	<xsl:param name="mode">hole</xsl:param>
-	<xsl:param name="hole-number">4</xsl:param>
+	<!-- If a hole-number is supplied, generates only that hole -->
+	<xsl:param name="hole-number">10</xsl:param>
+	<!-- TO DO: Apply placemark in layout order: large objects (hole-contour, etc.) first and
+		== smaller objects (tee, greens, poi) last. Here is suggested list of ordered values.
+		== 
+		== 01 = hole-contour
+		== 02 = out-of-bound
+		== 03 = heavy-rough
+		== 04 = rough
+		== 05 = semi-rough
+		== 06 = bush
+		== 
+		== 07 = lateral-water
+		== 08 = front-water
+		== 09 = water
+		== 
+		== 10 = tee
+		== 11 = fairway
+		== 12 = path
+		== 13 = other
+		== 14 = building
+		== 15 = obstruction
+		== 
+		== 16 = trap
+		== 17 = greenside-trap
+		== 18 = fairway-trap
+		== 19 = bunker
+		== 20 = fringe
+		== 21 = green
+		== 
+		== 22 = trees
+		== 23 = tree
+		== 
+		== 24 = aim
+		== 25 = marker			 
+		
+		The typelist parameter is a list of area/point of interest types in the sequence order it should be drawn.
+		Area are always drawn first, and points are drawn on top.
+	-->
 	
-	<xsl:template match="/">
-		<xsl:apply-templates select="g:golfml/g:country-club/g:golf-course" />
+	<xsl:param name="typelist">hole-contour out-of-bound heavy-rough rough semi-rough bush lateral-water front-water water tee fairway path other building obstruction trap greenside-trap fairway-trap bunker fringe green trees tree aim marker</xsl:param>
+
+	<xsl:template match="/g:golfml/g:country-club">
+		<xsl:apply-templates select="g:golf-course"/>
 	</xsl:template>
 	
 
 	<xsl:template match="g:golf-course">
-		<xsl:apply-templates select="g:holes"/>
+		<xsl:apply-templates select="g:holes" mode="head"/>
 	</xsl:template>
 
 
-	<xsl:template match="g:holes">
+	<xsl:template match="g:holes" mode="head">
 		<xsl:if test="$mode = 'course'">
 			<!-- Mode 1: generate a single SVG for each hole -->
-			<xsl:call-template name="DrawCourse"/>
+			<xsl:apply-templates select="." mode="draw"/>
 		</xsl:if>
 		<xsl:if test="$mode = 'hole'">
 			<!-- Mode 2: generate a single SVG for each hole -->
 			<xsl:choose>
 				<xsl:when test="$hole-number > 0">
-					<xsl:apply-templates select="g:hole[@number=$hole-number]"/>
+					<xsl:apply-templates select="g:hole[@number=$hole-number]" mode="draw"/>
 				</xsl:when>
 				<xsl:otherwise>
 					<xsl:for-each select="g:hole">
 						<xsl:variable name="uri" select="concat('hole-', @number, '.svg')"/>
 						<xsl:result-document href="{$uri}" format="SVGformat">
-							<xsl:apply-templates select="."/>
+							<xsl:apply-templates select="." mode="draw"/>
 						</xsl:result-document>
 					</xsl:for-each>
 				</xsl:otherwise>
@@ -75,12 +114,14 @@
 	</xsl:template>
 	
 
-	<xsl:template name="DrawCourse">
+	<xsl:template match="g:hole|g:holes" mode="draw">
+		<!-- draws either a single hole or a set of holes+"facilities".
+		  -->
 		<xsl:element name="svg">
 			<xsl:attribute name="width"><xsl:value-of select="$width"/></xsl:attribute>
 			<xsl:attribute name="height"><xsl:value-of select="$height"/></xsl:attribute>
 			
-			<xsl:call-template name="Defs"/>			
+			<xsl:call-template name="Defs"/>
 			
 			<xsl:element name="rect">
 				<xsl:attribute name="class">background</xsl:attribute>
@@ -91,49 +132,15 @@
 			</xsl:element>
 			
 			<!-- Compute bounding box for lat/lon which is mapped to the projected bounding box (width x height) -->	
-			<xsl:variable name="min_lat">
-				<xsl:for-each select=".//g:lat">
-					<xsl:sort data-type="number" />
-					<xsl:if test="position() = 1">
-						<xsl:value-of select="number(.)" />
-					</xsl:if>
-				</xsl:for-each>
-			</xsl:variable>
-			<xsl:variable name="max_lat">
-				<xsl:for-each select=".//g:lat">
-					<xsl:sort data-type="number" order="descending"/>
-					<xsl:if test="position() = 1">
-						<xsl:value-of select="number(.)" />
-					</xsl:if>
-				</xsl:for-each>
-			</xsl:variable>
-			<xsl:variable name="min_lon">
-				<xsl:for-each select=".//g:lon">
-					<xsl:sort data-type="number" />
-					<xsl:if test="position() = 1">
-						<xsl:value-of select="number(.)" />
-					</xsl:if>
-				</xsl:for-each>
-			</xsl:variable>
-			<xsl:variable name="max_lon">
-				<xsl:for-each select=".//g:lon">
-					<xsl:sort data-type="number" order="descending"/>
-					<xsl:if test="position() = 1">
-						<xsl:value-of select="number(.)" />
-					</xsl:if>
-				</xsl:for-each>
-			</xsl:variable>
-	
-			<xsl:variable name="mid_lat">
-				<xsl:value-of select="(number($max_lat)+number($min_lat)) div 2"/>
-			</xsl:variable>
-			
-			<xsl:variable name="mid_lon">
-				<xsl:value-of select="(number($max_lon)+number($min_lon)) div 2"/>
-			</xsl:variable>
+			<xsl:variable name="min_lat"><xsl:value-of select="min(.//g:lat)"/></xsl:variable>
+			<xsl:variable name="max_lat"><xsl:value-of select="max(.//g:lat)"/></xsl:variable>
+			<xsl:variable name="min_lon"><xsl:value-of select="min(.//g:lon)"/></xsl:variable>
+			<xsl:variable name="max_lon"><xsl:value-of select="max(.//g:lon)"/></xsl:variable>	
+			<xsl:variable name="mid_lat"><xsl:value-of select="(number($max_lat)+number($min_lat)) div 2"/></xsl:variable>
+			<xsl:variable name="mid_lon"><xsl:value-of select="(number($max_lon)+number($min_lon)) div 2"/></xsl:variable>
 			
 			<xsl:variable name="minmin">
-				<xsl:call-template name="project">
+				<xsl:call-template name="Project">
 					<xsl:with-param name="lat"><xsl:value-of select="$min_lat"/></xsl:with-param>
 					<xsl:with-param name="lon"><xsl:value-of select="$min_lon"/></xsl:with-param>
 					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
@@ -141,9 +148,8 @@
 					<xsl:with-param name="scale"><xsl:value-of select="number(1)"/></xsl:with-param>
 				</xsl:call-template>
 			</xsl:variable>
-			
 			<xsl:variable name="maxmax">
-				<xsl:call-template name="project">
+				<xsl:call-template name="Project">
 					<xsl:with-param name="lat"><xsl:value-of select="$max_lat"/></xsl:with-param>
 					<xsl:with-param name="lon"><xsl:value-of select="$max_lon"/></xsl:with-param>
 					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
@@ -151,7 +157,6 @@
 					<xsl:with-param name="scale"><xsl:value-of select="number(1)"/></xsl:with-param>
 				</xsl:call-template>
 			</xsl:variable>
-			
 			<xsl:variable name="x1"><xsl:value-of select="substring-before($minmin, ',')"/></xsl:variable>
 			<xsl:variable name="y1"><xsl:value-of select="substring-after($minmin, ',')"/></xsl:variable>
 			<xsl:variable name="x2"><xsl:value-of select="substring-before($maxmax, ',')"/></xsl:variable>
@@ -187,554 +192,74 @@
 					<xsl:value-of select="$scalex"/>
 				</xsl:if>
 			</xsl:variable>
-					
-	
-			<xsl:text disable-output-escaping="yes">
-			&lt;!-- debug information: mode course</xsl:text>
-			<xsl:text>
-				min_lat: </xsl:text><xsl:value-of select="$min_lat"/>
-			<xsl:text>
-				max_lat: </xsl:text><xsl:value-of select="$max_lat"/>
-			<xsl:text>
-				min_lon: </xsl:text><xsl:value-of select="$min_lon"/>
-			<xsl:text>
-				max_lon: </xsl:text><xsl:value-of select="$max_lon"/>
-			<xsl:text>
-				mid_lat: </xsl:text><xsl:value-of select="$mid_lat"/>
-			<xsl:text>
-				mid_lon: </xsl:text><xsl:value-of select="$mid_lon"/>
-			<xsl:text>
-				deltax: </xsl:text><xsl:value-of select="$deltax"/>
-			<xsl:text>
-				deltay: </xsl:text><xsl:value-of select="$deltay"/>
-			<xsl:text>
-				scalex: </xsl:text><xsl:value-of select="$scalex"/>
-			<xsl:text>
-				scaley: </xsl:text><xsl:value-of select="$scaley"/>
-			<xsl:text>
-				scale: </xsl:text><xsl:value-of select="$scale"/>
-			<xsl:text>
-				minx: </xsl:text><xsl:value-of select="$minx"/>
-			<xsl:text>
-				maxx: </xsl:text><xsl:value-of select="$maxx"/>
-			<xsl:text>
-				miny: </xsl:text><xsl:value-of select="$miny"/>
-			<xsl:text>
-				maxy: </xsl:text><xsl:value-of select="$maxy"/>
-			<xsl:text>
-				minx: </xsl:text><xsl:value-of select="$minx * $scale"/>
-			<xsl:text>
-				maxx: </xsl:text><xsl:value-of select="$maxx * $scale"/>
-			<xsl:text>
-				miny: </xsl:text><xsl:value-of select="$miny * $scale"/>
-			<xsl:text>
-				maxy: </xsl:text><xsl:value-of select="$maxy * $scale"/>
-			<xsl:text disable-output-escaping="yes">
-			--&gt;
-			</xsl:text>
-	
 			
-			<xsl:element name="g">
-				<xsl:attribute name="transform">
-					<!-- The Gnomonic projection reverses the X axis. We reverse it by applying a SCALE of -1 along the x axis only.
-						 The projection is centered, so we TRANSLATE the center in the middle of the drawing area as well.
-					  -->
-					<xsl:value-of select="concat('translate(',$width div 2, ',', $height div 2,') scale(',-1,',',1,') rotate(',-0,')')" />
-				</xsl:attribute>
-				
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='hole-contour']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='out-of-bound']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='heavy-rough']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='rough']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='semi-rough']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='bush']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='				 
-					lateral-water']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='front-water']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='water']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='tee']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='fairway']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='path']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='other']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='building']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='obstruction']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='trap']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='greenside-trap']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='fairway-trap']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='bunker']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='fringe']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='green']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='trees']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='tree']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='aim']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='marker']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='hole-contour']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='out-of-bound']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='heavy-rough']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='rough']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='semi-rough']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='bush']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='				 
-					lateral-water']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='front-water']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='water']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='tee']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='fairway']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='path']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='other']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='building']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='obstruction']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='trap']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='greenside-trap']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='fairway-trap']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='bunker']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='fringe']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='green']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='trees']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='tree']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='aim']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='marker']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				
-			</xsl:element><!-- g -->
-			<xsl:element name="use">
-				<xsl:attribute name="xlink:href">#Compass</xsl:attribute>
-				<xsl:attribute name="x"><xsl:value-of select="$compassx"/></xsl:attribute>
-				<xsl:attribute name="y"><xsl:value-of select="$compassy"/></xsl:attribute>
-				<xsl:attribute name="transform"><xsl:value-of select="concat('rotate(',0,' ',$compassx,' ',$compassy,')')"/></xsl:attribute>
-			</xsl:element>
-
-		</xsl:element><!-- svg -->
-	</xsl:template>
-
-	
-	
-	<xsl:template match="g:hole">
-		<xsl:element name="svg">
-			<xsl:attribute name="width"><xsl:value-of select="$width"/></xsl:attribute>
-			<xsl:attribute name="height"><xsl:value-of select="$height"/></xsl:attribute>
 			
-			<xsl:call-template name="Defs"/>			
-			
-			<xsl:element name="rect">
-				<xsl:attribute name="class">background</xsl:attribute>
-				<xsl:attribute name="x">0</xsl:attribute>
-				<xsl:attribute name="y">0</xsl:attribute>
-				<xsl:attribute name="width"><xsl:value-of select="$width"/></xsl:attribute>
-				<xsl:attribute name="height"><xsl:value-of select="$height"/></xsl:attribute>
-			</xsl:element>
-			
-			<!-- Compute bounding box for lat/lon which is mapped to the projected bounding box (width x height) -->	
-			<xsl:variable name="min_lat">
-				<xsl:for-each select=".//g:lat">
-					<xsl:sort data-type="number" />
-					<xsl:if test="position() = 1">
-						<xsl:value-of select="number(.)" />
-					</xsl:if>
-				</xsl:for-each>
-			</xsl:variable>
-			<xsl:variable name="max_lat">
-				<xsl:for-each select=".//g:lat">
-					<xsl:sort data-type="number" order="descending"/>
-					<xsl:if test="position() = 1">
-						<xsl:value-of select="number(.)" />
-					</xsl:if>
-				</xsl:for-each>
-			</xsl:variable>
-			<xsl:variable name="min_lon">
-				<xsl:for-each select=".//g:lon">
-					<xsl:sort data-type="number" />
-					<xsl:if test="position() = 1">
-						<xsl:value-of select="number(.)" />
-					</xsl:if>
-				</xsl:for-each>
-			</xsl:variable>
-			<xsl:variable name="max_lon">
-				<xsl:for-each select=".//g:lon">
-					<xsl:sort data-type="number" order="descending"/>
-					<xsl:if test="position() = 1">
-						<xsl:value-of select="number(.)" />
-					</xsl:if>
-				</xsl:for-each>
-			</xsl:variable>
-	
-			<xsl:variable name="mid_lat">
-				<xsl:value-of select="(number($max_lat)+number($min_lat)) div 2"/>
-			</xsl:variable>
-			
-			<xsl:variable name="mid_lon">
-				<xsl:value-of select="(number($max_lon)+number($min_lon)) div 2"/>
-			</xsl:variable>
-			
-			<xsl:variable name="minmin">
-				<xsl:call-template name="project">
-					<xsl:with-param name="lat"><xsl:value-of select="$min_lat"/></xsl:with-param>
-					<xsl:with-param name="lon"><xsl:value-of select="$min_lon"/></xsl:with-param>
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale"><xsl:value-of select="number(1)"/></xsl:with-param>
-				</xsl:call-template>
-			</xsl:variable>
-			
-			<xsl:variable name="maxmax">
-				<xsl:call-template name="project">
-					<xsl:with-param name="lat"><xsl:value-of select="$max_lat"/></xsl:with-param>
-					<xsl:with-param name="lon"><xsl:value-of select="$max_lon"/></xsl:with-param>
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale"><xsl:value-of select="number(1)"/></xsl:with-param>
-				</xsl:call-template>
-			</xsl:variable>
-			
-			<xsl:variable name="x1"><xsl:value-of select="substring-before($minmin, ',')"/></xsl:variable>
-			<xsl:variable name="y1"><xsl:value-of select="substring-after($minmin, ',')"/></xsl:variable>
-			<xsl:variable name="x2"><xsl:value-of select="substring-before($maxmax, ',')"/></xsl:variable>
-			<xsl:variable name="y2"><xsl:value-of select="substring-after($maxmax, ',')"/></xsl:variable>
-			<xsl:variable name="minx">
-				<xsl:if test="$x1 >=   $x2"><xsl:value-of select="$x2"/></xsl:if>
-				<xsl:if test="$x1 &lt; $x2"><xsl:value-of select="$x1"/></xsl:if>
-			</xsl:variable>
-			<xsl:variable name="maxx">
-				<xsl:if test="$x1 >=   $x2"><xsl:value-of select="$x1"/></xsl:if>
-				<xsl:if test="$x1 &lt; $x2"><xsl:value-of select="$x2"/></xsl:if>
-			</xsl:variable>
-			<xsl:variable name="miny">
-				<xsl:if test="$y1 >=   $y2"><xsl:value-of select="$y2"/></xsl:if>
-				<xsl:if test="$y1 &lt; $y2"><xsl:value-of select="$y1"/></xsl:if>
-			</xsl:variable>
-			<xsl:variable name="maxy">
-				<xsl:if test="$y1 >=   $y2"><xsl:value-of select="$y1"/></xsl:if>
-				<xsl:if test="$y1 &lt; $y2"><xsl:value-of select="$y2"/></xsl:if>
-			</xsl:variable>
-			
-			<xsl:variable name="deltax"><xsl:value-of select="abs(number($maxx) - number($minx))"/></xsl:variable>
-			<xsl:variable name="deltay"><xsl:value-of select="abs(number($maxy) - number($miny))"/></xsl:variable>
-			
-			<xsl:variable name="scalex"><xsl:value-of select="$width  div $deltax"></xsl:value-of></xsl:variable>
-			<xsl:variable name="scaley"><xsl:value-of select="$height div $deltay"></xsl:value-of></xsl:variable>
-			
-			<xsl:variable name="scale">
-				<xsl:if test="$scalex >= $scaley">
-					<xsl:value-of select="$scaley"/>
-				</xsl:if>
-				<xsl:if test="$scalex &lt; $scaley">
-					<xsl:value-of select="$scalex"/>
-				</xsl:if>
-			</xsl:variable>
 					
 			<!-- Find teeing area's middle point -->
-			<xsl:variable name="green_lat_min">
-				<xsl:for-each select=".//g:placemarks/*[@type='green']/g:position/g:position-gps/g:lat">
-					<xsl:sort data-type="number"/>
-					<xsl:if test="position() = 1">
-						<xsl:value-of select="number(.)" />
-					</xsl:if>
-				</xsl:for-each>
-			</xsl:variable>
-			<xsl:variable name="green_lat_max">
-				<xsl:for-each select=".//g:placemarks/*[@type='green']/g:position/g:position-gps/g:lat">
-					<xsl:sort data-type="number" order="descending"/>
-					<xsl:if test="position() = 1">
-						<xsl:value-of select="number(.)" />
-					</xsl:if>
-				</xsl:for-each>
-			</xsl:variable>
-			<xsl:variable name="green_lon_min">
-				<xsl:for-each select=".//g:placemarks/*[@type='green']/g:position/g:position-gps/g:lon">
-					<xsl:sort data-type="number"/>
-					<xsl:if test="position() = 1">
-						<xsl:value-of select="number(.)" />
-					</xsl:if>
-				</xsl:for-each>
-			</xsl:variable>
-			<xsl:variable name="green_lon_max">
-				<xsl:for-each select=".//g:placemarks/*[@type='green']/g:position/g:position-gps/g:lon">
-					<xsl:sort data-type="number" order="descending"/>
-					<xsl:if test="position() = 1">
-						<xsl:value-of select="number(.)" />
-					</xsl:if>
-				</xsl:for-each>
-			</xsl:variable>
-			<xsl:variable name="green_mid_lat">
-				<xsl:value-of select="(number($green_lat_max)+number($green_lat_min)) div 2"/>
-			</xsl:variable>
-			<xsl:variable name="green_mid_lon">
-				<xsl:value-of select="(number($green_lon_max)+number($green_lon_min)) div 2"/>
-			</xsl:variable>	
-			
-			<!-- Find green  area's middle point -->
-			<xsl:variable name="tee_lat_min">
-				<xsl:for-each select=".//g:placemarks/*[@type='tee']/g:position/g:position-gps/g:lat">
-					<xsl:sort data-type="number"/>
-					<xsl:if test="position() = 1">
-						<xsl:value-of select="number(.)" />
-					</xsl:if>
-				</xsl:for-each>
-			</xsl:variable>
-			<xsl:variable name="tee_lat_max">
-				<xsl:for-each select=".//g:placemarks/*[@type='tee']/g:position/g:position-gps/g:lat">
-					<xsl:sort data-type="number" order="descending"/>
-					<xsl:if test="position() = 1">
-						<xsl:value-of select="number(.)" />
-					</xsl:if>
-				</xsl:for-each>
-			</xsl:variable>
-			<xsl:variable name="tee_lon_min">
-				<xsl:for-each select=".//g:placemarks/*[@type='tee']/g:position/g:position-gps/g:lon">
-					<xsl:sort data-type="number"/>
-					<xsl:if test="position() = 1">
-						<xsl:value-of select="number(.)" />
-					</xsl:if>
-				</xsl:for-each>
-			</xsl:variable>
-			<xsl:variable name="tee_lon_max">
-				<xsl:for-each select=".//g:placemarks/*[@type='tee']/g:position/g:position-gps/g:lon">
-					<xsl:sort data-type="number" order="descending"/>
-					<xsl:if test="position() = 1">
-						<xsl:value-of select="number(.)" />
-					</xsl:if>
-				</xsl:for-each>
-			</xsl:variable>
-			<xsl:variable name="tee_mid_lat">
-				<xsl:value-of select="(number($tee_lat_max)+number($tee_lat_min)) div 2"/>
-			</xsl:variable>
-			<xsl:variable name="tee_mid_lon">
-				<xsl:value-of select="(number($tee_lon_max)+number($tee_lon_min)) div 2"/>
-			</xsl:variable>	
-			
-			<!-- Get x,y for each point -->
-			<xsl:variable name="tee_mid">
-				<xsl:call-template name="project">
-					<xsl:with-param name="lat"><xsl:value-of select="$tee_lat_min"/></xsl:with-param>
-					<xsl:with-param name="lon"><xsl:value-of select="$tee_lon_min"/></xsl:with-param>
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale"><xsl:value-of select="number(1)"/></xsl:with-param>
-				</xsl:call-template>
-			</xsl:variable>
-			<xsl:variable name="tee_mid_x"><xsl:value-of select="substring-before($tee_mid, ',')"/></xsl:variable>
-			<xsl:variable name="tee_mid_y"><xsl:value-of select="substring-after($tee_mid, ',')"/></xsl:variable>
-			
-			<xsl:variable name="green_mid">
-				<xsl:call-template name="project">
-					<xsl:with-param name="lat"><xsl:value-of select="$green_lat_min"/></xsl:with-param>
-					<xsl:with-param name="lon"><xsl:value-of select="$green_lon_min"/></xsl:with-param>
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale"><xsl:value-of select="number(1)"/></xsl:with-param>
-				</xsl:call-template>
-			</xsl:variable>
-			<xsl:variable name="green_mid_x"><xsl:value-of select="substring-before($green_mid, ',')"/></xsl:variable>
-			<xsl:variable name="green_mid_y"><xsl:value-of select="substring-after($green_mid, ',')"/></xsl:variable>
-			
-			<!-- Find overall orientation and scaling -->
 			<xsl:variable name="rotation">
-				<xsl:call-template name="GetAngle">
-					<xsl:with-param name="x1"><xsl:value-of select="$tee_mid_x"/></xsl:with-param>
-					<xsl:with-param name="y1"><xsl:value-of select="$tee_mid_y"/></xsl:with-param>
-					<xsl:with-param name="x2"><xsl:value-of select="$green_mid_x"/></xsl:with-param>
-					<xsl:with-param name="y2"><xsl:value-of select="$green_mid_y"/></xsl:with-param>
-				</xsl:call-template>
+				<xsl:choose>
+					<xsl:when test="$mode = 'hole'">
+						<!-- Find green area's middle point -->
+						<xsl:variable name="green_lat_min"><xsl:value-of select="min(.//g:placemarks/*[@type='green']/g:position/g:position-gps/g:lat)"/></xsl:variable>
+						<xsl:variable name="green_lat_max"><xsl:value-of select="max(.//g:placemarks/*[@type='green']/g:position/g:position-gps/g:lat)"/></xsl:variable>
+						<xsl:variable name="green_lon_min"><xsl:value-of select="min(.//g:placemarks/*[@type='green']/g:position/g:position-gps/g:lon)"/></xsl:variable>
+						<xsl:variable name="green_lon_max"><xsl:value-of select="max(.//g:placemarks/*[@type='green']/g:position/g:position-gps/g:lon)"/></xsl:variable>
+						<xsl:variable name="green_mid_lat">
+							<xsl:value-of select="(number($green_lat_max)+number($green_lat_min)) div 2"/>
+						</xsl:variable>
+						<xsl:variable name="green_mid_lon">
+							<xsl:value-of select="(number($green_lon_max)+number($green_lon_min)) div 2"/>
+						</xsl:variable>	
+						
+						<!-- Find teeing area's middle point -->
+						<xsl:variable name="tee_lat_min"><xsl:value-of select="min(.//g:placemarks/*[@type='tee']/g:position/g:position-gps/g:lat)"/></xsl:variable>
+						<xsl:variable name="tee_lat_max"><xsl:value-of select="max(.//g:placemarks/*[@type='tee']/g:position/g:position-gps/g:lat)"/></xsl:variable>
+						<xsl:variable name="tee_lon_min"><xsl:value-of select="min(.//g:placemarks/*[@type='tee']/g:position/g:position-gps/g:lon)"/></xsl:variable>
+						<xsl:variable name="tee_lon_max"><xsl:value-of select="max(.//g:placemarks/*[@type='tee']/g:position/g:position-gps/g:lon)"/></xsl:variable>
+						<xsl:variable name="tee_mid_lat">
+							<xsl:value-of select="(number($tee_lat_max)+number($tee_lat_min)) div 2"/>
+						</xsl:variable>
+						<xsl:variable name="tee_mid_lon">
+							<xsl:value-of select="(number($tee_lon_max)+number($tee_lon_min)) div 2"/>
+						</xsl:variable>	
+						
+						<!-- Get x,y for each point -->
+						<xsl:variable name="tee_mid">
+							<xsl:call-template name="Project">
+								<xsl:with-param name="lat"><xsl:value-of select="$tee_lat_min"/></xsl:with-param>
+								<xsl:with-param name="lon"><xsl:value-of select="$tee_lon_min"/></xsl:with-param>
+								<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
+								<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
+								<xsl:with-param name="scale"><xsl:value-of select="number(1)"/></xsl:with-param>
+							</xsl:call-template>
+						</xsl:variable>
+						<xsl:variable name="tee_mid_x"><xsl:value-of select="substring-before($tee_mid, ',')"/></xsl:variable>
+						<xsl:variable name="tee_mid_y"><xsl:value-of select="substring-after($tee_mid, ',')"/></xsl:variable>
+						
+						<xsl:variable name="green_mid">
+							<xsl:call-template name="Project">
+								<xsl:with-param name="lat"><xsl:value-of select="$green_lat_min"/></xsl:with-param>
+								<xsl:with-param name="lon"><xsl:value-of select="$green_lon_min"/></xsl:with-param>
+								<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
+								<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
+								<xsl:with-param name="scale"><xsl:value-of select="number(1)"/></xsl:with-param>
+							</xsl:call-template>
+						</xsl:variable>
+						<xsl:variable name="green_mid_x"><xsl:value-of select="substring-before($green_mid, ',')"/></xsl:variable>
+						<xsl:variable name="green_mid_y"><xsl:value-of select="substring-after($green_mid, ',')"/></xsl:variable>
+					
+						<!-- Find overall orientation and scaling -->
+						<xsl:call-template name="GetAngle">
+							<xsl:with-param name="x1"><xsl:value-of select="$tee_mid_x"/></xsl:with-param>
+							<xsl:with-param name="y1"><xsl:value-of select="$tee_mid_y"/></xsl:with-param>
+							<xsl:with-param name="x2"><xsl:value-of select="$green_mid_x"/></xsl:with-param>
+							<xsl:with-param name="y2"><xsl:value-of select="$green_mid_y"/></xsl:with-param>
+						</xsl:call-template>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="number(0)"/><!-- no rotation -->
+					</xsl:otherwise>
+				</xsl:choose>
 			</xsl:variable>
 			
 			<xsl:variable name="scaling">
@@ -743,388 +268,90 @@
 				</xsl:call-template>
 			</xsl:variable>
 				
-	
-			
-			<xsl:text disable-output-escaping="yes">
-			&lt;!-- debug information</xsl:text>
-			<xsl:text>
-				min_lat: </xsl:text><xsl:value-of select="$min_lat"/>
-			<xsl:text>
-				max_lat: </xsl:text><xsl:value-of select="$max_lat"/>
-			<xsl:text>
-				min_lon: </xsl:text><xsl:value-of select="$min_lon"/>
-			<xsl:text>
-				max_lon: </xsl:text><xsl:value-of select="$max_lon"/>
-			<xsl:text>
-				mid_lat: </xsl:text><xsl:value-of select="$mid_lat"/>
-			<xsl:text>
-				mid_lon: </xsl:text><xsl:value-of select="$mid_lon"/>
-			<xsl:text>
-				scale: </xsl:text><xsl:value-of select="$scale"/>
-			<xsl:if test="$deltax >= $deltay">
-				<xsl:text disable-output-escaping="yes"> ==> lat</xsl:text>
-			</xsl:if>
-			<xsl:if test="$deltax &lt; $deltay">
-				<xsl:text disable-output-escaping="yes"> ==> lon</xsl:text>
-			</xsl:if>
-			<xsl:text>
-				minx: </xsl:text><xsl:value-of select="$minx"/>
-			<xsl:text>
-				maxx: </xsl:text><xsl:value-of select="$maxx"/>
-			<xsl:text>
-				miny: </xsl:text><xsl:value-of select="$miny"/>
-			<xsl:text>
-				maxy: </xsl:text><xsl:value-of select="$maxy"/>
-			<xsl:text>
-				deltax: </xsl:text><xsl:value-of select="$deltax"/>
-			<xsl:text>
-				deltay: </xsl:text><xsl:value-of select="$deltay"/>
-			<xsl:text>
-				minx: </xsl:text><xsl:value-of select="$minx * $scale"/>
-			<xsl:text>
-				maxx: </xsl:text><xsl:value-of select="$maxx * $scale"/>
-			<xsl:text>
-				miny: </xsl:text><xsl:value-of select="$miny * $scale"/>
-			<xsl:text>
-				maxy: </xsl:text><xsl:value-of select="$maxy * $scale"/>
-			<xsl:text>
-				tee_mid_lat: </xsl:text><xsl:value-of select="$tee_mid_lat"/>
-			<xsl:text>
-				tee_mid_lon: </xsl:text><xsl:value-of select="$tee_mid_lon"/>
-			<xsl:text>
-				green_mid_lat: </xsl:text><xsl:value-of select="$green_mid_lat"/>
-			<xsl:text>
-				green_mid_lon </xsl:text><xsl:value-of select="$green_mid_lon"/>
-			<xsl:text>
-				rotation </xsl:text><xsl:value-of select="$rotation"/>
-			<xsl:text>
-				scaling </xsl:text><xsl:value-of select="$scaling"/>
-			<xsl:text disable-output-escaping="yes">
-			--&gt;
-			</xsl:text>
-	
-			
-						
-			<!-- TO DO: Apply placemark in layout order: large objects (hole-contour, etc.) first and
-				 smaller objects (tee, greens, poi) last.
-				 
-				 01 = hole-contour
-				 02 = out-of-bound
-				 03 = heavy-rough
-				 04 = rough
-				 05 = semi-rough
-				 06 = bush
-				 
-				 07 = lateral-water
-				 08 = front-water
-				 09 = water
-				 
-				 10 = tee
-				 11 = fairway
-				 12 = path
-				 13 = other
-				 14 = building
-				 15 = obstruction
-				 
-				 16 = trap
-				 17 = greenside-trap
-				 18 = fairway-trap
-				 19 = bunker
-				 20 = fringe
-				 21 = green
-				 
-				 22 = trees
-				 23 = tree
-				 
-				 24 = aim
-				 25 = marker
-				 
-			-->
+
 			<xsl:element name="g">
 				<xsl:attribute name="transform">
 					<!-- The Gnomonic projection reverses the X axis. We reverse it by applying a SCALE of -1 along the x axis only.
 						 The projection is centered, so we TRANSLATE the center in the middle of the drawing area as well.
+						 The rotation is not null for hole only, to present the tee at the bottom of the page and green at top.
 					  -->
 					<xsl:value-of select="concat('translate(',$width div 2, ',', $height div 2,') scale(',-$scaling,',',$scaling,') rotate(',$rotation,')')" />
 				</xsl:attribute>
 				
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='hole-contour']">
+				<xsl:apply-templates select=".//g:placemarks" mode="aoi">
 					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
 					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
 					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='out-of-bound']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='heavy-rough']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='rough']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='semi-rough']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='bush']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='				 
-					lateral-water']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='front-water']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='water']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='tee']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='fairway']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='path']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='other']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='building']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='obstruction']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='trap']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='greenside-trap']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='fairway-trap']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='bunker']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='fringe']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='green']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='trees']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='tree']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='aim']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:aoi[@type='marker']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
+					<xsl:with-param name="list-of-types"><xsl:value-of select="$typelist"/></xsl:with-param>
 				</xsl:apply-templates>
 				
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='hole-contour']">
+				<xsl:apply-templates select=".//g:placemarks" mode="poi">
 					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
 					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
 					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
+					<xsl:with-param name="list-of-types"><xsl:value-of select="$typelist"/></xsl:with-param>
 				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='out-of-bound']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='heavy-rough']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='rough']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='semi-rough']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='bush']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='				 
-					lateral-water']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='front-water']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='water']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='tee']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='fairway']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='path']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='other']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='building']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='obstruction']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='trap']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='greenside-trap']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='fairway-trap']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='bunker']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='fringe']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='green']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='trees']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='tree']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='aim']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
-				<xsl:apply-templates select=".//g:placemarks/g:poi[@type='marker']">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-				</xsl:apply-templates>
+				
 				
 			</xsl:element><!-- g -->
 			<xsl:element name="use">
 				<xsl:attribute name="xlink:href">#Compass</xsl:attribute>
 				<xsl:attribute name="x"><xsl:value-of select="$compassx"/></xsl:attribute>
 				<xsl:attribute name="y"><xsl:value-of select="$compassy"/></xsl:attribute>
-				<xsl:attribute name="transform"><xsl:value-of select="concat('rotate(',$rotation,' ',$compassx,' ',$compassy,')')"/></xsl:attribute>
+				<xsl:attribute name="transform">
+					<xsl:value-of select="concat('rotate(',$rotation,' ',$compassx,' ',$compassy,')')"/>
+				</xsl:attribute>
 			</xsl:element>
 		</xsl:element><!-- svg -->
 	</xsl:template>
 	
 	
-	<xsl:template match="g:placemarks">
+	<xsl:template match="g:placemarks" mode="aoi">
 		<xsl:param name="midlat"/>
 		<xsl:param name="midlon"/>
 		<xsl:param name="scale"/>
-		<xsl:apply-templates>
+		<xsl:param name="list-of-types"/>
+
+		<xsl:apply-templates select=".//g:aoi[@type=substring-before($list-of-types, ' ')]">
 			<xsl:with-param name="midlat"><xsl:value-of select="$midlat"/></xsl:with-param>
 			<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
 			<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
 		</xsl:apply-templates>
+
+		<xsl:if test="string-length(substring-after($list-of-types, ' '))> 2"> <!-- CHECK TEST -->
+			<xsl:apply-templates select="." mode="aoi">
+				<xsl:with-param name="midlat"><xsl:value-of select="$midlat"/></xsl:with-param>
+				<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
+				<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
+				<xsl:with-param name="list-of-types"><xsl:value-of select="substring-after($list-of-types, ' ')"/></xsl:with-param>
+			</xsl:apply-templates>
+		</xsl:if>
 	</xsl:template>
 
 
+	<xsl:template match="g:placemarks" mode="poi">
+		<xsl:param name="midlat"/>
+		<xsl:param name="midlon"/>
+		<xsl:param name="scale"/>
+		<xsl:param name="list-of-types"/>
+		
+		<xsl:apply-templates select=".//g:poi[@type=substring-before($list-of-types, ' ')]">
+			<xsl:with-param name="midlat"><xsl:value-of select="$midlat"/></xsl:with-param>
+			<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
+			<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
+		</xsl:apply-templates>
+		
+		<xsl:if test="string-length(substring-after($list-of-types, ' '))> 2"> <!-- CHECK TEST -->
+			<xsl:apply-templates select="." mode="poi">
+				<xsl:with-param name="midlat"><xsl:value-of select="$midlat"/></xsl:with-param>
+				<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
+				<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
+				<xsl:with-param name="list-of-types"><xsl:value-of select="substring-after($list-of-types, ' ')"/></xsl:with-param>
+			</xsl:apply-templates>
+		</xsl:if>
+	</xsl:template>
+	
+	
 	<xsl:template match="g:poi">
 		<xsl:param name="midlat"/>
 		<xsl:param name="midlon"/>
@@ -1139,7 +366,7 @@
 		</xsl:element>
 	</xsl:template>
 
-
+	
 	<xsl:template match="g:aoi">
 		<xsl:param name="midlat"/>
 		<xsl:param name="midlon"/>
@@ -1167,7 +394,7 @@
 		<xsl:param name="scale"/>
 		
 		<xsl:variable name="temp">
-			<xsl:call-template name="project">
+			<xsl:call-template name="Project">
 				<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
 				<xsl:with-param name="midlat"><xsl:value-of select="$midlat"/></xsl:with-param>
 				<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
@@ -1186,7 +413,7 @@
 		<xsl:param name="midlon"/>
 		<xsl:param name="scale"/>
 		
-		<xsl:call-template name="project">
+		<xsl:call-template name="Project">
 			<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
 			<xsl:with-param name="midlat"><xsl:value-of select="$midlat"/></xsl:with-param>
 			<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
@@ -1196,7 +423,7 @@
 	</xsl:template>
 
 
-	<xsl:template name="project" xmlns:Math="java:java.lang.Math">
+	<xsl:template name="Project" xmlns:Math="java:java.lang.Math">
 		<!-- Notes on geometry.
 			 Performs a local gnomonic projection around the middle point of the area (midlat,midlon).
 			 See: http://mathworld.wolfram.com/GnomonicProjection.html for formulae.
@@ -1241,6 +468,7 @@
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
+	
 	
 	<xsl:template name="GetScale" xmlns:Math="java:java.lang.Math">
 		<xsl:param name="angle"/>
