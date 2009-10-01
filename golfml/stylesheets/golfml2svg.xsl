@@ -26,7 +26,8 @@ HISTORY
 	<xsl:output method="xml" version="1.0" indent="yes"/>
 	
 	<!-- File format for multiple file output -->
-	<xsl:output method="xml" version="1.0" indent="yes" name="SVGformat"/>
+	<xsl:output method="xml" version="1.0" indent="yes" name="SVG"/>
+	<xsl:output method="text" version="1.0" indent="yes" name="Text"/>
 	<!-- size of individual outputs in pixels
 		 Please note that Defs are scaled for drawing between roughly 400 and 1200 pixels.
 		 Smaller or larger values for drawing would need scaling of Defs (patterns, stokes, elements...)
@@ -34,12 +35,12 @@ HISTORY
 	<xsl:param name="width">600</xsl:param>
 	<xsl:param name="height">600</xsl:param>
 	<!-- position of compass, relative to upper left corner, in pixels -->
-	<xsl:param name="compassx"><xsl:value-of select="$width  - 50"/></xsl:param>
+	<xsl:param name="compassx"><xsl:value-of select="$width - 50"/></xsl:param>
 	<xsl:param name="compassy"><xsl:value-of select="50"/></xsl:param>
 	<!-- mode=course|hole, generate a single SVG file for the entire course, or one for each hole -->
-	<xsl:param name="mode">hole</xsl:param>
+	<xsl:param name="mode">course</xsl:param>
 	<!-- If a hole-number is supplied, generates only that hole -->
-	<xsl:param name="hole-number">10</xsl:param>
+	<xsl:param name="hole-number">0</xsl:param>
 	<!-- TO DO: Apply placemark in layout order: large objects (hole-contour, etc.) first and
 		== smaller objects (tee, greens, poi) last. Here is suggested list of ordered values.
 		== 
@@ -104,7 +105,7 @@ HISTORY
 				<xsl:otherwise>
 					<xsl:for-each select="g:hole">
 						<xsl:variable name="uri" select="concat('hole-', @number, '.svg')"/>
-						<xsl:result-document href="{$uri}" format="SVGformat">
+						<xsl:result-document href="{$uri}" format="SVG">
 							<xsl:apply-templates select="." mode="draw"/>
 						</xsl:result-document>
 					</xsl:for-each>
@@ -193,10 +194,50 @@ HISTORY
 				</xsl:if>
 			</xsl:variable>
 			
+			<xsl:text disable-output-escaping="yes">
+				&lt;!-- debug information: mode course</xsl:text>
+			<xsl:text>
+				min_lat: </xsl:text><xsl:value-of select="$min_lat"/>
+			<xsl:text>
+				max_lat: </xsl:text><xsl:value-of select="$max_lat"/>
+			<xsl:text>
+				min_lon: </xsl:text><xsl:value-of select="$min_lon"/>
+			<xsl:text>
+				max_lon: </xsl:text><xsl:value-of select="$max_lon"/>
+			<xsl:text>
+				mid_lat: </xsl:text><xsl:value-of select="$mid_lat"/>
+			<xsl:text>
+				mid_lon: </xsl:text><xsl:value-of select="$mid_lon"/>
+			<xsl:text>
+				deltax: </xsl:text><xsl:value-of select="$deltax"/>
+			<xsl:text>
+				deltay: </xsl:text><xsl:value-of select="$deltay"/>
+			<xsl:text>
+				scalex: </xsl:text><xsl:value-of select="$scalex"/>
+			<xsl:text>
+				scaley: </xsl:text><xsl:value-of select="$scaley"/>
+			<xsl:text>
+				scale: </xsl:text><xsl:value-of select="$scale"/>
+			<xsl:text>
+				minx: </xsl:text><xsl:value-of select="$minx"/>
+			<xsl:text>
+				maxx: </xsl:text><xsl:value-of select="$maxx"/>
+			<xsl:text>
+				miny: </xsl:text><xsl:value-of select="$miny"/>
+			<xsl:text>
+				maxy: </xsl:text><xsl:value-of select="$maxy"/>
+			<xsl:text>
+				minx: </xsl:text><xsl:value-of select="$minx * $scale"/>
+			<xsl:text>
+				maxx: </xsl:text><xsl:value-of select="$maxx * $scale"/>
+			<xsl:text>
+				miny: </xsl:text><xsl:value-of select="$miny * $scale"/>
+			<xsl:text>
+				maxy: </xsl:text><xsl:value-of select="$maxy * $scale"/>
 			
 					
 			<!-- Find teeing area's middle point -->
-			<xsl:variable name="rotation">
+			<xsl:variable name="rotation-temp">
 				<xsl:choose>
 					<xsl:when test="$mode = 'hole'">
 						<!-- Find green area's middle point -->
@@ -210,6 +251,35 @@ HISTORY
 						<xsl:variable name="green_mid_lon">
 							<xsl:value-of select="(number($green_lon_max)+number($green_lon_min)) div 2"/>
 						</xsl:variable>	
+						<xsl:variable name="green_mid">
+							<xsl:call-template name="Project">
+								<xsl:with-param name="lat"><xsl:value-of select="$green_mid_lat"/></xsl:with-param>
+								<xsl:with-param name="lon"><xsl:value-of select="$green_mid_lon"/></xsl:with-param>
+								<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
+								<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
+								<xsl:with-param name="scale"><xsl:value-of select="number(1)"/></xsl:with-param>
+							</xsl:call-template>
+						</xsl:variable>
+						<xsl:variable name="green_mid_x"><xsl:value-of select="substring-before($green_mid, ',')"/></xsl:variable>
+						<xsl:variable name="green_mid_y"><xsl:value-of select="substring-after($green_mid, ',')"/></xsl:variable>
+						
+						<xsl:text>
+							Green
+							green_lat_min: </xsl:text><xsl:value-of select="$green_lat_min"/>
+						<xsl:text>
+							green_lat_max: </xsl:text><xsl:value-of select="$green_lat_max"/>
+						<xsl:text>
+							green_lon_min: </xsl:text><xsl:value-of select="$green_lon_min"/>
+						<xsl:text>
+							green_lon_max: </xsl:text><xsl:value-of select="$green_lon_max"/>
+						<xsl:text>
+							green_mid_lat: </xsl:text><xsl:value-of select="$green_mid_lat"/>
+						<xsl:text>
+							green_mid_lon: </xsl:text><xsl:value-of select="$green_mid_lon"/>
+						<xsl:text>
+							green_mid_x: </xsl:text><xsl:value-of select="$green_mid_x"/>
+						<xsl:text>
+							green_mid_y: </xsl:text><xsl:value-of select="$green_mid_y"/>
 						
 						<!-- Find teeing area's middle point -->
 						<xsl:variable name="tee_lat_min"><xsl:value-of select="min(.//g:placemarks/*[@type='tee']/g:position/g:position-gps/g:lat)"/></xsl:variable>
@@ -221,13 +291,11 @@ HISTORY
 						</xsl:variable>
 						<xsl:variable name="tee_mid_lon">
 							<xsl:value-of select="(number($tee_lon_max)+number($tee_lon_min)) div 2"/>
-						</xsl:variable>	
-						
-						<!-- Get x,y for each point -->
+						</xsl:variable>
 						<xsl:variable name="tee_mid">
 							<xsl:call-template name="Project">
-								<xsl:with-param name="lat"><xsl:value-of select="$tee_lat_min"/></xsl:with-param>
-								<xsl:with-param name="lon"><xsl:value-of select="$tee_lon_min"/></xsl:with-param>
+								<xsl:with-param name="lat"><xsl:value-of select="$tee_mid_lat"/></xsl:with-param>
+								<xsl:with-param name="lon"><xsl:value-of select="$tee_mid_lon"/></xsl:with-param>
 								<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
 								<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
 								<xsl:with-param name="scale"><xsl:value-of select="number(1)"/></xsl:with-param>
@@ -236,38 +304,73 @@ HISTORY
 						<xsl:variable name="tee_mid_x"><xsl:value-of select="substring-before($tee_mid, ',')"/></xsl:variable>
 						<xsl:variable name="tee_mid_y"><xsl:value-of select="substring-after($tee_mid, ',')"/></xsl:variable>
 						
-						<xsl:variable name="green_mid">
-							<xsl:call-template name="Project">
-								<xsl:with-param name="lat"><xsl:value-of select="$green_lat_min"/></xsl:with-param>
-								<xsl:with-param name="lon"><xsl:value-of select="$green_lon_min"/></xsl:with-param>
-								<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-								<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-								<xsl:with-param name="scale"><xsl:value-of select="number(1)"/></xsl:with-param>
+						<xsl:text>
+							Tee
+							tee_lat_min: </xsl:text><xsl:value-of select="$tee_lat_min"/>
+						<xsl:text>
+							tee_lat_max: </xsl:text><xsl:value-of select="$tee_lat_max"/>
+						<xsl:text>
+							tee_lon_min: </xsl:text><xsl:value-of select="$tee_lon_min"/>
+						<xsl:text>
+							tee_lon_max: </xsl:text><xsl:value-of select="$tee_lon_max"/>
+						<xsl:text>
+							tee_mid_lat: </xsl:text><xsl:value-of select="$tee_mid_lat"/>
+						<xsl:text>
+							tee_mid_lon: </xsl:text><xsl:value-of select="$tee_mid_lon"/>
+						<xsl:text>
+							tee_mid_x: </xsl:text><xsl:value-of select="$tee_mid_x"/>
+						<xsl:text>
+							tee_mid_y: </xsl:text><xsl:value-of select="$tee_mid_y"/>
+						<xsl:text disable-output-escaping="yes">
+							x1&gt;x2: </xsl:text><xsl:choose>
+								<xsl:when test="$tee_mid_x > $green_mid_x">Yes</xsl:when>
+								<xsl:otherwise>No</xsl:otherwise>
+							</xsl:choose>
+						<xsl:text disable-output-escaping="yes">
+							y1&gt;y2: </xsl:text><xsl:choose>
+								<xsl:when test="$tee_mid_y > $green_mid_y">Yes</xsl:when>
+								<xsl:otherwise>No</xsl:otherwise>
+							</xsl:choose>
+						<xsl:text>
+							Angle-temp: </xsl:text>
+						
+						<!-- Find overall orientation and scaling -->
+						<xsl:variable name="angle-temp">
+							<xsl:call-template name="GetAngle">
+								<xsl:with-param name="x1"><xsl:value-of select="$tee_mid_x"/></xsl:with-param>
+								<xsl:with-param name="y1"><xsl:value-of select="$tee_mid_y"/></xsl:with-param>
+								<xsl:with-param name="x2"><xsl:value-of select="$green_mid_x"/></xsl:with-param>
+								<xsl:with-param name="y2"><xsl:value-of select="$green_mid_y"/></xsl:with-param>
 							</xsl:call-template>
 						</xsl:variable>
-						<xsl:variable name="green_mid_x"><xsl:value-of select="substring-before($green_mid, ',')"/></xsl:variable>
-						<xsl:variable name="green_mid_y"><xsl:value-of select="substring-after($green_mid, ',')"/></xsl:variable>
-					
-						<!-- Find overall orientation and scaling -->
-						<xsl:call-template name="GetAngle">
-							<xsl:with-param name="x1"><xsl:value-of select="$tee_mid_x"/></xsl:with-param>
-							<xsl:with-param name="y1"><xsl:value-of select="$tee_mid_y"/></xsl:with-param>
-							<xsl:with-param name="x2"><xsl:value-of select="$green_mid_x"/></xsl:with-param>
-							<xsl:with-param name="y2"><xsl:value-of select="$green_mid_y"/></xsl:with-param>
-						</xsl:call-template>
+						<xsl:value-of select="concat('ROTATION=',$angle-temp,',x1=',$tee_mid_x,',y1=',$tee_mid_y,',x2=',$green_mid_x,',y2=',$green_mid_y)"></xsl:value-of>
 					</xsl:when>
 					<xsl:otherwise>
-						<xsl:value-of select="number(0)"/><!-- no rotation -->
+						<xsl:value-of select="string('ROTATION=0,x1=0,y1=0,x2=0,y2=0')"/><!-- no rotation -->
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:variable>
+			
+			<xsl:variable name="rotation"><xsl:value-of select="substring-before(substring-after($rotation-temp, 'ROTATION='), ',')"></xsl:value-of></xsl:variable>
 			
 			<xsl:variable name="scaling">
 				<xsl:call-template name="GetScale">
 					<xsl:with-param name="angle"><xsl:value-of select="$rotation"/></xsl:with-param>
 				</xsl:call-template>
 			</xsl:variable>
-				
+			
+			<xsl:text>MODIFICATION
+			</xsl:text>
+			<xsl:text>
+				rotation: </xsl:text><xsl:value-of select="$rotation"/>
+			<xsl:text>
+				scaling: </xsl:text><xsl:value-of select="$scaling"/>
+			<xsl:text>
+				x,y: </xsl:text><xsl:value-of select="$rotation-temp"/>
+			<xsl:text disable-output-escaping="yes">
+				--&gt;
+			</xsl:text>
+			
 
 			<xsl:element name="g">
 				<xsl:attribute name="transform">
@@ -291,9 +394,34 @@ HISTORY
 					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
 					<xsl:with-param name="list-of-types"><xsl:value-of select="$typelist"/></xsl:with-param>
 				</xsl:apply-templates>
-				
-				
+
+				<xsl:if test="$mode = 'hole'">
+					<!-- add marker at tee and green center middle position for testing purpose -->
+					<xsl:variable name="x1"><xsl:value-of select="substring-before(substring-after($rotation-temp,'x1='),',')"/></xsl:variable>
+					<xsl:variable name="y1"><xsl:value-of select="substring-before(substring-after($rotation-temp,'y1='),',')"/></xsl:variable>
+					<xsl:element name="use">
+						<xsl:attribute name="xlink:href">#TeeSet</xsl:attribute>
+						<xsl:attribute name="x"><xsl:value-of select="$x1 * $scale"/></xsl:attribute>
+						<xsl:attribute name="y"><xsl:value-of select="$y1 * $scale"/></xsl:attribute>
+						<xsl:attribute name="class">tees</xsl:attribute>
+						<xsl:attribute name="transform">
+							<xsl:value-of select="concat('rotate(',-$rotation,' ',$x1 * $scale,' ',$y1 * $scale,')')"/>
+						</xsl:attribute>
+					</xsl:element>
+					
+					<xsl:variable name="x2"><xsl:value-of select="substring-before(substring-after($rotation-temp,'x2='),',')"/></xsl:variable>
+					<xsl:variable name="y2"><xsl:value-of select="substring-after($rotation-temp,'y2=')"/></xsl:variable>
+					<xsl:element name="use">
+						<xsl:attribute name="xlink:href">#Flag</xsl:attribute>
+						<xsl:attribute name="x"><xsl:value-of select="$x2 * $scale"/></xsl:attribute>
+						<xsl:attribute name="y"><xsl:value-of select="$y2 * $scale"/></xsl:attribute>
+						<xsl:attribute name="transform">
+							<xsl:value-of select="concat('rotate(',-$rotation,' ',$x2 * $scale,' ',$y2 * $scale,')')"/>
+						</xsl:attribute>
+					</xsl:element>
+				</xsl:if>		
 			</xsl:element><!-- g -->
+			
 			<xsl:element name="use">
 				<xsl:attribute name="xlink:href">#Compass</xsl:attribute>
 				<xsl:attribute name="x"><xsl:value-of select="$compassx"/></xsl:attribute>
@@ -302,6 +430,7 @@ HISTORY
 					<xsl:value-of select="concat('rotate(',$rotation,' ',$compassx,' ',$compassy,')')"/>
 				</xsl:attribute>
 			</xsl:element>
+			
 		</xsl:element><!-- svg -->
 	</xsl:template>
 	
@@ -312,7 +441,7 @@ HISTORY
 		<xsl:param name="scale"/>
 		<xsl:param name="list-of-types"/>
 
-		<xsl:apply-templates select=".//g:aoi[@type=substring-before($list-of-types, ' ')]">
+		<xsl:apply-templates select=".//g:aoi[@type=substring-before($list-of-types, ' ')]" mode="draw">
 			<xsl:with-param name="midlat"><xsl:value-of select="$midlat"/></xsl:with-param>
 			<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
 			<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
@@ -335,7 +464,7 @@ HISTORY
 		<xsl:param name="scale"/>
 		<xsl:param name="list-of-types"/>
 		
-		<xsl:apply-templates select=".//g:poi[@type=substring-before($list-of-types, ' ')]">
+		<xsl:apply-templates select=".//g:poi[@type=substring-before($list-of-types, ' ')]" mode="draw">
 			<xsl:with-param name="midlat"><xsl:value-of select="$midlat"/></xsl:with-param>
 			<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
 			<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
@@ -352,7 +481,7 @@ HISTORY
 	</xsl:template>
 	
 	
-	<xsl:template match="g:poi">
+	<xsl:template match="g:poi" mode="draw">
 		<xsl:param name="midlat"/>
 		<xsl:param name="midlon"/>
 		<xsl:param name="scale"/>
@@ -367,7 +496,7 @@ HISTORY
 	</xsl:template>
 
 	
-	<xsl:template match="g:aoi">
+	<xsl:template match="g:aoi" mode="draw">
 		<xsl:param name="midlat"/>
 		<xsl:param name="midlon"/>
 		<xsl:param name="scale"/>
@@ -388,7 +517,7 @@ HISTORY
 	</xsl:template>
 		
 	
-	<xsl:template match="g:position-gps" mode="xy-projection" xmlns:Math="java:java.lang.Math">
+	<xsl:template match="g:position-gps" mode="xy-projection">
 		<xsl:param name="midlat"/>
 		<xsl:param name="midlon"/>
 		<xsl:param name="scale"/>
@@ -408,7 +537,7 @@ HISTORY
 	</xsl:template>
 
 
-	<xsl:template match="g:position-gps" mode="pair-projection" xmlns:Math="java:java.lang.Math">
+	<xsl:template match="g:position-gps" mode="pair-projection">
 		<xsl:param name="midlat"/>
 		<xsl:param name="midlon"/>
 		<xsl:param name="scale"/>
@@ -457,20 +586,21 @@ HISTORY
 		<xsl:param name="y2"/>
 		
 		<xsl:variable name="angle">
-			<xsl:value-of select="Math:asin( ($x2 - $x1) div Math:sqrt( ($x1 - $x2)*($x1 - $x2) + ($y1 - $y2)*($y1 - $y2) ) ) * 180 div Math:PI()"></xsl:value-of>
+			<xsl:value-of select="Math:acos( ($y2 - $y1) div Math:sqrt( ($x1 - $x2)*($x1 - $x2) + ($y1 - $y2)*($y1 - $y2) ) ) * 180 div Math:PI()"></xsl:value-of>
 		</xsl:variable>
 		<xsl:choose>
-			<xsl:when test="number($y1) &lt; number($y2)"><!-- green lower then tee on page -->
-				<xsl:value-of select="number($angle + 180)"/>
+			<xsl:when test="$x1 > $x2">
+				<xsl:value-of select="-$angle + 180"/>
 			</xsl:when>
 			<xsl:otherwise>
-				<xsl:value-of select="number($angle)"/>
+				<xsl:value-of select="$angle - 180"/>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
 	
 	
 	<xsl:template name="GetScale" xmlns:Math="java:java.lang.Math">
+		<!-- returns the max(sin(angle),cos(angle)) -->
 		<xsl:param name="angle"/>
 		<xsl:value-of select="Math:max(Math:abs(Math:sin($angle * Math:PI() div 180)),Math:abs(Math:cos($angle * Math:PI() div 180)))"></xsl:value-of>
 	</xsl:template>
@@ -749,6 +879,19 @@ HISTORY
 .compass-north {
 	fill: #fff;
 }
+.flag-pole {
+	fill: none;
+	stroke: #f00;
+	stroke-width: 2px;
+}
+.flag-flag {
+	fill: #ff0;
+	stroke: #f00;
+	stroke-width: 1px;
+}
+.flag-cup {
+	fill: #fff;
+}
 
      ]]></style>
 		
@@ -804,9 +947,19 @@ HISTORY
 		</g>
 		
 		<g id="Hole">
-			<circle r="1.2"/>
+			<circle r="2"/>
 		</g>
-		
+				
+		<g id="Flag" transform="translate(0 -30) scale(-0.2 0.2)">
+			<line id="FlagPole" class="flag-pole" x1="0.5" y1="0" x2="0.5" y2="150"/>
+			<circle id="FlagCup" class="flag-cup" r="10"  cx="0" cy="145" />
+			<g id="FlagFlag">
+				<path class="flag-flag"
+					d="M55.339,45.968c-18.28-14.516-36.559,14.516-54.839,0c0-12.097,0-24.193,0-36.29
+					c18.28,14.516,36.559-14.516,54.839,0C55.339,21.774,55.339,33.871,55.339,45.968z"/>
+			</g>
+		</g>
+				
 		<g id="Compass">
 			<polygon id="CompassNeedle" class="compass-needle" points="0,30 -8,0 0,-20 8,0"/>
 			<circle id="CompassCenter" class="compass-center" r="10"/>
