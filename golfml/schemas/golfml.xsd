@@ -41,30 +41,6 @@
 		
 		Relational keys are prefixed with PK_ and FK_, identifier groups are prefixed ID_ and identifier elements with REF_
 		
-
-		3. Rooms for alternatives
-		
-		The following hooks are provided to plug in alternative methods of storing information.
-		- Positions
-		A position is a point on a golf course. golfml offers the GPS localisation of the point but alternative scheme can be used.
-		For instance, some systems use a local grid map and store (x,y) coordinates to locate point of interest.
-
-		- Course qualification
-		A course qualification is a measure of the complexity of a course. The most common system use a course index value and a slope value.
-		We provided room for alternate systems.
-		
-		- Hole placement
-		A hole placement is the position of the hole on the green. Official tour use "pin sheet" to locate hole using "paces"
-		from the edge of the green.
-		We allow for alternate system here as well. Some golf courses use simpler horizontal, vertical or grid division of the green
-		and references to where the hole is located using those grids.
-		
-		- Applications
-		Any application that uses golfml as a data foirmat can use the application element to store application specific information and data.
-		
-		- Lists of values
-		When a fixed enumeration is requested, there is always a special value "other"
-		and either a "other" attribute or element to specify alternate values.
 		
 		Documentation
 		
@@ -135,6 +111,16 @@
 		</xs:restriction>
 	</xs:simpleType>
 
+	<xs:simpleType name="UnitOfWeight">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Units of weight for SI or imperial system.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="g"/>
+			<xs:enumeration value="lb"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
 	<xs:simpleType name="UnitOfSpeed">
 		<xs:annotation><xs:documentation xml:lang="en">
 			Units of speed for SI or imperial system.
@@ -715,6 +701,11 @@
 				Simple rating of the parent entitiy. Always optional.
 			</xs:documentation></xs:annotation>
 		</xs:attribute>
+		<xs:attribute name="date" type="xs:dateTime" use="optional">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Date of issue of the comment.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 	
 	
@@ -965,13 +956,13 @@
 			<xs:enumeration value="semi-rough"/>
 			<xs:enumeration value="rough"/>
 			<xs:enumeration value="heavy-rough"/>
+			<xs:enumeration value="bunker"/>
 			<xs:enumeration value="trap"/>
 			<xs:enumeration value="greenside-trap"/>
 			<xs:enumeration value="fairway-trap"/>
 			<xs:enumeration value="front-water"/>
-			<xs:enumeration value="water"/>
-			<xs:enumeration value="bunker"/>
 			<xs:enumeration value="lateral-water"/>
+			<xs:enumeration value="water"/>
 			<xs:enumeration value="path"/>
 			<xs:enumeration value="building"/>
 			<xs:enumeration value="obstruction"/>
@@ -979,6 +970,10 @@
 			<xs:enumeration value="hole-contour"/>
 			<xs:enumeration value="aim"/>
 			<xs:enumeration value="marker"/>
+			<xs:enumeration value="marker-100"/>
+			<xs:enumeration value="marker-135"/>
+			<xs:enumeration value="marker-150"/>
+			<xs:enumeration value="marker-200"/>
 			<xs:enumeration value="sprinkler"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
@@ -1224,7 +1219,6 @@
 			-->
 		</xs:sequence>
 	</xs:complexType>
-
 	
 		
 	<xs:complexType name="Statistics">
@@ -1332,6 +1326,17 @@
 		</xs:restriction>
 	</xs:simpleType>
 
+	<xs:complexType name="WeightWithUnits">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Length of an object and its unit of measure.
+		</xs:documentation></xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:float">
+				<xs:attribute name="units" type="golfml:UnitOfWeight" default="g"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
 	<xs:complexType name="LengthWithUnits">
 		<xs:annotation><xs:documentation xml:lang="en">
 				Length of an object and its unit of measure.
@@ -1411,7 +1416,7 @@
 				Color of tee set.
 			</xs:documentation></xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="gender" type="golfml:GolfingGender">
+		<xs:attribute name="gender" type="golfml:GolfingGender" use="required">
 			<xs:annotation><xs:documentation xml:lang="en">
 				"Gender" of tee set for handicaping purpose.
 			</xs:documentation></xs:annotation>
@@ -1756,11 +1761,42 @@
 		</xs:attribute>
 	</xs:complexType>
 	
+	<xs:complexType name="Facilities">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Description of a course: Media (photographs, videos, sketches...), notes and/or placemarks.
+		</xs:documentation></xs:annotation>
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="media" type="golfml:Media">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Associated media: Picture, video, document, link...
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="note" type="golfml:Note">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Localised note or comment about the hole.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="placemarks" type="golfml:Placemarks">
+				<xs:annotation><xs:documentation xml:lang="en">
+					List of places worth of interest on the hole.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	
 	<xs:complexType name="Holes">
 		<xs:annotation><xs:documentation xml:lang="en">
 			The Holes element groups 1 to 18 Hole descriptions.
 		</xs:documentation></xs:annotation>
 		<xs:sequence>
+			<xs:element name="facilities" type="golfml:Facilities" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Container elements for placemarks that are not specific to a hole.
+					Examples include: Practice areas, club house, parking, access road...
+					These facilties might need to appear on general golf course maps,
+					but not on specific hole.
+				</xs:documentation></xs:annotation>
+			</xs:element>
 			<xs:element name="hole" type="golfml:Hole" minOccurs="0" maxOccurs="18">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Collection of 1 to 18 holes of golf.
@@ -2038,7 +2074,7 @@
 					Reference to the golf bag used for the round from the pieces of equipement.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:choice minOccurs="1" maxOccurs="14">
+			<xs:choice maxOccurs="14">
 				<xs:element name="golf-club-ref" type="golfml:REF_GolfClub">
 					<xs:annotation><xs:documentation xml:lang="en">
 						Reference to a golf club in the player's equipment list.
@@ -2234,26 +2270,37 @@
 	<xs:complexType name="HoleStatistics">
 		<xs:annotation><xs:documentation xml:lang="en">
 			Type used to record basic hole statistics such as fairway hits and greens in regulation.
+			All elements are optional.
 		</xs:documentation></xs:annotation>
-		<xs:sequence>
-			<xs:element name="fairway" type="xs:boolean">
+		<xs:all>
+			<xs:element name="fairway" type="xs:boolean" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Fairway hit.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="green-in-regulation" type="xs:boolean">
+			<xs:element name="green-in-regulation" type="xs:boolean" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Green reached in regulation.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="driving-distance" type="golfml:LengthWithUnits">
+			<xs:element name="driving-distance" type="golfml:LengthWithUnits" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Driving distance.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="approach-to-hole" type="golfml:LengthWithUnits">
+			<xs:element name="approach-to-hole" type="golfml:LengthWithUnits" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Distance left to hole when ball landed on green. Distance of first putt.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	
+	<xs:complexType name="Strokes">
+		<xs:sequence>
+			<xs:element name="stroke" type="golfml:StrokeDetail" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Detail of each stroke.
 				</xs:documentation></xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -2263,7 +2310,7 @@
 		<xs:annotation><xs:documentation xml:lang="en">
 			Records detailed hole score information.
 		</xs:documentation></xs:annotation>
-		<xs:sequence>
+		<xs:all>
 			<xs:element name="strokes" type="xs:positiveInteger">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Total number of strokes for hole, including penalties.
@@ -2289,7 +2336,7 @@
 					Total number of penalty strokes.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="stroke" type="golfml:StrokeDetail" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="stroke-detail" type="golfml:Strokes" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Detail of each stroke.
 				</xs:documentation></xs:annotation>
@@ -2299,7 +2346,7 @@
 					Denormalised statistics for hole.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-		</xs:sequence>
+		</xs:all>
 		<xs:attribute name="number" type="golfml:OneToEighteen">
 			<xs:annotation><xs:documentation xml:lang="en">
 				Order number of hole.
@@ -2524,7 +2571,7 @@
 					Date and time of the round.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="scorecard" type="golfml:Scorecard" maxOccurs="1">
+			<xs:element name="scorecard" type="golfml:Scorecard">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Scorecard of the round for the player.
 				</xs:documentation></xs:annotation>
@@ -2597,12 +2644,12 @@
 				</xs:documentation></xs:annotation>
 			</xs:element>
 			
-			<xs:element name="note"	type="golfml:Note" minOccurs="0">
+			<xs:element name="note"	type="golfml:Note" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Note associated with the player.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="media"   type="golfml:Media" minOccurs="0">
+			<xs:element name="media"   type="golfml:Media" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Media associated with the player. Example may include photograph, copy of golf or handicap card, videos of swings...
 				</xs:documentation></xs:annotation>	 
@@ -2688,6 +2735,7 @@
 			Golfml main element also contains several primary keys for cross-reference of elements
 			inside the document, and one unique key to garantee the unicity of one element (application)
 			accross golfml document instances.
+			(See also: IdentifiersAndReferences )
 		</xs:documentation></xs:annotation>
 		<xs:complexType>
 			<xs:choice minOccurs="0" maxOccurs="unbounded">

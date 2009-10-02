@@ -198,41 +198,66 @@ HISTORY
 	
 	<xsl:template name="TypeFinder">
 		<!-- Tries to find strings in placemark names, and deduce area of interest's type.
-			 Could easily be refined.
-			 Example:
-			 	found "fairway"
-			 	      is it "bunker" (fairway bunker) or "trap" (fairway trap) or ... or just "fairway" alone?
-			 	Same schema for water, traps, bunker...
 		  -->
 		<xsl:param name="name"/>
 
 		<xsl:choose>
 			<xsl:when test="contains($name, 'tee')">tee</xsl:when>
-			<xsl:when test="contains($name, 'bunker')">bunker</xsl:when>
+			<xsl:when test="contains($name, 'bunker')|contains($name, 'trap')">
+				<xsl:choose>
+					<xsl:when test="contains($name, 'fairway')">fairway-trap</xsl:when>
+					<xsl:when test="contains($name, 'green')">greenside-trap</xsl:when>
+					<xsl:when test="contains($name, 'grass')">grass-trap</xsl:when>
+					<xsl:when test="contains($name, 'sand')">sand-trap</xsl:when>
+					<xsl:otherwise>trap</xsl:otherwise>
+				</xsl:choose>
+			</xsl:when>
 			<xsl:when test="contains($name, 'fairway')">fairway</xsl:when>
 			<xsl:when test="contains($name, 'green')">green</xsl:when>
 			<xsl:when test="contains($name, 'fringe')">fringe</xsl:when>
 			<xsl:when test="contains($name, 'trees')">trees</xsl:when>
 			<xsl:when test="contains($name, 'tree')">tree</xsl:when>
 			<xsl:when test="contains($name, 'bush')">bush</xsl:when>
-			<xsl:when test="contains($name, 'semi')">semi-rough</xsl:when>
-			<xsl:when test="contains($name, 'heavy')">heavy-rough</xsl:when>
-			<xsl:when test="contains($name, 'rough')">rough</xsl:when>
-			<xsl:when test="contains($name, 'trap')">trap</xsl:when>
-			<xsl:when test="contains($name, 'greenside-trap')">greenside-trap</xsl:when>
-			<xsl:when test="contains($name, 'fairway-trap')">fairway-trap</xsl:when>
-			<xsl:when test="contains($name, 'front-water')">front-water</xsl:when>
-			<xsl:when test="contains($name, 'lateral-water')">lateral-water</xsl:when>
-			<xsl:when test="contains($name, 'water')">water</xsl:when>
+			<xsl:when test="contains($name, 'rough')">
+				<xsl:choose>
+					<xsl:when test="contains($name, 'semi')|contains($name, 'light')">semi-rough</xsl:when>
+					<xsl:when test="contains($name, 'heavy')">heavy-rough</xsl:when>
+					<xsl:otherwise>rough</xsl:otherwise>
+				</xsl:choose>
+			</xsl:when>
+			<xsl:when test="contains($name, 'water')">
+				<xsl:choose>
+					<xsl:when test="contains($name, 'lateral')">lateral-water</xsl:when>
+					<xsl:when test="contains($name, 'front')">front-water</xsl:when>
+					<xsl:otherwise>water</xsl:otherwise>
+				</xsl:choose>
+			</xsl:when>
 			<xsl:when test="contains($name, 'path')">path</xsl:when>
 			<xsl:when test="contains($name, 'building')">building</xsl:when>
 			<xsl:when test="contains($name, 'construction')">building</xsl:when>
-			<xsl:when test="contains($name, 'obstruction')">obstruction</xsl:when>
+			<xsl:when test="contains($name, 'obstruction')">
+				<xsl:choose>
+					<xsl:when test="contains($name, 'movable')">obstruction</xsl:when>
+					<xsl:when test="contains($name, 'immovable')">immovable-obstruction</xsl:when>
+					<xsl:otherwise>obstruction</xsl:otherwise>
+				</xsl:choose>
+			</xsl:when>
 			<xsl:when test="contains($name, 'out-of-bound')">out-of-bound</xsl:when>
 			<xsl:when test="contains($name, 'oob')">out-of-bound</xsl:when>
 			<xsl:when test="contains($name, 'contour')">hole-contour</xsl:when>
 			<xsl:when test="contains($name, 'aim')">aim</xsl:when>
-			<xsl:when test="contains($name, 'dogleg')">aim</xsl:when>
+			<xsl:when test="contains($name, 'marker')">
+				<xsl:choose>
+					<xsl:when test="contains($name, '100')">marker-100</xsl:when>
+					<xsl:when test="contains($name, '135')">marker-135</xsl:when>
+					<xsl:when test="contains($name, '150')">marker-150</xsl:when>
+					<xsl:when test="contains($name, '200')">marker-200</xsl:when>
+					<xsl:otherwise>marker</xsl:otherwise>
+				</xsl:choose>
+			</xsl:when>
+			<xsl:when test="contains($name, 'dogleg')">dogleg</xsl:when>
+			<xsl:when test="contains($name, 'sprinkler')">sprinkler</xsl:when>
+			<xsl:when test="contains($name, 'aim')">aim</xsl:when>
 			<xsl:otherwise>other</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>

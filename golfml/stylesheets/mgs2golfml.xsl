@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <xsl:stylesheet version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:xlink="http://www.w3.org/1999/xlink"
-	xmlns:g="http://code.google.com/p/golfml"
+				xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+				xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+				xmlns:xlink="http://www.w3.org/1999/xlink"
+				xmlns:g="http://code.google.com/p/golfml"
 	>
-	<!-- mgs2golfml.xsl
-    
-    DESCRIPTION
-    
-    Mobile Golf Scorer to GolfML transformation style sheet
-     
-	MGS provides 2 different XML outputs:
+<!-- mgs2golfml.xsl
 
-		1. Golf course definition
-       	2. Rounds of golf
-       
-	A Round of golf contains the definition of the course played.
-      
-     VERSION
-     	$Revision$
-     	
-     HISTORY
-     	Aug 2009: Created with MGS Version 1.40.
-     	
+DESCRIPTION
+
+Mobile Golf Scorer to GolfML transformation style sheet
+ 
+MGS provides 2 different XML outputs:
+
+	1. Golf course definition
+       2. Rounds of golf
+   
+A Round of golf contains the definition of the course played.
+  
+ VERSION
+     $Revision$
+     
+ HISTORY
+     Aug 2009: Created with MGS Version 1.40.
+     
 -->
 	<xsl:output method="xml" indent="yes"/>
 	

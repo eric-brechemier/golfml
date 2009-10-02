@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<xsl:stylesheet
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	version="1.0"
-	xmlns:g="http://code.google.com/p/golfml"
+<xsl:stylesheet version="1.0"
+				xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+				xmlns:g="http://code.google.com/p/golfml"
 	>
-	<!-- score.xsl
+<!-- score.xsl
 
-		DESCRIPTION
-		
-		Demonstration stylesheet for GolfML.
-		Generate a compact score presentation for a round of one to 4 players.
-		
-		
-		VERSION
-		$Revision$
-		
-		
-		HISTORY
-		Aug 2009: Created with MGS Version 1.40.
-		
-	-->
+	DESCRIPTION
+	
+	Demonstration stylesheet for GolfML.
+	Generate a compact score presentation for a round of one to 4 players.
+	
+	
+	VERSION
+	$Revision$
+	
+	
+	HISTORY
+	Aug 2009: Created with MGS Version 1.40.
+	
+-->
 	
 	<xsl:output method="html" indent="yes"/>
 

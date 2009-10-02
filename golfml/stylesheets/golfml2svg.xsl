@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <?xml-stylesheet href="../stylesheets/golfml.css" type="text/css"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+<xsl:stylesheet version="2.0"
+				xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 				xmlns:xs="http://www.w3.org/2001/XMLSchema"
-				version="2.0"
 				xmlns="http://www.w3.org/2000/svg"
 				xmlns:g="http://code.google.com/p/golfml"
 				xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -38,9 +38,9 @@ HISTORY
 	<xsl:param name="compassx"><xsl:value-of select="$width - 50"/></xsl:param>
 	<xsl:param name="compassy"><xsl:value-of select="50"/></xsl:param>
 	<!-- mode=course|hole, generate a single SVG file for the entire course, or one for each hole -->
-	<xsl:param name="mode">course</xsl:param>
+	<xsl:param name="mode">hole</xsl:param>
 	<!-- If a hole-number is supplied, generates only that hole -->
-	<xsl:param name="hole-number">0</xsl:param>
+	<xsl:param name="hole-number">15</xsl:param>
 	<!-- TO DO: Apply placemark in layout order: large objects (hole-contour, etc.) first and
 		== smaller objects (tee, greens, poi) last. Here is suggested list of ordered values.
 		== 
@@ -429,6 +429,12 @@ HISTORY
 				<xsl:attribute name="transform">
 					<xsl:value-of select="concat('rotate(',$rotation,' ',$compassx,' ',$compassy,')')"/>
 				</xsl:attribute>
+			</xsl:element>
+			
+			<xsl:element name="use">
+				<xsl:attribute name="xlink:href">#GolfMLLogoSmall</xsl:attribute>
+				<xsl:attribute name="x">10</xsl:attribute>
+				<xsl:attribute name="y">575</xsl:attribute>
 			</xsl:element>
 			
 		</xsl:element><!-- svg -->
@@ -830,12 +836,15 @@ HISTORY
 	fill: #fff;
 }
 
+.distance-marker-100,
 .distance-marker-close {
 	fill: #44f;
 	stroke: #00f;
 	stroke-width: 1px;
 }
 
+.distance-marker-150,
+.distance-marker-135,
 .distance-marker,
 .distance-marker-mid {
 	fill: #f44;
@@ -843,6 +852,7 @@ HISTORY
 	stroke-width: 1px;
 }
 
+.distance-marker-200,
 .distance-marker-far {
 	fill: #dd4;
 	stroke: #ff0;
@@ -945,6 +955,10 @@ HISTORY
 		<g id="Dogleg">
 			<circle r="4"/>
 		</g>
+				
+		<g id="Aim">
+			<circle r="4"/>
+		</g>
 		
 		<g id="Hole">
 			<circle r="2"/>
@@ -964,6 +978,10 @@ HISTORY
 			<polygon id="CompassNeedle" class="compass-needle" points="0,30 -8,0 0,-20 8,0"/>
 			<circle id="CompassCenter" class="compass-center" r="10"/>
 			<text id="CompassNorth" class="compass-north" x="-4.7" y="40">N</text>
+		</g>
+				
+		<g id="GolfMLLogoSmall">
+			<image xlink:href="../stylesheets/images/golfml-small.png"></image>
 		</g>
 				
 	</defs>

@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600">
+   <defs xmlns:g="http://code.google.com/p/golfml"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <style type="text/css">
+/* Stylesheet for SVG elements
+ *
+ *
+ * Classes for area of interest (surfaces)
+ *
+ * DRAWING
+ */
+.background {
+		fill: url(#background-gradient);
+}
+
+.hole-limits {
+	fill: none;
+	stroke: #ccc;
+	stroke-width: 1px;
+	stroke-dasharray: 10,10;
+}
+
+.hole-contour {
+	fill: #030;
+	stroke: #fff;
+	stroke-width: 2px;
+}
+
+
+/* GROUND
+ */
+.fairway {
+	fill: url(#fairway-pattern);
+	stroke: #0b0;
+	stroke-width: 3px; /* fairway fringe... */
+}
+
+.tee {
+	fill: #00c800;
+	stroke: #0f0;
+	stroke-width: 1px;
+}
+
+.fringe {
+	fill: #0A0;
+}
+
+.green {
+	fill: url(#green-gradient);
+	stroke: #0f0;
+	stroke-width: 1px;
+}
+
+.semi-rough,
+.light-rough {
+	fill: #080;
+	stroke: #08800D;
+	stroke-width: 1px;
+}
+
+.rough {
+	fill: url(#rough-gradient);
+	stroke: #07660A;
+	stroke-width: 1px;
+}
+
+.heavy-rough {
+	fill: #040;
+	stroke: #074D08;
+	stroke-width: 1px;
+}
+
+.ground {
+	fill: #7f400c;
+	stroke: #fdcc6a;
+	stroke-width: 1px;
+}
+
+
+/* WATER
+ */
+.lateral-water {
+	fill: url(#lateral-water-gradient);
+	stroke: red;
+	stroke-width: 4px;
+}
+
+.front-water, .water {
+	fill: #37f;
+	stroke: yellow;
+	stroke-width: 3px;
+}
+
+
+/* SPECIAL
+ */
+.under-repair {
+	fill: none;
+	stroke: #00d;
+	stroke-width: 2px;
+}
+
+.out-of-bound { /* line only */
+	fill: none;
+	stroke: white;
+	stroke-width: 4px;
+}
+
+.out-of-bound-area {
+	fill: #ccc;
+	stroke: white;
+	stroke-width: 4px;
+}
+
+
+/* TRAPS
+ */
+.trap,
+.bunker {
+	fill: #92cf94;
+	stroke: #4c994c;
+	stroke-width: 1px;
+}
+
+.grass-trap,
+.grass-bunker {
+	fill: #050;
+	stroke: #0A0;
+	stroke-width: 1px;
+}
+
+.sand-trap,
+.sand-bunker,
+.greenside-trap,
+.greenside-bunker {
+	fill: #eec;
+	stroke: #040;
+	stroke-width: 2px;
+}
+
+.fairway-trap,
+.fairway-bunker {
+	fill: #eec;
+	stroke: #030;
+	stroke-width: 2px;
+}
+
+
+/* OBSTACLES
+ */
+.tree {
+	fill: #062;
+	stroke: #0c6;
+	stroke-width: 1px;
+}
+
+.trees {
+	fill: #062;
+	stroke: #0c6;
+	stroke-width: 1px;
+}
+
+.bush {
+	fill: #00b259;
+	stroke: #7f400c;
+	stroke-width: 1px;
+}
+
+
+.path {
+	fill: #666;
+	stroke: #bbb;
+	stroke-width: 1px;
+}
+
+.building,
+.construction {
+	fill: #fdcc6a;
+	stroke: #7f400C;
+	stroke-width: 1px;
+}
+
+.obstruction {
+	fill: #555;
+	stroke: #999;
+	stroke-width: 1px;
+}
+
+
+.other {
+	fill: #ddd;
+	stroke: #666;
+	stroke-width: 1px;
+}
+
+/* Classes for point of interest (points)
+ *
+ */
+.dogleg {
+	fill: #000;
+}
+
+.aim {
+	fill: #fff;
+	stroke: #f00;
+	stroke-width: 1px;
+}
+
+.tees {
+	fill: #00f;
+}
+
+.tees-hollow {
+	stroke: #fff;
+	stroke-width: 0.5px;
+}
+
+.hole {
+	fill: #fff;
+}
+
+.distance-marker-close {
+	fill: #44f;
+	stroke: #00f;
+	stroke-width: 1px;
+}
+
+.distance-marker,
+.distance-marker-mid {
+	fill: #f44;
+	stroke: #f00;
+	stroke-width: 1px;
+}
+
+.distance-marker-far {
+	fill: #dd4;
+	stroke: #ff0;
+	stroke-width: 1px;
+}
+
+.green-region-delimiter {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 0.5;
+	stroke-dasharray: 4,2;
+}
+
+.neutral {
+	fill: none;
+	stroke: #888;
+	stroke-width: 1px;
+}
+
+
+/* Classes for special decorative objects
+ *
+ */
+.compass-center {
+	fill: #ddd;
+	stroke: #fff;
+	stroke-width: 1px;
+}
+.compass-needle {
+	fill: #ddd;
+	stroke: #fff;
+	stroke-width: 1px;
+}
+.compass-north {
+	fill: #fff;
+}
+.flag-pole {
+	fill: none;
+	stroke: #f00;
+	stroke-width: 2px;
+}
+.flag-flag {
+	fill: #ff0;
+	stroke: #f00;
+	stroke-width: 1px;
+}
+.flag-cup {
+	fill: #fff;
+}
+
+     </style>
+      <linearGradient id="background-straight">
+         <stop offset="5%" stop-color="#002"/>
+         <stop offset="95%" stop-color="#004"/>
+      </linearGradient>
+      <linearGradient id="background-gradient" gradientTransform="rotate(30)"
+                      xlink:href="#background-straight"/>
+      <linearGradient id="lateral-water-straight">
+         <stop offset="5%" stop-color="#006"/>
+         <stop offset="95%" stop-color="#008"/>
+      </linearGradient>
+      <linearGradient id="lateral-water-gradient" gradientTransform="rotate(60)"
+                      xlink:href="#lateral-water-straight"/>
+      <linearGradient id="rough-straight">
+         <stop offset="0%" stop-color="#030"/>
+         <stop offset="25%" stop-color="#060"/>
+         <stop offset="50%" stop-color="#040"/>
+         <stop offset="75%" stop-color="#060"/>
+         <stop offset="100%" stop-color="#080"/>
+      </linearGradient>
+      <linearGradient id="rough-gradient" gradientTransform="rotate(70)" xlink:href="#rough-straight"/>
+      <linearGradient id="green-straight">
+         <stop offset="0%" stop-color="#0d0"/>
+         <stop offset="25%" stop-color="#0e0"/>
+         <stop offset="50%" stop-color="#0c0"/>
+         <stop offset="75%" stop-color="#0e0"/>
+         <stop offset="100%" stop-color="#0b0"/>
+      </linearGradient>
+      <linearGradient id="green-gradient" gradientTransform="rotate(75)" xlink:href="#green-straight"/>
+      <pattern id="fairway-straight" patternUnits="userSpaceOnUse" x="0" y="0" width="20"
+               height="20"
+               viewBox="0 0 20 20">
+         <rect x="0" y="0" width="10" height="10" fill="#00c000"/>
+         <rect x="10" y="10" width="10" height="10" fill="#00c800"/>
+         <rect x="10" y="0" width="10" height="10" fill="#00bc00"/>
+         <rect x="0" y="10" width="10" height="10" fill="#00b800"/>
+      </pattern>
+      <pattern id="fairway-pattern" patternTransform="rotate(60)"
+               xlink:href="#fairway-straight"/>
+      <g id="TeeSet">
+         <circle cx="-5" cy="0" r="2"/>
+         <circle cx="5" cy="0" r="2"/>
+      </g>
+      <g id="DistanceMarker">
+         <circle r="6"/>
+      </g>
+      <g id="Dogleg">
+         <circle r="4"/>
+      </g>
+      <g id="Hole">
+         <circle r="2"/>
+      </g>
+      <g id="Flag" transform="translate(0 -30) scale(-0.2 0.2)">
+         <line id="FlagPole" class="flag-pole" x1="0.5" y1="0" x2="0.5" y2="150"/>
+         <circle id="FlagCup" class="flag-cup" r="10" cx="0" cy="145"/>
+         <g id="FlagFlag">
+            <path class="flag-flag"
+                  d="M55.339,45.968c-18.28-14.516-36.559,14.516-54.839,0c0-12.097,0-24.193,0-36.29      c18.28,14.516,36.559-14.516,54.839,0C55.339,21.774,55.339,33.871,55.339,45.968z"/>
+         </g>
+      </g>
+      <g id="Compass">
+         <polygon id="CompassNeedle" class="compass-needle" points="0,30 -8,0 0,-20 8,0"/>
+         <circle id="CompassCenter" class="compass-center" r="10"/>
+         <text id="CompassNorth" class="compass-north" x="-4.7" y="40">N</text>
+      </g>
+   </defs>
+   <rect class="background" x="0" y="0" width="600" height="600"/>
+				<!-- debug information: mode course
+				min_lat: 50.54182240667064
+				max_lat: 50.54469352785844
+				min_lon: 4.503166865336272
+				max_lon: 4.505879777788817
+				mid_lat: 50.54325796726454
+				mid_lon: 4.504523321562544
+				deltax: 0.000030090236690901143
+				deltay: 0.00005011051794540089
+				scalex: 1.9940022611435004E7
+				scaley: 1.1973534192038173E7
+				scale: 1.1973534192038173E7
+				minx: -0.000015045118345450521
+				maxx: 0.000015045118345450624
+				miny: -0.000025055331011214488 
+				maxy: 0.000025055186934186402 
+				minx: -180.1432389325126
+				maxx: 180.14323893251384
+				miny: -300.00086255561104
+				maxy: 299.99913744438896MODIFICATION
+			
+				rotation: 152.27217037619346
+				scaling: 0.8851677389097379
+				x,y: 
+							Green
+							green_lat_min: 50.54211377223713
+							green_lat_max: 50.54232263510014
+							green_lon_min: 4.505207246026657
+							green_lon_max: 4.505645935292051
+							green_mid_lat: 50.54221820366864
+							green_mid_lon: 4.505426590659354
+							green_mid_x: -0.000010018598605619381
+							green_mid_y: 0.000018147253745104397 
+							Tee
+							tee_lat_min: 50.54436482250035
+							tee_lat_max: 50.54465999776399
+							tee_lon_min: 4.503257636501417
+							tee_lon_max: 4.503800370454156
+							tee_mid_lat: 50.54451241013217
+							tee_mid_lon: 4.503529003477787
+							tee_mid_x: 0.000011028467389661084
+							tee_mid_y: -0.00002189423187215489 
+							x1&gt;x2: Yes
+							y1&gt;y2: No
+							Angle-temp: ROTATION=152.27217037619346,x1=0.000011028467389661084,y1=-0.00002189423187215489 ,x2=-0.000010018598605619381,y2=0.000018147253745104397 
+				-->
+			<g transform="translate(300,300) scale(-0.8851677389097379,0.8851677389097379) rotate(152.27217037619346)">
+      <path class="hole-contour"
+            d="M 180.1432389226089,-272.4640894388504 L 85.26962001868363,-201.03601066962122 61.821165404666125,-131.74360939204504 -19.185814374802916,21.76714250388301 -56.487350857639626,140.09676226832593 -46.890549050192384,179.53834037685948 -56.47569159927204,299.9982524294265 -166.2757669627191,252.03739494896067 -172.6757076540191,203.00153454814537 -180.1432388875632,135.84369872240197 -150.3838895960586,-5.112612218658205 -112.23944282247257,-93.05819754729822 -44.350232284215195,-200.4052687860568 1.5581964214693278,-250.846497187662 106.96001965240471,-290.9448444923439 168.39192316715534,-300.00098643913503 180.1432389226089,-272.4640894388504 Z"/>
+      <path class="tee"
+            d="M 168.08843658633154,-283.98449865170187 L 138.97919393699627,-262.4965836389389 141.75197174715092,-257.6456495548384 107.10075134126934,-231.308694242479 96.01102616994821,-243.09011044141707 160.46417673792715,-292.9939416650782 168.08843658633154,-283.98449865170187 Z"/>
+      <path class="fairway"
+            d="M 29.627209522359728,-140.91748620886978 L 6.23379368768748,-92.18025095258494 -13.260533756066245,-54.16527282052527 -42.501914886702,-11.276482518836756 -51.273715959255654,31.611862343867003 -74.66641687923834,68.652125527107 -87.33691626931491,109.59104309167493 -88.31079821304965,146.6307105306563 -92.2086092366822,192.44299883911359 -82.46117029223744,206.08893034087097 -76.61244681421987,226.55805050143186 -91.23260789079782,248.00244064303087 -116.57481479467043,256.77576152669974 -138.01847065460507,253.85231473433757 -154.588790515551,244.10565743630897 -164.33668126060778,216.81366071887973 -147.76726944897317,192.4448225805903 -130.22359052579708,148.5814687732619 -122.52582891632376,114.99369304053515 -114.8446323147661,80.67996104483048 -101.5296697698769,53.5360364290189 -111.77305632819696,29.977815893343244 -112.79782271827236,10.516435839034607 -101.01905700080769,-10.993929413281107 -76.43675068086468,-39.16252023850732 -66.19436391846517,-65.79429882479951 -46.22107636285022,-92.42635546823794 -24.199043955664997,-119.5706324653282 -8.322679609723524,-147.73911681193937 4.63427963184267,-162.81682685477182 18.955085555990706,-166.5856435462943 30.261102860594402,-156.03367943930667 29.627209522359728,-140.91748620886978 Z"/>
+      <path class="bunker"
+            d="M -123.2942686938469,177.45013876575558 L -117.41489080230053,184.85344885848883 -110.88279419500404,185.28860860276924 -108.26985096013463,189.86110862457366 -110.4471003689098,194.86919085949702 -116.10821195435159,197.04676787991718 -124.60003354806696,194.21643072653978 -131.78550101698985,188.99092168543478 -134.39854987923746,181.58785796860641 -131.35034764599772,177.01521455669933 -128.3020677263238,175.27318979096754 -123.2942686938469,177.45013876575558 Z"/>
+      <path class="bunker"
+            d="M -108.35915827243036,-22.109867096260437 L -108.58999405300847,-17.254266785707003 -113.21419331993856,-15.172906043603259 -117.60750473315991,-17.253487952254456 -117.1454922520711,-22.571546360574203 -111.82770734073597,-25.577846951632083 -108.35915827243036,-22.109867096260437 Z"/>
+      <path class="bunker"
+            d="M -123.04463053034098,-10.647871459801339 L -118.68557506663717,-9.365951687490181 -115.60849608389454,-4.494205274378066 -119.19817248181077,-0.39148321790859286 -123.81362971317019,-1.4169814578770883 -125.3522745602383,-7.827251907247352 -123.04463053034098,-10.647871459801339 Z"/>
+      <path class="bunker"
+            d="M -120.47994750035747,10.890720598792749 L -121.50540618790528,18.326721059359656 -127.14642966906676,20.121798397066094 -130.47987791095693,16.788548757661466 -130.99282629943104,12.173139033776557 -124.83903384035837,8.070325555340755 -120.47994750035747,10.890720598792749 Z"/>
+      <path class="bunker"
+            d="M -125.8641269339826,29.35260640263366 L -125.60756788977639,34.993672864417626 -129.96650904489806,37.30153345629463 -134.32555846284376,35.50679831055752 -135.86424954962743,28.327318288423758 -130.22322031756363,26.019392593307256 -125.8641269339826,29.35260640263366 Z"/>
+      <path class="green"
+            d="M -100.12739383099655,200.0167540476235 L -93.86471580143632,209.5052599384357 -90.82811943699284,220.70182421986968 -95.95166344971152,232.46793982886103 -105.0605072367472,239.11028710855928 -115.49792008603673,238.351515707561 -123.65816253136714,234.55631405005573 -133.7160546958171,233.2282441765561 -142.25579533395148,231.5205899897878 -148.13882905246854,226.77646586470252 -149.08794648527535,217.4775869424119 -147.7597664884824,209.69681331187385 -139.789627306948,200.2078309522069 -132.00912199689947,195.46321024285538 -126.12615770017246,197.17097239243495 -112.6523334322762,199.06826840630347 -100.12739383099655,200.0167540476235 Z"/>
+      <path class="tree"
+            d="M -87.34140232875694,-92.178310820349 L -97.08869945609442,-87.30435688904593 -98.06366388817048,-97.05168657780393 -88.31640167646616,-103.87513174931316 -87.34140232875694,-92.178310820349 Z"/>
+      <path class="tree"
+            d="M -156.47942294733897,119.82061793138702 L -156.47922352674368,126.6782393392283 -159.479270871819,131.39296604862915 -163.76500464725925,139.53655903855145 -168.47947278260443,142.96555837031667 -171.90844479706814,136.53668756404363 -166.76530079732078,135.67927076999655 -165.05113974639,127.96438105685354 -161.1941160767256,115.96339266307263 -156.47942294733897,119.82061793138702 Z"/>
+      <path class="tree"
+            d="M -117.05258016786172,-46.05013084489024 L -118.76661737515957,-30.62027851751881 -127.33832262460074,-15.618820201115616 -130.76734949737326,-22.904984536714515 -122.19543402203333,-29.762951989586206 -126.91034519082244,-39.620714422703124 -123.05307287893493,-46.4785330478505 -117.05258016786172,-46.05013084489024 Z"/>
+      <path class="tree"
+            d="M -125.62333717426549,6.239927105053468 L -131.1948567741444,18.24101376020013 -135.90960028652256,13.955151015579206 -136.76710993452778,2.8114858250782384 -127.76663410002014,-4.475091888075859 -125.62333717426549,6.239927105053468 Z"/>
+      <path class="tree"
+            d="M -136.76640765646377,28.527683330725765 L -139.76656190213996,30.670805299949897 -142.33828089410778,26.81347278068013 -135.48077645278528,22.098597464223648 -136.76640765646377,28.527683330725765 Z"/>
+      <path class="tree"
+            d="M -134.6231775735375,36.67106342523181 L -135.05161645816074,42.67151448206202 -139.76613565237935,46.10050037829568 -140.19489126571884,40.528684919429644 -134.6231775735375,36.67106342523181 Z"/>
+      <path class="tree"
+            d="M -132.47983632965762,49.100458710517536 L -135.0511865778389,58.52979866374919 -140.6228632528352,63.244619312866114 -141.48027849642003,55.529813746269966 -138.4801913318996,51.24368261670303 -132.47983632965762,49.100458710517536 Z"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#TeeSet"
+           x="132.04973137588496"
+           y="-262.1513339296585"
+           class="tees"
+           transform="rotate(-152.27217037619346 132.04973137588496 -262.1513339296585)"/>
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Flag"
+           x="-119.95803296068962"
+           y="217.2867632086003"
+           transform="rotate(-152.27217037619346 -119.95803296068962 217.2867632086003)"/>
+   </g>
+   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Compass" x="550" y="50"
+        transform="rotate(152.27217037619346 550 50)"/>
+</svg>

@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<xsl:stylesheet
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	version="1.0"
-	xmlns:g="http://code.google.com/p/golfml"
+<xsl:stylesheet version="1.0"
+				xmlns:xsl="http://www.w3.org/1999/XSL/Transform"	
+				xmlns:g="http://code.google.com/p/golfml"
 	>
-	<!-- custom-scorecard.xsl
-	
-	DESCRIPTION
-	
-		Demonstration stylesheet for GolfML.
-		From a player's unique identifier (name and birthdate) and from a tee-set's unique identifier, generates a custom scorecard in HTML
-	
-	
-	VERSION
-		$Revision$
-	
-	
-	HISTORY
-		Sep 2009: Created.
-	
-	-->
+<!-- custom-scorecard.xsl
+
+DESCRIPTION
+
+	Demonstration stylesheet for GolfML.
+	From a player's unique identifier (name and birthdate) and from a tee-set's unique identifier, generates a custom scorecard in HTML
+
+
+VERSION
+	$Revision$
+
+
+HISTORY
+	Sep 2009: Created.
+
+-->
 	<xsl:output method="html" indent="yes"/>
 
 	<xsl:param name="golfer.name">Bob</xsl:param>
