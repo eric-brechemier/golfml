@@ -221,12 +221,15 @@
 	fill: #fff;
 }
 
+.distance-marker-100,
 .distance-marker-close {
 	fill: #44f;
 	stroke: #00f;
 	stroke-width: 1px;
 }
 
+.distance-marker-150,
+.distance-marker-135,
 .distance-marker,
 .distance-marker-mid {
 	fill: #f44;
@@ -234,6 +237,7 @@
 	stroke-width: 1px;
 }
 
+.distance-marker-200,
 .distance-marker-far {
 	fill: #dd4;
 	stroke: #ff0;
@@ -282,6 +286,35 @@
 }
 .flag-cup {
 	fill: #fff;
+}
+/* Information box */
+.info-background {
+	fill: #ddd;
+}
+.info-hole {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: xx-large;
+}
+.info-par {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: x-large;
+}
+.info-length {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: large;
+}
+/* Circle for distances */
+.circle-from-green {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 1px;
+	stroke-dasharray: 4,4;
+}
+.circle-from-tee {
+	fill: none;
+	stroke: #f00;
+	stroke-width: 1px;
+	stroke-dasharray: 8,8;
 }
 
      </style>
@@ -333,6 +366,9 @@
       <g id="Dogleg">
          <circle r="4"/>
       </g>
+      <g id="Aim">
+         <circle r="4"/>
+      </g>
       <g id="Hole">
          <circle r="2"/>
       </g>
@@ -348,6 +384,9 @@
          <polygon id="CompassNeedle" class="compass-needle" points="0,30 -8,0 0,-20 8,0"/>
          <circle id="CompassCenter" class="compass-center" r="10"/>
          <text id="CompassNorth" class="compass-north" x="-4.7" y="40">N</text>
+      </g>
+      <g id="GolfMLLogoSmall">
+         <image xlink:href="../stylesheets/images/golfml-small.png" width="80" height="15"/>
       </g>
    </defs>
    <rect class="background" x="0" y="0" width="600" height="600"/>
@@ -370,10 +409,13 @@
 				minx: -101.95590348348107
 				maxx: 101.9559034834811
 				miny: -300.000996324535
-				maxy: 299.9990036754651MODIFICATION
+				maxy: 299.9990036754651
+				calibration: 2.887324136019541
+			
+			MODIFICATION
 			
 				rotation: -171.06814644490981
-				scaling: 0.9878737019459036
+				reduction: 0.9878737019459036
 				x,y: 
 							Green
 							green_lat_min: 50.54340649219284
@@ -395,11 +437,15 @@
 							tee_mid_y: -0.000011209101219655793 
 							x1&gt;x2: No
 							y1&gt;y2: No
-							Angle-temp: ROTATION=-171.06814644490981,x1=-0.0000028261534928847026,y1=-0.000011209101219655793 ,x2=5.41296379216196E-7,y2=0.000010217044307370138 
+							Angle-temp: ROTATION=-171.06814644490981,$tee_mid_x=-0.0000028261534928847026,$tee_mid_y=-0.000011209101219655793 ,$green_mid_x=5.41296379216196E-7,$green_mid_y=0.000010217044307370138 ,
 				-->
 			<g transform="translate(300,300) scale(-0.9878737019459036,0.9878737019459036) rotate(-171.06814644490981)">
       <path class="hole-contour"
             d="M -70.36065439641924,-300.001103589884 L -53.257582671091605,-290.0253812443724 -41.22174905645357,-259.5871738084448 -30.378589040968944,-201.70992943452538 1.0772664051446341,-107.81264349627821 57.27719604440378,35.023884137851915 90.23384157300033,108.61329261837689 101.95590347373263,159.30762691498123 86.49682089807119,214.75159900688135 59.260037690793844,245.70013611385272 30.5773951599426,270.7576727646322 -12.212638113931353,299.9988018217851 -62.07393309832494,275.9628888113965 -93.95336886400167,254.72022974128947 -101.95590347639546,207.4371378905823 -82.75339732272133,-8.92023424480856 -61.44296912420938,-149.16145281019396 -84.62711733390589,-271.9953906877025 -85.24515216426721,-286.25771978842766 -70.36065439641924,-300.001103589884 Z"/>
+      <clipPath id="HoleContour" transform="scale(1.2)">
+         <path class="hole-contour"
+               d="M -70.36065439641924,-300.001103589884 L -53.257582671091605,-290.0253812443724 -41.22174905645357,-259.5871738084448 -30.378589040968944,-201.70992943452538 1.0772664051446341,-107.81264349627821 57.27719604440378,35.023884137851915 90.23384157300033,108.61329261837689 101.95590347373263,159.30762691498123 86.49682089807119,214.75159900688135 59.260037690793844,245.70013611385272 30.5773951599426,270.7576727646322 -12.212638113931353,299.9988018217851 -62.07393309832494,275.9628888113965 -93.95336886400167,254.72022974128947 -101.95590347639546,207.4371378905823 -82.75339732272133,-8.92023424480856 -61.44296912420938,-149.16145281019396 -84.62711733390589,-271.9953906877025 -85.24515216426721,-286.25771978842766 -70.36065439641924,-300.001103589884 Z"/>
+      </clipPath>
       <path class="tee"
             d="M -46.031449317949296,-233.1820861470315 L -45.31046114948751,-216.54273927125058 -44.022986911011046,-186.8296539971531 -39.066936776755426,-154.8940653505782 -53.32927354156982,-154.27605680949833 -55.444796888508314,-175.61794158786765 -60.55539231549747,-211.11912413277483 -64.83798767573394,-254.9915495056502 -54.24415726201027,-257.83213157190494 -46.031449317949296,-233.1820861470315 Z"/>
       <path class="fairway"
@@ -432,6 +478,15 @@
            y="187.81733185165587"
            transform="rotate(171.06814644490981 9.950513928182868 187.81733185165587)"/>
    </g>
+   <rect x="470" y="400" rx="4" ry="4" width="110" height="180" class="info-background"/>
+   <text x="525" y="420" class="info-hole" text-anchor="middle">
+					Hole 9</text>
+   <text x="525" y="440" class="info-par" text-anchor="middle">
+					Par 3</text>
+   <circle cx="485.625" cy="457.1875" r="5.625" style="fill:blue"/>
+   <text x="496.875" y="460" class="info-length">143 </text>
    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#Compass" x="550" y="50"
         transform="rotate(-171.06814644490981 550 50)"/>
+   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#GolfMLLogoSmall" x="10"
+        y="575"/>
 </svg>
