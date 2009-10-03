@@ -36,7 +36,15 @@ HISTORY
 	<xsl:param name="height">600</xsl:param>
 	<!-- position of compass, relative to upper left corner, in pixels -->
 	<xsl:param name="compassx"><xsl:value-of select="$width - 50"/></xsl:param>
-	<xsl:param name="compassy"><xsl:value-of select="50"/></xsl:param>
+	<xsl:param name="compassy">50</xsl:param>
+	<!-- Information box place and sizes -->
+	<xsl:param name="info-posx">470</xsl:param>
+	<xsl:param name="info-posy">400</xsl:param>
+	<xsl:param name="info-width">110</xsl:param>
+	<xsl:param name="info-height">180</xsl:param>
+	<xsl:param name="info-num">6</xsl:param><!-- total number of length displayed -->
+	<xsl:param name="info-text">20</xsl:param><!-- total number of length displayed -->
+	
 	<!-- mode=course|hole, generate a single SVG file for the entire course, or one for each hole -->
 	<xsl:param name="mode">hole</xsl:param>
 	<!-- If a hole-number is supplied, generates only that hole -->
@@ -132,6 +140,8 @@ HISTORY
 				<xsl:attribute name="height"><xsl:value-of select="$height"/></xsl:attribute>
 			</xsl:element>
 			
+			<xsl:variable name="local_number"><xsl:value-of select="@number"/></xsl:variable> <!-- does not work for holes -->
+			
 			<!-- Compute bounding box for lat/lon which is mapped to the projected bounding box (width x height) -->	
 			<xsl:variable name="min_lat"><xsl:value-of select="min(.//g:lat)"/></xsl:variable>
 			<xsl:variable name="max_lat"><xsl:value-of select="max(.//g:lat)"/></xsl:variable>
@@ -149,6 +159,18 @@ HISTORY
 					<xsl:with-param name="scale"><xsl:value-of select="number(1)"/></xsl:with-param>
 				</xsl:call-template>
 			</xsl:variable>
+			
+			<xsl:variable name="calibration_temp"><!-- one minute of arc = nautical mile = 1852 meters, we project 1' of latitude -->
+				<xsl:call-template name="Project">
+					<xsl:with-param name="lat"><xsl:value-of select="$mid_lat + (1 div (60 * 1852))"/></xsl:with-param>
+					<xsl:with-param name="lon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
+					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
+					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
+					<xsl:with-param name="scale"><xsl:value-of select="number(1)"/></xsl:with-param>
+				</xsl:call-template>
+			</xsl:variable> <!-- calibration gives us how many pixels for 1 meter -->
+			<xsl:variable name="calibration"><xsl:value-of select="substring-after($calibration_temp, ',')"/></xsl:variable>
+			
 			<xsl:variable name="maxmax">
 				<xsl:call-template name="Project">
 					<xsl:with-param name="lat"><xsl:value-of select="$max_lat"/></xsl:with-param>
@@ -234,6 +256,8 @@ HISTORY
 				miny: </xsl:text><xsl:value-of select="$miny * $scale"/>
 			<xsl:text>
 				maxy: </xsl:text><xsl:value-of select="$maxy * $scale"/>
+			<xsl:text>
+				calibration: </xsl:text><xsl:value-of select="abs($calibration) * $scale"/>
 			
 					
 			<!-- Find teeing area's middle point -->
@@ -343,28 +367,30 @@ HISTORY
 								<xsl:with-param name="y2"><xsl:value-of select="$green_mid_y"/></xsl:with-param>
 							</xsl:call-template>
 						</xsl:variable>
-						<xsl:value-of select="concat('ROTATION=',$angle-temp,',x1=',$tee_mid_x,',y1=',$tee_mid_y,',x2=',$green_mid_x,',y2=',$green_mid_y)"></xsl:value-of>
+						<xsl:value-of select="concat('ROTATION=',$angle-temp,',$tee_mid_x=',$tee_mid_x,',$tee_mid_y=',$tee_mid_y,',$green_mid_x=',$green_mid_x,',$green_mid_y=',$green_mid_y,',')"></xsl:value-of>
 					</xsl:when>
 					<xsl:otherwise>
-						<xsl:value-of select="string('ROTATION=0,x1=0,y1=0,x2=0,y2=0')"/><!-- no rotation -->
+						<xsl:value-of select="string('ROTATION=0,$tee_mid_x=0,$tee_mid_y=0,$green_mid_x=0,$green_mid_y=0,')"/><!-- no rotation -->
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:variable>
 			
 			<xsl:variable name="rotation"><xsl:value-of select="substring-before(substring-after($rotation-temp, 'ROTATION='), ',')"></xsl:value-of></xsl:variable>
 			
-			<xsl:variable name="scaling">
+			<xsl:variable name="reduction">
 				<xsl:call-template name="GetScale">
 					<xsl:with-param name="angle"><xsl:value-of select="$rotation"/></xsl:with-param>
 				</xsl:call-template>
 			</xsl:variable>
 			
-			<xsl:text>MODIFICATION
+			<xsl:text>
+			
+			MODIFICATION
 			</xsl:text>
 			<xsl:text>
 				rotation: </xsl:text><xsl:value-of select="$rotation"/>
 			<xsl:text>
-				scaling: </xsl:text><xsl:value-of select="$scaling"/>
+				reduction: </xsl:text><xsl:value-of select="$reduction"/>
 			<xsl:text>
 				x,y: </xsl:text><xsl:value-of select="$rotation-temp"/>
 			<xsl:text disable-output-escaping="yes">
@@ -378,7 +404,7 @@ HISTORY
 						 The projection is centered, so we TRANSLATE the center in the middle of the drawing area as well.
 						 The rotation is not null for hole only, to present the tee at the bottom of the page and green at top.
 					  -->
-					<xsl:value-of select="concat('translate(',$width div 2, ',', $height div 2,') scale(',-$scaling,',',$scaling,') rotate(',$rotation,')')" />
+					<xsl:value-of select="concat('translate(',$width div 2, ',', $height div 2,') scale(',-$reduction,',',$reduction,') rotate(',$rotation,')')" />
 				</xsl:attribute>
 				
 				<xsl:apply-templates select=".//g:placemarks" mode="aoi">
@@ -397,8 +423,10 @@ HISTORY
 
 				<xsl:if test="$mode = 'hole'">
 					<!-- add marker at tee and green center middle position for testing purpose -->
-					<xsl:variable name="x1"><xsl:value-of select="substring-before(substring-after($rotation-temp,'x1='),',')"/></xsl:variable>
-					<xsl:variable name="y1"><xsl:value-of select="substring-before(substring-after($rotation-temp,'y1='),',')"/></xsl:variable>
+					<xsl:variable name="x1"><xsl:value-of select="substring-before(substring-after($rotation-temp,'$tee_mid_x='),',')"/></xsl:variable>
+					<xsl:variable name="y1"><xsl:value-of select="substring-before(substring-after($rotation-temp,'$tee_mid_y='),',')"/></xsl:variable>
+					
+					
 					<xsl:element name="use">
 						<xsl:attribute name="xlink:href">#TeeSet</xsl:attribute>
 						<xsl:attribute name="x"><xsl:value-of select="$x1 * $scale"/></xsl:attribute>
@@ -409,8 +437,8 @@ HISTORY
 						</xsl:attribute>
 					</xsl:element>
 					
-					<xsl:variable name="x2"><xsl:value-of select="substring-before(substring-after($rotation-temp,'x2='),',')"/></xsl:variable>
-					<xsl:variable name="y2"><xsl:value-of select="substring-after($rotation-temp,'y2=')"/></xsl:variable>
+					<xsl:variable name="x2"><xsl:value-of select="substring-before(substring-after($rotation-temp,'$green_mid_x='),',')"/></xsl:variable>
+					<xsl:variable name="y2"><xsl:value-of select="substring-before(substring-after($rotation-temp,'$green_mid_y='),',')"/></xsl:variable>
 					<xsl:element name="use">
 						<xsl:attribute name="xlink:href">#Flag</xsl:attribute>
 						<xsl:attribute name="x"><xsl:value-of select="$x2 * $scale"/></xsl:attribute>
@@ -419,9 +447,100 @@ HISTORY
 							<xsl:value-of select="concat('rotate(',-$rotation,' ',$x2 * $scale,' ',$y2 * $scale,')')"/>
 						</xsl:attribute>
 					</xsl:element>
-				</xsl:if>		
-			</xsl:element><!-- g -->
+										
+					<xsl:if test="../../g:tee-set[position() = 1]/g:tee[@number = $local_number]/g:par > 3">
+						<xsl:variable name="radius100"><xsl:value-of select="100 * abs($calibration) * $scale"/></xsl:variable>
+
+						<xsl:element name="g">
+						<xsl:attribute name="clip-path">url(#HoleContour)</xsl:attribute>
+						<xsl:element name="circle">
+							<xsl:attribute name="cx"><xsl:value-of select="$x1 * $scale"/></xsl:attribute>
+							<xsl:attribute name="cy"><xsl:value-of select="$y1 * $scale"/></xsl:attribute>
+							<xsl:attribute name="r"><xsl:value-of select="$radius100"></xsl:value-of></xsl:attribute>
+							<xsl:attribute name="class">circle-from-tee</xsl:attribute>
+						</xsl:element>
+						<xsl:element name="circle">
+							<xsl:attribute name="cx"><xsl:value-of select="$x1 * $scale"/></xsl:attribute>
+							<xsl:attribute name="cy"><xsl:value-of select="$y1 * $scale"/></xsl:attribute>
+							<xsl:attribute name="r"><xsl:value-of select="$radius100 * 1.5"></xsl:value-of></xsl:attribute>
+							<xsl:attribute name="class">circle-from-tee</xsl:attribute>
+						</xsl:element>
+						<xsl:element name="circle">
+							<xsl:attribute name="cx"><xsl:value-of select="$x1 * $scale"/></xsl:attribute>
+							<xsl:attribute name="cy"><xsl:value-of select="$y1 * $scale"/></xsl:attribute>
+							<xsl:attribute name="r"><xsl:value-of select="$radius100 * 2"></xsl:value-of></xsl:attribute>
+							<xsl:attribute name="class">circle-from-tee</xsl:attribute>
+						</xsl:element>
+						<xsl:element name="circle">
+							<xsl:attribute name="cx"><xsl:value-of select="$x2 * $scale"/></xsl:attribute>
+							<xsl:attribute name="cy"><xsl:value-of select="$y2 * $scale"/></xsl:attribute>
+							<xsl:attribute name="r"><xsl:value-of select="$radius100"></xsl:value-of></xsl:attribute>
+							<xsl:attribute name="class">circle-from-green</xsl:attribute>
+						</xsl:element>
+						<xsl:element name="circle">
+							<xsl:attribute name="cx"><xsl:value-of select="$x2 * $scale"/></xsl:attribute>
+							<xsl:attribute name="cy"><xsl:value-of select="$y2 * $scale"/></xsl:attribute>
+							<xsl:attribute name="r"><xsl:value-of select="$radius100 * 1.5"></xsl:value-of></xsl:attribute>
+							<xsl:attribute name="class">circle-from-green</xsl:attribute>
+						</xsl:element>
+						<xsl:element name="circle">
+							<xsl:attribute name="cx"><xsl:value-of select="$x2 * $scale"/></xsl:attribute>
+							<xsl:attribute name="cy"><xsl:value-of select="$y2 * $scale"/></xsl:attribute>
+							<xsl:attribute name="r"><xsl:value-of select="$radius100 * 2"></xsl:value-of></xsl:attribute>
+							<xsl:attribute name="class">circle-from-green</xsl:attribute>
+						</xsl:element>
+						</xsl:element><!-- g for par 3 -->
+					</xsl:if><!-- if par>3 -->
+				</xsl:if><!-- if hole mode -->
+			</xsl:element><!-- g all elements -->
 			
+			<!-- Add decorative objects -->
+			<xsl:if test="$mode = 'hole'">
+				<xsl:variable name="bullet-size"><xsl:value-of select="$info-height div 32"/></xsl:variable>
+				<xsl:variable name="margin">10</xsl:variable>
+
+				<xsl:element name="rect">
+					<xsl:attribute name="x"><xsl:value-of select="$info-posx"/></xsl:attribute>
+					<xsl:attribute name="y"><xsl:value-of select="$info-posy"/></xsl:attribute>
+					<xsl:attribute name="rx">4</xsl:attribute>
+					<xsl:attribute name="ry">4</xsl:attribute>
+					<xsl:attribute name="width"><xsl:value-of select="$info-width"/></xsl:attribute>
+					<xsl:attribute name="height"><xsl:value-of select="$info-height"/></xsl:attribute>
+					<xsl:attribute name="class">info-background</xsl:attribute>
+				</xsl:element>
+				
+				<xsl:element name="text">
+					<xsl:attribute name="x"><xsl:value-of select="$info-posx + $info-width div 2"/></xsl:attribute>
+					<xsl:attribute name="y"><xsl:value-of select="$info-posy + $info-text"/></xsl:attribute>
+					<xsl:attribute name="class">info-hole</xsl:attribute>
+					<xsl:attribute name="text-anchor">middle</xsl:attribute>
+					Hole <xsl:value-of select="$local_number"/>
+				</xsl:element>
+			
+				<xsl:element name="text">
+					<xsl:attribute name="x"><xsl:value-of select="$info-posx + $info-width div 2"/></xsl:attribute>
+					<xsl:attribute name="y"><xsl:value-of select="$info-posy + 2 * $info-text"/></xsl:attribute>
+					<xsl:attribute name="class">info-par</xsl:attribute>
+					<xsl:attribute name="text-anchor">middle</xsl:attribute>
+					Par <xsl:value-of select="../../g:tee-set[position() = 1]/g:tee[@number = $local_number]/g:par"/>
+				</xsl:element>
+				
+				<xsl:for-each select="../../g:tee-set[position() = 1]/g:tee[@number = $local_number]/g:length">
+					<xsl:element name="circle">
+						<xsl:attribute name="cx"><xsl:value-of select="$info-posx + $bullet-size + $margin"/></xsl:attribute>
+						<xsl:attribute name="cy"><xsl:value-of select="$info-posy + 2*$info-text + position() * ($info-height - 2*$info-text - 2*$margin) div $info-num - $bullet-size div 2"/></xsl:attribute>
+						<xsl:attribute name="r"><xsl:value-of select="$bullet-size"></xsl:value-of></xsl:attribute>
+						<xsl:attribute name="style">fill:<xsl:value-of select="../../@colour"/></xsl:attribute>
+					</xsl:element>
+					<xsl:element name="text">
+						<xsl:attribute name="x"><xsl:value-of select="$info-posx + 3 * $bullet-size + $margin"/></xsl:attribute>
+						<xsl:attribute name="y"><xsl:value-of select="$info-posy + 2*$info-text + position() * ($info-height - 2*$info-text - 2*$margin) div $info-num"/></xsl:attribute>
+						<xsl:attribute name="class">info-length</xsl:attribute>
+						<xsl:value-of select="."/><xsl:text> </xsl:text><xsl:value-of select="@units"/>
+					</xsl:element>	
+				</xsl:for-each>
+			</xsl:if>
+
 			<xsl:element name="use">
 				<xsl:attribute name="xlink:href">#Compass</xsl:attribute>
 				<xsl:attribute name="x"><xsl:value-of select="$compassx"/></xsl:attribute>
@@ -452,6 +571,17 @@ HISTORY
 			<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
 			<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
 		</xsl:apply-templates>
+		<xsl:if test="substring-before($list-of-types, ' ') = 'hole-contour'">
+			<xsl:element name="clipPath">
+				<xsl:attribute name="id">HoleContour</xsl:attribute>
+				<xsl:attribute name="transform"><xsl:text>scale(1.2)</xsl:text></xsl:attribute>
+				<xsl:apply-templates select=".//g:aoi[@type=substring-before($list-of-types, ' ')]" mode="draw">
+					<xsl:with-param name="midlat"><xsl:value-of select="$midlat"/></xsl:with-param>
+					<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
+					<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
+				</xsl:apply-templates>
+			</xsl:element>
+		</xsl:if>
 
 		<xsl:if test="string-length(substring-after($list-of-types, ' '))> 2"> <!-- CHECK TEST -->
 			<xsl:apply-templates select="." mode="aoi">
@@ -902,6 +1032,35 @@ HISTORY
 .flag-cup {
 	fill: #fff;
 }
+/* Information box */
+.info-background {
+	fill: #ddd;
+}
+.info-hole {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: xx-large;
+}
+.info-par {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: x-large;
+}
+.info-length {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: large;
+}
+/* Circle for distances */
+.circle-from-green {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 1px;
+	stroke-dasharray: 4,4;
+}
+.circle-from-tee {
+	fill: none;
+	stroke: #f00;
+	stroke-width: 1px;
+	stroke-dasharray: 8,8;
+}
 
      ]]></style>
 		
@@ -981,7 +1140,7 @@ HISTORY
 		</g>
 				
 		<g id="GolfMLLogoSmall">
-			<image xlink:href="../stylesheets/images/golfml-small.png"></image>
+			<image xlink:href="../stylesheets/images/golfml-small.png" width="80" height="15"/>
 		</g>
 				
 	</defs>
