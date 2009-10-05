@@ -13,6 +13,8 @@ Welcome to the Golf Markup Language Specification and Example.
 
 [DesignGuidelines GolfML XML Schema Design Guidelines]
 
+[Branding Branding and logo]
+
 [Egolfml GolfML] -- This is the Top Element of the Golf Markup Language, the entry point for reference information.
 
 [Links Links of Interest for this Project]
