@@ -975,6 +975,7 @@
 			<xs:enumeration value="marker-150"/>
 			<xs:enumeration value="marker-200"/>
 			<xs:enumeration value="sprinkler"/>
+			<xs:enumeration value="dogleg"/>
 			<xs:enumeration value="other"/>
 		</xs:restriction>
 	</xs:simpleType>
