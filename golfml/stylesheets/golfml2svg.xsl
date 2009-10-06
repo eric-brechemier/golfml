@@ -28,15 +28,28 @@ HISTORY
 	<!-- File format for multiple file output -->
 	<xsl:output method="xml" version="1.0" indent="yes" name="SVG"/>
 	<xsl:output method="text" version="1.0" indent="yes" name="Text"/>
+	
+	
+	<!-- mode=course|hole, generate a single SVG file for the entire course, or one for each hole -->
+	<xsl:param name="mode">hole</xsl:param>
+	<!-- If a hole-number is supplied, generates only that hole -->
+	<xsl:param name="hole-number">15</xsl:param>
+	<!-- whether to generate JavaScript and animation for hole display (useful for web interactivity, useless for print) -->
+	<xsl:param name="dynamic"><xsl:value-of select="true()"/></xsl:param>
+	
+	
 	<!-- size of individual outputs in pixels
 		 Please note that Defs are scaled for drawing between roughly 400 and 1200 pixels.
 		 Smaller or larger values for drawing would need scaling of Defs (patterns, stokes, elements...)
+		 Please leave square canvas to allow for rotation and alignment of hole.
 	  -->
 	<xsl:param name="width">600</xsl:param>
-	<xsl:param name="height">600</xsl:param>
+	<xsl:param name="height"><xsl:value-of select="$width"/></xsl:param>
+
 	<!-- position of compass, relative to upper left corner, in pixels -->
 	<xsl:param name="compassx"><xsl:value-of select="$width - 50"/></xsl:param>
 	<xsl:param name="compassy">50</xsl:param>
+
 	<!-- Information box place and sizes -->
 	<xsl:param name="info-posx">470</xsl:param>
 	<xsl:param name="info-posy">400</xsl:param>
@@ -45,10 +58,10 @@ HISTORY
 	<xsl:param name="info-num">6</xsl:param><!-- total number of length displayed -->
 	<xsl:param name="info-text">20</xsl:param><!-- total number of length displayed -->
 	
-	<!-- mode=course|hole, generate a single SVG file for the entire course, or one for each hole -->
-	<xsl:param name="mode">hole</xsl:param>
-	<!-- If a hole-number is supplied, generates only that hole -->
-	<xsl:param name="hole-number">15</xsl:param>
+	<xsl:param name="units">metric</xsl:param>
+	
+	<xsl:param name="debug"><xsl:value-of select="true()"/></xsl:param>
+		
 	<!-- TO DO: Apply placemark in layout order: large objects (hole-contour, etc.) first and
 		== smaller objects (tee, greens, poi) last. Here is suggested list of ordered values.
 		== 
@@ -86,8 +99,8 @@ HISTORY
 		The typelist parameter is a list of area/point of interest types in the sequence order it should be drawn.
 		Area are always drawn first, and points are drawn on top.
 	-->
-	
-	<xsl:param name="typelist">hole-contour out-of-bound heavy-rough rough semi-rough bush lateral-water front-water water tee fairway path other building obstruction trap greenside-trap fairway-trap bunker fringe green trees tree aim marker</xsl:param>
+	<xsl:param name="typelist">hole-contour out-of-bound heavy-rough rough semi-rough bush lateral-water front-water water tee fairway path other building obstruction trap greenside-trap fairway-trap bunker fringe green trees tree aim marker dogleg dummy</xsl:param>
+
 
 	<xsl:template match="/g:golfml/g:country-club">
 		<xsl:apply-templates select="g:golf-course"/>
@@ -160,15 +173,22 @@ HISTORY
 				</xsl:call-template>
 			</xsl:variable>
 			
-			<xsl:variable name="calibration_temp"><!-- one minute of arc = nautical mile = 1852 meters, we project 1' of latitude -->
+			<xsl:variable name="nautical_mile">
+				<xsl:choose><!-- one minute of arc = nautical mile = 1852 meters = 2025 yards, we project 1' of latitude -->
+					<xsl:when test="$units = 'imperial'"><xsl:value-of select="number(2025.37183)"/></xsl:when>
+					<xsl:otherwise><xsl:value-of select="number(1852)"/></xsl:otherwise>
+				</xsl:choose>
+			</xsl:variable>
+
+			<xsl:variable name="calibration_temp"><!-- we project 1' of latitude --> -->
 				<xsl:call-template name="Project">
-					<xsl:with-param name="lat"><xsl:value-of select="$mid_lat + (1 div (60 * 1852))"/></xsl:with-param>
+					<xsl:with-param name="lat"><xsl:value-of select="$mid_lat + (1 div (60 * $nautical_mile))"/></xsl:with-param>
 					<xsl:with-param name="lon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
 					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
 					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
 					<xsl:with-param name="scale"><xsl:value-of select="number(1)"/></xsl:with-param>
 				</xsl:call-template>
-			</xsl:variable> <!-- calibration gives us how many pixels for 1 meter -->
+			</xsl:variable> <!-- calibration gives us how many pixels for 1 meter or one yard -->
 			<xsl:variable name="calibration"><xsl:value-of select="substring-after($calibration_temp, ',')"/></xsl:variable>
 			
 			<xsl:variable name="maxmax">
@@ -216,6 +236,7 @@ HISTORY
 				</xsl:if>
 			</xsl:variable>
 			
+			<xsl:if test="$debug">
 			<xsl:text disable-output-escaping="yes">
 				&lt;!-- debug information: mode course</xsl:text>
 			<xsl:text>
@@ -257,8 +278,10 @@ HISTORY
 			<xsl:text>
 				maxy: </xsl:text><xsl:value-of select="$maxy * $scale"/>
 			<xsl:text>
+				units: </xsl:text><xsl:value-of select="concat($units, '=', $nautical_mile)"/>
+			<xsl:text>
 				calibration: </xsl:text><xsl:value-of select="abs($calibration) * $scale"/>
-			
+			</xsl:if>			
 					
 			<!-- Find teeing area's middle point -->
 			<xsl:variable name="rotation-temp">
@@ -422,11 +445,25 @@ HISTORY
 				</xsl:apply-templates>
 
 				<xsl:if test="$mode = 'hole'">
+					<xsl:if test="$debug">
+						<!-- add 2 debuging markers at 0,0 and 100m,0 in direction of rotation -->
+						<xsl:element name="use">
+							<xsl:attribute name="xlink:href">#Dogleg</xsl:attribute>
+							<xsl:attribute name="x"><xsl:value-of select="0"/></xsl:attribute>
+							<xsl:attribute name="y"><xsl:value-of select="0"/></xsl:attribute>
+							<xsl:attribute name="class">distance-marker</xsl:attribute>
+						</xsl:element>
+						<xsl:element name="use">
+							<xsl:attribute name="xlink:href">#Dogleg</xsl:attribute>
+							<xsl:attribute name="x"><xsl:value-of select="100 * abs($calibration) * $scale"/></xsl:attribute>
+							<xsl:attribute name="y"><xsl:value-of select="0"/></xsl:attribute>
+							<xsl:attribute name="class">distance-marker-100</xsl:attribute>
+						</xsl:element>
+					</xsl:if>
+					
 					<!-- add marker at tee and green center middle position for testing purpose -->
 					<xsl:variable name="x1"><xsl:value-of select="substring-before(substring-after($rotation-temp,'$tee_mid_x='),',')"/></xsl:variable>
-					<xsl:variable name="y1"><xsl:value-of select="substring-before(substring-after($rotation-temp,'$tee_mid_y='),',')"/></xsl:variable>
-					
-					
+					<xsl:variable name="y1"><xsl:value-of select="substring-before(substring-after($rotation-temp,'$tee_mid_y='),',')"/></xsl:variable>					
 					<xsl:element name="use">
 						<xsl:attribute name="xlink:href">#TeeSet</xsl:attribute>
 						<xsl:attribute name="x"><xsl:value-of select="$x1 * $scale"/></xsl:attribute>
@@ -447,54 +484,55 @@ HISTORY
 							<xsl:value-of select="concat('rotate(',-$rotation,' ',$x2 * $scale,' ',$y2 * $scale,')')"/>
 						</xsl:attribute>
 					</xsl:element>
-										
+									
+					<!-- If more than Par 3, add distance circles at 100, 150, and 200 units of measure -->
 					<xsl:if test="../../g:tee-set[position() = 1]/g:tee[@number = $local_number]/g:par > 3">
 						<xsl:variable name="radius100"><xsl:value-of select="100 * abs($calibration) * $scale"/></xsl:variable>
 
 						<xsl:element name="g">
-						<xsl:attribute name="clip-path">url(#HoleContour)</xsl:attribute>
-						<xsl:element name="circle">
-							<xsl:attribute name="cx"><xsl:value-of select="$x1 * $scale"/></xsl:attribute>
-							<xsl:attribute name="cy"><xsl:value-of select="$y1 * $scale"/></xsl:attribute>
-							<xsl:attribute name="r"><xsl:value-of select="$radius100"></xsl:value-of></xsl:attribute>
-							<xsl:attribute name="class">circle-from-tee</xsl:attribute>
-						</xsl:element>
-						<xsl:element name="circle">
-							<xsl:attribute name="cx"><xsl:value-of select="$x1 * $scale"/></xsl:attribute>
-							<xsl:attribute name="cy"><xsl:value-of select="$y1 * $scale"/></xsl:attribute>
-							<xsl:attribute name="r"><xsl:value-of select="$radius100 * 1.5"></xsl:value-of></xsl:attribute>
-							<xsl:attribute name="class">circle-from-tee</xsl:attribute>
-						</xsl:element>
-						<xsl:element name="circle">
-							<xsl:attribute name="cx"><xsl:value-of select="$x1 * $scale"/></xsl:attribute>
-							<xsl:attribute name="cy"><xsl:value-of select="$y1 * $scale"/></xsl:attribute>
-							<xsl:attribute name="r"><xsl:value-of select="$radius100 * 2"></xsl:value-of></xsl:attribute>
-							<xsl:attribute name="class">circle-from-tee</xsl:attribute>
-						</xsl:element>
-						<xsl:element name="circle">
-							<xsl:attribute name="cx"><xsl:value-of select="$x2 * $scale"/></xsl:attribute>
-							<xsl:attribute name="cy"><xsl:value-of select="$y2 * $scale"/></xsl:attribute>
-							<xsl:attribute name="r"><xsl:value-of select="$radius100"></xsl:value-of></xsl:attribute>
-							<xsl:attribute name="class">circle-from-green</xsl:attribute>
-						</xsl:element>
-						<xsl:element name="circle">
-							<xsl:attribute name="cx"><xsl:value-of select="$x2 * $scale"/></xsl:attribute>
-							<xsl:attribute name="cy"><xsl:value-of select="$y2 * $scale"/></xsl:attribute>
-							<xsl:attribute name="r"><xsl:value-of select="$radius100 * 1.5"></xsl:value-of></xsl:attribute>
-							<xsl:attribute name="class">circle-from-green</xsl:attribute>
-						</xsl:element>
-						<xsl:element name="circle">
-							<xsl:attribute name="cx"><xsl:value-of select="$x2 * $scale"/></xsl:attribute>
-							<xsl:attribute name="cy"><xsl:value-of select="$y2 * $scale"/></xsl:attribute>
-							<xsl:attribute name="r"><xsl:value-of select="$radius100 * 2"></xsl:value-of></xsl:attribute>
-							<xsl:attribute name="class">circle-from-green</xsl:attribute>
-						</xsl:element>
+							<xsl:attribute name="clip-path">url(#HoleContour)</xsl:attribute>
+							<xsl:element name="circle">
+								<xsl:attribute name="cx"><xsl:value-of select="$x1 * $scale"/></xsl:attribute>
+								<xsl:attribute name="cy"><xsl:value-of select="$y1 * $scale"/></xsl:attribute>
+								<xsl:attribute name="r"><xsl:value-of select="$radius100"></xsl:value-of></xsl:attribute>
+								<xsl:attribute name="class">circle-from-tee</xsl:attribute>
+							</xsl:element>
+							<xsl:element name="circle">
+								<xsl:attribute name="cx"><xsl:value-of select="$x1 * $scale"/></xsl:attribute>
+								<xsl:attribute name="cy"><xsl:value-of select="$y1 * $scale"/></xsl:attribute>
+								<xsl:attribute name="r"><xsl:value-of select="$radius100 * 1.5"></xsl:value-of></xsl:attribute>
+								<xsl:attribute name="class">circle-from-tee</xsl:attribute>
+							</xsl:element>
+							<xsl:element name="circle">
+								<xsl:attribute name="cx"><xsl:value-of select="$x1 * $scale"/></xsl:attribute>
+								<xsl:attribute name="cy"><xsl:value-of select="$y1 * $scale"/></xsl:attribute>
+								<xsl:attribute name="r"><xsl:value-of select="$radius100 * 2"></xsl:value-of></xsl:attribute>
+								<xsl:attribute name="class">circle-from-tee</xsl:attribute>
+							</xsl:element>
+							<xsl:element name="circle">
+								<xsl:attribute name="cx"><xsl:value-of select="$x2 * $scale"/></xsl:attribute>
+								<xsl:attribute name="cy"><xsl:value-of select="$y2 * $scale"/></xsl:attribute>
+								<xsl:attribute name="r"><xsl:value-of select="$radius100"></xsl:value-of></xsl:attribute>
+								<xsl:attribute name="class">circle-from-green</xsl:attribute>
+							</xsl:element>
+							<xsl:element name="circle">
+								<xsl:attribute name="cx"><xsl:value-of select="$x2 * $scale"/></xsl:attribute>
+								<xsl:attribute name="cy"><xsl:value-of select="$y2 * $scale"/></xsl:attribute>
+								<xsl:attribute name="r"><xsl:value-of select="$radius100 * 1.5"></xsl:value-of></xsl:attribute>
+								<xsl:attribute name="class">circle-from-green</xsl:attribute>
+							</xsl:element>
+							<xsl:element name="circle">
+								<xsl:attribute name="cx"><xsl:value-of select="$x2 * $scale"/></xsl:attribute>
+								<xsl:attribute name="cy"><xsl:value-of select="$y2 * $scale"/></xsl:attribute>
+								<xsl:attribute name="r"><xsl:value-of select="$radius100 * 2"></xsl:value-of></xsl:attribute>
+								<xsl:attribute name="class">circle-from-green</xsl:attribute>
+							</xsl:element>
 						</xsl:element><!-- g for par 3 -->
 					</xsl:if><!-- if par>3 -->
 				</xsl:if><!-- if hole mode -->
 			</xsl:element><!-- g all elements -->
 			
-			<!-- Add decorative objects -->
+			<!-- Add information objects -->
 			<xsl:if test="$mode = 'hole'">
 				<xsl:variable name="bullet-size"><xsl:value-of select="$info-height div 32"/></xsl:variable>
 				<xsl:variable name="margin">10</xsl:variable>
@@ -536,11 +574,16 @@ HISTORY
 						<xsl:attribute name="x"><xsl:value-of select="$info-posx + 3 * $bullet-size + $margin"/></xsl:attribute>
 						<xsl:attribute name="y"><xsl:value-of select="$info-posy + 2*$info-text + position() * ($info-height - 2*$info-text - 2*$margin) div $info-num"/></xsl:attribute>
 						<xsl:attribute name="class">info-length</xsl:attribute>
-						<xsl:value-of select="."/><xsl:text> </xsl:text><xsl:value-of select="@units"/>
+						<xsl:value-of select="."/><xsl:text> </xsl:text><xsl:choose>
+							<xsl:when test="@units = 'yards'">yards</xsl:when>
+							<xsl:otherwise>meters</xsl:otherwise>
+						</xsl:choose>
+						
 					</xsl:element>	
 				</xsl:for-each>
 			</xsl:if>
 
+			<!-- Add decorative objects (compass, logo) -->
 			<xsl:element name="use">
 				<xsl:attribute name="xlink:href">#Compass</xsl:attribute>
 				<xsl:attribute name="x"><xsl:value-of select="$compassx"/></xsl:attribute>
@@ -555,6 +598,58 @@ HISTORY
 				<xsl:attribute name="x">10</xsl:attribute>
 				<xsl:attribute name="y">575</xsl:attribute>
 			</xsl:element>
+			
+			<!-- Add dynamic objects to measure distances -->
+			<xsl:if test="$dynamic">
+				<xsl:element name="path">
+					<xsl:attribute name="id">trajectory</xsl:attribute>
+					<xsl:attribute name="class">trajectory</xsl:attribute>
+					<xsl:attribute name="d">M300,500 Q450,100 300,100</xsl:attribute>
+				</xsl:element>
+				
+				<xsl:element name="text">
+					<xsl:attribute name="id">distance</xsl:attribute>
+					<xsl:attribute name="class">distance</xsl:attribute>
+					<xsl:attribute name="x"><xsl:value-of select="450"/></xsl:attribute>
+					<xsl:attribute name="y"><xsl:value-of select="100"/></xsl:attribute>
+					<xsl:value-of select="400 div (abs($calibration) * $scale)"/>
+				</xsl:element>				
+				
+				<xsl:element name="rect">
+					<xsl:variable name="quote">'</xsl:variable>
+					<xsl:attribute name="id">interactive-area</xsl:attribute>
+					<xsl:attribute name="fill">white</xsl:attribute>
+					<xsl:attribute name="fill-opacity">0</xsl:attribute>
+					<xsl:attribute name="x">0</xsl:attribute>
+					<xsl:attribute name="y">0</xsl:attribute>
+					<xsl:attribute name="width"><xsl:value-of select="$width"/></xsl:attribute>
+					<xsl:attribute name="height"><xsl:value-of select="$height"/></xsl:attribute>
+					<xsl:attribute name="onmousemove">drag(evt)</xsl:attribute>
+					<xsl:attribute name="onload"><xsl:value-of select="concat('on_load(300,500,300,100,450,100,',abs($calibration) * $scale * $reduction,',',$quote,$units,$quote,')')"/></xsl:attribute>
+				</xsl:element>
+				
+				<xsl:element name="g">
+					<xsl:attribute name="onmousedown">mouse_down(evt, 'ball')</xsl:attribute>
+					<xsl:attribute name="onmouseup">mouse_up(evt)</xsl:attribute>
+					<xsl:element name="use">
+						<xsl:attribute name="class">ball</xsl:attribute>
+						<xsl:attribute name="xlink:href">#Ball</xsl:attribute>
+						<xsl:attribute name="x"><xsl:value-of select="300"/></xsl:attribute>
+						<xsl:attribute name="y"><xsl:value-of select="500"/></xsl:attribute>
+					</xsl:element>
+				</xsl:element>
+				
+				<xsl:element name="g">
+					<xsl:attribute name="onmousedown">mouse_down(evt, 'target')</xsl:attribute>
+					<xsl:attribute name="onmouseup">mouse_up(evt)</xsl:attribute>
+					<xsl:element name="use">
+						<xsl:attribute name="class">target</xsl:attribute>
+						<xsl:attribute name="xlink:href">#Target</xsl:attribute>
+						<xsl:attribute name="x"><xsl:value-of select="300"/></xsl:attribute>
+						<xsl:attribute name="y"><xsl:value-of select="100"/></xsl:attribute>
+					</xsl:element>
+				</xsl:element>
+			</xsl:if><!-- dynamic -->
 			
 		</xsl:element><!-- svg -->
 	</xsl:template>
@@ -622,13 +717,28 @@ HISTORY
 		<xsl:param name="midlon"/>
 		<xsl:param name="scale"/>
 		<xsl:element name="use">
+			<xsl:attribute name="xlink:href">
+				<xsl:call-template name="GetPOIDrawType">
+					<xsl:with-param name="type" select="@type"/>
+				</xsl:call-template>
+			</xsl:attribute>
 			<xsl:apply-templates select="g:position/g:position-gps" mode="xy-projection">
 				<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
 				<xsl:with-param name="midlat"><xsl:value-of select="$midlat"/></xsl:with-param>
 				<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
 			</xsl:apply-templates>
-			<xsl:attribute name="xlink:href">#Dogleg</xsl:attribute>
 		</xsl:element>
+	</xsl:template>
+	
+	
+	
+	<xsl:template name="GetPOIDrawType">
+		<xsl:param name="type"/>
+		
+		<xsl:choose>
+			<xsl:when test="$type = 'tree'">#Tree</xsl:when>
+			<xsl:otherwise>#Dogleg</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 
 	
@@ -695,7 +805,7 @@ HISTORY
 			 See also: http://trac.osgeo.org/proj/ for software, description of projections, and more.
 			 For a golf course, since projection is very local, errors in distance are really minimal.
 			 Google Earth provides us with DEGREES that we need to convert into GRADIENTS (RAD = DEG * PI / 180).
-			 Notes: To measure distance: 1 minute of latitude = 1852m. 1 minute of longitude = 1852m x cos(longitude).
+			 Notes: To measure distance: 1 minute of latitude = 1 nautical mile. 1 minute of longitude = 1 nautical mile x cos(longitude).
 			        We assume cos(mid_longitude) for all distances on the golf course.
 		-->
 		<xsl:param name="midlat"/>
@@ -743,12 +853,8 @@ HISTORY
 	
 
 	<xsl:template name="Defs">
-		<xsl:param name="scale"/>
-			<defs>
-				<xsl:if test="$scale"><!-- does not work as expected... -->
-					<xsl:attribute name="transform"><xsl:value-of select="concat('scale(',$scale,')')"></xsl:value-of></xsl:attribute>
-				</xsl:if>
-		<style type="text/css"><![CDATA[
+	<defs>
+	<style type="text/css"><![CDATA[
 /* Stylesheet for SVG elements
  *
  *
@@ -1001,7 +1107,13 @@ HISTORY
 	stroke: #888;
 	stroke-width: 1px;
 }
-
+.one-tree {
+	fill: #14920D;
+	stroke: #165822;
+	stroke-width: 3px;
+	stroke-linecap: round;
+	stroke-linejoin: round; 
+}
 
 /* Classes for special decorative objects
  *
@@ -1061,8 +1173,151 @@ HISTORY
 	stroke-width: 1px;
 	stroke-dasharray: 8,8;
 }
+/* Dynamic objects */
+.target {
+	fill: none;
+	stroke: #f00;
+	stroke-width: 2px;
+}
+.target-filled {
+	fill: #f00;
+	fill-opacity: 0.5;
+	stroke: #f00;
+}
+.ball {
+	fill: #fff;
+	stroke: none;
+}
+.trajectory {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 2px;
+}
+.distance {
+	fill: #fff;
+}
+]]></style>
+		<xsl:if test="$dynamic">
+			<script type="text/ecmascript"><![CDATA[
+    var dragger = null;
+    var origTransform = "";
+    var origX;
+    var origY;
+    var oldTranslateX;
+    var oldTranslateY;
+    var translateRegExp = /translate\(([-+]?\d+)(\s*[\s,]\s*)([-+]?\d+)\)\s*$/;
 
-     ]]></style>
+	var mover = null;
+    var ballX = 300;
+    var ballY = 500;
+    var targetX = 300;
+    var targetY = 100;
+    var hookX = 450;
+    var hookY = 100;
+    var calibration = 1;
+    var units = 'm';
+
+	function on_load(bx, by, tx, ty, hx, hy, c, u) {
+	    ballX = bx;
+	    ballY = by;
+	    targetX = tx;
+	    targetY = ty;
+	    hookX = hx;
+	    hookY = hy;
+		calibration = c;
+		if (u=='imperial') { units="yds"; } else { units = "m"; }
+		update_trajectory();
+	}
+	
+    function update_trajectory() {
+	    var factor = 0.3;
+	    var d = Math.sqrt((ballX-targetX)*(ballX-targetX)+(ballY-targetY)*(ballY-targetY));
+	    var alpha = Math.acos((ballY-targetY)/d);
+	    if (targetX > ballX) { alpha = -alpha; }
+	    hookX = targetX + d * factor * Math.cos(alpha);
+	    hookY = targetY - d * factor * Math.sin(alpha);
+    
+   	 	var t=document.getElementById('trajectory');
+    	if (t != null) {
+    	    var c = "M" + ballX + "," + ballY + " Q" + hookX + "," + hookY + " " + targetX + "," + targetY;
+    		t.setAttributeNS(null,"d", c);
+		}
+		t=document.getElementById('distance');
+    	if (t != null) {
+    	    var d = Math.sqrt((ballX-targetX)*(ballX-targetX)+(ballY-targetY)*(ballY-targetY));
+    	    var v = Math.round(d * 10 / calibration ) / 10;
+    	    var alpha = Math.acos((ballY-targetY)/d);
+    	    t.firstChild.data=v + ' ' + units;
+    		t.setAttributeNS(null,"x", hookX);
+    		t.setAttributeNS(null,"y", hookY);    			
+		}
+    }
+    
+    function mouse_down(evt, id){	
+      mover = id;
+      dragger = evt.target;
+      origTransform = dragger.getAttributeNS(null,"transform");
+      if (origTransform == null){
+        origTransform = "";
+      } else {
+        origTransform = new String(origTransform);
+      }
+      origX = evt.clientX;
+      origY = evt.clientY;
+      oldTranslateX = 0;
+      oldTranslateY = 0;
+      if (origTransform == null || origTransform.length == 0){
+        origTransform = "";
+      } else {
+        var result = origTransform.match(translateRegExp);
+        if (result == null || result.index == -1){
+           alert("The regular expression had a problem finding the translate at the end of \"" + origTransform + "\"");
+           oldTranslateX = 0;
+           oldTranslateY = 0;
+        } else {
+           oldTranslateX = parseFloat(result[1]);
+           oldTranslateY = parseFloat(result[3]);
+           origTransform = origTransform.substr(0, result.index);
+        }
+        origTransform += " ";
+      }
+
+    }
+    
+    function mouse_up(evt){
+       if(dragger != null){
+          dragger = null;
+          origTransform = ""
+          origX = 0;
+          origY = 0;
+          oldTranslateX = 0;
+          oldTranslateY = 0;
+       }
+       if (mover != null) {
+		  mover = null;
+       }
+    }
+    
+    function drag(evt){
+       if(dragger != null){
+          var newX = oldTranslateX + (evt.clientX - origX);
+          var newY = oldTranslateY + (evt.clientY - origY);
+          var transform = origTransform + "translate(" + newX + " " + newY + ")";
+          dragger.setAttributeNS(null,"transform", transform );
+       }
+      if (mover != null) {
+          if (mover == 'ball') {
+		      ballX = evt.clientX;
+		      ballY = evt.clientY;
+	      } else if (mover == 'target') {
+		      targetX = evt.clientX;
+		      targetY = evt.clientY;
+		  }
+		  update_trajectory();
+      }
+    }
+  ]]></script>
+		</xsl:if>
 		
 		<linearGradient id="background-straight">
 			<stop offset="5%" stop-color="#002"/>
@@ -1101,6 +1356,14 @@ HISTORY
 			<rect x="0" y="10" width="10" height="10" fill="#00b800"/>
 		</pattern>
 		<pattern id="fairway-pattern" patternTransform="rotate(60)" xlink:href="#fairway-straight"/>
+				
+		<g id="Tree" transform="translate(-76 -66) scale(0.4)">
+			<path class="one-tree"
+				d="M191.991,126.799c-11.163,0-21.022,4.032-27.033,10.191c-17.556,0.615-31.556,11.151-31.556,24.079
+				c0,7.537,4.759,14.266,12.203,18.693c0.876,12.855,18.43,23.128,39.939,23.128c22.07,0,39.979-10.812,39.979-24.136
+				c0-0.065-0.012-0.13-0.013-0.195c6.33-2.866,10.33-6.992,10.33-11.595c0-4.806-4.343-9.104-11.164-11.977
+				c0.31-1.318,0.478-2.67,0.478-4.054C225.154,137.612,210.297,126.799,191.991,126.799z"/>
+		</g>
 		
 		<g id="TeeSet">
 			<circle cx="-5" cy="0" r="2"/>
@@ -1122,6 +1385,22 @@ HISTORY
 		<g id="Hole">
 			<circle r="2"/>
 		</g>
+				
+		<g id="Ball">
+			<image xlink:href="../stylesheets/images/golf-ball.png" width="16" height="16"
+				transform="translate(-8 -8)"/>
+		</g>
+		
+		<g id="Target">
+			<circle class="target-filled" r="12"/>
+			<!-- 
+				<path   class="target" d="M 0,4 L 0,10"/>
+				<path   class="target" d="M 0,-4 L 0,-10"/>
+				<path   class="target" d="M 4,0 L 10,0"/>
+				<path   class="target" d="M -4,0 L -10,0"/>
+			-->
+		</g>
+		
 				
 		<g id="Flag" transform="translate(0 -30) scale(-0.2 0.2)">
 			<line id="FlagPole" class="flag-pole" x1="0.5" y1="0" x2="0.5" y2="150"/>
