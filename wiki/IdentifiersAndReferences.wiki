@@ -46,7 +46,7 @@ Inside a GolfML document, we use the following identifiers:
 
 For a given entity, we defined a Identifier Group of Elements.
 
-For example, to uniquely identify a player, we use the following elements:
+For example, to uniquely identify a player in GolfML, we use the following elements:
 {{{
 <player>
   <name>Tiger Woods</name>
@@ -54,7 +54,7 @@ For example, to uniquely identify a player, we use the following elements:
 </player>
 }}}
 
-We create a group named *`ID_Player`*:
+We create a group named *`ID_Player`* which contains the following elements:
 {{{
 <xs:sequence>
   <xs:element name="player.name" type="xs:string"/>
@@ -65,8 +65,12 @@ Elements in the group are named after the GolfML hierarchy of elements used in t
 {{{
 <player>
   <name>
+  <date-of-birth>
 }}}
 becomes:
 {{{
-<player.name>
+<player-ref [remote-golfml-url="http://tigerwoods.com/profile.xml"]>
+  <player.name>Tiger Woods</player.name>
+  <player.date-of-birth>1975-12-30</player.date-of-birth>
+</player-ref>
 }}}
