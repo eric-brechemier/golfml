@@ -100,3 +100,40 @@ When a fixed enumeration is requested, there is always a special value "other" a
   72
 </handicap>
 }}}
+
+= References to Remote GolfML Documents =
+
+By nature, GolfML document are distributed.  While XML technologies address this issue in specific standards  (See XLink, XPoint, XPath 2.0, XQuery), the use of these standard in GolfML would make it a lot more complex.
+
+To address references to remote documents, GolfML offers a simple remote document location attribute where needed.
+
+Example: File scorecard.xml references a set of tee played from.
+{{{
+<round>
+  <scorecard>
+  <tees remote-golfml-url="http://www.golf-dieppe.com/golfml/course.xml">
+   <country-club.name>Golf De Dieppe-Pourville</country-club.name>
+   <country-club.address.country.iso3166>FR</country-club.address.country.iso3166>
+   <country-club.address.postal-code>76200 Dieppe</country-club.address.postal-code>
+   <country-club.golf-course.name>Golf De Dieppe-Pourville</country-club.golf-course.name>
+   <country-club.golf-course.tee-set.name>Yellow (Men)</country-club.golf-course.tee-set.name>
+  </tees>
+  <score>
+}}}
+
+Example: File located at http://www.golf-dieppe.com/golfml/course.xml, maintained by the golf course
+{{{
+<country-club>
+  <name>Golf De Dieppe-Pourville</name>
+  <address>
+    <street>Route de Pourville</street>
+    <postal-code>76200 Dieppe</postal-code>
+    <country code="FR">France</country>
+  </address>
+  <contact type="club-house">
+    <phone>33-2-35842505</phone>
+    </contact>
+    <golf-course>
+      <name>Golf De Dieppe-Pourville</name>
+         <tee-set name="Yellow (Men)" colour="black" gender="gentlemen">
+}}}
