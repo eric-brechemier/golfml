@@ -41,3 +41,32 @@ Inside a GolfML document, we use the following identifiers:
 
  # Golf clubs: A golf club is a complex description of a club to play golf with all its technical and commercial information.
  # Golf bag: A golf bag is a collection of golfing equipment that includes not only golf clubs but also balls, apparel, etc.
+
+= Naming Convention =
+
+For a given entity, we defined a Identifier Group of Elements.
+
+For example, to uniquely identify a player, we use the following elements:
+{{{
+<player>
+  <name>Tiger Woods</name>
+  <date-of-birth>1975-12-30</date-of-birth>
+</player>
+}}}
+
+We create a group named *`ID_Player`*:
+{{{
+		<xs:sequence>
+			<xs:element name="player.name" type="xs:string"/>
+			<xs:element name="player.date-of-birth" type="xs:date"/>
+		</xs:sequence>
+}}}
+Elements in the group are named after the GolfML hierarchy of elements used in the key. Name-forming element names are separated by period.
+{{{
+   <player>
+      <name>
+}}}
+becomes:
+{{{
+<player.name>
+}}}
