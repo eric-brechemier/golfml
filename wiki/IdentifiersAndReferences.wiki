@@ -56,15 +56,15 @@ For example, to uniquely identify a player, we use the following elements:
 
 We create a group named *`ID_Player`*:
 {{{
-		<xs:sequence>
-			<xs:element name="player.name" type="xs:string"/>
-			<xs:element name="player.date-of-birth" type="xs:date"/>
-		</xs:sequence>
+<xs:sequence>
+  <xs:element name="player.name" type="xs:string"/>
+  <xs:element name="player.date-of-birth" type="xs:date"/>
+</xs:sequence>
 }}}
 Elements in the group are named after the GolfML hierarchy of elements used in the key. Name-forming element names are separated by period.
 {{{
-   <player>
-      <name>
+<player>
+  <name>
 }}}
 becomes:
 {{{
