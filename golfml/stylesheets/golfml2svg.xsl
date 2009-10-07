@@ -33,7 +33,7 @@ HISTORY
 	<!-- mode=course|hole, generate a single SVG file for the entire course, or one for each hole -->
 	<xsl:param name="mode">hole</xsl:param>
 	<!-- If a hole-number is supplied, generates only that hole -->
-	<xsl:param name="hole-number">15</xsl:param>
+	<xsl:param name="hole-number">1</xsl:param>
 	<!-- whether to generate JavaScript and animation for hole display (useful for web interactivity, useless for print) -->
 	<xsl:param name="dynamic"><xsl:value-of select="true()"/></xsl:param>
 	

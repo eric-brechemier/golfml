@@ -29,11 +29,16 @@ HISTORY
 	<xsl:param name="personal-par">yes</xsl:param>
 
 
-	<xsl:template match="g:golfml">
+	<xsl:template match="/">
 		<html>
-			<body>
+			<head>
+				<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+				<link href="../../stylesheets/golfml.css" rel="stylesheet" type="text/css"/>
+				<title>GolfML Custom Scorecard</title>
+			</head>
+			<body><!-- /g:golfml/g:country-club[g:name=$country-club.name]/g:golf-course[g:name=$country-club.golf-course.name] -->
 				<xsl:apply-templates select="/g:golfml/g:country-club[g:name=$country-club.name]/g:golf-course[g:name=$country-club.golf-course.name]">
-					<xsl:with-param name="handicap"><xsl:value-of select="number(/g:golfml/g:player[g:name=$golfer.name]/g:current-handicap)"/></xsl:with-param>
+					<xsl:with-param name="handicap" select="number(/g:golfml/g:player[g:name=$golfer.name]/g:current-handicap)"/>
 				</xsl:apply-templates>
 			</body>
 		</html>
@@ -44,14 +49,13 @@ HISTORY
 		<xsl:param name="handicap"/>
 
 		<h1>Custom scorecard for: <xsl:value-of select="$golfer.name"/> (current handicap: <xsl:value-of select="$handicap"/>)</h1>
-		<h2>Course: <xsl:value-of select="../g:name"/> (<xsl:value-of select="g:name"/>)</h2>
-		<table border="1">
+		<table  class="course-data">
+			<caption><xsl:value-of select="../g:name"/> (<xsl:value-of select="g:name"/>)</caption>
 			<thead>
 				<tr>
-					<td> </td>
 					<td>Tee Color</td>
 					<td>Rating</td>
-					<td>Slope <xsl:value-of select="count(g:holes)"/></td>
+					<td>Slope</td>
 					<xsl:if test="count(g:holes)>0">
 						<xsl:for-each select="g:holes/g:hole">
 							<xsl:sort select="@number" data-type="number"/>
@@ -103,8 +107,8 @@ HISTORY
 		<xsl:param name="holes-all" ><xsl:value-of select="floor($strokes div 18)"/></xsl:param>
 		<xsl:param name="holes-some"><xsl:value-of select="$strokes mod 18"/></xsl:param>
 		
-		<tr>
-			<td colspan="4">Handicap</td> 
+		<tr class="handicap">
+			<td colspan="3" class="label">Handicap</td> 
 			<xsl:for-each select="g:tee">
 				<xsl:sort select="@number" data-type="number"/>
 				<td>
@@ -112,15 +116,13 @@ HISTORY
 				</td>
 			</xsl:for-each>
 		</tr>
-		<tr>
+		<xsl:element name="tr">
+			<xsl:attribute name="class"><xsl:value-of select="concat('tee-',@colour)"/></xsl:attribute>
 			<xsl:element name="td">
 				<xsl:attribute name="bgcolor">
 					<xsl:value-of select="@colour"/>
 				</xsl:attribute>
 			</xsl:element>
-			<td>
-				<xsl:value-of select="@colour"/>
-			</td>
 			<td>
 				<xsl:value-of select="g:qualification/g:qualification-usga/g:rating"/>
 			</td>
@@ -137,9 +139,9 @@ HISTORY
 			<td><xsl:value-of select="sum(g:tee[@number &lt; 10]/g:length[@units='meters'])"/></td>
 			<td><xsl:value-of select="sum(g:tee[@number > 9]/g:length[@units='meters'])"/></td>
 			<td><xsl:value-of select="sum(g:tee/g:length[@units='meters'])"/></td>
-		</tr>
-		<tr>
-			<td colspan="4">Par</td> 
+		</xsl:element>
+		<tr class="par">
+			<td colspan="3" class="label">Par</td> 
 			<xsl:for-each select="g:tee">
 				<xsl:sort select="@number" data-type="number"/>
 				<td>
@@ -150,8 +152,8 @@ HISTORY
 			<td><xsl:value-of select="sum(g:tee[@number > 9]/g:par)"/></td>
 			<td><xsl:value-of select="sum(g:tee/g:par)"/></td>
 		</tr>	
-		<tr>
-			<td colspan="4">Allowed</td> 
+		<tr class="par">
+			<td colspan="3" class="label">Allowed</td> 
 			<xsl:for-each select="g:tee">
 				<xsl:sort select="@number" data-type="number"/>
 				<td>
@@ -167,8 +169,8 @@ HISTORY
 			<td></td>
 			<td><xsl:value-of select="$strokes"/></td>
 		</tr>
-		<tr>
-			<td colspan="4">Total</td> 
+		<tr class="par">
+			<td colspan="3" class="label">Total</td> 
 			<xsl:for-each select="g:tee">
 				<xsl:sort select="@number" data-type="number"/>
 				<td>
@@ -206,7 +208,7 @@ HISTORY
 		
 		<xsl:if test="/g:golfml/g:application[@dotname='com.personalpar']">
 			<tr>
-				<td colspan="4">Personal par</td> 
+				<td colspan="3">Personal par</td> 
 				<xsl:for-each select="g:tee">
 					<xsl:sort select="@number" data-type="number"/>
 					<td>
@@ -238,7 +240,7 @@ HISTORY
 	<xsl:template name="EmptyLine">
 		<xsl:param name="label"/>
 		<tr>
-			<td colspan="4"><xsl:value-of select="$label"/></td> 
+			<td colspan="3" class="label"><xsl:value-of select="$label"/></td> 
 			<xsl:for-each select="g:tee">
 				<xsl:sort select="@number" data-type="number"/>
 				<td>

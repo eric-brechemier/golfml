@@ -24,6 +24,11 @@ HISTORY
 	
 	<xsl:template match="g:golfml">
 		<html>
+			<head>
+				<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+				<link href="../../stylesheets/golfml.css" rel="stylesheet" type="text/css"/>
+				<title>GolfML Scorecard</title>
+			</head>
 			<body>
 				<xsl:apply-templates select="g:player"/>
 				<hr/>
@@ -31,11 +36,13 @@ HISTORY
 		</html>
 	</xsl:template>
 	
+	
 	<xsl:template match="g:player">
 		<h1>Player: <xsl:value-of select="g:name"/></h1>
 		<p>Handicap: <xsl:value-of select="g:round/g:scorecard/g:handicap"/></p>
 		<xsl:apply-templates select="g:round"/>
 	</xsl:template>
+	
 	
 	<xsl:template match="g:round">
 		<h2>Date: <xsl:value-of select="g:date"/></h2>
@@ -43,13 +50,13 @@ HISTORY
 			<p> Weather: <xsl:value-of select="g:weather"/>. (Wind: <xsl:value-of select="g:weather/@wind"/>) </p>
 		</xsl:if>
 		<xsl:apply-templates select="g:scorecard"/>
+		<hr/>
 	</xsl:template>
 	
-	<xsl:template match="g:scorecard">
-		
-		<h3>Course: <xsl:value-of select="g:tees/g:country-club.golf-course.name"/></h3>
-		<p>Golf club: <xsl:value-of select="g:tees/g:country-club.name"/></p>
-		<table border="1">
+	
+	<xsl:template match="g:scorecard">		
+		<h3>Course: <xsl:value-of select="g:tees/g:country-club.golf-course.name"/> (<xsl:value-of select="g:tees/g:country-club.name"/>)</h3>
+		<table  class="course-data">
 			<xsl:call-template name="Tees">
 				<xsl:with-param name="country"
 					select="g:tees/g:country-club.address.country.iso3166"/>
@@ -61,9 +68,9 @@ HISTORY
 			<tbody>
 				<xsl:apply-templates select="g:score"/>
 			</tbody>
-		</table>
-		
+		</table>		
 	</xsl:template>
+	
 	
 	<xsl:template name="Tees">
 		<xsl:param name="country"/>
@@ -113,9 +120,10 @@ HISTORY
 		</b>
 	</xsl:template>
 	
+	
 	<xsl:template match="g:tee-set">
 		<tr>
-			<td colspan="4">Par</td>
+			<td colspan="3" class="label">Par</td>
 			<xsl:for-each select="g:tee">
 				<td>
 					<xsl:value-of select="g:par"/>
@@ -133,7 +141,7 @@ HISTORY
 		</tr>
 		
 		<tr>
-			<td colspan="4">Handicap</td>
+			<td colspan="3" class="label">Handicap</td>
 			<xsl:for-each select="g:tee">
 				<td>
 					<xsl:value-of select="g:handicap-stroke"/>
@@ -141,15 +149,8 @@ HISTORY
 			</xsl:for-each>
 		</tr>
 		
-		<tr>
-			<xsl:element name="td">
-				<xsl:attribute name="bgcolor">
-					<xsl:value-of select="@colour"/>
-				</xsl:attribute>
-			</xsl:element>
-			<td>
-				<xsl:value-of select="@colour"/>
-			</td>
+		<xsl:element name="tr">
+			<xsl:attribute name="class"><xsl:value-of select="concat('tee-',@colour)"/></xsl:attribute>
 			<td>
 				<xsl:value-of select="g:qualification/g:qualification-usga/g:rating"/>
 			</td>
@@ -172,14 +173,13 @@ HISTORY
 			<td>
 				<xsl:value-of select="sum(g:tee/g:length)"/>
 			</td>
-		</tr>
-		
-		
+		</xsl:element>		
 	</xsl:template>
+	
 	
 	<xsl:template match="g:score">
 		<tr>
-			<td colspan="4"> Strokes </td>
+			<td colspan="3" class="label">Strokes</td>
 			<xsl:for-each select="g:hole">
 				<xsl:sort select="@number"/>
 				<td>
@@ -198,7 +198,7 @@ HISTORY
 		</tr>
 		
 		<tr>
-			<td colspan="4">Putts</td>
+			<td colspan="3" class="label">Putts</td>
 			<xsl:for-each select="g:hole">
 				<xsl:sort select="@number"/>
 				<td>
@@ -215,7 +215,6 @@ HISTORY
 				<xsl:value-of select="sum(g:hole/g:putts)"/>
 			</td>
 		</tr>
-		
 	</xsl:template>
 	
 </xsl:stylesheet>

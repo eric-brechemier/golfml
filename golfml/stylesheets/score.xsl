@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<xsl:stylesheet version="1.0"
+<xsl:stylesheet version="2.0"
 				xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 				xmlns:g="http://code.google.com/p/golfml"
 	>
@@ -26,6 +26,11 @@
 	
 	<xsl:template match="g:golfml">
 		<html>
+			<head>
+				<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+				<link href="../../stylesheets/golfml.css" rel="stylesheet" type="text/css"/>
+				<title>GolfML Scorecard</title>
+			</head>
 			<body><!-- /default:golfml/default:player[1]/default:round[1]/default:date[1] -->
 				<xsl:apply-templates select="//g:round[g:date=$round-date]"/>
 				<xsl:value-of disable-output-escaping="yes" select="concat('&lt;','/table')"/>
@@ -35,16 +40,19 @@
 
 	<xsl:template match="g:round">
 		<xsl:if test="position() = 1">
-		<h2>Date: <xsl:value-of select="g:date"/></h2>
+			<h1>Scorecard</h1>
 			<xsl:if test="g:weather">
 				<p>Weather: <xsl:value-of select="g:weather"/>. (Wind: <xsl:value-of select="g:weather/@wind"/>) </p>
 			</xsl:if>
-			<p>Country club:<xsl:value-of select="g:scorecard/g:tees/g:country-club.name"/></p>
-			<p>Golf course:<xsl:value-of select="g:scorecard/g:tees/g:country-club.golf-course.name"/></p>
-			<xsl:value-of disable-output-escaping="yes" select="concat('&lt;','table border=&quot;1&quot;>')"/>
-				<xsl:variable name="gcc"><xsl:value-of select="g:scorecard/g:tees/g:country-club.name"/></xsl:variable>
-				<xsl:variable name="course"><xsl:value-of select="g:scorecard/g:tees/g:country-club.golf-course.name"/></xsl:variable>
-				<xsl:apply-templates select="/g:golfml/g:country-club[g:name=$gcc]/g:golf-course[g:name=$course]/g:tee-set"/>
+			<xsl:value-of disable-output-escaping="yes" select="concat('&lt;','table class=&quot;course-data&quot;>')"/>
+			<caption>
+				<xsl:value-of select="g:scorecard/g:tees/g:country-club.name"/>(<xsl:value-of select="g:scorecard/g:tees/g:country-club.golf-course.name"/>)
+				Date: <xsl:value-of select="format-dateTime(g:date, '[D] [MNn] [Y]', 'fr', (), ())"/>
+			</caption>
+
+			<xsl:variable name="gcc"><xsl:value-of select="g:scorecard/g:tees/g:country-club.name"/></xsl:variable>
+			<xsl:variable name="course"><xsl:value-of select="g:scorecard/g:tees/g:country-club.golf-course.name"/></xsl:variable>
+			<xsl:apply-templates select="/g:golfml/g:country-club[g:name=$gcc]/g:golf-course[g:name=$course]/g:tee-set"/>
 		</xsl:if>
 		<xsl:apply-templates select="g:scorecard/g:score"/>
 		<!-- xsl:value-of select="parent::node()/g:name"/ -->
@@ -54,7 +62,6 @@
 		<xsl:if test="position() = 1">
 			<thead>
 				<tr>
-					<td> </td>
 					<td>Tee Color</td>
 					<td>Rating</td>
 					<td>Slope</td>
@@ -82,7 +89,7 @@
 				</tr>
 			</thead>
 			<tr>
-				<td colspan="4">Par</td>
+				<td colspan="3" class="label">Par</td>
 				<xsl:for-each select="g:tee">
 					<td>
 						<xsl:value-of select="g:par"/>
@@ -99,7 +106,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td colspan="4">Handicap</td>
+				<td colspan="3" class="label">Handicap</td>
 				<xsl:for-each select="g:tee">
 					<td>
 						<xsl:value-of select="g:handicap-stroke"/>
@@ -109,15 +116,11 @@
 		</xsl:if>
 		
 		
-		<tr>
-			<xsl:element name="td">
-				<xsl:if test="@colour">
-					<xsl:attribute name="bgcolor">
-						<xsl:value-of select="@colour"/>
-					</xsl:attribute>
-					<xsl:value-of select="string(' ')"/>
-				</xsl:if>
-			</xsl:element>
+		<xsl:element name="tr">
+			<xsl:if test="@colour">
+				<xsl:attribute name="class"><xsl:value-of select="concat('tee-',@colour)"/></xsl:attribute>
+			</xsl:if>
+
 			<td>
 				<xsl:value-of select="@name"/>
 			</td>
@@ -135,23 +138,23 @@
 			</xsl:for-each>
 			
 			<td>
-				<xsl:value-of select="sum(g:tee[@number &lt; 10]/g:length)"/>
+				<xsl:value-of select="sum(g:tee[@number &lt; 10]/g:length[@units = 'meters'])"/>
 			</td>
 			<td>
-				<xsl:value-of select="sum(g:tee[@number > 9]/g:length)"/>
+				<xsl:value-of select="sum(g:tee[@number > 9]/g:length[@units = 'meters'])"/>
 			</td>
 			<td>
-				<xsl:value-of select="sum(g:tee/g:length)"/>
+				<xsl:value-of select="sum(g:tee/g:length[@units = 'meters'])"/>
 			</td>
-		</tr>
+		</xsl:element>
 	</xsl:template>
 
 
 	<xsl:template match="g:score">
 		<tr>
-			<td colspan="2"><xsl:value-of select="../../../g:name"/></td>
+			<td><xsl:value-of select="../../../g:name"/></td>
 			<td><xsl:value-of select="../g:tees/g:country-club.golf-course.tee-set.name"/></td>
-			<td>(Strokes)</td>
+			<td class="label">Strokes</td>
 			<xsl:for-each select="g:hole">
 				<xsl:sort select="@number"/>
 				<td>
