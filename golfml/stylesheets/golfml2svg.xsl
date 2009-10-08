@@ -33,7 +33,7 @@ HISTORY
 	<!-- mode=course|hole, generate a single SVG file for the entire course, or one for each hole -->
 	<xsl:param name="mode">hole</xsl:param>
 	<!-- If a hole-number is supplied, generates only that hole -->
-	<xsl:param name="hole-number">1</xsl:param>
+	<xsl:param name="hole-number">0</xsl:param>
 	<!-- whether to generate JavaScript and animation for hole display (useful for web interactivity, useless for print) -->
 	<xsl:param name="dynamic"><xsl:value-of select="true()"/></xsl:param>
 	
@@ -748,18 +748,110 @@ HISTORY
 		<xsl:param name="scale"/>
 		<xsl:element name="path">
 			<xsl:attribute name="class"><xsl:value-of select="@type"/></xsl:attribute>
-			<xsl:attribute name="d"><xsl:text>M </xsl:text>
+			<xsl:attribute name="d">
 				<xsl:for-each select="g:position">
 					<xsl:sort select="@number" data-type="number"/>
-					<xsl:if test="position() = 2"><xsl:text>L </xsl:text></xsl:if>
-					<xsl:apply-templates select="g:position-gps" mode="pair-projection">
-						<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
-						<xsl:with-param name="midlat"><xsl:value-of select="$midlat"/></xsl:with-param>
-						<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
-					</xsl:apply-templates>
-				</xsl:for-each><xsl:text>Z</xsl:text>
+					<xsl:variable name="curpos" select="position()"/>
+					<xsl:choose>
+						<xsl:when test="$curpos = 1">
+							<xsl:call-template name="Draw3">
+								<xsl:with-param name="midlat"><xsl:value-of select="$midlat"/></xsl:with-param>
+								<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
+								<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
+								<xsl:with-param name="curpos">first</xsl:with-param>
+								<xsl:with-param name="before" select="../g:position[last()]"/>
+								<xsl:with-param name="current" select="../g:position[$curpos]"/>
+								<xsl:with-param name="after" select="../g:position[$curpos+1]"/>
+							</xsl:call-template>							
+						</xsl:when>
+						<xsl:when test="$curpos = last()">
+							<xsl:call-template name="Draw3">
+								<xsl:with-param name="midlat"><xsl:value-of select="$midlat"/></xsl:with-param>
+								<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
+								<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
+								<xsl:with-param name="curpos">last</xsl:with-param>
+								<xsl:with-param name="before" select="../g:position[$curpos - 1]"/>
+								<xsl:with-param name="current" select="../g:position[$curpos]"/>
+								<xsl:with-param name="after" select="../g:position[1]"/>
+							</xsl:call-template>							
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:call-template name="Draw3">
+								<xsl:with-param name="midlat"><xsl:value-of select="$midlat"/></xsl:with-param>
+								<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
+								<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
+								<xsl:with-param name="curpos">middle</xsl:with-param>
+								<xsl:with-param name="before" select="../g:position[$curpos - 1]"/>
+								<xsl:with-param name="current" select="../g:position[$curpos]"/>
+								<xsl:with-param name="after" select="../g:position[$curpos+1]"/>
+							</xsl:call-template>							
+						</xsl:otherwise>
+					</xsl:choose>
+				</xsl:for-each>
 			</xsl:attribute>
 		</xsl:element>		
+	</xsl:template>
+	
+	
+	
+	<xsl:template name="Draw3"><!-- small routine to "round" angles of polygons -->
+		<xsl:param name="midlat"/>
+		<xsl:param name="midlon"/>
+		<xsl:param name="scale"/>
+		<xsl:param name="before"/>
+		<xsl:param name="current"/>
+		<xsl:param name="after"/>
+		<xsl:param name="curpos"/>
+
+		<xsl:param name="smoothingFactor" select="number(0.4)"/>
+		
+		<xsl:variable name="x1">
+			<xsl:apply-templates select="$before/g:position-gps" mode="pair-projection">
+				<xsl:with-param name="scale" select="$scale"/>
+				<xsl:with-param name="midlat" select="$midlat"/>
+				<xsl:with-param name="midlon" select="$midlon"/>
+			</xsl:apply-templates>
+		</xsl:variable>
+		<xsl:variable name="x1_x" select="number(substring-before($x1, ','))"/>
+		<xsl:variable name="x1_y" select="number(substring-after($x1, ','))"/>
+
+		<xsl:variable name="x2">
+			<xsl:apply-templates select="$current/g:position-gps" mode="pair-projection">
+				<xsl:with-param name="scale" select="$scale"/>
+				<xsl:with-param name="midlat" select="$midlat"/>
+				<xsl:with-param name="midlon" select="$midlon"/>
+			</xsl:apply-templates>
+		</xsl:variable>
+		<xsl:variable name="x2_x"  select="number(substring-before($x2, ','))"/>
+		<xsl:variable name="x2_y" select="number(substring-after($x2, ','))"/>
+		
+		<xsl:variable name="x3">
+			<xsl:apply-templates select="$after/g:position-gps" mode="pair-projection">
+				<xsl:with-param name="scale" select="$scale"/>
+				<xsl:with-param name="midlat" select="$midlat"/>
+				<xsl:with-param name="midlon" select="$midlon"/>
+			</xsl:apply-templates>
+		</xsl:variable>
+		<xsl:variable name="x3_x" select="number(substring-before($x3, ','))"/>
+		<xsl:variable name="x3_y" select="number(substring-after($x3, ','))"/>
+		
+		<xsl:variable name="new_start_x" select="$x2_x + ($x1_x - $x2_x) * $smoothingFactor"/>
+		<xsl:variable name="new_start_y" select="$x2_y + ($x1_y - $x2_y) * $smoothingFactor"/>
+		<xsl:variable name="new_end_x" select="$x2_x + ($x3_x - $x2_x) * $smoothingFactor"/>
+		<xsl:variable name="new_end_y" select="$x2_y + ($x3_y - $x2_y) * $smoothingFactor"/>
+		<!-- returns this: -->
+		<xsl:choose>
+			<xsl:when test="$curpos = 'first'"><!-- first point is a move to position -->
+				<xsl:value-of select="concat('M',$new_start_x,',',$new_start_y,'Q',$x2_x,',',$x2_y,' ',$new_end_x,',',$new_end_y,' ')"/>
+			</xsl:when>
+			<xsl:when test="$curpos = 'last'"><!-- finish last point by looping nicely on first one -->
+				<xsl:value-of select="concat('L',$new_start_x,',',$new_start_y,'Q',$x2_x,',',$x2_y,' ',$new_end_x,',',$new_end_y,' T', $x3_x, ',', $x3_y)"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="concat('L',$new_start_x,',',$new_start_y,'Q',$x2_x,',',$x2_y,' ',$new_end_x,',',$new_end_y,' ')"/>
+			</xsl:otherwise>
+		</xsl:choose>
+		
 	</xsl:template>
 		
 	
