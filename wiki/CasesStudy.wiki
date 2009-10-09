@@ -23,3 +23,5 @@ Geographic information was collected by drawing polygons in Google Earth. The KM
 = See Also =
 
 [CaseStudy1 From Google Earth to a Yardage Book]
+
+[ComputerFiles Computer file names and types]
