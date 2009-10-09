@@ -137,3 +137,7 @@ Example: File located at http://www.golf-dieppe.com/golfml/course.xml, maintaine
       <name>Golf De Dieppe-Pourville</name>
          <tee-set name="Yellow (Men)" colour="black" gender="gentlemen">
 }}}
+
+= See Also =
+
+[IdentifiersAndReferences Identifiers and References]
