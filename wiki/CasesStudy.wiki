@@ -20,7 +20,7 @@ Several stylesheets convert simple GolfML documents into various HTML files.
  * `static-course.xsl` - Prints a standard scorecard for a golf course.
 
 
-== golfml2svg ==
+== GolfML To SVG ([http://fr.wikipedia.org/wiki/Scalable_Vector_Graphics Scalable Vector Graphics]) ==
 
 This prototype stylesheet format the geographic information of a single hole to a SVG drawing.
 
