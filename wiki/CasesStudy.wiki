@@ -6,7 +6,7 @@ Please visit the source code repository for golfml document instances.
  
 The primary goal of golfml is to provide a XML based data format. This data format is formalized in an XML Schema.
 
-To illustrate the usefulness and the purpose of the golfml data format, we also provide a few sample stylesheets to transform golfml documentS to other useful data format.
+To illustrate the usefulness and the purpose of the golfml data format, we also provide a few sample stylesheets to transform golfml documents to other useful data format. Please recall that these style sheets are provided as illustrations and are not part of the GolfML standard.
 
 
 == GolfML To HTML ==
