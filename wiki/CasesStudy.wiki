@@ -9,9 +9,15 @@ The primary goal of golfml is to provide a XML based data format. This data form
 To illustrate the usefulness and the purpose of the golfml data format, we also provide a few sample stylesheets to transform golfml documentS to other useful data format.
 
 
-== golfml2html ==
+== GolfML To HTML ==
 
-Prints a standard scorecard for a golf course, with or without score information for up to four players.
+Several stylesheets convert simple GolfML documents into various HTML files.
+
+ * `custom-scorecard.xsl` - Prints a standard scorecard for a golf course, with or without score information for up to four players.
+ * `custom-scorecard.xsl` - Prints a standard scorecard for a golf course, with or without score information for up to four players.
+ * `score.xsl` - Prints a scorecard for a round of golf for up to four players.
+ * `simple-score.xsl` - Prints a simpler scorecard for each golfer for a round of golf.
+ * `static-course.xsl` - Prints a standard scorecard for a golf course.
 
 
 == golfml2svg ==
