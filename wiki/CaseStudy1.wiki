@@ -56,6 +56,10 @@ This design accomodates for several country clubs, hosting one or more golf cour
 
 Please note that Google Earth also allows you to color-code polygons (fill and stroke colors, opacity...), and choose different icons for placemarks. This information is not used or stored for GolfML.
 
+http://golfml.googlecode.com/files/hole15-GE.png
+
+=== Placemark Naming ===
+
 The name of polygons and placemark is also important. To be automagically recognized, the polygon or placemark name should contain the following string:
 
 || *Name contains* || *Recognized as* ||
@@ -99,6 +103,8 @@ Using a text or an XML editor, you can add the missing information: Address, con
 == Transformation to SVG ==
 
 Finally, using the golfml2svg.xsl stylesheet, you can transform the GolfML document to one or more XML SVG files with the resulting images.
+
+http://golfml.googlecode.com/files/hole15-golfml.png
 
 A few parameters at the begining of the XSL stylesheet allow you to choose to generate a map of the entire golf course, or a drawing of a single hole, or generate a separate SVG graphic file for each hole.
 
