@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet href="../stylesheets/golfml.css" type="text/css"?>
 <xsl:stylesheet version="2.0"
 				xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -31,12 +31,17 @@ HISTORY
 	
 	
 	<!-- mode=course|hole, generate a single SVG file for the entire course, or one for each hole -->
-	<xsl:param name="mode">hole</xsl:param>
+	<xsl:param name="mode">course</xsl:param>
 	<!-- If a hole-number is supplied, generates only that hole -->
 	<xsl:param name="hole-number">0</xsl:param>
 	<!-- whether to generate JavaScript and animation for hole display (useful for web interactivity, useless for print) -->
-	<xsl:param name="dynamic"><xsl:value-of select="true()"/></xsl:param>
+	<xsl:param name="dynamic" select="false()"/>
+	<!-- whether to generate HTML anchor for holes in course display -->
+	<xsl:param name="genhtml" select="true()"/>
 	
+	<xsl:param name="units">metric</xsl:param>
+	
+	<xsl:param name="debug" select="false()"/>
 	
 	<!-- size of individual outputs in pixels
 		 Please note that Defs are scaled for drawing between roughly 400 and 1200 pixels.
@@ -44,10 +49,10 @@ HISTORY
 		 Please leave square canvas to allow for rotation and alignment of hole.
 	  -->
 	<xsl:param name="width">600</xsl:param>
-	<xsl:param name="height"><xsl:value-of select="$width"/></xsl:param>
+	<xsl:param name="height" select="$width"/>
 
 	<!-- position of compass, relative to upper left corner, in pixels -->
-	<xsl:param name="compassx"><xsl:value-of select="$width - 50"/></xsl:param>
+	<xsl:param name="compassx" select="$width - 50"/>
 	<xsl:param name="compassy">50</xsl:param>
 
 	<!-- Information box place and sizes -->
@@ -58,9 +63,6 @@ HISTORY
 	<xsl:param name="info-num">6</xsl:param><!-- total number of length displayed -->
 	<xsl:param name="info-text">20</xsl:param><!-- total number of length displayed -->
 	
-	<xsl:param name="units">metric</xsl:param>
-	
-	<xsl:param name="debug"><xsl:value-of select="true()"/></xsl:param>
 		
 	<!-- TO DO: Apply placemark in layout order: large objects (hole-contour, etc.) first and
 		== smaller objects (tee, greens, poi) last. Here is suggested list of ordered values.
@@ -172,24 +174,8 @@ HISTORY
 					<xsl:with-param name="scale"><xsl:value-of select="number(1)"/></xsl:with-param>
 				</xsl:call-template>
 			</xsl:variable>
-			
-			<xsl:variable name="nautical_mile">
-				<xsl:choose><!-- one minute of arc = nautical mile = 1852 meters = 2025 yards, we project 1' of latitude -->
-					<xsl:when test="$units = 'imperial'"><xsl:value-of select="number(2025.37183)"/></xsl:when>
-					<xsl:otherwise><xsl:value-of select="number(1852)"/></xsl:otherwise>
-				</xsl:choose>
-			</xsl:variable>
-
-			<xsl:variable name="calibration_temp"><!-- we project 1' of latitude --> -->
-				<xsl:call-template name="Project">
-					<xsl:with-param name="lat"><xsl:value-of select="$mid_lat + (1 div (60 * $nautical_mile))"/></xsl:with-param>
-					<xsl:with-param name="lon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale"><xsl:value-of select="number(1)"/></xsl:with-param>
-				</xsl:call-template>
-			</xsl:variable> <!-- calibration gives us how many pixels for 1 meter or one yard -->
-			<xsl:variable name="calibration"><xsl:value-of select="substring-after($calibration_temp, ',')"/></xsl:variable>
+			<xsl:variable name="x1"><xsl:value-of select="substring-before($minmin, ',')"/></xsl:variable>
+			<xsl:variable name="y1"><xsl:value-of select="substring-after($minmin, ',')"/></xsl:variable>
 			
 			<xsl:variable name="maxmax">
 				<xsl:call-template name="Project">
@@ -200,25 +186,31 @@ HISTORY
 					<xsl:with-param name="scale"><xsl:value-of select="number(1)"/></xsl:with-param>
 				</xsl:call-template>
 			</xsl:variable>
-			<xsl:variable name="x1"><xsl:value-of select="substring-before($minmin, ',')"/></xsl:variable>
-			<xsl:variable name="y1"><xsl:value-of select="substring-after($minmin, ',')"/></xsl:variable>
 			<xsl:variable name="x2"><xsl:value-of select="substring-before($maxmax, ',')"/></xsl:variable>
 			<xsl:variable name="y2"><xsl:value-of select="substring-after($maxmax, ',')"/></xsl:variable>
+
 			<xsl:variable name="minx">
-				<xsl:if test="$x1 >=   $x2"><xsl:value-of select="$x2"/></xsl:if>
-				<xsl:if test="$x1 &lt; $x2"><xsl:value-of select="$x1"/></xsl:if>
+				<xsl:if test="number($x1) >=   number($x2)"><xsl:value-of select="$x2"/></xsl:if>
+				<xsl:if test="number($x1) &lt; number($x2)"><xsl:value-of select="$x1"/></xsl:if>
 			</xsl:variable>
 			<xsl:variable name="maxx">
-				<xsl:if test="$x1 >=   $x2"><xsl:value-of select="$x1"/></xsl:if>
-				<xsl:if test="$x1 &lt; $x2"><xsl:value-of select="$x2"/></xsl:if>
+				<xsl:if test="number($x1) >=   number($x2)"><xsl:value-of select="$x1"/></xsl:if>
+				<xsl:if test="number($x1) &lt; number($x2)"><xsl:value-of select="$x2"/></xsl:if>
 			</xsl:variable>
 			<xsl:variable name="miny">
-				<xsl:if test="$y1 >=   $y2"><xsl:value-of select="$y2"/></xsl:if>
-				<xsl:if test="$y1 &lt; $y2"><xsl:value-of select="$y1"/></xsl:if>
+				<xsl:if test="number($y1) >=   number($y2)"><xsl:value-of select="$y2"/></xsl:if>
+				<xsl:if test="number($y1) &lt; number($y2)"><xsl:value-of select="$y1"/></xsl:if>
 			</xsl:variable>
 			<xsl:variable name="maxy">
-				<xsl:if test="$y1 >=   $y2"><xsl:value-of select="$y1"/></xsl:if>
-				<xsl:if test="$y1 &lt; $y2"><xsl:value-of select="$y2"/></xsl:if>
+				<xsl:if test="number($y1) >=   number($y2)"><xsl:value-of select="$y1"/></xsl:if>
+				<xsl:if test="number($y1) &lt; number($y2)"><xsl:value-of select="$y2"/></xsl:if>
+			</xsl:variable>
+			
+			<xsl:variable name="nautical_mile">
+				<xsl:choose><!-- one minute of arc = nautical mile = 1852 meters = 2025 yards, we project 1' of latitude -->
+					<xsl:when test="$units = 'imperial'"><xsl:value-of select="number(2025.37183)"/></xsl:when>
+					<xsl:otherwise><xsl:value-of select="number(1852)"/></xsl:otherwise>
+				</xsl:choose>
 			</xsl:variable>
 			
 			<xsl:variable name="deltax"><xsl:value-of select="abs(number($maxx) - number($minx))"/></xsl:variable>
@@ -228,59 +220,71 @@ HISTORY
 			<xsl:variable name="scaley"><xsl:value-of select="$height div $deltay"></xsl:value-of></xsl:variable>
 			
 			<xsl:variable name="scale">
-				<xsl:if test="$scalex >= $scaley">
+				<xsl:if test="number($scalex) >= number($scaley)">
 					<xsl:value-of select="$scaley"/>
 				</xsl:if>
-				<xsl:if test="$scalex &lt; $scaley">
+				<xsl:if test="number($scalex) &lt; number($scaley)">
 					<xsl:value-of select="$scalex"/>
 				</xsl:if>
 			</xsl:variable>
 			
+			<xsl:variable name="calibration_temp"><!-- we project 1' of latitude --> -->
+				<xsl:call-template name="Project">
+					<xsl:with-param name="lat"><xsl:value-of select="$mid_lat + (1 div (60 * $nautical_mile))"/></xsl:with-param>
+					<xsl:with-param name="lon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
+					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
+					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
+					<xsl:with-param name="scale"><xsl:value-of select="number(1)"/></xsl:with-param>
+				</xsl:call-template>
+			</xsl:variable> <!-- calibration gives us how many pixels for 1 meter or one yard -->
+			<xsl:variable name="calibration"><xsl:value-of select="substring-after($calibration_temp, ',')"/></xsl:variable>			
+			
+			
 			<xsl:if test="$debug">
-			<xsl:text disable-output-escaping="yes">
-				&lt;!-- debug information: mode course</xsl:text>
-			<xsl:text>
-				min_lat: </xsl:text><xsl:value-of select="$min_lat"/>
-			<xsl:text>
-				max_lat: </xsl:text><xsl:value-of select="$max_lat"/>
-			<xsl:text>
-				min_lon: </xsl:text><xsl:value-of select="$min_lon"/>
-			<xsl:text>
-				max_lon: </xsl:text><xsl:value-of select="$max_lon"/>
-			<xsl:text>
-				mid_lat: </xsl:text><xsl:value-of select="$mid_lat"/>
-			<xsl:text>
-				mid_lon: </xsl:text><xsl:value-of select="$mid_lon"/>
-			<xsl:text>
-				deltax: </xsl:text><xsl:value-of select="$deltax"/>
-			<xsl:text>
-				deltay: </xsl:text><xsl:value-of select="$deltay"/>
-			<xsl:text>
-				scalex: </xsl:text><xsl:value-of select="$scalex"/>
-			<xsl:text>
-				scaley: </xsl:text><xsl:value-of select="$scaley"/>
-			<xsl:text>
-				scale: </xsl:text><xsl:value-of select="$scale"/>
-			<xsl:text>
-				minx: </xsl:text><xsl:value-of select="$minx"/>
-			<xsl:text>
-				maxx: </xsl:text><xsl:value-of select="$maxx"/>
-			<xsl:text>
-				miny: </xsl:text><xsl:value-of select="$miny"/>
-			<xsl:text>
-				maxy: </xsl:text><xsl:value-of select="$maxy"/>
-			<xsl:text>
-				minx: </xsl:text><xsl:value-of select="$minx * $scale"/>
-			<xsl:text>
-				maxx: </xsl:text><xsl:value-of select="$maxx * $scale"/>
-			<xsl:text>
-				miny: </xsl:text><xsl:value-of select="$miny * $scale"/>
-			<xsl:text>
-				maxy: </xsl:text><xsl:value-of select="$maxy * $scale"/>
-			<xsl:text>
-				units: </xsl:text><xsl:value-of select="concat($units, '=', $nautical_mile)"/>
-			<xsl:text>
-				calibration: </xsl:text><xsl:value-of select="abs($calibration) * $scale"/>
+				<xsl:text disable-output-escaping="yes">
+					&lt;!-- debug information: mode course</xsl:text>
+				<xsl:text>
+					min_lat: </xsl:text><xsl:value-of select="$min_lat"/>
+				<xsl:text>
+					max_lat: </xsl:text><xsl:value-of select="$max_lat"/>
+				<xsl:text>
+					min_lon: </xsl:text><xsl:value-of select="$min_lon"/>
+				<xsl:text>
+					max_lon: </xsl:text><xsl:value-of select="$max_lon"/>
+				<xsl:text>
+					mid_lat: </xsl:text><xsl:value-of select="$mid_lat"/>
+				<xsl:text>
+					mid_lon: </xsl:text><xsl:value-of select="$mid_lon"/>
+				<xsl:text>
+					minx: </xsl:text><xsl:value-of select="$minx"/>
+				<xsl:text>
+					maxx: </xsl:text><xsl:value-of select="$maxx"/>
+				<xsl:text>
+					miny: </xsl:text><xsl:value-of select="$miny"/>
+				<xsl:text>
+					maxy: </xsl:text><xsl:value-of select="$maxy"/>
+				<xsl:text>
+					deltax: </xsl:text><xsl:value-of select="$deltax"/>
+				<xsl:text>
+					deltay: </xsl:text><xsl:value-of select="$deltay"/>
+				<xsl:text>
+					scalex: </xsl:text><xsl:value-of select="$scalex"/>
+				<xsl:text>
+					scaley: </xsl:text><xsl:value-of select="$scaley"/>
+				<xsl:text>
+					scale: </xsl:text><xsl:value-of select="$scale"/>
+				<xsl:text>
+					minx: </xsl:text><xsl:value-of select="$minx * $scale"/>
+				<xsl:text>
+					maxx: </xsl:text><xsl:value-of select="$maxx * $scale"/>
+				<xsl:text>
+					miny: </xsl:text><xsl:value-of select="$miny * $scale"/>
+				<xsl:text>
+					maxy: </xsl:text><xsl:value-of select="$maxy * $scale"/>
+				<xsl:text>
+					units: </xsl:text><xsl:value-of select="concat($units, '=', $nautical_mile)"/>
+				<xsl:text>
+					calibration: </xsl:text><xsl:value-of select="abs($calibration) * $scale"/>
 			</xsl:if>			
 					
 			<!-- Find teeing area's middle point -->
@@ -310,24 +314,25 @@ HISTORY
 						<xsl:variable name="green_mid_x"><xsl:value-of select="substring-before($green_mid, ',')"/></xsl:variable>
 						<xsl:variable name="green_mid_y"><xsl:value-of select="substring-after($green_mid, ',')"/></xsl:variable>
 						
-						<xsl:text>
-							Green
-							green_lat_min: </xsl:text><xsl:value-of select="$green_lat_min"/>
-						<xsl:text>
-							green_lat_max: </xsl:text><xsl:value-of select="$green_lat_max"/>
-						<xsl:text>
-							green_lon_min: </xsl:text><xsl:value-of select="$green_lon_min"/>
-						<xsl:text>
-							green_lon_max: </xsl:text><xsl:value-of select="$green_lon_max"/>
-						<xsl:text>
-							green_mid_lat: </xsl:text><xsl:value-of select="$green_mid_lat"/>
-						<xsl:text>
-							green_mid_lon: </xsl:text><xsl:value-of select="$green_mid_lon"/>
-						<xsl:text>
-							green_mid_x: </xsl:text><xsl:value-of select="$green_mid_x"/>
-						<xsl:text>
-							green_mid_y: </xsl:text><xsl:value-of select="$green_mid_y"/>
-						
+						<xsl:if test="$debug">
+							<xsl:text>
+								Green
+								green_lat_min: </xsl:text><xsl:value-of select="$green_lat_min"/>
+							<xsl:text>
+								green_lat_max: </xsl:text><xsl:value-of select="$green_lat_max"/>
+							<xsl:text>
+								green_lon_min: </xsl:text><xsl:value-of select="$green_lon_min"/>
+							<xsl:text>
+								green_lon_max: </xsl:text><xsl:value-of select="$green_lon_max"/>
+							<xsl:text>
+								green_mid_lat: </xsl:text><xsl:value-of select="$green_mid_lat"/>
+							<xsl:text>
+								green_mid_lon: </xsl:text><xsl:value-of select="$green_mid_lon"/>
+							<xsl:text>
+								green_mid_x: </xsl:text><xsl:value-of select="$green_mid_x"/>
+							<xsl:text>
+								green_mid_y: </xsl:text><xsl:value-of select="$green_mid_y"/>
+						</xsl:if>
 						<!-- Find teeing area's middle point -->
 						<xsl:variable name="tee_lat_min"><xsl:value-of select="min(.//g:placemarks/*[@type='tee']/g:position/g:position-gps/g:lat)"/></xsl:variable>
 						<xsl:variable name="tee_lat_max"><xsl:value-of select="max(.//g:placemarks/*[@type='tee']/g:position/g:position-gps/g:lat)"/></xsl:variable>
@@ -351,35 +356,37 @@ HISTORY
 						<xsl:variable name="tee_mid_x"><xsl:value-of select="substring-before($tee_mid, ',')"/></xsl:variable>
 						<xsl:variable name="tee_mid_y"><xsl:value-of select="substring-after($tee_mid, ',')"/></xsl:variable>
 						
-						<xsl:text>
-							Tee
-							tee_lat_min: </xsl:text><xsl:value-of select="$tee_lat_min"/>
-						<xsl:text>
-							tee_lat_max: </xsl:text><xsl:value-of select="$tee_lat_max"/>
-						<xsl:text>
-							tee_lon_min: </xsl:text><xsl:value-of select="$tee_lon_min"/>
-						<xsl:text>
-							tee_lon_max: </xsl:text><xsl:value-of select="$tee_lon_max"/>
-						<xsl:text>
-							tee_mid_lat: </xsl:text><xsl:value-of select="$tee_mid_lat"/>
-						<xsl:text>
-							tee_mid_lon: </xsl:text><xsl:value-of select="$tee_mid_lon"/>
-						<xsl:text>
-							tee_mid_x: </xsl:text><xsl:value-of select="$tee_mid_x"/>
-						<xsl:text>
-							tee_mid_y: </xsl:text><xsl:value-of select="$tee_mid_y"/>
-						<xsl:text disable-output-escaping="yes">
-							x1&gt;x2: </xsl:text><xsl:choose>
-								<xsl:when test="$tee_mid_x > $green_mid_x">Yes</xsl:when>
-								<xsl:otherwise>No</xsl:otherwise>
-							</xsl:choose>
-						<xsl:text disable-output-escaping="yes">
-							y1&gt;y2: </xsl:text><xsl:choose>
-								<xsl:when test="$tee_mid_y > $green_mid_y">Yes</xsl:when>
-								<xsl:otherwise>No</xsl:otherwise>
-							</xsl:choose>
-						<xsl:text>
-							Angle-temp: </xsl:text>
+						<xsl:if test="$debug">
+							<xsl:text>
+								Tee
+								tee_lat_min: </xsl:text><xsl:value-of select="$tee_lat_min"/>
+							<xsl:text>
+								tee_lat_max: </xsl:text><xsl:value-of select="$tee_lat_max"/>
+							<xsl:text>
+								tee_lon_min: </xsl:text><xsl:value-of select="$tee_lon_min"/>
+							<xsl:text>
+								tee_lon_max: </xsl:text><xsl:value-of select="$tee_lon_max"/>
+							<xsl:text>
+								tee_mid_lat: </xsl:text><xsl:value-of select="$tee_mid_lat"/>
+							<xsl:text>
+								tee_mid_lon: </xsl:text><xsl:value-of select="$tee_mid_lon"/>
+							<xsl:text>
+								tee_mid_x: </xsl:text><xsl:value-of select="$tee_mid_x"/>
+							<xsl:text>
+								tee_mid_y: </xsl:text><xsl:value-of select="$tee_mid_y"/>
+							<xsl:text disable-output-escaping="yes">
+								x1&gt;x2: </xsl:text><xsl:choose>
+									<xsl:when test="$tee_mid_x > $green_mid_x">Yes</xsl:when>
+									<xsl:otherwise>No</xsl:otherwise>
+								</xsl:choose>
+							<xsl:text disable-output-escaping="yes">
+								y1&gt;y2: </xsl:text><xsl:choose>
+									<xsl:when test="$tee_mid_y > $green_mid_y">Yes</xsl:when>
+									<xsl:otherwise>No</xsl:otherwise>
+								</xsl:choose>
+							<xsl:text>
+								Angle-temp: </xsl:text>
+						</xsl:if>
 						
 						<!-- Find overall orientation and scaling -->
 						<xsl:variable name="angle-temp">
@@ -406,20 +413,21 @@ HISTORY
 				</xsl:call-template>
 			</xsl:variable>
 			
-			<xsl:text>
-			
-			MODIFICATION
-			</xsl:text>
-			<xsl:text>
-				rotation: </xsl:text><xsl:value-of select="$rotation"/>
-			<xsl:text>
-				reduction: </xsl:text><xsl:value-of select="$reduction"/>
-			<xsl:text>
-				x,y: </xsl:text><xsl:value-of select="$rotation-temp"/>
-			<xsl:text disable-output-escaping="yes">
-				--&gt;
-			</xsl:text>
-			
+			<xsl:if test="$debug">
+				<xsl:text>
+				
+				MODIFICATION
+				</xsl:text>
+				<xsl:text>
+					rotation: </xsl:text><xsl:value-of select="$rotation"/>
+				<xsl:text>
+					reduction: </xsl:text><xsl:value-of select="$reduction"/>
+				<xsl:text>
+					x,y: </xsl:text><xsl:value-of select="$rotation-temp"/>
+				<xsl:text disable-output-escaping="yes">
+					--&gt;
+				</xsl:text>
+			</xsl:if>
 
 			<xsl:element name="g">
 				<xsl:attribute name="transform">
@@ -581,6 +589,58 @@ HISTORY
 						
 					</xsl:element>	
 				</xsl:for-each>
+				
+				<!-- Add dynamic objects to measure distances -->
+				<xsl:if test="$dynamic">
+					<xsl:element name="path">
+						<xsl:attribute name="id">trajectory</xsl:attribute>
+						<xsl:attribute name="class">trajectory</xsl:attribute>
+						<xsl:attribute name="d">M300,500 Q450,100 300,100</xsl:attribute>
+					</xsl:element>
+					
+					<xsl:element name="text">
+						<xsl:attribute name="id">distance</xsl:attribute>
+						<xsl:attribute name="class">distance</xsl:attribute>
+						<xsl:attribute name="x"><xsl:value-of select="450"/></xsl:attribute>
+						<xsl:attribute name="y"><xsl:value-of select="100"/></xsl:attribute>
+						<xsl:value-of select="400 div (abs($calibration) * $scale)"/>
+					</xsl:element>				
+					
+					<xsl:element name="rect">
+						<xsl:variable name="quote">'</xsl:variable>
+						<xsl:attribute name="id">interactive-area</xsl:attribute>
+						<xsl:attribute name="fill">white</xsl:attribute>
+						<xsl:attribute name="fill-opacity">0</xsl:attribute>
+						<xsl:attribute name="x">0</xsl:attribute>
+						<xsl:attribute name="y">0</xsl:attribute>
+						<xsl:attribute name="width"><xsl:value-of select="$width"/></xsl:attribute>
+						<xsl:attribute name="height"><xsl:value-of select="$height"/></xsl:attribute>
+						<xsl:attribute name="onmousemove">drag(evt)</xsl:attribute>
+						<xsl:attribute name="onload"><xsl:value-of select="concat('on_load(300,500,300,100,450,100,',abs($calibration) * $scale * $reduction,',',$quote,$units,$quote,')')"/></xsl:attribute>
+					</xsl:element>
+					
+					<xsl:element name="g">
+						<xsl:attribute name="onmousedown">mouse_down(evt, 'ball')</xsl:attribute>
+						<xsl:attribute name="onmouseup">mouse_up(evt)</xsl:attribute>
+						<xsl:element name="use">
+							<xsl:attribute name="class">ball</xsl:attribute>
+							<xsl:attribute name="xlink:href">#Ball</xsl:attribute>
+							<xsl:attribute name="x"><xsl:value-of select="300"/></xsl:attribute>
+							<xsl:attribute name="y"><xsl:value-of select="500"/></xsl:attribute>
+						</xsl:element>
+					</xsl:element>
+					
+					<xsl:element name="g">
+						<xsl:attribute name="onmousedown">mouse_down(evt, 'target')</xsl:attribute>
+						<xsl:attribute name="onmouseup">mouse_up(evt)</xsl:attribute>
+						<xsl:element name="use">
+							<xsl:attribute name="class">target</xsl:attribute>
+							<xsl:attribute name="xlink:href">#Target</xsl:attribute>
+							<xsl:attribute name="x"><xsl:value-of select="300"/></xsl:attribute>
+							<xsl:attribute name="y"><xsl:value-of select="100"/></xsl:attribute>
+						</xsl:element>
+					</xsl:element>
+				</xsl:if><!-- dynamic -->
 			</xsl:if>
 
 			<!-- Add decorative objects (compass, logo) -->
@@ -599,57 +659,6 @@ HISTORY
 				<xsl:attribute name="y">575</xsl:attribute>
 			</xsl:element>
 			
-			<!-- Add dynamic objects to measure distances -->
-			<xsl:if test="$dynamic">
-				<xsl:element name="path">
-					<xsl:attribute name="id">trajectory</xsl:attribute>
-					<xsl:attribute name="class">trajectory</xsl:attribute>
-					<xsl:attribute name="d">M300,500 Q450,100 300,100</xsl:attribute>
-				</xsl:element>
-				
-				<xsl:element name="text">
-					<xsl:attribute name="id">distance</xsl:attribute>
-					<xsl:attribute name="class">distance</xsl:attribute>
-					<xsl:attribute name="x"><xsl:value-of select="450"/></xsl:attribute>
-					<xsl:attribute name="y"><xsl:value-of select="100"/></xsl:attribute>
-					<xsl:value-of select="400 div (abs($calibration) * $scale)"/>
-				</xsl:element>				
-				
-				<xsl:element name="rect">
-					<xsl:variable name="quote">'</xsl:variable>
-					<xsl:attribute name="id">interactive-area</xsl:attribute>
-					<xsl:attribute name="fill">white</xsl:attribute>
-					<xsl:attribute name="fill-opacity">0</xsl:attribute>
-					<xsl:attribute name="x">0</xsl:attribute>
-					<xsl:attribute name="y">0</xsl:attribute>
-					<xsl:attribute name="width"><xsl:value-of select="$width"/></xsl:attribute>
-					<xsl:attribute name="height"><xsl:value-of select="$height"/></xsl:attribute>
-					<xsl:attribute name="onmousemove">drag(evt)</xsl:attribute>
-					<xsl:attribute name="onload"><xsl:value-of select="concat('on_load(300,500,300,100,450,100,',abs($calibration) * $scale * $reduction,',',$quote,$units,$quote,')')"/></xsl:attribute>
-				</xsl:element>
-				
-				<xsl:element name="g">
-					<xsl:attribute name="onmousedown">mouse_down(evt, 'ball')</xsl:attribute>
-					<xsl:attribute name="onmouseup">mouse_up(evt)</xsl:attribute>
-					<xsl:element name="use">
-						<xsl:attribute name="class">ball</xsl:attribute>
-						<xsl:attribute name="xlink:href">#Ball</xsl:attribute>
-						<xsl:attribute name="x"><xsl:value-of select="300"/></xsl:attribute>
-						<xsl:attribute name="y"><xsl:value-of select="500"/></xsl:attribute>
-					</xsl:element>
-				</xsl:element>
-				
-				<xsl:element name="g">
-					<xsl:attribute name="onmousedown">mouse_down(evt, 'target')</xsl:attribute>
-					<xsl:attribute name="onmouseup">mouse_up(evt)</xsl:attribute>
-					<xsl:element name="use">
-						<xsl:attribute name="class">target</xsl:attribute>
-						<xsl:attribute name="xlink:href">#Target</xsl:attribute>
-						<xsl:attribute name="x"><xsl:value-of select="300"/></xsl:attribute>
-						<xsl:attribute name="y"><xsl:value-of select="100"/></xsl:attribute>
-					</xsl:element>
-				</xsl:element>
-			</xsl:if><!-- dynamic -->
 			
 		</xsl:element><!-- svg -->
 	</xsl:template>
@@ -660,23 +669,63 @@ HISTORY
 		<xsl:param name="midlon"/>
 		<xsl:param name="scale"/>
 		<xsl:param name="list-of-types"/>
+		<xsl:variable name="current_type" select="substring-before($list-of-types, ' ')"/>
 
-		<xsl:apply-templates select=".//g:aoi[@type=substring-before($list-of-types, ' ')]" mode="draw">
-			<xsl:with-param name="midlat"><xsl:value-of select="$midlat"/></xsl:with-param>
-			<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
-			<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
-		</xsl:apply-templates>
-		<xsl:if test="substring-before($list-of-types, ' ') = 'hole-contour'">
-			<xsl:element name="clipPath">
-				<xsl:attribute name="id">HoleContour</xsl:attribute>
-				<xsl:attribute name="transform"><xsl:text>scale(1.2)</xsl:text></xsl:attribute>
-				<xsl:apply-templates select=".//g:aoi[@type=substring-before($list-of-types, ' ')]" mode="draw">
+		<xsl:choose>
+			<xsl:when test="$current_type = 'hole-contour'">
+				<xsl:choose>
+					<xsl:when test="$mode = 'course'">
+						<xsl:choose>
+							<xsl:when test="$genhtml">
+								<xsl:element name="a">
+									<xsl:attribute name="xlink:href" select="concat('hole-', ../@number,'.svg')"/>
+									<xsl:attribute name="alt"  select="concat('Hole ', ../@number)"/>
+									<xsl:attribute name="title" select="concat('Hole ', ../@number)"/>
+									
+									<xsl:apply-templates select=".//g:aoi[@type=$current_type]" mode="draw">
+										<xsl:with-param name="midlat"><xsl:value-of select="$midlat"/></xsl:with-param>
+										<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
+										<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
+									</xsl:apply-templates>
+								</xsl:element>
+							</xsl:when>
+							<xsl:otherwise>
+								<xsl:apply-templates select=".//g:aoi[@type=$current_type]" mode="draw">
+									<xsl:with-param name="midlat"><xsl:value-of select="$midlat"/></xsl:with-param>
+									<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
+									<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
+								</xsl:apply-templates>
+							</xsl:otherwise>
+						</xsl:choose>
+					</xsl:when>
+
+					<xsl:otherwise><!-- mode=hole -->
+						<xsl:apply-templates select=".//g:aoi[@type=$current_type]" mode="draw">
+							<xsl:with-param name="midlat"><xsl:value-of select="$midlat"/></xsl:with-param>
+							<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
+							<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
+						</xsl:apply-templates>
+						<xsl:element name="clipPath">
+							<xsl:attribute name="id">HoleContour</xsl:attribute>
+							<xsl:attribute name="transform" select="string('scale(1.2)')"/>
+							<xsl:apply-templates select=".//g:aoi[@type=$current_type]" mode="draw">
+								<xsl:with-param name="midlat"><xsl:value-of select="$midlat"/></xsl:with-param>
+								<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
+								<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
+							</xsl:apply-templates>
+						</xsl:element>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:when>
+			<xsl:otherwise><!-- current_type != hole-contour -->
+				<xsl:apply-templates select=".//g:aoi[@type=$current_type]" mode="draw">
 					<xsl:with-param name="midlat"><xsl:value-of select="$midlat"/></xsl:with-param>
 					<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
 					<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
 				</xsl:apply-templates>
-			</xsl:element>
-		</xsl:if>
+			</xsl:otherwise>
+		</xsl:choose>
+		
 
 		<xsl:if test="string-length(substring-after($list-of-types, ' '))> 2"> <!-- CHECK TEST -->
 			<xsl:apply-templates select="." mode="aoi">
@@ -845,7 +894,7 @@ HISTORY
 				<xsl:value-of select="concat('M',$new_start_x,',',$new_start_y,'Q',$x2_x,',',$x2_y,' ',$new_end_x,',',$new_end_y,' ')"/>
 			</xsl:when>
 			<xsl:when test="$curpos = 'last'"><!-- finish last point by looping nicely on first one -->
-				<xsl:value-of select="concat('L',$new_start_x,',',$new_start_y,'Q',$x2_x,',',$x2_y,' ',$new_end_x,',',$new_end_y,' T', $x3_x, ',', $x3_y)"/>
+				<xsl:value-of select="concat('L',$new_start_x,',',$new_start_y,'Q',$x2_x,',',$x2_y,' ',$new_end_x,',',$new_end_y,' Z')"/>
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:value-of select="concat('L',$new_start_x,',',$new_start_y,'Q',$x2_x,',',$x2_y,' ',$new_end_x,',',$new_end_y,' ')"/>
@@ -945,8 +994,130 @@ HISTORY
 	
 
 	<xsl:template name="Defs">
-	<defs>
-	<style type="text/css"><![CDATA[
+		<xsl:element name="defs">
+			<xsl:if test="$mode = 'hole'">
+				<xsl:if test="$dynamic">
+					<script type="text/ecmascript"><![CDATA[
+    var dragger = null;
+    var origTransform = "";
+    var origX;
+    var origY;
+    var oldTranslateX;
+    var oldTranslateY;
+    var translateRegExp = /translate\(([-+]?\d+)(\s*[\s,]\s*)([-+]?\d+)\)\s*$/;
+
+	var mover = null;
+    var ballX = 300;
+    var ballY = 500;
+    var targetX = 300;
+    var targetY = 100;
+    var hookX = 450;
+    var hookY = 100;
+    var calibration = 1;
+    var units = 'm';
+
+	function on_load(bx, by, tx, ty, hx, hy, c, u) {
+	    ballX = bx;
+	    ballY = by;
+	    targetX = tx;
+	    targetY = ty;
+	    hookX = hx;
+	    hookY = hy;
+		calibration = c;
+		if (u=='imperial') { units="yds"; } else { units = "m"; }
+		update_trajectory();
+	}
+	
+    function update_trajectory() {
+	    var factor = 0.15;
+	    var d = Math.sqrt((ballX-targetX)*(ballX-targetX)+(ballY-targetY)*(ballY-targetY));
+	    var alpha = Math.acos((ballY-targetY)/d);
+	    if (targetX > ballX) { alpha = -alpha; }
+	    hookX = targetX + d * factor * Math.cos(alpha);
+	    hookY = targetY - d * factor * Math.sin(alpha);
+    
+   	 	var t=document.getElementById('trajectory');
+    	if (t != null) {
+    	    var c = "M" + ballX + "," + ballY + " Q" + hookX + "," + hookY + " " + targetX + "," + targetY;
+    		t.setAttributeNS(null,"d", c);
+		}
+		t=document.getElementById('distance');
+    	if (t != null) {
+    	    var d = Math.sqrt((ballX-targetX)*(ballX-targetX)+(ballY-targetY)*(ballY-targetY));
+    	    var v = Math.round(d * 10 / calibration ) / 10;
+    	    var alpha = Math.acos((ballY-targetY)/d);
+    	    t.firstChild.data=v + ' ' + units;
+    		t.setAttributeNS(null,"x", hookX);
+    		t.setAttributeNS(null,"y", hookY);    			
+		}
+    }
+    
+    function mouse_down(evt, id){	
+      mover = id;
+      dragger = evt.target;
+      origTransform = dragger.getAttributeNS(null,"transform");
+      if (origTransform == null){
+        origTransform = "";
+      } else {
+        origTransform = new String(origTransform);
+      }
+      origX = evt.clientX;
+      origY = evt.clientY;
+      oldTranslateX = 0;
+      oldTranslateY = 0;
+      if (origTransform == null || origTransform.length == 0){
+        origTransform = "";
+      } else {
+        var result = origTransform.match(translateRegExp);
+        if (result == null || result.index == -1){
+           alert("The regular expression had a problem finding the translate at the end of \"" + origTransform + "\"");
+           oldTranslateX = 0;
+           oldTranslateY = 0;
+        } else {
+           oldTranslateX = parseFloat(result[1]);
+           oldTranslateY = parseFloat(result[3]);
+           origTransform = origTransform.substr(0, result.index);
+        }
+        origTransform += " ";
+      }
+
+    }
+    
+    function mouse_up(evt){
+       if(dragger != null){
+          dragger = null;
+          origTransform = ""
+          origX = 0;
+          origY = 0;
+          oldTranslateX = 0;
+          oldTranslateY = 0;
+       }
+       if (mover != null) {
+		  mover = null;
+       }
+    }
+    
+    function drag(evt){
+       if(dragger != null){
+          var newX = oldTranslateX + (evt.clientX - origX);
+          var newY = oldTranslateY + (evt.clientY - origY);
+          var transform = origTransform + "translate(" + newX + " " + newY + ")";
+          dragger.setAttributeNS(null,"transform", transform );
+       }
+      if (mover != null) {
+          if (mover == 'ball') {
+		      ballX = evt.clientX;
+		      ballY = evt.clientY;
+	      } else if (mover == 'target') {
+		      targetX = evt.clientX;
+		      targetY = evt.clientY;
+		  }
+		  update_trajectory();
+      }
+    }
+  ]]></script>
+				</xsl:if>
+				<style type="text/css"><![CDATA[
 /* Stylesheet for SVG elements
  *
  *
@@ -1289,232 +1460,560 @@ HISTORY
 	fill: #fff;
 }
 ]]></style>
-		<xsl:if test="$dynamic">
-			<script type="text/ecmascript"><![CDATA[
-    var dragger = null;
-    var origTransform = "";
-    var origX;
-    var origY;
-    var oldTranslateX;
-    var oldTranslateY;
-    var translateRegExp = /translate\(([-+]?\d+)(\s*[\s,]\s*)([-+]?\d+)\)\s*$/;
 
-	var mover = null;
-    var ballX = 300;
-    var ballY = 500;
-    var targetX = 300;
-    var targetY = 100;
-    var hookX = 450;
-    var hookY = 100;
-    var calibration = 1;
-    var units = 'm';
+				<linearGradient id="background-straight">
+					<stop offset="5%" stop-color="#002"/>
+					<stop offset="95%" stop-color="#004"/>
+				</linearGradient>		
+				<linearGradient id="background-gradient" gradientTransform="rotate(30)" xlink:href="#background-straight"/>
+				
+				<linearGradient id="lateral-water-straight">
+					<stop offset="5%" stop-color="#006"/>
+					<stop offset="95%" stop-color="#008"/>
+				</linearGradient>		
+				<linearGradient id="lateral-water-gradient" gradientTransform="rotate(60)" xlink:href="#lateral-water-straight"/>
+				
+				<linearGradient id="rough-straight">
+					<stop offset="0%" stop-color="#030"/>
+					<stop offset="25%" stop-color="#060"/>
+					<stop offset="50%" stop-color="#040"/>
+					<stop offset="75%" stop-color="#060"/>
+					<stop offset="100%" stop-color="#080"/>
+				</linearGradient>		
+				<linearGradient id="rough-gradient" gradientTransform="rotate(70)" xlink:href="#rough-straight"/>
+				
+				<linearGradient id="green-straight">
+					<stop offset="0%" stop-color="#0d0"/>
+					<stop offset="25%" stop-color="#0e0"/>
+					<stop offset="50%" stop-color="#0c0"/>
+					<stop offset="75%" stop-color="#0e0"/>
+					<stop offset="100%" stop-color="#0b0"/>
+				</linearGradient>		
+				<linearGradient id="green-gradient" gradientTransform="rotate(75)" xlink:href="#green-straight"/>
+				
+				<pattern id="fairway-straight" patternUnits="userSpaceOnUse" x="0" y="0" width="20" height="20" viewBox="0 0 20 20">	
+					<rect x="0" y="0" width="10" height="10" fill="#00c000"/>
+					<rect x="10" y="10" width="10" height="10" fill="#00c800"/>
+					<rect x="10" y="0" width="10" height="10" fill="#00bc00"/>
+					<rect x="0" y="10" width="10" height="10" fill="#00b800"/>
+				</pattern>
+				<pattern id="fairway-pattern" patternTransform="rotate(60)" xlink:href="#fairway-straight"/>
+				
+				<g id="Tree" transform="translate(-76 -66) scale(0.4)">
+					<path class="one-tree"
+						d="M191.991,126.799c-11.163,0-21.022,4.032-27.033,10.191c-17.556,0.615-31.556,11.151-31.556,24.079
+						c0,7.537,4.759,14.266,12.203,18.693c0.876,12.855,18.43,23.128,39.939,23.128c22.07,0,39.979-10.812,39.979-24.136
+						c0-0.065-0.012-0.13-0.013-0.195c6.33-2.866,10.33-6.992,10.33-11.595c0-4.806-4.343-9.104-11.164-11.977
+						c0.31-1.318,0.478-2.67,0.478-4.054C225.154,137.612,210.297,126.799,191.991,126.799z"/>
+				</g>
+				
+				<g id="TeeSet">
+					<circle cx="-5" cy="0" r="2"/>
+					<circle cx="5" cy="0" r="2"/>			
+				</g>
+				
+				<g id="DistanceMarker">
+					<circle r="6"/>
+				</g>
+				
+				<g id="Dogleg">
+					<circle r="4"/>
+				</g>
+				
+				<g id="Aim">
+					<circle r="4"/>
+				</g>
+				
+				<g id="Hole">
+					<circle r="2"/>
+				</g>
+				
+				<g id="Ball">
+					<image xlink:href="../stylesheets/images/golf-ball.png" width="16" height="16"
+						transform="translate(-8 -8)"/>
+				</g>
+				
+				<g id="Target">
+					<circle class="target-filled" r="12"/>
+					<!-- 
+						<path   class="target" d="M 0,4 L 0,10"/>
+						<path   class="target" d="M 0,-4 L 0,-10"/>
+						<path   class="target" d="M 4,0 L 10,0"/>
+						<path   class="target" d="M -4,0 L -10,0"/>
+					-->
+				</g>
+				
+				
+				<g id="Flag" transform="translate(0 -30) scale(-0.2 0.2)">
+					<line id="FlagPole" class="flag-pole" x1="0.5" y1="0" x2="0.5" y2="150"/>
+					<circle id="FlagCup" class="flag-cup" r="10"  cx="0" cy="145" />
+					<g id="FlagFlag">
+						<path class="flag-flag"
+							d="M55.339,45.968c-18.28-14.516-36.559,14.516-54.839,0c0-12.097,0-24.193,0-36.29
+							c18.28,14.516,36.559-14.516,54.839,0C55.339,21.774,55.339,33.871,55.339,45.968z"/>
+					</g>
+				</g>
+				
+				<g id="Compass">
+					<polygon id="CompassNeedle" class="compass-needle" points="0,30 -8,0 0,-20 8,0"/>
+					<circle id="CompassCenter" class="compass-center" r="10"/>
+					<text id="CompassNorth" class="compass-north" x="-4.7" y="40">N</text>
+				</g>
+				
+				<g id="GolfMLLogoSmall">
+					<image xlink:href="../stylesheets/images/golfml-small.png" width="80" height="15"/>
+				</g>
+			</xsl:if><!-- mode=hole -->
 
-	function on_load(bx, by, tx, ty, hx, hy, c, u) {
-	    ballX = bx;
-	    ballY = by;
-	    targetX = tx;
-	    targetY = ty;
-	    hookX = hx;
-	    hookY = hy;
-		calibration = c;
-		if (u=='imperial') { units="yds"; } else { units = "m"; }
-		update_trajectory();
-	}
-	
-    function update_trajectory() {
-	    var factor = 0.3;
-	    var d = Math.sqrt((ballX-targetX)*(ballX-targetX)+(ballY-targetY)*(ballY-targetY));
-	    var alpha = Math.acos((ballY-targetY)/d);
-	    if (targetX > ballX) { alpha = -alpha; }
-	    hookX = targetX + d * factor * Math.cos(alpha);
-	    hookY = targetY - d * factor * Math.sin(alpha);
-    
-   	 	var t=document.getElementById('trajectory');
-    	if (t != null) {
-    	    var c = "M" + ballX + "," + ballY + " Q" + hookX + "," + hookY + " " + targetX + "," + targetY;
-    		t.setAttributeNS(null,"d", c);
-		}
-		t=document.getElementById('distance');
-    	if (t != null) {
-    	    var d = Math.sqrt((ballX-targetX)*(ballX-targetX)+(ballY-targetY)*(ballY-targetY));
-    	    var v = Math.round(d * 10 / calibration ) / 10;
-    	    var alpha = Math.acos((ballY-targetY)/d);
-    	    t.firstChild.data=v + ' ' + units;
-    		t.setAttributeNS(null,"x", hookX);
-    		t.setAttributeNS(null,"y", hookY);    			
-		}
-    }
-    
-    function mouse_down(evt, id){	
-      mover = id;
-      dragger = evt.target;
-      origTransform = dragger.getAttributeNS(null,"transform");
-      if (origTransform == null){
-        origTransform = "";
-      } else {
-        origTransform = new String(origTransform);
-      }
-      origX = evt.clientX;
-      origY = evt.clientY;
-      oldTranslateX = 0;
-      oldTranslateY = 0;
-      if (origTransform == null || origTransform.length == 0){
-        origTransform = "";
-      } else {
-        var result = origTransform.match(translateRegExp);
-        if (result == null || result.index == -1){
-           alert("The regular expression had a problem finding the translate at the end of \"" + origTransform + "\"");
-           oldTranslateX = 0;
-           oldTranslateY = 0;
-        } else {
-           oldTranslateX = parseFloat(result[1]);
-           oldTranslateY = parseFloat(result[3]);
-           origTransform = origTransform.substr(0, result.index);
-        }
-        origTransform += " ";
-      }
+			<xsl:if test="$mode = 'course'">
+				<style type="text/css"><![CDATA[
+/* Stylesheet for SVG elements
+ *
+ *
+ * Classes for area of interest (surfaces)
+ *
+ * DRAWING
+ */
+.background {
+		fill: url(#background-gradient);
+}
 
-    }
-    
-    function mouse_up(evt){
-       if(dragger != null){
-          dragger = null;
-          origTransform = ""
-          origX = 0;
-          origY = 0;
-          oldTranslateX = 0;
-          oldTranslateY = 0;
-       }
-       if (mover != null) {
-		  mover = null;
-       }
-    }
-    
-    function drag(evt){
-       if(dragger != null){
-          var newX = oldTranslateX + (evt.clientX - origX);
-          var newY = oldTranslateY + (evt.clientY - origY);
-          var transform = origTransform + "translate(" + newX + " " + newY + ")";
-          dragger.setAttributeNS(null,"transform", transform );
-       }
-      if (mover != null) {
-          if (mover == 'ball') {
-		      ballX = evt.clientX;
-		      ballY = evt.clientY;
-	      } else if (mover == 'target') {
-		      targetX = evt.clientX;
-		      targetY = evt.clientY;
-		  }
-		  update_trajectory();
-      }
-    }
-  ]]></script>
-		</xsl:if>
-		
-		<linearGradient id="background-straight">
-			<stop offset="5%" stop-color="#002"/>
-			<stop offset="95%" stop-color="#004"/>
-		</linearGradient>		
-		<linearGradient id="background-gradient" gradientTransform="rotate(30)" xlink:href="#background-straight"/>
-		
-		<linearGradient id="lateral-water-straight">
-			<stop offset="5%" stop-color="#006"/>
-			<stop offset="95%" stop-color="#008"/>
-		</linearGradient>		
-		<linearGradient id="lateral-water-gradient" gradientTransform="rotate(60)" xlink:href="#lateral-water-straight"/>
-		
-		<linearGradient id="rough-straight">
-			<stop offset="0%" stop-color="#030"/>
-			<stop offset="25%" stop-color="#060"/>
-			<stop offset="50%" stop-color="#040"/>
-			<stop offset="75%" stop-color="#060"/>
-			<stop offset="100%" stop-color="#080"/>
-		</linearGradient>		
-		<linearGradient id="rough-gradient" gradientTransform="rotate(70)" xlink:href="#rough-straight"/>
-		
-		<linearGradient id="green-straight">
-			<stop offset="0%" stop-color="#0d0"/>
-			<stop offset="25%" stop-color="#0e0"/>
-			<stop offset="50%" stop-color="#0c0"/>
-			<stop offset="75%" stop-color="#0e0"/>
-			<stop offset="100%" stop-color="#0b0"/>
-		</linearGradient>		
-		<linearGradient id="green-gradient" gradientTransform="rotate(75)" xlink:href="#green-straight"/>
-		
-		<pattern id="fairway-straight" patternUnits="userSpaceOnUse" x="0" y="0" width="20" height="20" viewBox="0 0 20 20">	
-			<rect x="0" y="0" width="10" height="10" fill="#00c000"/>
-			<rect x="10" y="10" width="10" height="10" fill="#00c800"/>
-			<rect x="10" y="0" width="10" height="10" fill="#00bc00"/>
-			<rect x="0" y="10" width="10" height="10" fill="#00b800"/>
-		</pattern>
-		<pattern id="fairway-pattern" patternTransform="rotate(60)" xlink:href="#fairway-straight"/>
+.hole-limits {
+	fill: none;
+	stroke: #ccc;
+	stroke-width: 1px;
+	stroke-dasharray: 10,10;
+}
+
+.hole-contour {
+	fill: #030;
+	stroke: #fff;
+	stroke-width: 1px;
+}
+
+
+/* GROUND
+ */
+.fairway {
+	fill: url(#fairway-pattern);
+	stroke: #0b0;
+	stroke-width: 1px; /* fairway fringe... */
+}
+
+.tee {
+	fill: #00c800;
+	stroke: #0f0;
+	stroke-width: 1px;
+}
+
+.fringe {
+	fill: #0A0;
+}
+
+.green {
+	fill: url(#green-gradient);
+	stroke: #0f0;
+	stroke-width: 1px;
+}
+
+.semi-rough,
+.light-rough {
+	fill: #080;
+	stroke: #08800D;
+	stroke-width: 1px;
+}
+
+.rough {
+	fill: url(#rough-gradient);
+	stroke: #07660A;
+	stroke-width: 1px;
+}
+
+.heavy-rough {
+	fill: #040;
+	stroke: #074D08;
+	stroke-width: 1px;
+}
+
+.ground {
+	fill: #7f400c;
+	stroke: #fdcc6a;
+	stroke-width: 1px;
+}
+
+
+/* WATER
+ */
+.lateral-water {
+	fill: url(#lateral-water-gradient);
+	stroke: red;
+	stroke-width: 1px;
+}
+
+.front-water, .water {
+	fill: #37f;
+	stroke: yellow;
+	stroke-width: 1px;
+}
+
+
+/* SPECIAL
+ */
+.under-repair {
+	fill: none;
+	stroke: #00d;
+	stroke-width: 1px;
+}
+
+.out-of-bound { /* line only */
+	fill: none;
+	stroke: white;
+	stroke-width: 1px;
+}
+
+.out-of-bound-area {
+	fill: #ccc;
+	stroke: white;
+	stroke-width: 1px;
+}
+
+
+/* TRAPS
+ */
+.trap,
+.bunker {
+	fill: #92cf94;
+	stroke: #4c994c;
+	stroke-width: 1px;
+}
+
+.grass-trap,
+.grass-bunker {
+	fill: #050;
+	stroke: #0A0;
+	stroke-width: 1px;
+}
+
+.sand-trap,
+.sand-bunker,
+.greenside-trap,
+.greenside-bunker {
+	fill: #eec;
+	stroke: #040;
+	stroke-width: 1px;
+}
+
+.fairway-trap,
+.fairway-bunker {
+	fill: #eec;
+	stroke: #030;
+	stroke-width: 1px;
+}
+
+
+/* OBSTACLES
+ */
+.tree {
+	fill: #062;
+	stroke: #0c6;
+	stroke-width: 1px;
+}
+
+.trees {
+	fill: #062;
+	stroke: #0c6;
+	stroke-width: 1px;
+}
+
+.bush {
+	fill: #00b259;
+	stroke: #7f400c;
+	stroke-width: 1px;
+}
+
+
+.path {
+	fill: #666;
+	stroke: #bbb;
+	stroke-width: 1px;
+}
+
+.building,
+.construction {
+	fill: #fdcc6a;
+	stroke: #7f400C;
+	stroke-width: 1px;
+}
+
+.obstruction {
+	fill: #555;
+	stroke: #999;
+	stroke-width: 1px;
+}
+
+
+.other {
+	fill: #ddd;
+	stroke: #666;
+	stroke-width: 1px;
+}
+
+/* Classes for point of interest (points)
+ *
+ */
+.dogleg {
+	fill: #000;
+}
+
+.aim {
+	fill: #fff;
+	stroke: #f00;
+	stroke-width: 1px;
+}
+
+.tees {
+	fill: #00f;
+}
+
+.tees-hollow {
+	stroke: #fff;
+	stroke-width: 0.5px;
+}
+
+.hole {
+	fill: #fff;
+}
+
+.distance-marker-100,
+.distance-marker-close {
+	fill: #44f;
+	stroke: #00f;
+	stroke-width: 1px;
+}
+
+.distance-marker-150,
+.distance-marker-135,
+.distance-marker,
+.distance-marker-mid {
+	fill: #f44;
+	stroke: #f00;
+	stroke-width: 1px;
+}
+
+.distance-marker-200,
+.distance-marker-far {
+	fill: #dd4;
+	stroke: #ff0;
+	stroke-width: 1px;
+}
+
+.green-region-delimiter {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 0.5px;
+	stroke-dasharray: 4,2;
+}
+
+.neutral {
+	fill: none;
+	stroke: #888;
+	stroke-width: 1px;
+}
+.one-tree {
+	fill: #14920D;
+	stroke: #165822;
+	stroke-width: 1px;
+	stroke-linecap: round;
+	stroke-linejoin: round; 
+}
+
+/* Classes for special decorative objects
+ *
+ */
+.compass-center {
+	fill: #ddd;
+	stroke: #fff;
+	stroke-width: 1px;
+}
+.compass-needle {
+	fill: #ddd;
+	stroke: #fff;
+	stroke-width: 1px;
+}
+.compass-north {
+	fill: #fff;
+}
+.flag-pole {
+	fill: none;
+	stroke: #f00;
+	stroke-width: 1px;
+}
+.flag-flag {
+	fill: #ff0;
+	stroke: #f00;
+	stroke-width: 1px;
+}
+.flag-cup {
+	fill: #fff;
+}
+/* Information box */
+.info-background {
+	fill: #ddd;
+}
+.info-hole {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: xx-large;
+}
+.info-par {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: x-large;
+}
+.info-length {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: large;
+}
+/* Circle for distances */
+.circle-from-green {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 1px;
+	stroke-dasharray: 4,4;
+}
+.circle-from-tee {
+	fill: none;
+	stroke: #f00;
+	stroke-width: 1px;
+	stroke-dasharray: 8,8;
+}
+/* Dynamic objects */
+.target {
+	fill: none;
+	stroke: #f00;
+	stroke-width: 2px;
+}
+.target-filled {
+	fill: #f00;
+	fill-opacity: 0.5;
+	stroke: #f00;
+}
+.ball {
+	fill: #fff;
+	stroke: none;
+}
+.trajectory {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 2px;
+}
+.distance {
+	fill: #fff;
+}
+]]></style>
+
+				<linearGradient id="background-straight">
+					<stop offset="5%" stop-color="#002"/>
+					<stop offset="95%" stop-color="#004"/>
+				</linearGradient>		
+				<linearGradient id="background-gradient" gradientTransform="rotate(30)" xlink:href="#background-straight"/>
 				
-		<g id="Tree" transform="translate(-76 -66) scale(0.4)">
-			<path class="one-tree"
-				d="M191.991,126.799c-11.163,0-21.022,4.032-27.033,10.191c-17.556,0.615-31.556,11.151-31.556,24.079
-				c0,7.537,4.759,14.266,12.203,18.693c0.876,12.855,18.43,23.128,39.939,23.128c22.07,0,39.979-10.812,39.979-24.136
-				c0-0.065-0.012-0.13-0.013-0.195c6.33-2.866,10.33-6.992,10.33-11.595c0-4.806-4.343-9.104-11.164-11.977
-				c0.31-1.318,0.478-2.67,0.478-4.054C225.154,137.612,210.297,126.799,191.991,126.799z"/>
-		</g>
-		
-		<g id="TeeSet">
-			<circle cx="-5" cy="0" r="2"/>
-			<circle cx="5" cy="0" r="2"/>			
-		</g>
-		
-		<g id="DistanceMarker">
-			<circle r="6"/>
-		</g>
-		
-		<g id="Dogleg">
-			<circle r="4"/>
-		</g>
+				<linearGradient id="lateral-water-straight">
+					<stop offset="5%" stop-color="#006"/>
+					<stop offset="95%" stop-color="#008"/>
+				</linearGradient>		
+				<linearGradient id="lateral-water-gradient" gradientTransform="rotate(60)" xlink:href="#lateral-water-straight"/>
 				
-		<g id="Aim">
-			<circle r="4"/>
-		</g>
-		
-		<g id="Hole">
-			<circle r="2"/>
-		</g>
+				<linearGradient id="rough-straight">
+					<stop offset="0%" stop-color="#030"/>
+					<stop offset="25%" stop-color="#060"/>
+					<stop offset="50%" stop-color="#040"/>
+					<stop offset="75%" stop-color="#060"/>
+					<stop offset="100%" stop-color="#080"/>
+				</linearGradient>		
+				<linearGradient id="rough-gradient" gradientTransform="rotate(70)" xlink:href="#rough-straight"/>
 				
-		<g id="Ball">
-			<image xlink:href="../stylesheets/images/golf-ball.png" width="16" height="16"
-				transform="translate(-8 -8)"/>
-		</g>
-		
-		<g id="Target">
-			<circle class="target-filled" r="12"/>
-			<!-- 
-				<path   class="target" d="M 0,4 L 0,10"/>
-				<path   class="target" d="M 0,-4 L 0,-10"/>
-				<path   class="target" d="M 4,0 L 10,0"/>
-				<path   class="target" d="M -4,0 L -10,0"/>
-			-->
-		</g>
-		
+				<linearGradient id="green-straight">
+					<stop offset="0%" stop-color="#0d0"/>
+					<stop offset="25%" stop-color="#0e0"/>
+					<stop offset="50%" stop-color="#0c0"/>
+					<stop offset="75%" stop-color="#0e0"/>
+					<stop offset="100%" stop-color="#0b0"/>
+				</linearGradient>		
+				<linearGradient id="green-gradient" gradientTransform="rotate(75)" xlink:href="#green-straight"/>
 				
-		<g id="Flag" transform="translate(0 -30) scale(-0.2 0.2)">
-			<line id="FlagPole" class="flag-pole" x1="0.5" y1="0" x2="0.5" y2="150"/>
-			<circle id="FlagCup" class="flag-cup" r="10"  cx="0" cy="145" />
-			<g id="FlagFlag">
-				<path class="flag-flag"
-					d="M55.339,45.968c-18.28-14.516-36.559,14.516-54.839,0c0-12.097,0-24.193,0-36.29
-					c18.28,14.516,36.559-14.516,54.839,0C55.339,21.774,55.339,33.871,55.339,45.968z"/>
-			</g>
-		</g>
+				<pattern id="fairway-straight" patternUnits="userSpaceOnUse" x="0" y="0" width="8" height="8" viewBox="0 0 8 8">	
+					<rect x="0" y="0" width="4" height="4" fill="#00c000"/>
+					<rect x="4" y="4" width="4" height="4" fill="#00c800"/>
+					<rect x="4" y="0" width="4" height="4" fill="#00bc00"/>
+					<rect x="0" y="4" width="4" height="4" fill="#00b800"/>
+				</pattern>
+				<pattern id="fairway-pattern" patternTransform="rotate(60)" xlink:href="#fairway-straight"/>
 				
-		<g id="Compass">
-			<polygon id="CompassNeedle" class="compass-needle" points="0,30 -8,0 0,-20 8,0"/>
-			<circle id="CompassCenter" class="compass-center" r="10"/>
-			<text id="CompassNorth" class="compass-north" x="-4.7" y="40">N</text>
-		</g>
+				<g id="Tree" transform="translate(-19 -17) scale(0.1)">
+					<path class="one-tree"
+						d="M191.991,126.799c-11.163,0-21.022,4.032-27.033,10.191c-17.556,0.615-31.556,11.151-31.556,24.079
+						c0,7.537,4.759,14.266,12.203,18.693c0.876,12.855,18.43,23.128,39.939,23.128c22.07,0,39.979-10.812,39.979-24.136
+						c0-0.065-0.012-0.13-0.013-0.195c6.33-2.866,10.33-6.992,10.33-11.595c0-4.806-4.343-9.104-11.164-11.977
+						c0.31-1.318,0.478-2.67,0.478-4.054C225.154,137.612,210.297,126.799,191.991,126.799z"/>
+				</g>
 				
-		<g id="GolfMLLogoSmall">
-			<image xlink:href="../stylesheets/images/golfml-small.png" width="80" height="15"/>
-		</g>
+				<g id="TeeSet">
+					<circle cx="-5" cy="0" r="2"/>
+					<circle cx="5" cy="0" r="2"/>			
+				</g>
 				
-	</defs>
+				<g id="DistanceMarker">
+					<circle r="2"/>
+				</g>
+				
+				<g id="Dogleg">
+					<circle r="2"/>
+				</g>
+				
+				<g id="Aim">
+					<circle r="2"/>
+				</g>
+				
+				<g id="Hole">
+					<circle r="2"/>
+				</g>
+				
+				<g id="Ball">
+					<image xlink:href="../stylesheets/images/golf-ball.png" width="16" height="16"
+						transform="translate(-8 -8)"/>
+				</g>
+				
+				<g id="Target">
+					<circle class="target-filled" r="12"/>
+					<!-- 
+						<path   class="target" d="M 0,4 L 0,10"/>
+						<path   class="target" d="M 0,-4 L 0,-10"/>
+						<path   class="target" d="M 4,0 L 10,0"/>
+						<path   class="target" d="M -4,0 L -10,0"/>
+					-->
+				</g>
+				
+				
+				<g id="Flag" transform="translate(0 -30) scale(-0.2 0.2)">
+					<line id="FlagPole" class="flag-pole" x1="0.5" y1="0" x2="0.5" y2="150"/>
+					<circle id="FlagCup" class="flag-cup" r="10"  cx="0" cy="145" />
+					<g id="FlagFlag">
+						<path class="flag-flag"
+							d="M55.339,45.968c-18.28-14.516-36.559,14.516-54.839,0c0-12.097,0-24.193,0-36.29
+							c18.28,14.516,36.559-14.516,54.839,0C55.339,21.774,55.339,33.871,55.339,45.968z"/>
+					</g>
+				</g>
+				
+				<g id="Compass">
+					<polygon id="CompassNeedle" class="compass-needle" points="0,30 -8,0 0,-20 8,0"/>
+					<circle id="CompassCenter" class="compass-center" r="10"/>
+					<text id="CompassNorth" class="compass-north" x="-4.7" y="40">N</text>
+				</g>
+				
+				<g id="GolfMLLogoSmall">
+					<image xlink:href="../stylesheets/images/golfml-small.png" width="80" height="15"/>
+				</g>
+			</xsl:if><!-- mode=course -->
+		</xsl:element><!-- defs -->
 	</xsl:template>
 
 </xsl:stylesheet>
