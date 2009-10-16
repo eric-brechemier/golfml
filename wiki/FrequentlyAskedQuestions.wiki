@@ -1,0 +1,18 @@
+#summary Golf Markup Language: Frequently Asked Questions
+
+ # Why would I use GolfML?
+
+I have a distribution system. I don't want ot change my code. Others should adapt their code to mine.
+
+I have the best application. Others will comply to mine.
+
+I don't want others to steal my data.
+Do you really "own" your data?
+
+GolfML is verbose. My code is more compact. I don't need the extra stuff.
+
+GolfML is too complicated.
+
+GolfML does not suit my needs.
+
+Why can't I dump everything in the <application> element? It would make a valid golfml document.
