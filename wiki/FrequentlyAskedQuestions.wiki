@@ -7,14 +7,16 @@ To benefit from the golf community. Golfers around the world contribute to vario
  * *I have a distribution system. I don't want ot change my code. Others should adapt their code to mine.*
 
 If we are taking about golf related data, we can certainly write XML stylesheets to convert to and from your own proprietary format.
+Golfer will benefit from a standard, common format for golf-related data. To make the life of your customers easy, you should adapt your application and allow them to enter information in a GolfML document and your application should export GolfML documents on request.
 
  * *I have the best application. Others will comply to mine.*
 
-Everybody will benefit from the community.
+Everybody will benefit from the community. You cannot benefit from a community by living in your own, restricted word.
 
  * *I don't want others to steal my data.*
 
 GolfML is just a markup language. It does not specify how you distribute your document.
+To protect your data, it is possible to add a digital signature and copyright restrictions in the document.
 
  * *GolfML is verbose. My code is more compact. I don't need the extra stuff.*
 
