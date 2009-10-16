@@ -265,6 +265,26 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	
+	
+	<xs:complexType name="UID">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Allow an application to insert a unique identifier for a GolfML entity.
+		</xs:documentation></xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="application.dotname" type="xs:string" use="required">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Name of the application in a reverse internet host name or a Java package and class style. Used by the application only.
+						Mandatory. Must be unique among all application names stored in an golfml document.
+						
+						Example: "com.company.golf.scorecardapp".
+					</xs:documentation></xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	
 	<xs:simpleType name="Gender">
 		<xs:annotation><xs:documentation xml:lang="en">
 			List of values used to specify the gender of a golfer.
@@ -666,10 +686,11 @@
 	<xs:simpleType name="Rating">
 		<xs:annotation><xs:documentation xml:lang="en">
 			The rating type defines a standard, generic, evaluation criteria for golfml entities.
-			Rating is limited to 0 to 5 "stars".
+			Rating is limited to 0 to 5 "stars". Decimal faction allowed.
 		</xs:documentation></xs:annotation>
-		<xs:restriction base="xs:nonNegativeInteger">
+		<xs:restriction base="xs:float">
 			<xs:maxInclusive value="5"/>
+			<xs:pattern value="[0-5]{0,1}(\.[0-9]{1,1})?"/>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -795,7 +816,7 @@
 					to +180° for longitude East of Greenwich.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="alt" type="golfml:Altitude">
+			<xs:element name="alt" type="golfml:Altitude" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Altitude of a GPS position expressed as a float value. Meaning and units of the value depends on the
 					mandatory 'mode' attribute.
@@ -939,7 +960,25 @@
 	</xs:complexType>
 	
 	
-	<!--  Golf types -->
+	<!--  Country Clubs and Golf Types -->
+	
+	<xs:simpleType name="CountryClubTypeEnum">
+		<xs:annotation><xs:documentation xml:lang="en">
+			List of types of country club ownership.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="public"/>
+			<xs:enumeration value="public-municipal"/>
+			<xs:enumeration value="public-regional"/>
+			<xs:enumeration value="public-state"/>
+			<xs:enumeration value="private"/>
+			<xs:enumeration value="semi-private"/>
+			<xs:enumeration value="military"/>
+			<xs:enumeration value="resort"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
 	
 	<xs:simpleType name="GolfCourseAreaTypeEnum">
 		<xs:annotation><xs:documentation xml:lang="en">
@@ -1130,43 +1169,628 @@
 				List of statistics that can be computed for a player or a golf course.
 		</xs:documentation></xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Official World Golf Ranking"/>
-			<xs:enumeration value="PGA Championship Points"/>
-			<xs:enumeration value="Scoring Average (adjusted)"/>
-			<xs:enumeration value="Scoring Average (actual)"/>
-			<xs:enumeration value="Scoring Average Before Cut"/>
-			<xs:enumeration value="Scoring Average 3rd Round"/>
-			<xs:enumeration value="Scoring Average Final Round"/>
-			<xs:enumeration value="Birdies (Total)"/>
-			<xs:enumeration value="Birdies (Average)"/>
-			<xs:enumeration value="Birdies (Conversion %)"/>
-			<xs:enumeration value="Eagles (Total)"/>
-			<xs:enumeration value="Eagles (Holes per)"/>
-			<xs:enumeration value="Par Breakers"/>
-			<xs:enumeration value="Par 3 Performance"/>
-			<xs:enumeration value="Par 4 Performance"/>
-			<xs:enumeration value="Par 5 Performance"/>
-			<xs:enumeration value="Driving Distance"/>
-			<xs:enumeration value="Driving Accuracy"/>
-			<xs:enumeration value="Longest Drive"/>
-			<xs:enumeration value="Total Driving"/>
-			<xs:enumeration value="Greens in Regulation"/>
-			<xs:enumeration value="Sand Saves"/>
-			<xs:enumeration value="Scrambling"/>
-			<xs:enumeration value="Putts Per Round"/>
-			<xs:enumeration value="Putts Per GIR"/>
-			<xs:enumeration value="Money Leaders"/>
-			<xs:enumeration value="World Money List"/>
-			<xs:enumeration value="Career Earnings (TOUR Members)"/>
-			<xs:enumeration value="Career Earnings (All Players)"/>
-			<xs:enumeration value="Non-Member Earnings"/>
-			<xs:enumeration value="Top 10 Finishes"/>
-			<xs:enumeration value="All-Around Ranking"/>
-			<xs:enumeration value="Ball Striking"/>
-			<xs:enumeration value="Bounce Back"/>
-			<xs:enumeration value="Consecutive # of Cuts"/>
-			<xs:enumeration value="other"/>
-		</xs:restriction>	  
+			<xs:enumeration value="3-Putt Avoidance">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The percent of time 3 or more putts were taken for a hole (total 3-putts, 4-putts, etc./ total holes played). 
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="All-Around Ranking">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The All Around statistic is computed by totalling a player's rank in each of the following statistics:
+					Scoring Leaders, Putting Leaders, Eagle Leaders, Birdie Leaders, Sand Saves, Greens in Regulation,
+					Driving Distance and Driving Accuracy..
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Approach Putt Performance">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Putt left after first putt from 10-25 feet.
+					This statistic measures the average distance left to the hole after a player's first putt,
+					an indicator of his ability to lag the ball close with the putter.
+					The large greens and tight aprons at the Open Championship mean players will be putting
+					longer-than-average distances as well as many shots they would normally chip or pitch.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Approaches from 100-125 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					This statistic measures the average distance left to the hole after a player's approach from a distance between 100 and 125 yards from the hole.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Approaches from 125-150 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					This statistic measures the average distance left to the hole after a player's approach from a distance between 125 and 150 yards from the hole.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Approaches from 150-175 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					This statistic measures the average distance left to the hole after a player's approach from a distance between 150 and 175 yards from the hole.				
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Approaches from 175-200 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					This statistic measures the average distance left to the hole after a player's approach from a distance between 175 and 200 yards from the hole.					
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Approaches from 200-225 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					This statistic measures the average distance left to the hole after a player's approach from a distance between 200 and 225 yards from the hole.				
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Approaches from 225-250 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					This statistic measures the average distance left to the hole after a player's approach from a distance between 225 and 250 yards from the hole.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Approaches from 250-275 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					This statistic measures the average distance left to the hole after a player's approach from a distance between 250 and 275 yards from the hole.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Approaches from 50-125 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					This statistic measures the average distance left to the hole after a player's approach from a distance between 50 and 75 yards from the hole.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Approaches from 75-100 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					This statistic measures the average distance left to the hole after a player's approach from a distance between 75 and 100 yards from the hole.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Approaches from > 200 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					This statistic measures the average distance left to the hole after a player's approach from more than 200 yards yards from the hole.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Approaches from > 275 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					This statistic measures the average distance left to the hole after a player's approach from more than 275 yards from the hole.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Average Distance after Going for it Shot">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Average Distance after Going for it Shot.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Average Distance of Putts made">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Average Distance of Putts made.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Average Distance to Hole After Tee Shot">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Average Distance to Hole After Tee Shot.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Average Putts per GIR">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Average Putts per GIR.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Back 9 Scoring Avg.">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Back 9 Scoring Avg.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Ball Striking">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: Ball Striking is computed by totaling a player's rank in both Total Driving and Greens in Regulation. 
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Birdie Average">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Birdie Average.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Birdie or Better Conversion %">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Birdie or Better Conversion percentage.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Birdies (Average)">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The average number of birdies made per round played.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Birdies (Conversion %)">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The percent of time a player makes birdie or better after hitting the green in regulation.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Birdies (Total)">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The total birdies made for the year.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Bounce Back">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The percent of time a player is over par on a hole and then under par on the following hole. 
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Career Earnings (All Players)">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Career Earnings (All Players).
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Career Earnings (TOUR Members)">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The total official money earned by a PGA TOUR regular member on the PGA TOUR over an entire career. 
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Career Money Leaders">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Career Money Leaders.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Consecutive # of Cuts">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The number of cuts a player has made since the last time a cut was missed.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Driving Accuracy Percentage">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Driving Accuracy Percentage.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Driving Accuracy">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The percentage of time a tee shot comes to rest in the fairway (regardless of club).
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Driving Distance">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The average number of yards per measured drive.
+					These drives are measured on two holes per round.
+					Care is taken to select two holes which face in opposite directions to counteract the effect of wind.
+					Drives are measured to the point at which they come to rest
+					regardless of whether they are in the fairway or not. 
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Driving Pct. 300+ (All Drvs.)">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Driving Pct. 300+ (All Drvs.).
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Driving Pct. 300-320 (All Drives)">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Driving Pct. 300-320 (All Drives).
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Driving Pct. 320+ (All Drives)">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Driving Pct. 320+ (All Drives).
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Eagles (Holes per)">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The average number of holes between each eagle.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Eagles (Total)">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The total eagles made for the year.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Fairway Proximity">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Fairway Proximity.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Final Round Scoring Average">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Final Round Scoring Average.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Front 9 Scoring Avg.">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Front 9 Scoring Avg.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GIR % From Other Than Fairway">
+				<xs:annotation><xs:documentation xml:lang="en">
+					GIR % From Other Than Fairway.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GIR Percentage - 100+ yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					GIR Percentage - 100+ yards.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GIR Percentage - 100-125 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					GIR Percentage - 100-125 yards.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GIR Percentage - 125-150 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					GIR Percentage - 125-150 yards.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GIR Percentage - 150-175 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					GIR Percentage - 150-175 yards.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GIR Percentage - 175-200 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					GIR Percentage - 175-200 yards.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GIR Percentage - 200+ yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					GIR Percentage - 200+ yards.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GIR Percentage - 75-100 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					GIR Percentage - 75-100 yards.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GIR Percentage - less than 100 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					GIR Percentage - less than 100 yards.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GIR Percentage - less than 125 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					GIR Percentage - less than 125 yards.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GIR Percentage - less than 75 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					GIR Percentage - less than 75 yards.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Going for the Green">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Going for the Green.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Greens in Regulation">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The percent of time a player was able to hit the green in regulation (greens hit in regulation/holes played).
+					Note: A green is considered hit in regulation if any portion of the ball is touching the putting surface
+					after the GIR stroke has been taken. (The GIR stroke is determined by subtracting 2 from par
+					(1st stroke on a par 3, 2nd on a par 4, 3rd on a par 5)).
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Left Rough Tendency">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Left Rough Tendency.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Longest Drive">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: For all drives measured with a laser, this is the longest drive for the entire year.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Lowest Round">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Lowest Round.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Money Leaders">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The total official money a player has earned year-to-date. Note: This is for PGA TOUR members only.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Non-Member Earnings">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The total official money a player has earned year-to-date. NOTE: This is for non-PGA TOUR members only. 
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Official World Golf Ranking">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The Official World Golf Ranking, which is
+					endorsed by the four major championships and the five professional tours
+					which make up the International Federation of PGA Tours, is issued every
+					Monday, following completion of the previous week's tournaments from around
+					the world. This statistic is the average number of points earned per event
+					in the last 104 weeks. These points are awarded based upon finish position
+					as well as the strength of the field. The points are initially worth double
+					their original value and decline gradually over this two-year period. There
+					are 8 13-week periods and points decline by .25 times their value each period.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="One Putts">
+				<xs:annotation><xs:documentation xml:lang="en">
+					One Putts.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Par 3 Birdie or Better Leaders">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Par 3 Birdie or Better Leaders.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Par 3 Performance">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The total strokes under or over par for all par 3's played.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Par 4 Birdie or Better Leaders">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Par 4 Birdie or Better Leaders.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Par 4 Performance">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The total strokes over or under par for all par 4's played.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Par 5 Birdie or Better Leaders">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Par 5 Birdie or Better Leaders.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Par 5 Performance">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The total strokes over or under par for all par 5's played.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Par Breakers">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The percent of the time the scoring average is under par.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PGA Championship Points">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The Top 70 players from this statistic are eligible to play in the PGA Championship.
+					It consists of a player's official money over a one-year period that ends two weeks
+					before the current year's PGA Championship and begins with the tournament just prior
+					to the previous year's PGA Championship.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PGA TOUR Playoffs for the FedEx Cup">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The cumulative points that the player has earned since the playoff
+					started for the FedExCup points race. 
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Proximity to Hole from Sand">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Proximity to Hole from Sand.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Proximity to Hole">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Proximity to Hole.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Proximity to Hole Around the Green">
+				<xs:annotation><xs:documentation xml:lang="en">
+					This statistic measures the average distance to the hole a player's ball comes to rest from shots around the green (within 30 yards of the edge of the green).
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Proximity to Hole from more then 200 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					This statistic measures the average distance to the hole a player's ball comes to rest from shots outside of 200 yards.
+					This is a good indicator of long-iron skill. Many players will be hitting irons and hybrids off the tee to keep
+					the ball in the fairway, translating into longer approach shots into the greens.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Putting Average">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Putting Average.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Putting from - 10-15'">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Putting from - 10-15'.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Putting from - 15-20'">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Putting from - 15-20'.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Putting from - 20-25'">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Putting from - 20-25'.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Putting from - > 25'">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Putting from - > 25'.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Putting from 15-25'">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Putting from 15-25'.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Putting from 3-5'">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Putting from 3-5'.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Putting from 5-10'">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Putting from 5-10'.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Putting from 5-15'">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Putting from 5-15'.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Putting from Inside 5'">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Putting from Inside 5'.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Putts Per GIR">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The average number of putts per green in regulation. By using greens hit in regulation,
+					we are able to eliminate the effects of chipping close and one-putting in the computation.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Putts Per Round">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The average number of putts per round played.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Regular Season FedExCup Points">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Regular Season FedExCup Points.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Right Rough Tendency">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Right Rough Tendency.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Rough Proximity">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Rough Proximity.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Rough Tendency">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Rough Tendency.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Round 3 Scoring Avg.">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: (PGA TOUR Only) The weighted scoring average which takes the stroke average of the field into account.
+					It is computed by adding a player's total strokes to an adjustment and dividing by the total rounds played.
+					The adjustment is computed by determining the stroke average of the field for each round played.
+					This average is subtracted from par to create an adjustment for each round.
+					A player accumulates these adjustments for each round played.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Sand Save Percentage">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The percent of time a player was able to get 'up and down' once in a greenside sand bunker (regardless of score).
+					Note: 'Up and down' indicates it took the player 2 shots or less to put the ball in the hole from that point.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Scoring Average (actual)">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The average number of strokes per completed round. 
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Scoring Average (adjusted)">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: (PGA TOUR Only) The weighted scoring average which takes the stroke average of the field into account.
+					It is computed by adding a player's total strokes to an adjustment and dividing by the total rounds played.
+					The adjustment is computed by determining the stroke average of the field for each round played.
+					This average is subtracted from par to create an adjustment for each round.
+					A player accumulates these adjustments for each round played.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Scoring Average 3rd Round">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The average number of strokes per completed round for Round 3. 
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Scoring Average Before Cut">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The average strokes per round for those rounds prior to the cut. 
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Scoring Average Final Round">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The average number of strokes for the final round of each tournament played.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Scoring Average">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Scoring Average.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Scrambling from > 30 Yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Scrambling from > 30 Yards.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Scrambling from the Rough">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Scrambling from the Rough.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Scrambling">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The percent of time a player misses the green in regulation, but still makes par or better.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Three Putts">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Three Putts.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Top 10 Finishes">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The total number of times the player has finished in the top 10 at official events for the year.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Total Birdies">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Total Birdies.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Total Driving">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: Total Driving is computed by totaling a player's rank in both driving distance and driving accuracy.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Total Eagles">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Total Eagles.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Total Putting Distance">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Total Putting Distance.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="World Money List">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The total official money earned by a player on the PGA TOUR or the 5 International tours
+					(Japanese PGA, European PGA, Australasian, South African, Asian) computed in U.S. Dollars.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<!-- Other stats:
+				PGA TOUR CAREER EARNINGS
+				PGATOUR: The total official money earned by a player on the PGA TOUR for his career. This is different from Career Money in that it includes all players, not just members. 
+			
+			    PGA TOUR FEDEXCUP BONUS MONEY
+			    PGATOUR: The bonus money that the player has earned in the FedExCup points race.
+			    
+			    PGA TOUR ALL-AROUND RANKING
+			    PGATOUR: The All Around statistic is computed by totalling a player's rank in each of the following statistics: Scoring Leaders, Putting Leaders, Eagle Leaders, Birdie Leaders, Sand Saves, Greens in Regulation, Driving Distance and Driving Accuracy. 
+			 -->
+			
+			<!-- special stats for tees, holes, courses... -->
+			<xs:enumeration value="Par">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Total par for the golf course.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Front">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Total distance of the first 9 holes of a 18 hole golf course.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Back">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Total distance of the last 9 holes of a 18 hole golf course.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Holes Played">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Number of holes played.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Holes">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Number of holes of a golf course.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			
+			<xs:enumeration value="other">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Other statistic value. Attribute "other" describes the element.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+		</xs:restriction> 
 	</xs:simpleType>
 	
 	<xs:complexType name="StatisticValue">
@@ -1201,9 +1825,9 @@
 					End date for the collection of statistical calculation.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="round" type="xs:date" minOccurs="0">
+			<xs:element name="round" type="xs:dateTime" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
-					Date of a round of golf used for statistical calculation.
+					Date (and time) of a round of golf used for statistical calculation.
 				</xs:documentation></xs:annotation>
 			</xs:element>
 			<xs:element name="golf-course" type="golfml:REF_GolfCourse" minOccurs="0">
@@ -1222,7 +1846,57 @@
 	</xs:complexType>
 	
 		
+	<xs:complexType name="TeeSetSummary">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Stores denormalized parameters for a set of tees.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="holes" type="xs:nonNegativeInteger" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Denormalisation: Number of holes.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="par" type="xs:positiveInteger" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Denormalisation: Total number of strokes for set of tees.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="front" type="golfml:LengthWithUnits" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Denormalisation: Total length of first nine holes.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="back" type="golfml:LengthWithUnits" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Denormalisation: Total length for last nine holes.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="statistic" type="golfml:StatisticValue" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Denormalisation: Statistic for the round of golf.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	
 	<xs:complexType name="Statistics">
+		<xs:annotation><xs:documentation xml:lang="en">
+			List of statistics.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="value" type="golfml:StatisticValue" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						Value of a statistic computed for the supplied collection type.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>		  
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="StatisticsCollection">
 		<xs:annotation><xs:documentation xml:lang="en">
 				List of statistics computed over the same type.
 		</xs:documentation></xs:annotation>
@@ -1378,9 +2052,14 @@
 		
 	<xs:complexType name="Tees">
 		<xs:annotation><xs:documentation xml:lang="en">
-				Set of tees from which a golf course can be played.
+			Set of tees from which a golf course can be played.
 		</xs:documentation></xs:annotation>
 		<xs:sequence>
+			<xs:element name="uid" type="golfml:UID" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Unique identifier for an application.
+				</xs:documentation></xs:annotation>
+			</xs:element>
 			<xs:element name="qualification" type="golfml:HoleQualification">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Qualification of the hole for handicaping purposes.
@@ -1396,6 +2075,13 @@
 					Records tee set modifications over time.
 				</xs:documentation></xs:annotation>
 			</xs:element>
+			<xs:element name="summary" type="golfml:Statistics" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					A set of statistical data associated with the set of tees.
+					(EXPERIMENTAL.)
+				</xs:documentation></xs:annotation>	 
+			</xs:element>
+			
 		</xs:sequence>
 		<xs:attribute name="date-from" type="xs:date">
 			<xs:annotation><xs:documentation xml:lang="en">
@@ -1811,6 +2497,11 @@
 			Description of a course: Mmedia (photographs, videos, sketches...), notes, holes and tee-set.
 		</xs:documentation></xs:annotation>
 		<xs:sequence> <!-- sequence has a "logical" meaning here. -->
+			<xs:element name="uid" type="golfml:UID" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Unique identifier for an application.
+				</xs:documentation></xs:annotation>
+			</xs:element>
 			<xs:element name="name" type="xs:string"> <!-- used in PK_Tees -->
 				<xs:annotation><xs:documentation xml:lang="en">
 					Name of a tee set. Mandatory since it is used to uniquely identify this set of tees on a golf course.
@@ -1891,7 +2582,17 @@
 			golf resorts, etc.
 		</xs:documentation></xs:annotation>
 		<xs:sequence>
+			<xs:element name="uid" type="golfml:UID" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Unique identifier for an application.
+				</xs:documentation></xs:annotation>
+			</xs:element>
 			<xs:element name="name" type="xs:string" >
+				<xs:annotation><xs:documentation xml:lang="en">
+					Name of the country club.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="ownership-type" type="golfml:CountryClubTypeEnum" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Name of the country club.
 				</xs:documentation></xs:annotation>
@@ -2065,6 +2766,11 @@
 			in equipement-list elements.
 		</xs:documentation></xs:annotation>
 		<xs:sequence>
+			<xs:element name="uid" type="golfml:UID" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Unique identifier for an application.
+				</xs:documentation></xs:annotation>
+			</xs:element>
 			<xs:element name="name" type="xs:string">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Name of a golf bag used to identify it.
@@ -2102,6 +2808,11 @@
 			A attribute named type help describe the equipment.
 		</xs:documentation></xs:annotation> 	
 		<xs:sequence>
+			<xs:element name="uid" type="golfml:UID" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Unique identifier for an application.
+				</xs:documentation></xs:annotation>
+			</xs:element>
 			<xs:element name="name" type="xs:string">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Name or description of equipment.
@@ -2373,7 +3084,7 @@
 			Stores denormalized score for the round of golf.
 		</xs:documentation></xs:annotation>
 		<xs:sequence>
-			<xs:element name="strokes" type="xs:positiveInteger">
+			<xs:element name="strokes" type="xs:positiveInteger" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Denormalisation: Total number of strokes for the round of golf.
 				</xs:documentation></xs:annotation>
@@ -2440,7 +3151,7 @@
 					This element is provided to prevent recalculation of golf round data.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="score" type="golfml:Score">
+			<xs:element name="score" type="golfml:Score" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Detailed information about the score for the round of golf.
 				</xs:documentation></xs:annotation>
@@ -2572,6 +3283,11 @@
 					Date and time of the round.
 				</xs:documentation></xs:annotation>
 			</xs:element>
+			<xs:element name="note" type="golfml:Note">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Comment about the round.
+				</xs:documentation></xs:annotation>
+			</xs:element>
 			<xs:element name="scorecard" type="golfml:Scorecard">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Scorecard of the round for the player.
@@ -2612,6 +3328,11 @@
 		</xs:documentation></xs:annotation>
 		
 		<xs:sequence>
+			<xs:element name="uid" type="golfml:UID" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Unique identifier for an application.
+				</xs:documentation></xs:annotation>
+			</xs:element>
 			<xs:element name="name" type="xs:string">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Name of the player.
@@ -2673,7 +3394,7 @@
 				</xs:documentation></xs:annotation>	 
 			</xs:element>
 			
-			<xs:element name="statistics" type="golfml:Statistics" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="statistics" type="golfml:StatisticsCollection" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation><xs:documentation xml:lang="en">
 					A set of statistical data associated with the player.
 				</xs:documentation></xs:annotation>	 
