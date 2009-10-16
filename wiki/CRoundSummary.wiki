@@ -28,7 +28,7 @@ anyType
 ===  Model ===
 
 	<...>
-            ( strokes, points?, putts?, money?, [CPenalty penalties]?, [CStatisticValue statistic]`*`   )
+            ( strokes?, points?, putts?, money?, [CPenalty penalties]?, [CStatisticValue statistic]`*`   )
   </...>
 ----
   		

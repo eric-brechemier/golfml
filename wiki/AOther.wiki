@@ -24,4 +24,4 @@
 ----
   		
 ===  Local Usage ===
-    	[CAmenety Amenety], [CAreaOfInterest AreaOfInterest], [CContact Contact], [CGolfGame GolfGame], [AMediaTypeAttributes MediaTypeAttributes], [CPlayerHandicap PlayerHandicap], [CPointOfInterest PointOfInterest], [CStatistics Statistics], [CWeather Weather]
+    	[CAmenety Amenety], [CAreaOfInterest AreaOfInterest], [CContact Contact], [CGolfGame GolfGame], [AMediaTypeAttributes MediaTypeAttributes], [CPlayerHandicap PlayerHandicap], [CPointOfInterest PointOfInterest], [CStatisticsCollection StatisticsCollection], [CWeather Weather]

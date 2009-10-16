@@ -31,7 +31,7 @@ anyType
 ===  Model ===
 
 	<...  `gender`=[SGender Gender]>
-            ( name, date-of-birth, [CPlayerHandicap current-handicap]?, [CAddress address]`*`, [CContact contact]`*`, [CCountryClubChoice home-country-club]?, [CNote note]`*`, [CMedia media]`*`, [CEquipmentList equipment-list]?, [CGolfBag golf-bag]`*`, [CRound round]`*`, [CStatistics statistics]`*`   )
+            ( [CUID uid]?, name, date-of-birth, [CPlayerHandicap current-handicap]?, [CAddress address]`*`, [CContact contact]`*`, [CCountryClubChoice home-country-club]?, [CNote note]`*`, [CMedia media]`*`, [CEquipmentList equipment-list]?, [CGolfBag golf-bag]`*`, [CRound round]`*`, [CStatisticsCollection statistics]`*`   )
   </...>
 ----
   		      
@@ -54,7 +54,8 @@ anyType
 || name ||  					Name of the player.				 || xs:string ||
 || [CNote note] ||  					Note associated with the player.				 || [CNote golfml:Note] ||
 || [CRound round] ||  					A round of golf played by the player.				 || [CRound golfml:Round] ||
-|| [CStatistics statistics] ||  					A set of statistical data associated with the player.				 || [CStatistics golfml:Statistics] ||
+|| [CStatisticsCollection statistics] ||  					A set of statistical data associated with the player.				 || [CStatisticsCollection golfml:StatisticsCollection] ||
+|| [CUID uid] ||  					Unique identifier for an application.				 || [CUID golfml:UID] ||
 
 ----
   		

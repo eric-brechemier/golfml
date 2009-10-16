@@ -28,7 +28,7 @@ anyType
 ===  Model ===
 
 	<...>
-            ( name, architect?, ( [CMedia media] | [CNote note] )`*` , [CHoles holes]?, [CTees tee-set]+, [CVersion version]`*`   )
+            ( [CUID uid]?, name, architect?, ( [CMedia media] | [CNote note] )`*` , [CHoles holes]?, [CTees tee-set]+, [CVersion version]`*`   )
   </...>
 ----
   		
@@ -41,6 +41,7 @@ anyType
 || name ||  Name of a tee set || xs:string ||
 || [CNote note] ||  						Notes and comments associated with the golf course.					 || [CNote golfml:Note] ||
 || [CTees tee-set] ||  					Description of a tee set for the golf course.				 || [CTees golfml:Tees] ||
+|| [CUID uid] ||  					Unique identifier for an application.				 || [CUID golfml:UID] ||
 || [CVersion version] ||  					Records history of the golf course.				 || [CVersion golfml:Version] ||
 
 ----

@@ -30,7 +30,7 @@ anyType
 ===  Model ===
 
 	<...>
-            ( name, [CAddress address], [CContact contact]`*`, [CAmenety amenety]`*`, [CNote note]`*`, [CMedia media]`*`, [CGolfCourse golf-course]+, [CVersion version]`*`   )
+            ( [CUID uid]?, name, [SCountryClubTypeEnum ownership-type]?, [CAddress address], [CContact contact]`*`, [CAmenety amenety]`*`, [CNote note]`*`, [CMedia media]`*`, [CGolfCourse golf-course]+, [CVersion version]`*`   )
   </...>
 ----
   		
@@ -44,6 +44,8 @@ anyType
 || [CMedia media] ||  Media for the country club || [CMedia golfml:Media] ||
 || name ||  					Name of the country club.				 || xs:string ||
 || [CNote note] ||  					Note about the country club.				 || [CNote golfml:Note] ||
+|| [SCountryClubTypeEnum ownership-type] ||  					Name of the country club.				 || [SCountryClubTypeEnum golfml:CountryClubTypeEnum] ||
+|| [CUID uid] ||  					Unique identifier for an application.				 || [CUID golfml:UID] ||
 || [CVersion version] ||   || [CVersion golfml:Version] ||
 
 ----

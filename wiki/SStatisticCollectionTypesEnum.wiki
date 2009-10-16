@@ -33,4 +33,4 @@ string
 
 	( 'round' | 'course' | 'duration' | 'other' )
 ===  Local Usage ===
-    	[CStatistics Statistics]
+    	[CStatisticsCollection StatisticsCollection]

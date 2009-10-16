@@ -40,4 +40,4 @@ anyType
 ----
   		
 ===  Local Usage ===
-    	[CRoundSummary RoundSummary], [CStatistics Statistics]
+    	[CRoundSummary RoundSummary], [CStatistics Statistics], [CStatisticsCollection StatisticsCollection], [CTeeSetSummary TeeSetSummary]

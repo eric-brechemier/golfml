@@ -15,7 +15,7 @@ anyType
 ===  Documentation ===
 
         
-				Set of tees from which a golf course can be played.
+			Set of tees from which a golf course can be played.
 		
 ----
       
@@ -28,7 +28,7 @@ anyType
 ===  Model ===
 
 	<...  `colour`=xs:string  `date-from`=xs:date  `date-to`=xs:date  `gender`=[SGolfingGender GolfingGender]  `name`=xs:string>
-            ( [CHoleQualification qualification], [CTee tee]{1,18}, [CVersion version]`*`   )
+            ( [CUID uid]?, [CHoleQualification qualification], [CTee tee]{1,18}, [CVersion version]`*`, [CStatistics summary]?   )
   </...>
 ----
   		      
@@ -45,7 +45,9 @@ anyType
 
 || *Name* || *Description* || *Type* ||
 || [CHoleQualification qualification] ||  					Qualification of the hole for handicaping purposes.				 || [CHoleQualification golfml:HoleQualification] ||
+|| [CStatistics summary] ||  A set of statistical data associated with the set of tees || [CStatistics golfml:Statistics] ||
 || [CTee tee] ||  Description of a single hole || [CTee golfml:Tee] ||
+|| [CUID uid] ||  					Unique identifier for an application.				 || [CUID golfml:UID] ||
 || [CVersion version] ||  					Records tee set modifications over time.				 || [CVersion golfml:Version] ||
 
 ----

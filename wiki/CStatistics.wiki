@@ -15,7 +15,7 @@ anyType
 ===  Documentation ===
 
         
-				List of statistics computed over the same type.
+			List of statistics.
 		
 ----
       
@@ -27,24 +27,17 @@ anyType
   	
 ===  Model ===
 
-	<...  `other`=xs:string  `type`=[SStatisticCollectionTypesEnum StatisticCollectionTypesEnum]>
-            ( [CCollection collection], [CStatisticValue value]+   )
+	<...>
+            [CStatisticValue value]+  
   </...>
 ----
-  		      
-=== Attributes ===
-
-|| *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
-|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
-|| type ||   || [SStatisticCollectionTypesEnum golfml:StatisticCollectionTypesEnum] || required ||  ||  || unqualified ||
-
+  		
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| [CCollection collection] ||  Information regarding the collection of the statistic || [CCollection golfml:Collection] ||
 || [CStatisticValue value] ||  						Value of a statistic computed for the supplied collection type.					 || [CStatisticValue golfml:StatisticValue] ||
 
 ----
   		
 ===  Local Usage ===
-    	[CPlayer Player]
+    	[CTees Tees]

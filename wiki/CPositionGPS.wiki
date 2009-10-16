@@ -28,7 +28,7 @@ anyType
 ===  Model ===
 
 	<...>
-            ( [SAngle90 lat] ; [SAngle180 lon] ; [CAltitude alt] ) 
+            ( [SAngle90 lat] ; [SAngle180 lon] ; [CAltitude alt]? ) 
   </...>
 ----
   		

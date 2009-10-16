@@ -42,9 +42,9 @@ anyType
 || date-from ||  					Start date for the collection of statistical calculation.				 || xs:date ||
 || date-to ||  					End date for the collection of statistical calculation.				 || xs:date ||
 || [CREF_GolfCourse golf-course] ||  					Golf course used for statistical calculation.				 || [CREF_GolfCourse golfml:REF_GolfCourse] ||
-|| round ||  					Date of a round of golf used for statistical calculation.				 || xs:date ||
+|| round ||  					Date (and time) of a round of golf used for statistical calculation.				 || xs:dateTime ||
 
 ----
   		
 ===  Local Usage ===
-    	[CStatistics Statistics]
+    	[CStatisticsCollection StatisticsCollection]

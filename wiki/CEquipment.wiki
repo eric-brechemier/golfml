@@ -30,7 +30,7 @@ anyType
 ===  Model ===
 
 	<...  `type`=[SEquipmentTypeEnum EquipmentTypeEnum]>
-            ( name, manufacturer, model, submodel?, serial?   )
+            ( [CUID uid]?, name, manufacturer, model, submodel?, serial?   )
   </...>
 ----
   		      
@@ -47,6 +47,7 @@ anyType
 || name ||  					Name or description of equipment.				 || xs:string ||
 || serial ||  					Serial number of equipment.				 || xs:string ||
 || submodel ||  					Submodel or type of equipment.				 || xs:string ||
+|| [CUID uid] ||  					Unique identifier for an application.				 || [CUID golfml:UID] ||
 
 ----
   		

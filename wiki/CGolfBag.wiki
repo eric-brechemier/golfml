@@ -29,7 +29,7 @@ anyType
 ===  Model ===
 
 	<...>
-            ( name, [CREF_GolfBag bag-ref]?, ( [CREF_GolfClub golf-club-ref] | [CGolfClub golf-club] ){1,14} , [CEquipment equipment]`*`   )
+            ( [CUID uid]?, name, [CREF_GolfBag bag-ref]?, ( [CREF_GolfClub golf-club-ref] | [CGolfClub golf-club] ){1,14} , [CEquipment equipment]`*`   )
   </...>
 ----
   		
@@ -41,6 +41,7 @@ anyType
 || [CGolfClub golf-club] ||  						Definition of a golf club owned by the player.					 || [CGolfClub golfml:GolfClub] ||
 || [CREF_GolfClub golf-club-ref] ||  						Reference to a golf club in the player's equipment list.					 || [CREF_GolfClub golfml:REF_GolfClub] ||
 || name ||  					Name of a golf bag used to identify it.				 || xs:string ||
+|| [CUID uid] ||  					Unique identifier for an application.				 || [CUID golfml:UID] ||
 
 ----
   		

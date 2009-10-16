@@ -5,7 +5,7 @@
 [SRating Rating]
 ===  Super Types ===
 {{{
-nonNegativeInteger
+float
   |
   +--Rating (restriction)
 }}}
@@ -16,7 +16,7 @@ nonNegativeInteger
 
         
 			The rating type defines a standard, generic, evaluation criteria for golfml entities.
-			Rating is limited to 0 to 5 "stars".
+			Rating is limited to 0 to 5 "stars". Decimal faction allowed.
 		
 ----
       
@@ -28,6 +28,11 @@ nonNegativeInteger
   	
 ===  Model ===
 
-	inclusive upper bound: 5
+	
+{{{
+        [0-5]{0,1}(\.[0-9]{1,1})?
+}}}
+      
+    inclusive upper bound: 5
 ===  Local Usage ===
     	[CNote Note]

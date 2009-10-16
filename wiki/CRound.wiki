@@ -29,7 +29,7 @@ anyType
 ===  Model ===
 
 	<...>
-            ( [CHolePlacements hole-placement]?, [CWeather weather]?, [CFourSome foursome]?, [CGolfGame game]?, [CRoomForExtension wager]?, date, [CScorecard scorecard]   )
+            ( [CHolePlacements hole-placement]?, [CWeather weather]?, [CFourSome foursome]?, [CGolfGame game]?, [CRoomForExtension wager]?, date, [CNote note], [CScorecard scorecard]   )
   </...>
 ----
   		
@@ -40,6 +40,7 @@ anyType
 || [CFourSome foursome] ||  					Player information for the round of golf.				 || [CFourSome golfml:FourSome] ||
 || [CGolfGame game] ||  					Information about the game(s) played during the round of golf.				 || [CGolfGame golfml:GolfGame] ||
 || [CHolePlacements hole-placement] ||  					Placement of holes for the round of golf.				 || [CHolePlacements golfml:HolePlacements] ||
+|| [CNote note] ||  					Comment about the round.				 || [CNote golfml:Note] ||
 || [CScorecard scorecard] ||  					Scorecard of the round for the player.				 || [CScorecard golfml:Scorecard] ||
 || [CRoomForExtension wager] ||  					Information about the wagers during the round of golf.				 || [CRoomForExtension golfml:RoomForExtension] ||
 || [CWeather weather] ||  					Weather information for the round of golf.				 || [CWeather golfml:Weather] ||

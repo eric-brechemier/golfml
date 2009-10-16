@@ -30,7 +30,7 @@ anyType
 ===  Model ===
 
 	<...>
-            ( [CREF_Tees tees], handicap?, handicap-strokes?, [CREF_GolfBag golf-bag-ref]?, [CRoundSummary summary]?, [CScore score]   )
+            ( [CREF_Tees tees], handicap?, handicap-strokes?, [CREF_GolfBag golf-bag-ref]?, [CRoundSummary summary]?, [CScore score]?   )
   </...>
 ----
   		
