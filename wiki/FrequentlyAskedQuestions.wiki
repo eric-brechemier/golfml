@@ -1,17 +1,35 @@
 #summary Golf Markup Language: Frequently Asked Questions
 
- * Why would I use GolfML?
+ * *Why would I use GolfML?*
 
- * I have a distribution system. I don't want ot change my code. Others should adapt their code to mine.
+To benefit from the golf community. Golfers around the world contribute to various sites. All that information is now available and accessible in a standard common format.
 
- * I have the best application. Others will comply to mine.
+ * *I have a distribution system. I don't want ot change my code. Others should adapt their code to mine.*
 
- * I don't want others to steal my data.
+If we are taking about golf related data, we can certainly write XML stylesheets to convert to and from your own proprietary format.
 
- * GolfML is verbose. My code is more compact. I don't need the extra stuff.
+ * *I have the best application. Others will comply to mine.*
 
- * GolfML is too complicated.
+Everybody will benefit from the community.
 
- * GolfML does not suit my needs.
+ * *I don't want others to steal my data.*
 
- * Why can't I dump everything in the `<application>` element? It would make a valid golfml document.
+GolfML is just a markup language. It does not specify how you distribute your document.
+
+ * *GolfML is verbose. My code is more compact. I don't need the extra stuff.*
+
+GolfML encompasses several scenarii, it is flexdible and must adapt to a lot of situations.
+Yes it is verbose, but it certainly is neither closed nor static.
+
+ * *GolfML is too complicated.*
+
+We can help by explaining the rationale behind GolfML, and help building XML document and stylesheets.
+
+ * *GolfML does not suit my needs.*
+
+Please review the [Goals goals of GolfML] to see if your application falls into the category of applications GolfML can help.
+
+ * *Why can't I dump everything in the `<application>` element? It would make a valid golfml document.*
+
+A given GolfML application should ignore other `<application>` elements.
+No application will ever see of find your work if you do so.
