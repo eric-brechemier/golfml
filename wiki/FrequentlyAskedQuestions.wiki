@@ -20,12 +20,18 @@ To protect your data, it is possible to add a digital signature and copyright re
 
  * *GolfML is verbose. My code is more compact. I don't need the extra stuff.*
 
-GolfML encompasses several scenarii, it is flexdible and must adapt to a lot of situations.
+GolfML encompasses several scenarii, it is flexible and must adapt to a lot of situations.
+To make GolfML easy and readable, element and attribute names are meaningful english terms.
 Yes it is verbose, but it certainly is neither closed nor static.
+
+If an application requires a valid addition to the standard, we are open to discussion (in the forum for instance).
+
+Our standard is also yours. You can contribute to it, make it better and more comprehensive. However, it never should go away from its initial [Goals goals].
 
  * *GolfML is too complicated.*
 
 We can help by explaining the rationale behind GolfML, and help building XML document and stylesheets.
+Fell free to ask questions in the forum.
 
  * *GolfML does not suit my needs.*
 
