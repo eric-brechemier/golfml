@@ -23,6 +23,13 @@ Some necessary control cannot be enforced by the XML Schema standard. There must
 
 For instance, on a scorecard, "handicap stroke index" should range from 1 to 18 for a eighteen hole course. There should be a single occurance of every number between 1 and 18. XML Schema can only control that the number is an interger value between 1 and 18, but it cannot check that every number occurs once and only once.
 
+= Dynamic Data =
+
+GolfML aims at storing static data: Golf course descriptions, scorecards _after_ a round or a tournament is played... It is not designed to distribute score of a _ongoing_ tournament.
+
+Another standard, [http://www.sportsml.org/ SportML], is targeted at providing such a dynamic information.
+
+
 = SVG =
 
 == Altitude ==
