@@ -5,16 +5,32 @@
 List of issues.
 
 
+= GolfML Data =
+
+#summary General GolfML Issues
+
+== Remote Document ==
+
+There is no easy way to provide references to remote document.
+
+Alternatives are:
+
+ * Copy the referenced data in the local document. The local document will grow larger but it will be self contained.
+
+ * Maintain a reference to the remote document with the `remote-golfml-url` attribute. The remote document might disappear some day, or modified with knowing. It is advised to take a copy of the remote document for later reference.
+
+== Functional Verification of Documents ==
+
+Some necessary control cannot be enforced by the XML Schema standard. There must be an additional control.
+
+For instance, on a scorecard, "handicap stroke index" should range from 1 to 18 for a eighteen hole course. There should be a single occurance of every number between 1 and 18. XML Schema can only control that the number is an interger value between 1 and 18, but it cannot check that every number occurs once and only once.
+
 = SVG =
-
-== Projection ==
-
-The golfml2svg.xsl stylesheet does not perform a projection from the lat/log sphere to a surface.
-
-XML to SVG through a simple, single stylesheet is not easy because of the limitation of "pure" stylesheets.
-Stylesheets operator do not include Math operators.
-
 
 == Altitude ==
 
 How to graphically transpose altitude? Shades of green? Control transparency? Add a mask?
+
+= See Also =
+
+[golfml GolfML]
