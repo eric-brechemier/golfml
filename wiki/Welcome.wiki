@@ -12,6 +12,7 @@ Welcome to the Golf Markup Language Specification and Example.
 [CasesStudy	Golf Markup Language Examples and Cases Study]
 
 [DesignGuidelines GolfML XML Schema Design Guidelines]
+
 [FrequentlyAskedQuestions Frequently Asked Questions]
 
 [Branding Branding and logo]
