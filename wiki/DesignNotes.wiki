@@ -82,11 +82,11 @@ We allow for alternate system here as well. Some golf courses use simpler horizo
 Any application that uses golfml as a data foirmat can use the application element to store application specific information and data.
 
 {{{
-<application dotname="com.scorecard.app" name="scorecard application">
-  <preference>
-    <unit-system>metric</unit-system>
-    <handicap-method>EGA</handicap-method>
-  </preference>
+<application dotname="com.scorecard.app" name="scorecard application" xmlns:a="http://app.scorecard.com/golfml">
+  <a:preference>
+    <a:unit-system>metric</unit-system>
+    <a:handicap-method>EGA</handicap-method>
+  </a:preference>
 </application>
 }}}
 
