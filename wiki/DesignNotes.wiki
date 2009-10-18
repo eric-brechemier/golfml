@@ -138,6 +138,13 @@ Example: File located at http://www.golf-dieppe.com/golfml/course.xml, maintaine
          <tee-set name="Yellow (Men)" colour="black" gender="gentlemen">
 }}}
 
+=== Discussion ===
+
+Please be aware that hte remote document can change, move, or disappear.
+
+If is advised to copy the remote content in a local GolfML document.
+
+
 = See Also =
 
 [IdentifiersAndReferences Identifiers and References]
