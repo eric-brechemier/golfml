@@ -88,15 +88,16 @@
 		</xs:restriction>
 	</xs:simpleType>
 	
-	<xs:simpleType name="UnitOfLengthWithUnitsEnum">
+	<xs:simpleType name="UnitOfLengthEnum">
 		<xs:annotation><xs:documentation xml:lang="en">
 			List of acceptable values for units of length using either SI or imperial units.
-			The uncommon 'pace' unit is traditionnaly used for hole location sheets.
+			The uncommon 'pace' unit is traditionnaly used for hole location sheets. Units are plural form.
 		</xs:documentation></xs:annotation>
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="meters"/>
 			<xs:enumeration value="yards"/>
 			<xs:enumeration value="feet"/>
+			<xs:enumeration value="inches"/>
 			<xs:enumeration value="paces"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -244,7 +245,7 @@
 		</xs:annotation>
 		
 		<xs:restriction base="xs:string">
-			<xs:pattern value="([1-9][0-9]{0,2})(-[1-9][0-9]{0,4})?(-[1-9][0-9]{0,13})(-[0-9]+)?"/>
+			<xs:pattern value="[+]?([1-9][0-9]{0,2})(-[1-9][0-9]{0,4})?(-[1-9][0-9]{0,13})(-[0-9]+)?"/>
 		</xs:restriction>
 	</xs:simpleType>
 	
@@ -269,6 +270,8 @@
 	<xs:complexType name="UID">
 		<xs:annotation><xs:documentation xml:lang="en">
 			Allow an application to insert a unique identifier for a GolfML entity.
+			Allows for serialization of surrogate keys to maintain and enforce referential integrity in databases.
+			Several different applications can each have their own UID for a GolfML entitiy.
 		</xs:documentation></xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
@@ -987,6 +990,7 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="tee"/>
 			<xs:enumeration value="fairway"/>
+			<xs:enumeration value="hole"/>
 			<xs:enumeration value="green"/>
 			<xs:enumeration value="fringe"/>
 			<xs:enumeration value="tree"/>
@@ -1039,6 +1043,20 @@
 			<xs:enumeration value="left"/>
 			<xs:enumeration value="center"/>
 			<xs:enumeration value="right"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	
+	<xs:simpleType name="StrokeTypeEnum">
+		<xs:annotation><xs:documentation xml:lang="en">
+			List of values to specify stroke direction in shot quality description.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="slice"/>
+			<xs:enumeration value="fade"/>
+			<xs:enumeration value="straight"/>
+			<xs:enumeration value="draw"/>
+			<xs:enumeration value="hook"/>
 		</xs:restriction>
 	</xs:simpleType>
 	
@@ -1896,6 +1914,27 @@
 	</xs:complexType>
 	
 	
+	<xs:complexType name="ClubDistance">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Average distance hit with a given golf club.
+		</xs:documentation></xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="golfml:LengthWithUnits">
+				<xs:attribute name="date" type="xs:date">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Date of measurement or statistics.
+					</xs:documentation></xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="precision" type="golfml:StrokeTypeEnum" default="straight">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Information on the precision of the stroke regarding average direction.
+					</xs:documentation></xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	
 	<xs:complexType name="StatisticsCollection">
 		<xs:annotation><xs:documentation xml:lang="en">
 				List of statistics computed over the same type.
@@ -2018,7 +2057,7 @@
 		</xs:documentation></xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="golfml:Length">
-				<xs:attribute name="units" type="golfml:UnitOfLengthWithUnitsEnum" default="meters"/>
+				<xs:attribute name="units" type="golfml:UnitOfLengthEnum" default="meters"/>
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -2055,7 +2094,7 @@
 			Set of tees from which a golf course can be played.
 		</xs:documentation></xs:annotation>
 		<xs:sequence>
-			<xs:element name="uid" type="golfml:UID" minOccurs="0">
+			<xs:element name="uid" type="golfml:UID" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Unique identifier for an application.
 				</xs:documentation></xs:annotation>
@@ -2234,6 +2273,8 @@
 			<xs:enumeration value="iron"/>
 			<xs:enumeration value="wedge"/>
 			<xs:enumeration value="putter"/>
+			<xs:enumeration value="shaft"/>
+			<xs:enumeration value="grip"/>
 			<xs:enumeration value="ball"/>
 			<xs:enumeration value="bag"/>
 			<xs:enumeration value="trolley"/>
@@ -2497,7 +2538,7 @@
 			Description of a course: Mmedia (photographs, videos, sketches...), notes, holes and tee-set.
 		</xs:documentation></xs:annotation>
 		<xs:sequence> <!-- sequence has a "logical" meaning here. -->
-			<xs:element name="uid" type="golfml:UID" minOccurs="0">
+			<xs:element name="uid" type="golfml:UID" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Unique identifier for an application.
 				</xs:documentation></xs:annotation>
@@ -2582,7 +2623,7 @@
 			golf resorts, etc.
 		</xs:documentation></xs:annotation>
 		<xs:sequence>
-			<xs:element name="uid" type="golfml:UID" minOccurs="0">
+			<xs:element name="uid" type="golfml:UID" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Unique identifier for an application.
 				</xs:documentation></xs:annotation>
@@ -2734,6 +2775,16 @@
 					Shaft of the golf club.
 				</xs:documentation></xs:annotation>
 			</xs:element>
+			<xs:element name="grip" type="golfml:Equipment" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Grip of club (manufacturer + model).
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="distance" type="golfml:ClubDistance" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Average distance and shot type covered by a ball hit by this club on a given date.
+				</xs:documentation></xs:annotation>
+			</xs:element>
 		</xs:sequence>
 		<xs:attribute name="type" type="golfml:GolfClubTypeEnum" use="required">
 			<xs:annotation><xs:documentation xml:lang="en">
@@ -2756,7 +2807,10 @@
 	</xs:group>
 	
 	<xs:complexType name="REF_GolfClub">
-		<xs:group ref="golfml:ID_GolfClub"/>
+		<xs:choice>
+			<xs:group ref="golfml:ID_GolfClub"/>
+			<xs:element name="uid" type="golfml:UID"/>
+		</xs:choice>
 		<xs:attributeGroup ref="golfml:RemoteGolfML"/>
 	</xs:complexType>
 	
@@ -2766,7 +2820,7 @@
 			in equipement-list elements.
 		</xs:documentation></xs:annotation>
 		<xs:sequence>
-			<xs:element name="uid" type="golfml:UID" minOccurs="0">
+			<xs:element name="uid" type="golfml:UID" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Unique identifier for an application.
 				</xs:documentation></xs:annotation>
@@ -2808,7 +2862,7 @@
 			A attribute named type help describe the equipment.
 		</xs:documentation></xs:annotation> 	
 		<xs:sequence>
-			<xs:element name="uid" type="golfml:UID" minOccurs="0">
+			<xs:element name="uid" type="golfml:UID" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Unique identifier for an application.
 				</xs:documentation></xs:annotation>
@@ -2838,6 +2892,11 @@
 					Serial number of equipment.
 				</xs:documentation></xs:annotation>
 			</xs:element>
+			<xs:element name="note" type="golfml:Note" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Comment about the equipment. Comment contains an optional rating attribute (0-5).
+				</xs:documentation></xs:annotation>
+			</xs:element>
 		</xs:sequence>
 		<xs:attribute name="type" type="golfml:EquipmentTypeEnum">
 			<xs:annotation><xs:documentation xml:lang="en">
@@ -2858,7 +2917,7 @@
 			</xs:element>
 			<xs:element name="equipment" type="golfml:Equipment">
 				<xs:annotation><xs:documentation xml:lang="en">
-					Piece of golfing equipment owned by a player.
+					Piece of golfing equipment owned by a player that is not a golf club (golf-club should be used instead).
 				</xs:documentation></xs:annotation>
 			</xs:element>
 		</xs:choice>
@@ -2904,7 +2963,7 @@
 		<xs:annotation><xs:documentation xml:lang="en">
 			Elements used to record details about a golf stroke.
 		</xs:documentation></xs:annotation>
-		<xs:sequence>
+		<xs:all>
 			<xs:element name="position" type="golfml:Position" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Position FROM where the stroke take place.
@@ -2915,7 +2974,7 @@
 					Time of stroke.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="golf-club" type="golfml:GolfClub" minOccurs="0">
+			<xs:element name="golf-club" type="golfml:REF_GolfClub" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Golf club used for stroke.
 				</xs:documentation></xs:annotation>
@@ -2925,31 +2984,31 @@
 					Information on landing are of stroke.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="precision" type="golfml:StrokePrecision" minOccurs="0">
-				<xs:annotation><xs:documentation xml:lang="en">
-					Information on the precision of the stroke regarding distance and direction.
-				</xs:documentation></xs:annotation>
-			</xs:element>
-			<xs:element name="distance" type="xs:double" minOccurs="0">
+			<xs:element name="distance" type="golfml:LengthWithUnits" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					<xs:annotation><xs:documentation xml:lang="en">
 						Distance of the stroke.
 					</xs:documentation></xs:annotation>
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="distance-to-hole" type="xs:double" minOccurs="0">
+			<xs:element name="precision" type="golfml:StrokePrecision" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Information on the precision of the stroke regarding distance and direction.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="distance-to-hole" type="golfml:LengthWithUnits" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					<xs:annotation><xs:documentation xml:lang="en">
 						Distance left to the hole BEFORE the stroke.
 					</xs:documentation></xs:annotation>
 				</xs:documentation></xs:annotation>				
 			</xs:element>
-			<xs:element name="comment" type="golfml:Note" minOccurs="0">
+			<xs:element name="note" type="golfml:Note" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Comment about the stroke. Comment contains a rating attribute to rate the stroke (0-5).
 				</xs:documentation></xs:annotation>
 			</xs:element>
-		</xs:sequence>
+		</xs:all>
 		<xs:attribute name="number" type="xs:nonNegativeInteger">
 			<xs:annotation><xs:documentation xml:lang="en">
 				Order number of the stroke playing the hole.
@@ -3253,6 +3312,16 @@
 			weather conditions, date of the round, opponenents and partners, and the scorecard.
 		</xs:documentation></xs:annotation>
 		<xs:sequence>
+			<xs:element name="uid" type="golfml:UID" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Unique identifier for an application.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="date" type="xs:dateTime">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Date and time of the round.
+				</xs:documentation></xs:annotation>
+			</xs:element>
 			<xs:element name="hole-placement" type="golfml:HolePlacements" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Placement of holes for the round of golf.
@@ -3278,12 +3347,7 @@
 					Information about the wagers during the round of golf.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="date" type="xs:dateTime">
-				<xs:annotation><xs:documentation xml:lang="en">
-					Date and time of the round.
-				</xs:documentation></xs:annotation>
-			</xs:element>
-			<xs:element name="note" type="golfml:Note">
+			<xs:element name="note" type="golfml:Note" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Comment about the round.
 				</xs:documentation></xs:annotation>
@@ -3328,7 +3392,7 @@
 		</xs:documentation></xs:annotation>
 		
 		<xs:sequence>
-			<xs:element name="uid" type="golfml:UID" minOccurs="0">
+			<xs:element name="uid" type="golfml:UID" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Unique identifier for an application.
 				</xs:documentation></xs:annotation>
