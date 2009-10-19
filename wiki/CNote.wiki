@@ -47,4 +47,4 @@ anyType
 ----
   		
 ===  Local Usage ===
-    	[CCountryClub CountryClub], [CFacilities Facilities], [CGolfCourse GolfCourse], [CHole Hole], [CPlayer Player], [CRound Round], [CStrokeDetail StrokeDetail]
+    	[CCountryClub CountryClub], [CEquipment Equipment], [CFacilities Facilities], [CGolfCourse GolfCourse], [CHole Hole], [CPlayer Player], [CRound Round], [CStrokeDetail StrokeDetail]

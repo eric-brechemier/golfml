@@ -28,7 +28,7 @@ anyType
 ===  Model ===
 
 	<...>
-            ( [CUID uid]?, name, architect?, ( [CMedia media] | [CNote note] )`*` , [CHoles holes]?, [CTees tee-set]+, [CVersion version]`*`   )
+            ( [CUID uid]`*`, name, architect?, ( [CMedia media] | [CNote note] )`*` , [CHoles holes]?, [CTees tee-set]+, [CVersion version]`*`   )
   </...>
 ----
   		

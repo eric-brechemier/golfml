@@ -28,7 +28,7 @@ anyType
 ===  Model ===
 
 	<...  `type`=[SGolfClubTypeEnum GolfClubTypeEnum]>
-            ( manufacturer, model, submodel, number?, serial?, [SAngle90 loft]?, [SAngle90 lie]?, weight?, [SSwingWeight swing-weight]?, [CShaft shaft]?   )
+            ( manufacturer, model, submodel, number?, serial?, [SAngle90 loft]?, [SAngle90 lie]?, weight?, [SSwingWeight swing-weight]?, [CShaft shaft]?, [CEquipment grip]?, [CClubDistance distance]`*`   )
   </...>
 ----
   		      
@@ -40,6 +40,8 @@ anyType
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
+|| [CClubDistance distance] ||  					Average distance and shot type covered by a ball hit by this club on a given date.				 || [CClubDistance golfml:ClubDistance] ||
+|| [CEquipment grip] ||  					Grip of club (manufacturer + model).				 || [CEquipment golfml:Equipment] ||
 || [SAngle90 lie] ||  					Lie of the golf club.				 || [SAngle90 golfml:Angle90] ||
 || [SAngle90 loft] ||  					Loft of the golf club.				 || [SAngle90 golfml:Angle90] ||
 || manufacturer ||  					Manufacturer of a golf club.				 || xs:string ||
@@ -54,4 +56,4 @@ anyType
 ----
   		
 ===  Local Usage ===
-    	[CEquipmentList EquipmentList], [CGolfBag GolfBag], [CStrokeDetail StrokeDetail]
+    	[CEquipmentList EquipmentList], [CGolfBag GolfBag]

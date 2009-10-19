@@ -29,7 +29,7 @@ anyType
 ===  Model ===
 
 	<...>
-            ( [CUID uid]?, name, [CREF_GolfBag bag-ref]?, ( [CREF_GolfClub golf-club-ref] | [CGolfClub golf-club] ){1,14} , [CEquipment equipment]`*`   )
+            ( [CUID uid]`*`, name, [CREF_GolfBag bag-ref]?, ( [CREF_GolfClub golf-club-ref] | [CGolfClub golf-club] ){1,14} , [CEquipment equipment]`*`   )
   </...>
 ----
   		

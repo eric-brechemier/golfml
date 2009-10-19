@@ -1,0 +1,47 @@
+#summary Golf Markup Language Reference: complexType ClubDistance.
+
+== Name ==
+
+[CClubDistance ClubDistance]
+===  Super Types ===
+{{{
+anyType
+  |
+  +--[CLengthWithUnits LengthWithUnits] (restriction)
+       |
+       +--ClubDistance (extension)
+}}}
+    
+----
+  	
+===  Documentation ===
+
+        
+			Average distance hit with a given golf club.
+		
+----
+      
+  	
+===  Properties ===
+
+  	This component is not nillable.
+----
+  	
+===  Model ===
+
+	<...  `date`=xs:date  `precision`=[SStrokeTypeEnum StrokeTypeEnum] : straight  `units`=[SUnitOfLengthEnum UnitOfLengthEnum] : meters>
+          [SLength Length]
+  </...>
+----
+  		      
+=== Attributes ===
+
+|| *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
+|| date ||  						Date of measurement or statistics.					 || xs:date || optional ||  ||  || unqualified ||
+|| precision ||  						Information on the precision of the stroke regarding average direction.					 || [SStrokeTypeEnum golfml:StrokeTypeEnum] || optional || straight ||  || unqualified ||
+|| units ||   || [SUnitOfLengthEnum golfml:UnitOfLengthEnum] || optional || meters ||  || unqualified ||
+
+----
+  		
+===  Local Usage ===
+    	[CGolfClub GolfClub]

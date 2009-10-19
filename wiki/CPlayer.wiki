@@ -31,7 +31,7 @@ anyType
 ===  Model ===
 
 	<...  `gender`=[SGender Gender]>
-            ( [CUID uid]?, name, date-of-birth, [CPlayerHandicap current-handicap]?, [CAddress address]`*`, [CContact contact]`*`, [CCountryClubChoice home-country-club]?, [CNote note]`*`, [CMedia media]`*`, [CEquipmentList equipment-list]?, [CGolfBag golf-bag]`*`, [CRound round]`*`, [CStatisticsCollection statistics]`*`   )
+            ( [CUID uid]`*`, name, date-of-birth, [CPlayerHandicap current-handicap]?, [CAddress address]`*`, [CContact contact]`*`, [CCountryClubChoice home-country-club]?, [CNote note]`*`, [CMedia media]`*`, [CEquipmentList equipment-list]?, [CGolfBag golf-bag]`*`, [CRound round]`*`, [CStatisticsCollection statistics]`*`   )
   </...>
 ----
   		      

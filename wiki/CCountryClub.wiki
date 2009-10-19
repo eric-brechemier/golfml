@@ -30,7 +30,7 @@ anyType
 ===  Model ===
 
 	<...>
-            ( [CUID uid]?, name, [SCountryClubTypeEnum ownership-type]?, [CAddress address], [CContact contact]`*`, [CAmenety amenety]`*`, [CNote note]`*`, [CMedia media]`*`, [CGolfCourse golf-course]+, [CVersion version]`*`   )
+            ( [CUID uid]`*`, name, [SCountryClubTypeEnum ownership-type]?, [CAddress address], [CContact contact]`*`, [CAmenety amenety]`*`, [CNote note]`*`, [CMedia media]`*`, [CGolfCourse golf-course]+, [CVersion version]`*`   )
   </...>
 ----
   		

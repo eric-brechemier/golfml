@@ -28,7 +28,7 @@ anyType
 ===  Model ===
 
 	<...  `colour`=xs:string  `date-from`=xs:date  `date-to`=xs:date  `gender`=[SGolfingGender GolfingGender]  `name`=xs:string>
-            ( [CUID uid]?, [CHoleQualification qualification], [CTee tee]{1,18}, [CVersion version]`*`, [CStatistics summary]?   )
+            ( [CUID uid]`*`, [CHoleQualification qualification], [CTee tee]{1,18}, [CVersion version]`*`, [CStatistics summary]?   )
   </...>
 ----
   		      

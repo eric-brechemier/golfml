@@ -27,7 +27,7 @@ anyType
   	
 ===  Model ===
 
-	<...  `units`=[SUnitOfLengthWithUnitsEnum UnitOfLengthWithUnitsEnum] : meters>
+	<...  `units`=[SUnitOfLengthEnum UnitOfLengthEnum] : meters>
           [SLength Length]
   </...>
 ----
@@ -35,9 +35,18 @@ anyType
 === Attributes ===
 
 || *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
-|| units ||   || [SUnitOfLengthWithUnitsEnum golfml:UnitOfLengthWithUnitsEnum] || optional || meters ||  || unqualified ||
+|| units ||   || [SUnitOfLengthEnum golfml:UnitOfLengthEnum] || optional || meters ||  || unqualified ||
 
 ----
   		
+===  Sub Types ===
+{{{
+[CLengthWithUnits LengthWithUnits] (restriction)
+  |  
+  +--[CClubDistance ClubDistance] (extension)
+
+}}}
+----
+    
 ===  Local Usage ===
-    	[CHoleDistanceOnGreen HoleDistanceOnGreen], [CHolePlacementWithDistances HolePlacementWithDistances], [CHoleStatistics HoleStatistics], [CShaft Shaft], [CTee Tee], [CTeeSetSummary TeeSetSummary]
+    	[CClubDistance ClubDistance], [CHoleDistanceOnGreen HoleDistanceOnGreen], [CHolePlacementWithDistances HolePlacementWithDistances], [CHoleStatistics HoleStatistics], [CShaft Shaft], [CStrokeDetail StrokeDetail], [CTee Tee], [CTeeSetSummary TeeSetSummary]

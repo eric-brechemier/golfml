@@ -29,7 +29,7 @@ anyType
 ===  Model ===
 
 	<...>
-            ( [CHolePlacements hole-placement]?, [CWeather weather]?, [CFourSome foursome]?, [CGolfGame game]?, [CRoomForExtension wager]?, date, [CNote note], [CScorecard scorecard]   )
+            ( [CUID uid]`*`, date, [CHolePlacements hole-placement]?, [CWeather weather]?, [CFourSome foursome]?, [CGolfGame game]?, [CRoomForExtension wager]?, [CNote note]?, [CScorecard scorecard]   )
   </...>
 ----
   		
@@ -42,6 +42,7 @@ anyType
 || [CHolePlacements hole-placement] ||  					Placement of holes for the round of golf.				 || [CHolePlacements golfml:HolePlacements] ||
 || [CNote note] ||  					Comment about the round.				 || [CNote golfml:Note] ||
 || [CScorecard scorecard] ||  					Scorecard of the round for the player.				 || [CScorecard golfml:Scorecard] ||
+|| [CUID uid] ||  					Unique identifier for an application.				 || [CUID golfml:UID] ||
 || [CRoomForExtension wager] ||  					Information about the wagers during the round of golf.				 || [CRoomForExtension golfml:RoomForExtension] ||
 || [CWeather weather] ||  					Weather information for the round of golf.				 || [CWeather golfml:Weather] ||
 

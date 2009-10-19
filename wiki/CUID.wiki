@@ -16,6 +16,8 @@ anyType
 
         
 			Allow an application to insert a unique identifier for a GolfML entity.
+			Allows for serialization of surrogate keys to maintain and enforce referential integrity in databases.
+			Several different applications can each have their own UID for a GolfML entitiy.
 		
 ----
       
@@ -40,4 +42,4 @@ anyType
 ----
   		
 ===  Local Usage ===
-    	[CCountryClub CountryClub], [CEquipment Equipment], [CGolfBag GolfBag], [CGolfCourse GolfCourse], [CPlayer Player], [CTees Tees]
+    	[CCountryClub CountryClub], [CEquipment Equipment], [CGolfBag GolfBag], [CGolfCourse GolfCourse], [CPlayer Player], [CREF_GolfClub REF_GolfClub], [CRound Round], [CTees Tees]

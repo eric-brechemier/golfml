@@ -28,7 +28,7 @@ anyType
 ===  Model ===
 
 	<...  `drop`=xs:boolean  `number`=xs:nonNegativeInteger>
-            ( [CPosition position]?, time?, [CGolfClub golf-club]?, [SGolfCourseAreaTypeEnum landing]?, [CStrokePrecision precision]?, distance?, distance-to-hole?, [CNote comment]?   )
+            ( [CPosition position]? ; time? ; [CREF_GolfClub golf-club]? ; [SGolfCourseAreaTypeEnum landing]? ; [CLengthWithUnits distance]? ; [CStrokePrecision precision]? ; [CLengthWithUnits distance-to-hole]? ; [CNote note]? ) 
   </...>
 ----
   		      
@@ -41,11 +41,11 @@ anyType
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| [CNote comment] ||  Comment about the stroke || [CNote golfml:Note] ||
-|| distance ||  											Distance of the stroke.					 || xs:double ||
-|| distance-to-hole ||  											Distance left to the hole BEFORE the stroke.					 || xs:double ||
-|| [CGolfClub golf-club] ||  					Golf club used for stroke.				 || [CGolfClub golfml:GolfClub] ||
+|| [CLengthWithUnits distance] ||  											Distance of the stroke.					 || [CLengthWithUnits golfml:LengthWithUnits] ||
+|| [CLengthWithUnits distance-to-hole] ||  											Distance left to the hole BEFORE the stroke.					 || [CLengthWithUnits golfml:LengthWithUnits] ||
+|| [CREF_GolfClub golf-club] ||  					Golf club used for stroke.				 || [CREF_GolfClub golfml:REF_GolfClub] ||
 || [SGolfCourseAreaTypeEnum landing] ||  					Information on landing are of stroke.				 || [SGolfCourseAreaTypeEnum golfml:GolfCourseAreaTypeEnum] ||
+|| [CNote note] ||  Comment about the stroke || [CNote golfml:Note] ||
 || [CPosition position] ||  					Position FROM where the stroke take place.				 || [CPosition golfml:Position] ||
 || [CStrokePrecision precision] ||  					Information on the precision of the stroke regarding distance and direction.				 || [CStrokePrecision golfml:StrokePrecision] ||
 || time ||  					Time of stroke.				 || xs:dateTime ||

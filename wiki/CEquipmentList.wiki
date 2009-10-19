@@ -35,7 +35,7 @@ anyType
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| [CEquipment equipment] ||  					Piece of golfing equipment owned by a player.				 || [CEquipment golfml:Equipment] ||
+|| [CEquipment equipment] ||  					Piece of golfing equipment owned by a player that is not a golf club (golf-club should be used instead).				 || [CEquipment golfml:Equipment] ||
 || [CGolfClub golf-club] ||  					Golf club owned by a player.				 || [CGolfClub golfml:GolfClub] ||
 
 ----
