@@ -1,0 +1,32 @@
+#summary Golf Markup Language Reference: simpleType StrokeTypeEnum.
+
+== Name ==
+
+[SStrokeTypeEnum StrokeTypeEnum]
+===  Super Types ===
+{{{
+string
+  |
+  +--StrokeTypeEnum (restriction)
+}}}
+    
+----
+  	
+===  Documentation ===
+
+        
+			List of values to specify stroke direction in shot quality description.
+		
+----
+      
+  	
+===  Properties ===
+
+  	This component is not nillable.
+----
+  	
+===  Model ===
+
+	( 'slice' | 'fade' | 'straight' | 'draw' | 'hook' )
+===  Local Usage ===
+    	[CClubDistance ClubDistance]
