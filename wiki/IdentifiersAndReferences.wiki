@@ -10,8 +10,12 @@ GolfML documents are spread all over the world.
 
 GolfML needs to uniquely identify the following entities:
 
+ # Country Clubs
  # Golf courses
+ # Sets of tees
  # Players
+
+Other applications may require identifications of other entities.
 
 A golf course should be defined once and for all other GolfML document instances.
 
@@ -74,3 +78,7 @@ becomes:
   <player.date-of-birth>1975-12-30</player.date-of-birth>
 </player-ref>
 }}}
+
+= Surrogate Keys =
+
+[http://en.wikipedia.org/wiki/Surrogate_key Surrogate keys] are often used by applications and always difficult to serialize. GolfML conveniently offer a complex type UID to serialize such surrogate keys and store them inside a GolfML document.
