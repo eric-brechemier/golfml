@@ -27,4 +27,6 @@ string
   	
 ===  Model ===
 
-	( 'left' | 'center' | 'right' )
+	( 'far left' | 'left' | 'center' | 'right' | 'far right' )
+===  Local Usage ===
+    	[CStrokePrecision StrokePrecision]

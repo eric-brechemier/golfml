@@ -27,4 +27,6 @@ string
   	
 ===  Model ===
 
-	( 'short' | 'middle' | 'long' )
+	( 'too short' | 'short' | 'middle' | 'long' | 'too long' )
+===  Local Usage ===
+    	[CStrokePrecision StrokePrecision]

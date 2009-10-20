@@ -23,15 +23,7 @@ string
 			Since the Imperial system of units is not the default system for units, it MUST be specified each time it is used.
 			
 			To further enhance the sharing of data across both unit systems, golfml allows for several values to be given in
-			different unit systems for the same object.
-			
-			Example:
-{{{
-			
-				417
-				456
-			
-}}}
+			different unit systems for the same object.		
 		
 ----
       

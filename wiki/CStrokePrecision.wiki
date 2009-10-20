@@ -17,7 +17,7 @@ anyType
         
 			Elements to quantify the precision and quality of a stroke in two directions:
 			Front/Back for stroke length, and Left/Right for stroke direction.
-			Elements values are constrained between -2 and +2.
+			Elements values can either be numeric values constrained between -2 and +2 or text values out of list.
 		
 ----
       
@@ -30,7 +30,7 @@ anyType
 ===  Model ===
 
 	<...  `type`=xs:string>
-            ( [SStrokePrecisionValue front-back], [SStrokePrecisionValue left-right]   )?
+            ( ( [SStrokePrecisionValue front-back], [SStrokePrecisionValue left-right] )? | ( [SStrokeLengthEnum front-back-text], [SStrokeDirectionEnum left-right-text] ) ) 
   </...>
 ----
   		      
@@ -42,8 +42,10 @@ anyType
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| [SStrokePrecisionValue front-back] ||  					Precision of a stroke relative to the distance.				 || [SStrokePrecisionValue golfml:StrokePrecisionValue] ||
-|| [SStrokePrecisionValue left-right] ||  					Precision of a stroke relative to the direction.				 || [SStrokePrecisionValue golfml:StrokePrecisionValue] ||
+|| [SStrokePrecisionValue front-back] ||  						Precision of a stroke relative to the distance.					 || [SStrokePrecisionValue golfml:StrokePrecisionValue] ||
+|| [SStrokeLengthEnum front-back-text] ||  						Precision of a stroke relative to the distance.					 || [SStrokeLengthEnum golfml:StrokeLengthEnum] ||
+|| [SStrokePrecisionValue left-right] ||  						Precision of a stroke relative to the direction.					 || [SStrokePrecisionValue golfml:StrokePrecisionValue] ||
+|| [SStrokeDirectionEnum left-right-text] ||  						Precision of a stroke relative to the direction.					 || [SStrokeDirectionEnum golfml:StrokeDirectionEnum] ||
 
 ----
   		

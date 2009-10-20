@@ -39,7 +39,7 @@ string
 				
 				Note
 				
-				It should not start with a + sign and there should be no space to separate numbers.
+				We added "start with a + sign" for country code; there should be no space to separate numbers.
 			
 ----
       
