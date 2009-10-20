@@ -17,9 +17,9 @@ string
         
 				List of statistics that can be computed for a player or a golf course.
 		
-					PGATOUR: The percent of time 3 or more putts were taken for a hole (total 3-putts, 4-putts, etc./ total holes played). 
+					* *3-Putt Avoidance*: PGATOUR: The percent of time 3 or more putts were taken for a hole (total 3-putts, 4-putts, etc./ total holes played). 
 				
-					PGATOUR: The All Around statistic is computed by totalling a player's rank in each of the following statistics:
+					* *All-Around Ranking*: PGATOUR: The All Around statistic is computed by totalling a player's rank in each of the following statistics:
 					Scoring Leaders, Putting Leaders, Eagle Leaders, Birdie Leaders, Sand Saves, Greens in Regulation,
 					Driving Distance and Driving Accuracy..
 				
