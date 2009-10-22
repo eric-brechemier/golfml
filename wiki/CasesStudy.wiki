@@ -11,7 +11,7 @@ To illustrate the usefulness and the purpose of the golfml data format, we also 
 
 == GolfML To HTML ==
 
-Several stylesheets convert simple GolfML documents into various HTML files.
+[CaseStudy2 Several stylesheets] convert simple GolfML documents into various HTML files.
 
  * `custom-scorecard.xsl` - Prints a standard scorecard for a golf course, with or without score information for up to four players.
  * `custom-scorecard.xsl` - Prints a standard scorecard for a golf course, with or without score information for up to four players.
