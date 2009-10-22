@@ -34,7 +34,9 @@ Another standard, [http://www.sportsml.org/ SportML], is targeted at providing s
 
 == Altitude ==
 
-How to graphically transpose altitude? Shades of green? Control transparency? Add a mask?
+Google Earth does not easily provide altitude information. Should that information be available, it is not currently used by the golfml2svg stylesheet to provide altitude information.
+
+How to graphically transpose altitude? Shades of green? Control transparency? Add a mask? Proper use of a [http://en.wikipedia.org/wiki/Cartographic_relief_depiction shading algorithm] requires programming.
 
 = See Also =
 
