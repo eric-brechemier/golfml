@@ -10,6 +10,8 @@ GolfML documents are spread all over the world.
 
 GolfML needs to uniquely identify the following entities:
 
+ # Countries
+ # Municipalities
  # Country Clubs
  # Golf courses
  # Sets of tees
