@@ -33,11 +33,13 @@ HISTORY
 	<!-- mode=course|hole, generate a single SVG file for the entire course, or one for each hole -->
 	<xsl:param name="mode">course</xsl:param>
 	<!-- If a hole-number is supplied, generates only that hole -->
-	<xsl:param name="hole-number">0</xsl:param>
+	<xsl:param name="hole-number">15</xsl:param>
 	<!-- whether to generate JavaScript and animation for hole display (useful for web interactivity, useless for print) -->
 	<xsl:param name="dynamic" select="false()"/>
 	<!-- whether to generate HTML anchor for holes in course display -->
-	<xsl:param name="genhtml" select="true()"/>
+	<xsl:param name="genhtml" select="false()"/>
+	
+	<xsl:param name="genfakehillshading" select="true()"/>
 	
 	<xsl:param name="units">metric</xsl:param>
 	
@@ -48,7 +50,7 @@ HISTORY
 		 Smaller or larger values for drawing would need scaling of Defs (patterns, stokes, elements...)
 		 Please leave square canvas to allow for rotation and alignment of hole.
 	  -->
-	<xsl:param name="width">600</xsl:param>
+	<xsl:param name="width">800</xsl:param>
 	<xsl:param name="height" select="$width"/>
 
 	<!-- position of compass, relative to upper left corner, in pixels -->
@@ -56,11 +58,12 @@ HISTORY
 	<xsl:param name="compassy">50</xsl:param>
 
 	<!-- Information box place and sizes -->
-	<xsl:param name="info-posx">470</xsl:param>
-	<xsl:param name="info-posy">400</xsl:param>
-	<xsl:param name="info-width">110</xsl:param>
+	<xsl:param name="info-width">120</xsl:param>
 	<xsl:param name="info-height">180</xsl:param>
-	<xsl:param name="info-num">6</xsl:param><!-- total number of length displayed -->
+	<xsl:param name="info-posx" select="$width - $info-width - 20"/>
+	<xsl:param name="info-posy" select="$height - $info-height - 20"/>
+	
+	<xsl:param name="info-num">6</xsl:param>  <!-- total number of length displayed -->
 	<xsl:param name="info-text">20</xsl:param><!-- total number of length displayed -->
 	
 		
@@ -102,7 +105,8 @@ HISTORY
 		Area are always drawn first, and points are drawn on top.
 	-->
 	<xsl:param name="typelist">hole-contour out-of-bound heavy-rough rough semi-rough bush lateral-water front-water water tee fairway path other building obstruction trap greenside-trap fairway-trap bunker fringe green trees tree aim marker dogleg dummy</xsl:param>
-
+	<xsl:param name="typelist4map">hole-contour lateral-water front-water water path other building obstruction trees tree dummy</xsl:param>
+	
 
 	<xsl:template match="/g:golfml/g:country-club">
 		<xsl:apply-templates select="g:golf-course"/>
@@ -438,12 +442,30 @@ HISTORY
 					<xsl:value-of select="concat('translate(',$width div 2, ',', $height div 2,') scale(',-$reduction,',',$reduction,') rotate(',$rotation,')')" />
 				</xsl:attribute>
 				
-				<xsl:apply-templates select=".//g:placemarks" mode="aoi">
-					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
-					<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
-					<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
-					<xsl:with-param name="list-of-types"><xsl:value-of select="$typelist"/></xsl:with-param>
-				</xsl:apply-templates>
+				<xsl:if test="$mode = 'course'"><!-- clippath on all hole-contours -->
+					<xsl:element name="clipPath">
+						<xsl:attribute name="id">HoleContourStrict</xsl:attribute>
+						<xsl:apply-templates select=".//g:placemarks" mode="aoi">
+							<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
+							<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
+							<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
+							<xsl:with-param name="list-of-types"><xsl:value-of select="$typelist4map"/></xsl:with-param>
+						</xsl:apply-templates>
+					</xsl:element>
+				</xsl:if>
+				
+				<xsl:element name="g">
+					<xsl:attribute name="clip-path">url(#HoleContourStrict)</xsl:attribute>
+					<xsl:if test="$genfakehillshading">
+						<xsl:attribute name="filter">url(#AddFakeHillShadow)</xsl:attribute>
+					</xsl:if>
+					<xsl:apply-templates select=".//g:placemarks" mode="aoi">
+						<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
+						<xsl:with-param name="midlon"><xsl:value-of select="$mid_lon"/></xsl:with-param>
+						<xsl:with-param name="scale" ><xsl:value-of select="$scale"/></xsl:with-param>
+						<xsl:with-param name="list-of-types"><xsl:value-of select="$typelist"/></xsl:with-param>
+					</xsl:apply-templates>
+				</xsl:element>
 				
 				<xsl:apply-templates select=".//g:placemarks" mode="poi">
 					<xsl:with-param name="midlat"><xsl:value-of select="$mid_lat"/></xsl:with-param>
@@ -592,18 +614,27 @@ HISTORY
 				
 				<!-- Add dynamic objects to measure distances -->
 				<xsl:if test="$dynamic">
+					<xsl:variable name="hookfactor" select="number(0.5)"/> <!-- between 0 (flat, and 1 (curved line) -->
+					<xsl:variable name="fromedge">0.1</xsl:variable>
+					
+					<xsl:variable name="ball_x" select="$width * 0.5"/>
+					<xsl:variable name="ball_y" select="$height * (1 - $fromedge)"/>
+					<xsl:variable name="target_x" select="$width * 0.5"/>
+					<xsl:variable name="target_y" select="$height * $fromedge"/>
+					<xsl:variable name="hook_x" select="$width * (0.5 + $hookfactor)"/>
+					<xsl:variable name="hook_y" select="$height * $fromedge"/>
 					<xsl:element name="path">
 						<xsl:attribute name="id">trajectory</xsl:attribute>
 						<xsl:attribute name="class">trajectory</xsl:attribute>
-						<xsl:attribute name="d">M300,500 Q450,100 300,100</xsl:attribute>
+						<xsl:attribute name="d" select="concat('M', $ball_x, ',', $ball_y, ' Q', $hook_x, ',', $hook_y, ' ', $target_x, ',', $target_y)" />
 					</xsl:element>
 					
 					<xsl:element name="text">
 						<xsl:attribute name="id">distance</xsl:attribute>
 						<xsl:attribute name="class">distance</xsl:attribute>
-						<xsl:attribute name="x"><xsl:value-of select="450"/></xsl:attribute>
-						<xsl:attribute name="y"><xsl:value-of select="100"/></xsl:attribute>
-						<xsl:value-of select="400 div (abs($calibration) * $scale)"/>
+						<xsl:attribute name="x" select="$width * 0.75"/>
+						<xsl:attribute name="y" select="$width * 0.20"/>
+						<xsl:value-of select="$width * (1 - 2 * $fromedge) div (abs($calibration) * $scale)"/>
 					</xsl:element>				
 					
 					<xsl:element name="rect">
@@ -616,7 +647,7 @@ HISTORY
 						<xsl:attribute name="width"><xsl:value-of select="$width"/></xsl:attribute>
 						<xsl:attribute name="height"><xsl:value-of select="$height"/></xsl:attribute>
 						<xsl:attribute name="onmousemove">drag(evt)</xsl:attribute>
-						<xsl:attribute name="onload"><xsl:value-of select="concat('on_load(300,500,300,100,450,100,',abs($calibration) * $scale * $reduction,',',$quote,$units,$quote,')')"/></xsl:attribute>
+						<xsl:attribute name="onload"><xsl:value-of select="concat('on_load(',$ball_x, ',', $ball_y,',',$target_x, ',', $target_y,',',$hook_x, ',', $hook_y,',',abs($calibration) * $scale * $reduction,',',$quote,$units,$quote,',',$hookfactor,')')"/></xsl:attribute>
 					</xsl:element>
 					
 					<xsl:element name="g">
@@ -625,8 +656,8 @@ HISTORY
 						<xsl:element name="use">
 							<xsl:attribute name="class">ball</xsl:attribute>
 							<xsl:attribute name="xlink:href">#Ball</xsl:attribute>
-							<xsl:attribute name="x"><xsl:value-of select="300"/></xsl:attribute>
-							<xsl:attribute name="y"><xsl:value-of select="500"/></xsl:attribute>
+							<xsl:attribute name="x"><xsl:value-of select="$width * 0.5"/></xsl:attribute>
+							<xsl:attribute name="y"><xsl:value-of select="$height * (1 - $fromedge)"/></xsl:attribute>
 						</xsl:element>
 					</xsl:element>
 					
@@ -636,8 +667,8 @@ HISTORY
 						<xsl:element name="use">
 							<xsl:attribute name="class">target</xsl:attribute>
 							<xsl:attribute name="xlink:href">#Target</xsl:attribute>
-							<xsl:attribute name="x"><xsl:value-of select="300"/></xsl:attribute>
-							<xsl:attribute name="y"><xsl:value-of select="100"/></xsl:attribute>
+							<xsl:attribute name="x"><xsl:value-of select="$width * 0.5"/></xsl:attribute>
+							<xsl:attribute name="y"><xsl:value-of select="$height * $fromedge"/></xsl:attribute>
 						</xsl:element>
 					</xsl:element>
 				</xsl:if><!-- dynamic -->
@@ -655,8 +686,8 @@ HISTORY
 			
 			<xsl:element name="use">
 				<xsl:attribute name="xlink:href">#GolfMLLogoSmall</xsl:attribute>
-				<xsl:attribute name="x">10</xsl:attribute>
-				<xsl:attribute name="y">575</xsl:attribute>
+				<xsl:attribute name="x" select="number(10)"/>
+				<xsl:attribute name="y" select="$height - 25"/>
 			</xsl:element>
 			
 			
@@ -705,6 +736,14 @@ HISTORY
 							<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
 							<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
 						</xsl:apply-templates>
+						<xsl:element name="clipPath">
+							<xsl:attribute name="id">HoleContourStrict</xsl:attribute>
+							<xsl:apply-templates select=".//g:aoi[@type=$current_type]" mode="draw">
+								<xsl:with-param name="midlat"><xsl:value-of select="$midlat"/></xsl:with-param>
+								<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
+								<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
+							</xsl:apply-templates>
+						</xsl:element>
 						<xsl:element name="clipPath">
 							<xsl:attribute name="id">HoleContour</xsl:attribute>
 							<xsl:attribute name="transform" select="string('scale(1.2)')"/>
@@ -1014,9 +1053,10 @@ HISTORY
     var hookX = 450;
     var hookY = 100;
     var calibration = 1;
+    var factor = 0.15;
     var units = 'm';
 
-	function on_load(bx, by, tx, ty, hx, hy, c, u) {
+	function on_load(bx, by, tx, ty, hx, hy, c, u, f) {
 	    ballX = bx;
 	    ballY = by;
 	    targetX = tx;
@@ -1024,12 +1064,12 @@ HISTORY
 	    hookX = hx;
 	    hookY = hy;
 		calibration = c;
+		factor = f;
 		if (u=='imperial') { units="yds"; } else { units = "m"; }
 		update_trajectory();
 	}
 	
     function update_trajectory() {
-	    var factor = 0.15;
 	    var d = Math.sqrt((ballX-targetX)*(ballX-targetX)+(ballY-targetY)*(ballY-targetY));
 	    var alpha = Math.acos((ballY-targetY)/d);
 	    if (targetX > ballX) { alpha = -alpha; }
@@ -1047,8 +1087,10 @@ HISTORY
     	    var v = Math.round(d * 10 / calibration ) / 10;
     	    var alpha = Math.acos((ballY-targetY)/d);
     	    t.firstChild.data=v + ' ' + units;
-    		t.setAttributeNS(null,"x", hookX);
-    		t.setAttributeNS(null,"y", hookY);    			
+    	    pX = targetX + d * 0.2 * Math.cos(alpha);
+    	    pY = targetY - d * 0.2 * Math.sin(alpha);
+    	    t.setAttributeNS(null,"x", pX);
+    		t.setAttributeNS(null,"y", pY);
 		}
     }
     
@@ -1394,6 +1436,7 @@ HISTORY
 .compass-north {
 	fill: #fff;
 }
+
 .flag-pole {
 	fill: none;
 	stroke: #f00;
@@ -1407,6 +1450,7 @@ HISTORY
 .flag-cup {
 	fill: #fff;
 }
+
 /* Information box */
 .info-background {
 	fill: #ddd;
@@ -1414,15 +1458,18 @@ HISTORY
 .info-hole {
 	font-family: Georgia, "Times New Roman", Times, serif;
 	font-size: xx-large;
+	stroke: #000; /*batikbug*/
 }
 .info-par {
 	font-family: Georgia, "Times New Roman", Times, serif;
 	font-size: x-large;
-}
+	stroke: #000; /*batikbug*/}
 .info-length {
 	font-family: Georgia, "Times New Roman", Times, serif;
 	font-size: large;
+	stroke: #000; /*batikbug*/
 }
+
 /* Circle for distances */
 .circle-from-green {
 	fill: none;
@@ -1458,6 +1505,7 @@ HISTORY
 }
 .distance {
 	fill: #fff;
+	stroke: #fff; /*batikbug*/
 }
 ]]></style>
 
@@ -1563,6 +1611,12 @@ HISTORY
 				<g id="GolfMLLogoSmall">
 					<image xlink:href="../stylesheets/images/golfml-small.png" width="80" height="15"/>
 				</g>
+				
+				<filter id="AddFakeHillShadow">
+					<feTurbulence baseFrequency=".01" type="fractalNoise" numOctaves="3"/>
+					<feColorMatrix type="luminanceToAlpha" values="0" />
+					<feBlend  mode="darken" in2="SourceGraphic"/>  <!--SourceGraphic SourceAlpha BackgroundImage BackgroundAlpha -->
+				</filter>
 			</xsl:if><!-- mode=hole -->
 
 			<xsl:if test="$mode = 'course'">
@@ -2012,6 +2066,13 @@ HISTORY
 				<g id="GolfMLLogoSmall">
 					<image xlink:href="../stylesheets/images/golfml-small.png" width="80" height="15"/>
 				</g>
+				
+				<filter id="AddFakeHillShadow">
+					<feTurbulence baseFrequency=".03" type="fractalNoise" numOctaves="3"/>
+					<feColorMatrix type="luminanceToAlpha" values="0" />
+					<feBlend  mode="darken" in2="SourceGraphic"/>  <!--SourceGraphic SourceAlpha BackgroundImage BackgroundAlpha -->
+				</filter>
+				
 			</xsl:if><!-- mode=course -->
 		</xsl:element><!-- defs -->
 	</xsl:template>
