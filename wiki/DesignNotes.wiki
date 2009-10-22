@@ -147,4 +147,8 @@ If is advised to copy the remote content in a local GolfML document.
 
 = See Also =
 
+[DesignGuidelines GolfML XML Schema Design Guidelines]
+
 [IdentifiersAndReferences Identifiers and References]
+
+[http://code.google.com/p/golfml/ Home]
