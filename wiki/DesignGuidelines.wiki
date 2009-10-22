@@ -65,7 +65,7 @@ Example:
 Example:
 
  * Player_PK, Player_FK
- * IDPlayer, REF_Player
+ * [GID_Player IDPlayer], [CREF_Player REF_Player]
 
 == Root Element ==
 
