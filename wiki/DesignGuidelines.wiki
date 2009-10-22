@@ -20,8 +20,8 @@ Element and type names can be any length. They should be meaningful.
 
 Example:
 
- * golf-courses
- * tee-time
+ * `golf-courses`
+ * `tee-time`
 
 
 === Attributes ===
@@ -49,8 +49,8 @@ The name of XML Schema types, attributeGroups, groups, etc. are `CamelCase ` to 
 
 Example:
 
- * GolfCourse is a type for golf-course elements
- * MediaType is a type for media-type elements
+ * [CGolfCourse GolfCourse] is a type for golf-course elements
+ * [CMediaType MediaType] is a type for media-type elements
 
 == Special Types ==
 
@@ -58,7 +58,7 @@ Example:
 
 Example:
 
- * MediaTypeEnum
+ * [SMediaTypeEnum MediaTypeEnum]
 
 *Relational keys* are prefixed with PK_ and FK_, *identifier* are prefixed with ID_ and *references to identifiers* are prefixed with REF_
 
