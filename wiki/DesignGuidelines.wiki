@@ -7,10 +7,9 @@ This section introduce conventions used in the Golf Markup Language and its defi
 
 = GolfML Document =
 
-Elements and attributes are named using English language common terms and vocabulary.
+Elements and attributes are named using English language common golf terms and vocabulary.
 In general, use elements for data that will be produced or consumed by an application and attributes for metadata.   
 A good rule of thumb is to use elements for nouns and attributes for adjectives.
-
 
 == Naming Conventions ==
 
@@ -46,7 +45,7 @@ Example:
 
 == XML Schema Constructs ==
 
-The name of XML Schema types, attributeGroups, groups, etc. are `CamelCase ` to easily differenciate them from elements.
+The name of XML Schema types, attributeGroups, groups, etc. are `CamelCase ` to easily differenciate them from GolfML elements names used in document instances.
 
 Example:
 
@@ -62,6 +61,11 @@ Example:
  * MediaTypeEnum
 
 *Relational keys* are prefixed with PK_ and FK_, *identifier* are prefixed with ID_ and *references to identifiers* are prefixed with REF_
+
+Example:
+
+ * Player_PK, Player_FK
+ * IDPlayer, REF_Player
 
 == Root Element ==
 
