@@ -106,7 +106,13 @@ Finally, using the golfml2svg.xsl stylesheet, you can transform the GolfML docum
 
 http://golfml.googlecode.com/files/hole15-golfml.png
 
+In the above interactive SVG graphics, the golf ball and the red target can be moved to get distance estimates in yards or meters.
+
 A few parameters at the begining of the XSL stylesheet allow you to choose to generate a map of the entire golf course, or a drawing of a single hole, or generate a separate SVG graphic file for each hole.
+
+We even added a SVG filter to add (fake) hill shading to the picture.
+
+http://golfml.googlecode.com/files/hole15-hillshading.png
 
 The [http://code.google.com/p/golfml/downloads/list Download area] of the GolfML project contains some sample graphics.
 
