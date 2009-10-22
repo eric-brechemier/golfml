@@ -49,8 +49,8 @@ The name of XML Schema types, attributeGroups, groups, etc. are `CamelCase ` to 
 
 Example:
 
- * [CGolfCourse GolfCourse] is a type for golf-course elements
- * [CMediaType MediaType] is a type for media-type elements
+ * [CGolfCourse GolfCourse] is a type for `golf-course` elements
+ * [CMedia Media] is a type for `media` elements
 
 == Special Types ==
 
