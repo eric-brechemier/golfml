@@ -2,42 +2,31 @@
 
 = Introduction =
 
-The goals of GolfML are summaized in the following main axis:
- # Description of golf courses.
- # Record of golf rounds.
+The goals of GolfML is to provide a language for:
+ # The description of golf courses.
+ # The record of golf rounds, scorecards, statistics, and equipment.
 
-Later, we may add:
- * Record of golf tournaments.
 
-They are described below.
+= 1. Description of Golf Courses =
 
-= Description of Golf Courses =
-
-The description of golf courses consists not only in general data like name, address, contact phone number, email address, and web site, but also technical details of interest to the game of golf.
+The description of golf courses consists of
+ * general data like name, address, contact phone number, email address, and web site,
+ * technical details of interest to the game of golf.
 
 A golf course generally consists of 18 holes. Golfers can play these holes from different starting positions (tees) depending on their skills.
 
-To prepare a round of golf, players usually have access to some reference information provided by the course itself or by specialized companies or web sites: Scorecard, general map of the course, but also "yardage" books and sometimes notes and drawings.
+To prepare a round of golf, players usually have access to some reference information provided by the course itself or by specialized companies or web sites: Scorecard, general map of the course, "yardage" books, pin placement sheets, notes and drawings. A hole on a course is piece of land with hasards, traps, natural obstacle... marked on drawings or maps. Courses also contain distance markers to help the golfer estimate the distance to a target. All these elements can be included in a GolfML document in a structured way:
 
-A hole on a course is piece of land with hasards, traps, natural obstacle... marked on drawings or maps. Courses also contain distance markers to help the golfer estimate the distance to a target.
+ * Scorecards with hole pars, distances, and handicap indices;
+ * Yardage books in electronic form, maps, pictures, videos of hole overview;
+ * Hole descriptions with markers, position of hasards or natural obstacle, green shape and sizes, GPS positions, personal notes.
 
-All these elements should be included in GolfML in a structured way.
+The purpose of this _documentation_ of a golf course is to collect information in a unique, structured, organized GolfML document that can be shared among golfer and that can be used by applications to present that information to golfers: It is possible to generate scorecards. If geographic information has been entered for a golf course, with markers and polygons that describe fairways, traps, greens, and lakes, it is possible to generate a yardage book from the available data. [CaseStudy1 (It is easy to do so in Google Earth for instance.)]
 
-For example, scorecards with hole pars, distances, and handicap indices are modelized in a structured XML document.
-
-Yardage books in electronic form, maps, pictures, videos of hole overview can also be of interest to golfers. GolfML provides a structured way to describe and _reference_ such information.
-
-Hole descriptions with markers, position of hasards or natural obstacle, green shape and sizes, and personal notes,  can also be stored to describe holes.
-
-The purpose of this documentation of a golf course is to collect information in a unique, structured, organized document. It is left to the golf application programmer to use or not those structure defined to describe a golf course.
-
-Ultimately, it will be possible to generate documents useful to golfer from these descriptions. For instance, we can generate scorecards from a structured description of a golf course. If geographic information has been entered for a golf course, with markers and polygons that describe fairways, traps, greens, and lakes, it is conceivable to generate a yardage book from the available data. (It is easy to do so in Google Earth for instance.)
-
-Please note that this information is time dependant (from-date, to-date) since golf courses, hole layout and traps change over time.
+Information about golf courses, layouts, distances... can change over time, and that information can be stored in a GolfML document as well.
 
 
-
-= Records of Rounds of Golf =
+= 2. Records of Rounds of Golf, Scorecards, Statistics, and Equipment =
 
 Golfers like to keep scores, notes, and sometimes more information to track the progress of their game. The purpose of this section is to provide a place to collect such information, store it, organize it, and later refer to it to analyze the game.
 
