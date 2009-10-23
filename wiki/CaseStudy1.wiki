@@ -1,4 +1,4 @@
-#summary Case Study 1: Design of a yardage book with Google Earth
+#summary Case Study: Design of a yardage book with Google Earth
 
 = Introduction =
 
