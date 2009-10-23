@@ -117,3 +117,7 @@ http://golfml.googlecode.com/files/hole15-hillshading.png
 The [http://code.google.com/p/golfml/downloads/list Download area] of the GolfML project contains some sample graphics.
 
 The [http://code.google.com/p/golfml/source/checkout Source Code area] contains XSL transformation sheets.
+
+= See Also =
+
+[CaseStudy2 Case Study: Design of HTML Scorecards]
