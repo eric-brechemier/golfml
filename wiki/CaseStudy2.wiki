@@ -17,4 +17,4 @@ http://golfml.googlecode.com/files/custom-scorecard.png
 
 = See Also =
 
-The [http://code.google.com/p/golfml/downloads/list Download area] of the GolfML project contains the stylesheet.
+The [http://code.google.com/p/golfml/source/browse/ source code area] of the GolfML project contains the stylesheet.
