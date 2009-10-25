@@ -71,7 +71,7 @@ Example:
 
 There is a single, unique top-level element called [Egolfml golfml].
 
-(The GolfML XML Schema is designed according to the [http://developers.sun.com/jsenterprise/archive/nb_enterprise_pack/reference/techart/design_patterns.html "venitian blinds" design pattern].)
+(The GolfML XML Schema is designed according to the [http://developers.sun.com/jsenterprise/archive/nb_enterprise_pack/reference/techart/design_patterns.html "Garden of Eden" design pattern].)
 
 = See Also =
 
