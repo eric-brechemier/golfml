@@ -60,7 +60,7 @@ Example:
 
  * [SMediaTypeEnum MediaTypeEnum]
 
-*Relational keys* are prefixed with PK_ and FK_, *identifier* are prefixed with ID_ and *references to identifiers* are prefixed with REF_
+*Relational keys* are prefixed with `PK_` and `FK_`, *identifier* are prefixed with `ID_` and *references to identifiers* are prefixed with `REF_`.
 
 Example:
 
@@ -71,7 +71,7 @@ Example:
 
 There is a single, unique top-level element called [Egolfml golfml].
 
-(The GolfML XML Schema is designed according to the "venitian blinds" design pattern.)
+(The GolfML XML Schema is designed according to the [http://developers.sun.com/jsenterprise/archive/nb_enterprise_pack/reference/techart/design_patterns.html "venitian blinds" design pattern].)
 
 = See Also =
 
