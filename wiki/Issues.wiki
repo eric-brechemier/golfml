@@ -9,13 +9,13 @@ List of issues.
 
 == Remote Document ==
 
-There is no easy way to provide references to remote document.
+There is no easy way to provide references to remote document and maintain referential integrity.
 
 Alternatives are:
 
  * Copy the referenced data in the local document. The local document will grow larger but it will be self contained.
 
- * Maintain a reference to the remote document with the `remote-golfml-url` attribute. The remote document might disappear some day, or modified with knowing. It is advised to take a copy of the remote document for later reference.
+ * Maintain a reference to the remote document with the `remote-golfml-url` attribute. The remote document might disappear some day, or modified without knowing. It is advised to take a copy of the remote document for later reference.
 
 == Functional Verification of Documents ==
 
