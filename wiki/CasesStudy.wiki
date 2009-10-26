@@ -1,4 +1,5 @@
 #summary Golf Markup Language Examples and Cases Study.
+#sidebar TableOfContents
 
 = Introduction =
 
