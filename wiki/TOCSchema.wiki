@@ -1,3 +1,4 @@
+[Welcome Home]
 [Egolfml GolfML Top Element]
    * Simple Types
       * [SAltitudeModeEnum AltitudeModeEnum]
