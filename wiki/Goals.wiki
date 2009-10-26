@@ -1,8 +1,6 @@
 #summary Golf Markup Language: General Goals.
 #sidebar TableOfContents
 
-= Introduction =
-
 The goals of GolfML is to provide a language for:
  # The description of golf courses.
  # The record of golf rounds, scorecards, statistics, and equipment.
