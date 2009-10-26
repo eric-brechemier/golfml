@@ -1,32 +1,23 @@
 #summary Golf Markup Language
+#sidebar TableOfContents
 
 = Introduction =
 
-Welcome to the Golf Markup Language Specification and Example.
+The purpose of GolfML is to provide a XML-based file format for the exchange of golf-related data.
 
+There are numerous golf scorecard programs and online web sites that allow golfers to browse course information, print scorecards, keep track of scores, and analyze statistics, or view a Google Earth fly-over of each hole.
 
-= Information Available =
+Most programs or web sites use proprietary data representation and only few of them allow for data exchange of course descriptions such as scorecard, hole par, length and handicap strokes. If available, data import or export is often performed in site- or application-specific proprietary format.
 
-== Design ==
+We promote the use of a vendor-neutral, open data format for the exchange of golf-related data like golf course descriptions, or golfer scorecards.
 
-[Goals GolfML Design Goals]
+The markup language will focus on:
 
-[DesignGuidelines GolfML XML Schema Design Guidelines]
+ # The description of golf courses
+ # The golfer's logbook, with scorecards and statistics
 
-== Reference ==
+The first part of this project defines a uniform data format to present golf course information such as name, address, number of courses, available facilities, course description, individual hole tee length, par, handicap strokes, etc. This data format also allows definition of geographic areas such as coordinates (of tees, holes, trees and traps...) or surfaces (such as fairways, bunkers, greens, lake...). It also permit references to files like pictures, video, or other media.
 
-[Egolfml GolfML] -- This is the Top Element of the Golf Markup Language, the entry point for reference information.
+The second part of the project defines a data format to allow golfer to record scores, statistics, and golf equipment. Scores can be as simple as stroke counts or as complex as location-based individual stroke record.
 
-== Examples ==
-
-[Workflow Typical use of GolfML]
-
-[CasesStudy	Golf Markup Language Examples and Cases Study]
-
-== More Information ==
-
-[FrequentlyAskedQuestions Frequently Asked Questions]
-
-[Branding Branding and logo]
-
-[Links Links of Interest for this Project]
+This project will not deliver software code. It will deliver a vocabulary, XML specifications and references to allow for data exchange between golf software applications.
