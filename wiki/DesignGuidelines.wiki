@@ -3,6 +3,38 @@
 
 This page introduce conventions used in the Golf Markup Language and its definition.
 
+== GolfML Schema ==
+
+=== XML Schema Constructs ===
+
+The name of XML Schema types, attributeGroups, groups, etc. are `CamelCase ` to easily differenciate them from GolfML elements names used in document instances.
+
+Example:
+
+ * [CGolfCourse GolfCourse] is a type for `golf-course` elements
+ * [CMedia Media] is a type for `media` elements
+
+=== Special Types ===
+
+*Enumeration* and *list* types ends with Enum.
+
+Example:
+
+ * [SMediaTypeEnum MediaTypeEnum]
+
+*Relational keys* are prefixed with `PK_` and `FK_`, *identifier* are prefixed with `ID_` and *references to identifiers* are prefixed with `REF_`.
+
+Example:
+
+ * Player_PK, Player_FK
+ * [GID_Player IDPlayer], [CREF_Player REF_Player]
+
+=== Root Element ===
+
+There is a single, unique top-level element called [Egolfml golfml].
+
+(The GolfML XML Schema is designed according to the [http://developers.sun.com/jsenterprise/archive/nb_enterprise_pack/reference/techart/design_patterns.html "Garden of Eden" design pattern].)
+
 == GolfML Document ==
 
 Elements and attributes are named using English language common golf terms and vocabulary.
@@ -38,38 +70,6 @@ Example:
 
  * `holes` is a collection of 1 or more `hole`
 
-
-== GolfML Schema ==
-
-=== XML Schema Constructs ===
-
-The name of XML Schema types, attributeGroups, groups, etc. are `CamelCase ` to easily differenciate them from GolfML elements names used in document instances.
-
-Example:
-
- * [CGolfCourse GolfCourse] is a type for `golf-course` elements
- * [CMedia Media] is a type for `media` elements
-
-=== Special Types ===
-
-*Enumeration* and *list* types ends with Enum.
-
-Example:
-
- * [SMediaTypeEnum MediaTypeEnum]
-
-*Relational keys* are prefixed with `PK_` and `FK_`, *identifier* are prefixed with `ID_` and *references to identifiers* are prefixed with `REF_`.
-
-Example:
-
- * Player_PK, Player_FK
- * [GID_Player IDPlayer], [CREF_Player REF_Player]
-
-=== Root Element ===
-
-There is a single, unique top-level element called [Egolfml golfml].
-
-(The GolfML XML Schema is designed according to the [http://developers.sun.com/jsenterprise/archive/nb_enterprise_pack/reference/techart/design_patterns.html "Garden of Eden" design pattern].)
 
 == See Also ==
 
