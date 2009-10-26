@@ -20,14 +20,14 @@ To prepare a round of golf, players usually have access to some reference inform
  * Yardage books in electronic form, maps, pictures, videos of hole overview;
  * Hole descriptions with markers, position of hasards or natural obstacle, green shape and sizes, GPS positions, personal notes.
 
-The purpose of this _documentation_ of a golf course is to collect information in a unique, structured, organized GolfML document that can be shared among golfer and that can be used by applications to present that information to golfers: It is possible to generate scorecards. If geographic information has been entered for a golf course, with markers and polygons that describe fairways, traps, greens, and lakes, it is possible to generate a yardage book from the available data. [CaseStudy1 (It is easy to do so in Google Earth for instance.)]
+The purpose of this _documentation_ of a golf course is to collect information in a unique, structured GolfML document that can be shared among golfer. The GolfML document can be used by applications to present that information to golfers. From it, it is possible to generate scorecards. If GPS information is available, with markers and surfaces that describe greens, fairways, traps, and lakes, it is possible to generate a yardage book. [CaseStudy1 (It is easy to do so in Google Earth for instance.)]
 
-Information about golf courses, layouts, distances... can change over time, and that information can be stored in a GolfML document as well.
+Information about golf courses, layouts, distances... can change over time. GolfML document handles such changes  as well.
 
 
 = 2. Records of Rounds of Golf, Scorecards, Statistics, and Equipment =
 
-Golfers like to keep scores, notes, and sometimes more information to track the progress of their game. The purpose of this section is to provide a place to collect such information, store it, organize it, and later refer to it to analyze the game.
+Golfers like to keep scores, notes, and more information to track the progress of their game. The purpose of this section is to provide a place to collect such information, store it, organize it, and later refer to it to analyze the game.
 
 In addition to score, golfer are able to record the position of the ball after each stroke (sometimes refered to as "location aware scorecard"), information about the club used, the quality of the shot and its result, notes about the hole or the course.
 
@@ -37,7 +37,7 @@ Players like to analyze their games through various statistics. While statistics
 
 GolfML offers a structured construct to store statistical information, together with data related to the statistics (period covered, courses used, rounds considered...) and methods used to derive the computed value.
 
-GolfML also offers a place to record golf-related belongings such as golf clubs, ball used, contents of golf bags, together with additional information (average distance of stroke with each club, brand, model, physical characteristics...)
+GolfML also offers a place to record golf-related belongings such as golf clubs, balls used, contents of golf bags, together with additional information (average distance of stroke with each club, brand, model, physical characteristics...)
 
 
 = Notes about GolfML Alternatives =
