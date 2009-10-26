@@ -1,0 +1,72 @@
+#summary Simple GolfML document (Scorecard)
+#sidebar TableOfContents
+
+Here is an example of a very simple GolfML document.
+
+While designed to be processed by computer programs, it is readable by golfers.
+
+{{{
+<?xml version="1.0" encoding="utf-8"?>
+<golfml xmlns="http://code.google.com/p/golfml"  version="0.9">
+
+	<country-club>
+	...
+	</country-club>
+
+	<player gender="male">
+		<name>Lion Wedge</name>
+		<date-of-birth>1980-12-30</date-of-birth>
+		<current-handicap handicap-system="EGA">8.6</current-handicap>
+		<contact type="mobile">
+			<phone>+00-000-0000000</phone>
+		</contact>
+		<contact type="home">
+			<email>golf.markup.language@gmail.com</email>
+		</contact>
+		<home-country-club>
+			<name>The Club at Oak Hill</name>
+		</home-country-club>
+				
+		<round>
+			<date>2009-09-29T08:30:00</date>
+			<scorecard>
+				<tees>
+					<country-club.name>The Club at Oak Hill</country-club.name>
+					<country-club.address.country.iso3166>US</country-club.address.country.iso3166>
+					<country-club.address.postal-code>00000</country-club.address.postal-code>
+					<country-club.golf-course.name>The Lakes</country-club.golf-course.name>
+					<country-club.golf-course.tee-set.name>Back</country-club.golf-course.tee-set.name>
+				</tees>
+				<handicap-strokes>10</handicap-strokes>
+
+				<score>
+					<hole number="1">
+						<strokes>6</strokes>
+						<putts>2</putts>
+						<points>2</points>
+						<statistics>
+							<fairway>1</fairway>
+							<green-in-regulation>1</green-in-regulation>
+						</statistics>
+						<stroke-detail>
+							<stroke number="1">
+								<golf-club>
+									<uid application.dotname="mgs">Driver</uid>
+								</golf-club>
+								<landing>hole</landing>
+								<precision>
+									<front-back>0</front-back>
+									<left-right>0</left-right>
+								</precision>
+							</stroke>
+							...
+					</stroke-detail>
+					</hole>
+					...
+
+				</score>
+			</scorecard>
+		</round>
+	</player>
+</golfml>
+}}}
