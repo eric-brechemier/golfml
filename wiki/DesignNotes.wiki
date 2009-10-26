@@ -35,15 +35,15 @@ The elements inside GolfML which allow for `<any>` content are described hereaft
 
 ==== Positions ====
 
-A position is a point on a golf course. golfml offers the GPS localisation of the point but alternative scheme can be used.
+A position is a point on a golf course. GolfML offers the GPS localisation of the point but alternative scheme can be used.
 For instance, some systems use a local grid map and store (x,y) coordinates to locate point of interest.
 
 {{{
 <position>
-  <position-other>
+  <other>
     <x>24</x>
     <>49</y>
-  </position-other>
+  <other>
 </position>
 }}}
 
