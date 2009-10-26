@@ -1,7 +1,7 @@
 #summary Notes and comments about decisions in the design process
 #sidebar TableOfContents
 
-== Room for Alternatives ==
+= Room for Alternatives =
 
 GolfML users may require additional contructs for particular use. GolfML allows for extension of its structure at a limited number of places.
 
@@ -81,7 +81,7 @@ Any application that uses golfml as a data foirmat can use the application eleme
 }}}
 
 	
-== Grouping of elements ==
+= Grouping of elements =
 
 Since XML Schema leaves us with `choice`, `all` and `sequence` to compose elements, we sometimes added an intermediate element to better control cardinality and still offer full flexibily for order of appearance of elements.
 
@@ -110,7 +110,7 @@ we added a container element such as:
 
 The parent `stroke-detail` element is not _required_ but its added construnct allows for better cardinality control of the parent element (a `all` construct). On the `hole` element, we can request a `all` construct, with optional `stroke-detail`, and inside the `stroke-detail` element, we require one or more stroke.
 
-== References to Remote GolfML Documents ==
+= References to Remote GolfML Documents =
 
 By nature, GolfML document are distributed.  While XML technologies address this issue in specific standards  (See XLink, XPoint, XPath 2.0, XQuery), the use of these standard in GolfML would make it a lot more complex.
 
