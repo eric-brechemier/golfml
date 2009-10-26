@@ -1,9 +1,7 @@
 #summary GolfML XML Schema Design Guidelines
 #sidebar TableOfContents
 
-= Introduction =
-
-This section introduce conventions used in the Golf Markup Language and its definition.
+This page introduce conventions used in the Golf Markup Language and its definition.
 
 
 = GolfML Document =
