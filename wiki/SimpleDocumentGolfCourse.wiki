@@ -57,7 +57,7 @@ While designed to be processed by computer programs, it is readable by golfers.
     </golf-course>
   </country-club>
 
-  <application name="com.scorecardapp" xmlns:s="http://scorecardapp.com/">
+  <application dotname="com.scorecard.app" name="scorecard application" xmlns:s="http://app.scorecard.com/golfml">
     <s:preference name="handicap-method">usga</s:preference>
     <s:preference name="units-system">metric</s:preference>
   </application>
