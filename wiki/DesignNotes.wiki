@@ -1,11 +1,7 @@
 #summary Notes and comments about decisions in the design process
 #sidebar TableOfContents
 
-= Introduction =
-
-
-
-= Grouping of elements =
+== Grouping of elements ==
 
 Since XML Schema leaves us with `choice`, `all` and `sequence` to compose elements, we sometimes added an intermediate element to better control cardinality and still offer full flexibily for order of appearance of elements.
 
@@ -34,11 +30,11 @@ we added a container element such as:
 
 The `stroke-detail` element is not required in GolfML but its added construnct allows for better cardinality control of the parent element (a `all` construct). On the `hole` element, we can request a `all` construct, with optional `stroke-detail`, and inside the `stroke-detail` element, we require one or more stroke.
 
-= Room for Alternatives =
+== Room for Alternatives ==
 		
 The following hooks are provided to plug in alternative methods of storing information.
 
-== Positions ==
+=== Positions ===
 A position is a point on a golf course. golfml offers the GPS localisation of the point but alternative scheme can be used.
 For instance, some systems use a local grid map and store (x,y) coordinates to locate point of interest.
 
@@ -52,7 +48,7 @@ For instance, some systems use a local grid map and store (x,y) coordinates to l
 }}}
 
 
-== Course qualification ==
+=== Course qualification ===
 
 A course qualification is a measure of the complexity of a course. The most common system use a course index value and a slope value. We provided room for alternate systems.
 
@@ -65,7 +61,7 @@ A course qualification is a measure of the complexity of a course. The most comm
 </qualification>
 }}}
 		
-== Hole placement ==
+=== Hole placement ===
 
 A hole placement is the position of the hole on the green. Official tour use "pin sheet" to locate hole using "paces" from the edge of the green.
 We allow for alternate system here as well. Some golf courses use simpler horizontal, vertical or grid division of the green and references to where the hole is located using those grids.
@@ -78,7 +74,7 @@ We allow for alternate system here as well. Some golf courses use simpler horizo
 </hole-placement>
 }}}
 
-== Applications ==
+=== Applications ===
 
 Any application that uses golfml as a data foirmat can use the application element to store application specific information and data.
 
@@ -92,7 +88,7 @@ Any application that uses golfml as a data foirmat can use the application eleme
 }}}
 
 	
-== Lists of values ==
+=== Lists of values ===
 
 When a fixed enumeration is requested, there is always a special value "other" and either a "other" attribute or element to specify alternate values.
 
@@ -102,7 +98,7 @@ When a fixed enumeration is requested, there is always a special value "other" a
 </handicap>
 }}}
 
-= References to Remote GolfML Documents =
+== References to Remote GolfML Documents ==
 
 By nature, GolfML document are distributed.  While XML technologies address this issue in specific standards  (See XLink, XPoint, XPath 2.0, XQuery), the use of these standard in GolfML would make it a lot more complex.
 
@@ -144,12 +140,3 @@ Example: File located at http://www.golf-dieppe.com/golfml/course.xml, maintaine
 Please be aware that hte remote document can change, move, or disappear.
 
 If is advised to copy the remote content in a local GolfML document.
-
-
-= See Also =
-
-[DesignGuidelines GolfML XML Schema Design Guidelines]
-
-[IdentifiersAndReferences Identifiers and References]
-
-[http://code.google.com/p/golfml/ Home]
