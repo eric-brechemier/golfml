@@ -7,7 +7,8 @@ While designed to be processed by computer programs, it is readable by golfers.
 {{{
 <?xml version="1.0" encoding="utf-8"?>
 <golfml xmlns="http://code.google.com/p/golfml"
-	version="0.9">
+	       version="0.9">
+
 	<country-club>
 		<name>The Club at Oak Hill</name>
 		<address>
@@ -57,8 +58,8 @@ While designed to be processed by computer programs, it is readable by golfers.
 	</country-club>
 
 	<application name="com.scorecardapp" xmlns:s="http://scorecardapp.com/">
-		<s:preference><s:name>handicap-method</s:name><s:value>usga</s:value></s:preference>
-		<s:preference><s:name>units-length</s:name><s:value>yards</s:value></s:preference>
+		<s:preference name="handicap-method">usga</s:preference>
+		<s:preference name="units-length">yards</s:preference>
 	</application>
 
 </golfml>
