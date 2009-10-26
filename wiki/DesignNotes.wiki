@@ -123,6 +123,8 @@ By nature, GolfML document are distributed.  While XML technologies address this
 
 To address references to remote documents, GolfML offers a simple remote document location attribute where needed.
 
+http://golfml.googlecode.com/files/remote-doc-example.png
+
 Example: File scorecard.xml references a set of tee played from.
 {{{
 <round>
