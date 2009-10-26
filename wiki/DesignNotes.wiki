@@ -1,40 +1,34 @@
 #summary Notes and comments about decisions in the design process
 #sidebar TableOfContents
 
-== Grouping of elements ==
-
-Since XML Schema leaves us with `choice`, `all` and `sequence` to compose elements, we sometimes added an intermediate element to better control cardinality and still offer full flexibily for order of appearance of elements.
-
-For example, instead of
-{{{
-<hole>
- ...
-  <stroke (...) />
-  <stroke (...) />
-  <stroke (...) />
- ...
-</hole>
-}}}
-we added a container element such as:
-{{{
-<hole>
- ...
-  <stroke-detail>
-    <stroke (...) />
-    <stroke (...) />
-    <stroke (...) />
-  </stroke-detail>
- ...
-</hole>
-}}}
-
-The `stroke-detail` element is not required in GolfML but its added construnct allows for better cardinality control of the parent element (a `all` construct). On the `hole` element, we can request a `all` construct, with optional `stroke-detail`, and inside the `stroke-detail` element, we require one or more stroke.
-
 == Room for Alternatives ==
-		
+
+GolfML users may require additional contructs for particular use. GolfML allows for extension of its structure at a limited number of places.
+
 The following hooks are provided to plug in alternative methods of storing information.
 
+=== Lists of values ===
+
+When a fixed enumeration is requested, there is always a special value "other" and either a "other" attribute or element to specify alternate values.
+
+For example, if a federation is not enlisted inside GolfML list of handicaping system, it is possible to add it:
+{{{
+<handicap handicap-system="other" other="GGA">
+  72
+</handicap>
+}}}
+
+Please note allowed value `other` assigned to the `handicap-system ` attribute and the _free text_ value `GGA` assigned to the `other` attribute. The `other` attribute is designed to accept the alternate value of the attribute.
+
+=== <Any/> Element Type ===
+
+Inside GolfML, a limited number of elements have the type `<any>` which allows for literally any content inside the element.
+
+
+=== Example of Extension inside GolfML ===
+
 === Positions ===
+
 A position is a point on a golf course. golfml offers the GPS localisation of the point but alternative scheme can be used.
 For instance, some systems use a local grid map and store (x,y) coordinates to locate point of interest.
 
@@ -88,15 +82,34 @@ Any application that uses golfml as a data foirmat can use the application eleme
 }}}
 
 	
-=== Lists of values ===
+== Grouping of elements ==
 
-When a fixed enumeration is requested, there is always a special value "other" and either a "other" attribute or element to specify alternate values.
+Since XML Schema leaves us with `choice`, `all` and `sequence` to compose elements, we sometimes added an intermediate element to better control cardinality and still offer full flexibily for order of appearance of elements.
 
+For example, instead of
 {{{
-<handicap handicap-system="other" other="GGA">
-  72
-</handicap>
+<hole>
+ ...
+  <stroke (...) />
+  <stroke (...) />
+  <stroke (...) />
+ ...
+</hole>
 }}}
+we added a container element such as:
+{{{
+<hole>
+ ...
+  <stroke-detail>
+    <stroke (...) />
+    <stroke (...) />
+    <stroke (...) />
+  </stroke-detail>
+ ...
+</hole>
+}}}
+
+The parent `stroke-detail` element is not _required_ but its added construnct allows for better cardinality control of the parent element (a `all` construct). On the `hole` element, we can request a `all` construct, with optional `stroke-detail`, and inside the `stroke-detail` element, we require one or more stroke.
 
 == References to Remote GolfML Documents ==
 
