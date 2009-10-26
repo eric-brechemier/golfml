@@ -9,29 +9,25 @@ We provide a way to uniquely identify a golf course, or a player, or other objec
 
 GolfML needs to uniquely identify the following entities:
 
- # Countries
- # Municipalities
- # Country Clubs
- # Golf courses
  # Sets of tees
  # Players
+ # Golf playing clubs
 
 Other applications may require identifications of other entities.
 
 A golf course should be defined once and for all other GolfML document instances.
 
-=== Golf Courses ===
+=== Sets of Tees ===
 
-To insure uniqueness of golf courses, we build a identifier on the following unambiguous attributes:
+To insure uniqueness of sets of tees on a golf courses, we build a identifier on the following unambiguous attributes:
 
  # Country: We use the *ISO 3166 2 letter code* to uniquely identify the *country* where the golf course is located.
- # Municipality: We use either the *postal code* (which should be unique in a given country) to uniquely identify a place in a country. If the country does not use postal code, the name of the municipality should be used instead.
- # Country-club name: The name of the country club, park, facility... where the golf course is located.
- # Golf course name: The name of the golf course at the above location. Some locations offer more than one golf course.
+ # Municipality: We use either the *postal code* (which should be unique in a given country) to uniquely identify a place in a country. If the country does not use postal code, the name of the municipality should be used instead. The combination of Country and PostalCode uniquely identify a Municipality.
+ # Country-club name: The name of the country club, park, facility... The combination of CountryClubName, PostalCode, and Country uniquely identify a CountryClub.
+ # Golf course name: The name of the golf course at the above location.
+ # Tee set name: The name of the set of tees used to play the round of golf on the above golf course.
 
-To identify a precise set of tees for a round of golf, the following identifier is added:
-
- # Tee set name: The name of the set of tees used to play the round from. If sets of tees have no names, colours should be used instead.
+The combination of all five elements uniquely identify a set of tees, worldwide.
 
 === Players ===
 
