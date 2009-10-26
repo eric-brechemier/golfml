@@ -1,10 +1,6 @@
 #summary General GolfML Issues
 #sidebar TableOfContents
 
-= Introduction =
-
-List of issues.
-
 = GolfML Data =
 
 == Remote Document ==
@@ -32,8 +28,8 @@ Another standard, [http://www.sportsml.org/ SportML], is targeted at providing s
 
 = SVG =
 
-== Altitude ==
+== Altitude in GolfML documents ==
 
 Google Earth does not easily provide altitude information. Should that information be available, it is not currently used by the golfml2svg stylesheet to provide altitude information.
 
-How to graphically transpose altitude? Shades of green? Control transparency? Add a mask? Proper use of a [http://en.wikipedia.org/wiki/Cartographic_relief_depiction shading algorithm] requires extensive programming.
+Altitude is usualy represented using a proper [http://en.wikipedia.org/wiki/Cartographic_relief_depiction shading algorithm] which requires extensive programming.
