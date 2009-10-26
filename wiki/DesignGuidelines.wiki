@@ -5,6 +5,12 @@ This page introduce conventions used in the Golf Markup Language and its definit
 
 == GolfML Schema ==
 
+=== XML Schema Namespace ===
+
+The GolfML namespace is
+
+`xmlns="http://code.google.com/p/golfml"`
+
 === XML Schema Constructs ===
 
 The name of XML Schema types, attributeGroups, groups, etc. are `CamelCase `.
