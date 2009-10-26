@@ -45,6 +45,7 @@
     * [SUnitOfWeight UnitOfWeight]
     * [SUnitSystemEnum UnitSystemEnum]
     * [SWindEnum WindEnum]
+
  * Complex Types
     * [CAddress Address]
     * [CAltitude Altitude]
@@ -113,6 +114,7 @@
     * [CVersion Version]
     * [CWeather Weather]
     * [CWeightWithUnits WeightWithUnits]
+
  * Element Groups
     * [GID_GolfBag ID_GolfBag]
     * [GID_GolfClub ID_GolfClub]
@@ -120,6 +122,7 @@
     * [GID_Player ID_Player]
     * [GID_Tees ID_Tees]
     * [GMediaChoice MediaChoice]
+
  * Attribute Groups
     * [AMediaTypeAttributes MediaTypeAttributes]
     * [AOther Other]
