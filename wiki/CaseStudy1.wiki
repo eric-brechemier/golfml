@@ -1,11 +1,7 @@
 #summary Case Study: Design of a yardage book with Google Earth
 #sidebar TableOfContents
 
-= Introduction =
-
 The purpose of this project is to design a professional looking yardage book and scorecard for a golf course.
-
-= Procedure =
 
 == Collect Information ==
 
@@ -118,7 +114,3 @@ http://golfml.googlecode.com/files/hole15-hillshading.png
 The [http://code.google.com/p/golfml/downloads/list Download area] of the GolfML project contains some sample graphics.
 
 The [http://code.google.com/p/golfml/source/browse/ source code area] contains XSL transformation sheets.
-
-= See Also =
-
-[CaseStudy2 Case Study: Design of HTML Scorecards]
