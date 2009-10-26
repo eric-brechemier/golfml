@@ -7,7 +7,7 @@ This page introduce conventions used in the Golf Markup Language and its definit
 
 === XML Schema Constructs ===
 
-The name of XML Schema types, attributeGroups, groups, etc. are `CamelCase ` to easily differenciate them from GolfML elements names used in document instances.
+The name of XML Schema types, attributeGroups, groups, etc. are `CamelCase `.
 
 Example:
 
