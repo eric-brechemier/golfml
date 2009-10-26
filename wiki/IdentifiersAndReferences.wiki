@@ -49,7 +49,7 @@ Inside a GolfML document, we use the following identifiers:
 
 == Naming Convention ==
 
-For a given entity, we defined a Identifier Group of Elements.
+For a given entity, we defined a Identifier _Group of Elements_.
 
 For example, to uniquely identify a player in GolfML, we use the following elements:
 {{{
