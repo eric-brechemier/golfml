@@ -55,5 +55,11 @@ While designed to be processed by computer programs, it is readable by golfers.
 			</tee-set>
 		</golf-course>
 	</country-club>
+
+	<application name="com.scorecardapp" xmlns:s="http://scorecardapp.com/">
+		<s:preference><s:name>handicap-method</s:name><s:value>usga</s:value></s:preference>
+		<s:preference><s:name>units-length</s:name><s:value>yards</s:value></s:preference>
+	</application>
+
 </golfml>
 }}}
