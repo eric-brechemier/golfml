@@ -2,8 +2,8 @@
 #sidebar TableOfContents
 
 GolfML specifies a vendor neutral, standard format for the distribution of:
-1. Golf courses information and data.
-Player scorecards, statistics, and belongings.
+   # Golf courses information and data.
+   # Player scorecards, statistics, and belongings.
 Data stored in GolfML formated documents are processed by GolfML compliant web sites and applications. GolfML eases data exchange.
 
 == Golf Course Information and Data ==
