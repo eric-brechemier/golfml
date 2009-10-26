@@ -3,7 +3,7 @@
 
 The ultimate goal of GolfML is to store golf course descriptions and player scorecards in GolfML formatted documents that are spread all over the world.
 
-We provide a way to uniquely identify a golf course and always refer to it using the same information.
+We provide a way to uniquely identify a golf course, or a player, or other object of interest for the game of golf and always refer to it using the same information.
 
 == Identifiers ==
 
