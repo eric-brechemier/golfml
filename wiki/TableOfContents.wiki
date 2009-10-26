@@ -1,12 +1,23 @@
 #summary Table of Content
+
 [Welcome Welcome]
+
 [Workflow Typical GolfML Workflows]
+
 [Goals GolfML's Goals]
+
 [DesignGuidelines Design Guidelines]
+
 [DesignNotes Desing Notes]
+
 [CasesStudy Case studies]
+
 [FrequentlyAskedQuestions FAQ]
+
 [Egolfml GolfML Reference]
+
 [Issues Design Issues]
+
 [Branding Branding]
+
 [Links Links]
