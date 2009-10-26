@@ -1,4 +1,5 @@
 #summary Typical use of GolfML
+#sidebar TableOfContents
 
 = 1. Definition of golf courses and upload of definition in GolfML format =
 
