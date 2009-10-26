@@ -8,7 +8,7 @@
       * [FrequentlyAskedQuestions FAQ]
       * [Issues Issues]
    * Examples
-      * [SimpleDocumentCourse Simple GolfML Golf Course]
+      * [SimpleDocumentGolfCourse Simple GolfML Golf Course]
       * [SimpleDocumentScorecard Simple GolfML Scorecard]
       * [CasesStudy Case studies]
       * [Workflow Typical workflows]
