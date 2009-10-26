@@ -1,4 +1,5 @@
 #summary Usage of GolfML logo and references
+#sidebar TableOfContents
 
 = Introduction =
 
