@@ -28,6 +28,8 @@ http://golfml.googlecode.com/files/golfml-microformat.png
 
 [http://code.google.com/p/golfml/source/browse/#svn/golfml/examples/instances http://golfml.googlecode.com/files/golfml-microformat-ball.png] Download GolfML sample document [http://code.google.com/p/golfml/source/browse/#svn/golfml/examples/instances here].
 
+http://golfml.googlecode.com/files/logo256.png Higher quality larger version here.
+
 = Description =
 
 Here is a suggestion for a short explanation of golfml, to be used in pop-up window or baloon help:
