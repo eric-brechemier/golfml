@@ -1,6 +1,6 @@
 [Welcome Welcome]
 
-[Goals GolfML's Goals]
+[Goals What is GolfML?]
 
    * Design
       * [DesignGuidelines Guidelines]
