@@ -7,13 +7,12 @@
 * Design
    * [DesignGuidelines Design Guidelines]
    * [DesignNotes Desing Notes]
+   * [FrequentlyAskedQuestions FAQ]
    * [Issues Design Issues]
 
 * Examples
    * [CasesStudy Case studies]
    * [Workflow Typical GolfML Workflows]
-
-* [FrequentlyAskedQuestions FAQ]
 
 * References
    * [Egolfml GolfML Reference]
