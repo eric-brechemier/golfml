@@ -42,4 +42,4 @@ anyType
 ----
   		
 ===  Local Usage ===
-    	[CCollection Collection], [CCountryClubChoice CountryClubChoice]
+    	[CCountryClubChoice CountryClubChoice], [CStatisticsCollectionDescription StatisticsCollectionDescription]

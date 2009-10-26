@@ -29,7 +29,7 @@ anyType
 ===  Model ===
 
 	<...  `other`=xs:string  `type`=[SStatisticCollectionTypesEnum StatisticCollectionTypesEnum]>
-            ( [CCollection collection], [CStatisticValue value]+   )
+            ( [CStatisticsCollectionDescription collection], [CStatisticValue value]+   )
   </...>
 ----
   		      
@@ -42,7 +42,7 @@ anyType
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| [CCollection collection] ||  Information regarding the collection of the statistic || [CCollection golfml:Collection] ||
+|| [CStatisticsCollectionDescription collection] ||  Information regarding the collection of the statistic || [CStatisticsCollectionDescription golfml:StatisticsCollectionDescription] ||
 || [CStatisticValue value] ||  						Value of a statistic computed for the supplied collection type.					 || [CStatisticValue golfml:StatisticValue] ||
 
 ----
