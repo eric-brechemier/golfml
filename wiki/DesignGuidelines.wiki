@@ -1,5 +1,4 @@
 #summary GolfML XML Schema Design Guidelines
-#sidebar TableOfContents
 
 = Introduction =
 
