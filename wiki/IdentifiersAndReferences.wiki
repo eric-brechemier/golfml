@@ -24,8 +24,8 @@ A golf course should be defined once and for all other GolfML document instances
 
 To insure uniqueness of golf courses, we build a identifier on the following unambiguous attributes:
 
- # Country: We use the ISO 3166 2 letter code to uniquely identify the country where the golf course is located.
- # Municipality: We use either the postal code (which should be unique in a given country) to uniquely identify a place in a country. If the country does not use postal code, the name of the municipality should be used instead.
+ # Country: We use the *ISO 3166 2 letter code* to uniquely identify the *country* where the golf course is located.
+ # Municipality: We use either the *postal code* (which should be unique in a given country) to uniquely identify a place in a country. If the country does not use postal code, the name of the municipality should be used instead.
  # Country-club name: The name of the country club, park, facility... where the golf course is located.
  # Golf course name: The name of the golf course at the above location. Some locations offer more than one golf course.
 
