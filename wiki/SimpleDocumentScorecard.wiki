@@ -36,7 +36,8 @@ While designed to be processed by computer programs, it is readable by golfers.
           <country-club.address.postal-code>00000</country-club.address.postal-code>
           <country-club.golf-course.name>The Lakes</country-club.golf-course.name>
           <country-club.golf-course.tee-set.name>Back</country-club.golf-course.tee-set.name>
-        </tees>
+        </tees
+
         <handicap-strokes>10</handicap-strokes>
 
         <score>
@@ -60,7 +61,7 @@ While designed to be processed by computer programs, it is readable by golfers.
                 </precision>
               </stroke>
               ...
-          </stroke-detail>
+            </stroke-detail>
           </hole>
           ...
 
