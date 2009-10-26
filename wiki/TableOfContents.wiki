@@ -1,17 +1,12 @@
 #summary Table of Content
-
-[Goals GolfML Design Goals]
-
-[DesignGuidelines GolfML XML Schema Design Guidelines]
-
+[Welcome Welcome]
+[Workflow Typical GolfML Workflows]
+[Goals GolfML's Goals]
+[DesignGuidelines Design Guidelines]
+[DesignNotes Desing Notes]
+[CasesStudy Case studies]
+[FrequentlyAskedQuestions FAQ]
 [Egolfml GolfML Reference]
-
-[Workflow Typical use of GolfML]
-
-[CasesStudy	Golf Markup Language Examples and Cases Study]
-
-[FrequentlyAskedQuestions Frequently Asked Questions]
-
-[Branding Branding and logo]
-
-[Links Links of Interest for this Project]
+[Issues Design Issues]
+[Branding Branding]
+[Links Links]
