@@ -2,22 +2,22 @@
 
 [Welcome Welcome]
 
-[Workflow Typical GolfML Workflows]
-
 [Goals GolfML's Goals]
 
 Design
  * [DesignGuidelines Design Guidelines]
  * [DesignNotes Desing Notes]
+ * [Issues Design Issues]
 
-[CasesStudy Case studies]
+Examples
+ * [CasesStudy Case studies]
+ * [Workflow Typical GolfML Workflows]
 
 [FrequentlyAskedQuestions FAQ]
 
-[Egolfml GolfML Reference]
+References
+ * [Egolfml GolfML Reference]
 
-[Issues Design Issues]
-
-[Branding Branding]
-
-[Links Links]
+Other
+ * [Branding Branding]
+ * [Links Links]
