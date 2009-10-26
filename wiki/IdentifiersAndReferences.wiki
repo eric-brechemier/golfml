@@ -59,20 +59,14 @@ For example, to uniquely identify a player in GolfML, we use the following eleme
 </player>
 }}}
 
-We create a group named *`ID_Player`* which contains the following elements:
+We create a group named *`ID_Player`* which contains the following elements. Elements in the group are named after the GolfML hierarchy of elements used in the key. Name-forming element names are separated by period. So, element `name` inside element `player` becomes element `player.name` in the identifier element, and so on.
 {{{
 <xs:sequence>
   <xs:element name="player.name" type="xs:string"/>
   <xs:element name="player.date-of-birth" type="xs:date"/>
 </xs:sequence>
 }}}
-Elements in the group are named after the GolfML hierarchy of elements used in the key. Name-forming element names are separated by period.
-{{{
-<player>
-  <name>
-  <date-of-birth>
-}}}
-becomes:
+A *reference* to a `player` element, elsewhere in a GolfML document has the following structure:
 {{{
 <player-ref [remote-golfml-url="http://tigerwoods.com/profile.xml"]>
   <player.name>Tiger Woods</player.name>
@@ -87,7 +81,7 @@ becomes:
 Example:
 {{{
 <player>
-  <uid>2593-3953-3919-9386</uid>
+  <uid application.dotname="com.mygolfapp">2593-3953-3919-9386</uid>
   <name>Tiger Woods</name>
   <date-of-birth>1975-12-30</date-of-birth>
 </player>
