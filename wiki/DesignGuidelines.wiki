@@ -74,8 +74,4 @@ There is a single, unique top-level element called [Egolfml golfml].
 
 = See Also =
 
-[DesignNotes Comments about the design of GolfML XML Schema]
-
 [IdentifiersAndReferences Identifiers and References]
-
-[http://code.google.com/p/golfml/ Home]
