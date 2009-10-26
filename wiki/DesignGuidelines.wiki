@@ -3,16 +3,15 @@
 
 This page introduce conventions used in the Golf Markup Language and its definition.
 
-
-= GolfML Document =
+== GolfML Document ==
 
 Elements and attributes are named using English language common golf terms and vocabulary.
 In general, use elements for data that will be produced or consumed by an application and attributes for metadata.   
 A good rule of thumb is to use elements for nouns and attributes for adjectives.
 
-== Naming Conventions ==
+=== Naming Conventions ===
 
-=== Elements and Types ===
+==== Elements and Types ====
 
 Elements and XML schema types should be defined using dash ('-') separated lower case words.
 Element and type names can be any length. They should be meaningful.
@@ -23,7 +22,7 @@ Example:
  * `tee-time`
 
 
-=== Attributes ===
+==== Attributes ====
 
 Attributes should be defined using dash ('-') separated words.
 Example:
@@ -32,7 +31,7 @@ Example:
  * media-type
 
 
-=== Plurals ===
+==== Plurals ====
 
 Collections of elements of the same type can be organized into a parent element. The name of the parent element should be a plural form of the children elements.
 Example:
@@ -40,9 +39,9 @@ Example:
  * `holes` is a collection of 1 or more `hole`
 
 
-= GolfML Schema =
+== GolfML Schema ==
 
-== XML Schema Constructs ==
+=== XML Schema Constructs ===
 
 The name of XML Schema types, attributeGroups, groups, etc. are `CamelCase ` to easily differenciate them from GolfML elements names used in document instances.
 
@@ -51,7 +50,7 @@ Example:
  * [CGolfCourse GolfCourse] is a type for `golf-course` elements
  * [CMedia Media] is a type for `media` elements
 
-== Special Types ==
+=== Special Types ===
 
 *Enumeration* and *list* types ends with Enum.
 
@@ -66,12 +65,12 @@ Example:
  * Player_PK, Player_FK
  * [GID_Player IDPlayer], [CREF_Player REF_Player]
 
-== Root Element ==
+=== Root Element ===
 
 There is a single, unique top-level element called [Egolfml golfml].
 
 (The GolfML XML Schema is designed according to the [http://developers.sun.com/jsenterprise/archive/nb_enterprise_pack/reference/techart/design_patterns.html "Garden of Eden" design pattern].)
 
-= See Also =
+== See Also ==
 
 [IdentifiersAndReferences Identifiers and References]
