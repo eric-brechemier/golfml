@@ -9,6 +9,8 @@ The following hooks are provided to plug in alternative methods of storing infor
 
 === Lists of values ===
 
+Before using the extension mechanism discussed below, it is legitimate to ask whether the proposed value can or cannot be part of the standard. It is very likely that it will be added to the list of valid values for an element or an attribute and there will be no need for this extension mechanism.
+
 When a fixed enumeration is requested, there is always a special value "other" and either a "other" attribute or element to specify alternate values.
 
 For example, if a federation is not enlisted inside GolfML list of handicaping system, it is possible to add it:
@@ -21,6 +23,11 @@ For example, if a federation is not enlisted inside GolfML list of handicaping s
 Please note allowed value `other` assigned to the `handicap-system ` attribute and the _free text_ value `GGA` assigned to the `other` attribute. The `other` attribute is designed to accept the alternate value of the attribute.
 
 === < Any> Element Type ===
+
+As for the values of a list of accepted values, the first discussion to have is to propose an extension of the GolfML document format to handle application specific data.
+
+ # If the data and its structure is generic, used in other applications and/or web sites, it will be added to the standard.
+ # We will investigate how data can be managed using the _existing_ standard.
 
 Inside GolfML, a limited number of elements have the type `<any>` which allows for literally any content inside the element.
 
