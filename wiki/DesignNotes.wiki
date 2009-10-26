@@ -20,7 +20,7 @@ For example, if a federation is not enlisted inside GolfML list of handicaping s
 
 Please note allowed value `other` assigned to the `handicap-system ` attribute and the _free text_ value `GGA` assigned to the `other` attribute. The `other` attribute is designed to accept the alternate value of the attribute.
 
-=== <Any> Element Type ===
+=== &lt;Any> Element Type ===
 
 Inside GolfML, a limited number of elements have the type `<any>` which allows for literally any content inside the element.
 
