@@ -28,6 +28,8 @@ Another standard, [http://www.sportsml.org/ SportML], is targeted at providing s
 
 = SVG =
 
+SVG documents and XML transformation sheets are only provided as examples.
+
 == Altitude in GolfML documents ==
 
 Google Earth does not easily provide altitude information. Should that information be available, it is not currently used by the golfml2svg stylesheet to provide altitude information.
