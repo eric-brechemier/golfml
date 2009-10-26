@@ -3,13 +3,13 @@
 [Goals GolfML's Goals]
 
    * Design
-      * [DesignGuidelines Design Guidelines]
-      * [DesignNotes Desing Notes]
+      * [DesignGuidelines Guidelines]
+      * [DesignNotes Notes]
       * [FrequentlyAskedQuestions FAQ]
-      * [Issues Design Issues]
+      * [Issues Issues]
    * Examples
       * [CasesStudy Case studies]
-      * [Workflow Typical GolfML Workflows]
+      * [Workflow Typical workflows]
    * References
       * [Egolfml GolfML Reference]
    * Other
