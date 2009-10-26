@@ -1,8 +1,6 @@
 #summary GolfML Identifier and References
 #sidebar TableOfContents
 
-= Introduction =
-
 The ultimate goal of GolfML is to store golf course descriptions and player scorecards in GolfML formatted documents.
 GolfML documents are spread all over the world.
 
