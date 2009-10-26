@@ -42,9 +42,9 @@ While designed to be processed by computer programs, it is readable by golfers.
 
         <score>
           <hole number="1">
-            <strokes>6</strokes>
-            <putts>2</putts>
-            <points>2</points>
+            <strokes>1</strokes>
+            <putts>0</putts>
+            <points>5</points>
             <statistics>
               <fairway>1</fairway>
               <green-in-regulation>1</green-in-regulation>
