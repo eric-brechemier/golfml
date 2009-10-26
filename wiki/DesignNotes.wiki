@@ -24,8 +24,7 @@ Please note allowed value `other` assigned to the `handicap-system ` attribute a
 
 Inside GolfML, a limited number of elements have the type `<any>` which allows for literally any content inside the element.
 
-
-=== Example of Extension inside GolfML ===
+The elements inside GolfML which allow for `<any>` content are described hereafter.
 
 ==== Positions ====
 
