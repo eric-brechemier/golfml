@@ -1,4 +1,5 @@
 #summary Golf Markup Language Reference: complexType REF_GolfBag.
+#sidebar TOCSchema
 
 == Name ==
 

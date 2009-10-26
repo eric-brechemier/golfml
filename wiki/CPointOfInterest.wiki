@@ -1,4 +1,5 @@
 #summary Golf Markup Language Reference: complexType PointOfInterest.
+#sidebar TOCSchema
 
 == Name ==
 

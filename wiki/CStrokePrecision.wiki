@@ -1,4 +1,5 @@
 #summary Golf Markup Language Reference: complexType StrokePrecision.
+#sidebar TOCSchema
 
 == Name ==
 
@@ -30,7 +31,7 @@ anyType
 ===  Model ===
 
 	<...  `type`=xs:string>
-            ( ( [SStrokePrecisionValue front-back], [SStrokePrecisionValue left-right] )? | ( [SStrokeLengthEnum front-back-text], [SStrokeDirectionEnum left-right-text] ) ) 
+            ( ( [SStrokePrecisionValue front-back]?, [SStrokePrecisionValue left-right]? ) | ( [SStrokeLengthEnum front-back-text]?, [SStrokeDirectionEnum left-right-text]? ) ) 
   </...>
 ----
   		      

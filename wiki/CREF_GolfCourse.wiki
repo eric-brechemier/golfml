@@ -1,4 +1,5 @@
 #summary Golf Markup Language Reference: complexType REF_GolfCourse.
+#sidebar TOCSchema
 
 == Name ==
 

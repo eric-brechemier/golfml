@@ -1,4 +1,5 @@
 #summary Golf Markup Language Reference: attributeGroup RemoteGolfML.
+#sidebar TOCSchema
 
 == Name ==
 

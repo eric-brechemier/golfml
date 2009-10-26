@@ -1,4 +1,5 @@
 #summary Golf Markup Language Reference: simpleType ISO3166CountryCodeEnum.
+#sidebar TOCSchema
 
 == Name ==
 

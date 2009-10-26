@@ -1,4 +1,5 @@
 #summary Golf Markup Language Reference: complexType Country.
+#sidebar TOCSchema
 
 == Name ==
 

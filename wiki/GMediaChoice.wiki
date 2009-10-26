@@ -1,4 +1,5 @@
 #summary Golf Markup Language Reference: group MediaChoice.
+#sidebar TOCSchema
 
 == Name ==
 

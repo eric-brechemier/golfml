@@ -1,4 +1,5 @@
 #summary Golf Markup Language Reference: complexType HolePlacement.
+#sidebar TOCSchema
 
 == Name ==
 

@@ -1,4 +1,5 @@
 #summary Golf Markup Language Reference: complexType StrokeDetail.
+#sidebar TOCSchema
 
 == Name ==
 

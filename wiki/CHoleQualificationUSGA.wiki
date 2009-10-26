@@ -1,4 +1,5 @@
 #summary Golf Markup Language Reference: complexType HoleQualificationUSGA.
+#sidebar TOCSchema
 
 == Name ==
 

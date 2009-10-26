@@ -1,4 +1,5 @@
 #summary Golf Markup Language Reference: simpleType GolfClubTypeEnum.
+#sidebar TOCSchema
 
 == Name ==
 

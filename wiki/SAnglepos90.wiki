@@ -1,4 +1,5 @@
 #summary Golf Markup Language Reference: simpleType Anglepos90.
+#sidebar TOCSchema
 
 == Name ==
 

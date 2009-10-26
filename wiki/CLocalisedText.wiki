@@ -1,4 +1,5 @@
 #summary Golf Markup Language Reference: complexType LocalisedText.
+#sidebar TOCSchema
 
 == Name ==
 

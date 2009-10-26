@@ -1,4 +1,5 @@
 #summary Golf Markup Language Reference: complexType Round.
+#sidebar TOCSchema
 
 == Name ==
 

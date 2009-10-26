@@ -1,4 +1,5 @@
 #summary Golf Markup Language Reference: group ID_GolfBag.
+#sidebar TOCSchema
 
 == Name ==
 

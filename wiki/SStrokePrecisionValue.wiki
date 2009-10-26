@@ -1,4 +1,5 @@
 #summary Golf Markup Language Reference: simpleType StrokePrecisionValue.
+#sidebar TOCSchema
 
 == Name ==
 
