@@ -1,5 +1,5 @@
 #summary General GolfML Issues
-
+#sidebar TableOfContents
 
 = Introduction =
 
