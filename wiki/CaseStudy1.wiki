@@ -1,4 +1,5 @@
 #summary Case Study: Design of a yardage book with Google Earth
+#sidebar TableOfContents
 
 = Introduction =
 
