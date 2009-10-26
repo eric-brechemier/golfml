@@ -43,6 +43,12 @@ Inside a GolfML document, we use the following identifiers:
  # Golf clubs: A golf club is a complex description of a club to play golf with all its technical and commercial information.
  # Golf bag: A golf bag is a collection of golfing equipment that includes not only golf clubs but also balls, apparel, etc.
 
+For convenience, we also provide the following identifiers:
+
+ # Golf Course
+ # Country Club
+ # Municipality
+
 == Naming Convention for Identifiers and References ==
 
 For a given entity, we defined a Identifier _Group of Elements_.
