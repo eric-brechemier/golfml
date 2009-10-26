@@ -6,8 +6,7 @@ While designed to be processed by computer programs, it is readable by golfers.
 
 {{{
 <?xml version="1.0" encoding="utf-8"?>
-<golfml xmlns="http://code.google.com/p/golfml"
-	       version="0.9">
+<golfml xmlns="http://code.google.com/p/golfml"  version="0.9">
 
 	<country-club>
 		<name>The Club at Oak Hill</name>
