@@ -1,4 +1,5 @@
 #summary Simple GolfML document
+#sidebar TableOfContents
 
 Here is an example of a very simple GolfML document.
 
