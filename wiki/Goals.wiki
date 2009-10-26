@@ -1,4 +1,5 @@
 #summary Golf Markup Language: General Goals.
+#sidebar TableOfContents
 
 = Introduction =
 
