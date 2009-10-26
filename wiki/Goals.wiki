@@ -1,49 +1,42 @@
 #summary Golf Markup Language: General Goals.
 #sidebar TableOfContents
 
-The goals of GolfML is to provide a language for:
- # The description of golf courses.
- # The record of golf rounds, scorecards, statistics, and equipment.
+GolfML specifies a vendor neutral, standard format for the distribution of:
+1. Golf courses information and data.
+Player scorecards, statistics, and belongings.
+Data stored in GolfML formated documents are processed by GolfML compliant web sites and applications. GolfML eases data exchange.
+
+== Golf Course Information and Data ==
+
+GolfML document stores all information about a golf facility:
+
+   * Name, address, phone numbers, contact information, amenities, pictures, videos, maps…
+
+   * For the golf course itself, a GolfML document contains information about tee sets, par, distances, pictures, maps or drawings of each hole.
+
+   * Finally, a GolfML document can store (GPS) positions of amenities, golf holes, greens, fairways, traps, lakes...
+
+Information about golf courses, layouts, distances... changes over time. GolfML document handles such changes  as well.
+
+A GolfML document that contains golf course information can easily be exchanged between applications, web sites, or golfers. It not longer is necessary to type in that information over and over again. It is easier to find the GolfML document and let the application do the work.
+
+== Player Scorecards, Statistics, and Belongings ==
+
+GolfML documents also keep information about a golfer:
+
+   * Name, address, phone numbers, contact information, current handicap, pictures…
+
+   * Belongings such as golf club, balls, training devices, golf bags, together with additional information (average distance of stroke with each club, brand, model, physical characteristics...)
+
+   * Scorecards for each round of golf played. All detailed information recorded during a round of golf can be stored in a GolfML document. In particular, if a «location aware» scorecard application is used, it is possible to record position of each stroke.
+
+   * Statistics: GolfML offers a structured construct to store statistical information, together with data related to the statistics (period covered, courses used, rounds considered...) and methods used to derive the computed value.
+
+   * Golfers often play a variety of games and challenges for fun or money. GolfML has room to keep a track of such information in a simple way as well.
 
 
-= 1. Description of Golf Courses =
-
-The description of golf courses consists of
- * general data like name, address, contact phone number, email address, and web site,
- * technical details of interest to the game of golf.
-
-A golf course generally consists of 18 holes. Golfers can play these holes from different starting positions (tees) depending on their skills.
-
-To prepare a round of golf, players usually have access to some reference information provided by the course itself or by specialized companies or web sites: Scorecard, general map of the course, "yardage" books, pin placement sheets, notes and drawings. A hole on a course is piece of land with hasards, traps, natural obstacle... marked on drawings or maps. Courses also contain distance markers to help the golfer estimate the distance to a target. All these elements can be included in a GolfML document in a structured way:
-
- * Scorecards with hole pars, distances, and handicap indices;
- * Yardage books in electronic form, maps, pictures, videos of hole overview;
- * Hole descriptions with markers, position of hasards or natural obstacle, green shape and sizes, GPS positions, personal notes.
-
-The purpose of this _documentation_ of a golf course is to collect information in a unique, structured GolfML document that can be shared among golfer. The GolfML document can be used by applications to present that information to golfers. From it, it is possible to generate scorecards. If GPS information is available, with markers and surfaces that describe greens, fairways, traps, and lakes, it is possible to generate a yardage book. [CaseStudy1 (It is easy to do so in Google Earth for instance.)]
-
-Information about golf courses, layouts, distances... can change over time. GolfML document handles such changes  as well.
-
-
-= 2. Records of Rounds of Golf, Scorecards, Statistics, and Equipment =
-
-Golfers like to keep scores, notes, and more information to track the progress of their game. The purpose of this section is to provide a place to collect such information, store it, organize it, and later refer to it to analyze the game.
-
-In addition to score, golfer are able to record the position of the ball after each stroke (sometimes refered to as "location aware scorecard"), information about the club used, the quality of the shot and its result, notes about the hole or the course.
-
-Golfers often play a variety of games and challenges for fun or money. GolfML has room to keep a track of such information in a simple way as well.
-
-Players like to analyze their games through various statistics. While statistics can always be re-computed from raw data, it is convenient to keep a baselined, denormalized version of some statistics. It is simply easier and more convenient to store the computed value rather than recomputing the value each time. For example, a player may want to keep his scoring average per quarter. It is simply easier to store the value in a statistic section at the end of each quarter rather than computing the value each time it is needed.
-
-GolfML offers a structured construct to store statistical information, together with data related to the statistics (period covered, courses used, rounds considered...) and methods used to derive the computed value.
-
-GolfML also offers a place to record golf-related belongings such as golf clubs, balls used, contents of golf bags, together with additional information (average distance of stroke with each club, brand, model, physical characteristics...)
-
-
-= Notes about GolfML Alternatives =
+== Notes about Existing Alternatives ==
 
 The primary goal of GolfML is to record golf-related data from players.
 
 SportML has a section dedicated to the game of golf. SportML is oriented towards the communication of results in sport events. While SportML has features to store information such as player characteristics, statistics, and results of rounds of golf, SportML is not designed to store other golf-related or detailed information about a game. SportML cannot store information about course length, design, marker positions, SportML cannot record details about strokes, ball position, or content of a bag of golf. It was simply not design to record such information.
-
-[http://code.google.com/p/golfml/ Home]
