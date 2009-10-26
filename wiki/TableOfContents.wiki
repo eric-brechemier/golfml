@@ -6,9 +6,9 @@
 
 [Goals GolfML's Goals]
 
-[DesignGuidelines Design Guidelines]
-
-[DesignNotes Desing Notes]
+Design
+ * [DesignGuidelines Design Guidelines]
+ * [DesignNotes Desing Notes]
 
 [CasesStudy Case studies]
 
