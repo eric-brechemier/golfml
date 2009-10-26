@@ -7,14 +7,11 @@
       * [DesignNotes Desing Notes]
       * [FrequentlyAskedQuestions FAQ]
       * [Issues Design Issues]
-
    * Examples
       * [CasesStudy Case studies]
       * [Workflow Typical GolfML Workflows]
-
    * References
       * [Egolfml GolfML Reference]
-
    * Other
       * [Branding Branding]
       * [Links Links]
