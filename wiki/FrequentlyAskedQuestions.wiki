@@ -1,4 +1,5 @@
 #summary Golf Markup Language: Frequently Asked Questions
+#sidebar TableOfContents
 
  * *Why would I use GolfML?*
 
