@@ -1,4 +1,5 @@
 #summary GolfML Identifier and References
+#sidebar TableOfContents
 
 = Introduction =
 
