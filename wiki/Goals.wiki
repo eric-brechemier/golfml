@@ -4,7 +4,9 @@
 GolfML specifies a vendor neutral, standard format for the distribution of:
    # Golf courses information and data.
    # Player scorecards, statistics, and belongings.
-Data stored in GolfML formated documents are processed by GolfML compliant web sites and applications. GolfML eases data exchange.
+Data stored in GolfML formated documents are processed by GolfML compliant web sites and applications.
+
+GolfML eases data exchange.
 
 == Golf Course Information and Data ==
 
