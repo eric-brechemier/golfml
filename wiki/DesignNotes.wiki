@@ -1,4 +1,5 @@
 #summary Notes and comments about decisions in the design process
+#sidebar TableOfContents
 
 = Introduction =
 
