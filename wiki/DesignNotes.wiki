@@ -27,7 +27,7 @@ Inside GolfML, a limited number of elements have the type `<any>` which allows f
 
 === Example of Extension inside GolfML ===
 
-=== Positions ===
+==== Positions ====
 
 A position is a point on a golf course. golfml offers the GPS localisation of the point but alternative scheme can be used.
 For instance, some systems use a local grid map and store (x,y) coordinates to locate point of interest.
@@ -42,7 +42,7 @@ For instance, some systems use a local grid map and store (x,y) coordinates to l
 }}}
 
 
-=== Course qualification ===
+==== Course qualification ====
 
 A course qualification is a measure of the complexity of a course. The most common system use a course index value and a slope value. We provided room for alternate systems.
 
@@ -55,7 +55,7 @@ A course qualification is a measure of the complexity of a course. The most comm
 </qualification>
 }}}
 		
-=== Hole placement ===
+==== Hole placement ====
 
 A hole placement is the position of the hole on the green. Official tour use "pin sheet" to locate hole using "paces" from the edge of the green.
 We allow for alternate system here as well. Some golf courses use simpler horizontal, vertical or grid division of the green and references to where the hole is located using those grids.
@@ -68,7 +68,7 @@ We allow for alternate system here as well. Some golf courses use simpler horizo
 </hole-placement>
 }}}
 
-=== Applications ===
+==== Applications ====
 
 Any application that uses golfml as a data foirmat can use the application element to store application specific information and data.
 
