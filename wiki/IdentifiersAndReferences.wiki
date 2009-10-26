@@ -47,7 +47,7 @@ Inside a GolfML document, we use the following identifiers:
  # Golf clubs: A golf club is a complex description of a club to play golf with all its technical and commercial information.
  # Golf bag: A golf bag is a collection of golfing equipment that includes not only golf clubs but also balls, apparel, etc.
 
-= Naming Convention =
+== Naming Convention ==
 
 For a given entity, we defined a Identifier Group of Elements.
 
@@ -80,7 +80,7 @@ becomes:
 </player-ref>
 }}}
 
-= Surrogate Keys =
+== Surrogate Keys ==
 
 [http://en.wikipedia.org/wiki/Surrogate_key Surrogate keys] are often used by applications and always difficult to serialize. GolfML conveniently offer a complex type [CUID UID] to serialize such surrogate keys and store them inside a GolfML document.
 
@@ -92,12 +92,3 @@ Example:
   <date-of-birth>1975-12-30</date-of-birth>
 </player>
 }}}
-
-
-= See Also =
-
-[DesignGuidelines GolfML XML Schema Design Guidelines]
-
-[DesignNotes Comments about the design of GolfML XML Schema]
-
-[http://code.google.com/p/golfml/ Home]
