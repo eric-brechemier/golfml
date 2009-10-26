@@ -1,4 +1,0 @@
-#summary GolfML Schema Release Notes
-#sidebar TableOfContents
-
-*26-OCT-2009* GolfML 0.9: Wiki cleaned. All documents updated. GolfML 0.9RC1 released.
