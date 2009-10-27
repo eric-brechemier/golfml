@@ -17,7 +17,7 @@ When he first starts the application, he must manually encode the details of the
 
 Rather, we promote the ability to find that information on the internet, download it and load it into the application. No typing required. To achieve this, the information must be made available on a website, and must be presented in a form that can be understood by all programs. That form that all programs understand is GolfML.
 
-Is that information available on a web site? Of course it is. There are literally dozen of websites that offer that simple Par/Handicap stroke index/Distance/Rating/Slope information in different forms. But none of this web site proposes this information in a form that can be understood by other applications. The purpose of GolfML is to be that form of presentation of the data for to ease the exchange of information, not only between the website and your application, but also between websites themselves.
+Is that information available on a web site? Of course it is. There are literally dozen of websites that offer that simple Par/Handicap stroke index/Distance/Rating/Slope information in different forms. But none of this web site proposes this information in a form that can be understood by other applications. The purpose of GolfML is to be _that_ form of presentation of the data to ease the exchange of information, not only between the website and your application, but also between websites themselves.
 
 But there is more.
 
