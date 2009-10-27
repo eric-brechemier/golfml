@@ -20,7 +20,7 @@ To illustrate the usefulness and the purpose of the golfml data format, we also 
  * `static-course.xsl` - Prints a standard scorecard for a golf course.
 
 
-== GolfML To SVG ([http://fr.wikipedia.org/wiki/Scalable_Vector_Graphics Scalable Vector Graphics]) ==
+== GolfML To [http://fr.wikipedia.org/wiki/Scalable_Vector_Graphics Scalable Vector Graphics] ==
 
 This prototype stylesheet format the geographic information of either a single hole or a whole golf course to a SVG drawing.
 
