@@ -31,7 +31,7 @@ GolfML is not owned by anybody. It is everybody’s common ground. If someone ne
 
 Of course, a website might refuse to give information and data it bought into a readable format like GolfML. This is normal. They bought information, let us say a “database of all golf courses of the world, with their par/distance/phone numbers”, and they do not want or are not allowed to disclose that information. But if the information was entered by you, or a community of golfers, no social network can decently take ownership of the information and refuse to release it to its contributing members. GolfML is a clever way to make that information widely available.
 
-==== GPS ====
+==== GPS Too ====
 
 Let us take another example. Nowadays, location aware applications running on mobile devices like to take advantage of the Global Positioning System.
 
