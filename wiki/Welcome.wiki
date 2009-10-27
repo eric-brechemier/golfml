@@ -43,7 +43,7 @@ Some private companies invest millions of US dollars to map golf courses with mo
 
 Next to those commercial companies, some social golfing networks have started encoding golf maps, with or without the ubiquitous Google Earth or dedicated tools. Like commercial applications, some are very basic and only offer position of tees and start-of-greens, but some other are fairly comprehensive and draw fairway contours and more.
 
-
+==== ====
 
 As today, only one of these social networks gives its data back in a form usable by a mobile application. And literally no mobile application is ready to accept data from another website than the one of its manufacturer.
 Here again, the ambition of GolfML is to close the gap between those who have the information and are ready to provide it, and those who need the information to use it. They both need to talk the same language, GolfML.
