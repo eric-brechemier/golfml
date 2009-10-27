@@ -9,6 +9,8 @@ There are numerous golf scorecard programs and online web sites that allow golfe
 
 Scorecard programs and websites can usually neither talk to each other nor share data. The main reason is the lack of a common language. GolfML is the missing link, the language necessary for each party to understand the other.
 
+==== Golfing Data: Par, distances, rating, slope... ====
+
 The benefits for golfers are numerous. Let us take the practical example of a golfer who simply records his or her rounds in a desktop application.
 
 When he first starts the application, it must manually encode the details of the golf course he just played. He takes his scorecard and type in par, handicap index, distances for each hole.
