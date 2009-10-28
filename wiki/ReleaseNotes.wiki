@@ -1,7 +1,7 @@
 #summary GolfML Schema Release Notes
 #sidebar TableOfContents
 
-=== Current Work and Investigations ===
+== Current Work and Investigations ==
 
 
 ==== Long element names used often ====
@@ -20,7 +20,16 @@ Descreased size from 2.5 to 1.3MB for single golf course survey.
 
 We will track other long element names that appear frequently in documents.
 
+==== Elements ====
 
-=== History ===
+Numerous applications not only keep detailed score but also synthetic summary.
+
+Examples:
+ * In golf course tee set description, next to individual par, a _total par_ is also kept.
+ * In round scores, next to stoke counts per hole, a total score is kept.
+
+
+
+== History ==
 
 *26-OCT-2009* GolfML 0.9: Wiki cleaned. All documents updated. GolfML 0.9RC1 released.
