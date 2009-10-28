@@ -45,7 +45,7 @@ Next to those commercial companies, some social golfing networks have started en
 
 ==== . ====
 
-As today, only one of these social networks gives its data back in a form usable by a mobile application. And literally no mobile application is ready to accept data from another website than the one of its manufacturer.
+As today, only one of these social networks gives its data back in a form usable by a mobile application. There is a handful applications that use this data. But literally, no other mobile application is ready to accept data from another website than the one of its manufacturer.
 Here again, the ambition of GolfML is to close the gap between those who have the information and are ready to share it, and those who need the information to use it. They both need to talk the same language, GolfML.
 
 Owner of sharable information need to learn how to present that information in a form that can be understood by all, and applications need to be able to decode that information and place it in their application. These is no big, unsolvable issue involved, just the willingness to open an application or a service to more golfers.
