@@ -4,9 +4,9 @@
 == Current Work and Investigations ==
 
 
-==== Long element names used often ====
+=== Long element names used often ===
 
-construct
+Construct
 {{{
   <position>
     <position-gps>
@@ -16,11 +16,32 @@ appears often in GPS-mapped golf course. Must be shortened.
 
 Descreased size from 2.5 to 1.3MB for single golf course survey.
 
-*Impact*: Minimal at this stage. XML/XSL code refectoring quite easy.
+==== Suggestion ====
+
+Proposed alternatives:
+{{{
+  <position>
+    <gps>
+      <lat>...
+}}}
+
+Or
+{{{
+   <position>
+     <gps lat=".." lon=".." ../>
+}}}
+
+The latter case would violate our element/attribute data/metadata principle but is very compact.
+
+==== Impact ====
+
+Minimal at this stage. XML/XSL code refectoring quite easy.
+
+==== See Also ====
 
 We will track other long element names that appear frequently in documents.
 
-==== Elements ====
+=== «Summary» Elements ===
 
 Numerous applications not only keep detailed score but also synthetic summary.
 
@@ -28,7 +49,10 @@ Examples:
  * In golf course tee set description, next to individual par, a _total par_ is also kept.
  * In round scores, next to stoke counts per hole, a total score is kept.
 
+==== Suggestion ====
 
+Move _summary elements_ into leading element as attibute.
+This would violate our element/attribute data/metadata principle but is very compact.
 
 == History ==
 
