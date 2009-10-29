@@ -26,6 +26,7 @@ To protect your data, it is possible to add a digital signature and copyright re
 GolfML encompasses several scenarii, it is flexible and must adapt to a lot of situations.
 To make GolfML easy and readable, element and attribute names are meaningful english terms.
 Yes it is verbose, but it certainly is neither closed nor static. GolfML document are _human readable_.
+
 If size of document is an issue, [http://www.cafeconleche.org/books/effectivexml/chapters/50.html compression] is recommanded. Compression of text-based files easily reaches 50-70% decrease in size.
 
 If an application requires a valid addition to the standard, we are open to discussion (in the forum for instance).
