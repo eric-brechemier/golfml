@@ -33,6 +33,12 @@ Or
 
 The latter case would violate our element/attribute data/metadata principle but is very compact.
 
+Non "markup" oriented structure should be avoided at all cost. For example, structures like those encountered in SVG or KML [http://www.cafeconleche.org/books/effectivexml/chapters/11.html should be avoided]:
+{{{
+<polygon points="350,75 379,161 469,161 397,215 423,301 
+                 350,250 277,301 303,215 231,161 321,161" />
+}}}
+
 ==== Impact ====
 
 Minimal at this stage. XML/XSL code refectoring quite easy.
