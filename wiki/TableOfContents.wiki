@@ -15,6 +15,7 @@
       * [CasesStudy Case studies]
    * References
       * [Egolfml GolfML Reference]
+      * [ReleaseNotes Release notes]
    * Other
       * [Branding Branding]
       * [Links Links]
