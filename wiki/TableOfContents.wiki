@@ -5,7 +5,7 @@
    * Design
       * [DesignGuidelines Guidelines]
       * [DesignNotes Notes]
-      * [IdentifiersAndReferences]
+      * [IdentifiersAndReferences Identifiers]
       * [FrequentlyAskedQuestions FAQ]
       * [Issues Issues]
    * Examples
