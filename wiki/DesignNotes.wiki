@@ -96,7 +96,7 @@ If a existing GolfML element needs further division, it is possible to use the f
 first-name: Lion;
 middle-name: Eldrick;
 last-name: Wedge;
-  </name
+  </name>
 </player>
 }}}
 
