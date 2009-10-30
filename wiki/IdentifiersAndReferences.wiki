@@ -11,7 +11,7 @@ GolfML needs to uniquely identify the following entities:
 
  # Sets of tees
  # Players
- # Golf playing clubs
+ # Golf clubs (equipment)
 
 Other applications may require identifications of other entities.
 
