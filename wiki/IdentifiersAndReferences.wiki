@@ -88,3 +88,5 @@ Example:
   <date-of-birth>1975-12-30</date-of-birth>
 </player>
 }}}
+
+There can be as many `uid` as necessary. An application should simply carry over, without modification, all other applications' `uid`'s.
