@@ -87,6 +87,19 @@ Any application that uses golfml as a data foirmat can use the application eleme
 </application>
 }}}
 
+== Alternate Storage of Information ==
+
+If a existing GolfML element needs further division, it is possible to use the following schemes: Let us imagine that we need to further divide the player's name into first, middle and last name:
+{{{
+<player>
+  <name>
+first-name: Lion;
+middle-name: Eldrick;
+last-name: Wedge;
+  </name
+</player>
+}}}
+
 	
 = Grouping of elements =
 
