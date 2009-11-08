@@ -47,6 +47,10 @@ Elements and attributes are named using English language common golf terms and v
 In general, use elements for data that will be produced or consumed by an application and attributes for metadata.   
 A good rule of thumb is to use elements for nouns and attributes for adjectives.
 
+{{{
+  <length units="meters">269</length>
+}}}
+
 === Naming Conventions ===
 
 ==== Elements and Types ====
