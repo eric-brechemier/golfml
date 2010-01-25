@@ -62,7 +62,7 @@ This would violate our element/attribute data/metadata principle but is very com
 
 == History ==
 
-0.9RC2 will be the next release available November 15th. 2009.
+0.9RC2 will be the next release.
 
 Release 1.0 is targeted for the end of the year.
 
