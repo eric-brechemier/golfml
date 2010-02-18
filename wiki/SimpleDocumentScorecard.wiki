@@ -41,7 +41,79 @@ While designed to be processed by computer programs, it is readable by golfers.
         <handicap-strokes>10</handicap-strokes>
 
         <score>
-          <hole number="1"> <!-- hole in one -->
+          <hole number="1">
+            <strokes>6</strokes>
+            <putts>2</putts>
+            <points>1</points>
+            <statistics>
+              <fairway>1</fairway>
+              <green-in-regulation>0</green-in-regulation>
+            </statistics>
+            <stroke-detail>
+              <stroke number="1">
+                <golf-club>
+                  <uid application.dotname="mgs">Driver</uid>
+                </golf-club>
+                <landing>fairway</landing>
+                <precision>
+                  <front-back>0</front-back>
+                  <left-right>1</left-right>
+                </precision>
+              </stroke>
+              <stroke number="2">
+                <golf-club>
+                  <uid application.dotname="mgs">3-wood</uid>
+                </golf-club>
+                <landing>fairway</landing>
+                <precision>
+                  <front-back>1</front-back>
+                  <left-right>-1</left-right>
+                </precision>
+              </stroke>
+              <stroke number="3">
+                <golf-club>
+                  <uid application.dotname="mgs">6-iron</uid>
+                </golf-club>
+                <landing>bunker</landing>
+                <precision>
+                  <front-back>0</front-back>
+                  <left-right>-1</left-right>
+                </precision>
+              </stroke>
+              <stroke number="4">
+                <golf-club>
+                  <uid application.dotname="mgs">sand-wedge</uid>
+                </golf-club>
+                <landing>green</landing>
+                <precision>
+                  <front-back>-1</front-back>
+                  <left-right>0</left-right>
+                </precision>
+              </stroke>
+              <stroke number="5">
+                <golf-club>
+                  <uid application.dotname="mgs">putter</uid>
+                </golf-club>
+                <landing>green</landing>
+                <precision>
+                  <front-back>-1</front-back>
+                  <left-right>1</left-right>
+                </precision>
+              </stroke>
+              <stroke number="6">
+                <golf-club>
+                  <uid application.dotname="mgs">putter</uid>
+                </golf-club>
+                <landing>hole</landing>
+                <precision>
+                  <front-back>0</front-back>
+                  <left-right>0</left-right>
+                </precision>
+              </stroke>
+              ...
+            </stroke-detail>
+          </hole>
+          <hole number="2"> <!-- hole in one -->
             <strokes>1</strokes>
             <putts>0</putts>
             <points>5</points>
@@ -52,7 +124,7 @@ While designed to be processed by computer programs, it is readable by golfers.
             <stroke-detail>
               <stroke number="1">
                 <golf-club>
-                  <uid application.dotname="mgs">Driver</uid>
+                  <uid application.dotname="mgs">Sand Wedge</uid>
                 </golf-club>
                 <landing>hole</landing>
                 <precision>
