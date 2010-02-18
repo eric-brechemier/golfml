@@ -41,7 +41,7 @@ While designed to be processed by computer programs, it is readable by golfers.
         <handicap-strokes>10</handicap-strokes>
 
         <score>
-          <hole number="1"> <-!! hole in one -->
+          <hole number="1"> <!-- hole in one -->
             <strokes>1</strokes>
             <putts>0</putts>
             <points>5</points>
