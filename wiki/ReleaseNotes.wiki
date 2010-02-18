@@ -67,3 +67,4 @@ This would violate our element/attribute data/metadata principle but is very com
 Release 1.0 is targeted for the end of the year.
 
 *26-OCT-2009* GolfML 0.9: Wiki cleaned. All documents updated. GolfML 0.9RC1 released.
+*18-FEB-2010* GolfML 0.9: Minor Changes to element or attribute names or types. No change to structure. This is 0.9RC2. One more RC expected before version 1.0
