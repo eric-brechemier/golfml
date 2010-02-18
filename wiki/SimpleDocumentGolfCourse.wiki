@@ -36,6 +36,12 @@ While designed to be processed by computer programs, it is readable by golfers.
           <length units="meters">475</length>
           <length units="yards">519</length>
         </tee>
+        <tee number="2">
+          <par>3</par>
+          <handicap-stroke>18</handicap-stroke>
+          <length units="meters">105</length>
+          <length units="yards">115</length>
+        </tee>
         ...
       </tee-set>
 
@@ -51,6 +57,12 @@ While designed to be processed by computer programs, it is readable by golfers.
           <handicap-stroke>15</handicap-stroke>
           <length units="meters">378</length>
           <length units="yards">413</length>
+        </tee>
+        <tee number="2">
+          <par>3</par>
+          <handicap-stroke>18</handicap-stroke>
+          <length units="meters">83</length>
+          <length units="yards">91</length>
         </tee>
         ...
       </tee-set>
