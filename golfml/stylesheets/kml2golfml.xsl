@@ -187,10 +187,10 @@
 		  -->
 		<xsl:param name="coordinate"/>
 		<xsl:param name="separator"/>
-		<xsl:element name="position-gps">
-			<xsl:element name="lon"><xsl:value-of select="substring-before($coordinate, $separator)"/></xsl:element>
-			<xsl:element name="lat"><xsl:value-of select="substring-before(substring-after($coordinate, $separator), $separator)"/></xsl:element>
-			<xsl:element name="alt"><xsl:value-of select="substring-after(substring-after($coordinate, $separator), $separator)"/></xsl:element>
+		<xsl:element name="gps">
+			<xsl:attribute name="lon"><xsl:value-of select="substring-before($coordinate, $separator)"/></xsl:attribute>
+			<xsl:attribute name="lat"><xsl:value-of select="substring-before(substring-after($coordinate, $separator), $separator)"/></xsl:attribute>
+			<xsl:attribute name="alt"><xsl:value-of select="substring-after(substring-after($coordinate, $separator), $separator)"/></xsl:attribute>
 		</xsl:element>
 	</xsl:template>
 	

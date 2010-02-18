@@ -31,7 +31,7 @@ HISTORY
 	
 	
 	<!-- mode=course|hole, generate a single SVG file for the entire course, or one for each hole -->
-	<xsl:param name="mode">course</xsl:param>
+	<xsl:param name="mode">hole</xsl:param>
 	<!-- If a hole-number is supplied, generates only that hole -->
 	<xsl:param name="hole-number">15</xsl:param>
 	<!-- whether to generate JavaScript and animation for hole display (useful for web interactivity, useless for print) -->
@@ -50,7 +50,7 @@ HISTORY
 		 Smaller or larger values for drawing would need scaling of Defs (patterns, stokes, elements...)
 		 Please leave square canvas to allow for rotation and alignment of hole.
 	  -->
-	<xsl:param name="width">800</xsl:param>
+	<xsl:param name="width">600</xsl:param>
 	<xsl:param name="height" select="$width"/>
 
 	<!-- position of compass, relative to upper left corner, in pixels -->
@@ -162,10 +162,10 @@ HISTORY
 			<xsl:variable name="local_number"><xsl:value-of select="@number"/></xsl:variable> <!-- does not work for holes -->
 			
 			<!-- Compute bounding box for lat/lon which is mapped to the projected bounding box (width x height) -->	
-			<xsl:variable name="min_lat"><xsl:value-of select="min(.//g:lat)"/></xsl:variable>
-			<xsl:variable name="max_lat"><xsl:value-of select="max(.//g:lat)"/></xsl:variable>
-			<xsl:variable name="min_lon"><xsl:value-of select="min(.//g:lon)"/></xsl:variable>
-			<xsl:variable name="max_lon"><xsl:value-of select="max(.//g:lon)"/></xsl:variable>	
+			<xsl:variable name="min_lat"><xsl:value-of select="min(.//@lat)"/></xsl:variable>
+			<xsl:variable name="max_lat"><xsl:value-of select="max(.//@lat)"/></xsl:variable>
+			<xsl:variable name="min_lon"><xsl:value-of select="min(.//@lon)"/></xsl:variable>
+			<xsl:variable name="max_lon"><xsl:value-of select="max(.//@lon)"/></xsl:variable>	
 			<xsl:variable name="mid_lat"><xsl:value-of select="(number($max_lat)+number($min_lat)) div 2"/></xsl:variable>
 			<xsl:variable name="mid_lon"><xsl:value-of select="(number($max_lon)+number($min_lon)) div 2"/></xsl:variable>
 			
@@ -296,10 +296,10 @@ HISTORY
 				<xsl:choose>
 					<xsl:when test="$mode = 'hole'">
 						<!-- Find green area's middle point -->
-						<xsl:variable name="green_lat_min"><xsl:value-of select="min(.//g:placemarks/*[@type='green']/g:position/g:position-gps/g:lat)"/></xsl:variable>
-						<xsl:variable name="green_lat_max"><xsl:value-of select="max(.//g:placemarks/*[@type='green']/g:position/g:position-gps/g:lat)"/></xsl:variable>
-						<xsl:variable name="green_lon_min"><xsl:value-of select="min(.//g:placemarks/*[@type='green']/g:position/g:position-gps/g:lon)"/></xsl:variable>
-						<xsl:variable name="green_lon_max"><xsl:value-of select="max(.//g:placemarks/*[@type='green']/g:position/g:position-gps/g:lon)"/></xsl:variable>
+						<xsl:variable name="green_lat_min"><xsl:value-of select="min(.//g:placemarks/*[@type='green']/g:position/g:gps/@lat)"/></xsl:variable>
+						<xsl:variable name="green_lat_max"><xsl:value-of select="max(.//g:placemarks/*[@type='green']/g:position/g:gps/@lat)"/></xsl:variable>
+						<xsl:variable name="green_lon_min"><xsl:value-of select="min(.//g:placemarks/*[@type='green']/g:position/g:gps/@lon)"/></xsl:variable>
+						<xsl:variable name="green_lon_max"><xsl:value-of select="max(.//g:placemarks/*[@type='green']/g:position/g:gps/@lon)"/></xsl:variable>
 						<xsl:variable name="green_mid_lat">
 							<xsl:value-of select="(number($green_lat_max)+number($green_lat_min)) div 2"/>
 						</xsl:variable>
@@ -338,10 +338,10 @@ HISTORY
 								green_mid_y: </xsl:text><xsl:value-of select="$green_mid_y"/>
 						</xsl:if>
 						<!-- Find teeing area's middle point -->
-						<xsl:variable name="tee_lat_min"><xsl:value-of select="min(.//g:placemarks/*[@type='tee']/g:position/g:position-gps/g:lat)"/></xsl:variable>
-						<xsl:variable name="tee_lat_max"><xsl:value-of select="max(.//g:placemarks/*[@type='tee']/g:position/g:position-gps/g:lat)"/></xsl:variable>
-						<xsl:variable name="tee_lon_min"><xsl:value-of select="min(.//g:placemarks/*[@type='tee']/g:position/g:position-gps/g:lon)"/></xsl:variable>
-						<xsl:variable name="tee_lon_max"><xsl:value-of select="max(.//g:placemarks/*[@type='tee']/g:position/g:position-gps/g:lon)"/></xsl:variable>
+						<xsl:variable name="tee_lat_min"><xsl:value-of select="min(.//g:placemarks/*[@type='tee']/g:position/g:gps/@lat)"/></xsl:variable>
+						<xsl:variable name="tee_lat_max"><xsl:value-of select="max(.//g:placemarks/*[@type='tee']/g:position/g:gps/@lat)"/></xsl:variable>
+						<xsl:variable name="tee_lon_min"><xsl:value-of select="min(.//g:placemarks/*[@type='tee']/g:position/g:gps/@lon)"/></xsl:variable>
+						<xsl:variable name="tee_lon_max"><xsl:value-of select="max(.//g:placemarks/*[@type='tee']/g:position/g:gps/@lon)"/></xsl:variable>
 						<xsl:variable name="tee_mid_lat">
 							<xsl:value-of select="(number($tee_lat_max)+number($tee_lat_min)) div 2"/>
 						</xsl:variable>
@@ -810,7 +810,7 @@ HISTORY
 					<xsl:with-param name="type" select="@type"/>
 				</xsl:call-template>
 			</xsl:attribute>
-			<xsl:apply-templates select="g:position/g:position-gps" mode="xy-projection">
+			<xsl:apply-templates select="g:position/g:gps" mode="xy-projection">
 				<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
 				<xsl:with-param name="midlat"><xsl:value-of select="$midlat"/></xsl:with-param>
 				<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
@@ -894,7 +894,7 @@ HISTORY
 		<xsl:param name="smoothingFactor" select="number(0.4)"/>
 		
 		<xsl:variable name="x1">
-			<xsl:apply-templates select="$before/g:position-gps" mode="pair-projection">
+			<xsl:apply-templates select="$before/g:gps" mode="pair-projection">
 				<xsl:with-param name="scale" select="$scale"/>
 				<xsl:with-param name="midlat" select="$midlat"/>
 				<xsl:with-param name="midlon" select="$midlon"/>
@@ -904,7 +904,7 @@ HISTORY
 		<xsl:variable name="x1_y" select="number(substring-after($x1, ','))"/>
 
 		<xsl:variable name="x2">
-			<xsl:apply-templates select="$current/g:position-gps" mode="pair-projection">
+			<xsl:apply-templates select="$current/g:gps" mode="pair-projection">
 				<xsl:with-param name="scale" select="$scale"/>
 				<xsl:with-param name="midlat" select="$midlat"/>
 				<xsl:with-param name="midlon" select="$midlon"/>
@@ -914,7 +914,7 @@ HISTORY
 		<xsl:variable name="x2_y" select="number(substring-after($x2, ','))"/>
 		
 		<xsl:variable name="x3">
-			<xsl:apply-templates select="$after/g:position-gps" mode="pair-projection">
+			<xsl:apply-templates select="$after/g:gps" mode="pair-projection">
 				<xsl:with-param name="scale" select="$scale"/>
 				<xsl:with-param name="midlat" select="$midlat"/>
 				<xsl:with-param name="midlon" select="$midlon"/>
@@ -943,7 +943,7 @@ HISTORY
 	</xsl:template>
 		
 	
-	<xsl:template match="g:position-gps" mode="xy-projection">
+	<xsl:template match="g:gps" mode="xy-projection">
 		<xsl:param name="midlat"/>
 		<xsl:param name="midlon"/>
 		<xsl:param name="scale"/>
@@ -953,8 +953,8 @@ HISTORY
 				<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
 				<xsl:with-param name="midlat"><xsl:value-of select="$midlat"/></xsl:with-param>
 				<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
-				<xsl:with-param name="lat"><xsl:value-of select="g:lat"/></xsl:with-param>
-				<xsl:with-param name="lon"><xsl:value-of select="g:lon"/></xsl:with-param>
+				<xsl:with-param name="lat"><xsl:value-of select="@lat"/></xsl:with-param>
+				<xsl:with-param name="lon"><xsl:value-of select="@lon"/></xsl:with-param>
 			</xsl:call-template>
 		</xsl:variable>
 		
@@ -963,7 +963,7 @@ HISTORY
 	</xsl:template>
 
 
-	<xsl:template match="g:position-gps" mode="pair-projection">
+	<xsl:template match="g:gps" mode="pair-projection">
 		<xsl:param name="midlat"/>
 		<xsl:param name="midlon"/>
 		<xsl:param name="scale"/>
@@ -972,8 +972,8 @@ HISTORY
 			<xsl:with-param name="scale"><xsl:value-of select="$scale"/></xsl:with-param>
 			<xsl:with-param name="midlat"><xsl:value-of select="$midlat"/></xsl:with-param>
 			<xsl:with-param name="midlon"><xsl:value-of select="$midlon"/></xsl:with-param>
-			<xsl:with-param name="lat"><xsl:value-of select="g:lat"/></xsl:with-param>
-			<xsl:with-param name="lon"><xsl:value-of select="g:lon"/></xsl:with-param>
+			<xsl:with-param name="lat"><xsl:value-of select="@lat"/></xsl:with-param>
+			<xsl:with-param name="lon"><xsl:value-of select="@lon"/></xsl:with-param>
 		</xsl:call-template>
 	</xsl:template>
 
@@ -1583,12 +1583,6 @@ HISTORY
 				
 				<g id="Target">
 					<circle class="target-filled" r="12"/>
-					<!-- 
-						<path   class="target" d="M 0,4 L 0,10"/>
-						<path   class="target" d="M 0,-4 L 0,-10"/>
-						<path   class="target" d="M 4,0 L 10,0"/>
-						<path   class="target" d="M -4,0 L -10,0"/>
-					-->
 				</g>
 				
 				
@@ -2038,14 +2032,8 @@ HISTORY
 				
 				<g id="Target">
 					<circle class="target-filled" r="12"/>
-					<!-- 
-						<path   class="target" d="M 0,4 L 0,10"/>
-						<path   class="target" d="M 0,-4 L 0,-10"/>
-						<path   class="target" d="M 4,0 L 10,0"/>
-						<path   class="target" d="M -4,0 L -10,0"/>
-					-->
 				</g>
-				
+			
 				
 				<g id="Flag" transform="translate(0 -30) scale(-0.2 0.2)">
 					<line id="FlagPole" class="flag-pole" x1="0.5" y1="0" x2="0.5" y2="150"/>
@@ -2071,8 +2059,7 @@ HISTORY
 					<feTurbulence baseFrequency=".03" type="fractalNoise" numOctaves="3"/>
 					<feColorMatrix type="luminanceToAlpha" values="0" />
 					<feBlend  mode="darken" in2="SourceGraphic"/>  <!--SourceGraphic SourceAlpha BackgroundImage BackgroundAlpha -->
-				</filter>
-				
+				</filter>			
 			</xsl:if><!-- mode=course -->
 		</xsl:element><!-- defs -->
 	</xsl:template>

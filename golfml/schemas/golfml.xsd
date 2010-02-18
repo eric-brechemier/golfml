@@ -9,42 +9,28 @@
 <!-- The Golf Markup Language - golfml
 	
 	DESCRIPTION
-	
 		XML Schema definition of a valid Golf Markup Language document.
 		
-
 	HISTORY
-	   
 		Version 0.9: AUG-2009: Initial version. Work in progress.
 		
-
 	SEE ALSO
 		
 		SportML: Sport Markup Language
 		kml.xsd: Google Earth Keyhole Markup Language
 		
-
 	NOTES
-	 
 		1. Assumptions, limits, etc.
 		- A course contains 1 to maximum 18 holes.
 		- Par is 3 to 9 strokes maximum. Are there any Par 7 anywhere in the world? (This can be changed in the Par type definition.)
-		- 
-		
+		- 		
 		2. Naming conventions
-
 		Type names are CamelCase: Example: GolfCourse.
-		
 		Element names are dash separated words. Example: golf-course.
-		
 		Enumeration and list types ends with Enum.
+		Relational keys are prefixed with PK_ and FK_, identifier groups are prefixed ID_ and identifier elements with REF_		
 		
-		Relational keys are prefixed with PK_ and FK_, identifier groups are prefixed ID_ and identifier elements with REF_
-		
-		
-		Documentation
-		
-		Note: Sep 18 2009
+	    Note on Documentation Sep 18 2009
 		We decided to host the project on Google Code.
 		Since Google Code favor the use of a wiki style documentation, we build a quick documentation generator from this XML Schema document.
 		The generator generates a single file per element, type or group formatted according to Google Code's Wiki formatting.
@@ -238,7 +224,7 @@
 		</xs:annotation>
 		
 		<xs:restriction base="xs:string">
-			<xs:pattern value="[+]?([1-9][0-9]{0,2})(-[1-9][0-9]{0,4})?(-[1-9][0-9]{0,13})(-[0-9]+)?"/>
+			<xs:pattern value="[\-+]?([1-9][0-9]{0,2})(-[1-9][0-9]{0,4})?(-[1-9][0-9]{0,13})(-[0-9]+)?"/>
 		</xs:restriction>
 	</xs:simpleType>
 	
@@ -800,25 +786,24 @@
 		<xs:annotation><xs:documentation xml:lang="en">
 			GPS coordinate of a point.
 		</xs:documentation></xs:annotation>
-		<xs:all>
-			<xs:element name="lat" type="golfml:Angle90">
-				<xs:annotation><xs:documentation xml:lang="en">
-					Latitude of the GPS position expressed as a float value between -90° (South Pole) to +90° (North Pole).
-				</xs:documentation></xs:annotation>
-			</xs:element>
-			<xs:element name="lon" type="golfml:Angle180">
-				<xs:annotation><xs:documentation xml:lang="en">
-					Longitude in the GPS position expressed as a float value between -180° for longitude West of Greenwich
-					to +180° for longitude East of Greenwich.
-				</xs:documentation></xs:annotation>
-			</xs:element>
-			<xs:element name="alt" type="golfml:Altitude" minOccurs="0">
-				<xs:annotation><xs:documentation xml:lang="en">
-					Altitude of a GPS position expressed as a float value. Meaning and units of the value depends on the
-					mandatory 'mode' attribute.
-				</xs:documentation></xs:annotation>
-			</xs:element>
-		</xs:all>
+		<xs:attribute name="lat" type="golfml:Angle90" use="required">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Latitude of the GPS position expressed as a float value between -90° (South Pole) to +90° (North Pole).
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="lon" type="golfml:Angle180" use="required">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Longitude in the GPS position expressed as a float value between -180° for longitude West of Greenwich
+				to +180° for longitude East of Greenwich.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="alt" type="xs:float" use="optional">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Altitude of a GPS position expressed as a float value. Meaning and units of the value depends on the
+				mandatory 'mode' attribute.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="alt-mode" type="golfml:AltitudeModeEnum" use="optional" default="absolute"/>
 	</xs:complexType>
 	
 	<xs:complexType name="Position">
@@ -827,12 +812,12 @@
 			coordinates in any specific system.
 		</xs:documentation></xs:annotation>
 		<xs:choice>
-			<xs:element name="position-gps" type="golfml:PositionGPS">
+			<xs:element name="gps" type="golfml:PositionGPS">
 				<xs:annotation><xs:documentation xml:lang="en">
 					GPS coordinate of a point.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="position-other" type="golfml:RoomForExtension">
+			<xs:element name="other" type="golfml:RoomForExtension">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Coordinate of a point in an arbitraty unit system.
 				</xs:documentation></xs:annotation>
@@ -1840,7 +1825,7 @@
 					End date for the collection of statistical calculation.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="round" type="xs:dateTime" minOccurs="0">
+			<xs:element name="round-date" type="xs:dateTime" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Date (and time) of a round of golf used for statistical calculation.
 				</xs:documentation></xs:annotation>
@@ -2059,7 +2044,7 @@
 		</xs:simpleContent>
 	</xs:complexType>
 	
-	<xs:complexType name="Tee"> <!-- PROBLEM: Accept 2 lengths -->
+	<xs:complexType name="Tee">
 		<xs:annotation><xs:documentation xml:lang="en">
 				Description of a hole played from a set of tee.
 		</xs:documentation></xs:annotation>
@@ -2975,6 +2960,12 @@
 			Elements used to record details about a golf stroke.
 		</xs:documentation></xs:annotation>
 		<xs:all>
+			<xs:element name="player" type="xs:string" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Name of the player who actually stroked the ball
+					in best-ball, four-ball or other similar team competition.
+				</xs:documentation></xs:annotation>
+			</xs:element>
 			<xs:element name="position" type="golfml:Position" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Position FROM where the stroke take place.
@@ -3108,7 +3099,7 @@
 					Number of putts, from the green.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="money" type="xs:integer" minOccurs="0">
+			<xs:element name="money" type="xs:float" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Money earned or loss on hole in wagers.
 				</xs:documentation></xs:annotation>
@@ -3169,14 +3160,14 @@
 					Denormalisation: Total number of putts for the round of golf.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="money" type="xs:nonNegativeInteger" minOccurs="0">
-				<xs:annotation><xs:documentation xml:lang="en">
-					Denormalisation: Total money earned or loss during the round of golf.
-				</xs:documentation></xs:annotation>
-			</xs:element>
 			<xs:element name="penalties" type="golfml:Penalty" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Denormalisation: Total number of penalty strokes during the round of golf.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="money" type="xs:float" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Denormalisation: Total money earned or loss during the round of golf.
 				</xs:documentation></xs:annotation>
 			</xs:element>
 			<xs:element name="statistic" type="golfml:StatisticValue" minOccurs="0" maxOccurs="unbounded">
