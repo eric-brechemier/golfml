@@ -40,5 +40,3 @@ anyType
 
 ----
   		
-===  Local Usage ===
-    	[CPositionGPS PositionGPS]

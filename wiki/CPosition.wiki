@@ -30,15 +30,15 @@ anyType
 ===  Model ===
 
 	<...>
-            ( [CPositionGPS position-gps] | [CRoomForExtension position-other] ) 
+            ( [CPositionGPS gps] | [CRoomForExtension other] ) 
   </...>
 ----
   		
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| [CPositionGPS position-gps] ||  					GPS coordinate of a point.				 || [CPositionGPS golfml:PositionGPS] ||
-|| [CRoomForExtension position-other] ||  					Coordinate of a point in an arbitraty unit system.				 || [CRoomForExtension golfml:RoomForExtension] ||
+|| [CPositionGPS gps] ||  					GPS coordinate of a point.				 || [CPositionGPS golfml:PositionGPS] ||
+|| [CRoomForExtension other] ||  					Coordinate of a point in an arbitraty unit system.				 || [CRoomForExtension golfml:RoomForExtension] ||
 
 ----
   		

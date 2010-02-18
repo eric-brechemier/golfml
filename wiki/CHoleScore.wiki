@@ -41,7 +41,7 @@ anyType
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| money ||  					Money earned or loss on hole in wagers.				 || xs:integer ||
+|| money ||  					Money earned or loss on hole in wagers.				 || xs:float ||
 || [CPenalty penalties] ||  					Total number of penalty strokes.				 || [CPenalty golfml:Penalty] ||
 || points ||  					Total number of points for hole.				 || xs:nonNegativeInteger ||
 || putts ||  					Number of putts, from the green.				 || xs:nonNegativeInteger ||

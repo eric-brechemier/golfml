@@ -28,17 +28,18 @@ anyType
   	
 ===  Model ===
 
-	<...>
-            ( [SAngle90 lat] ; [SAngle180 lon] ; [CAltitude alt]? ) 
+	<...  `alt`=xs:float  `alt-mode`=[SAltitudeModeEnum AltitudeModeEnum] : absolute  `lat`=[SAngle90 Angle90]  `lon`=[SAngle180 Angle180]>
+          
   </...>
 ----
-  		
-=== Nested Elements ===
+  		      
+=== Attributes ===
 
-|| *Name* || *Description* || *Type* ||
-|| [CAltitude alt] ||  Altitude of a GPS position expressed as a float value || [CAltitude golfml:Altitude] ||
-|| [SAngle90 lat] ||  					Latitude of the GPS position expressed as a float value between -90° (South Pole) to +90° (North Pole).				 || [SAngle90 golfml:Angle90] ||
-|| [SAngle180 lon] ||  					Longitude in the GPS position expressed as a float value between -180° for longitude West of Greenwich					to +180° for longitude East of Greenwich.				 || [SAngle180 golfml:Angle180] ||
+|| *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
+|| alt ||  Altitude of a GPS position expressed as a float value || xs:float || optional ||  ||  || unqualified ||
+|| alt-mode ||   || [SAltitudeModeEnum golfml:AltitudeModeEnum] || optional || absolute ||  || unqualified ||
+|| lat ||  				Latitude of the GPS position expressed as a float value between -90° (South Pole) to +90° (North Pole).			 || [SAngle90 golfml:Angle90] || required ||  ||  || unqualified ||
+|| lon ||  				Longitude in the GPS position expressed as a float value between -180° for longitude West of Greenwich				to +180° for longitude East of Greenwich.			 || [SAngle180 golfml:Angle180] || required ||  ||  || unqualified ||
 
 ----
   		

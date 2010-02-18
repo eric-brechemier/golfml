@@ -29,14 +29,14 @@ anyType
 ===  Model ===
 
 	<...>
-            ( strokes?, points?, putts?, money?, [CPenalty penalties]?, [CStatisticValue statistic]`*`   )
+            ( strokes?, points?, putts?, [CPenalty penalties]?, money?, [CStatisticValue statistic]`*`   )
   </...>
 ----
   		
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| money ||  					Denormalisation: Total money earned or loss during the round of golf.				 || xs:nonNegativeInteger ||
+|| money ||  					Denormalisation: Total money earned or loss during the round of golf.				 || xs:float ||
 || [CPenalty penalties] ||  					Denormalisation: Total number of penalty strokes during the round of golf.				 || [CPenalty golfml:Penalty] ||
 || points ||  					Denormalisation: Total number of points for the round of golf.				 || xs:nonNegativeInteger ||
 || putts ||  					Denormalisation: Total number of putts for the round of golf.				 || xs:nonNegativeInteger ||

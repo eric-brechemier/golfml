@@ -31,4 +31,4 @@ string
 
 	( 'relativeToSeaFloor' | 'clampToSeaFloor' | 'relativeToGround' | 'clampToGround' | 'absolute' )
 ===  Local Usage ===
-    	[CAltitude Altitude]
+    	[CAltitude Altitude], [CPositionGPS PositionGPS]

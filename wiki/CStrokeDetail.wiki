@@ -29,7 +29,7 @@ anyType
 ===  Model ===
 
 	<...  `drop`=xs:boolean  `number`=xs:nonNegativeInteger>
-            ( [CPosition position]? ; time? ; [CREF_GolfClub golf-club]? ; [SGolfCourseAreaTypeEnum landing]? ; [CLengthWithUnits distance]? ; [CStrokePrecision precision]? ; [CLengthWithUnits distance-to-hole]? ; [CNote note]? ) 
+            ( player? ; [CPosition position]? ; time? ; [CREF_GolfClub golf-club]? ; [SGolfCourseAreaTypeEnum landing]? ; [CLengthWithUnits distance]? ; [CStrokePrecision precision]? ; [CLengthWithUnits distance-to-hole]? ; [CNote note]? ) 
   </...>
 ----
   		      
@@ -47,6 +47,7 @@ anyType
 || [CREF_GolfClub golf-club] ||  					Golf club used for stroke.				 || [CREF_GolfClub golfml:REF_GolfClub] ||
 || [SGolfCourseAreaTypeEnum landing] ||  					Information on landing are of stroke.				 || [SGolfCourseAreaTypeEnum golfml:GolfCourseAreaTypeEnum] ||
 || [CNote note] ||  Comment about the stroke || [CNote golfml:Note] ||
+|| player ||  					Name of the player who actually stroked the ball					in best-ball, four-ball or other similar team competition.				 || xs:string ||
 || [CPosition position] ||  					Position FROM where the stroke take place.				 || [CPosition golfml:Position] ||
 || [CStrokePrecision precision] ||  					Information on the precision of the stroke regarding distance and direction.				 || [CStrokePrecision golfml:StrokePrecision] ||
 || time ||  					Time of stroke.				 || xs:dateTime ||
