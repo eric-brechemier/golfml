@@ -30,8 +30,8 @@ anyType
   	
 ===  Model ===
 
-	<...  `number`=xs:nonNegativeInteger  `orientation`=[SOrientationEnum OrientationEnum]  `other`=xs:string  `subtype`=xs:string  `type`=[SGolfCourseAreaTypeEnum GolfCourseAreaTypeEnum]>
-            ( name? ; description? ; [CPosition position] ) 
+	<...  `number`=xs:nonNegativeInteger  `orientation`=golfml:OrientationEnum  `subtype`=xs:string  `type`=golfml:GolfCourseAreaTypeEnum>
+            ( name? ; description? ; position ) 
   </...>
 ----
   		      
@@ -39,17 +39,16 @@ anyType
 
 || *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
 || number ||   || xs:nonNegativeInteger || optional ||  ||  || unqualified ||
-|| orientation ||   || [SOrientationEnum golfml:OrientationEnum] || optional ||  ||  || unqualified ||
-|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
+|| orientation ||   || golfml:OrientationEnum || optional ||  ||  || unqualified ||
 || subtype ||   || xs:string || optional ||  ||  || unqualified ||
-|| type ||   || [SGolfCourseAreaTypeEnum golfml:GolfCourseAreaTypeEnum] || optional ||  ||  || unqualified ||
+|| type ||   || golfml:GolfCourseAreaTypeEnum || optional ||  ||  || unqualified ||
 
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
 || description ||  					Description of a point of interest.				 || xs:string ||
 || name ||  					Name of point of interest.				 || xs:string ||
-|| [CPosition position] ||  					Coordinate of a point of interest.				 || [CPosition golfml:Position] ||
+|| position ||  					Coordinate of a point of interest.				 || golfml:Position ||
 
 ----
   		

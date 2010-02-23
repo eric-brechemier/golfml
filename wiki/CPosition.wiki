@@ -30,26 +30,17 @@ anyType
 ===  Model ===
 
 	<...>
-            ( [CPositionGPS gps] | [CRoomForExtension other] ) 
+            ( gps | other ) 
   </...>
 ----
   		
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| [CPositionGPS gps] ||  					GPS coordinate of a point.				 || [CPositionGPS golfml:PositionGPS] ||
-|| [CRoomForExtension other] ||  					Coordinate of a point in an arbitraty unit system.				 || [CRoomForExtension golfml:RoomForExtension] ||
+|| gps ||  					GPS coordinate of a point.				 || golfml:PositionGPS ||
+|| other ||  					Coordinate of a point in an arbitraty unit system.				 || golfml:RoomForExtension ||
 
 ----
   		
-===  Sub Types ===
-{{{
-[CPosition Position] (restriction)
-  |  
-  +--[CPositionWithSequence PositionWithSequence] (extension)
-
-}}}
-----
-    
 ===  Local Usage ===
     	[CPointOfInterest PointOfInterest], [CPositionWithSequence PositionWithSequence], [CStrokeDetail StrokeDetail]

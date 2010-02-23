@@ -28,25 +28,25 @@ anyType
   	
 ===  Model ===
 
-	<...  `number`=[SOneToEighteen OneToEighteen]>
-            ( strokes ; points? ; putts? ; money? ; [CPenalty penalties]? ; [CStrokes stroke-detail]? ; [CHoleStatistics statistics]? ) 
+	<...  `number`=golfml:OneToEighteen>
+            ( strokes ; points? ; putts? ; money? ; penalties? ; stroke-detail? ; statistics? ) 
   </...>
 ----
   		      
 === Attributes ===
 
 || *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
-|| number ||  				Order number of hole.			 || [SOneToEighteen golfml:OneToEighteen] || optional ||  ||  || unqualified ||
+|| number ||  				Order number of hole.			 || golfml:OneToEighteen || optional ||  ||  || unqualified ||
 
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
 || money ||  					Money earned or loss on hole in wagers.				 || xs:float ||
-|| [CPenalty penalties] ||  					Total number of penalty strokes.				 || [CPenalty golfml:Penalty] ||
+|| penalties ||  					Total number of penalty strokes.				 || golfml:Penalty ||
 || points ||  					Total number of points for hole.				 || xs:nonNegativeInteger ||
 || putts ||  					Number of putts, from the green.				 || xs:nonNegativeInteger ||
-|| [CHoleStatistics statistics] ||  					Denormalised statistics for hole.				 || [CHoleStatistics golfml:HoleStatistics] ||
-|| [CStrokes stroke-detail] ||  					Detail of each stroke.				 || [CStrokes golfml:Strokes] ||
+|| statistics ||  					Denormalised statistics for hole.				 || golfml:HoleStatistics ||
+|| stroke-detail ||  					Detail of each stroke.				 || golfml:Strokes ||
 || strokes ||  					Total number of strokes for hole, including penalties.				 || xs:positiveInteger ||
 
 ----

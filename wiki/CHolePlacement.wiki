@@ -29,15 +29,15 @@ anyType
 ===  Model ===
 
 	<...>
-            ( [CHolePlacementWithDistances distances] | [CRoomForExtension coordinates] ) 
+            ( distances | coordinates ) 
   </...>
 ----
   		
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| [CRoomForExtension coordinates] ||  Description of the placement on the hole on the surface of the green with an alternate localisation system || [CRoomForExtension golfml:RoomForExtension] ||
-|| [CHolePlacementWithDistances distances] ||  					Position of hole relative to the edges of the green.				 || [CHolePlacementWithDistances golfml:HolePlacementWithDistances] ||
+|| coordinates ||  Description of the placement on the hole on the surface of the green with an alternate localisation system || golfml:RoomForExtension ||
+|| distances ||  					Position of hole relative to the edges of the green.				 || golfml:HolePlacementWithDistances ||
 
 ----
   		

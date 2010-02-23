@@ -29,14 +29,14 @@ anyType
 ===  Model ===
 
 	<...>
-            [CStatisticValue value]+  
+            value+  
   </...>
 ----
   		
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| [CStatisticValue value] ||  						Value of a statistic computed for the supplied collection type.					 || [CStatisticValue golfml:StatisticValue] ||
+|| value ||  						Value of a statistic computed for the supplied collection type.					 || golfml:StatisticValue ||
 
 ----
   		

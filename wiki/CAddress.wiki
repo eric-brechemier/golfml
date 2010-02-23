@@ -31,14 +31,14 @@ anyType
 ===  Model ===
 
 	<...>
-            ( [CCountry country] ; municipality? ; postal-code ; region? ; street? ) 
+            ( country ; municipality? ; postal-code ; region? ; street? ) 
   </...>
 ----
   		
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| [CCountry country] ||  Country of address || [CCountry golfml:Country] ||
+|| country ||  Country of address || golfml:Country ||
 || municipality ||  					Municipality of address.				 || xs:string ||
 || postal-code ||  Postal code of the address || xs:string ||
 || region ||  Region of an address || xs:string ||

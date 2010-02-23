@@ -6,11 +6,7 @@
 [CPositionWithSequence PositionWithSequence]
 ===  Super Types ===
 {{{
-anyType
-  |
-  +--[CPosition Position] (restriction)
-       |
-       +--PositionWithSequence (extension)
+PositionWithSequence (extension)
 }}}
     
 ----
@@ -31,7 +27,7 @@ anyType
 ===  Model ===
 
 	<...  `number`=xs:nonNegativeInteger>
-            ( [CPositionGPS gps] | [CRoomForExtension other] ) 
+          
   </...>
 ----
   		      
@@ -39,12 +35,6 @@ anyType
 
 || *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
 || number ||   || xs:nonNegativeInteger || required ||  ||  || unqualified ||
-
-=== Nested Elements ===
-
-|| *Name* || *Description* || *Type* ||
-|| [CPositionGPS gps] ||  					GPS coordinate of a point.				 || [CPositionGPS golfml:PositionGPS] ||
-|| [CRoomForExtension other] ||  					Coordinate of a point in an arbitraty unit system.				 || [CRoomForExtension golfml:RoomForExtension] ||
 
 ----
   		

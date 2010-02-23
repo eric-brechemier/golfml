@@ -32,8 +32,8 @@ anyType
   	
 ===  Model ===
 
-	<...  `number`=xs:nonNegativeInteger  `other`=xs:string  `type`=[SGolfCourseAreaTypeEnum GolfCourseAreaTypeEnum]>
-            ( name, description?, [CPositionWithSequence position]{2,*}   )
+	<...  `number`=xs:nonNegativeInteger  `type`=golfml:GolfCourseAreaTypeEnum>
+            ( name, description?, position{2,*}   )
   </...>
 ----
   		      
@@ -41,15 +41,14 @@ anyType
 
 || *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
 || number ||  Position of the area of interest in a list of areas of interest || xs:nonNegativeInteger || optional ||  ||  || unqualified ||
-|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
-|| type ||  				Type of area of interest.			 || [SGolfCourseAreaTypeEnum golfml:GolfCourseAreaTypeEnum] || optional ||  ||  || unqualified ||
+|| type ||  				Type of area of interest.			 || golfml:GolfCourseAreaTypeEnum || optional ||  ||  || unqualified ||
 
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
 || description ||  					Description of an area of interest.				 || xs:string ||
 || name ||  					Name of an area of interest.				 || xs:string ||
-|| [CPositionWithSequence position] ||  Position of a point of the polygon that forms the area of interest || [CPositionWithSequence golfml:PositionWithSequence] ||
+|| position ||  Position of a point of the polygon that forms the area of interest || golfml:PositionWithSequence ||
 
 ----
   		

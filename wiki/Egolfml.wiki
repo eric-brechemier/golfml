@@ -57,7 +57,7 @@
 ===  Model ===
 
 	<[Egolfml golfml]  `version`=xs:string>
-            ( [CCountryClub country-club] | [CPlayer player] | [CApplication application] | [CVersion version] )`*` [Egolfml </golfml>]
+            ( country-club | player | application | version )`*` [Egolfml </golfml>]
 ----
   		      
 === Attributes ===
@@ -68,10 +68,10 @@
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| [CApplication application] ||  						Room for non-golfml application storage.					 || [CApplication golfml:Application] ||
-|| [CCountryClub country-club] ||  						Country club defined and used in this document.					 || [CCountryClub golfml:CountryClub] ||
-|| [CPlayer player] ||  						Player  in this document.					 || [CPlayer golfml:Player] ||
-|| [CVersion version] ||  						Room for version information about the file.					 || [CVersion golfml:Version] ||
+|| application ||  						Room for non-golfml application storage.					 || golfml:Application ||
+|| country-club ||  						Country club defined and used in this document.					 || golfml:CountryClub ||
+|| player ||  						Player  in this document.					 || golfml:Player ||
+|| version ||  						Room for version information about the file.					 || golfml:Version ||
 
 ----
   		

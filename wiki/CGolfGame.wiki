@@ -28,7 +28,7 @@ anyType
   	
 ===  Model ===
 
-	<...  `other`=xs:string  `type`=[SGolfGameTypeEnum GolfGameTypeEnum]>
+	<...  `type`=golfml:GolfGameTypeEnum>
           [Sstring string]
   </...>
 ----
@@ -36,8 +36,7 @@ anyType
 === Attributes ===
 
 || *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
-|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
-|| type ||  						Type of golf game played.					 || [SGolfGameTypeEnum golfml:GolfGameTypeEnum] || optional ||  ||  || unqualified ||
+|| type ||  						Type of golf game played.					 || golfml:GolfGameTypeEnum || optional ||  ||  || unqualified ||
 
 ----
   		

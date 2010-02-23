@@ -29,7 +29,7 @@ anyType
 ===  Model ===
 
 	<...>
-            ( [CUID uid]`*`, name, architect?, ( [CMedia media] | [CNote note] )`*` , [CHoles holes]?, [CTees tee-set]+, [CVersion version]`*`   )
+            ( uid`*`, name, architect?, ( media | note )`*` , holes?, tee-set+, version`*`   )
   </...>
 ----
   		
@@ -37,13 +37,13 @@ anyType
 
 || *Name* || *Description* || *Type* ||
 || architect ||  					Architect(s) of the golf course.				 || xs:string ||
-|| [CHoles holes] ||  					Description of the individual holes.				 || [CHoles golfml:Holes] ||
-|| [CMedia media] ||  						Medias associated with the golf course.					 || [CMedia golfml:Media] ||
+|| holes ||  					Description of the individual holes.				 || golfml:Holes ||
+|| media ||  						Medias associated with the golf course.					 || golfml:Media ||
 || name ||  Name of a tee set || xs:string ||
-|| [CNote note] ||  						Notes and comments associated with the golf course.					 || [CNote golfml:Note] ||
-|| [CTees tee-set] ||  					Description of a tee set for the golf course.				 || [CTees golfml:Tees] ||
-|| [CUID uid] ||  					Unique identifier for an application.				 || [CUID golfml:UID] ||
-|| [CVersion version] ||  					Records history of the golf course.				 || [CVersion golfml:Version] ||
+|| note ||  						Notes and comments associated with the golf course.					 || golfml:Note ||
+|| tee-set ||  					Description of a tee set for the golf course.				 || golfml:Tees ||
+|| uid ||  					Unique identifier for an application.				 || golfml:UID ||
+|| version ||  					Records history of the golf course.				 || golfml:Version ||
 
 ----
   		

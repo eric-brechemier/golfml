@@ -32,8 +32,8 @@ anyType
   	
 ===  Model ===
 
-	<...  `team`=xs:string  `type`=[SPlayerSomeEnum PlayerSomeEnum]>
-            ( player.name, player.date-of-birth )  
+	<...  `team`=xs:string  `type`=golfml:PlayerSomeEnum>
+              
   </...>
 ----
   		      
@@ -41,13 +41,7 @@ anyType
 
 || *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
 || team ||  Name of the team this player was a member of || xs:string || optional ||  ||  || unqualified ||
-|| type ||  				Qualification of the player on the 2,3,4 some.			 || [SPlayerSomeEnum golfml:PlayerSomeEnum] || optional ||  ||  || unqualified ||
-
-=== Nested Elements ===
-
-|| *Name* || *Description* || *Type* ||
-|| player.date-of-birth ||   || xs:date ||
-|| player.name ||   || xs:string ||
+|| type ||  				Qualification of the player on the 2,3,4 some.			 || golfml:PlayerSomeEnum || optional ||  ||  || unqualified ||
 
 ----
   		

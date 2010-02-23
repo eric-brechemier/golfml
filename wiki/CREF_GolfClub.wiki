@@ -21,24 +21,15 @@ anyType
   	
 ===  Model ===
 
-	<...  `remote-golfml-url`=xs:anyURI>
-            ( ( golf-club.manufacturer, golf-club.model, golf-club.submodel, golf-club.number ) | [CUID uid] ) 
+	<...>
+            uid 
   </...>
 ----
-  		      
-=== Attributes ===
-
-|| *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
-|| remote-golfml-url ||  				URL of remote GolfML document used for references.			 || xs:anyURI || optional ||  ||  || unqualified ||
-
+  		
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| golf-club.manufacturer ||   || xs:string ||
-|| golf-club.model ||   || xs:string ||
-|| golf-club.number ||   || xs:string ||
-|| golf-club.submodel ||   || xs:string ||
-|| [CUID uid] ||   || [CUID golfml:UID] ||
+|| uid ||   || golfml:UID ||
 
 ----
   		

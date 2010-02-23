@@ -28,7 +28,7 @@ anyType
   	
 ===  Model ===
 
-	<...  `units`=[SUnitOfWeight UnitOfWeight] : g>
+	<...  `units`=golfml:UnitOfWeight : g>
           [Sfloat float]
   </...>
 ----
@@ -36,7 +36,7 @@ anyType
 === Attributes ===
 
 || *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
-|| units ||   || [SUnitOfWeight golfml:UnitOfWeight] || optional || g ||  || unqualified ||
+|| units ||   || golfml:UnitOfWeight || optional || g ||  || unqualified ||
 
 ----
   		

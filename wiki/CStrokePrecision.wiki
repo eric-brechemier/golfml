@@ -31,7 +31,7 @@ anyType
 ===  Model ===
 
 	<...  `type`=xs:string>
-            ( ( [SStrokePrecisionValue front-back]?, [SStrokePrecisionValue left-right]? ) | ( [SStrokeLengthEnum front-back-text]?, [SStrokeDirectionEnum left-right-text]? ) ) 
+            ( ( front-back?, left-right? ) | ( front-back-text?, left-right-text? ) ) 
   </...>
 ----
   		      
@@ -43,10 +43,10 @@ anyType
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| [SStrokePrecisionValue front-back] ||  						Precision of a stroke relative to the distance.					 || [SStrokePrecisionValue golfml:StrokePrecisionValue] ||
-|| [SStrokeLengthEnum front-back-text] ||  						Precision of a stroke relative to the distance.					 || [SStrokeLengthEnum golfml:StrokeLengthEnum] ||
-|| [SStrokePrecisionValue left-right] ||  						Precision of a stroke relative to the direction.					 || [SStrokePrecisionValue golfml:StrokePrecisionValue] ||
-|| [SStrokeDirectionEnum left-right-text] ||  						Precision of a stroke relative to the direction.					 || [SStrokeDirectionEnum golfml:StrokeDirectionEnum] ||
+|| front-back ||  						Precision of a stroke relative to the distance.					 || golfml:StrokePrecisionValue ||
+|| front-back-text ||  						Precision of a stroke relative to the distance.					 || golfml:StrokeLengthEnum ||
+|| left-right ||  						Precision of a stroke relative to the direction.					 || golfml:StrokePrecisionValue ||
+|| left-right-text ||  						Precision of a stroke relative to the direction.					 || golfml:StrokeDirectionEnum ||
 
 ----
   		

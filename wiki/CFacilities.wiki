@@ -29,16 +29,16 @@ anyType
 ===  Model ===
 
 	<...>
-            ( [CMedia media] | [CNote note] | [CPlacemarks placemarks] )`*` 
+            ( media | note | placemarks )`*` 
   </...>
 ----
   		
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| [CMedia media] ||  					Associated media: Picture, video, document, link...				 || [CMedia golfml:Media] ||
-|| [CNote note] ||  					Localised note or comment about the hole.				 || [CNote golfml:Note] ||
-|| [CPlacemarks placemarks] ||  					List of places worth of interest on the hole.				 || [CPlacemarks golfml:Placemarks] ||
+|| media ||  					Associated media: Picture, video, document, link...				 || golfml:Media ||
+|| note ||  					Localised note or comment about the hole.				 || golfml:Note ||
+|| placemarks ||  					List of places worth of interest on the hole.				 || golfml:Placemarks ||
 
 ----
   		

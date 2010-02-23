@@ -29,7 +29,7 @@ anyType
   	
 ===  Model ===
 
-	<...  `from`=[SOrientationEnum OrientationEnum]>
+	<...  `from`=golfml:OrientationEnum>
           [SLengthWithUnits LengthWithUnits]
   </...>
 ----
@@ -37,7 +37,7 @@ anyType
 === Attributes ===
 
 || *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
-|| from ||  Edge of green the distance is taken from || [SOrientationEnum golfml:OrientationEnum] || required ||  ||  || unqualified ||
+|| from ||  Edge of green the distance is taken from || golfml:OrientationEnum || required ||  ||  || unqualified ||
 
 ----
   		

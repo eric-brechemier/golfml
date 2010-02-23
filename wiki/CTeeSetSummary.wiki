@@ -29,18 +29,18 @@ anyType
 ===  Model ===
 
 	<...>
-            ( holes?, par?, [CLengthWithUnits front]?, [CLengthWithUnits back]?, [CStatisticValue statistic]`*`   )
+            ( holes?, par?, front?, back?, statistic`*`   )
   </...>
 ----
   		
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| [CLengthWithUnits back] ||  					Denormalisation: Total length for last nine holes.				 || [CLengthWithUnits golfml:LengthWithUnits] ||
-|| [CLengthWithUnits front] ||  					Denormalisation: Total length of first nine holes.				 || [CLengthWithUnits golfml:LengthWithUnits] ||
+|| back ||  					Denormalisation: Total length for last nine holes.				 || golfml:LengthWithUnits ||
+|| front ||  					Denormalisation: Total length of first nine holes.				 || golfml:LengthWithUnits ||
 || holes ||  					Denormalisation: Number of holes.				 || xs:nonNegativeInteger ||
 || par ||  					Denormalisation: Total number of strokes for set of tees.				 || xs:positiveInteger ||
-|| [CStatisticValue statistic] ||  					Denormalisation: Statistic for the round of golf.				 || [CStatisticValue golfml:StatisticValue] ||
+|| statistic ||  					Denormalisation: Statistic for the round of golf.				 || golfml:StatisticValue ||
 
 ----
   		

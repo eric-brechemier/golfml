@@ -30,15 +30,15 @@ anyType
   	
 ===  Model ===
 
-	<...  `type`=[SEquipmentTypeEnum EquipmentTypeEnum]>
-            ( [CUID uid]`*`, name, manufacturer, model, submodel?, serial?, [CNote note]?   )
+	<...  `type`=golfml:EquipmentTypeEnum>
+            ( uid`*`, name, manufacturer, model, submodel?, serial?, note?   )
   </...>
 ----
   		      
 === Attributes ===
 
 || *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
-|| type ||  				Type of piece of equipment to organise them in categories: Training devices, clubs, balls...			 || [SEquipmentTypeEnum golfml:EquipmentTypeEnum] || optional ||  ||  || unqualified ||
+|| type ||  				Type of piece of equipment to organise them in categories: Training devices, clubs, balls...			 || golfml:EquipmentTypeEnum || optional ||  ||  || unqualified ||
 
 === Nested Elements ===
 
@@ -46,10 +46,10 @@ anyType
 || manufacturer ||  					Manufacturer of equipment.				 || xs:string ||
 || model ||  					Model of equipment.				 || xs:string ||
 || name ||  					Name or description of equipment.				 || xs:string ||
-|| [CNote note] ||  Comment about the equipment || [CNote golfml:Note] ||
+|| note ||  Comment about the equipment || golfml:Note ||
 || serial ||  					Serial number of equipment.				 || xs:string ||
 || submodel ||  					Submodel or type of equipment.				 || xs:string ||
-|| [CUID uid] ||  					Unique identifier for an application.				 || [CUID golfml:UID] ||
+|| uid ||  					Unique identifier for an application.				 || golfml:UID ||
 
 ----
   		

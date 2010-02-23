@@ -31,7 +31,7 @@ anyType
   	
 ===  Model ===
 
-	<...  `other`=xs:string  `wind`=[SWindEnum WindEnum]>
+	<...  `wind`=golfml:WindEnum>
           [Sstring string]
   </...>
 ----
@@ -39,8 +39,7 @@ anyType
 === Attributes ===
 
 || *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
-|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
-|| wind ||   || [SWindEnum golfml:WindEnum] || optional ||  ||  || unqualified ||
+|| wind ||   || golfml:WindEnum || optional ||  ||  || unqualified ||
 
 ----
   		

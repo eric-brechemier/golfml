@@ -30,7 +30,7 @@ anyType
   	
 ===  Model ===
 
-	<...  `other`=xs:string  `type`=[SAmenetyTypeEnum AmenetyTypeEnum]>
+	<...  `type`=golfml:AmenetyTypeEnum>
           [Sstring string]
   </...>
 ----
@@ -38,8 +38,7 @@ anyType
 === Attributes ===
 
 || *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
-|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
-|| type ||   || [SAmenetyTypeEnum golfml:AmenetyTypeEnum] || optional ||  ||  || unqualified ||
+|| type ||   || golfml:AmenetyTypeEnum || optional ||  ||  || unqualified ||
 
 ----
   		

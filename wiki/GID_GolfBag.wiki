@@ -21,15 +21,13 @@
   	
 ===  Model ===
 
-	  ( ( player.name, player.date-of-birth ), player.golf-bag.name   )
+	  player.golf-bag.name  
 ----
   		
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| player.date-of-birth ||   || xs:date ||
 || player.golf-bag.name ||   || xs:string ||
-|| player.name ||   || xs:string ||
 
 ----
   		

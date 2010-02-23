@@ -22,14 +22,14 @@ anyType
 ===  Model ===
 
 	<...>
-            [CStrokeDetail stroke]+  
+            stroke+  
   </...>
 ----
   		
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| [CStrokeDetail stroke] ||  					Detail of each stroke.				 || [CStrokeDetail golfml:StrokeDetail] ||
+|| stroke ||  					Detail of each stroke.				 || golfml:StrokeDetail ||
 
 ----
   		
