@@ -6,7 +6,11 @@
 [CClubDistance ClubDistance]
 ===  Super Types ===
 {{{
-ClubDistance (extension)
+anyType
+  |
+  +--[CLengthWithUnits LengthWithUnits] (restriction)
+       |
+       +--ClubDistance (extension)
 }}}
     
 ----
@@ -26,8 +30,8 @@ ClubDistance (extension)
   	
 ===  Model ===
 
-	<...  `date`=xs:date  `precision`=golfml:StrokeTypeEnum : straight>
-          
+	<...  `date`=xs:date  `precision`=[SStrokeTypeEnum StrokeTypeEnum] : straight  `units`=[SUnitOfLengthEnum UnitOfLengthEnum] : meters>
+          [SLength Length]
   </...>
 ----
   		      
@@ -35,7 +39,8 @@ ClubDistance (extension)
 
 || *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
 || date ||  						Date of measurement or statistics.					 || xs:date || optional ||  ||  || unqualified ||
-|| precision ||  						Information on the precision of the stroke regarding average direction.					 || golfml:StrokeTypeEnum || optional || straight ||  || unqualified ||
+|| precision ||  						Information on the precision of the stroke regarding average direction.					 || [SStrokeTypeEnum golfml:StrokeTypeEnum] || optional || straight ||  || unqualified ||
+|| units ||   || [SUnitOfLengthEnum golfml:UnitOfLengthEnum] || optional || meters ||  || unqualified ||
 
 ----
   		

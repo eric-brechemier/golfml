@@ -28,7 +28,7 @@ anyType
   	
 ===  Model ===
 
-	<...  `mode`=golfml:AltitudeModeEnum : absolute>
+	<...  `mode`=[SAltitudeModeEnum AltitudeModeEnum] : absolute>
           [Sdouble double]
   </...>
 ----
@@ -36,7 +36,7 @@ anyType
 === Attributes ===
 
 || *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
-|| mode ||   || golfml:AltitudeModeEnum || optional || absolute ||  || unqualified ||
+|| mode ||   || [SAltitudeModeEnum golfml:AltitudeModeEnum] || optional || absolute ||  || unqualified ||
 
 ----
   		

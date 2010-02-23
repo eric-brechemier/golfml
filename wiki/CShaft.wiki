@@ -28,20 +28,20 @@ anyType
   	
 ===  Model ===
 
-	<...  `type`=golfml:GolfClubTypeEnum>
-            ( manufacturer, model, submodel?, length?, weight?, tip?   )
+	<...  `type`=[SGolfClubTypeEnum GolfClubTypeEnum]>
+            ( manufacturer, model, submodel?, [CLengthWithUnits length]?, weight?, tip?   )
   </...>
 ----
   		      
 === Attributes ===
 
 || *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
-|| type ||  				Type of golf club for the shaft.			 || golfml:GolfClubTypeEnum || optional ||  ||  || unqualified ||
+|| type ||  				Type of golf club for the shaft.			 || [SGolfClubTypeEnum golfml:GolfClubTypeEnum] || optional ||  ||  || unqualified ||
 
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| length ||  					Length of a shaft.				 || golfml:LengthWithUnits ||
+|| [CLengthWithUnits length] ||  					Length of a shaft.				 || [CLengthWithUnits golfml:LengthWithUnits] ||
 || manufacturer ||  					Manufacturer of a shaft.				 || xs:string ||
 || model ||  					Model of a shaft.				 || xs:string ||
 || submodel ||  					Sub-model or type of a model of a shaft.				 || xs:string ||

@@ -31,32 +31,32 @@ anyType
   	
 ===  Model ===
 
-	<...  `gender`=golfml:Gender>
-            ( uid`*`, name, date-of-birth, current-handicap?, address`*`, contact`*`, home-country-club?, note`*`, media`*`, equipment-list?, golf-bag`*`, round`*`, statistics`*`   )
+	<...  `gender`=[SGender Gender]>
+            ( [CUID uid]`*`, name, date-of-birth, [CPlayerHandicap current-handicap]?, [CAddress address]`*`, [CContact contact]`*`, [CCountryClubChoice home-country-club]?, [CNote note]`*`, [CMedia media]`*`, [CEquipmentList equipment-list]?, [CGolfBag golf-bag]`*`, [CRound round]`*`, [CStatisticsCollection statistics]`*`   )
   </...>
 ----
   		      
 === Attributes ===
 
 || *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
-|| gender ||  Gender of the player || golfml:Gender || required ||  ||  || unqualified ||
+|| gender ||  Gender of the player || [SGender golfml:Gender] || required ||  ||  || unqualified ||
 
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| address ||  					Address of the player.				 || golfml:Address ||
-|| contact ||  					Contact information of the player.				 || golfml:Contact ||
-|| current-handicap ||  Denormalisation of the current handicap of the player || golfml:PlayerHandicap ||
+|| [CAddress address] ||  					Address of the player.				 || [CAddress golfml:Address] ||
+|| [CContact contact] ||  					Contact information of the player.				 || [CContact golfml:Contact] ||
+|| [CPlayerHandicap current-handicap] ||  Denormalisation of the current handicap of the player || [CPlayerHandicap golfml:PlayerHandicap] ||
 || date-of-birth ||  					Date of birth of player, used to uniquely identify him.				 || xs:date ||
-|| equipment-list ||  					List of equipement owned by the player.				 || golfml:EquipmentList ||
-|| golf-bag ||  					Collection of at most 14 golf clubs.				 || golfml:GolfBag ||
-|| home-country-club ||  					Main country club of the player.				 || golfml:CountryClubChoice ||
-|| media ||  Media associated with the player || golfml:Media ||
+|| [CEquipmentList equipment-list] ||  					List of equipement owned by the player.				 || [CEquipmentList golfml:EquipmentList] ||
+|| [CGolfBag golf-bag] ||  					Collection of at most 14 golf clubs.				 || [CGolfBag golfml:GolfBag] ||
+|| [CCountryClubChoice home-country-club] ||  					Main country club of the player.				 || [CCountryClubChoice golfml:CountryClubChoice] ||
+|| [CMedia media] ||  Media associated with the player || [CMedia golfml:Media] ||
 || name ||  					Name of the player.				 || xs:string ||
-|| note ||  					Note associated with the player.				 || golfml:Note ||
-|| round ||  					A round of golf played by the player.				 || golfml:Round ||
-|| statistics ||  					A set of statistical data associated with the player.				 || golfml:StatisticsCollection ||
-|| uid ||  					Unique identifier for an application.				 || golfml:UID ||
+|| [CNote note] ||  					Note associated with the player.				 || [CNote golfml:Note] ||
+|| [CRound round] ||  					A round of golf played by the player.				 || [CRound golfml:Round] ||
+|| [CStatisticsCollection statistics] ||  					A set of statistical data associated with the player.				 || [CStatisticsCollection golfml:StatisticsCollection] ||
+|| [CUID uid] ||  					Unique identifier for an application.				 || [CUID golfml:UID] ||
 
 ----
   		

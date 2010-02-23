@@ -29,7 +29,7 @@ anyType
 ===  Model ===
 
 	<...>
-            ( strokes?, points?, putts?, penalties?, money?, statistic`*`   )
+            ( strokes?, points?, putts?, [CPenalty penalties]?, money?, [CStatisticValue statistic]`*`   )
   </...>
 ----
   		
@@ -37,10 +37,10 @@ anyType
 
 || *Name* || *Description* || *Type* ||
 || money ||  					Denormalisation: Total money earned or loss during the round of golf.				 || xs:float ||
-|| penalties ||  					Denormalisation: Total number of penalty strokes during the round of golf.				 || golfml:Penalty ||
+|| [CPenalty penalties] ||  					Denormalisation: Total number of penalty strokes during the round of golf.				 || [CPenalty golfml:Penalty] ||
 || points ||  					Denormalisation: Total number of points for the round of golf.				 || xs:nonNegativeInteger ||
 || putts ||  					Denormalisation: Total number of putts for the round of golf.				 || xs:nonNegativeInteger ||
-|| statistic ||  					Denormalisation: Statistic for the round of golf.				 || golfml:StatisticValue ||
+|| [CStatisticValue statistic] ||  					Denormalisation: Statistic for the round of golf.				 || [CStatisticValue golfml:StatisticValue] ||
 || strokes ||  					Denormalisation: Total number of strokes for the round of golf.				 || xs:positiveInteger ||
 
 ----

@@ -29,22 +29,23 @@ anyType
   	
 ===  Model ===
 
-	<...  `type`=golfml:ContactTypeEnum>
-            ( name? ; phone? ; email? ; website? ) 
+	<...  `other`=xs:string  `type`=[SContactTypeEnum ContactTypeEnum]>
+            ( name? ; [SPhoneNumber phone]? ; email? ; website? ) 
   </...>
 ----
   		      
 === Attributes ===
 
 || *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
-|| type ||  Qualification of a contact || golfml:ContactTypeEnum || optional ||  ||  || unqualified ||
+|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
+|| type ||  Qualification of a contact || [SContactTypeEnum golfml:ContactTypeEnum] || optional ||  ||  || unqualified ||
 
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
 || email ||  					Electronic mail address of contact.				 || xs:string ||
 || name ||  					Name or description of contact.				 || xs:string ||
-|| phone ||  Telephone number of contact || golfml:PhoneNumber ||
+|| [SPhoneNumber phone] ||  Telephone number of contact || [SPhoneNumber golfml:PhoneNumber] ||
 || website ||  					Internet web site URL of contact.				 || xs:anyURI ||
 
 ----

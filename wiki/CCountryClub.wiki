@@ -31,23 +31,23 @@ anyType
 ===  Model ===
 
 	<...>
-            ( uid`*`, name, ownership-type?, address, contact`*`, amenety`*`, note`*`, media`*`, golf-course+, version`*`   )
+            ( [CUID uid]`*`, name, [SCountryClubTypeEnum ownership-type]?, [CAddress address], [CContact contact]`*`, [CAmenety amenety]`*`, [CNote note]`*`, [CMedia media]`*`, [CGolfCourse golf-course]+, [CVersion version]`*`   )
   </...>
 ----
   		
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| address ||  					Address of the country club or golf course.				 || golfml:Address ||
-|| amenety ||  Amenety available at the contry club || golfml:Amenety ||
-|| contact ||  Contact for the golf course || golfml:Contact ||
-|| golf-course ||  					Description of one golf course at the country club.				 || golfml:GolfCourse ||
-|| media ||  Media for the country club || golfml:Media ||
+|| [CAddress address] ||  					Address of the country club or golf course.				 || [CAddress golfml:Address] ||
+|| [CAmenety amenety] ||  Amenety available at the contry club || [CAmenety golfml:Amenety] ||
+|| [CContact contact] ||  Contact for the golf course || [CContact golfml:Contact] ||
+|| [CGolfCourse golf-course] ||  					Description of one golf course at the country club.				 || [CGolfCourse golfml:GolfCourse] ||
+|| [CMedia media] ||  Media for the country club || [CMedia golfml:Media] ||
 || name ||  					Name of the country club.				 || xs:string ||
-|| note ||  					Note about the country club.				 || golfml:Note ||
-|| ownership-type ||  					Name of the country club.				 || golfml:CountryClubTypeEnum ||
-|| uid ||  					Unique identifier for an application.				 || golfml:UID ||
-|| version ||   || golfml:Version ||
+|| [CNote note] ||  					Note about the country club.				 || [CNote golfml:Note] ||
+|| [SCountryClubTypeEnum ownership-type] ||  					Name of the country club.				 || [SCountryClubTypeEnum golfml:CountryClubTypeEnum] ||
+|| [CUID uid] ||  					Unique identifier for an application.				 || [CUID golfml:UID] ||
+|| [CVersion version] ||   || [CVersion golfml:Version] ||
 
 ----
   		

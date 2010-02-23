@@ -30,15 +30,15 @@ anyType
 ===  Model ===
 
 	<...>
-            ( fairway? ; green-in-regulation? ; driving-distance? ; approach-to-hole? ) 
+            ( fairway? ; green-in-regulation? ; [CLengthWithUnits driving-distance]? ; [CLengthWithUnits approach-to-hole]? ) 
   </...>
 ----
   		
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| approach-to-hole ||  Distance left to hole when ball landed on green || golfml:LengthWithUnits ||
-|| driving-distance ||  					Driving distance.				 || golfml:LengthWithUnits ||
+|| [CLengthWithUnits approach-to-hole] ||  Distance left to hole when ball landed on green || [CLengthWithUnits golfml:LengthWithUnits] ||
+|| [CLengthWithUnits driving-distance] ||  					Driving distance.				 || [CLengthWithUnits golfml:LengthWithUnits] ||
 || fairway ||  					Fairway hit.				 || xs:boolean ||
 || green-in-regulation ||  					Green reached in regulation.				 || xs:boolean ||
 

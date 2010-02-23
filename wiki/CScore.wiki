@@ -29,14 +29,14 @@ anyType
 ===  Model ===
 
 	<...>
-            hole{1,18}  
+            [CHoleScore hole]{1,18}  
   </...>
 ----
   		
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| hole ||  					Detail of score for one hole.				 || golfml:HoleScore ||
+|| [CHoleScore hole] ||  					Detail of score for one hole.				 || [CHoleScore golfml:HoleScore] ||
 
 ----
   		

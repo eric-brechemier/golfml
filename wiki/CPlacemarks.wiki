@@ -29,15 +29,15 @@ anyType
 ===  Model ===
 
 	<...>
-            ( poi | aoi )`*` 
+            ( [CPointOfInterest poi] | [CAreaOfInterest aoi] )`*` 
   </...>
 ----
   		
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| aoi ||  					Area of interest.				 || golfml:AreaOfInterest ||
-|| poi ||  					Point of interest.				 || golfml:PointOfInterest ||
+|| [CAreaOfInterest aoi] ||  					Area of interest.				 || [CAreaOfInterest golfml:AreaOfInterest] ||
+|| [CPointOfInterest poi] ||  					Point of interest.				 || [CPointOfInterest golfml:PointOfInterest] ||
 
 ----
   		

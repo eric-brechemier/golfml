@@ -29,8 +29,8 @@ anyType
   	
 ===  Model ===
 
-	<...  `date`=xs:dateTime  `rating`=golfml:Rating>
-            comment+  
+	<...  `date`=xs:dateTime  `rating`=[SRating Rating]>
+            [CLocalisedText comment]+  
   </...>
 ----
   		      
@@ -38,12 +38,12 @@ anyType
 
 || *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
 || date ||  				Date of issue of the comment.			 || xs:dateTime || optional ||  ||  || unqualified ||
-|| rating ||  Simple rating of the parent entitiy || golfml:Rating || optional ||  ||  || unqualified ||
+|| rating ||  Simple rating of the parent entitiy || [SRating golfml:Rating] || optional ||  ||  || unqualified ||
 
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| comment ||  					Localised, textual comment about the parent entitiy.				 || golfml:LocalisedText ||
+|| [CLocalisedText comment] ||  					Localised, textual comment about the parent entitiy.				 || [CLocalisedText golfml:LocalisedText] ||
 
 ----
   		

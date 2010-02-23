@@ -33,7 +33,7 @@ anyType
 ===  Model ===
 
 	<...>
-            ( date-from?, date-to?, round-date?, golf-course?   )
+            ( date-from?, date-to?, round-date?, [CREF_GolfCourse golf-course]?   )
   </...>
 ----
   		
@@ -42,7 +42,7 @@ anyType
 || *Name* || *Description* || *Type* ||
 || date-from ||  					Start date for the collection of statistical calculation.				 || xs:date ||
 || date-to ||  					End date for the collection of statistical calculation.				 || xs:date ||
-|| golf-course ||  					Golf course used for statistical calculation.				 || golfml:REF_GolfCourse ||
+|| [CREF_GolfCourse golf-course] ||  					Golf course used for statistical calculation.				 || [CREF_GolfCourse golfml:REF_GolfCourse] ||
 || round-date ||  					Date (and time) of a round of golf used for statistical calculation.				 || xs:dateTime ||
 
 ----

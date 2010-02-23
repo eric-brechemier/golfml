@@ -29,14 +29,14 @@ anyType
 ===  Model ===
 
 	<...>
-            player-some{0,3}  
+            [CPlayerSome player-some]{0,3}  
   </...>
 ----
   		
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| player-some ||  											Qualification of the player on the 2,3,4 some.					 || golfml:PlayerSome ||
+|| [CPlayerSome player-some] ||  											Qualification of the player on the 2,3,4 some.					 || [CPlayerSome golfml:PlayerSome] ||
 
 ----
   		

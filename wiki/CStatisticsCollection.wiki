@@ -28,21 +28,22 @@ anyType
   	
 ===  Model ===
 
-	<...  `type`=golfml:StatisticCollectionTypesEnum>
-            ( collection, value+   )
+	<...  `other`=xs:string  `type`=[SStatisticCollectionTypesEnum StatisticCollectionTypesEnum]>
+            ( [CStatisticsCollectionDescription collection], [CStatisticValue value]+   )
   </...>
 ----
   		      
 === Attributes ===
 
 || *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
-|| type ||   || golfml:StatisticCollectionTypesEnum || required ||  ||  || unqualified ||
+|| other ||  				Alternate value for an attribute.			 || xs:string || optional ||  ||  || unqualified ||
+|| type ||   || [SStatisticCollectionTypesEnum golfml:StatisticCollectionTypesEnum] || required ||  ||  || unqualified ||
 
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| collection ||  Information regarding the collection of the statistic || golfml:StatisticsCollectionDescription ||
-|| value ||  						Value of a statistic computed for the supplied collection type.					 || golfml:StatisticValue ||
+|| [CStatisticsCollectionDescription collection] ||  Information regarding the collection of the statistic || [CStatisticsCollectionDescription golfml:StatisticsCollectionDescription] ||
+|| [CStatisticValue value] ||  						Value of a statistic computed for the supplied collection type.					 || [CStatisticValue golfml:StatisticValue] ||
 
 ----
   		

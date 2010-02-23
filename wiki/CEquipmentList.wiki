@@ -29,15 +29,15 @@ anyType
 ===  Model ===
 
 	<...>
-            ( golf-club | equipment )`*` 
+            ( [CGolfClub golf-club] | [CEquipment equipment] )`*` 
   </...>
 ----
   		
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| equipment ||  					Piece of golfing equipment owned by a player that is not a golf club (golf-club should be used instead).				 || golfml:Equipment ||
-|| golf-club ||  					Golf club owned by a player.				 || golfml:GolfClub ||
+|| [CEquipment equipment] ||  					Piece of golfing equipment owned by a player that is not a golf club (golf-club should be used instead).				 || [CEquipment golfml:Equipment] ||
+|| [CGolfClub golf-club] ||  					Golf club owned by a player.				 || [CGolfClub golfml:GolfClub] ||
 
 ----
   		

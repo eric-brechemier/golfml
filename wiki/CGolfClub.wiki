@@ -28,30 +28,30 @@ anyType
   	
 ===  Model ===
 
-	<...  `type`=golfml:GolfClubTypeEnum>
-            ( manufacturer, model, submodel, number?, serial?, loft?, lie?, weight?, swing-weight?, shaft?, grip?, distance`*`   )
+	<...  `type`=[SGolfClubTypeEnum GolfClubTypeEnum]>
+            ( manufacturer, model, submodel, number?, serial?, [SAngle90 loft]?, [SAngle90 lie]?, weight?, [SSwingWeight swing-weight]?, [CShaft shaft]?, [CEquipment grip]?, [CClubDistance distance]`*`   )
   </...>
 ----
   		      
 === Attributes ===
 
 || *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
-|| type ||  				Type of golf club.			 || golfml:GolfClubTypeEnum || required ||  ||  || unqualified ||
+|| type ||  				Type of golf club.			 || [SGolfClubTypeEnum golfml:GolfClubTypeEnum] || required ||  ||  || unqualified ||
 
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| distance ||  					Average distance and shot type covered by a ball hit by this club on a given date.				 || golfml:ClubDistance ||
-|| grip ||  					Grip of club (manufacturer + model).				 || golfml:Equipment ||
-|| lie ||  					Lie of the golf club.				 || golfml:Angle90 ||
-|| loft ||  					Loft of the golf club.				 || golfml:Angle90 ||
+|| [CClubDistance distance] ||  					Average distance and shot type covered by a ball hit by this club on a given date.				 || [CClubDistance golfml:ClubDistance] ||
+|| [CEquipment grip] ||  					Grip of club (manufacturer + model).				 || [CEquipment golfml:Equipment] ||
+|| [SAngle90 lie] ||  					Lie of the golf club.				 || [SAngle90 golfml:Angle90] ||
+|| [SAngle90 loft] ||  					Loft of the golf club.				 || [SAngle90 golfml:Angle90] ||
 || manufacturer ||  					Manufacturer of a golf club.				 || xs:string ||
 || model ||  					Model of a golf club.				 || xs:string ||
 || number ||  					Number or name of a club in a set.				 || xs:string ||
 || serial ||  					Serial number of the golf club.				 || xs:string ||
-|| shaft ||  					Shaft of the golf club.				 || golfml:Shaft ||
+|| [CShaft shaft] ||  					Shaft of the golf club.				 || [CShaft golfml:Shaft] ||
 || submodel ||  					Sub model or type of a golf club.				 || xs:string ||
-|| swing-weight ||  					Swing weight of the golf club.				 || golfml:SwingWeight ||
+|| [SSwingWeight swing-weight] ||  					Swing weight of the golf club.				 || [SSwingWeight golfml:SwingWeight] ||
 || weight ||  					Weight of the golf club.				 || xs:float ||
 
 ----

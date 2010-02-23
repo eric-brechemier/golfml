@@ -28,8 +28,8 @@ anyType
   	
 ===  Model ===
 
-	<...  `colour`=xs:string  `date-from`=xs:date  `date-to`=xs:date  `gender`=golfml:GolfingGender  `name`=xs:string>
-            ( uid`*`, qualification, tee{1,18}, version`*`, summary?   )
+	<...  `colour`=xs:string  `date-from`=xs:date  `date-to`=xs:date  `gender`=[SGolfingGender GolfingGender]  `name`=xs:string>
+            ( [CUID uid]`*`, [CHoleQualification qualification], [CTee tee]{1,18}, [CVersion version]`*`, [CStatistics summary]?   )
   </...>
 ----
   		      
@@ -39,17 +39,17 @@ anyType
 || colour ||  				Color of tee set.			 || xs:string || optional ||  ||  || unqualified ||
 || date-from ||  				Start date of validity of tee set.			 || xs:date || optional ||  ||  || unqualified ||
 || date-to ||  				End date of validity of tee set.			 || xs:date || optional ||  ||  || unqualified ||
-|| gender ||  				"Gender" of tee set for handicaping purpose.			 || golfml:GolfingGender || required ||  ||  || unqualified ||
+|| gender ||  				"Gender" of tee set for handicaping purpose.			 || [SGolfingGender golfml:GolfingGender] || required ||  ||  || unqualified ||
 || name ||  Name of the tee set || xs:string || required ||  ||  || unqualified ||
 
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| qualification ||  					Qualification of the hole for handicaping purposes.				 || golfml:HoleQualification ||
-|| summary ||  A set of statistical data associated with the set of tees || golfml:Statistics ||
-|| tee ||  Description of a single hole || golfml:Tee ||
-|| uid ||  					Unique identifier for an application.				 || golfml:UID ||
-|| version ||  					Records tee set modifications over time.				 || golfml:Version ||
+|| [CHoleQualification qualification] ||  					Qualification of the hole for handicaping purposes.				 || [CHoleQualification golfml:HoleQualification] ||
+|| [CStatistics summary] ||  A set of statistical data associated with the set of tees || [CStatistics golfml:Statistics] ||
+|| [CTee tee] ||  Description of a single hole || [CTee golfml:Tee] ||
+|| [CUID uid] ||  					Unique identifier for an application.				 || [CUID golfml:UID] ||
+|| [CVersion version] ||  					Records tee set modifications over time.				 || [CVersion golfml:Version] ||
 
 ----
   		

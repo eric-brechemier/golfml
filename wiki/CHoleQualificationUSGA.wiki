@@ -29,15 +29,15 @@ anyType
 ===  Model ===
 
 	<...>
-            ( rating ; slope ) 
+            ( [SCourseRating rating] ; [SCourseSlope slope] ) 
   </...>
 ----
   		
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
-|| rating ||  					Course rating of a set of tees according to USGA specifications.				 || golfml:CourseRating ||
-|| slope ||  					Slope of a set of tees according to USGA specifications.				 || golfml:CourseSlope ||
+|| [SCourseRating rating] ||  					Course rating of a set of tees according to USGA specifications.				 || [SCourseRating golfml:CourseRating] ||
+|| [SCourseSlope slope] ||  					Slope of a set of tees according to USGA specifications.				 || [SCourseSlope golfml:CourseSlope] ||
 
 ----
   		
