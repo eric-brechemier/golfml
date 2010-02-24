@@ -1,0 +1,115 @@
+<project name="GolfML Stylesheets" default="build" basedir=".">
+	<description>
+		Generates GolfML documents from sample data and stylesheets.
+	</description>
+	
+	<property name="build"   location="build"/>
+	<property name="xslt2_location" location="/Users/pierre/Applications/Application\ Folders/oxygen/lib"/>
+	
+	<target name="init">
+		<mkdir dir="${build}"/>
+	</target>
+	
+	<target name="clean">
+		<delete dir="${build}"/>
+	</target>
+	
+	<target name="build" depends="golfml.samples.validate,golfml.samples.render" />
+
+	<!-- validate examples documents against schema -->
+	<target name="golfml.samples.validate">
+		<xmlvalidate failonerror="yes" lenient="no" warn="yes">
+			<fileset dir="examples/instances" includes="*.xml"/>
+			<attribute name="http://xml.org/sax/features/validation" value="true"/>
+			<attribute name="http://apache.org/xml/features/validation/schema"  value="true"/>
+			<attribute name="http://xml.org/sax/features/namespaces" value="true"/>
+		</xmlvalidate>
+	</target>
+	
+	<!-- stylesheet application -->
+	<!-- empty scorecards -->
+	<target name="golfml.samples.render"
+		depends="golfml.sample.html.static-course.morganhill,
+		         golfml.sample.html.static-course.tournette,
+		         golfml.sample.html.custom-scorecard,
+		         golfml.sample.html.simple-score,
+		         golfml.sample.html.compact-score,
+		         golfml.sample.mgs.static-course,
+		         golfml.sample.mgs.kml,
+		         golfml.sample.svg.course,
+		         golfml.sample.svg.hole"/>
+	
+	<target name="golfml.sample.html.static-course.morganhill" depends="init"> <!-- OK -->
+		<xslt style="stylesheets/static-course.xsl"
+			in="examples/instances/MorganHill.xml"
+			out="${build}/MorganHill.html">
+			<param name="units" expression="yards"/>
+		</xslt>
+	</target>
+	
+	<target name="golfml.sample.html.static-course.tournette" depends="init"> <!-- OK -->
+		<xslt style="stylesheets/static-course.xsl"
+			in="examples/instances/Tournette.xml"
+			out="${build}/Tournette.html">
+			<param name="units" expression="meters"/>
+		</xslt>
+	</target>
+	
+	<!-- custom scorecards -->
+	<target name="golfml.sample.html.custom-scorecard" depends="init"> <!-- OK -->
+		<xslt style="stylesheets/custom-scorecard.xsl"
+			in="examples/instances/score.xml"
+			out="${build}/custom-scorecard.html" />
+	</target>
+	
+	<!-- scorecards with scores -->
+	<target name="golfml.sample.html.simple-score" depends="init"> <!-- OK -->
+		<xslt style="stylesheets/simple-score.xsl"
+			in="examples/instances/score.xml"
+			out="${build}/simple-score.html" />
+	</target>
+	
+	<target name="golfml.sample.html.compact-score" depends="init"> <!-- TESTING -->
+		<xslt style="stylesheets/score.xsl"
+			  in="examples/instances/score.xml"
+			  out="${build}/compact-score.html"
+			  force="true">
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+		</xslt>
+	</target>
+	
+	<!-- Mobile Golf Scorer: -->
+	<target name="golfml.sample.mgs.static-course" depends="init"> <!-- OK -->
+		<xslt style="stylesheets/mgs2golfml.xsl"
+			in="examples/mgs-round.xml"
+			out="${build}/golfml-from-mgs.xml" />
+	</target>
+	
+	<target name="golfml.sample.mgs.kml" depends="init"> <!-- OK -->
+		<xslt style="stylesheets/mgskml2golfml.xsl"
+			in="examples/mgs-bruyere.kml"
+			out="${build}/golfml-gps-from-mgs-google-earth.xml" />
+	</target>
+	
+	<!-- course layout -->
+	<target name="golfml.sample.svg.course" depends="init">
+		<xslt style="stylesheets/golfml2svg.xsl"
+			  in="examples/instances/Bruyere.xml"
+			  out="${build}/Bruyere.svg" >
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+			<param name="mode" expression="course"/>
+		</xslt>
+	</target>
+	
+	<target name="golfml.sample.svg.hole" depends="init">
+		<xslt style="stylesheets/golfml2svg.xsl"
+			in="examples/instances/Bruyere.xml"
+			out="${build}/Bruyere-4.svg" >
+			<factory name="net.sf.saxon.TransformerFactoryImpl"/>
+			<param name="mode" expression="hole"/>
+			<param name="hole" expression="4"/>
+		</xslt>
+	</target>
+	
+	
+</project>
