@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../stylesheets/static-course.xsl"?>
+<golfml xmlns="http://code.google.com/p/golfml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://code.google.com/p/golfml ../../schemas/golfml.xsd"
+    version="0.9">
+    <country-club>
+        <name>Golf De Dieppe-Pourville</name>
+        <address>
+          <country code="FR">France</country>
+          <municipality>Dieppe</municipality>
+          <postal-code>76200</postal-code>
+          <street>Route de Pourville</street>
+        </address>
+        <contact type="reception">
+            <website>http://www.golf-dieppe.com/</website>
+        </contact>
+        <contact type="reception">
+            <phone>33-2-35842505</phone>
+        </contact>
+        <amenety type="practice">range</amenety>
+        <amenety type="practice">green</amenety>
+        <golf-course>
+        	<name>Golf de Dieppe-Pourville</name>
+        	<media type="course-map" content-type="image/jpeg">
+        		<name>Course Map</name>
+        		<url>pourville/00.jpg</url>
+        	</media>
+        	<media type="photograph" content-type="image/jpeg">
+        		<name>Les Falaises</name>
+        		<url>pourville/GolfDieppePourville.jpg</url>
+        	</media>
+        	<media type="photograph" content-type="image/jpeg">
+        		<name>Les Falaises</name>
+        		<url>pourville/bgMiddle.jpg</url>
+        	</media>
+        	
+        	<holes>
+        		<hole number="1">
+        			<media type="hole-yardage" content-type="image/gif">
+        				<name>Hole 1</name>
+        				<url>pourville/01.gif</url>
+        			</media>
+        		</hole>
+        		<hole number="2">
+        			<media type="hole-yardage" content-type="image/gif">
+        				<name>Hole 2</name>
+        				<url>pourville/02.gif</url>
+        			</media>
+        		</hole>
+        		<hole number="3">
+        			<media type="hole-yardage" content-type="image/gif">
+        				<name>Hole 3</name>
+        				<url>pourville/03.gif</url>
+        			</media>
+        		</hole>
+        		<hole number="4">
+        			<media type="hole-yardage" content-type="image/gif">
+        				<name>Hole 4</name>
+        				<url>pourville/04.gif</url>
+        			</media>
+        		</hole>
+        		<hole number="5">
+        			<media type="hole-yardage" content-type="image/gif">
+        				<name>Hole 5</name>
+        				<url>pourville/05.gif</url>
+        			</media>
+        		</hole>
+        		<hole number="6">
+        			<media type="hole-yardage" content-type="image/gif">
+        				<name>Hole 6</name>
+        				<url>pourville/06.gif</url>
+        			</media>
+        		</hole>
+        		<hole number="7">
+        			<media type="hole-yardage" content-type="image/gif">
+        				<name>Hole 7</name>
+        				<url>pourville/07.gif</url>
+        			</media>
+        		</hole>
+        		<hole number="8">
+        			<media type="hole-yardage" content-type="image/gif">
+        				<name>Hole 8</name>
+        				<url>pourville/08.gif</url>
+        			</media>
+        		</hole>
+        		<hole number="9">
+        			<media type="hole-yardage" content-type="image/gif">
+        				<name>Hole 9</name>
+        				<url>pourville/09.gif</url>
+        			</media>
+        		</hole>
+        		<hole number="10">
+        			<media type="hole-yardage" content-type="image/gif">
+        				<name>Hole 10</name>
+        				<url>pourville/10.gif</url>
+        			</media>
+        		</hole>
+        		<hole number="11">
+        			<media type="hole-yardage" content-type="image/gif">
+        				<name>Hole 11</name>
+        				<url>pourville/11.gif</url>
+        			</media>
+        		</hole>
+        		<hole number="12">
+        			<media type="hole-yardage" content-type="image/gif">
+        				<name>Hole 12</name>
+        				<url>pourville/12.gif</url>
+        			</media>
+        		</hole>
+        		<hole number="13">
+        			<media type="hole-yardage" content-type="image/gif">
+        				<name>Hole 13</name>
+        				<url>pourville/13.gif</url>
+        			</media>
+        		</hole>
+        		<hole number="14">
+        			<media type="hole-yardage" content-type="image/gif">
+        				<name>Hole 14</name>
+        				<url>pourville/14.gif</url>
+        			</media>
+        		</hole>
+        		<hole number="15">
+        			<media type="hole-yardage" content-type="image/gif">
+        				<name>Hole 15</name>
+        				<url>pourville/15.gif</url>
+        			</media>
+        		</hole>
+        		<hole number="16">
+        			<media type="hole-yardage" content-type="image/gif">
+        				<name>Hole 16</name>
+        				<url>pourville/16.gif</url>
+        			</media>
+        		</hole>
+        		<hole number="17">
+        			<media type="hole-yardage" content-type="image/gif">
+        				<name>Hole 17</name>
+        				<url>pourville/17.gif</url>
+        			</media>
+        		</hole>
+        		<hole number="18">
+        			<media type="hole-yardage" content-type="image/gif">
+        				<name>Hole 18</name>
+        				<url>pourville/18.gif</url>
+        			</media>
+        		</hole>
+        	</holes>
+
+        	<tee-set date-from="2008-01-01" name="Noirs" colour="black" gender="gentlemen">
+                <qualification>
+                    <qualification-usga>
+                        <rating>71.8</rating>
+                        <slope>132</slope>
+                    </qualification-usga>
+                </qualification>
+                <tee number="1">
+                    <par>4</par>
+                    <handicap-stroke>15</handicap-stroke>
+                	<length>358</length>
+                </tee>
+                <tee number="2">
+                    <par>3</par>
+                    <handicap-stroke>9</handicap-stroke>
+                    <length>156</length>
+                </tee>
+                <tee number="3">
+                    <par>5</par>
+                    <handicap-stroke>17</handicap-stroke>
+                    <length>456</length>
+                </tee>
+                <tee number="4">
+                    <par>4</par>
+                    <handicap-stroke>1</handicap-stroke>
+                    <length>443</length>
+                </tee>
+                <tee number="5">
+                    <par>4</par>
+                    <handicap-stroke>5</handicap-stroke>
+                    <length>362</length>
+                </tee>
+                <tee number="6">
+                    <par>3</par>
+                    <handicap-stroke>11</handicap-stroke>
+                    <length>179</length>
+                </tee>
+                <tee number="7">
+                    <par>4</par>
+                    <handicap-stroke>7</handicap-stroke>
+
+                    <length>354</length>
+                </tee>
+                <tee number="8">
+                    <par>4</par>
+                    <handicap-stroke>3</handicap-stroke>
+                    <length>378</length>
+                </tee>
+                <tee number="9">
+                    <par>4</par>
+                    <handicap-stroke>13</handicap-stroke>
+                    <length>373</length>
+                </tee>
+                <tee number="10">
+                    <par>3</par>
+                    <handicap-stroke>16</handicap-stroke>
+                    <length>163</length>
+                </tee>
+                <tee number="11">
+                    <par>4</par>
+                    <handicap-stroke>10</handicap-stroke>
+                    <length>350</length>
+                </tee>
+                <tee number="12">
+                    <par>4</par>
+                    <handicap-stroke>6</handicap-stroke>
+                    <length>320</length>
+                </tee>
+                <tee number="13">
+                    <par>4</par>
+                    <handicap-stroke>2</handicap-stroke>
+                    <length>427</length>
+                </tee>
+                <tee number="14">
+                    <par>5</par>
+                    <handicap-stroke>8</handicap-stroke>
+                    <length>440</length>
+                </tee>
+                <tee number="15">
+                    <par>3</par>
+                    <handicap-stroke>12</handicap-stroke>
+                    <length>146</length>
+                </tee>
+                <tee number="16">
+                    <par>5</par>
+                    <handicap-stroke>4</handicap-stroke>
+                    <length>468</length>
+                </tee>
+                <tee number="17">
+                    <par>3</par>
+                    <handicap-stroke>14</handicap-stroke>
+                    <length>148</length>
+                </tee>
+                <tee number="18">
+                    <par>4</par>
+                    <handicap-stroke>18</handicap-stroke>
+                    <length>309</length>
+                </tee>
+            </tee-set>
+            <tee-set date-from="2008-01-01" name="Blancs" colour="white" gender="gentlemen">
+                <qualification>
+                    <qualification-usga>
+                        <rating>71.2</rating>
+                        <slope>131</slope>
+                    </qualification-usga>
+                </qualification>
+                <tee number="1">
+                    <par>4</par>
+                    <handicap-stroke>15</handicap-stroke>
+                    <length>278</length>
+                </tee>
+                <tee number="2">
+                    <par>3</par>
+                    <handicap-stroke>9</handicap-stroke>
+                    <length>156</length>
+                </tee>
+                <tee number="3">
+                    <par>5</par>
+                    <handicap-stroke>17</handicap-stroke>
+                    <length>456</length>
+                </tee>
+                <tee number="4">
+                    <par>4</par>
+                    <handicap-stroke>1</handicap-stroke>
+                    <length>425</length>
+                </tee>
+                <tee number="5">
+                    <par>4</par>
+                    <handicap-stroke>5</handicap-stroke>
+                    <length>362</length>
+                </tee>
+                <tee number="6">
+                    <par>3</par>
+                    <handicap-stroke>11</handicap-stroke>
+                    <length>186</length>
+                </tee>
+                <tee number="7">
+                    <par>4</par>
+                    <handicap-stroke>7</handicap-stroke>
+                    <length>360</length>
+                </tee>
+                <tee number="8">
+                    <par>4</par>
+                    <handicap-stroke>3</handicap-stroke>
+                    <length>377</length>
+                </tee>
+                <tee number="9">
+                    <par>4</par>
+                    <handicap-stroke>13</handicap-stroke>
+                    <length>379</length>
+                </tee>
+                <tee number="10">
+                    <par>3</par>
+                    <handicap-stroke>16</handicap-stroke>
+                    <length>175</length>
+                </tee>
+                <tee number="11">
+                    <par>4</par>
+                    <handicap-stroke>10</handicap-stroke>
+                    <length>350</length>
+                </tee>
+                <tee number="12">
+                    <par>4</par>
+                    <handicap-stroke>6</handicap-stroke>
+                    <length>326</length>
+                </tee>
+                <tee number="13">
+                    <par>4</par>
+                    <handicap-stroke>2</handicap-stroke>
+                    <length>434</length>
+                </tee>
+                <tee number="14">
+                    <par>5</par>
+                    <handicap-stroke>8</handicap-stroke>
+                    <length>444</length>
+                </tee>
+                <tee number="15">
+                    <par>3</par>
+                    <handicap-stroke>12</handicap-stroke>
+                    <length>143</length>
+                </tee>
+                <tee number="16">
+                    <par>5</par>
+                    <handicap-stroke>4</handicap-stroke>
+                    <length>472</length>
+                </tee>
+                <tee number="17">
+                    <par>3</par>
+                    <handicap-stroke>14</handicap-stroke>
+                    <length>149</length>
+                </tee>
+                <tee number="18">
+                    <par>4</par>
+                    <handicap-stroke>18</handicap-stroke>
+                    <length>308</length>
+                </tee>
+            </tee-set>
+            <tee-set name="Jaunes" colour="yellow" gender="gentlemen">
+                <qualification>
+                    <qualification-usga>
+                        <rating>70.0</rating>
+                        <slope>127</slope>
+                    </qualification-usga>
+                </qualification>
+                <tee number="1">
+                    <par>4</par>
+                    <handicap-stroke>15</handicap-stroke>
+                    <length>272</length>
+                </tee>
+                <tee number="2">
+                    <par>3</par>
+                    <handicap-stroke>9</handicap-stroke>
+                    <length>150</length>
+                </tee>
+                <tee number="3">
+                    <par>5</par>
+                    <handicap-stroke>17</handicap-stroke>
+                    <length>445</length>
+                </tee>
+                <tee number="4">
+                    <par>4</par>
+                    <handicap-stroke>1</handicap-stroke>
+                    <length>417</length>
+                </tee>
+                <tee number="5">
+                    <par>4</par>
+                    <handicap-stroke>5</handicap-stroke>
+                    <length>350</length>
+                </tee>
+                <tee number="6">
+                    <par>3</par>
+                    <handicap-stroke>11</handicap-stroke>
+                    <length>176</length>
+                </tee>
+                <tee number="7">
+                    <par>4</par>
+                    <handicap-stroke>7</handicap-stroke>
+                    <length>350</length>
+                </tee>
+                <tee number="8">
+                    <par>4</par>
+                    <handicap-stroke>3</handicap-stroke>
+                    <length>370</length>
+                </tee>
+                <tee number="9">
+                    <par>4</par>
+                    <handicap-stroke>13</handicap-stroke>
+                    <length>360</length>
+                </tee>
+                <tee number="10">
+                    <par>3</par>
+                    <handicap-stroke>16</handicap-stroke>
+                    <length>160</length>
+                </tee>
+                <tee number="11">
+                    <par>4</par>
+                    <handicap-stroke>10</handicap-stroke>
+                    <length>330</length>
+                </tee>
+                <tee number="12">
+                    <par>4</par>
+                    <handicap-stroke>6</handicap-stroke>
+                    <length>310</length>
+                </tee>
+                <tee number="13">
+                    <par>4</par>
+                    <handicap-stroke>2</handicap-stroke>
+                    <length>407</length>
+                </tee>
+                <tee number="14">
+                    <par>5</par>
+                    <handicap-stroke>8</handicap-stroke>
+                    <length>424</length>
+                </tee>
+                <tee number="15">
+                    <par>3</par>
+                    <handicap-stroke>12</handicap-stroke>
+                    <length>136</length>
+                </tee>
+                <tee number="16">
+                    <par>5</par>
+                    <handicap-stroke>4</handicap-stroke>
+                    <length>435</length>
+                </tee>
+                <tee number="17">
+                    <par>3</par>
+                    <handicap-stroke>14</handicap-stroke>
+                    <length>142</length>
+                </tee>
+                <tee number="18">
+                    <par>4</par>
+                    <handicap-stroke>18</handicap-stroke>
+                    <length>300</length>
+                </tee>
+            </tee-set>
+            <tee-set name="Bleus" colour="blue" gender="ladies">
+                <qualification>
+                    <qualification-usga>
+                        <rating>72.5</rating>
+                        <slope>130</slope>
+                    </qualification-usga>
+                </qualification>
+                <tee number="1">
+                    <par>4</par>
+                    <handicap-stroke>15</handicap-stroke>
+                    <length>264</length>
+                </tee>
+                <tee number="2">
+                    <par>3</par>
+                    <handicap-stroke>9</handicap-stroke>
+                    <length>130</length>
+                </tee>
+                <tee number="3">
+                    <par>5</par>
+                    <handicap-stroke>17</handicap-stroke>
+                    <length>408</length>
+                </tee>
+                <tee number="4">
+                    <par>4</par>
+                    <handicap-stroke>1</handicap-stroke>
+                    <length>365</length>
+                </tee>
+                <tee number="5">
+                    <par>4</par>
+                    <handicap-stroke>5</handicap-stroke>
+                    <length>310</length>
+                </tee>
+                <tee number="6">
+                    <par>3</par>
+                    <handicap-stroke>11</handicap-stroke>
+                    <length>139</length>
+                </tee>
+                <tee number="7">
+                    <par>4</par>
+                    <handicap-stroke>7</handicap-stroke>
+                    <length>290</length>
+                </tee>
+                <tee number="8">
+                    <par>4</par>
+                    <handicap-stroke>3</handicap-stroke>
+                    <length>362</length>
+                </tee>
+                <tee number="9">
+                    <par>4</par>
+                    <handicap-stroke>13</handicap-stroke>
+                    <length>320</length>
+                </tee>
+                <tee number="10">
+                    <par>3</par>
+                    <handicap-stroke>16</handicap-stroke>
+                    <length>118</length>
+                </tee>
+                <tee number="11">
+                    <par>4</par>
+                    <handicap-stroke>10</handicap-stroke>
+                    <length>304</length>
+                </tee>
+                <tee number="12">
+                    <par>4</par>
+                    <handicap-stroke>6</handicap-stroke>
+                    <length>290</length>
+                </tee>
+                <tee number="13">
+                    <par>4</par>
+                    <handicap-stroke>2</handicap-stroke>
+                    <length>382</length>
+                </tee>
+                <tee number="14">
+                    <par>5</par>
+                    <handicap-stroke>8</handicap-stroke>
+                    <length>392</length>
+                </tee>
+                <tee number="15">
+                    <par>3</par>
+                    <handicap-stroke>12</handicap-stroke>
+                    <length>126</length>
+                </tee>
+                <tee number="16">
+                    <par>5</par>
+                    <handicap-stroke>4</handicap-stroke>
+                    <length>396</length>
+                </tee>
+                <tee number="17">
+                    <par>3</par>
+                    <handicap-stroke>14</handicap-stroke>
+                    <length>123</length>
+                </tee>
+                <tee number="18">
+                    <par>4</par>
+                    <handicap-stroke>18</handicap-stroke>
+                    <length>264</length>
+                </tee>
+            </tee-set>
+            <tee-set name="Rouges" colour="red" gender="ladies">
+                <qualification>
+                    <qualification-usga>
+                        <rating>71.1</rating>
+                        <slope>126</slope>
+                    </qualification-usga>
+                </qualification>
+                <tee number="1">
+                    <par>4</par>
+                    <handicap-stroke>15</handicap-stroke>
+                    <length>258</length>
+                </tee>
+                <tee number="2">
+                    <par>3</par>
+                    <handicap-stroke>9</handicap-stroke>
+                    <length>121</length>
+                </tee>
+                <tee number="3">
+                    <par>5</par>
+                    <handicap-stroke>17</handicap-stroke>
+                    <length>398</length>
+                </tee>
+                <tee number="4">
+                    <par>4</par>
+                    <handicap-stroke>1</handicap-stroke>
+                    <length>360</length>
+                </tee>
+                <tee number="5">
+                    <par>4</par>
+                    <handicap-stroke>5</handicap-stroke>
+                    <length>310</length>
+                </tee>
+                <tee number="6">
+                    <par>3</par>
+                    <handicap-stroke>11</handicap-stroke>
+                    <length>139</length>
+                </tee>
+                <tee number="7">
+                    <par>4</par>
+                    <handicap-stroke>7</handicap-stroke>
+                    <length>280</length>
+                </tee>
+                <tee number="8">
+                    <par>4</par>
+                    <handicap-stroke>3</handicap-stroke>
+                    <length>356</length>
+                </tee>
+                <tee number="9">
+                    <par>4</par>
+                    <handicap-stroke>13</handicap-stroke>
+                    <length>310</length>
+                </tee>
+                <tee number="10">
+                    <par>3</par>
+                    <handicap-stroke>16</handicap-stroke>
+                    <length>108</length>
+                </tee>
+                <tee number="11">
+                    <par>4</par>
+                    <handicap-stroke>10</handicap-stroke>
+                    <length>294</length>
+                </tee>
+                <tee number="12">
+                    <par>4</par>
+                    <handicap-stroke>6</handicap-stroke>
+                    <length>285</length>
+                </tee>
+                <tee number="13">
+                    <par>4</par>
+                    <handicap-stroke>2</handicap-stroke>
+                    <length>364</length>
+                </tee>
+                <tee number="14">
+                    <par>5</par>
+                    <handicap-stroke>8</handicap-stroke>
+                    <length>382</length>
+                </tee>
+                <tee number="15">
+                    <par>3</par>
+                    <handicap-stroke>12</handicap-stroke>
+                    <length>119</length>
+                </tee>
+                <tee number="16">
+                    <par>5</par>
+                    <handicap-stroke>4</handicap-stroke>
+                    <length>357</length>
+                </tee>
+                <tee number="17">
+                    <par>3</par>
+                    <handicap-stroke>14</handicap-stroke>
+                    <length>115</length>
+                </tee>
+                <tee number="18">
+                    <par>4</par>
+                    <handicap-stroke>18</handicap-stroke>
+                    <length>260</length>
+                </tee>
+            </tee-set>
+        </golf-course>
+    </country-club>
+</golfml>

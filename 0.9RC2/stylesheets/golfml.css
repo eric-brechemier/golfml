@@ -1,0 +1,133 @@
+/* golfml.css
+
+DESCRIPTION
+
+	Demonstration stylesheet for GolfML.
+
+
+VERSION
+	$Revision$
+
+
+HISTORY
+	Aug 2009: Created.
+ */
+ 
+body {
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+h1 {
+	text-align: center;
+}
+#title-gentlemen {
+	background-color: lightblue;
+	color: #006;
+	font-weight: bolder;
+}
+#title-ladies {
+	background-color: lightpink;
+	color: #b00;
+	font-weight: bolder;
+}
+.handicap {
+	background-color: lightgrey;
+}
+#header {
+	background-color: black;
+	color: white;
+}
+#header a {
+	color: lightblue;
+	text-decoration: none;
+}
+table caption {
+	margin: 0;
+	padding: 8px 20px;
+	text-align: left;
+	border: 1px solid #000;
+	border-bottom: none;
+	background: #fff;
+	font-size: x-large;
+}
+table.course-data{
+	width: 70%;
+	margin: auto;
+	border: thin solid green;
+	border-collapse: collapse;
+}
+td {
+	text-align: center;
+	padding: 4px;
+	border: thin solid green;
+}
+.label {
+	text-align: right;
+	font-weight: bolder;
+}
+/* Scoring */
+.scoreB3 {
+	background-color: #0e3f7e;
+}
+.scoreB2 {
+	background-color: #6898ca;
+}
+.scoreB1 {
+	background-color: #9bcbfd;
+}
+.scoreR3 {
+	background-color: #fd6668;
+}
+.scoreR2 {
+	background-color: #fd999a;
+}
+.scoreR1 {
+	background-color: #fecccc;
+}
+.scoreG3 {
+	background-color: #31990f;
+}
+.scoreG2 {
+	background-color: #30cc14;
+}
+.scoreG1 {
+	background-color: #97ff6a;
+}
+.scoreY0 {
+	background-color: #feffcd;
+}
+.scoreC0 {
+	background-color: #e6e6e6;
+}
+.scoreM0 {
+	background-color: #fff;
+}
+
+
+/* Tee set colors */
+.tee-red {
+	background-color: #b00;
+}
+.tee-blue {
+	background-color: #00d;
+	color: white;
+}
+.tee-green {
+	background-color: #060;
+	color: white;
+}
+.tee-white {
+	background-color: #fff;
+}
+.tee-yellow {
+	background-color: yellow;
+}
+.tee-gold {
+	background-color: gold;
+}
+.tee-silver {
+	background-color: silver;
+}
+.tee-black {
+	background-color: #000;
+	color: white;
+}

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2"
+	 xmlns:gx="http://www.google.com/kml/ext/2.2"
+	 xmlns:kml="http://www.opengis.net/kml/2.2"
+	 xmlns:atom="http://www.w3.org/2005/Atom">
+	<Folder>
+		<name>Country Club Name</name>
+		<visibility>0</visibility>
+		<open>1</open>
+		<Folder>
+			<name>Golf Course Name</name>
+			<visibility>0</visibility>
+			<Folder>
+				<name>Hole 1</name>
+				<visibility>0</visibility>
+			</Folder>
+			<Folder>
+				<name>Hole 2</name>
+				<visibility>0</visibility>
+			</Folder>
+			<Folder>
+				<name>Hole 3</name>
+				<visibility>0</visibility>
+			</Folder>
+			<Folder>
+				<name>Hole 4</name>
+				<visibility>0</visibility>
+			</Folder>
+			<Folder>
+				<name>Hole 5</name>
+				<visibility>0</visibility>
+			</Folder>
+			<Folder>
+				<name>Hole 6</name>
+				<visibility>0</visibility>
+			</Folder>
+			<Folder>
+				<name>Hole 7</name>
+				<visibility>0</visibility>
+			</Folder>
+			<Folder>
+				<name>Hole 8</name>
+				<visibility>0</visibility>
+			</Folder>
+			<Folder>
+				<name>Hole 9</name>
+				<visibility>0</visibility>
+			</Folder>
+			<Folder>
+				<name>Hole 10</name>
+				<visibility>0</visibility>
+			</Folder>
+			<Folder>
+				<name>Hole 11</name>
+				<visibility>0</visibility>
+			</Folder>
+			<Folder>
+				<name>Hole 12</name>
+				<visibility>0</visibility>
+			</Folder>
+			<Folder>
+				<name>Hole 13</name>
+				<visibility>0</visibility>
+			</Folder>
+			<Folder>
+				<name>Hole 14</name>
+				<visibility>0</visibility>
+			</Folder>
+			<Folder>
+				<name>Hole 15</name>
+				<visibility>0</visibility>
+			</Folder>
+			<Folder>
+				<name>Hole 16</name>
+				<visibility>0</visibility>
+			</Folder>
+			<Folder>
+				<name>Hole 17</name>
+				<visibility>0</visibility>
+			</Folder>
+			<Folder>
+				<name>Hole 18</name>
+				<visibility>0</visibility>
+			</Folder>
+		</Folder>
+	</Folder>
+</kml>

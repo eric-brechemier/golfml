@@ -1,0 +1,243 @@
+/*	golfml.css
+    
+	DESCRIPTION
+    
+		Stylesheet for SVG elements.
+     
+      
+     VERSION
+     	$Revision$
+ 
+ 
+     HISTORY
+     	Sep 2009: Created.
+ 
+ */
+
+/* Classes for area of interest
+ *
+ */
+/* DRAWING
+ */
+.background {
+		fill: url(#background-gradient);
+}
+
+.hole-limits {
+	fill: none;
+	stroke: #ccc;
+	stroke-width: 1px;
+	stroke-dasharray: 10,10;
+}
+
+.hole-contour {
+	fill: #030;
+	stroke: #fff;
+	stroke-width: 2px;
+}
+
+
+/* GROUND
+ */
+.fairway {
+	fill: url(#fairway-pattern);
+	stroke: #0b0;
+	stroke-width: 3px;
+}
+
+.teeground {
+	fill: #83ff80;
+	stroke: #00ff19;
+	stroke-width: 1px;
+}
+
+.fringe {
+	fill: #0A0;
+	stroke: #none;
+}
+
+.green {
+	fill: url(#green-gradient);
+	stroke: #00ff19;
+	stroke-width: 1px;
+}
+
+.semi-rough,
+.light-rough {
+	fill: #080;
+	stroke: #08800D;
+	stroke-width: 1px;
+}
+
+.rough {
+	fill: #060;
+	stroke: #07660A;
+	stroke-width: 1px;
+}
+
+.heavy-rough {
+	fill: #040;
+	stroke: #074D08;
+	stroke-width: 1px;
+}
+
+.ground {
+	fill: #7f400c;
+	stroke: #fdcc6a;
+	stroke-width: 1px;
+}
+
+
+/* WATER
+ */
+.lateral-water {
+	fill: url(#lateral-water-gradient);
+	stroke: #fd0013;
+	stroke-width: 3px;
+}
+
+.front-water, .water {
+	fill: #6aCCfd;
+	stroke: #FCff21;
+	stroke-width: 3px;
+}
+
+
+/* SPECIAL
+ */
+.under-repair {
+	fill: none;
+	stroke: #00d;
+	stroke-width: 3px;
+}
+
+.out-of-bound {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 3px;
+}
+
+
+/* TRAPS
+ */
+.trap,
+.bunker {
+	fill: #92cf94;
+	stroke: #4c994c;
+	stroke-width: 1px;
+}
+
+.grass-trap,
+.grass-bunker {
+	fill: #050;
+	stroke: #0A0;
+	stroke-width: 1px;
+}
+
+.sand-trap,
+.sand-bunker,
+.greenside-trap,
+.greenside-bunker {
+	fill: #eec;
+	stroke: #040;
+	stroke-width: 2px;
+}
+
+.fairway-trap,
+.fairway-bunker {
+	fill: #eec;
+	stroke: #030;
+	stroke-width: 2px;
+}
+
+
+/* OBSTACLES
+ */
+.tree {
+	fill: #062;
+	stroke: #0c6;
+	stroke-width: 1px;
+}
+
+.trees {
+	fill: #062;
+	stroke: #0c6;
+	stroke-width: 1px;
+}
+
+.bush {
+	fill: #00b259;
+	stroke: #7f400c;
+	stroke-width: 1px;
+}
+
+
+.path {
+	fill: #666;
+	stroke: #bbb;
+	stroke-width: 1px;
+}
+
+.building,
+.construction {
+	fill: #fdcc6a;
+	stroke: #7f400C;
+	stroke-width: 1px;
+}
+
+.obstruction {
+	fill: #555;
+	stroke: #999;
+	stroke-width: 1px;
+}
+
+
+.other {
+	fill: #ddd;
+	stroke: #666;
+	stroke-width: 1px;
+}
+
+/* Classes for point of interest
+ *
+ */
+.dogleg {
+	fill: #000;
+	stroke: none;
+}
+
+.aim {
+	fill: #fff;
+	stroke: #f00;
+	stroke-width: 1px;
+}
+
+.tee {
+	fill: #00f;
+}
+
+.hole {
+	fill: #fff;
+}
+
+.distance-marker {
+	fill: #f44;
+	stroke: #f00;
+	stroke-width: 1px;
+}
+
+.green-region-delimiter {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 0.5;
+	stroke-dasharray: 4,2;
+}
+
+/* Classes for special decorative objects
+ *
+ */
+.compass {
+	fill: #ddd;
+	stroke: #fff;
+	stroke-width: 1px;
+}
