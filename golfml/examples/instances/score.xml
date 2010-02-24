@@ -1,0 +1,1209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../../stylesheets/custom-scorecard.xsl"?>
+<golfml xmlns="http://code.google.com/p/golfml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://code.google.com/p/golfml ../../schemas/golfml.xsd" version="0.9">
+   <country-club>
+      <name>Golf De Dieppe-Pourville</name>
+      <address>
+         <street>Route de Pourville</street>
+         <postal-code>76200 Dieppe</postal-code>
+         <country code="FR">France</country>
+      </address>
+      <contact type="club-house">
+         <phone>33-2-35842505</phone>
+      </contact>
+      <golf-course>
+         <name>Golf De Dieppe-Pourville</name>
+         <tee-set name="Black (Men)" colour="black" gender="gentlemen">
+            <qualification>
+               <qualification-usga>
+                  <rating>71.8</rating>
+                  <slope>132</slope>
+               </qualification-usga>
+            </qualification>
+            <tee number="1">
+               <par>4</par>
+               <handicap-stroke>15</handicap-stroke>
+               <length units="meters">278</length>
+               <length units="yards">304</length>
+            </tee>
+            <tee number="2">
+               <par>3</par>
+               <handicap-stroke>9</handicap-stroke>
+               <length units="meters">156</length>
+               <length units="yards">171</length>
+            </tee>
+            <tee number="3">
+               <par>5</par>
+               <handicap-stroke>17</handicap-stroke>
+               <length units="meters">456</length>
+               <length units="yards">499</length>
+            </tee>
+            <tee number="4">
+               <par>4</par>
+               <handicap-stroke>1</handicap-stroke>
+               <length units="meters">425</length>
+               <length units="yards">465</length>
+            </tee>
+            <tee number="5">
+               <par>4</par>
+               <handicap-stroke>5</handicap-stroke>
+               <length units="meters">362</length>
+               <length units="yards">396</length>
+            </tee>
+            <tee number="6">
+               <par>3</par>
+               <handicap-stroke>11</handicap-stroke>
+               <length units="meters">186</length>
+               <length units="yards">203</length>
+            </tee>
+            <tee number="7">
+               <par>4</par>
+               <handicap-stroke>7</handicap-stroke>
+               <length units="meters">360</length>
+               <length units="yards">394</length>
+            </tee>
+            <tee number="8">
+               <par>4</par>
+               <handicap-stroke>3</handicap-stroke>
+               <length units="meters">377</length>
+               <length units="yards">412</length>
+            </tee>
+            <tee number="9">
+               <par>4</par>
+               <handicap-stroke>13</handicap-stroke>
+               <length units="meters">379</length>
+               <length units="yards">414</length>
+            </tee>
+            <tee number="10">
+               <par>3</par>
+               <handicap-stroke>16</handicap-stroke>
+               <length units="meters">175</length>
+               <length units="yards">191</length>
+            </tee>
+            <tee number="11">
+               <par>4</par>
+               <handicap-stroke>10</handicap-stroke>
+               <length units="meters">350</length>
+               <length units="yards">383</length>
+            </tee>
+            <tee number="12">
+               <par>4</par>
+               <handicap-stroke>6</handicap-stroke>
+               <length units="meters">326</length>
+               <length units="yards">357</length>
+            </tee>
+            <tee number="13">
+               <par>4</par>
+               <handicap-stroke>2</handicap-stroke>
+               <length units="meters">434</length>
+               <length units="yards">475</length>
+            </tee>
+            <tee number="14">
+               <par>5</par>
+               <handicap-stroke>8</handicap-stroke>
+               <length units="meters">444</length>
+               <length units="yards">486</length>
+            </tee>
+            <tee number="15">
+               <par>3</par>
+               <handicap-stroke>12</handicap-stroke>
+               <length units="meters">143</length>
+               <length units="yards">156</length>
+            </tee>
+            <tee number="16">
+               <par>5</par>
+               <handicap-stroke>4</handicap-stroke>
+               <length units="meters">472</length>
+               <length units="yards">516</length>
+            </tee>
+            <tee number="17">
+               <par>3</par>
+               <handicap-stroke>14</handicap-stroke>
+               <length units="meters">149</length>
+               <length units="yards">163</length>
+            </tee>
+            <tee number="18">
+               <par>4</par>
+               <handicap-stroke>18</handicap-stroke>
+               <length units="meters">308</length>
+               <length units="yards">337</length>
+            </tee>
+         </tee-set>
+         <tee-set name="White (Men)" colour="white" gender="gentlemen">
+            <qualification>
+               <qualification-usga>
+                  <rating>71.2</rating>
+                  <slope>131</slope>
+               </qualification-usga>
+            </qualification>
+            <tee number="1">
+               <par>4</par>
+               <handicap-stroke>15</handicap-stroke>
+               <length units="meters">278</length>
+               <length units="yards">304</length>
+            </tee>
+            <tee number="2">
+               <par>3</par>
+               <handicap-stroke>9</handicap-stroke>
+               <length units="meters">156</length>
+               <length units="yards">171</length>
+            </tee>
+            <tee number="3">
+               <par>5</par>
+               <handicap-stroke>17</handicap-stroke>
+               <length units="meters">456</length>
+               <length units="yards">499</length>
+            </tee>
+            <tee number="4">
+               <par>4</par>
+               <handicap-stroke>1</handicap-stroke>
+               <length units="meters">425</length>
+               <length units="yards">465</length>
+            </tee>
+            <tee number="5">
+               <par>4</par>
+               <handicap-stroke>5</handicap-stroke>
+               <length units="meters">362</length>
+               <length units="yards">396</length>
+            </tee>
+            <tee number="6">
+               <par>3</par>
+               <handicap-stroke>11</handicap-stroke>
+               <length units="meters">186</length>
+               <length units="yards">203</length>
+            </tee>
+            <tee number="7">
+               <par>4</par>
+               <handicap-stroke>7</handicap-stroke>
+               <length units="meters">360</length>
+               <length units="yards">394</length>
+            </tee>
+            <tee number="8">
+               <par>4</par>
+               <handicap-stroke>3</handicap-stroke>
+               <length units="meters">377</length>
+               <length units="yards">412</length>
+            </tee>
+            <tee number="9">
+               <par>4</par>
+               <handicap-stroke>13</handicap-stroke>
+               <length units="meters">379</length>
+               <length units="yards">414</length>
+            </tee>
+            <tee number="10">
+               <par>3</par>
+               <handicap-stroke>16</handicap-stroke>
+               <length units="meters">175</length>
+               <length units="yards">191</length>
+            </tee>
+            <tee number="11">
+               <par>4</par>
+               <handicap-stroke>10</handicap-stroke>
+               <length units="meters">350</length>
+               <length units="yards">383</length>
+            </tee>
+            <tee number="12">
+               <par>4</par>
+               <handicap-stroke>6</handicap-stroke>
+               <length units="meters">326</length>
+               <length units="yards">357</length>
+            </tee>
+            <tee number="13">
+               <par>4</par>
+               <handicap-stroke>2</handicap-stroke>
+               <length units="meters">434</length>
+               <length units="yards">475</length>
+            </tee>
+            <tee number="14">
+               <par>5</par>
+               <handicap-stroke>8</handicap-stroke>
+               <length units="meters">444</length>
+               <length units="yards">486</length>
+            </tee>
+            <tee number="15">
+               <par>3</par>
+               <handicap-stroke>12</handicap-stroke>
+               <length units="meters">143</length>
+               <length units="yards">156</length>
+            </tee>
+            <tee number="16">
+               <par>5</par>
+               <handicap-stroke>4</handicap-stroke>
+               <length units="meters">472</length>
+               <length units="yards">516</length>
+            </tee>
+            <tee number="17">
+               <par>3</par>
+               <handicap-stroke>14</handicap-stroke>
+               <length units="meters">149</length>
+               <length units="yards">163</length>
+            </tee>
+            <tee number="18">
+               <par>4</par>
+               <handicap-stroke>18</handicap-stroke>
+               <length units="meters">308</length>
+               <length units="yards">337</length>
+            </tee>
+         </tee-set>
+         <tee-set name="Yellow (Men)" colour="yellow" gender="gentlemen">
+            <qualification>
+               <qualification-usga>
+                  <rating>70.0</rating>
+                  <slope>127</slope>
+               </qualification-usga>
+            </qualification>
+            <tee number="1">
+               <par>4</par>
+               <handicap-stroke>15</handicap-stroke>
+               <length units="meters">272</length>
+               <length units="yards">297</length>
+            </tee>
+            <tee number="2">
+               <par>3</par>
+               <handicap-stroke>9</handicap-stroke>
+               <length units="meters">150</length>
+               <length units="yards">164</length>
+            </tee>
+            <tee number="3">
+               <par>5</par>
+               <handicap-stroke>17</handicap-stroke>
+               <length units="meters">445</length>
+               <length units="yards">487</length>
+            </tee>
+            <tee number="4">
+               <par>4</par>
+               <handicap-stroke>1</handicap-stroke>
+               <length units="meters">417</length>
+               <length units="yards">456</length>
+            </tee>
+            <tee number="5">
+               <par>4</par>
+               <handicap-stroke>5</handicap-stroke>
+               <length units="meters">350</length>
+               <length units="yards">383</length>
+            </tee>
+            <tee number="6">
+               <par>3</par>
+               <handicap-stroke>11</handicap-stroke>
+               <length units="meters">176</length>
+               <length units="yards">192</length>
+            </tee>
+            <tee number="7">
+               <par>4</par>
+               <handicap-stroke>7</handicap-stroke>
+               <length units="meters">350</length>
+               <length units="yards">383</length>
+            </tee>
+            <tee number="8">
+               <par>4</par>
+               <handicap-stroke>3</handicap-stroke>
+               <length units="meters">370</length>
+               <length units="yards">405</length>
+            </tee>
+            <tee number="9">
+               <par>4</par>
+               <handicap-stroke>13</handicap-stroke>
+               <length units="meters">360</length>
+               <length units="yards">394</length>
+            </tee>
+            <tee number="10">
+               <par>3</par>
+               <handicap-stroke>16</handicap-stroke>
+               <length units="meters">160</length>
+               <length units="yards">175</length>
+            </tee>
+            <tee number="11">
+               <par>4</par>
+               <handicap-stroke>10</handicap-stroke>
+               <length units="meters">330</length>
+               <length units="yards">361</length>
+            </tee>
+            <tee number="12">
+               <par>4</par>
+               <handicap-stroke>6</handicap-stroke>
+               <length units="meters">310</length>
+               <length units="yards">339</length>
+            </tee>
+            <tee number="13">
+               <par>4</par>
+               <handicap-stroke>2</handicap-stroke>
+               <length units="meters">407</length>
+               <length units="yards">445</length>
+            </tee>
+            <tee number="14">
+               <par>5</par>
+               <handicap-stroke>8</handicap-stroke>
+               <length units="meters">424</length>
+               <length units="yards">464</length>
+            </tee>
+            <tee number="15">
+               <par>3</par>
+               <handicap-stroke>12</handicap-stroke>
+               <length units="meters">136</length>
+               <length units="yards">149</length>
+            </tee>
+            <tee number="16">
+               <par>5</par>
+               <handicap-stroke>4</handicap-stroke>
+               <length units="meters">435</length>
+               <length units="yards">476</length>
+            </tee>
+            <tee number="17">
+               <par>3</par>
+               <handicap-stroke>14</handicap-stroke>
+               <length units="meters">142</length>
+               <length units="yards">155</length>
+            </tee>
+            <tee number="18">
+               <par>4</par>
+               <handicap-stroke>18</handicap-stroke>
+               <length units="meters">300</length>
+               <length units="yards">328</length>
+            </tee>
+         </tee-set>
+         <tee-set name="Blue (Women)" colour="blue" gender="ladies">
+            <qualification>
+               <qualification-usga>
+                  <rating>72.5</rating>
+                  <slope>130</slope>
+               </qualification-usga>
+            </qualification>
+            <tee number="1">
+               <par>4</par>
+               <handicap-stroke>15</handicap-stroke>
+               <length units="meters">264</length>
+               <length units="yards">289</length>
+            </tee>
+            <tee number="2">
+               <par>3</par>
+               <handicap-stroke>9</handicap-stroke>
+               <length units="meters">130</length>
+               <length units="yards">142</length>
+            </tee>
+            <tee number="3">
+               <par>5</par>
+               <handicap-stroke>17</handicap-stroke>
+               <length units="meters">408</length>
+               <length units="yards">446</length>
+            </tee>
+            <tee number="4">
+               <par>4</par>
+               <handicap-stroke>1</handicap-stroke>
+               <length units="meters">365</length>
+               <length units="yards">399</length>
+            </tee>
+            <tee number="5">
+               <par>4</par>
+               <handicap-stroke>5</handicap-stroke>
+               <length units="meters">310</length>
+               <length units="yards">339</length>
+            </tee>
+            <tee number="6">
+               <par>3</par>
+               <handicap-stroke>11</handicap-stroke>
+               <length units="meters">139</length>
+               <length units="yards">152</length>
+            </tee>
+            <tee number="7">
+               <par>4</par>
+               <handicap-stroke>7</handicap-stroke>
+               <length units="meters">290</length>
+               <length units="yards">317</length>
+            </tee>
+            <tee number="8">
+               <par>4</par>
+               <handicap-stroke>3</handicap-stroke>
+               <length units="meters">362</length>
+               <length units="yards">396</length>
+            </tee>
+            <tee number="9">
+               <par>4</par>
+               <handicap-stroke>13</handicap-stroke>
+               <length units="meters">320</length>
+               <length units="yards">350</length>
+            </tee>
+            <tee number="10">
+               <par>3</par>
+               <handicap-stroke>16</handicap-stroke>
+               <length units="meters">118</length>
+               <length units="yards">129</length>
+            </tee>
+            <tee number="11">
+               <par>4</par>
+               <handicap-stroke>10</handicap-stroke>
+               <length units="meters">304</length>
+               <length units="yards">332</length>
+            </tee>
+            <tee number="12">
+               <par>4</par>
+               <handicap-stroke>6</handicap-stroke>
+               <length units="meters">290</length>
+               <length units="yards">317</length>
+            </tee>
+            <tee number="13">
+               <par>4</par>
+               <handicap-stroke>2</handicap-stroke>
+               <length units="meters">382</length>
+               <length units="yards">418</length>
+            </tee>
+            <tee number="14">
+               <par>5</par>
+               <handicap-stroke>8</handicap-stroke>
+               <length units="meters">392</length>
+               <length units="yards">429</length>
+            </tee>
+            <tee number="15">
+               <par>3</par>
+               <handicap-stroke>12</handicap-stroke>
+               <length units="meters">126</length>
+               <length units="yards">138</length>
+            </tee>
+            <tee number="16">
+               <par>5</par>
+               <handicap-stroke>4</handicap-stroke>
+               <length units="meters">396</length>
+               <length units="yards">433</length>
+            </tee>
+            <tee number="17">
+               <par>3</par>
+               <handicap-stroke>14</handicap-stroke>
+               <length units="meters">123</length>
+               <length units="yards">135</length>
+            </tee>
+            <tee number="18">
+               <par>4</par>
+               <handicap-stroke>18</handicap-stroke>
+               <length units="meters">264</length>
+               <length units="yards">289</length>
+            </tee>
+         </tee-set>
+      </golf-course>
+   </country-club>
+   <player gender="female">
+      <name>Alice</name>
+      <date-of-birth>2000-01-01</date-of-birth>
+   	  <current-handicap>15.6</current-handicap>
+      <round>
+         <date>2009-09-22T11:00:00</date>
+         <scorecard>
+            <tees>
+               <country-club.name>Golf De Dieppe-Pourville</country-club.name>
+               <country-club.address.country.iso3166>FR</country-club.address.country.iso3166>
+               <country-club.address.postal-code>76200 Dieppe</country-club.address.postal-code>
+               <country-club.golf-course.name>Golf De Dieppe-Pourville</country-club.golf-course.name>
+               <country-club.golf-course.tee-set.name>Blue (Women)</country-club.golf-course.tee-set.name>
+            </tees>
+            <handicap-strokes>21</handicap-strokes>
+         	<score>
+         		<hole number="1">
+         			<strokes>5</strokes>
+         			<putts>2</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="2">
+         			<strokes>3</strokes>
+         			<putts>1</putts>
+         			<points>3</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="3">
+         			<strokes>7</strokes>
+         			<putts>2</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="4">
+         			<strokes>6</strokes>
+         			<putts>2</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="5">
+         			<strokes>6</strokes>
+         			<putts>2</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="6">
+         			<strokes>7</strokes>
+         			<putts>2</putts>
+         			<points>0</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="7">
+         			<strokes>5</strokes>
+         			<putts>1</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="8">
+         			<strokes>6</strokes>
+         			<putts>2</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="9">
+         			<strokes>6</strokes>
+         			<putts>2</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="10">
+         			<strokes>5</strokes>
+         			<putts>2</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="11">
+         			<strokes>7</strokes>
+         			<putts>2</putts>
+         			<points>0</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="12">
+         			<strokes>5</strokes>
+         			<putts>2</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="13">
+         			<strokes>5</strokes>
+         			<putts>2</putts>
+         			<points>3</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="14">
+         			<strokes>7</strokes>
+         			<putts>2</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="15">
+         			<strokes>3</strokes>
+         			<putts>2</putts>
+         			<points>3</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="16">
+         			<strokes>7</strokes>
+         			<putts>2</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="17">
+         			<strokes>4</strokes>
+         			<putts>2</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="18">
+         			<strokes>5</strokes>
+         			<putts>2</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         	</score>
+         </scorecard>
+      </round>
+   </player>
+   <player gender="male">
+      <name>Bob</name>
+      <date-of-birth>2000-01-01</date-of-birth>
+   	  <current-handicap handicap-system="USGA">22.8</current-handicap>
+      <round>
+         <date>2009-09-22T11:00:00</date>
+         <scorecard>
+            <tees>
+               <country-club.name>Golf De Dieppe-Pourville</country-club.name>
+               <country-club.address.country.iso3166>FR</country-club.address.country.iso3166>
+               <country-club.address.postal-code>76200 Dieppe</country-club.address.postal-code>
+               <country-club.golf-course.name>Golf De Dieppe-Pourville</country-club.golf-course.name>
+               <country-club.golf-course.tee-set.name>Yellow (Men)</country-club.golf-course.tee-set.name>
+            </tees>
+            <handicap-strokes>22</handicap-strokes>
+         	<score>
+         		<hole number="1">
+         			<strokes>4</strokes>
+         			<putts>2</putts>
+         			<points>3</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>1</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="2">
+         			<strokes>4</strokes>
+         			<putts>2</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="3">
+         			<strokes>6</strokes>
+         			<putts>2</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="4">
+         			<strokes>5</strokes>
+         			<putts>2</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="5">
+         			<strokes>5</strokes>
+         			<putts>2</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="6">
+         			<strokes>5</strokes>
+         			<putts>2</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="7">
+         			<strokes>5</strokes>
+         			<putts>2</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="8">
+         			<strokes>5</strokes>
+         			<putts>2</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="9">
+         			<strokes>4</strokes>
+         			<putts>2</putts>
+         			<points>3</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>1</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="10">
+         			<strokes>3</strokes>
+         			<putts>2</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>1</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="11">
+         			<strokes>6</strokes>
+         			<putts>2</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="12">
+         			<strokes>6</strokes>
+         			<putts>1</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="13">
+         			<strokes>6</strokes>
+         			<putts>2</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="14">
+         			<strokes>6</strokes>
+         			<putts>2</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="15">
+         			<strokes>3</strokes>
+         			<putts>2</putts>
+         			<points>3</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>1</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="16">
+         			<strokes>7</strokes>
+         			<putts>2</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="17">
+         			<strokes>4</strokes>
+         			<putts>2</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="18">
+         			<strokes>4</strokes>
+         			<putts>2</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>1</green-in-regulation>
+         			</statistics>
+         		</hole>
+         	</score>
+         </scorecard>
+      </round>
+   </player>
+   <player gender="male">
+      <name>Carl</name>
+      <date-of-birth>2000-01-01</date-of-birth>
+      <round>
+         <date>2009-09-22T11:00:00</date>
+         <scorecard>
+            <tees>
+               <country-club.name>Golf De Dieppe-Pourville</country-club.name>
+               <country-club.address.country.iso3166>FR</country-club.address.country.iso3166>
+               <country-club.address.postal-code>76200 Dieppe</country-club.address.postal-code>
+               <country-club.golf-course.name>Golf De Dieppe-Pourville</country-club.golf-course.name>
+               <country-club.golf-course.tee-set.name>Yellow (Men)</country-club.golf-course.tee-set.name>
+            </tees>
+            <handicap-strokes>22</handicap-strokes>
+         	<score>
+         		<hole number="1">
+         			<strokes>5</strokes>
+         			<putts>2</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="2">
+         			<strokes>4</strokes>
+         			<putts>2</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="3">
+         			<strokes>7</strokes>
+         			<putts>3</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="4">
+         			<strokes>5</strokes>
+         			<putts>2</putts>
+         			<points>3</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="5">
+         			<strokes>6</strokes>
+         			<putts>3</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="6">
+         			<strokes>5</strokes>
+         			<putts>3</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="7">
+         			<strokes>6</strokes>
+         			<putts>2</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="8">
+         			<strokes>6</strokes>
+         			<putts>2</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="9">
+         			<strokes>4</strokes>
+         			<putts>1</putts>
+         			<points>3</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="10">
+         			<strokes>5</strokes>
+         			<putts>3</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="11">
+         			<strokes>6</strokes>
+         			<putts>2</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="12">
+         			<strokes>5</strokes>
+         			<putts>2</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="13">
+         			<strokes>6</strokes>
+         			<putts>2</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="14">
+         			<strokes>8</strokes>
+         			<putts>2</putts>
+         			<points>0</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="15">
+         			<strokes>4</strokes>
+         			<putts>2</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="16">
+         			<strokes>8</strokes>
+         			<putts>2</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="17">
+         			<strokes>5</strokes>
+         			<putts>2</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="18">
+         			<strokes>6</strokes>
+         			<putts>2</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         	</score>
+         </scorecard>
+      </round>
+   </player>
+   <player gender="male">
+      <name>David</name>
+      <date-of-birth>2000-01-01</date-of-birth>
+      <round>
+         <date>2009-09-22T11:00:00</date>
+         <scorecard>
+            <tees>
+               <country-club.name>Golf De Dieppe-Pourville</country-club.name>
+               <country-club.address.country.iso3166>FR</country-club.address.country.iso3166>
+               <country-club.address.postal-code>76200 Dieppe</country-club.address.postal-code>
+               <country-club.golf-course.name>Golf De Dieppe-Pourville</country-club.golf-course.name>
+               <country-club.golf-course.tee-set.name>Yellow (Men)</country-club.golf-course.tee-set.name>
+            </tees>
+            <handicap-strokes>27</handicap-strokes>
+         	<score>
+         		<hole number="1">
+         			<strokes>6</strokes>
+         			<putts>3</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="2">
+         			<strokes>4</strokes>
+         			<putts>2</putts>
+         			<points>3</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="3">
+         			<strokes>8</strokes>
+         			<putts>2</putts>
+         			<points>0</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="4">
+         			<strokes>6</strokes>
+         			<putts>2</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="5">
+         			<strokes>6</strokes>
+         			<putts>2</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="6">
+         			<strokes>6</strokes>
+         			<putts>2</putts>
+         			<points>0</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="7">
+         			<strokes>7</strokes>
+         			<putts>2</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="8">
+         			<strokes>7</strokes>
+         			<putts>2</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="9">
+         			<strokes>5</strokes>
+         			<putts>3</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>1</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="10">
+         			<strokes>5</strokes>
+         			<putts>2</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="11">
+         			<strokes>7</strokes>
+         			<putts>2</putts>
+         			<points>0</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="12">
+         			<strokes>7</strokes>
+         			<putts>2</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="13">
+         			<strokes>7</strokes>
+         			<putts>3</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="14">
+         			<strokes>7</strokes>
+         			<putts>2</putts>
+         			<points>2</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="15">
+         			<strokes>3</strokes>
+         			<putts>2</putts>
+         			<points>3</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>1</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="16">
+         			<strokes>8</strokes>
+         			<putts>3</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="17">
+         			<strokes>5</strokes>
+         			<putts>2</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         		<hole number="18">
+         			<strokes>6</strokes>
+         			<putts>2</putts>
+         			<points>1</points>
+         			<statistics>
+         				<fairway>0</fairway>
+         				<green-in-regulation>0</green-in-regulation>
+         			</statistics>
+         		</hole>
+         	</score>
+         </scorecard>
+      </round>
+   </player>
+
+</golfml>

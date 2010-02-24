@@ -1,0 +1,1674 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+<Folder>
+<name>Golf de la Bruy re</name>
+<Folder>
+<name>Hole 1</name>
+<Placemark>
+ <name>Green 1</name>
+<View>
+ <longitude>4.503880</longitude>
+ <latitude>50.540465</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/StartOfGreen.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 1 - Start of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.503880,50.540465,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.499922</longitude>
+ <latitude>50.543488</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 1 - Tee Men]]>
+ </description>
+ <Point>
+  <coordinates>4.499922,50.543488,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.504234</longitude>
+ <latitude>50.540179</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 1 - End of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.504234,50.540179,0</coordinates>
+ </Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>Hole 2</name>
+<Placemark>
+ <name>Green 2</name>
+<View>
+ <longitude>4.503868</longitude>
+ <latitude>50.543490</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/StartOfGreen.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 2 - Start of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.503868,50.543490,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.504477</longitude>
+ <latitude>50.542456</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 2 - Fairway Bunker Right]]>
+ </description>
+ <Point>
+  <coordinates>4.504477,50.542456,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.503754</longitude>
+ <latitude>50.543871</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 2 - End of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.503754,50.543871,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.505153</longitude>
+ <latitude>50.541034</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 2 - Tee Men]]>
+ </description>
+ <Point>
+  <coordinates>4.505153,50.541034,0</coordinates>
+ </Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>Hole 3</name>
+<Placemark>
+ <name>Green 3</name>
+<View>
+ <longitude>4.502917</longitude>
+ <latitude>50.544257</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/StartOfGreen.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 3 - Start of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.502917,50.544257,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.502948</longitude>
+ <latitude>50.544491</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 3 - End of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.502948,50.544491,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.502623</longitude>
+ <latitude>50.543384</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 3 - Tee Men]]>
+ </description>
+ <Point>
+  <coordinates>4.502623,50.543384,0</coordinates>
+ </Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>Hole 4</name>
+<Placemark>
+ <name>Green 4</name>
+<View>
+ <longitude>4.505370</longitude>
+ <latitude>50.542257</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/StartOfGreen.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 4 - Start of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.505370,50.542257,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.505525</longitude>
+ <latitude>50.542057</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 4 - End of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.505525,50.542057,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.505524</longitude>
+ <latitude>50.542340</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 4 - Green Bunker Left]]>
+ </description>
+ <Point>
+  <coordinates>4.505524,50.542340,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.505343</longitude>
+ <latitude>50.543300</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 4 - Fairway Bunker Left]]>
+ </description>
+ <Point>
+  <coordinates>4.505343,50.543300,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.503792</longitude>
+ <latitude>50.544315</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 4 - Tee Men]]>
+ </description>
+ <Point>
+  <coordinates>4.503792,50.544315,0</coordinates>
+ </Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>Hole 5</name>
+<Placemark>
+ <name>Green 5</name>
+<View>
+ <longitude>4.509107</longitude>
+ <latitude>50.544545</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/StartOfGreen.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 5 - Start of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.509107,50.544545,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.509235</longitude>
+ <latitude>50.544811</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 5 - End of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.509235,50.544811,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.508265</longitude>
+ <latitude>50.543482</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 5 - Fairway Bunker Right]]>
+ </description>
+ <Point>
+  <coordinates>4.508265,50.543482,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.506323</longitude>
+ <latitude>50.542133</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 5 - Tee Men]]>
+ </description>
+ <Point>
+  <coordinates>4.506323,50.542133,0</coordinates>
+ </Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>Hole 6</name>
+<Placemark>
+ <name>Green 6</name>
+<View>
+ <longitude>4.507221</longitude>
+ <latitude>50.542328</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/StartOfGreen.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 6 - Start of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.507221,50.542328,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.507211</longitude>
+ <latitude>50.542448</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 6 - Green Bunker Right]]>
+ </description>
+ <Point>
+  <coordinates>4.507211,50.542448,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.506854</longitude>
+ <latitude>50.542142</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 6 - End of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.506854,50.542142,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.508800</longitude>
+ <latitude>50.543021</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 6 - Dogleg]]>
+ </description>
+ <Point>
+  <coordinates>4.508800,50.543021,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.509643</longitude>
+ <latitude>50.544377</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 6 - Tee Men]]>
+ </description>
+ <Point>
+  <coordinates>4.509643,50.544377,0</coordinates>
+ </Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>Hole 7</name>
+<Placemark>
+ <name>Green 7</name>
+<View>
+ <longitude>4.508789</longitude>
+ <latitude>50.544877</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/StartOfGreen.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 7 - Start of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.508789,50.544877,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.508850</longitude>
+ <latitude>50.545153</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 7 - End of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.508850,50.545153,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.507583</longitude>
+ <latitude>50.543738</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 7 - Fairway Bunker]]>
+ </description>
+ <Point>
+  <coordinates>4.507583,50.543738,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.506086</longitude>
+ <latitude>50.542376</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 7 - Tee Men]]>
+ </description>
+ <Point>
+  <coordinates>4.506086,50.542376,0</coordinates>
+ </Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>Hole 8</name>
+<Placemark>
+ <name>Green 8</name>
+<View>
+ <longitude>4.502942</longitude>
+ <latitude>50.544932</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/StartOfGreen.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 8 - Start of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.502942,50.544932,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.502406</longitude>
+ <latitude>50.545051</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 8 - End of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.502406,50.545051,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.503002</longitude>
+ <latitude>50.545029</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 8 - Green Bunker Right]]>
+ </description>
+ <Point>
+  <coordinates>4.503002,50.545029,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.502780</longitude>
+ <latitude>50.544833</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 8 - Green Bunker Left]]>
+ </description>
+ <Point>
+  <coordinates>4.502780,50.544833,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.503734</longitude>
+ <latitude>50.544936</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 8 - Fairway Bunker Back]]>
+ </description>
+ <Point>
+  <coordinates>4.503734,50.544936,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.504159</longitude>
+ <latitude>50.544932</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 8 - Fairway Bunker Front]]>
+ </description>
+ <Point>
+  <coordinates>4.504159,50.544932,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.506536</longitude>
+ <latitude>50.544697</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 8 - Dogleg]]>
+ </description>
+ <Point>
+  <coordinates>4.506536,50.544697,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.508832</longitude>
+ <latitude>50.545632</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 8 - Tee Men]]>
+ </description>
+ <Point>
+  <coordinates>4.508832,50.545632,0</coordinates>
+ </Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>Hole 9</name>
+<Placemark>
+ <name>Green 9</name>
+<View>
+ <longitude>4.501182</longitude>
+ <latitude>50.543558</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/StartOfGreen.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 9 - Start of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.501182,50.543558,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.501110</longitude>
+ <latitude>50.543353</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 9 - End of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.501110,50.543353,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.501072</longitude>
+ <latitude>50.543595</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 9 - Green Bunker Right]]>
+ </description>
+ <Point>
+  <coordinates>4.501072,50.543595,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.501314</longitude>
+ <latitude>50.543541</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 9 - Green Bunker Left]]>
+ </description>
+ <Point>
+  <coordinates>4.501314,50.543541,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.501462</longitude>
+ <latitude>50.544655</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 9 - Tee Men]]>
+ </description>
+ <Point>
+  <coordinates>4.501462,50.544655,0</coordinates>
+ </Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>Hole 10</name>
+<Placemark>
+ <name>Green 10</name>
+<View>
+ <longitude>4.495655</longitude>
+ <latitude>50.546737</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/StartOfGreen.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 10 - Start of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.495655,50.546737,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.495215</longitude>
+ <latitude>50.546804</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 10 - End of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.495215,50.546804,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.496813</longitude>
+ <latitude>50.545520</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 10 - Fairway Bunker Back]]>
+ </description>
+ <Point>
+  <coordinates>4.496813,50.545520,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.497089</longitude>
+ <latitude>50.545303</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 10 - Fairway Bunker Left]]>
+ </description>
+ <Point>
+  <coordinates>4.497089,50.545303,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.498693</longitude>
+ <latitude>50.544621</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 10 - Tee Men]]>
+ </description>
+ <Point>
+  <coordinates>4.498693,50.544621,0</coordinates>
+ </Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>Hole 11</name>
+<Placemark>
+ <name>Green 11</name>
+<View>
+ <longitude>4.500095</longitude>
+ <latitude>50.544713</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/StartOfGreen.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 11 - Start of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.500095,50.544713,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.500552</longitude>
+ <latitude>50.544627</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 11 - End of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.500552,50.544627,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.499003</longitude>
+ <latitude>50.544947</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 11 - Dogleg]]>
+ </description>
+ <Point>
+  <coordinates>4.499003,50.544947,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.496471</longitude>
+ <latitude>50.546692</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 11 - Tee Men]]>
+ </description>
+ <Point>
+  <coordinates>4.496471,50.546692,0</coordinates>
+ </Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>Hole 12</name>
+<Placemark>
+ <name>Green 12</name>
+<View>
+ <longitude>4.499045</longitude>
+ <latitude>50.545713</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/StartOfGreen.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 12 - Start of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.499045,50.545713,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.498715</longitude>
+ <latitude>50.545897</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 12 - End of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.498715,50.545897,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.500860</longitude>
+ <latitude>50.544812</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 12 - Tee Men]]>
+ </description>
+ <Point>
+  <coordinates>4.500860,50.544812,0</coordinates>
+ </Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>Hole 13</name>
+<Placemark>
+ <name>Green 13</name>
+<View>
+ <longitude>4.497085</longitude>
+ <latitude>50.547580</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/StartOfGreen.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 13 - Start of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.497085,50.547580,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.496662</longitude>
+ <latitude>50.547577</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 13 - End of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.496662,50.547577,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.498245</longitude>
+ <latitude>50.547230</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 13 - Dogleg]]>
+ </description>
+ <Point>
+  <coordinates>4.498245,50.547230,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.499754</longitude>
+ <latitude>50.545900</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 13 - Tee Men]]>
+ </description>
+ <Point>
+  <coordinates>4.499754,50.545900,0</coordinates>
+ </Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>Hole 14</name>
+<Placemark>
+ <name>Green 14</name>
+<View>
+ <longitude>4.501183</longitude>
+ <latitude>50.545389</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/StartOfGreen.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 14 - Start of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.501183,50.545389,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.501406</longitude>
+ <latitude>50.545139</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 14 - End of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.501406,50.545139,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.500797</longitude>
+ <latitude>50.546647</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 14 - Dogleg]]>
+ </description>
+ <Point>
+  <coordinates>4.500797,50.546647,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.498950</longitude>
+ <latitude>50.547765</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 14 - Tee Men]]>
+ </description>
+ <Point>
+  <coordinates>4.498950,50.547765,0</coordinates>
+ </Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>Hole 15</name>
+<Placemark>
+ <name>Green 15</name>
+<View>
+ <longitude>4.506221</longitude>
+ <latitude>50.545525</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/StartOfGreen.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 15 - Start of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.506221,50.545525,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.506574</longitude>
+ <latitude>50.545351</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 15 - End of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.506574,50.545351,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.505062</longitude>
+ <latitude>50.546092</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 15 - Dogleg]]>
+ </description>
+ <Point>
+  <coordinates>4.505062,50.546092,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.502601</longitude>
+ <latitude>50.545689</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 15 - Tee Men]]>
+ </description>
+ <Point>
+  <coordinates>4.502601,50.545689,0</coordinates>
+ </Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>Hole 16</name>
+<Placemark>
+ <name>Green 16</name>
+<View>
+ <longitude>4.503190</longitude>
+ <latitude>50.545453</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/StartOfGreen.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 16 - Start of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.503190,50.545453,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.502770</longitude>
+ <latitude>50.545484</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 16 - End of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.502770,50.545484,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.505577</longitude>
+ <latitude>50.545055</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 16 - Tee Men]]>
+ </description>
+ <Point>
+  <coordinates>4.505577,50.545055,0</coordinates>
+ </Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>Hole 17</name>
+<Placemark>
+ <name>Green 17</name>
+<View>
+ <longitude>4.504405</longitude>
+ <latitude>50.540961</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/StartOfGreen.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 17 - Start of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.504405,50.540961,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.504694</longitude>
+ <latitude>50.540716</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 17 - End of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.504694,50.540716,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.504340</longitude>
+ <latitude>50.541241</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 17 - Fairway Bunker]]>
+ </description>
+ <Point>
+  <coordinates>4.504340,50.541241,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.501769</longitude>
+ <latitude>50.544733</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 17 - Tee Men]]>
+ </description>
+ <Point>
+  <coordinates>4.501769,50.544733,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.502140</longitude>
+ <latitude>50.543077</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 17 - Dogleg]]>
+ </description>
+ <Point>
+  <coordinates>4.502140,50.543077,0</coordinates>
+ </Point>
+</Placemark>
+</Folder>
+<Folder>
+<name>Hole 18</name>
+<Placemark>
+ <name>Green 18</name>
+<View>
+ <longitude>4.500189</longitude>
+ <latitude>50.542549</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/StartOfGreen.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 18 - Start of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.500189,50.542549,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.499886</longitude>
+ <latitude>50.542778</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 18 - End of Green]]>
+ </description>
+ <Point>
+  <coordinates>4.499886,50.542778,0</coordinates>
+ </Point>
+</Placemark>
+<Placemark>
+<View>
+ <longitude>4.503467</longitude>
+ <latitude>50.540167</latitude>
+  <range>1000</range>
+  <tilt>0</tilt>
+  <heading>0</heading>
+ </View>
+ <visibility>1</visibility>
+ <Style>
+  <icon>
+   <href>http://www.mobilegolfscorer.com/GPSPosition.png</href>
+  </icon>
+ </Style>
+ <description>
+  <![CDATA[Hole 18 - Tee Men]]>
+ </description>
+ <Point>
+  <coordinates>4.503467,50.540167,0</coordinates>
+ </Point>
+</Placemark>
+</Folder>
+</Folder>
+</kml>

@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="../stylesheets/static-course.xsl"?>
 <golfml xmlns="http://code.google.com/p/golfml"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://code.google.com/p/golfml ../schemas/golfml.xsd"
+    xsi:schemaLocation="http://code.google.com/p/golfml ../../schemas/golfml.xsd"
     version="0.9">
     <country-club>
         <name>Golf De Dieppe-Pourville</name>

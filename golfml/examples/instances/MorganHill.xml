@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../stylesheets/static-course.xsl"?>
 <golfml xmlns="http://code.google.com/p/golfml"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:g="http://code.google.com/p/golfml"
@@ -18,7 +19,7 @@
 		</contact>
 		<golf-course>
 			<name>The Club at Morgan Hill</name>
-			<tee-set name="Blue (Men)">
+			<tee-set name="Blue (Men)" gender="gentlemen" colour="blue">
 				<qualification>
 					<qualification-usga>
 						<rating>72.8</rating>
@@ -134,7 +135,7 @@
 					<length units="yards">378</length>
 				</tee>
 			</tee-set>
-			<tee-set name="Green (Men)">
+			<tee-set name="Green (Men)" gender="gentlemen" colour="green">
 				<qualification>
 					<qualification-usga>
 						<rating>71.2</rating>
@@ -250,7 +251,7 @@
 					<length units="yards">356</length>
 				</tee>
 			</tee-set>
-			<tee-set name="White (Men)">
+			<tee-set name="White (Men)" gender="gentlemen" colour="white">
 				<qualification>
 					<qualification-usga>
 						<rating>69.5</rating>
@@ -366,7 +367,7 @@
 					<length units="yards">330</length>
 				</tee>
 			</tee-set>
-			<tee-set name="Red (Women)">
+			<tee-set name="Red (Women)" gender="ladies" colour="red">
 				<qualification>
 					<qualification-usga>
 						<rating>70.9</rating>

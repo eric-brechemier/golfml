@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../stylesheets/static-course.xsl"?>
 <golfml xmlns="http://code.google.com/p/golfml"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:g="http://code.google.com/p/golfml"
-	xsi:schemaLocation="http://code.google.com/p/golfml ../schemas/golfml.xsd"
+	xsi:schemaLocation="http://code.google.com/p/golfml ../../schemas/golfml.xsd"
 	version="0.9">
 	<country-club>
-		<name>Mercer Oaks</name>
+		<name>Mercer County Golf</name>
 		<address><street>725 Village Road West</street>
 			<postal-code>08550</postal-code>
 			<municipality>West Windsor</municipality>
@@ -17,7 +18,7 @@
 		</contact>
 		<golf-course>
 			<name>East Course</name>
-			<tee-set name="Black (Men)">
+			<tee-set name="Black (Men)" gender="gentlemen" colour="black">
 				<qualification>
 					<qualification-usga>
 						<rating>74.0</rating>
@@ -133,7 +134,7 @@
 					<length units="yards">620</length>
 				</tee>
 			</tee-set>
-			<tee-set name="Blue (Men)">
+			<tee-set name="Blue (Men)" gender="gentlemen" colour="blue">
 				<qualification>
 					<qualification-usga>
 						<rating>71.7</rating>
@@ -249,7 +250,7 @@
 					<length units="yards">575</length>
 				</tee>
 			</tee-set>
-			<tee-set name="White (Men)">
+			<tee-set name="White (Men)" gender="gentlemen" colour="white">
 				<qualification>
 					<qualification-usga>
 						<rating>69.4</rating>
@@ -365,7 +366,7 @@
 					<length units="yards">545</length>
 				</tee>
 			</tee-set>
-			<tee-set name="Yellow (Men)">
+			<tee-set name="Yellow (Men)" gender="gentlemen" colour="yellow">
 				<qualification>
 					<qualification-usga>
 						<rating>67.6</rating>
@@ -481,7 +482,7 @@
 					<length units="yards">508</length>
 				</tee>
 			</tee-set>
-			<tee-set name="Red (Women)">
+			<tee-set name="Red (Women)" gender="ladies" colour="red">
 				<qualification>
 					<qualification-usga>
 						<rating>68.9</rating>
@@ -600,7 +601,7 @@
 		</golf-course>
 		<golf-course>
 			<name>West Course</name>
-			<tee-set name="Black (Men)">
+			<tee-set name="Black (Men)" gender="gentlemen" colour="black">
 				<qualification>
 					<qualification-usga>
 						<rating>74.2</rating>
@@ -716,7 +717,7 @@
 					<length units="yards">535</length>
 				</tee>
 			</tee-set>
-			<tee-set name="Blue (Men)">
+			<tee-set name="Blue (Men)" gender="gentlemen" colour="blue">
 				<qualification>
 					<qualification-usga>
 						<rating>72</rating>
@@ -832,7 +833,7 @@
 					<length units="yards">525</length>
 				</tee>
 			</tee-set>
-			<tee-set name="White (Men)">
+			<tee-set name="White (Men)" gender="gentlemen" colour="white">
 				<qualification>
 					<qualification-usga>
 						<rating>70.6</rating>
@@ -948,7 +949,7 @@
 					<length units="yards">510</length>
 				</tee>
 			</tee-set>
-			<tee-set name="Red (Women)">
+			<tee-set name="Red (Women)" gender="ladies" colour="red">
 				<qualification>
 					<qualification-usga>
 						<rating>70.8</rating>
