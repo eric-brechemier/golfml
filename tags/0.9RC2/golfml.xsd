@@ -1,0 +1,3692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../stylesheets/genwiki.xsl"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   xmlns:golfml="http://code.google.com/p/golfml"
+		   targetNamespace="http://code.google.com/p/golfml"
+		   elementFormDefault="qualified"
+		   version="$Revision:$" >
+	
+<!-- The Golf Markup Language - golfml
+	
+	DESCRIPTION
+		XML Schema definition of a valid Golf Markup Language document.
+		
+	HISTORY
+		Version 0.9: AUG-2009: Initial version. Work in progress.
+		
+	SEE ALSO
+		
+		SportML: Sport Markup Language
+		kml.xsd: Google Earth Keyhole Markup Language
+		
+	NOTES
+		1. Assumptions, limits, etc.
+		- A course contains 1 to maximum 18 holes.
+		- Par is 3 to 9 strokes maximum. Are there any Par 7 anywhere in the world? (This can be changed in the Par type definition.)
+		- 		
+		2. Naming conventions
+		Type names are CamelCase: Example: GolfCourse.
+		Element names are dash separated words. Example: golf-course.
+		Enumeration and list types ends with Enum.
+		Relational keys are prefixed with PK_ and FK_, identifier groups are prefixed ID_ and identifier elements with REF_		
+		
+	    Note on Documentation Sep 18 2009
+		We decided to host the project on Google Code.
+		Since Google Code favor the use of a wiki style documentation, we build a quick documentation generator from this XML Schema document.
+		The generator generates a single file per element, type or group formatted according to Google Code's Wiki formatting.
+		Therefore, comments in annotation and documentation should be formatted accordingly to transfer smoothly to Google Code's Wiki area.
+		
+-->
+	
+	<xs:annotation><xs:documentation xml:lang="en">
+		Golf Markup Language
+	</xs:documentation></xs:annotation>
+   
+<!-- =================================================================
+	 B A S E  T Y P E S
+  -->
+	
+	<!-- Units -->
+
+	<xs:simpleType name="UnitSystemEnum">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Physical units used in golfml.
+			Units are always expressed in the International System of units, using meters, seconds, and kilograms.
+			
+			However, given the popularity of golf in the United States of America, alternative unit system can be used to prevent
+			unit conversions in applications. Therefore, physical values can also be expressed in yards, miles, and pounds.
+			Since the Imperial system of units is not the default system for units, it MUST be specified each time it is used.
+			
+			To further enhance the sharing of data across both unit systems, golfml allows for several values to be given in
+			different unit systems for the same object.		
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="metric"/>
+			<xs:enumeration value="imperial"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="UnitOfLengthEnum">
+		<xs:annotation><xs:documentation xml:lang="en">
+			List of acceptable values for units of length using either SI or imperial units.
+			The uncommon 'pace' unit is traditionnaly used for hole location sheets. Units are plural form.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="meters"/>
+			<xs:enumeration value="yards"/>
+			<xs:enumeration value="feet"/>
+			<xs:enumeration value="inches"/>
+			<xs:enumeration value="paces"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="UnitOfTemperature">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Units of temperature for SI or imperial system.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="C"/>
+			<xs:enumeration value="F"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="UnitOfWeight">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Units of weight for SI or imperial system.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="g"/>
+			<xs:enumeration value="lb"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="UnitOfSpeed">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Units of speed for SI or imperial system.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="m/s"/>
+			<xs:enumeration value="kmh"/>
+			<xs:enumeration value="mph"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	
+	<!-- Base Types -->
+
+	<xs:complexType name="RoomForExtension">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Local type for 'any' content. Room for different applications and systems to store their private data.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:any/>
+		</xs:sequence>
+		<xs:attribute name="other" type="xs:string">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Qualifies the content of the Any element.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	
+	
+	<xs:attributeGroup name="RemoteGolfML">
+		<xs:attribute name="remote-golfml-url" type="xs:anyURI">
+			<xs:annotation><xs:documentation xml:lang="en">
+				URL of remote GolfML document used for references.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	
+	
+	<xs:attributeGroup name="Other">
+		<xs:attribute name="other" type="xs:string">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Alternate value for an attribute.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	
+	
+	<xs:complexType name="Application">
+		<xs:annotation><xs:documentation xml:lang="en">
+			The application element is provided to store application private data that cannot be stored in golfml.
+			The content of an application element is ignored by other golfml applications.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:any/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Name of the application that stores data in the application container.
+				
+				Example: "GolfML Scorecard Application".
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="version" type="xs:string">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Version of the application that stored data in this container. Used by the application only.
+				
+				Example: "1.2.3456".
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="dotname" type="xs:string" use="required">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Name of the application in a reverse internet host name or a Java package and class style. Used by the application only.
+				Mandatory. Must be unique among all application names stored in an golfml document.
+				
+				Example: "com.company.golf.scorecardapp".
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	
+	
+	<xs:simpleType name="EmailAddress">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				Valid email address.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="([a-zA-Z0-9_\-])([a-zA-Z0-9_\-\.]*)@(\[((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}|((([a-zA-Z0-9\-]+)\.)+))([a-zA-Z]{2,}|(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\])"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	
+	<xs:simpleType name="PhoneNumber">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				Full international telephone number is up to 15 digits long.
+				The country code is up to 3 digits long. The area code is
+				country-dependent and is not used for some countries. If
+				used, it seems to be from 1 to 5 digits long. This leaves
+				the subscriber number up to 14 digits. Plus there is the
+				optional extension. Putting this all together, we get:
+				
+				country-area-subscriber-extension
+				
+				The area code and extension are optional. Here are a few
+				examples:
+				
+				1-800-1234567	(country-area-subscriber)
+				1-800-1234567-89 (country-area-subscriber-extension)
+				34-912345678	 (country-subscriber)
+				34-912345678-9   (country-subscriber-extension)
+				
+				See also
+				
+				http://en.wikipedia.org/wiki/Area_code
+				http://en.wikipedia.org/wiki/E.164
+				
+				Note
+				
+				We added "start with a + sign" for country code; there should be no space to separate numbers.
+			</xs:documentation>
+		</xs:annotation>
+		
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[\-+]?([1-9][0-9]{0,2})(-[1-9][0-9]{0,4})?(-[1-9][0-9]{0,13})(-[0-9]+)?"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+		
+	<!-- Miscellaneous Utility Types -->
+	
+	<xs:complexType name="Version">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Allow for version tracking on a single element with meta-data.
+			Element content should consists of version comments.
+		</xs:documentation></xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="version" type="xs:string"/>
+				<xs:attribute name="created" type="xs:dateTime"/>
+				<xs:attribute name="updated" type="xs:dateTime"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="UID">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Allow an application to insert a unique identifier for a GolfML entity.
+			Allows for serialization of surrogate keys to maintain and enforce referential integrity in databases.
+			Several different applications can each have their own UID for a GolfML entitiy.
+		</xs:documentation></xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="application.dotname" type="xs:string" use="required">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Name of the application in a reverse internet host name or a Java package and class style. Used by the application only.
+						Mandatory. Must be unique among all application names stored in an golfml document.
+						
+						Example: "com.company.golf.scorecardapp".
+					</xs:documentation></xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	
+	<xs:simpleType name="Gender">
+		<xs:annotation><xs:documentation xml:lang="en">
+			List of values used to specify the gender of a golfer.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="male"/>
+			<xs:enumeration value="female"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	
+	<xs:simpleType name="GolfingGender">
+		<xs:annotation><xs:documentation xml:lang="en">
+			List of values used to specify the gender of a set of tees.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="gentlemen"/>
+			<xs:enumeration value="ladies"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	
+	<xs:simpleType name="ISO3166CountryCodeEnum">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				Two-letter (alpha-2) ISO 3166-1 code for one of the 243 countries.
+			</xs:documentation>
+		</xs:annotation>
+		
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AF"/> <!-- AFGHANISTAN -->
+			<xs:enumeration value="AX"/> <!-- &Aring;LAND ISLANDS -->
+			<xs:enumeration value="AL"/> <!-- ALBANIA -->
+			<xs:enumeration value="DZ"/> <!-- ALGERIA -->
+			<xs:enumeration value="AS"/> <!-- AMERICAN SAMOA -->
+			<xs:enumeration value="AD"/> <!-- ANDORRA -->
+			<xs:enumeration value="AO"/> <!-- ANGOLA -->
+			<xs:enumeration value="AI"/> <!-- ANGUILLA -->
+			<xs:enumeration value="AQ"/> <!-- ANTARCTICA -->
+			<xs:enumeration value="AG"/> <!-- ANTIGUA AND BARBUDA -->
+			<xs:enumeration value="AR"/> <!-- ARGENTINA -->
+			<xs:enumeration value="AM"/> <!-- ARMENIA -->
+			<xs:enumeration value="AW"/> <!-- ARUBA -->
+			<xs:enumeration value="AU"/> <!-- AUSTRALIA -->
+			<xs:enumeration value="AT"/> <!-- AUSTRIA -->
+			<xs:enumeration value="AZ"/> <!-- AZERBAIJAN -->
+			<xs:enumeration value="BS"/> <!-- BAHAMAS -->
+			<xs:enumeration value="BH"/> <!-- BAHRAIN -->
+			<xs:enumeration value="BD"/> <!-- BANGLADESH -->
+			<xs:enumeration value="BB"/> <!-- BARBADOS -->
+			<xs:enumeration value="BY"/> <!-- BELARUS -->
+			<xs:enumeration value="BE"/> <!-- BELGIUM -->
+			<xs:enumeration value="BZ"/> <!-- BELIZE -->
+			<xs:enumeration value="BJ"/> <!-- BENIN -->
+			<xs:enumeration value="BM"/> <!-- BERMUDA -->
+			<xs:enumeration value="BT"/> <!-- BHUTAN -->
+			<xs:enumeration value="BO"/> <!-- BOLIVIA -->
+			<xs:enumeration value="BA"/> <!-- BOSNIA AND HERZEGOVINA -->
+			<xs:enumeration value="BW"/> <!-- BOTSWANA -->
+			<xs:enumeration value="BV"/> <!-- BOUVET ISLAND -->
+			<xs:enumeration value="BR"/> <!-- BRAZIL -->
+			<xs:enumeration value="IO"/> <!-- BRITISH INDIAN OCEAN TERRITORY -->
+			<xs:enumeration value="BN"/> <!-- BRUNEI DARUSSALAM -->
+			<xs:enumeration value="BG"/> <!-- BULGARIA -->
+			<xs:enumeration value="BF"/> <!-- BURKINA FASO -->
+			<xs:enumeration value="BI"/> <!-- BURUNDI -->
+			<xs:enumeration value="KH"/> <!-- CAMBODIA -->
+			<xs:enumeration value="CM"/> <!-- CAMEROON -->
+			<xs:enumeration value="CA"/> <!-- CANADA -->
+			<xs:enumeration value="CV"/> <!-- CAPE VERDE -->
+			<xs:enumeration value="KY"/> <!-- CAYMAN ISLANDS -->
+			<xs:enumeration value="CF"/> <!-- CENTRAL AFRICAN REPUBLIC -->
+			<xs:enumeration value="TD"/> <!-- CHAD -->
+			<xs:enumeration value="CL"/> <!-- CHILE -->
+			<xs:enumeration value="CN"/> <!-- CHINA -->
+			<xs:enumeration value="CX"/> <!-- CHRISTMAS ISLAND -->
+			<xs:enumeration value="CC"/> <!-- COCOS (KEELING) ISLANDS -->
+			<xs:enumeration value="CO"/> <!-- COLOMBIA -->
+			<xs:enumeration value="KM"/> <!-- COMOROS -->
+			<xs:enumeration value="CG"/> <!-- CONGO -->
+			<xs:enumeration value="CD"/> <!-- CONGO, THE DEMOCRATIC REPUBLIC OF THE -->
+			<xs:enumeration value="CK"/> <!-- COOK ISLANDS -->
+			<xs:enumeration value="CR"/> <!-- COSTA RICA -->
+			<xs:enumeration value="CI"/> <!-- COTE D'IVOIRE -->
+			<xs:enumeration value="HR"/> <!-- CROATIA -->
+			<xs:enumeration value="CU"/> <!-- CUBA -->
+			<xs:enumeration value="CY"/> <!-- CYPRUS -->
+			<xs:enumeration value="CZ"/> <!-- CZECH REPUBLIC -->
+			<xs:enumeration value="DK"/> <!-- DENMARK -->
+			<xs:enumeration value="DJ"/> <!-- DJIBOUTI -->
+			<xs:enumeration value="DM"/> <!-- DOMINICA -->
+			<xs:enumeration value="DO"/> <!-- DOMINICAN REPUBLIC -->
+			<xs:enumeration value="EC"/> <!-- ECUADOR -->
+			<xs:enumeration value="EG"/> <!-- EGYPT -->
+			<xs:enumeration value="SV"/> <!-- EL SALVADOR -->
+			<xs:enumeration value="GQ"/> <!-- EQUATORIAL GUINEA -->
+			<xs:enumeration value="ER"/> <!-- ERITREA -->
+			<xs:enumeration value="EE"/> <!-- ESTONIA -->
+			<xs:enumeration value="ET"/> <!-- ETHIOPIA -->
+			<xs:enumeration value="FK"/> <!-- FALKLAND ISLANDS (MALVINAS) -->
+			<xs:enumeration value="FO"/> <!-- FAROE ISLANDS -->
+			<xs:enumeration value="FJ"/> <!-- FIJI -->
+			<xs:enumeration value="FI"/> <!-- FINLAND -->
+			<xs:enumeration value="FR"/> <!-- FRANCE -->
+			<xs:enumeration value="GF"/> <!-- FRENCH GUIANA -->
+			<xs:enumeration value="PF"/> <!-- FRENCH POLYNESIA -->
+			<xs:enumeration value="TF"/> <!-- FRENCH SOUTHERN TERRITORIES -->
+			<xs:enumeration value="GA"/> <!-- GABON -->
+			<xs:enumeration value="GM"/> <!-- GAMBIA -->
+			<xs:enumeration value="GE"/> <!-- GEORGIA -->
+			<xs:enumeration value="DE"/> <!-- GERMANY -->
+			<xs:enumeration value="GH"/> <!-- GHANA -->
+			<xs:enumeration value="GI"/> <!-- GIBRALTAR -->
+			<xs:enumeration value="GR"/> <!-- GREECE -->
+			<xs:enumeration value="GL"/> <!-- GREENLAND -->
+			<xs:enumeration value="GD"/> <!-- GRENADA -->
+			<xs:enumeration value="GP"/> <!-- GUADELOUPE -->
+			<xs:enumeration value="GU"/> <!-- GUAM -->
+			<xs:enumeration value="GT"/> <!-- GUATEMALA -->
+			<xs:enumeration value="GG"/> <!-- GUERNSEY -->
+			<xs:enumeration value="GN"/> <!-- GUINEA -->
+			<xs:enumeration value="GW"/> <!-- GUINEA-BISSAU -->
+			<xs:enumeration value="GY"/> <!-- GUYANA -->
+			<xs:enumeration value="HT"/> <!-- HAITI -->
+			<xs:enumeration value="HM"/> <!-- HEARD ISLAND AND MCDONALD ISLANDS -->
+			<xs:enumeration value="VA"/> <!-- HOLY SEE (VATICAN CITY STATE) -->
+			<xs:enumeration value="HN"/> <!-- HONDURAS -->
+			<xs:enumeration value="HK"/> <!-- HONG KONG -->
+			<xs:enumeration value="HU"/> <!-- HUNGARY -->
+			<xs:enumeration value="IS"/> <!-- ICELAND -->
+			<xs:enumeration value="IN"/> <!-- INDIA -->
+			<xs:enumeration value="ID"/> <!-- INDONESIA -->
+			<xs:enumeration value="IR"/> <!-- IRAN, ISLAMIC REPUBLIC OF -->
+			<xs:enumeration value="IQ"/> <!-- IRAQ -->
+			<xs:enumeration value="IE"/> <!-- IRELAND -->
+			<xs:enumeration value="IM"/> <!-- ISLE OF MAN -->
+			<xs:enumeration value="IL"/> <!-- ISRAEL -->
+			<xs:enumeration value="IT"/> <!-- ITALY -->
+			<xs:enumeration value="JM"/> <!-- JAMAICA -->
+			<xs:enumeration value="JP"/> <!-- JAPAN -->
+			<xs:enumeration value="JE"/> <!-- JERSEY -->
+			<xs:enumeration value="JO"/> <!-- JORDAN -->
+			<xs:enumeration value="KZ"/> <!-- KAZAKHSTAN -->
+			<xs:enumeration value="KE"/> <!-- KENYA -->
+			<xs:enumeration value="KI"/> <!-- KIRIBATI -->
+			<xs:enumeration value="KP"/> <!-- KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF -->
+			<xs:enumeration value="KR"/> <!-- KOREA, REPUBLIC OF -->
+			<xs:enumeration value="KW"/> <!-- KUWAIT -->
+			<xs:enumeration value="KG"/> <!-- KYRGYZSTAN -->
+			<xs:enumeration value="LA"/> <!-- LAO PEOPLE'S DEMOCRATIC REPUBLIC -->
+			<xs:enumeration value="LV"/> <!-- LATVIA -->
+			<xs:enumeration value="LB"/> <!-- LEBANON -->
+			<xs:enumeration value="LS"/> <!-- LESOTHO -->
+			<xs:enumeration value="LR"/> <!-- LIBERIA -->
+			<xs:enumeration value="LY"/> <!-- LIBYAN ARAB JAMAHIRIYA -->
+			<xs:enumeration value="LI"/> <!-- LIECHTENSTEIN -->
+			<xs:enumeration value="LT"/> <!-- LITHUANIA -->
+			<xs:enumeration value="LU"/> <!-- LUXEMBOURG -->
+			<xs:enumeration value="MO"/> <!-- MACAO -->
+			<xs:enumeration value="MK"/> <!-- MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF -->
+			<xs:enumeration value="MG"/> <!-- MADAGASCAR -->
+			<xs:enumeration value="MW"/> <!-- MALAWI -->
+			<xs:enumeration value="MY"/> <!-- MALAYSIA -->
+			<xs:enumeration value="MV"/> <!-- MALDIVES -->
+			<xs:enumeration value="ML"/> <!-- MALI -->
+			<xs:enumeration value="MT"/> <!-- MALTA -->
+			<xs:enumeration value="MH"/> <!-- MARSHALL ISLANDS -->
+			<xs:enumeration value="MQ"/> <!-- MARTINIQUE -->
+			<xs:enumeration value="MR"/> <!-- MAURITANIA -->
+			<xs:enumeration value="MU"/> <!-- MAURITIUS -->
+			<xs:enumeration value="YT"/> <!-- MAYOTTE -->
+			<xs:enumeration value="MX"/> <!-- MEXICO -->
+			<xs:enumeration value="FM"/> <!-- MICRONESIA, FEDERATED STATES OF -->
+			<xs:enumeration value="MD"/> <!-- MOLDOVA, REPUBLIC OF -->
+			<xs:enumeration value="MC"/> <!-- MONACO -->
+			<xs:enumeration value="MN"/> <!-- MONGOLIA -->
+			<xs:enumeration value="MS"/> <!-- MONTSERRAT -->
+			<xs:enumeration value="MA"/> <!-- MOROCCO -->
+			<xs:enumeration value="MZ"/> <!-- MOZAMBIQUE -->
+			<xs:enumeration value="MM"/> <!-- MYANMAR -->
+			<xs:enumeration value="NA"/> <!-- NAMIBIA -->
+			<xs:enumeration value="NR"/> <!-- NAURU -->
+			<xs:enumeration value="NP"/> <!-- NEPAL -->
+			<xs:enumeration value="NL"/> <!-- NETHERLANDS -->
+			<xs:enumeration value="AN"/> <!-- NETHERLANDS ANTILLES -->
+			<xs:enumeration value="NC"/> <!-- NEW CALEDONIA -->
+			<xs:enumeration value="NZ"/> <!-- NEW ZEALAND -->
+			<xs:enumeration value="NI"/> <!-- NICARAGUA -->
+			<xs:enumeration value="NE"/> <!-- NIGER -->
+			<xs:enumeration value="NG"/> <!-- NIGERIA -->
+			<xs:enumeration value="NU"/> <!-- NIUE -->
+			<xs:enumeration value="NF"/> <!-- NORFOLK ISLAND -->
+			<xs:enumeration value="MP"/> <!-- NORTHERN MARIANA ISLANDS -->
+			<xs:enumeration value="NO"/> <!-- NORWAY -->
+			<xs:enumeration value="OM"/> <!-- OMAN -->
+			<xs:enumeration value="PK"/> <!-- PAKISTAN -->
+			<xs:enumeration value="PW"/> <!-- PALAU -->
+			<xs:enumeration value="PS"/> <!-- PALESTINIAN TERRITORY, OCCUPIED -->
+			<xs:enumeration value="PA"/> <!-- PANAMA -->
+			<xs:enumeration value="PG"/> <!-- PAPUA NEW GUINEA -->
+			<xs:enumeration value="PY"/> <!-- PARAGUAY -->
+			<xs:enumeration value="PE"/> <!-- PERU -->
+			<xs:enumeration value="PH"/> <!-- PHILIPPINES -->
+			<xs:enumeration value="PN"/> <!-- PITCAIRN -->
+			<xs:enumeration value="PL"/> <!-- POLAND -->
+			<xs:enumeration value="PT"/> <!-- PORTUGAL -->
+			<xs:enumeration value="PR"/> <!-- PUERTO RICO -->
+			<xs:enumeration value="QA"/> <!-- QATAR -->
+			<xs:enumeration value="RE"/> <!-- REUNION -->
+			<xs:enumeration value="RO"/> <!-- ROMANIA -->
+			<xs:enumeration value="RU"/> <!-- RUSSIAN FEDERATION -->
+			<xs:enumeration value="RW"/> <!-- RWANDA -->
+			<xs:enumeration value="SH"/> <!-- SAINT HELENA -->
+			<xs:enumeration value="KN"/> <!-- SAINT KITTS AND NEVIS -->
+			<xs:enumeration value="LC"/> <!-- SAINT LUCIA -->
+			<xs:enumeration value="PM"/> <!-- SAINT PIERRE AND MIQUELON -->
+			<xs:enumeration value="VC"/> <!-- SAINT VINCENT AND THE GRENADINES -->
+			<xs:enumeration value="WS"/> <!-- SAMOA -->
+			<xs:enumeration value="SM"/> <!-- SAN MARINO -->
+			<xs:enumeration value="ST"/> <!-- SAO TOME AND PRINCIPE -->
+			<xs:enumeration value="SA"/> <!-- SAUDI ARABIA -->
+			<xs:enumeration value="SN"/> <!-- SENEGAL -->
+			<xs:enumeration value="CS"/> <!-- SERBIA AND MONTENEGRO -->
+			<xs:enumeration value="SC"/> <!-- SEYCHELLES -->
+			<xs:enumeration value="SL"/> <!-- SIERRA LEONE -->
+			<xs:enumeration value="SG"/> <!-- SINGAPORE -->
+			<xs:enumeration value="SK"/> <!-- SLOVAKIA -->
+			<xs:enumeration value="SI"/> <!-- SLOVENIA -->
+			<xs:enumeration value="SB"/> <!-- SOLOMON ISLANDS -->
+			<xs:enumeration value="SO"/> <!-- SOMALIA -->
+			<xs:enumeration value="ZA"/> <!-- SOUTH AFRICA -->
+			<xs:enumeration value="GS"/> <!-- SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS -->
+			<xs:enumeration value="ES"/> <!-- SPAIN -->
+			<xs:enumeration value="LK"/> <!-- SRI LANKA -->
+			<xs:enumeration value="SD"/> <!-- SUDAN -->
+			<xs:enumeration value="SR"/> <!-- SURINAME -->
+			<xs:enumeration value="SJ"/> <!-- SVALBARD AND JAN MAYEN -->
+			<xs:enumeration value="SZ"/> <!-- SWAZILAND -->
+			<xs:enumeration value="SE"/> <!-- SWEDEN -->
+			<xs:enumeration value="CH"/> <!-- SWITZERLAND -->
+			<xs:enumeration value="SY"/> <!-- SYRIAN ARAB REPUBLIC -->
+			<xs:enumeration value="TW"/> <!-- TAIWAN, PROVINCE OF CHINA -->
+			<xs:enumeration value="TJ"/> <!-- TAJIKISTAN -->
+			<xs:enumeration value="TZ"/> <!-- TANZANIA, UNITED REPUBLIC OF -->
+			<xs:enumeration value="TH"/> <!-- THAILAND -->
+			<xs:enumeration value="TL"/> <!-- TIMOR-LESTE -->
+			<xs:enumeration value="TG"/> <!-- TOGO -->
+			<xs:enumeration value="TK"/> <!-- TOKELAU -->
+			<xs:enumeration value="TO"/> <!-- TONGA -->
+			<xs:enumeration value="TT"/> <!-- TRINIDAD AND TOBAGO -->
+			<xs:enumeration value="TN"/> <!-- TUNISIA -->
+			<xs:enumeration value="TR"/> <!-- TURKEY -->
+			<xs:enumeration value="TM"/> <!-- TURKMENISTAN -->
+			<xs:enumeration value="TC"/> <!-- TURKS AND CAICOS ISLANDS -->
+			<xs:enumeration value="TV"/> <!-- TUVALU -->
+			<xs:enumeration value="UG"/> <!-- UGANDA -->
+			<xs:enumeration value="UA"/> <!-- UKRAINE -->
+			<xs:enumeration value="AE"/> <!-- UNITED ARAB EMIRATES -->
+			<xs:enumeration value="GB"/> <!-- UNITED KINGDOM -->
+			<xs:enumeration value="US"/> <!-- UNITED STATES -->
+			<xs:enumeration value="UM"/> <!-- UNITED STATES MINOR OUTLYING ISLANDS -->
+			<xs:enumeration value="UY"/> <!-- URUGUAY -->
+			<xs:enumeration value="UZ"/> <!-- UZBEKISTAN -->
+			<xs:enumeration value="VU"/> <!-- VANUATU -->
+			<xs:enumeration value="VE"/> <!-- VENEZUELA -->
+			<xs:enumeration value="VN"/> <!-- VIET NAM -->
+			<xs:enumeration value="VG"/> <!-- VIRGIN ISLANDS, BRITISH -->
+			<xs:enumeration value="VI"/> <!-- VIRGIN ISLANDS, U.S. -->
+			<xs:enumeration value="WF"/> <!-- WALLIS AND FUTUNA -->
+			<xs:enumeration value="EH"/> <!-- WESTERN SAHARA -->
+			<xs:enumeration value="YE"/> <!-- YEMEN -->
+			<xs:enumeration value="ZM"/> <!-- ZAMBIA -->
+			<xs:enumeration value="ZW"/> <!-- ZIMBABWE -->
+		</xs:restriction>
+	</xs:simpleType>
+	   
+	<xs:complexType name="Country">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Country name in address element.
+			A country element must include an unambiguous country ISO 3166 2 letter code.
+		</xs:documentation></xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="code" type="golfml:ISO3166CountryCodeEnum" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+
+	<xs:simpleType name="ContactTypeEnum">
+		<xs:annotation><xs:documentation xml:lang="en">
+			List of values for contact type information.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="club-house"/>
+			<xs:enumeration value="reception"/>
+			<xs:enumeration value="restaurant"/>
+			<xs:enumeration value="reservation"/>
+			<xs:enumeration value="management"/>
+			<xs:enumeration value="technical"/>
+			<xs:enumeration value="corporate"/>
+			<xs:enumeration value="home"/>
+			<xs:enumeration value="work"/>
+			<xs:enumeration value="mobile"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:simpleType name="MediaTypeEnum">
+		<xs:annotation><xs:documentation xml:lang="en">
+			List of values for types of media used in golfml.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="photograph"/>
+			<xs:enumeration value="video"/>
+			<xs:enumeration value="hole-fly-over"/>
+			<xs:enumeration value="hole-presentation"/>
+			<xs:enumeration value="hole-yardage"/>
+			<xs:enumeration value="yardage-book"/>
+			<xs:enumeration value="course-map"/>
+			<xs:enumeration value="google-earth"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:attributeGroup name="MediaTypeAttributes">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				Group of common attributes used to characterise a media associated with either a country-club, a golf-course,
+				or a hole, anywhere a media is accepted.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="type" type="golfml:MediaTypeEnum">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Type of information conveyed by the media: Photograph, video, yardage book, scan of scorecard, scan of golf card, map...
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="content-type" type="xs:string"> <!-- Should be limited to valid content-types? -->
+			<xs:annotation><xs:documentation xml:lang="en">
+				Technical type of the media (MIME (Multipurpose Internet Mail Extensions) type of the media.
+				Example: video/mpeg, text/xml...
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attributeGroup ref="golfml:Other"/>
+	</xs:attributeGroup>
+	
+	<xs:group name="MediaChoice">
+		<xs:annotation><xs:documentation xml:lang="en">
+			A media is either embedded in the golfml document or a URI (link) to it.
+			We currently removed the ability to store media inside a golfml document for performance purposes
+			and to limit the size of golfml document.
+			Embedded storage of media in golfml document should be limited to small size items such as vector logo
+			and small images.
+		</xs:documentation></xs:annotation>
+		<xs:choice>
+			<xs:element name="url" type="xs:anyURI">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Location of the media.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="content" type="xs:base64Binary">
+				<xs:annotation><xs:documentation xml:lang="en">
+					<!-- PROBLEM: Shall we accept image content in golfml file? File could be quite large and clumpsy to process... -->
+					Base64-coded content of the media. Use of content embedded in golfml document is discouraged and should be limited
+					to small media files (less than 2000 bytes).
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:group>
+	   
+	<xs:complexType name="Media">
+		<xs:annotation><xs:documentation xml:lang="en">
+			A media is a piece of multi-media information attached to either a country-club, a golf-course, a hole, a player,
+			or a round of golf. Example of such media are:
+			* country-club: Picture of club house, access map.
+			* golf-course: scenic pictures of holes, yardage book...
+			* hole: yardage page, pin placement chart...
+			* player: picture, scan of official golf card...
+			* round of golf: souvenir of a memorable golfing moment...
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="name" type="xs:string">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Name of the media.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="description" type="xs:string" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Description of the media.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:group ref="golfml:MediaChoice"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="golfml:MediaTypeAttributes"/>
+	</xs:complexType>
+	
+	
+	<xs:simpleType name="Rating">
+		<xs:annotation><xs:documentation xml:lang="en">
+			The rating type defines a standard, generic, evaluation criteria for golfml entities.
+			Rating is limited to 0 to 5 "stars". Decimal faction allowed.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:float">
+			<xs:maxInclusive value="5"/>
+			<xs:pattern value="[0-5]{0,1}(\.[0-9]{1,1})?"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="LocalisedText">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Simple type to add language information on comments and notes.
+		</xs:documentation></xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="lang" type="xs:language" default="en"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="Note">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Generic type for addition of comments and/or rating.
+			The text of the note is localised to a xml language.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="comment" type="golfml:LocalisedText" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Localised, textual comment about the parent entitiy.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="rating" type="golfml:Rating">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Simple rating of the parent entitiy. Always optional.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="date" type="xs:dateTime" use="optional">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Date of issue of the comment.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	
+	
+	<!-- Geographical types (Copied from KML 2.1) -->
+	
+	<xs:simpleType name="Anglepos90">
+		<xs:annotation><xs:documentation xml:lang="en">
+				Angle between 0 and 90 degrees.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0.0"/>
+			<xs:maxInclusive value="90.0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="Angle90">
+		<xs:annotation><xs:documentation xml:lang="en">
+				Angle between -90 and 90 degrees.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="-90"/>
+			<xs:maxInclusive value="90.0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="Angle180">
+		<xs:annotation><xs:documentation xml:lang="en">
+				Angle between -180 and 180 degrees.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="-180"/>
+			<xs:maxInclusive value="180"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="Angle360">
+		<xs:annotation><xs:documentation xml:lang="en">
+				Angle between -360 and 360 degrees.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="-360"/>
+			<xs:maxInclusive value="360"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="AltitudeModeEnum">
+		<xs:annotation><xs:documentation xml:lang="en">
+				KML/Google Earth "altitude mode".
+				See also: http://code.google.com/intl/en/apis/kml/documentation/altitudemode.html.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="relativeToSeaFloor"/>
+			<xs:enumeration value="clampToSeaFloor"/>
+			<xs:enumeration value="relativeToGround"/>
+			<xs:enumeration value="clampToGround"/>
+			<xs:enumeration value="absolute"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="Altitude">
+		<xs:annotation><xs:documentation xml:lang="en">
+				Altitude of a point. Use mode attribute to determine semantics.
+		</xs:documentation></xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:double">
+				<xs:attribute name="mode" type="golfml:AltitudeModeEnum" use="optional" default="absolute"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	
+	<!-- GPS and position related types -->
+	
+	<xs:complexType name="PositionGPS">
+		<xs:annotation><xs:documentation xml:lang="en">
+			GPS coordinate of a point.
+		</xs:documentation></xs:annotation>
+		<xs:attribute name="lat" type="golfml:Angle90" use="required">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Latitude of the GPS position expressed as a float value between -90° (South Pole) to +90° (North Pole).
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="lon" type="golfml:Angle180" use="required">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Longitude in the GPS position expressed as a float value between -180° for longitude West of Greenwich
+				to +180° for longitude East of Greenwich.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="alt" type="xs:float" use="optional">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Altitude of a GPS position expressed as a float value. Meaning and units of the value depends on the
+				mandatory 'mode' attribute.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="alt-mode" type="golfml:AltitudeModeEnum" use="optional" default="absolute"/>
+	</xs:complexType>
+	
+	<xs:complexType name="Position">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Coordinate of a point. The coordinate of a point can be either a GPS coordinate or
+			coordinates in any specific system.
+		</xs:documentation></xs:annotation>
+		<xs:choice>
+			<xs:element name="gps" type="golfml:PositionGPS">
+				<xs:annotation><xs:documentation xml:lang="en">
+					GPS coordinate of a point.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="other" type="golfml:RoomForExtension">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Coordinate of a point in an arbitraty unit system.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	
+	<xs:complexType name="PositionWithSequence">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Coordinate of a point in a list of points (polygon).
+		</xs:documentation></xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="golfml:Position">
+				<xs:attribute name="number" type="xs:nonNegativeInteger" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:simpleType name="OrientationEnum">
+		<xs:annotation><xs:documentation xml:lang="en">
+			List of values to further document a point of interest on a golf course.
+			Example: Point of interest is of type "green" and orientation of the point is "front"
+					 to specify the front or start of the green.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="front"/>
+			<xs:enumeration value="middle"/>
+			<xs:enumeration value="back"/>
+			<xs:enumeration value="left"/>
+			<xs:enumeration value="center"/>
+			<xs:enumeration value="right"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="PointOfInterest">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Point of interest on a golf course.
+			A point of interest contains a name, the coordinate of the point, a specification of its type limited to a list
+			of valid values, and an optional orientation in respect to the point.
+		</xs:documentation></xs:annotation>
+		<xs:all>
+			<xs:element name="name" type="xs:string" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Name of point of interest.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="description" type="xs:string" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Description of a point of interest.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="position" type="golfml:Position">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Coordinate of a point of interest.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:all>
+		<xs:attribute name="number" type="xs:nonNegativeInteger"/>
+		<xs:attribute name="type" type="golfml:GolfCourseAreaTypeEnum"/>
+		<xs:attribute name="subtype" type="xs:string"/> <!-- green-side or fairway bunker, sand or grass bunker... -->
+		<xs:attribute name="orientation" type="golfml:OrientationEnum"/>
+		<xs:attributeGroup ref="golfml:Other"/>
+	</xs:complexType>	
+	
+	<xs:complexType name="AreaOfInterest">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Area of interest on a golf course.
+			An area of interest contains a name, a list of coordinates of points, and a specification of its type
+			limited to a list of valid values.
+			
+			Note: An AreaOfInterest can be a line (example: Out-of-bound line along a hole).
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="name" type="xs:string">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Name of an area of interest.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="description" type="xs:string" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Description of an area of interest.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="position" type="golfml:PositionWithSequence" minOccurs="2" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Position of a point of the polygon that forms the area of interest.
+					Positions are ordered with the 'number' attribute.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="number" type="xs:nonNegativeInteger">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Position of the area of interest in a list of areas of interest.
+				This position can be used to "layer" areas of interest.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="type" type="golfml:GolfCourseAreaTypeEnum">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Type of area of interest.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attributeGroup ref="golfml:Other"/>
+	</xs:complexType>
+	
+	<xs:complexType name="Placemarks">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Placemarks is a collection of points and/or areas of interest.
+		</xs:documentation></xs:annotation>
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="poi" type="golfml:PointOfInterest">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Point of interest.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="aoi" type="golfml:AreaOfInterest">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Area of interest.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	
+	
+	<!--  Country Clubs and Golf Types -->
+	
+	<xs:simpleType name="CountryClubTypeEnum">
+		<xs:annotation><xs:documentation xml:lang="en">
+			List of types of country club ownership.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="public"/>
+			<xs:enumeration value="public-municipal"/>
+			<xs:enumeration value="public-regional"/>
+			<xs:enumeration value="public-state"/>
+			<xs:enumeration value="private"/>
+			<xs:enumeration value="semi-private"/>
+			<xs:enumeration value="military"/>
+			<xs:enumeration value="resort"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	
+	<xs:simpleType name="GolfCourseAreaTypeEnum">
+		<xs:annotation><xs:documentation xml:lang="en">
+			List of values to document a point or an area of interest on a golf course.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="tee"/>
+			<xs:enumeration value="fairway"/>
+			<xs:enumeration value="hole"/>
+			<xs:enumeration value="green"/>
+			<xs:enumeration value="fringe"/>
+			<xs:enumeration value="tree"/>
+			<xs:enumeration value="trees"/>
+			<xs:enumeration value="bush"/>
+			<xs:enumeration value="semi-rough"/>
+			<xs:enumeration value="rough"/>
+			<xs:enumeration value="heavy-rough"/>
+			<xs:enumeration value="bunker"/>
+			<xs:enumeration value="trap"/>
+			<xs:enumeration value="greenside-trap"/>
+			<xs:enumeration value="fairway-trap"/>
+			<xs:enumeration value="front-water"/>
+			<xs:enumeration value="lateral-water"/>
+			<xs:enumeration value="water"/>
+			<xs:enumeration value="path"/>
+			<xs:enumeration value="building"/>
+			<xs:enumeration value="obstruction"/>
+			<xs:enumeration value="out-of-bound"/>
+			<xs:enumeration value="hole-contour"/>
+			<xs:enumeration value="aim"/>
+			<xs:enumeration value="marker"/>
+			<xs:enumeration value="marker-100"/>
+			<xs:enumeration value="marker-135"/>
+			<xs:enumeration value="marker-150"/>
+			<xs:enumeration value="marker-200"/>
+			<xs:enumeration value="sprinkler"/>
+			<xs:enumeration value="dogleg"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:simpleType name="GolfingDirectionEnum">
+		<xs:annotation><xs:documentation xml:lang="en">
+			List of values to specify golfing direction on a 18 hole golf course.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="front"/>
+			<xs:enumeration value="back"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+
+	<xs:simpleType name="StrokeTypeEnum">
+		<xs:annotation><xs:documentation xml:lang="en">
+			List of values to specify stroke direction in shot quality description.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="slice"/>
+			<xs:enumeration value="fade"/>
+			<xs:enumeration value="straight"/>
+			<xs:enumeration value="draw"/>
+			<xs:enumeration value="hook"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	
+	<xs:simpleType name="StrokeDirectionEnum">
+		<xs:annotation><xs:documentation xml:lang="en">
+			List of values to specify stroke direction in shot quality description.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="far left"/>
+			<xs:enumeration value="left"/>
+			<xs:enumeration value="center"/>
+			<xs:enumeration value="right"/>
+			<xs:enumeration value="far right"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	
+	<xs:simpleType name="StrokeLengthEnum">
+		<xs:annotation><xs:documentation xml:lang="en">
+			List of values to specify stroke length in shot quality description.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="too short"/>
+			<xs:enumeration value="short"/>
+			<xs:enumeration value="middle"/>
+			<xs:enumeration value="long"/>
+			<xs:enumeration value="too long"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	
+	<xs:simpleType name="Par">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Type for elements specifying Par information.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:minInclusive value="3"/>
+			<xs:maxInclusive value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="OneToEighteen">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Type to to restrict a value to an integer between 1 and 18.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="18"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+
+	<!-- Handicaping -->
+	
+	<xs:simpleType name="HandicapSystemEnum">
+		<xs:annotation><xs:documentation xml:lang="en">
+			List of valid values for handicap method or systems.
+			
+			Before using "other" and specify the other handicaping system, application designer
+			should ask the golfml design team to add their system in the list of handicaping system.
+		</xs:documentation></xs:annotation>		
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="USGA"/>
+			<xs:enumeration value="EGA"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	   
+	<xs:simpleType name="HandicapStroke"> <!-- to be re-done to allow only one value -->
+		<xs:annotation><xs:documentation xml:lang="en">
+			Type for elements specifying Handicap stroke information.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="18"/>
+		</xs:restriction>
+	</xs:simpleType>
+	   
+	<xs:simpleType name="CourseSlope">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Type to specify a golf course difficulty for handicap calculation.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:minInclusive value="55"/>
+			<xs:maxInclusive value="155"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="CourseRating">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Type to specify the golf course rating for handicap calculation.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:float">
+			<xs:minInclusive value="3"/>
+			<xs:maxInclusive value="90"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="FloatWithOneFractionalNumber">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Type to specify the player handicap (maximum of one digit after the decimal period).
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:float">
+			<xs:pattern value="[-+]?[0-9]{0,2}(\.[0-9]{1,1})?"></xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="PlayerHandicap">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Type to specify a player's handicap. The mandatory attribute specify the method used to compute
+			the handicap.
+		</xs:documentation></xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="golfml:FloatWithOneFractionalNumber">
+				<xs:attribute name="handicap-system" type="golfml:HandicapSystemEnum"/>
+				<xs:attributeGroup ref="golfml:Other"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	
+	
+	<!-- Statistics -->
+	
+	<xs:simpleType name="StatisticCollectionTypesEnum">
+		<xs:annotation><xs:documentation xml:lang="en">
+				List of methods used to compute statistics. Statistics can be accumulated
+				* for a single round (example: greens-in-regulation, fairway-hits...)
+				* for all rounds played on the same course (example: dream-round...)
+				* for all rounds played between two dates (example: annual statistics)
+				* for any combination of the above constraints.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="round"/>
+			<xs:enumeration value="course"/>
+			<xs:enumeration value="duration"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>	  
+	</xs:simpleType>
+	
+	<xs:simpleType name="StatisticEnum">
+		<xs:annotation><xs:documentation xml:lang="en">
+				List of statistics that can be computed for a player or a golf course.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="3-Putt Avoidance">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *3-Putt Avoidance*: PGATOUR: The percent of time 3 or more putts were taken for a hole (total 3-putts, 4-putts, etc./ total holes played). 
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="All-Around Ranking">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *All-Around Ranking*: PGATOUR: The All Around statistic is computed by totalling a player's rank in each of the following statistics:
+					Scoring Leaders, Putting Leaders, Eagle Leaders, Birdie Leaders, Sand Saves, Greens in Regulation,
+					Driving Distance and Driving Accuracy..
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Approach Putt Performance">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Putt left after first putt from 10-25 feet.
+					This statistic measures the average distance left to the hole after a player's first putt,
+					an indicator of his ability to lag the ball close with the putter.
+					The large greens and tight aprons at the Open Championship mean players will be putting
+					longer-than-average distances as well as many shots they would normally chip or pitch.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Approaches from 100-125 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Approaches from 100-125 yards*: This statistic measures the average distance left to the hole after a player's approach from a distance between 100 and 125 yards from the hole.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Approaches from 125-150 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Approaches from 125-150 yards*: This statistic measures the average distance left to the hole after a player's approach from a distance between 125 and 150 yards from the hole.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Approaches from 150-175 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Approaches from 150-175 yards*: This statistic measures the average distance left to the hole after a player's approach from a distance between 150 and 175 yards from the hole.				
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Approaches from 175-200 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Approaches from 175-200 yards*: This statistic measures the average distance left to the hole after a player's approach from a distance between 175 and 200 yards from the hole.					
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Approaches from 200-225 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Approaches from 200-225 yards*: This statistic measures the average distance left to the hole after a player's approach from a distance between 200 and 225 yards from the hole.				
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Approaches from 225-250 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Approaches from 225-250 yards*: This statistic measures the average distance left to the hole after a player's approach from a distance between 225 and 250 yards from the hole.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Approaches from 250-275 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Approaches from 250-275 yards*: This statistic measures the average distance left to the hole after a player's approach from a distance between 250 and 275 yards from the hole.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Approaches from 50-125 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Approaches from 50-125 yards*: This statistic measures the average distance left to the hole after a player's approach from a distance between 50 and 75 yards from the hole.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Approaches from 75-100 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Approaches from 75-100 yards*: This statistic measures the average distance left to the hole after a player's approach from a distance between 75 and 100 yards from the hole.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Approaches from > 200 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Approaches from > 200 yards*: This statistic measures the average distance left to the hole after a player's approach from more than 200 yards yards from the hole.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Approaches from > 275 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Approaches from > 275 yards*: This statistic measures the average distance left to the hole after a player's approach from more than 275 yards from the hole.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Average Distance after Going for it Shot">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Average Distance after Going for it Shot*: Average Distance after Going for it Shot.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Average Distance of Putts made">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Average Distance of Putts made*: Average Distance of Putts made.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Average Distance to Hole After Tee Shot">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Average Distance to Hole After Tee Shot*: Average Distance to Hole After Tee Shot.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Average Putts per GIR">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Average Putts per GIR*: Average Putts per GIR.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Back 9 Scoring Avg.">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Back 9 Scoring Avg.*: Back 9 Scoring Avg.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Ball Striking">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Ball Striking*: PGATOUR: Ball Striking is computed by totaling a player's rank in both Total Driving and Greens in Regulation. 
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Birdie Average">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Birdie Average*: Birdie Average.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Birdie or Better Conversion %">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Birdie or Better Conversion %*: Birdie or Better Conversion percentage.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Birdies (Average)">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Birdies (Average)*: PGATOUR: The average number of birdies made per round played.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Birdies (Conversion %)">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Birdies (Conversion %)*: PGATOUR: The percent of time a player makes birdie or better after hitting the green in regulation.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Birdies (Total)">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Birdies (Total)*: PGATOUR: The total birdies made for the year.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Bounce Back">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Bounce Back*: PGATOUR: The percent of time a player is over par on a hole and then under par on the following hole. 
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Career Earnings (All Players)">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Career Earnings (All Players)*: Career Earnings (All Players).
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Career Earnings (TOUR Members)">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Career Earnings (TOUR Members)*: PGATOUR: The total official money earned by a PGA TOUR regular member on the PGA TOUR over an entire career. 
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Career Money Leaders">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Career Money Leaders*: Career Money Leaders.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Consecutive # of Cuts">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Consecutive # of Cuts*: PGATOUR: The number of cuts a player has made since the last time a cut was missed.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Driving Accuracy Percentage">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Driving Accuracy Percentage*: Driving Accuracy Percentage.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Driving Accuracy">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Driving Accuracy*: PGATOUR: The percentage of time a tee shot comes to rest in the fairway (regardless of club).
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Driving Distance">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The average number of yards per measured drive.
+					These drives are measured on two holes per round.
+					Care is taken to select two holes which face in opposite directions to counteract the effect of wind.
+					Drives are measured to the point at which they come to rest
+					regardless of whether they are in the fairway or not. 
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Driving Pct. 300+ (All Drvs.)">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Driving Pct. 300+ (All Drvs.)*: Driving Pct. 300+ (All Drvs.).
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Driving Pct. 300-320 (All Drives)">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Driving Pct. 300-320 (All Drives)*: Driving Pct. 300-320 (All Drives).
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Driving Pct. 320+ (All Drives)">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Driving Pct. 320+ (All Drives)*: Driving Pct. 320+ (All Drives).
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Eagles (Holes per)">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Eagles (Holes per)*: PGATOUR: The average number of holes between each eagle.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Eagles (Total)">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Eagles (Total)*: PGATOUR: The total eagles made for the year.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Fairway Proximity">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Fairway Proximity*: Fairway Proximity.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Final Round Scoring Average">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Final Round Scoring Average*: Final Round Scoring Average.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Front 9 Scoring Avg.">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Front 9 Scoring Avg.*: Front 9 Scoring Avg.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GIR % From Other Than Fairway">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *GIR % From Other Than Fairway*: GIR % From Other Than Fairway.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GIR Percentage - 100+ yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *GIR Percentage - 100+ yards*: GIR Percentage - 100+ yards.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GIR Percentage - 100-125 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *GIR Percentage - 100-125 yards*: GIR Percentage - 100-125 yards.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GIR Percentage - 125-150 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *GIR Percentage - 125-150 yards*: GIR Percentage - 125-150 yards.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GIR Percentage - 150-175 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *GIR Percentage - 150-175 yards*: GIR Percentage - 150-175 yards.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GIR Percentage - 175-200 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *GIR Percentage - 175-200 yards*: GIR Percentage - 175-200 yards.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GIR Percentage - 200+ yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *GIR Percentage - 200+ yards*: GIR Percentage - 200+ yards.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GIR Percentage - 75-100 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *GIR Percentage - 75-100 yards*: GIR Percentage - 75-100 yards.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GIR Percentage - less than 100 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *GIR Percentage - less than 100 yards*: GIR Percentage - less than 100 yards.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GIR Percentage - less than 125 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *GIR Percentage - less than 125 yards*: GIR Percentage - less than 125 yards.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="GIR Percentage - less than 75 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *GIR Percentage - less than 75 yards*: GIR Percentage - less than 75 yards.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Going for the Green">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Going for the Green*: Going for the Green.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Greens in Regulation">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The percent of time a player was able to hit the green in regulation (greens hit in regulation/holes played).
+					Note: A green is considered hit in regulation if any portion of the ball is touching the putting surface
+					after the GIR stroke has been taken. (The GIR stroke is determined by subtracting 2 from par
+					(1st stroke on a par 3, 2nd on a par 4, 3rd on a par 5)).
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Left Rough Tendency">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Left Rough Tendency*: Left Rough Tendency.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Longest Drive">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Longest Drive*: PGATOUR: For all drives measured with a laser, this is the longest drive for the entire year.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Lowest Round">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Lowest Round*: Lowest Round.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Money Leaders">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Money Leaders*: PGATOUR: The total official money a player has earned year-to-date. Note: This is for PGA TOUR members only.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Non-Member Earnings">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Non-Member Earnings*: PGATOUR: The total official money a player has earned year-to-date. NOTE: This is for non-PGA TOUR members only. 
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Official World Golf Ranking">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The Official World Golf Ranking, which is
+					endorsed by the four major championships and the five professional tours
+					which make up the International Federation of PGA Tours, is issued every
+					Monday, following completion of the previous week's tournaments from around
+					the world. This statistic is the average number of points earned per event
+					in the last 104 weeks. These points are awarded based upon finish position
+					as well as the strength of the field. The points are initially worth double
+					their original value and decline gradually over this two-year period. There
+					are 8 13-week periods and points decline by .25 times their value each period.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="One Putts">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *One Putts*: One Putts.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Par 3 Birdie or Better Leaders">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Par 3 Birdie or Better Leaders*: Par 3 Birdie or Better Leaders.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Par 3 Performance">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Par 3 Performance*: PGATOUR: The total strokes under or over par for all par 3's played.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Par 4 Birdie or Better Leaders">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Par 4 Birdie or Better Leaders*: Par 4 Birdie or Better Leaders.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Par 4 Performance">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Par 4 Performance*: PGATOUR: The total strokes over or under par for all par 4's played.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Par 5 Birdie or Better Leaders">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Par 5 Birdie or Better Leaders*: Par 5 Birdie or Better Leaders.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Par 5 Performance">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Par 5 Performance*: PGATOUR: The total strokes over or under par for all par 5's played.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Par Breakers">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Par Breakers*: PGATOUR: The percent of the time the scoring average is under par.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PGA Championship Points">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The Top 70 players from this statistic are eligible to play in the PGA Championship.
+					It consists of a player's official money over a one-year period that ends two weeks
+					before the current year's PGA Championship and begins with the tournament just prior
+					to the previous year's PGA Championship.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="PGA TOUR Playoffs for the FedEx Cup">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The cumulative points that the player has earned since the playoff
+					started for the FedExCup points race. 
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Proximity to Hole from Sand">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Proximity to Hole from Sand*: Proximity to Hole from Sand.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Proximity to Hole">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Proximity to Hole*: Proximity to Hole.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Proximity to Hole Around the Green">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Proximity to Hole Around the Green*: This statistic measures the average distance to the hole a player's ball comes to rest from shots around the green (within 30 yards of the edge of the green).
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Proximity to Hole from more then 200 yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					This statistic measures the average distance to the hole a player's ball comes to rest from shots outside of 200 yards.
+					This is a good indicator of long-iron skill. Many players will be hitting irons and hybrids off the tee to keep
+					the ball in the fairway, translating into longer approach shots into the greens.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Putting Average">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Putting Average*: Putting Average.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Putting from - 10-15'">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Putting from - 10-15'*: Putting from - 10-15'.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Putting from - 15-20'">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Putting from - 15-20'*: Putting from - 15-20'.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Putting from - 20-25'">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Putting from - 20-25'*: Putting from - 20-25'.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Putting from - > 25'">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Putting from - > 25'*: Putting from - > 25'.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Putting from 15-25'">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Putting from 15-25'*: Putting from 15-25'.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Putting from 3-5'">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Putting from 3-5'*: Putting from 3-5'.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Putting from 5-10'">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Putting from 5-10'*: Putting from 5-10'.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Putting from 5-15'">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Putting from 5-15'*: Putting from 5-15'.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Putting from Inside 5'">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Putting from Inside 5'*: Putting from Inside 5'.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Putts Per GIR">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The average number of putts per green in regulation. By using greens hit in regulation,
+					we are able to eliminate the effects of chipping close and one-putting in the computation.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Putts Per Round">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Putts Per Round*: PGATOUR: The average number of putts per round played.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Regular Season FedExCup Points">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Regular Season FedExCup Points*: Regular Season FedExCup Points.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Right Rough Tendency">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Right Rough Tendency*: Right Rough Tendency.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Rough Proximity">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Rough Proximity*: Rough Proximity.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Rough Tendency">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Rough Tendency*: Rough Tendency.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Round 3 Scoring Avg.">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: (PGA TOUR Only) The weighted scoring average which takes the stroke average of the field into account.
+					It is computed by adding a player's total strokes to an adjustment and dividing by the total rounds played.
+					The adjustment is computed by determining the stroke average of the field for each round played.
+					This average is subtracted from par to create an adjustment for each round.
+					A player accumulates these adjustments for each round played.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Sand Save Percentage">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The percent of time a player was able to get 'up and down' once in a greenside sand bunker (regardless of score).
+					Note: 'Up and down' indicates it took the player 2 shots or less to put the ball in the hole from that point.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Scoring Average (actual)">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Scoring Average (actual)*: PGATOUR: The average number of strokes per completed round. 
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Scoring Average (adjusted)">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: (PGA TOUR Only) The weighted scoring average which takes the stroke average of the field into account.
+					It is computed by adding a player's total strokes to an adjustment and dividing by the total rounds played.
+					The adjustment is computed by determining the stroke average of the field for each round played.
+					This average is subtracted from par to create an adjustment for each round.
+					A player accumulates these adjustments for each round played.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Scoring Average 3rd Round">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Scoring Average 3rd Round*: PGATOUR: The average number of strokes per completed round for Round 3. 
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Scoring Average Before Cut">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Scoring Average Before Cut*: PGATOUR: The average strokes per round for those rounds prior to the cut. 
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Scoring Average Final Round">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Scoring Average Final Round*: PGATOUR: The average number of strokes for the final round of each tournament played.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Scoring Average">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Scoring Average*: Scoring Average.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Scrambling from > 30 Yards">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Scrambling from > 30 Yards*: Scrambling from > 30 Yards.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Scrambling from the Rough">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Scrambling from the Rough*: Scrambling from the Rough.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Scrambling">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Scrambling*: PGATOUR: The percent of time a player misses the green in regulation, but still makes par or better.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Three Putts">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Three Putts*: Three Putts.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Top 10 Finishes">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Top 10 Finishes*: PGATOUR: The total number of times the player has finished in the top 10 at official events for the year.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Total Birdies">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Total Birdies*: Total Birdies.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Total Driving">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Total Driving*: PGATOUR: Total Driving is computed by totaling a player's rank in both driving distance and driving accuracy.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Total Eagles">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Total Eagles*: Total Eagles.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Total Putting Distance">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Total Putting Distance*: Total Putting Distance.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="World Money List">
+				<xs:annotation><xs:documentation xml:lang="en">
+					PGATOUR: The total official money earned by a player on the PGA TOUR or the 5 International tours
+					(Japanese PGA, European PGA, Australasian, South African, Asian) computed in U.S. Dollars.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<!-- Other stats:
+				PGA TOUR CAREER EARNINGS
+				PGATOUR: The total official money earned by a player on the PGA TOUR for his career. This is different from Career Money in that it includes all players, not just members. 
+			
+			    PGA TOUR FEDEXCUP BONUS MONEY
+			    PGATOUR: The bonus money that the player has earned in the FedExCup points race.
+			    
+			    PGA TOUR ALL-AROUND RANKING
+			    PGATOUR: The All Around statistic is computed by totalling a player's rank in each of the following statistics: Scoring Leaders, Putting Leaders, Eagle Leaders, Birdie Leaders, Sand Saves, Greens in Regulation, Driving Distance and Driving Accuracy. 
+			 -->
+			
+			<!-- special stats for tees, holes, courses... -->
+			<xs:enumeration value="Par">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Par*: Total par for the golf course.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Front">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Front*: Total distance of the first 9 holes of a 18 hole golf course.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Back">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Back*: Total distance of the last 9 holes of a 18 hole golf course.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Holes Played">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Holes Played*: Number of holes played.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="Holes">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *Holes*: Number of holes of a golf course.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+			
+			<xs:enumeration value="other">
+				<xs:annotation><xs:documentation xml:lang="en">
+					* *other*: Other statistic value. Attribute "other" describes the element.
+				</xs:documentation></xs:annotation>
+			</xs:enumeration>
+		</xs:restriction> 
+	</xs:simpleType>
+	
+	<xs:complexType name="StatisticValue">
+		<xs:annotation><xs:documentation xml:lang="en">
+				Numeric value for a statistic. The name of the statistics is mandatory.
+		</xs:documentation></xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:double">
+				<xs:attribute name="name" type="xs:string" use="required"/> <!-- should be typed to StatisticEnum -->
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="StatisticsCollectionDescription" >
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				Information regarding the collection of the statistic (meta data).
+				* for a single round: the round element specify the date of the round.
+				* for all rounds played on the same course: the golf-course element specify the golf course.
+				* for all rounds played between two dates: the date-from and date-to element specify the time frame.
+				* for any combination of the above constraints: elements can be combined.						
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="date-from" type="xs:date" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Start date for the collection of statistical calculation.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="date-to" type="xs:date" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					End date for the collection of statistical calculation.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="round-date" type="xs:dateTime" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Date (and time) of a round of golf used for statistical calculation.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="golf-course" type="golfml:REF_GolfCourse" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Golf course used for statistical calculation.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<!-- may be we should allow another any element for extension of other statistics calculation:
+				<xs:element name="statistics-parameters" type="golfml:RoomForExtension">
+				<xs:annotation><xs:documentation xml:lang="en">
+				Any other statistical parameters.
+				</xs:documentation></xs:annotation>
+				</xs:element>	
+			-->
+		</xs:sequence>
+	</xs:complexType>
+	
+		
+	<xs:complexType name="TeeSetSummary">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Stores denormalized parameters for a set of tees.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="holes" type="xs:nonNegativeInteger" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Denormalisation: Number of holes.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="par" type="xs:positiveInteger" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Denormalisation: Total number of strokes for set of tees.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="front" type="golfml:LengthWithUnits" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Denormalisation: Total length of first nine holes.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="back" type="golfml:LengthWithUnits" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Denormalisation: Total length for last nine holes.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="statistic" type="golfml:StatisticValue" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Denormalisation: Statistic for the round of golf.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="Statistics">
+		<xs:annotation><xs:documentation xml:lang="en">
+			List of statistics.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="value" type="golfml:StatisticValue" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						Value of a statistic computed for the supplied collection type.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>		  
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="ClubDistance">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Average distance hit with a given golf club.
+		</xs:documentation></xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="golfml:LengthWithUnits">
+				<xs:attribute name="date" type="xs:date">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Date of measurement or statistics.
+					</xs:documentation></xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="precision" type="golfml:StrokeTypeEnum" default="straight">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Information on the precision of the stroke regarding average direction.
+					</xs:documentation></xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="StatisticsCollection">
+		<xs:annotation><xs:documentation xml:lang="en">
+				List of statistics computed over the same type.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="collection" type="golfml:StatisticsCollectionDescription">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						Information regarding the collection of the statistic.
+						* for a single round: the round element specify the date of the round.
+						* for all rounds played on the same course: the golf-course element specify the golf course.
+						* for all rounds played between two dates: the date-from and date-to element specify the time frame.
+						* for any combination of the above constraints: elements can be combined.						
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="value" type="golfml:StatisticValue" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						Value of a statistic computed for the supplied collection type.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>		  
+		</xs:sequence>
+		<xs:attribute name="type" type="golfml:StatisticCollectionTypesEnum" use="required"/>
+		<xs:attributeGroup ref="golfml:Other"/>
+	</xs:complexType>
+
+	
+	<!-- Country clubs -->
+	
+	<xs:simpleType name="AmenetyTypeEnum">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				List of value to document facilities available at the country club premises.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="practice"/>
+			<xs:enumeration value="store"/>
+			<xs:enumeration value="food"/>
+			<xs:enumeration value="corporate"/>
+			<xs:enumeration value="golfers"/>
+			<xs:enumeration value="bathroom"/>
+			<xs:enumeration value="water"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+
+	<!-- Golf Courses -->
+	
+	<xs:complexType name="HoleQualificationUSGA">
+		<xs:annotation><xs:documentation xml:lang="en">
+				Qualify a golf course played from a set of tees according to the USGA rules.
+		</xs:documentation></xs:annotation>
+		<xs:all>
+			<xs:element name="rating" type="golfml:CourseRating">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Course rating of a set of tees according to USGA specifications.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="slope" type="golfml:CourseSlope">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Slope of a set of tees according to USGA specifications.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	
+	<xs:complexType name="HoleQualification">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				Qualify a golf course played from a set of tees.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element name="qualification-usga" type="golfml:HoleQualificationUSGA">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						Qualify a golf course played from a set of tees according to the USGA rules.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="qualification-other" type="golfml:RoomForExtension">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						Qualify a golf course played from a set of tees according to a non-USGA golfing authority.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	
+	
+	<xs:simpleType name="Length">
+		<xs:annotation><xs:documentation xml:lang="en">
+				Length of an object. Limited to 1000 units of length.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="1000"/> <!-- hole lengths of more than 1000 yards are rare. Even in PGA. -->
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="WeightWithUnits">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Length of an object and its unit of measure.
+		</xs:documentation></xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:float">
+				<xs:attribute name="units" type="golfml:UnitOfWeight" default="g"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="LengthWithUnits">
+		<xs:annotation><xs:documentation xml:lang="en">
+				Length of an object and its unit of measure.
+		</xs:documentation></xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="golfml:Length">
+				<xs:attribute name="units" type="golfml:UnitOfLengthEnum" default="meters"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="Tee">
+		<xs:annotation><xs:documentation xml:lang="en">
+				Description of a hole played from a set of tee.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="par" type="golfml:Par">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Par score for the hole.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="handicap-stroke" type="golfml:HandicapStroke">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Relative difficulty level of the hole for this set of tees.
+				</xs:documentation></xs:annotation>
+			</xs:element>			
+			<xs:element name="length" type="golfml:LengthWithUnits" minOccurs="0" maxOccurs="2">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Length of the hole from the set of tees. The description of a tee can contain
+					one or more length in different unit systems.
+					Exemple: <length units="meters">100</length><length units="yards">109.36</length>
+					Note: The equivalence of length cannot be enforced by XML Schema specification.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="number" type="golfml:OneToEighteen"/>
+	</xs:complexType>
+		
+	<xs:complexType name="Tees">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Set of tees from which a golf course can be played.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="uid" type="golfml:UID" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Unique identifier for an application.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="qualification" type="golfml:HoleQualification">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Qualification of the hole for handicaping purposes.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="tee" type="golfml:Tee" maxOccurs="18">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Description of a single hole. There can be at most 18 tee descriptions.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="version" type="golfml:Version" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Records tee set modifications over time.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="summary" type="golfml:Statistics" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					A set of statistical data associated with the set of tees.
+					(EXPERIMENTAL.)
+				</xs:documentation></xs:annotation>	 
+			</xs:element>
+			
+		</xs:sequence>
+		<xs:attribute name="date-from" type="xs:date">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Start date of validity of tee set.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="date-to" type="xs:date">
+			<xs:annotation><xs:documentation xml:lang="en">
+				End date of validity of tee set.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="name" type="xs:string" use="required"> <!-- used in PK_Tees -->
+			<xs:annotation><xs:documentation xml:lang="en">
+				Name of the tee set. If no name exist, use color indicator.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="colour" type="xs:string">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Color of tee set.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="gender" type="golfml:GolfingGender" use="required">
+			<xs:annotation><xs:documentation xml:lang="en">
+				"Gender" of tee set for handicaping purpose.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	
+	<xs:group name="ID_Tees">
+		<xs:annotation><xs:documentation xml:lang="en">
+				List of elements to uniquely identify a set of tees from which a round of golf can be played.
+				Elements includes those necessary to identify a golf course, and a set of tees.
+				Used in foreign keys.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:group ref="golfml:ID_GolfCourse"/>
+			<xs:element name="country-club.golf-course.tee-set.name" type="xs:string"/>
+		</xs:sequence>
+	</xs:group>
+	
+	<xs:complexType name="REF_Tees">
+		<xs:group ref="golfml:ID_Tees"/>
+		<xs:attributeGroup ref="golfml:RemoteGolfML"/>
+	</xs:complexType>
+
+	
+	<!-- Pin placement -->
+	
+	<xs:complexType name="HoleDistanceOnGreen">
+		<xs:annotation><xs:documentation xml:lang="en">
+				Distance from edge of green. From attribute specify which edge the distance is measured from.
+				Unit attribute can be used to specify alternate unit system such as 'paces'.
+		</xs:documentation></xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="golfml:LengthWithUnits">
+				<xs:attribute name="from" type="golfml:OrientationEnum" use="required">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Edge of green the distance is taken from.
+						Mandatory since it is not possible to determinite which where the distance is taken from without this information.
+					</xs:documentation></xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	<xs:complexType name="HolePlacementWithDistances">
+		<xs:annotation><xs:documentation xml:lang="en">
+				Description of the placement on the hole on the surface of the green in a precise,
+				tournament fashion, which includes length and width of the green and distance of
+				the hole from 2 edges of the green.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="green-length" type="golfml:LengthWithUnits">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Length of green.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="green-width"  type="golfml:LengthWithUnits">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Width of green.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="hole-distance" type="golfml:HoleDistanceOnGreen" minOccurs="2" maxOccurs="2">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Distance of hole from edge of green.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="number" type="golfml:OneToEighteen"/>
+	</xs:complexType>
+	
+	<xs:complexType name="HolePlacement">
+		<xs:annotation><xs:documentation xml:lang="en">
+				Description of the placement on the hole on the surface of the green.
+		</xs:documentation></xs:annotation>
+		<xs:choice>
+			<xs:element name="distances" type="golfml:HolePlacementWithDistances">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Position of hole relative to the edges of the green.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="coordinates" type="golfml:RoomForExtension">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						Description of the placement on the hole on the surface of the green with an alternate
+						localisation system. Some golf courses use A/B/C tiers to specify front, middle and back of
+						the green, some other courses use more sofisticated systems.
+						
+						See also
+						Illustrative pictures in golfml download area.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	 
+	<xs:complexType name="HolePlacements">
+		<xs:annotation><xs:documentation xml:lang="en">
+				Description of the placement on holes on greens.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="name" type="xs:string">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Identifying name for hole placement.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="hole-placement" type="golfml:HolePlacement" maxOccurs="18">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Placement of a hole on a green.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="date" type="xs:date">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Date hole placement is valid.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	
+	 
+	<!-- Equipment -->
+	
+	<xs:simpleType name="EquipmentTypeEnum">
+		<xs:annotation><xs:documentation xml:lang="en">
+				List of equipment type.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="driver"/>
+			<xs:enumeration value="wood"/>
+			<xs:enumeration value="iron"/>
+			<xs:enumeration value="wedge"/>
+			<xs:enumeration value="putter"/>
+			<xs:enumeration value="shaft"/>
+			<xs:enumeration value="grip"/>
+			<xs:enumeration value="ball"/>
+			<xs:enumeration value="bag"/>
+			<xs:enumeration value="trolley"/>
+			<xs:enumeration value="training-aid"/>
+			<xs:enumeration value="shoes"/>
+			<xs:enumeration value="gloves"/>
+			<xs:enumeration value="apparel"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="GolfClubTypeEnum">
+		<xs:annotation><xs:documentation xml:lang="en">
+				List of types of golf clubs.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="wood"/>
+			<xs:enumeration value="iron"/>
+			<xs:enumeration value="wedge"/>
+			<xs:enumeration value="putter"/>
+			<xs:enumeration value="driver"/>
+			<xs:enumeration value="hybrid"/>
+			<xs:enumeration value="utility"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	   
+	<xs:simpleType name="SwingWeight">
+		<xs:annotation><xs:documentation xml:lang="en">
+				Swing weight of a club of golf.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[B-E][0-9]"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!-- Player  -->
+	
+	
+<!-- =================================================================
+	 S T R U C T U R A L   T Y P E S
+-->
+	
+	<!-- =============================
+		GENERIC Types				  -->
+	
+	<!-- Addresses  -->
+	<xs:complexType name="Address">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Address type for country-club and players.
+			Country and postal-code must always be present as they are part of primary keys.
+			If there is no postal-code for a place, the municipality should be copied over to the postal-code element.
+		</xs:documentation></xs:annotation>
+		<xs:all>
+			<xs:element name="country" type="golfml:Country">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Country of address. Country can be specified in any language (xml:lang advised) but
+					the 2-letter country ISO 3166 code must be present. 
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="municipality" type="xs:string" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Municipality of address.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="postal-code" type="xs:string">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Postal code of the address. Mandatory since it is part of the unique key of a place.
+					If the place does not have a postal code, copy the municipality name, which ought to be unique
+					in a country.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="region" type="xs:string" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Region of an address. Region can be any optional information such as department, United States of America state, county...
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="street" type="xs:string" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Street name and number of address.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	
+
+	<!-- Contact information -->
+	<xs:complexType name="Contact">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Contact type for country-club and players.
+			The contact has a attribute named type to help identify the contact in a list.
+		</xs:documentation></xs:annotation>
+		<xs:all>
+			<xs:element name="name" type="xs:string" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Name or description of contact.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="phone" type="golfml:PhoneNumber" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Telephone number of contact. Type type of telephone number (home, work, mobile...) can be specified in the address type
+					attribute.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="email" type="xs:string" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Electronic mail address of contact.
+				</xs:documentation></xs:annotation>
+			</xs:element>	 	
+			<xs:element name="website" type="xs:anyURI" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Internet web site URL of contact.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:all>
+		<xs:attribute name="type" type="golfml:ContactTypeEnum">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Qualification of a contact. For country clubs, the qualification can be the reservation desk, the bar, the corporate facility's main number...
+				For player, the contact type can be his or her home, work or mobile telephone number, home or work address...
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attributeGroup ref="golfml:Other"/>
+	</xs:complexType>
+	
+
+	<!-- Miscellaneous -->
+	<xs:complexType name="Preference">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Preference to store name/value pairs.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="name"  type="xs:string">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Name of a preference value.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="value" type="xs:string">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Value of a preference.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="WindEnum">
+		<xs:annotation><xs:documentation xml:lang="en">
+			List of values for wind condition during play.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="none"/>
+			<xs:enumeration value="calm"/>
+			<xs:enumeration value="light breeze"/>
+			<xs:enumeration value="breeze"/>
+			<xs:enumeration value="strong breeze"/>
+			<xs:enumeration value="high wind"/>
+			<xs:enumeration value="storm"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="Weather">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Store weather condition during play.
+			It contains an optional attribute named wind to specify wind condition during play.
+			
+			See also: SportML has a normalisation of weather types.
+		</xs:documentation></xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="wind" type="golfml:WindEnum"/>
+				<xs:attributeGroup ref="golfml:Other"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+
+
+	<!-- =============================
+		 Types for GOLF COURSES		 -->
+	
+	<!-- Golf courses -->	
+	<xs:complexType name="Hole">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Description of a hole on a course: Media (photographs, videos, sketches...), notes and/or placemarks.
+		</xs:documentation></xs:annotation>
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="media" type="golfml:Media">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Associated media: Picture, video, document, link...
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="note" type="golfml:Note">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Localised note or comment about the hole.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="placemarks" type="golfml:Placemarks">
+				<xs:annotation><xs:documentation xml:lang="en">
+					List of places worth of interest on the hole.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:choice>
+		<xs:attribute name="number" type="golfml:OneToEighteen" use="required">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Hole number. Mandatory.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="name" type="xs:string">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Name of hole. Some golf courses name all holes on a course.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	
+	<xs:complexType name="Facilities">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Description of a course: Media (photographs, videos, sketches...), notes and/or placemarks.
+		</xs:documentation></xs:annotation>
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="media" type="golfml:Media">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Associated media: Picture, video, document, link...
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="note" type="golfml:Note">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Localised note or comment about the hole.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="placemarks" type="golfml:Placemarks">
+				<xs:annotation><xs:documentation xml:lang="en">
+					List of places worth of interest on the hole.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	
+	<xs:complexType name="Holes">
+		<xs:annotation><xs:documentation xml:lang="en">
+			The Holes element groups 1 to 18 Hole descriptions.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="facilities" type="golfml:Facilities" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Container elements for placemarks that are not specific to a hole.
+					Examples include: Practice areas, club house, parking, access road...
+					These facilties might need to appear on general golf course maps,
+					but not on specific hole.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="hole" type="golfml:Hole" minOccurs="0" maxOccurs="18">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Collection of 1 to 18 holes of golf.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+  
+	<xs:complexType name="GolfCourse">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Description of a course: Mmedia (photographs, videos, sketches...), notes, holes and tee-set.
+		</xs:documentation></xs:annotation>
+		<xs:sequence> <!-- sequence has a "logical" meaning here. -->
+			<xs:element name="uid" type="golfml:UID" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Unique identifier for an application.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="name" type="xs:string"> <!-- used in PK_Tees -->
+				<xs:annotation><xs:documentation xml:lang="en">
+					Name of a tee set. Mandatory since it is used to uniquely identify this set of tees on a golf course.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="architect" type="xs:string" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Architect(s) of the golf course.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="media" type="golfml:Media">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Medias associated with the golf course.
+					</xs:documentation></xs:annotation>
+				</xs:element>
+				<xs:element name="note" type="golfml:Note">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Notes and comments associated with the golf course.
+					</xs:documentation></xs:annotation>
+				</xs:element>
+			</xs:choice>
+			<xs:element name="holes" type="golfml:Holes" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Description of the individual holes.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="tee-set" type="golfml:Tees" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Description of a tee set for the golf course.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="version" type="golfml:Version" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Records history of the golf course.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:group name="ID_GolfCourse">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Identifying elements for a golf course. Used in foreign keys.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="country-club.name" type="xs:string"/>
+			<xs:element name="country-club.address.country.iso3166" type="golfml:ISO3166CountryCodeEnum"/>
+			<xs:element name="country-club.address.postal-code" type="xs:string"/>
+			<xs:element name="country-club.golf-course.name" type="xs:string"/>
+		</xs:sequence>
+	</xs:group>
+	
+	<xs:complexType name="REF_GolfCourse">
+		<xs:group ref="golfml:ID_GolfCourse"/>
+		<xs:attributeGroup ref="golfml:RemoteGolfML"/>
+	</xs:complexType>
+	
+	<!-- Country Club -->
+	<xs:complexType name="Amenety">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Amenety available at the country club premises.
+			Ameneties have a type attribute to help identify the amenety.
+			LATER: May be store the position (gps or other) inside the amenety.
+		</xs:documentation></xs:annotation> 	
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="type" type="golfml:AmenetyTypeEnum"/>
+				<xs:attributeGroup ref="golfml:Other"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	   
+	<xs:complexType name="CountryClub">
+		<xs:annotation><xs:documentation xml:lang="en">
+			A country-club is a place where we can find one or more golf courses at the same location.
+			Examples are your municipal golf course, a 9 hole pitch and putt, a 36 or more hole golf courses,
+			golf resorts, etc.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="uid" type="golfml:UID" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Unique identifier for an application.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="name" type="xs:string" >
+				<xs:annotation><xs:documentation xml:lang="en">
+					Name of the country club.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="ownership-type" type="golfml:CountryClubTypeEnum" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Name of the country club.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="address" type="golfml:Address">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Address of the country club or golf course.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="contact" type="golfml:Contact" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Contact for the golf course. Contacts have a contact type to further identify it.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="amenety" type="golfml:Amenety" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Amenety available at the contry club. Ameneties includes practice facilities, club-house facilities for golfers,
+					including bar, restaurant, locker rooms, showers, pro-shop... but also "corporate" facilities such as meeting rooms and more.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="note"	type="golfml:Note" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Note about the country club.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="media"   type="golfml:Media" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Media for the country club. Media may include elements such as pictures, videos, flyers, access maps...
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="golf-course" type="golfml:GolfCourse" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Description of one golf course at the country club.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="version" type="golfml:Version" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<!-- =============================
+		 Types for EQUIPMENT			-->
+	
+	<xs:complexType name="Shaft">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Descriptive elements for the shaft of a golf club.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="manufacturer" type="xs:string">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Manufacturer of a shaft.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="model" type="xs:string">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Model of a shaft.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="submodel" type="xs:string" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Sub-model or type of a model of a shaft.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="length" type="golfml:LengthWithUnits" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Length of a shaft.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="weight" type="xs:float" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Weight of a shaft.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="tip" type="xs:string" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Type of tip of the shaft.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="type" type="golfml:GolfClubTypeEnum">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Type of golf club for the shaft.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	
+	<xs:complexType name="GolfClub">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Descriptive elements for a golf club.
+		</xs:documentation></xs:annotation>	
+		<xs:sequence>
+			<xs:element name="manufacturer" type="xs:string">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Manufacturer of a golf club.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="model" type="xs:string">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Model of a golf club.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="submodel" type="xs:string">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Sub model or type of a golf club.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="number" type="xs:string" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Number or name of a club in a set.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="serial" type="xs:string" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Serial number of the golf club.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="loft" type="golfml:Angle90" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Loft of the golf club.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="lie" type="golfml:Angle90" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Lie of the golf club.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="weight" type="xs:float" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Weight of the golf club.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="swing-weight" type="golfml:SwingWeight" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Swing weight of the golf club.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="shaft" type="golfml:Shaft" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Shaft of the golf club.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="grip" type="golfml:Equipment" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Grip of club (manufacturer + model).
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="distance" type="golfml:ClubDistance" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Average distance and shot type covered by a ball hit by this club on a given date.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="type" type="golfml:GolfClubTypeEnum" use="required">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Type of golf club.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	
+	<xs:group name="ID_GolfClub">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Identifying elements for a golf club. Used in foreign keys.
+		</xs:documentation></xs:annotation>  	
+		<xs:sequence>
+			<xs:element name="golf-club.manufacturer" type="xs:string"/>
+			<xs:element name="golf-club.model" type="xs:string"/>
+			<xs:element name="golf-club.submodel" type="xs:string"/>
+			<xs:element name="golf-club.number" type="xs:string"/>
+			<!-- xs:element name="serial" type="xs:string"/ -->
+		</xs:sequence>
+	</xs:group>
+	
+	<xs:complexType name="REF_GolfClub">
+		<xs:choice>
+			<xs:group ref="golfml:ID_GolfClub"/>
+			<xs:element name="uid" type="golfml:UID"/>
+		</xs:choice>
+		<xs:attributeGroup ref="golfml:RemoteGolfML"/>
+	</xs:complexType>
+	
+	<xs:complexType name="GolfBag">
+		<xs:annotation><xs:documentation xml:lang="en">
+			A golf bag can contain either golf clubs or references to them when they are
+			in equipement-list elements.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="uid" type="golfml:UID" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Unique identifier for an application.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="name" type="xs:string">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Name of a golf bag used to identify it.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="bag-ref" type="golfml:REF_GolfBag" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Reference to the golf bag used for the round from the pieces of equipement.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:choice maxOccurs="14">
+				<xs:element name="golf-club-ref" type="golfml:REF_GolfClub">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Reference to a golf club in the player's equipment list.
+					</xs:documentation></xs:annotation>
+				</xs:element>
+				<xs:element name="golf-club" type="golfml:GolfClub">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Definition of a golf club owned by the player.
+					</xs:documentation></xs:annotation>
+				</xs:element>			
+			</xs:choice>
+			<xs:element name="equipment" type="golfml:Equipment" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Other piece of equipment used in bag: Balls, tees, apparel, gloves...
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Equipment">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Descriptive elements for golf equipment. Golf clubs should be described using the GolfClub type.
+			Other pieces of golf equipment should use the Equipment type: Golf bags, ball, apparel, training aids...
+			A attribute named type help describe the equipment.
+		</xs:documentation></xs:annotation> 	
+		<xs:sequence>
+			<xs:element name="uid" type="golfml:UID" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Unique identifier for an application.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="name" type="xs:string">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Name or description of equipment.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="manufacturer" type="xs:string">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Manufacturer of equipment.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="model" type="xs:string">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Model of equipment.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="submodel" type="xs:string" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Submodel or type of equipment.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="serial" type="xs:string" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Serial number of equipment.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="note" type="golfml:Note" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Comment about the equipment. Comment contains an optional rating attribute (0-5).
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="type" type="golfml:EquipmentTypeEnum">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Type of piece of equipment to organise them in categories: Training devices, clubs, balls...
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	
+	<xs:complexType name="EquipmentList">
+		<xs:annotation><xs:documentation xml:lang="en">
+			List golf belongings of a player.
+		</xs:documentation></xs:annotation>
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="golf-club" type="golfml:GolfClub">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Golf club owned by a player.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="equipment" type="golfml:Equipment">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Piece of golfing equipment owned by a player that is not a golf club (golf-club should be used instead).
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	
+
+	<!-- =============================
+	 !   Types for SCORES			   -->
+	<xs:simpleType name="StrokePrecisionValue">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Element to quantify the precision and quality of a stroke.
+			Must be an integer values between -2 and +2.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="-2"/>
+			<xs:maxInclusive value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="StrokePrecision">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Elements to quantify the precision and quality of a stroke in two directions:
+			Front/Back for stroke length, and Left/Right for stroke direction.
+			Elements values can either be numeric values constrained between -2 and +2 or text values out of list.
+		</xs:documentation></xs:annotation>
+		<xs:choice>
+			<xs:sequence>
+				<xs:element name="front-back" type="golfml:StrokePrecisionValue" minOccurs="0">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Precision of a stroke relative to the distance.
+					</xs:documentation></xs:annotation>
+				</xs:element>
+				<xs:element name="left-right" type="golfml:StrokePrecisionValue" minOccurs="0">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Precision of a stroke relative to the direction.
+					</xs:documentation></xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:sequence>
+				<xs:element name="front-back-text" type="golfml:StrokeLengthEnum" minOccurs="0">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Precision of a stroke relative to the distance.
+					</xs:documentation></xs:annotation>
+				</xs:element>
+				<xs:element name="left-right-text" type="golfml:StrokeDirectionEnum" minOccurs="0">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Precision of a stroke relative to the direction.
+					</xs:documentation></xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:choice>
+		<xs:attribute name="type" type="xs:string"></xs:attribute>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="StrokeDetail">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Elements used to record details about a golf stroke.
+		</xs:documentation></xs:annotation>
+		<xs:all>
+			<xs:element name="player" type="xs:string" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Name of the player who actually stroked the ball
+					in best-ball, four-ball or other similar team competition.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="position" type="golfml:Position" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Position FROM where the stroke take place.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="time" type="xs:dateTime" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Time of stroke.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="golf-club" type="golfml:REF_GolfClub" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Golf club used for stroke.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="landing" type="golfml:GolfCourseAreaTypeEnum" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Information on landing are of stroke.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="distance" type="golfml:LengthWithUnits" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Distance of the stroke.
+					</xs:documentation></xs:annotation>
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="precision" type="golfml:StrokePrecision" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Information on the precision of the stroke regarding distance and direction.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="distance-to-hole" type="golfml:LengthWithUnits" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Distance left to the hole BEFORE the stroke.
+					</xs:documentation></xs:annotation>
+				</xs:documentation></xs:annotation>				
+			</xs:element>
+			<xs:element name="note" type="golfml:Note" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Comment about the stroke. Comment contains a rating attribute to rate the stroke (0-5).
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:all>
+		<xs:attribute name="number" type="xs:nonNegativeInteger">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Order number of the stroke playing the hole.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="drop" type="xs:boolean">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Boolean flag indicating if the stroke was a drop.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	
+	<xs:complexType name="Penalty">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Type used to record penalty stroke and help identify the reason of the penalty.
+			An optional rule attribute can be used to store the rule breached.
+		</xs:documentation></xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:positiveInteger">
+				<xs:attribute name="rule" type="xs:string">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Rule number indicating the violation.
+						Example: rule="USGA:26-1/19:Water Hazard"
+					</xs:documentation></xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>	
+	
+	<xs:complexType name="HoleStatistics">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Type used to record basic hole statistics such as fairway hits and greens in regulation.
+			All elements are optional.
+		</xs:documentation></xs:annotation>
+		<xs:all>
+			<xs:element name="fairway" type="xs:boolean" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Fairway hit.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="green-in-regulation" type="xs:boolean" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Green reached in regulation.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="driving-distance" type="golfml:LengthWithUnits" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Driving distance.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="approach-to-hole" type="golfml:LengthWithUnits" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Distance left to hole when ball landed on green. Distance of first putt.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:all>
+	</xs:complexType>
+	
+	<xs:complexType name="Strokes">
+		<xs:sequence>
+			<xs:element name="stroke" type="golfml:StrokeDetail" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Detail of each stroke.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="HoleScore">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Records detailed hole score information.
+		</xs:documentation></xs:annotation>
+		<xs:all>
+			<xs:element name="strokes" type="xs:positiveInteger">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Total number of strokes for hole, including penalties.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="points" type="xs:nonNegativeInteger" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Total number of points for hole.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="putts" type="xs:nonNegativeInteger" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Number of putts, from the green.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="money" type="xs:float" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Money earned or loss on hole in wagers.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="penalties" type="golfml:Penalty" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Total number of penalty strokes.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="stroke-detail" type="golfml:Strokes" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Detail of each stroke.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="statistics" type="golfml:HoleStatistics" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Denormalised statistics for hole.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:all>
+		<xs:attribute name="number" type="golfml:OneToEighteen">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Order number of hole.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="Score">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Type used to record 1 to 18 HoleScores.
+		</xs:documentation></xs:annotation>		
+		<xs:sequence>
+			<xs:element name="hole" type="golfml:HoleScore" maxOccurs="18">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Detail of score for one hole.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="RoundSummary">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Stores denormalized score for the round of golf.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="strokes" type="xs:positiveInteger" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Denormalisation: Total number of strokes for the round of golf.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="points" type="xs:nonNegativeInteger" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Denormalisation: Total number of points for the round of golf.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="putts" type="xs:nonNegativeInteger" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Denormalisation: Total number of putts for the round of golf.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="penalties" type="golfml:Penalty" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Denormalisation: Total number of penalty strokes during the round of golf.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="money" type="xs:float" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Denormalisation: Total money earned or loss during the round of golf.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="statistic" type="golfml:StatisticValue" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Denormalisation: Statistic for the round of golf.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="Scorecard">
+		<xs:annotation><xs:documentation xml:lang="en">
+			A Scorecard contains scoring information for a round of golf: Tees used (reference to them),
+			handicap used by the player for this round and consecutive strokes allowed (depending on the tees rating and slope),
+			golf bag used by the player, and finally score.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="tees" type="golfml:REF_Tees">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Reference to tee set used for the round of golf.
+				</xs:documentation></xs:annotation>
+			</xs:element>			
+			<xs:element name="handicap" type="xs:float" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Handicap used for the round of golf.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="handicap-strokes" type="xs:integer" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Denormalisation: Number of strokes received for the round.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="golf-bag-ref" type="golfml:REF_GolfBag" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Reference to the golf bag used for the round of golf.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="summary" type="golfml:RoundSummary" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Denormalisation: Basic statistics for the round of golf.
+					This element is provided to prevent recalculation of golf round data.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="score" type="golfml:Score" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Detailed information about the score for the round of golf.
+				</xs:documentation></xs:annotation>
+			</xs:element>					   
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="GolfGameTypeEnum">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				Game played during the round of golf.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="stroke-play"/>
+			<xs:enumeration value="match-play"/>
+			<xs:enumeration value="stableford"/>
+			<xs:enumeration value="bingo-bango-bongo"/>
+			<xs:enumeration value="skin"/>
+			<xs:enumeration value="other"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="GolfGame">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Game played during the round of golf.
+		</xs:documentation></xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="type" type="golfml:GolfGameTypeEnum">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Type of golf game played.
+					</xs:documentation></xs:annotation>
+				</xs:attribute>
+				<xs:attributeGroup ref="golfml:Other"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	
+	<xs:simpleType name="PlayerSomeEnum">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				Qualify a golfer in a two, three, or four some.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="partner"/>
+			<xs:enumeration value="competitor"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="PlayerSome">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Identify partners and opponents during a round of golf.
+			PlayerSome must have a player entry in the golfml document. (The player's name, gender, and date of birth is the only mandatory information.)
+			Scorecards of other players are stored in their player element.
+			Round date and time and foursome elements can be used to reconstruct the 2,3,4 some of a multiplayer round.
+			Attributes type and team help identify players as partners or opponents and organise teams.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:group ref="golfml:ID_Player"/>
+		</xs:sequence>
+		<xs:attribute name="type" type="golfml:PlayerSomeEnum">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Qualification of the player on the 2,3,4 some.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="team" type="xs:string">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Name of the team this player was a member of. For example, if 4 players are playing 2 against 2, the foursome would be:
+			    {{{
+					<player-some type="parner" team="a"/>
+					<player-some type="competitor" team="b"/>
+					<player-some type="competitor" team="b"/>
+				}}}
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	
+	<xs:complexType name="FourSome">
+		<xs:annotation><xs:documentation xml:lang="en">
+			A FourSome type is used to store up to three additional player names who play the same round of golf.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="player-some" type="golfml:PlayerSome" minOccurs="0" maxOccurs="3">
+				<xs:annotation><xs:documentation xml:lang="en">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Qualification of the player on the 2,3,4 some.
+					</xs:documentation></xs:annotation>
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Round">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Details about a round of golf: Location of the flags on greens (usually called pin sheet),
+			weather conditions, date of the round, opponenents and partners, and the scorecard.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="uid" type="golfml:UID" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Unique identifier for an application.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="date" type="xs:dateTime">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Date and time of the round.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="hole-placement" type="golfml:HolePlacements" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Placement of holes for the round of golf.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="weather" type="golfml:Weather" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Weather information for the round of golf.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="foursome" type="golfml:FourSome" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Player information for the round of golf.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="game" type="golfml:GolfGame" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Information about the game(s) played during the round of golf.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="wager" type="golfml:RoomForExtension" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Information about the wagers during the round of golf.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="note" type="golfml:Note" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Comment about the round.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="scorecard" type="golfml:Scorecard">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Scorecard of the round for the player.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="CountryClubChoice">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Choice to specify the main country club of a player. The player can either simply enter the name of the country-club or
+			a formal reference to a country-club in the golfml document.
+		</xs:documentation></xs:annotation>
+		<xs:choice>
+			<xs:element name="name" type="xs:string">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Name of the home country club of a player.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="country-club" type="golfml:REF_GolfCourse">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Reference to the home country club of the player in the golfml document, defined as a country-club element.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+
+
+	<!-- =============================
+		 Types for PLAYERS			 -->
+	
+	<xs:complexType name="Player">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Type used to record all information about a golfer: Identification, equipment, rounds played,
+			statistics.
+			A player has a mandatory gender attribute.
+			The name and date-of-birth elements are mendatory as the are part of the primary key.
+		</xs:documentation></xs:annotation>
+		
+		<xs:sequence>
+			<xs:element name="uid" type="golfml:UID" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Unique identifier for an application.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="name" type="xs:string">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Name of the player.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="date-of-birth" type="xs:date">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Date of birth of player, used to uniquely identify him.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="current-handicap" type="golfml:PlayerHandicap" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Denormalisation of the current handicap of the player.
+					Value to be used in the next round of golf.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="address" type="golfml:Address" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Address of the player.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="contact" type="golfml:Contact" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Contact information of the player.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="home-country-club" type="golfml:CountryClubChoice" minOccurs="0">
+				<!-- Should be a link to a valid golf course... (may be later?) -->
+				<xs:annotation><xs:documentation xml:lang="en">
+					Main country club of the player.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			
+			<xs:element name="note"	type="golfml:Note" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Note associated with the player.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="media"   type="golfml:Media" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Media associated with the player. Example may include photograph, copy of golf or handicap card, videos of swings...
+				</xs:documentation></xs:annotation>	 
+			</xs:element>
+			
+			<xs:element name="equipment-list" type="golfml:EquipmentList" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					List of equipement owned by the player.
+				</xs:documentation></xs:annotation>
+			</xs:element>	   	
+			<xs:element name="golf-bag" type="golfml:GolfBag" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Collection of at most 14 golf clubs.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+
+			<xs:element name="round" type="golfml:Round" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					A round of golf played by the player.
+				</xs:documentation></xs:annotation>	 
+			</xs:element>
+			
+			<xs:element name="statistics" type="golfml:StatisticsCollection" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation><xs:documentation xml:lang="en">
+					A set of statistical data associated with the player.
+				</xs:documentation></xs:annotation>	 
+			</xs:element>
+			
+		</xs:sequence>
+		<xs:attribute name="gender" type="golfml:Gender" use="required">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Gender of the player. Limited to gentlemen or ladies.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	
+	<xs:group name="ID_Player">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Identifying elements for a player. Used in foreign keys.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:element name="player.name" type="xs:string"/>
+			<xs:element name="player.date-of-birth" type="xs:date"/>
+		</xs:sequence>
+	</xs:group>
+	
+	<xs:complexType name="REF_Player">
+		<xs:group ref="golfml:ID_Player"/>
+		<xs:attributeGroup ref="golfml:RemoteGolfML"/>
+	</xs:complexType>
+	
+	<xs:group name="ID_GolfBag">
+		<xs:annotation><xs:documentation xml:lang="en">
+			Identifying elements for a golf bag. Used in foreign keys.
+		</xs:documentation></xs:annotation>
+		<xs:sequence>
+			<xs:group ref="golfml:ID_Player"/>
+			<xs:element name="player.golf-bag.name" type="xs:string"/>
+		</xs:sequence>
+	</xs:group>
+	
+	<xs:complexType name="REF_GolfBag">
+		<xs:group ref="golfml:ID_GolfBag"/>
+		<xs:attributeGroup ref="golfml:RemoteGolfML"/>
+	</xs:complexType>
+	
+
+<!-- =================================================================
+	E L E M E N T S
+	 
+	Only one element (golfml) defined in this schema.
+	Contains either golf courses definitions (grouped by country-club) or players information.
+-->
+   
+	<xs:element name="golfml">
+		<xs:annotation><xs:documentation xml:lang="en">
+			golfml is the main element of the language. It is the unique element exposed for reuse.
+			A golfml element can contain any number of the following elements:
+			* country-club: To describe a country club, golf course, tee length...
+			* player: To store a player's golf carrier: Scorecards, rounds played, statistics...
+			* application: To store  application specific items not relevant to country clubs or players such as application preferences, etc.
+			* version: Any comment or note about the version of the golfml document.
+			Golfml main element also contains several primary keys for cross-reference of elements
+			inside the document, and one unique key to garantee the unicity of one element (application)
+			accross golfml document instances.
+			(See also: IdentifiersAndReferences )
+		</xs:documentation></xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="country-club" type="golfml:CountryClub">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Country club defined and used in this document.
+					</xs:documentation></xs:annotation>
+				</xs:element>
+				<xs:element name="player" type="golfml:Player">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Player  in this document.
+					</xs:documentation></xs:annotation>
+				</xs:element>
+				<xs:element name="application" type="golfml:Application">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Room for non-golfml application storage.
+					</xs:documentation></xs:annotation>
+				</xs:element>
+				<xs:element name="version" type="golfml:Version">
+					<xs:annotation><xs:documentation xml:lang="en">
+						Room for version information about the file.
+					</xs:documentation></xs:annotation>
+				</xs:element>
+	   			
+			</xs:choice>
+			<xs:attribute name="version" type="xs:string">
+			   <xs:annotation><xs:documentation xml:lang="en">
+				   Version of the golfml language used. Optional, in which case the latest version is used.
+				   It is advised to always specify the version.
+			   </xs:documentation></xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	   
+		<!-- Key scope is local to the element where it is defined. So we define keys at the top-most element
+			and enforce them within it.
+			
+			Primary Keys
+		  -->
+ 
+		<xs:key name="PK_CountryClub">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Primary key to uniquely identify a country club world wide.
+			</xs:documentation></xs:annotation>
+			<xs:selector xpath="./country-club"/>
+			<xs:field xpath="address/country/@iso3166"/>
+			<xs:field xpath="address/postal-code"/>
+			<xs:field xpath="name"/>
+		</xs:key>				   
+	   
+		<xs:key name="PK_Tees">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Primary key to uniquely identify a set of tees world wide.
+			</xs:documentation></xs:annotation>
+			<xs:selector xpath="country-club"/>
+			<xs:field xpath="address/country/@iso3166"/>
+			<xs:field xpath="address/postal-code"/>
+			<xs:field xpath="name"/>
+			<xs:field xpath="golf-course/name"/>
+			<xs:field xpath="golf-course/tee-set/@name"/>
+			<!-- xs:field xpath="golf-course/tee-set/@date-from"/ -->
+		</xs:key>		 
+	   
+		<xs:key name="PK_Player">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Primary key to uniquely identify a golfer.
+			</xs:documentation></xs:annotation>
+			<xs:selector xpath="player"/>
+			<xs:field xpath="name"/>
+			<xs:field xpath="date-of-birth"/>
+		</xs:key>
+	   
+	   	<xs:key name="PK_GolfBag">
+	   		<xs:annotation><xs:documentation xml:lang="en">
+	   			Primary key to uniquely identify a golf bag of a player.
+	   		</xs:documentation></xs:annotation>
+	   		<xs:selector xpath="player"/>
+	   		<xs:field xpath="name"/>
+	   		<xs:field xpath="date-of-birth"/>
+	   		<xs:field xpath="golf-bag/name"/>
+	   	</xs:key>
+	   	
+	   	<xs:key name="PK_GolfClub">
+	   		<xs:annotation><xs:documentation xml:lang="en">
+	   			Primary key to uniquely identify a golf club.
+	   		</xs:documentation></xs:annotation>
+			<xs:selector xpath="player/equipement-list/golf-club"/>
+			<xs:field xpath="manufacturer"/>
+			<xs:field xpath="model"/>
+			<xs:field xpath="submodel"/>
+			<xs:field xpath="number"/>
+	   	</xs:key>
+	   
+	   
+		<!-- Uniqueness requirement without any FK enforcement.
+		  -->
+	   	<xs:unique name="PK_Application">
+	   		<xs:annotation><xs:documentation xml:lang="en">
+	   			Key to uniquely identify an application.
+	   		</xs:documentation></xs:annotation>
+			<xs:selector xpath="application"/>
+			<xs:field xpath="@dotname"/>
+	   	</xs:unique>
+	   
+
+		<!-- Foreign Keys
+		  -->
+	   	<xs:keyref  refer="golfml:PK_Player" name="FK_FoursomePlayer">
+	   		<xs:annotation><xs:documentation xml:lang="en">
+	   			Reference to a player in the 2,3,4 some.
+	   		</xs:documentation></xs:annotation>
+			<xs:selector xpath="player/round/foursome/player-some"/>
+			<xs:field xpath="player.name"/>
+			<xs:field xpath="player.date-of-birth"/>
+	   	</xs:keyref>
+	   
+	   	<xs:keyref refer="golfml:PK_Tees" name="FK_ScorecardTees">
+	   		<xs:annotation><xs:documentation xml:lang="en">
+	   			Reference to set of tees used for the round of golf.
+	   			Note: The set of tees used unambiguously identify the country club and the golf course. 
+	   		</xs:documentation></xs:annotation>
+	   		<xs:selector xpath="player/round/scorecard/tees"/>
+			<xs:field xpath="country-club.name"/>
+			<xs:field xpath="country-club.address.country.iso3166"/>
+			<xs:field xpath="country-club.address.postal-code"/>
+			<xs:field xpath="country-club.golf-course.name"/>
+			<xs:field xpath="country-club.golf-course.tee-set.name"/>
+	   	</xs:keyref>
+	   
+		<xs:keyref  refer="golfml:PK_GolfBag" name="FK_RoundGolfBag">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Reference to a golf bag used in a round.
+			</xs:documentation></xs:annotation>
+			<xs:selector xpath="player/round/golf-bag"/>
+			<xs:field xpath="player.name"/>
+			<xs:field xpath="player.date-of-birth"/>
+			<xs:field xpath="player.golf-bag.name"/>
+		</xs:keyref>
+		
+		<xs:keyref refer="golfml:PK_GolfClub" name="FK_GolfBagGolfClub">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Reference to a golf club in the bag.
+			</xs:documentation></xs:annotation>
+	   		<xs:selector xpath="player/golf-bag/golf-club-ref"/>
+	   		<xs:field xpath="golf-club.manufacturer"/>
+	   		<xs:field xpath="golf-club.model"/>
+	   		<xs:field xpath="golf-club.submodel"/>
+	   		<xs:field xpath="golf-club.number"/>
+	   	</xs:keyref>
+	   	
+	   	<xs:keyref refer="golfml:PK_GolfClub" name="FK_StrokeGolfClub">
+	   		<xs:annotation><xs:documentation xml:lang="en">
+	   			Reference to a golf club used for a stroke.
+	   			Currently, the reference points to a golf club owned by the player.
+	   			Formally, the golf club should point an item in the golf bag used for the round of golf.
+	   			We do not enforce this relationship to allow for practice rounds and more flexibility.
+	   		</xs:documentation></xs:annotation>
+			<xs:selector xpath="player/scorecard/score/hole/stroke/golf-club"/>
+			<xs:field xpath="golf-club.manufacturer"/>
+			<xs:field xpath="golf-club.model"/>
+			<xs:field xpath="golf-club.submodel"/>
+			<xs:field xpath="golf-club.number"/>
+		</xs:keyref>
+   	
+	</xs:element> <!-- golfml -->
+		
+</xs:schema>
