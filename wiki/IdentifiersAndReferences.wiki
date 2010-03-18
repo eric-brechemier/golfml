@@ -56,8 +56,8 @@ For a given entity, we defined a Identifier _Group of Elements_.
 For example, to uniquely identify a player in GolfML, we use the following elements:
 {{{
 <player>
-  <name>Tiger Woods</name>
-  <date-of-birth>1975-12-30</date-of-birth>
+  <name>Thomas Mitchell Morris</name>
+  <date-of-birth>1821-06-16</date-of-birth>
 </player>
 }}}
 
