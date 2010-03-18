@@ -21,11 +21,11 @@ A golf course should be defined once and for all other GolfML document instances
 
 To insure uniqueness of sets of tees on a golf courses, we build a identifier on the following unambiguous attributes:
 
- # Country: We use the *ISO 3166 2 letter code* to uniquely identify the *country* where the golf course is located.
- # Municipality: We use the *postal code* (which should be unique in a given country) to uniquely identify a place in a country. If the country does not use postal code, the name of the municipality should be used instead. The combination of Country and either the *postal code* or the *municipality name* (if and only if no postal code is available for that municipality in the country) uniquely identify a Municipality.
- # Country-club name: The name of the country club, park, facility... The combination of CountryClubName, Municipality, and Country uniquely identify a CountryClub.
- # Golf course name: The name of the golf course at the above location.
- # Tee set name: The name of the set of tees used to play the round of golf on the above golf course.
+ # *Country*: We use the *ISO 3166 2 letter code* to uniquely identify the *country* where the golf course is located.
+ # *Municipality*: We use the *postal code* (which should be unique in a given country) to uniquely identify a place in a country. If the country does not use postal code, the name of the municipality should be used instead. The combination of Country and either the *postal code* or the *municipality name* (if and only if no postal code is available for that municipality in the country) uniquely identify a Municipality.
+ # *Country club name*: The name of the country club, park, facility... The combination of *Country club name*, *Municipality*, and *Country* uniquely identify a *Country Club*.
+ # *Golf course name*: The name of the golf course at the above location.
+ # *Tee set name*: The name of the set of tees used to play the round of golf on the above golf course.
 
 The combination of all five elements uniquely identify a set of tees, worldwide.
 
