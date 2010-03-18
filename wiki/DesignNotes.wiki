@@ -150,6 +150,7 @@ Example: File scorecard.xml references a set of tee played from.
    <country-club.golf-course.tee-set.name>Yellow (Men)</country-club.golf-course.tee-set.name>
   </tees>
   <score>
+  ...
 }}}
 
 Example: File located at http://www.golf-dieppe.com/golfml/course.xml, maintained by the golf course
@@ -166,11 +167,12 @@ Example: File located at http://www.golf-dieppe.com/golfml/course.xml, maintaine
     </contact>
     <golf-course>
       <name>Golf De Dieppe-Pourville</name>
-         <tee-set name="Yellow (Men)" colour="black" gender="gentlemen">
+         <tee-set name="Yellow (Men)" colour="yellow" gender="gentlemen">
+         ...
 }}}
 
 === Discussion ===
 
-Please be aware that hte remote document can change, move, or disappear.
+Please be aware that the remote document can change, move, or disappear.
 
-If is advised to copy the remote content in a local GolfML document.
+It is sometimes advised to copy the content of the remote document in a local GolfML document.
