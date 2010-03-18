@@ -45,4 +45,4 @@ Please review the [Goals goals of GolfML] to see if your application falls into 
  * *Why can't I dump everything in the `<application>` element? It would make a valid golfml document.*
 
 A given GolfML application should ignore other `<application>` elements.
-No application will ever see of find your work if you do so.
+No application will ever see or find your work if you do so.
