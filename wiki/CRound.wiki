@@ -30,7 +30,7 @@ anyType
 ===  Model ===
 
 	<...>
-            ( [CUID uid]`*`, date, [CHolePlacements hole-placement]?, [CWeather weather]?, [CFourSome foursome]?, [CGolfGame game]?, [CRoomForExtension wager]?, [CNote note]?, [CScorecard scorecard]   )
+            ( [CUID uid]`*`, date, [SGolfingDirectionEnum holes-played]?, [CHolePlacements hole-placement]?, [CWeather weather]?, [CFourSome foursome]?, [CGolfGame game]?, [CRoomForExtension wager]?, [CNote note]?, [CScorecard scorecard]   )
   </...>
 ----
   		
@@ -41,6 +41,7 @@ anyType
 || [CFourSome foursome] ||  					Player information for the round of golf.				 || [CFourSome golfml:FourSome] ||
 || [CGolfGame game] ||  					Information about the game(s) played during the round of golf.				 || [CGolfGame golfml:GolfGame] ||
 || [CHolePlacements hole-placement] ||  					Placement of holes for the round of golf.				 || [CHolePlacements golfml:HolePlacements] ||
+|| [SGolfingDirectionEnum holes-played] ||  					Number of hole played during this round: 9 front, 9 back, or 18.				 || [SGolfingDirectionEnum golfml:GolfingDirectionEnum] ||
 || [CNote note] ||  					Comment about the round.				 || [CNote golfml:Note] ||
 || [CScorecard scorecard] ||  					Scorecard of the round for the player.				 || [CScorecard golfml:Scorecard] ||
 || [CUID uid] ||  					Unique identifier for an application.				 || [CUID golfml:UID] ||

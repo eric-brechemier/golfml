@@ -28,4 +28,6 @@ string
   	
 ===  Model ===
 
-	( 'front' | 'back' )
+	( 'front' | 'back' | '18' )
+===  Local Usage ===
+    	[CRound Round]

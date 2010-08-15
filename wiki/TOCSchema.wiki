@@ -19,6 +19,7 @@
       * [SGolfClubTypeEnum GolfClubTypeEnum]
       * [SGolfCourseAreaTypeEnum GolfCourseAreaTypeEnum]
       * [SGolfGameTypeEnum GolfGameTypeEnum]
+      * [SGolfWedgeTypeEnum GolfWedgeTypeEnum]
       * [SGolfingDirectionEnum GolfingDirectionEnum]
       * [SGolfingGender GolfingGender]
       * [SHandicapStroke HandicapStroke]
