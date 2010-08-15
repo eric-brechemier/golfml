@@ -1,0 +1,31 @@
+#summary Golf Markup Language Reference: simpleType GolfWedgeTypeEnum.
+#sidebar TOCSchema
+
+== Name ==
+
+[SGolfWedgeTypeEnum GolfWedgeTypeEnum]
+===  Super Types ===
+{{{
+string
+  |
+  +--GolfWedgeTypeEnum (restriction)
+}}}
+    
+----
+  	
+===  Documentation ===
+
+        
+			List of types of wedge golf clubs.
+		
+----
+      
+  	
+===  Properties ===
+
+  	This component is not nillable.
+----
+  	
+===  Model ===
+
+	( 'pitching' | 'approach' | 'sand' | 'lob' | 'extra-lob' | 'utility' )
