@@ -1009,6 +1009,7 @@
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="front"/>
 			<xs:enumeration value="back"/>
+			<xs:enumeration value="18"/>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -1023,6 +1024,12 @@
 			<xs:enumeration value="straight"/>
 			<xs:enumeration value="draw"/>
 			<xs:enumeration value="hook"/>
+			<xs:enumeration value="push"/>
+			<xs:enumeration value="push-hook"/>
+			<xs:enumeration value="push-slice"/>
+			<xs:enumeration value="pull"/>
+			<xs:enumeration value="pull-hook"/>
+			<xs:enumeration value="pull-slice"/>
 		</xs:restriction>
 	</xs:simpleType>
 	
@@ -2284,6 +2291,20 @@
 		</xs:restriction>
 	</xs:simpleType>
 	   
+	<xs:simpleType name="GolfWedgeTypeEnum">
+		<xs:annotation><xs:documentation xml:lang="en">
+			List of types of wedge golf clubs.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="pitching"/>
+			<xs:enumeration value="approach"/>
+			<xs:enumeration value="sand"/>
+			<xs:enumeration value="lob"/>
+			<xs:enumeration value="extra-lob"/>
+			<xs:enumeration value="utility"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
 	<xs:simpleType name="SwingWeight">
 		<xs:annotation><xs:documentation xml:lang="en">
 				Swing weight of a club of golf.
@@ -2951,7 +2972,16 @@
 				</xs:element>
 			</xs:sequence>
 		</xs:choice>
-		<xs:attribute name="type" type="xs:string"></xs:attribute>
+		<xs:attribute name="stroke-type" type="golfml:StrokeTypeEnum">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Qualification of the stroke.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="type" type="xs:string">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Type of précision used (values or text).
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 	
 	
@@ -3322,6 +3352,11 @@
 			<xs:element name="date" type="xs:dateTime">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Date and time of the round.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="holes-played" type="golfml:GolfingDirectionEnum" minOccurs="0" maxOccurs="1">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Number of hole played during this round: 9 front, 9 back, or 18.
 				</xs:documentation></xs:annotation>
 			</xs:element>
 			<xs:element name="hole-placement" type="golfml:HolePlacements" minOccurs="0">
