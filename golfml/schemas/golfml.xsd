@@ -278,6 +278,18 @@
 	</xs:simpleType>
 	
 	
+	<xs:simpleType name="Dexterity">
+		<xs:annotation><xs:documentation xml:lang="en">
+			List of values used to specify the dexterity of a golfer.
+		</xs:documentation></xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="left"/>
+			<xs:enumeration value="right"/>
+			<xs:enumeration value="both"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	
 	<xs:simpleType name="GolfingGender">
 		<xs:annotation><xs:documentation xml:lang="en">
 			List of values used to specify the gender of a set of tees.
@@ -3507,8 +3519,18 @@
 				Gender of the player. Limited to gentlemen or ladies.
 			</xs:documentation></xs:annotation>
 		</xs:attribute>
+		<xs:attribute name="dexterity" type="golfml:Dexterity" use="optional">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Dexterity of the player. Left, right or both.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="language" type="xs:string" use="optional">
+			<xs:annotation><xs:documentation xml:lang="en">
+				Language of the player. ISO code 639 should be used but is not enforced.
+			</xs:documentation></xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
-	
+		
 	<xs:group name="ID_Player">
 		<xs:annotation><xs:documentation xml:lang="en">
 			Identifying elements for a player. Used in foreign keys.
