@@ -2550,7 +2550,7 @@
   
 	<xs:complexType name="GolfCourse">
 		<xs:annotation><xs:documentation xml:lang="en">
-			Description of a course: Mmedia (photographs, videos, sketches...), notes, holes and tee-set.
+			Description of a course: Media (photographs, videos, sketches...), notes, holes and tee-set.
 		</xs:documentation></xs:annotation>
 		<xs:sequence> <!-- sequence has a "logical" meaning here. -->
 			<xs:element name="uid" type="golfml:UID" minOccurs="0" maxOccurs="unbounded">
@@ -3126,6 +3126,11 @@
 			Records detailed hole score information.
 		</xs:documentation></xs:annotation>
 		<xs:all>
+			<xs:element name="allowed-strokes" type="xs:positiveInteger" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Total number of strokes allowed on hole according to handicap of player, course rating and hole index. Optional.
+				</xs:documentation></xs:annotation>
+			</xs:element>
 			<xs:element name="strokes" type="xs:positiveInteger">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Total number of strokes for hole, including penalties.
