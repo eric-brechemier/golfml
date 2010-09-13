@@ -1,0 +1,33 @@
+#summary Golf Markup Language Reference: simpleType Dexterity.
+#sidebar TOCSchema
+
+== Name ==
+
+[SDexterity Dexterity]
+===  Super Types ===
+{{{
+string
+  |
+  +--Dexterity (restriction)
+}}}
+    
+----
+  	
+===  Documentation ===
+
+        
+			List of values used to specify the dexterity of a golfer.
+		
+----
+      
+  	
+===  Properties ===
+
+  	This component is not nillable.
+----
+  	
+===  Model ===
+
+	( 'left' | 'right' | 'both' )
+===  Local Usage ===
+    	[CPlayer Player]

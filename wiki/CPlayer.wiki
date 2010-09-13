@@ -31,7 +31,7 @@ anyType
   	
 ===  Model ===
 
-	<...  `gender`=[SGender Gender]>
+	<...  `dexterity`=[SDexterity Dexterity]  `gender`=[SGender Gender]  `language`=xs:string>
             ( [CUID uid]`*`, name, date-of-birth, [CPlayerHandicap current-handicap]?, [CAddress address]`*`, [CContact contact]`*`, [CCountryClubChoice home-country-club]?, [CNote note]`*`, [CMedia media]`*`, [CEquipmentList equipment-list]?, [CGolfBag golf-bag]`*`, [CRound round]`*`, [CStatisticsCollection statistics]`*`   )
   </...>
 ----
@@ -39,7 +39,9 @@ anyType
 === Attributes ===
 
 || *Name* || *Description* || *Type* || *Use* || *Default* || *Fixed* || *Form* ||
+|| dexterity ||  Dexterity of the player || [SDexterity golfml:Dexterity] || optional ||  ||  || unqualified ||
 || gender ||  Gender of the player || [SGender golfml:Gender] || required ||  ||  || unqualified ||
+|| language ||  Language of the player || xs:string || optional ||  ||  || unqualified ||
 
 === Nested Elements ===
 

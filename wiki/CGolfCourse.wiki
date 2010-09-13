@@ -16,7 +16,7 @@ anyType
 ===  Documentation ===
 
         
-			Description of a course: Mmedia (photographs, videos, sketches...), notes, holes and tee-set.
+			Description of a course: Media (photographs, videos, sketches...), notes, holes and tee-set.
 		
 ----
       

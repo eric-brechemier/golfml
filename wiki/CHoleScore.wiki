@@ -29,7 +29,7 @@ anyType
 ===  Model ===
 
 	<...  `number`=[SOneToEighteen OneToEighteen]>
-            ( strokes ; points? ; putts? ; money? ; [CPenalty penalties]? ; [CStrokes stroke-detail]? ; [CHoleStatistics statistics]? ) 
+            ( allowed-strokes? ; strokes ; points? ; putts? ; money? ; [CPenalty penalties]? ; [CStrokes stroke-detail]? ; [CHoleStatistics statistics]? ) 
   </...>
 ----
   		      
@@ -41,6 +41,7 @@ anyType
 === Nested Elements ===
 
 || *Name* || *Description* || *Type* ||
+|| allowed-strokes ||  Total number of strokes allowed on hole according to handicap of player, course rating and hole index || xs:positiveInteger ||
 || money ||  					Money earned or loss on hole in wagers.				 || xs:float ||
 || [CPenalty penalties] ||  					Total number of penalty strokes.				 || [CPenalty golfml:Penalty] ||
 || points ||  					Total number of points for hole.				 || xs:nonNegativeInteger ||

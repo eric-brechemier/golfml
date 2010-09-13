@@ -12,6 +12,7 @@
       * [SCountryClubTypeEnum CountryClubTypeEnum]
       * [SCourseRating CourseRating]
       * [SCourseSlope CourseSlope]
+      * [SDexterity Dexterity]
       * [SEmailAddress EmailAddress]
       * [SEquipmentTypeEnum EquipmentTypeEnum]
       * [SFloatWithOneFractionalNumber FloatWithOneFractionalNumber]
