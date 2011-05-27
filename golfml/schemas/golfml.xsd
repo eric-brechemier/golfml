@@ -2115,7 +2115,12 @@
 					Records tee set modifications over time.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="summary" type="golfml:Statistics" minOccurs="0">
+			<xs:element name="summary" type="golfml:TeeSetSummary" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					A set of denormalized parameters for a set of tees, like total length of front and back, total length, par, etc.
+				</xs:documentation></xs:annotation>	
+			</xs:element>
+			<xs:element name="statitics" type="golfml:Statistics" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					A set of statistical data associated with the set of tees.
 					(EXPERIMENTAL.)
