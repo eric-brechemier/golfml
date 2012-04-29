@@ -8,7 +8,7 @@
       <Title Value="Golfml Reader"/>
       <ResourceType Value="res"/>
       <UseXPManifest Value="True"/>
-      <Icon Value="0"/>
+      <ActiveWindowIndexAtStart Value="0"/>
     </General>
     <i18n>
       <EnableI18N LFM="False"/>
@@ -16,7 +16,7 @@
     <VersionInfo>
       <StringTable ProductVersion=""/>
     </VersionInfo>
-    <BuildModes Count="1">
+    <BuildModes Count="1" Active="Default">
       <Item1 Name="Default" Default="True"/>
     </BuildModes>
     <PublishOptions>
@@ -41,6 +41,7 @@
         <Filename Value="golfumlwin64.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="golfumlwin64"/>
+        <UsageCount Value="20"/>
       </Unit0>
       <Unit1>
         <Filename Value="ugolfmainform.pas"/>
@@ -48,13 +49,33 @@
         <ComponentName Value="mainform"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ugolfmainform"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="thandicapgolfumlclass.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="thandicapgolfumlclass"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="48" Y="25"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
       </Unit2>
     </Units>
+    <JumpHistory Count="1" HistoryIndex="0">
+      <Position1>
+        <Filename Value="thandicapgolfumlclass.pas"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position1>
+    </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="9"/>
