@@ -1,0 +1,44 @@
+object scoreform: Tscoreform
+  Left = 805
+  Height = 411
+  Top = 194
+  Width = 219
+  BorderIcons = []
+  BorderStyle = bsToolWindow
+  Caption = 'Enter Scorecard'
+  ClientHeight = 411
+  ClientWidth = 219
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poScreenCenter
+  ShowInTaskBar = stNever
+  LCLVersion = '0.9.30'
+  object cmd_close: TBitBtn
+    Left = 133
+    Height = 30
+    Top = 368
+    Width = 75
+    Caption = 'Done'
+    OnClick = cmd_closeClick
+    TabOrder = 0
+  end
+  object lbl_intro: TLabel
+    Left = 16
+    Height = 48
+    Top = 16
+    Width = 192
+    AutoSize = False
+    Caption = 'lbl_intro'
+    ParentColor = False
+    WordWrap = True
+  end
+  object cmd_calculate: TBitBtn
+    Left = 16
+    Height = 30
+    Top = 368
+    Width = 75
+    Caption = 'Calculate'
+    OnClick = cmd_calculateClick
+    TabOrder = 1
+  end
+end
