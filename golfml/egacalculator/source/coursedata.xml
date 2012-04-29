@@ -1,19 +1,18 @@
 <?xml version="1.0"?>
-<golfml xmlns="xmlns=http://code.google.com/p/golfml" version="0.9" xmlns:g="http://code.google.com/p/golfml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://code.google.com/p/golfml/source/browse/golfml/schemas/golfml.xsd">
+<golfml xmlns="http://code.google.com/p/golfml" version="0.9" xmlns:g="http://code.google.com/p/golfml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://code.google.com/p/golfml/source/browse/golfml/schemas/golfml.xsd">
   <country-club>
     <name>Amarilla Country Club</name>
     <note>
-      <comment lang="es">EGA Handicapping</comment>
-      <comment lang="es">English spoken</comment>
+      <comment lang="en">EGA Handicapping</comment>
+      <comment lang="en">English spoken</comment>
       <comment lang="en">Created by Golfml Coursewriter</comment>
       <comment lang="en">http://www.charcodelvalle.com/golfmlweb/</comment>
     </note>
     <address>
-      <Street>San Miguel de Abona</Street>
       <municipality>San Miguel</municipality>
       <region>Tenerife</region>
       <postal-code>38688</postal-code>
-      <country code="es">Spain</country>
+      <country code="ES"> Spain</country>
       <website>http://www.amarillagolf.es/</website>
     </address>
     <contact type="club-house">
@@ -28,6 +27,14 @@
             <slope>126</slope>
           </qualification-usga>
         </qualification>
+        <summary>
+          <front units="meters">3032</front>
+          <front units="yards">3315</front>
+          <back units="meters">2886</back>
+          <back units="yards">3158</back>
+          <holes>18</holes>
+          <par>71</par>
+        </summary>
         <tee number="1">
           <par>4</par>
           <handicap-stroke>6</handicap-stroke>
@@ -144,6 +151,14 @@
             <slope>123</slope>
           </qualification-usga>
         </qualification>
+        <summary>
+          <front units="meters">2852</front>
+          <front units="yards">3119</front>
+          <back units="meters">2660</back>
+          <back units="yards">2911</back>
+          <holes>18</holes>
+          <par>71</par>
+        </summary>
         <tee number="1">
           <par>4</par>
           <handicap-stroke>6</handicap-stroke>
@@ -260,6 +275,14 @@
             <slope>122</slope>
           </qualification-usga>
         </qualification>
+        <summary>
+          <front units="meters">2474</front>
+          <front units="yards">2705</front>
+          <back units="meters">2374</back>
+          <back units="yards">2595</back>
+          <holes>18</holes>
+          <par>71</par>
+        </summary>
         <tee number="1">
           <par>4</par>
           <handicap-stroke>6</handicap-stroke>
@@ -374,6 +397,6 @@
       <s:preference name="handicap-method">usga</s:preference>
       <s:preference name="units-system">metric</s:preference>
     </application>
-    <version created="20-4-12 13:54:22" version="2.0.20120420"/>
+    <version created="29/04/2012 08:31:00" version="2.3.20120429"/>
   </country-club>
 </golfml>
