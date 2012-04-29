@@ -1,0 +1,405 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="9"/>
+    <PathDelim Value="\"/>
+    <General>
+      <MainUnit Value="0"/>
+      <Title Value="GolfML Reader"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <MajorVersionNr Value="1"/>
+      <MinorVersionNr Value="1"/>
+      <Language Value="0809"/>
+      <CharSet Value="04B0"/>
+      <StringTable Comments="Alpha" CompanyName="minesadorada" FileDescription="GolfML Reader" InternalName="golfuml" OriginalFilename="golfuml" ProductName="Puppy Linux 32 bit" ProductVersion="Laz: 9.30.0  fpc: 2.4.2"/>
+    </VersionInfo>
+    <BuildModes Count="2" Active="Retail">
+      <Item1 Name="Retail" Default="True"/>
+      <Item2 Name="DEBUGGING">
+        <CompilerOptions>
+          <Version Value="9"/>
+          <PathDelim Value="\"/>
+          <Target>
+            <Filename Value="golfumllinux32"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="."/>
+            <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+            <TargetCPU Value="i386"/>
+            <TargetOS Value="linux"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <GenerateDebugInfo Value="True"/>
+              <GenerateDwarf Value="True"/>
+            </Debugging>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <CompilerMessages>
+              <UseMsgFile Value="True"/>
+            </CompilerMessages>
+            <CompilerPath Value="$(CompPath)"/>
+          </Other>
+        </CompilerOptions>
+      </Item2>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
+      <ExcludeFileFilter Value="*.(bak|ppu|o|so);*~;backup"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+        <LaunchingApplication PathPlusParams="\usr\bin\xterm -T 'Lazarus Run Output' -e $(LazarusDir)\tools\runwait.sh $(TargetCmdLine)"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="1">
+      <Item1>
+        <PackageName Value="LCL"/>
+      </Item1>
+    </RequiredPackages>
+    <Units Count="14">
+      <Unit0>
+        <Filename Value="golfumlwin32.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="golfumlwin32"/>
+        <EditorIndex Value="3"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="14"/>
+        <UsageCount Value="111"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="ugolfmainform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="mainform"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ugolfmainform"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="133"/>
+        <CursorPos X="11" Y="153"/>
+        <UsageCount Value="111"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="thandicapgolfumlclass.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="thandicapgolfumlclass"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="462"/>
+        <CursorPos X="48" Y="486"/>
+        <UsageCount Value="111"/>
+        <Bookmarks Count="5">
+          <Item0 X="1" Y="634" ID="2"/>
+          <Item1 X="1" Y="908" ID="3"/>
+          <Item2 X="6" Y="887" ID="4"/>
+          <Item3 X="93" Y="456" ID="1"/>
+          <Item4 X="32" Y="650" ID="0"/>
+        </Bookmarks>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="ugolfml.pas"/>
+        <UnitName Value="ugolfml"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="41"/>
+        <CursorPos X="19" Y="74"/>
+        <UsageCount Value="52"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="MorganHill.xml"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="2" Y="11"/>
+        <UsageCount Value="5"/>
+        <DefaultSyntaxHighlighter Value="XML"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="coursedata.xml"/>
+        <EditorIndex Value="4"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="342"/>
+        <CursorPos X="46" Y="363"/>
+        <UsageCount Value="54"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="XML"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="thandicapclassunit.pas"/>
+        <UnitName Value="thandicapclassunit"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="257"/>
+        <CursorPos X="1" Y="270"/>
+        <UsageCount Value="52"/>
+        <Loaded Value="True"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="templateclass.pas"/>
+        <UnitName Value="classunit"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="34" Y="8"/>
+        <UsageCount Value="3"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="E:\usr\lib\lazarus\0.9.30\lcl\include\customform.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="856"/>
+        <CursorPos X="1" Y="877"/>
+        <UsageCount Value="5"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="E:\usr\lib\lazarus\0.9.30\lcl\include\customlistbox.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="472"/>
+        <CursorPos X="1" Y="493"/>
+        <UsageCount Value="5"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="scoreform.pas"/>
+        <UnitName Value="scoreform"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="5"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="uscoreform.pas"/>
+        <UnitName Value="uscoreform"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="121"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="5"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="oakhill.xml"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="24" Y="14"/>
+        <UsageCount Value="37"/>
+        <DefaultSyntaxHighlighter Value="XML"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="E:\usr\lib\lazarus\0.9.30\lcl\include\customcombobox.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="752"/>
+        <CursorPos X="10" Y="773"/>
+        <UsageCount Value="10"/>
+      </Unit13>
+    </Units>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="ugolfmainform.pas"/>
+        <Caret Line="270" Column="5" TopLine="247"/>
+      </Position1>
+      <Position2>
+        <Filename Value="ugolfmainform.pas"/>
+        <Caret Line="277" Column="23" TopLine="253"/>
+      </Position2>
+      <Position3>
+        <Filename Value="thandicapgolfumlclass.pas"/>
+        <Caret Line="5" Column="1" TopLine="1"/>
+      </Position3>
+      <Position4>
+        <Filename Value="thandicapgolfumlclass.pas"/>
+        <Caret Line="279" Column="43" TopLine="257"/>
+      </Position4>
+      <Position5>
+        <Filename Value="thandicapgolfumlclass.pas"/>
+        <Caret Line="297" Column="19" TopLine="286"/>
+      </Position5>
+      <Position6>
+        <Filename Value="thandicapgolfumlclass.pas"/>
+        <Caret Line="597" Column="7" TopLine="275"/>
+      </Position6>
+      <Position7>
+        <Filename Value="thandicapgolfumlclass.pas"/>
+        <Caret Line="766" Column="27" TopLine="745"/>
+      </Position7>
+      <Position8>
+        <Filename Value="thandicapgolfumlclass.pas"/>
+        <Caret Line="759" Column="23" TopLine="745"/>
+      </Position8>
+      <Position9>
+        <Filename Value="ugolfmainform.pas"/>
+        <Caret Line="272" Column="29" TopLine="188"/>
+      </Position9>
+      <Position10>
+        <Filename Value="ugolfmainform.pas"/>
+        <Caret Line="273" Column="29" TopLine="227"/>
+      </Position10>
+      <Position11>
+        <Filename Value="ugolfmainform.pas"/>
+        <Caret Line="274" Column="29" TopLine="228"/>
+      </Position11>
+      <Position12>
+        <Filename Value="ugolfmainform.pas"/>
+        <Caret Line="212" Column="54" TopLine="188"/>
+      </Position12>
+      <Position13>
+        <Filename Value="ugolfmainform.pas"/>
+        <Caret Line="376" Column="1" TopLine="365"/>
+      </Position13>
+      <Position14>
+        <Filename Value="ugolfmainform.pas"/>
+        <Caret Line="372" Column="6" TopLine="367"/>
+      </Position14>
+      <Position15>
+        <Filename Value="ugolfmainform.pas"/>
+        <Caret Line="385" Column="53" TopLine="359"/>
+      </Position15>
+      <Position16>
+        <Filename Value="ugolfmainform.pas"/>
+        <Caret Line="386" Column="53" TopLine="360"/>
+      </Position16>
+      <Position17>
+        <Filename Value="ugolfmainform.pas"/>
+        <Caret Line="387" Column="53" TopLine="361"/>
+      </Position17>
+      <Position18>
+        <Filename Value="thandicapgolfumlclass.pas"/>
+        <Caret Line="891" Column="100" TopLine="873"/>
+      </Position18>
+      <Position19>
+        <Filename Value="thandicapgolfumlclass.pas"/>
+        <Caret Line="469" Column="48" TopLine="446"/>
+      </Position19>
+      <Position20>
+        <Filename Value="thandicapgolfumlclass.pas"/>
+        <Caret Line="470" Column="52" TopLine="447"/>
+      </Position20>
+      <Position21>
+        <Filename Value="thandicapgolfumlclass.pas"/>
+        <Caret Line="112" Column="1" TopLine="87"/>
+      </Position21>
+      <Position22>
+        <Filename Value="thandicapgolfumlclass.pas"/>
+        <Caret Line="848" Column="39" TopLine="817"/>
+      </Position22>
+      <Position23>
+        <Filename Value="ugolfmainform.pas"/>
+        <Caret Line="359" Column="25" TopLine="1"/>
+      </Position23>
+      <Position24>
+        <Filename Value="ugolfmainform.pas"/>
+        <Caret Line="217" Column="65" TopLine="1"/>
+      </Position24>
+      <Position25>
+        <Filename Value="ugolfmainform.pas"/>
+        <Caret Line="218" Column="65" TopLine="172"/>
+      </Position25>
+      <Position26>
+        <Filename Value="thandicapgolfumlclass.pas"/>
+        <Caret Line="850" Column="85" TopLine="817"/>
+      </Position26>
+      <Position27>
+        <Filename Value="thandicapgolfumlclass.pas"/>
+        <Caret Line="486" Column="10" TopLine="446"/>
+      </Position27>
+      <Position28>
+        <Filename Value="thandicapgolfumlclass.pas"/>
+        <Caret Line="482" Column="62" TopLine="459"/>
+      </Position28>
+      <Position29>
+        <Filename Value="ugolfmainform.pas"/>
+        <Caret Line="189" Column="26" TopLine="1"/>
+      </Position29>
+      <Position30>
+        <Filename Value="ugolfmainform.pas"/>
+        <Caret Line="190" Column="26" TopLine="143"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="9"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="golfmlreaderwin32"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="."/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <CodeGeneration>
+      <SmartLinkUnit Value="True"/>
+      <Checks>
+        <IOChecks Value="True"/>
+      </Checks>
+      <SmallerCode Value="True"/>
+      <TargetCPU Value="i386"/>
+      <TargetOS Value="win32"/>
+      <Optimizations>
+        <OptimizationLevel Value="3"/>
+      </Optimizations>
+    </CodeGeneration>
+    <Linking>
+      <Debugging>
+        <UseLineInfoUnit Value="False"/>
+      </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+    <Other>
+      <Verbosity>
+        <ShowWarn Value="False"/>
+        <ShowNotes Value="False"/>
+        <ShowHints Value="False"/>
+      </Verbosity>
+      <CompilerMessages>
+        <UseMsgFile Value="True"/>
+      </CompilerMessages>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>
