@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="9"/>
+    <PathDelim Value="\"/>
+    <General>
+      <MainUnit Value="0"/>
+      <Title Value="Golf UML"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
+    <VersionInfo>
+      <StringTable ProductVersion=""/>
+    </VersionInfo>
+    <BuildModes Count="1" Active="Default">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
+      <ExcludeFileFilter Value="*.(bak|ppu|o|so);*~;backup"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="1">
+      <Item1>
+        <PackageName Value="LCL"/>
+      </Item1>
+    </RequiredPackages>
+    <Units Count="8">
+      <Unit0>
+        <Filename Value="ugolfmainform.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ugolfmainform"/>
+        <UsageCount Value="20"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="ugolfmainform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="mainform"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ugolfmainform"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="30" Y="36"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="golfumlclass.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="golfumlclass"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="45"/>
+        <CursorPos X="48" Y="79"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="ugolfml.pas"/>
+        <UnitName Value="ugolfml"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="4"/>
+        <CursorPos X="42" Y="8"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="MorganHill.xml"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="427"/>
+        <CursorPos X="2" Y="11"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="XML"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="coursedata.xml"/>
+        <EditorIndex Value="3"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="26" Y="14"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="XML"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="thandicapclassunit.pas"/>
+        <UnitName Value="thandicapclassunit"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="825"/>
+        <CursorPos X="20" Y="829"/>
+        <UsageCount Value="10"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="templateclass.pas"/>
+        <UnitName Value="classunit"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="158"/>
+        <CursorPos X="2" Y="184"/>
+        <UsageCount Value="10"/>
+      </Unit7>
+    </Units>
+    <JumpHistory Count="2" HistoryIndex="1">
+      <Position1>
+        <Filename Value="golfumlclass.pas"/>
+        <Caret Line="27" Column="10" TopLine="25"/>
+      </Position1>
+      <Position2>
+        <Filename Value="ugolfmainform.pas"/>
+        <Caret Line="9" Column="14" TopLine="1"/>
+      </Position2>
+    </JumpHistory>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="9"/>
+    <PathDelim Value="\"/>
+    <Target>
+      <Filename Value="ugolfmainform"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="C:\lazarus\exactega"/>
+      <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Linking>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+    <Other>
+      <CompilerMessages>
+        <UseMsgFile Value="True"/>
+      </CompilerMessages>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>
