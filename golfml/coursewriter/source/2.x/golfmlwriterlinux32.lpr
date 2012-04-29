@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, umainform, ugolfmlwriter_globals, ugolfmlclass,uwaitform,lnetvisual
+  Forms, umainform, ugolfmlwriter_globals,uwaitform,lnetvisual
   { you can add units after this };
 
 {$R *.res}

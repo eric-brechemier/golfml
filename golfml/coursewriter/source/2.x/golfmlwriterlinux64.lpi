@@ -98,10 +98,10 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="golfmlwriterlinux64"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="32" Y="21"/>
+        <CursorPos X="48" Y="5"/>
         <UsageCount Value="216"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -141,12 +141,10 @@
       <Unit4>
         <Filename Value="../exactega/thandicapgolfumlclass.pas"/>
         <UnitName Value="thandicapgolfumlclass"/>
-        <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
         <TopLine Value="215"/>
         <CursorPos X="84" Y="899"/>
         <UsageCount Value="103"/>
-        <Loaded Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="ugolfmlclass.pas"/>

@@ -91,7 +91,7 @@
         <Filename Value="golfumllinux64.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="golfumllinux64"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="15" Y="18"/>
@@ -117,22 +117,20 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="thandicapgolfumlclass"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="959"/>
-        <CursorPos X="13" Y="973"/>
+        <CursorPos X="67" Y="966"/>
         <UsageCount Value="69"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="ugolfml.pas"/>
         <UnitName Value="ugolfml"/>
-        <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
         <TopLine Value="41"/>
         <CursorPos X="19" Y="74"/>
         <UsageCount Value="34"/>
-        <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="MorganHill.xml"/>
@@ -144,7 +142,7 @@
       </Unit4>
       <Unit5>
         <Filename Value="coursedata.xml"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
         <TopLine Value="380"/>
         <CursorPos X="43" Y="379"/>
@@ -155,7 +153,7 @@
       <Unit6>
         <Filename Value="thandicapclassunit.pas"/>
         <UnitName Value="thandicapclassunit"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="236"/>
         <CursorPos X="1" Y="254"/>
@@ -202,12 +200,10 @@
       </Unit11>
       <Unit12>
         <Filename Value="oakhill.xml"/>
-        <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="24" Y="14"/>
         <UsageCount Value="17"/>
-        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="XML"/>
       </Unit12>
     </Units>

@@ -1,0 +1,34 @@
+object waitform: Twaitform
+  Left = 397
+  Height = 82
+  Top = 301
+  Width = 320
+  BorderIcons = []
+  BorderStyle = bsToolWindow
+  Caption = 'Import golfml File'
+  ClientHeight = 82
+  ClientWidth = 320
+  FormStyle = fsStayOnTop
+  Position = poMainFormCenter
+  ShowInTaskBar = stNever
+  LCLVersion = '0.9.30'
+  object lbl_info: TLabel
+    Left = 0
+    Height = 56
+    Top = 8
+    Width = 320
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Please wait.  Loading data....'
+    ParentColor = False
+    WordWrap = True
+  end
+  object loadprogress: TProgressBar
+    Left = 0
+    Height = 20
+    Top = 62
+    Width = 320
+    Align = alBottom
+    TabOrder = 0
+  end
+end

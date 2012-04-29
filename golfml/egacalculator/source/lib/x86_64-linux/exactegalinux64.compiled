@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <Compiler Value="/usr/bin/fpc" Date="1328714871"/>
+  <Params Value=" -MObjFPC -Scghi -Os3 -Tlinux -Px86_64 -Px86_64 -gl -vewnhi -l -Fi/mnt/sda1/lazarus/golfmlsvn/golfml/egacalculator/source/lib/x86_64-linux -Fu/usr/lib64/lazarus/components/lazcontrols/lib/x86_64-linux -Fu/usr/lib64/lazarus/lcl/units/x86_64-linux -Fu/usr/lib64/lazarus/lcl/units/x86_64-linux/gtk2 -Fu/usr/lib64/lazarus/packager/units/x86_64-linux -Fu/mnt/sda1/lazarus/golfmlsvn/golfml/egacalculator/source/ -Fu. -FU/mnt/sda1/lazarus/golfmlsvn/golfml/egacalculator/source/lib/x86_64-linux/ -oexactegalinux64 -dLCL -dLCLgtk2 exactegalinux64.lpr"/>
+</CONFIG>

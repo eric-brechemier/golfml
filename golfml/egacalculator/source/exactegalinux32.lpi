@@ -20,7 +20,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="1"/>
-      <BuildNr Value="50"/>
+      <BuildNr Value="51"/>
       <StringTable CompanyName="Lazarus" FileDescription="EGA Calculator" InternalName="egacalc" OriginalFilename="egacalc" ProductVersion="9.30.2/2.4.4"/>
     </VersionInfo>
     <BuildModes Count="2" Active="Retail">
@@ -89,7 +89,7 @@
         <Filename Value="exactegalinux32.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="exactegalinux32"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="6"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="12" Y="10"/>
@@ -117,7 +117,7 @@
         <ComponentName Value="scoreform"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uscoreform"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
         <TopLine Value="73"/>
         <CursorPos X="23" Y="53"/>
@@ -181,12 +181,10 @@
       <Unit9>
         <Filename Value="../twenty_linux/TBitClassUnit.pas"/>
         <UnitName Value="TBitClassUnit"/>
-        <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
         <TopLine Value="61"/>
         <CursorPos X="1" Y="116"/>
         <UsageCount Value="66"/>
-        <Loaded Value="True"/>
       </Unit9>
       <Unit10>
         <Filename Value="classunit.pas"/>
@@ -201,7 +199,7 @@
         <Filename Value="thandicapclassunit.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="thandicapclassunit"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="15" Y="13"/>
