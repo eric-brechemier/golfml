@@ -20,7 +20,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="1"/>
-      <BuildNr Value="35"/>
+      <BuildNr Value="36"/>
       <StringTable CompanyName="Lazarus" FileDescription="EGA Calculator" InternalName="egacalc" OriginalFilename="egacalc" ProductVersion="9.30.2/2.4.4"/>
     </VersionInfo>
     <BuildModes Count="1" Active="Default">
