@@ -1,0 +1,364 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="9"/>
+    <General>
+      <MainUnit Value="0"/>
+      <Title Value="Golfml CourseWriter"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <MajorVersionNr Value="1"/>
+      <StringTable ProductVersion=""/>
+    </VersionInfo>
+    <BuildModes Count="2" Active="Retail">
+      <Item1 Name="DEBUG" Default="True"/>
+      <Item2 Name="Retail">
+        <CompilerOptions>
+          <Version Value="9"/>
+          <Target>
+            <Filename Value="golfmlcoursewriterlinux64"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <CodeGeneration>
+            <SmartLinkUnit Value="True"/>
+            <SmallerCode Value="True"/>
+            <TargetCPU Value="x86_64"/>
+            <TargetOS Value="linux"/>
+            <Optimizations>
+              <OptimizationLevel Value="3"/>
+            </Optimizations>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <UseLineInfoUnit Value="False"/>
+            </Debugging>
+            <LinkSmart Value="True"/>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <Verbosity>
+              <ShowErrors Value="False"/>
+              <ShowWarn Value="False"/>
+              <ShowNotes Value="False"/>
+              <ShowHints Value="False"/>
+              <ShowGenInfo Value="False"/>
+              <ShowSummary Value="True"/>
+            </Verbosity>
+            <WriteFPCLogo Value="False"/>
+            <CompilerMessages>
+              <UseMsgFile Value="True"/>
+            </CompilerMessages>
+            <CompilerPath Value="$(CompPath)"/>
+          </Other>
+        </CompilerOptions>
+      </Item2>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
+      <ExcludeFileFilter Value="*.(bak|ppu|o|so);*~;backup"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+        <LaunchingApplication PathPlusParams="/usr/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="3">
+      <Item1>
+        <PackageName Value="SynEdit"/>
+        <MinVersion Major="1" Valid="True"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="FCL"/>
+        <MinVersion Major="1" Valid="True"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="LCL"/>
+      </Item3>
+    </RequiredPackages>
+    <Units Count="8">
+      <Unit0>
+        <Filename Value="golfmlwriterlinux64.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="golfmlwriterlinux64"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="5"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="32" Y="21"/>
+        <UsageCount Value="216"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="umainform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="mainform"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="umainform"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="21" Y="11"/>
+        <UsageCount Value="216"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="xmlwriting.txt"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="18"/>
+        <CursorPos X="27" Y="28"/>
+        <UsageCount Value="104"/>
+        <DefaultSyntaxHighlighter Value="None"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="ugolfmlwriter_globals.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ugolfmlwriter_globals"/>
+        <EditorIndex Value="3"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="29"/>
+        <CursorPos X="30" Y="27"/>
+        <UsageCount Value="204"/>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="../exactega/thandicapgolfumlclass.pas"/>
+        <UnitName Value="thandicapgolfumlclass"/>
+        <EditorIndex Value="4"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="215"/>
+        <CursorPos X="84" Y="899"/>
+        <UsageCount Value="103"/>
+        <Loaded Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="ugolfmlclass.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ugolfmlclass"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1794"/>
+        <CursorPos X="63" Y="1204"/>
+        <UsageCount Value="200"/>
+        <Bookmarks Count="2">
+          <Item0 X="6" Y="23" ID="1"/>
+          <Item1 X="1" Y="544" ID="0"/>
+        </Bookmarks>
+        <Loaded Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="../exactega/coursedata.xml"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="339"/>
+        <CursorPos X="43" Y="372"/>
+        <UsageCount Value="97"/>
+        <DefaultSyntaxHighlighter Value="XML"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="uwaitform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="waitform"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uwaitform"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="36" Y="21"/>
+        <UsageCount Value="90"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit7>
+    </Units>
+    <JumpHistory Count="29" HistoryIndex="28">
+      <Position1>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="1240" Column="24" TopLine="1216"/>
+      </Position1>
+      <Position2>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="1576" Column="24" TopLine="1552"/>
+      </Position2>
+      <Position3>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="1578" Column="26" TopLine="228"/>
+      </Position3>
+      <Position4>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="1" Column="9" TopLine="1"/>
+      </Position4>
+      <Position5>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="45" Column="20" TopLine="21"/>
+      </Position5>
+      <Position6>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="353" Column="21" TopLine="329"/>
+      </Position6>
+      <Position7>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="1194" Column="49" TopLine="1174"/>
+      </Position7>
+      <Position8>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="278" Column="1" TopLine="258"/>
+      </Position8>
+      <Position9>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1114" Column="36" TopLine="1107"/>
+      </Position9>
+      <Position10>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="1255" Column="46" TopLine="1238"/>
+      </Position10>
+      <Position11>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="1250" Column="49" TopLine="1238"/>
+      </Position11>
+      <Position12>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="348" Column="3" TopLine="327"/>
+      </Position12>
+      <Position13>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="1245" Column="58" TopLine="1238"/>
+      </Position13>
+      <Position14>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="399" Column="24" TopLine="372"/>
+      </Position14>
+      <Position15>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="383" Column="20" TopLine="368"/>
+      </Position15>
+      <Position16>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="385" Column="18" TopLine="370"/>
+      </Position16>
+      <Position17>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="388" Column="21" TopLine="373"/>
+      </Position17>
+      <Position18>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="1163" Column="20" TopLine="1148"/>
+      </Position18>
+      <Position19>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="1176" Column="1" TopLine="1161"/>
+      </Position19>
+      <Position20>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="1177" Column="3" TopLine="1161"/>
+      </Position20>
+      <Position21>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="243" Column="39" TopLine="237"/>
+      </Position21>
+      <Position22>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="1275" Column="51" TopLine="1270"/>
+      </Position22>
+      <Position23>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="1561" Column="31" TopLine="1549"/>
+      </Position23>
+      <Position24>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="1275" Column="21" TopLine="1263"/>
+      </Position24>
+      <Position25>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="2631" Column="34" TopLine="1375"/>
+      </Position25>
+      <Position26>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="2646" Column="95" TopLine="2630"/>
+      </Position26>
+      <Position27>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="2637" Column="55" TopLine="2620"/>
+      </Position27>
+      <Position28>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="2630" Column="35" TopLine="2620"/>
+      </Position28>
+      <Position29>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="310" Column="90" TopLine="293"/>
+      </Position29>
+    </JumpHistory>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="9"/>
+    <Target>
+      <Filename Value="golfmlcoursewriterlinux64"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <CodeGeneration>
+      <SmartLinkUnit Value="True"/>
+      <Checks>
+        <IOChecks Value="True"/>
+        <RangeChecks Value="True"/>
+        <OverflowChecks Value="True"/>
+        <StackChecks Value="True"/>
+      </Checks>
+      <TargetCPU Value="x86_64"/>
+      <TargetOS Value="linux"/>
+    </CodeGeneration>
+    <Linking>
+      <Debugging>
+        <GenerateDebugInfo Value="True"/>
+        <GenerateDwarf Value="True"/>
+      </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+    <Other>
+      <Verbosity>
+        <ShoLineNum Value="True"/>
+        <ShowHintsForUnusedUnitsInMainSrc Value="True"/>
+      </Verbosity>
+      <WriteFPCLogo Value="False"/>
+      <CompilerMessages>
+        <UseMsgFile Value="True"/>
+      </CompilerMessages>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

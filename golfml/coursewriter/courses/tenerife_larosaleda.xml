@@ -1,0 +1,409 @@
+<?xml version="1.0"?>
+<golfml xmlns="http://code.google.com/p/golfml" version="0.9" xmlns:g="http://code.google.com/p/golfml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://code.google.com/p/golfml/source/browse/golfml/schemas/golfml.xsd">
+  <country-club>
+    <name>La Rosaleda</name>
+    <note>
+      <comment lang="en">Small public course in north Tenerife</comment>
+      <comment lang="en">English spoken</comment>
+      <comment lang="en">Created by Golfml Coursewriter</comment>
+      <comment lang="en">http://www.charcodelvalle.com/golfmlweb/</comment>
+    </note>
+    <address>
+      <street>Camino Carrasco 17</street>
+      <municipality>Pueto de la Cruz</municipality>
+      <region>Tenerife</region>
+      <postal-code>38400</postal-code>
+      <country code="en">Spain</country>
+      <website>http://www.clubdegolfrosaleda.com</website>
+    </address>
+    <contact type="club-house">
+      <phone>00 34 922 373 000</phone>
+    </contact>
+    <amenety type="practice,">Practice Putting Green</amenety>
+    <amenety type="practice,">Practice Driving Range</amenety>
+    <amenety type="shop,">Clubhouse shop</amenety>
+    <amenety type="food,">Clubhouse bar</amenety>
+    <amenety type="food,">Clubhouse cafe/restaurant</amenety>
+    <amenety type="other,">Private parking</amenety>
+    <golf-course>
+      <name>18 Holes</name>
+      <tee-set name="Back" colour="white" gender="gentlemen">
+        <qualification>
+          <qualification-usga>
+            <rating>49.00</rating>
+            <slope>65</slope>
+          </qualification-usga>
+        </qualification>
+        <summary>
+          <front units="meters">502</front>
+          <front units="yards">548</front>
+          <back units="meters">502</back>
+          <back units="yards">548</back>
+          <holes>18</holes>
+          <par>54</par>
+        </summary>
+        <tee number="1">
+          <par>3</par>
+          <handicap-stroke>5</handicap-stroke>
+          <length units="meters">76</length>
+          <length units="yards">83</length>
+        </tee>
+        <tee number="2">
+          <par>3</par>
+          <handicap-stroke>7</handicap-stroke>
+          <length units="meters">61</length>
+          <length units="yards">67</length>
+        </tee>
+        <tee number="3">
+          <par>3</par>
+          <handicap-stroke>13</handicap-stroke>
+          <length units="meters">66</length>
+          <length units="yards">72</length>
+        </tee>
+        <tee number="4">
+          <par>3</par>
+          <handicap-stroke>3</handicap-stroke>
+          <length units="meters">55</length>
+          <length units="yards">60</length>
+        </tee>
+        <tee number="5">
+          <par>3</par>
+          <handicap-stroke>17</handicap-stroke>
+          <length units="meters">37</length>
+          <length units="yards">40</length>
+        </tee>
+        <tee number="6">
+          <par>3</par>
+          <handicap-stroke>15</handicap-stroke>
+          <length units="meters">37</length>
+          <length units="yards">40</length>
+        </tee>
+        <tee number="7">
+          <par>3</par>
+          <handicap-stroke>1</handicap-stroke>
+          <length units="meters">51</length>
+          <length units="yards">56</length>
+        </tee>
+        <tee number="8">
+          <par>3</par>
+          <handicap-stroke>9</handicap-stroke>
+          <length units="meters">66</length>
+          <length units="yards">72</length>
+        </tee>
+        <tee number="9">
+          <par>3</par>
+          <handicap-stroke>11</handicap-stroke>
+          <length units="meters">53</length>
+          <length units="yards">58</length>
+        </tee>
+        <tee number="10">
+          <par>3</par>
+          <handicap-stroke>6</handicap-stroke>
+          <length units="meters">76</length>
+          <length units="yards">83</length>
+        </tee>
+        <tee number="11">
+          <par>3</par>
+          <handicap-stroke>8</handicap-stroke>
+          <length units="meters">61</length>
+          <length units="yards">67</length>
+        </tee>
+        <tee number="12">
+          <par>3</par>
+          <handicap-stroke>14</handicap-stroke>
+          <length units="meters">66</length>
+          <length units="yards">72</length>
+        </tee>
+        <tee number="13">
+          <par>3</par>
+          <handicap-stroke>4</handicap-stroke>
+          <length units="meters">55</length>
+          <length units="yards">60</length>
+        </tee>
+        <tee number="14">
+          <par>3</par>
+          <handicap-stroke>18</handicap-stroke>
+          <length units="meters">37</length>
+          <length units="yards">40</length>
+        </tee>
+        <tee number="15">
+          <par>3</par>
+          <handicap-stroke>6</handicap-stroke>
+          <length units="meters">37</length>
+          <length units="yards">40</length>
+        </tee>
+        <tee number="16">
+          <par>3</par>
+          <handicap-stroke>2</handicap-stroke>
+          <length units="meters">51</length>
+          <length units="yards">56</length>
+        </tee>
+        <tee number="17">
+          <par>3</par>
+          <handicap-stroke>10</handicap-stroke>
+          <length units="meters">66</length>
+          <length units="yards">72</length>
+        </tee>
+        <tee number="18">
+          <par>3</par>
+          <handicap-stroke>12</handicap-stroke>
+          <length units="meters">53</length>
+          <length units="yards">58</length>
+        </tee>
+      </tee-set>
+      <tee-set name="Regular" colour="yellow" gender="gentlemen">
+        <qualification>
+          <qualification-usga>
+            <rating>49.00</rating>
+            <slope>65</slope>
+          </qualification-usga>
+        </qualification>
+        <summary>
+          <front units="meters">458</front>
+          <front units="yards">500</front>
+          <back units="meters">458</back>
+          <back units="yards">500</back>
+          <holes>18</holes>
+          <par>54</par>
+        </summary>
+        <tee number="1">
+          <par>3</par>
+          <handicap-stroke>5</handicap-stroke>
+          <length units="meters">69</length>
+          <length units="yards">75</length>
+        </tee>
+        <tee number="2">
+          <par>3</par>
+          <handicap-stroke>7</handicap-stroke>
+          <length units="meters">56</length>
+          <length units="yards">61</length>
+        </tee>
+        <tee number="3">
+          <par>3</par>
+          <handicap-stroke>13</handicap-stroke>
+          <length units="meters">60</length>
+          <length units="yards">66</length>
+        </tee>
+        <tee number="4">
+          <par>3</par>
+          <handicap-stroke>3</handicap-stroke>
+          <length units="meters">50</length>
+          <length units="yards">55</length>
+        </tee>
+        <tee number="5">
+          <par>3</par>
+          <handicap-stroke>17</handicap-stroke>
+          <length units="meters">34</length>
+          <length units="yards">37</length>
+        </tee>
+        <tee number="6">
+          <par>3</par>
+          <handicap-stroke>15</handicap-stroke>
+          <length units="meters">34</length>
+          <length units="yards">37</length>
+        </tee>
+        <tee number="7">
+          <par>3</par>
+          <handicap-stroke>1</handicap-stroke>
+          <length units="meters">47</length>
+          <length units="yards">51</length>
+        </tee>
+        <tee number="8">
+          <par>3</par>
+          <handicap-stroke>9</handicap-stroke>
+          <length units="meters">60</length>
+          <length units="yards">66</length>
+        </tee>
+        <tee number="9">
+          <par>3</par>
+          <handicap-stroke>11</handicap-stroke>
+          <length units="meters">48</length>
+          <length units="yards">52</length>
+        </tee>
+        <tee number="10">
+          <par>3</par>
+          <handicap-stroke>6</handicap-stroke>
+          <length units="meters">69</length>
+          <length units="yards">75</length>
+        </tee>
+        <tee number="11">
+          <par>3</par>
+          <handicap-stroke>8</handicap-stroke>
+          <length units="meters">56</length>
+          <length units="yards">61</length>
+        </tee>
+        <tee number="12">
+          <par>3</par>
+          <handicap-stroke>14</handicap-stroke>
+          <length units="meters">60</length>
+          <length units="yards">66</length>
+        </tee>
+        <tee number="13">
+          <par>3</par>
+          <handicap-stroke>4</handicap-stroke>
+          <length units="meters">50</length>
+          <length units="yards">55</length>
+        </tee>
+        <tee number="14">
+          <par>3</par>
+          <handicap-stroke>18</handicap-stroke>
+          <length units="meters">34</length>
+          <length units="yards">37</length>
+        </tee>
+        <tee number="15">
+          <par>3</par>
+          <handicap-stroke>6</handicap-stroke>
+          <length units="meters">34</length>
+          <length units="yards">37</length>
+        </tee>
+        <tee number="16">
+          <par>3</par>
+          <handicap-stroke>2</handicap-stroke>
+          <length units="meters">47</length>
+          <length units="yards">51</length>
+        </tee>
+        <tee number="17">
+          <par>3</par>
+          <handicap-stroke>10</handicap-stroke>
+          <length units="meters">60</length>
+          <length units="yards">66</length>
+        </tee>
+        <tee number="18">
+          <par>3</par>
+          <handicap-stroke>12</handicap-stroke>
+          <length units="meters">48</length>
+          <length units="yards">52</length>
+        </tee>
+      </tee-set>
+      <tee-set name="Ladies" colour="red" gender="ladies">
+        <qualification>
+          <qualification-usga>
+            <rating>49.70</rating>
+            <slope>64</slope>
+          </qualification-usga>
+        </qualification>
+        <summary>
+          <front units="meters">458</front>
+          <front units="yards">500</front>
+          <back units="meters">458</back>
+          <back units="yards">500</back>
+          <holes>18</holes>
+          <par>54</par>
+        </summary>
+        <tee number="1">
+          <par>3</par>
+          <handicap-stroke>5</handicap-stroke>
+          <length units="meters">69</length>
+          <length units="yards">75</length>
+        </tee>
+        <tee number="2">
+          <par>3</par>
+          <handicap-stroke>7</handicap-stroke>
+          <length units="meters">56</length>
+          <length units="yards">61</length>
+        </tee>
+        <tee number="3">
+          <par>3</par>
+          <handicap-stroke>13</handicap-stroke>
+          <length units="meters">60</length>
+          <length units="yards">66</length>
+        </tee>
+        <tee number="4">
+          <par>3</par>
+          <handicap-stroke>3</handicap-stroke>
+          <length units="meters">50</length>
+          <length units="yards">55</length>
+        </tee>
+        <tee number="5">
+          <par>3</par>
+          <handicap-stroke>17</handicap-stroke>
+          <length units="meters">34</length>
+          <length units="yards">37</length>
+        </tee>
+        <tee number="6">
+          <par>3</par>
+          <handicap-stroke>15</handicap-stroke>
+          <length units="meters">34</length>
+          <length units="yards">37</length>
+        </tee>
+        <tee number="7">
+          <par>3</par>
+          <handicap-stroke>1</handicap-stroke>
+          <length units="meters">47</length>
+          <length units="yards">51</length>
+        </tee>
+        <tee number="8">
+          <par>3</par>
+          <handicap-stroke>9</handicap-stroke>
+          <length units="meters">60</length>
+          <length units="yards">66</length>
+        </tee>
+        <tee number="9">
+          <par>3</par>
+          <handicap-stroke>11</handicap-stroke>
+          <length units="meters">48</length>
+          <length units="yards">52</length>
+        </tee>
+        <tee number="10">
+          <par>3</par>
+          <handicap-stroke>6</handicap-stroke>
+          <length units="meters">69</length>
+          <length units="yards">75</length>
+        </tee>
+        <tee number="11">
+          <par>3</par>
+          <handicap-stroke>8</handicap-stroke>
+          <length units="meters">56</length>
+          <length units="yards">61</length>
+        </tee>
+        <tee number="12">
+          <par>3</par>
+          <handicap-stroke>14</handicap-stroke>
+          <length units="meters">60</length>
+          <length units="yards">66</length>
+        </tee>
+        <tee number="13">
+          <par>3</par>
+          <handicap-stroke>4</handicap-stroke>
+          <length units="meters">50</length>
+          <length units="yards">55</length>
+        </tee>
+        <tee number="14">
+          <par>3</par>
+          <handicap-stroke>18</handicap-stroke>
+          <length units="meters">34</length>
+          <length units="yards">37</length>
+        </tee>
+        <tee number="15">
+          <par>3</par>
+          <handicap-stroke>6</handicap-stroke>
+          <length units="meters">34</length>
+          <length units="yards">37</length>
+        </tee>
+        <tee number="16">
+          <par>3</par>
+          <handicap-stroke>2</handicap-stroke>
+          <length units="meters">47</length>
+          <length units="yards">51</length>
+        </tee>
+        <tee number="17">
+          <par>3</par>
+          <handicap-stroke>10</handicap-stroke>
+          <length units="meters">60</length>
+          <length units="yards">66</length>
+        </tee>
+        <tee number="18">
+          <par>3</par>
+          <handicap-stroke>12</handicap-stroke>
+          <length units="meters">48</length>
+          <length units="yards">52</length>
+        </tee>
+      </tee-set>
+    </golf-course>
+    <application name="scorecard application" dotname="com.scorecard.app" xmlns:s="http://app.scorecard.com/golfml">
+      <s:preference name="handicap-method">usga</s:preference>
+      <s:preference name="units-system">metric</s:preference>
+    </application>
+    <version created="22-4-12 14:11:26" version="2.1.20120422"/>
+  </country-club>
+</golfml>
