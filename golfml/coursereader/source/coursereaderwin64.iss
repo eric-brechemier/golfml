@@ -5,7 +5,7 @@
 #define MyAppVersion "1.5"
 #define MyAppPublisher "minesadorada"
 #define MyAppURL "http://code.google.com/p/golfml/"
-#define MyAppExeName "golfmlreaderwin32.exe"
+#define MyAppExeName "golfmlreaderwin64.exe"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
