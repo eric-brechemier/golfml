@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="http://www.charcodelvalle.com/golfmlweb/files/static-course.xsl"?>
 <golfml xmlns="http://code.google.com/p/golfml" version="0.9" xmlns:g="http://code.google.com/p/golfml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://code.google.com/p/golfml/source/browse/golfml/schemas/golfml.xsd">
   <country-club>
     <name>Buenavista Golf</name>
@@ -14,7 +13,7 @@
       <municipality>Isla Baja</municipality>
       <region>Tenerife</region>
       <postal-code>38480</postal-code>
-      <country code="US">Spain</country>
+      <country code="ES"> Spain</country>
       <website>http://www.buenavistagolf.es/</website>
     </address>
     <contact type="club-house">
@@ -532,6 +531,6 @@
       <s:preference name="handicap-method">usga</s:preference>
       <s:preference name="units-system">metric</s:preference>
     </application>
-    <version created="25-4-12 20:54:55" version="2.2.20120423"/>
+    <version created="29/04/2012 08:27:41" version="2.3.20120429"/>
   </country-club>
 </golfml>

@@ -534,6 +534,6 @@
       <s:preference name="handicap-method">usga</s:preference>
       <s:preference name="units-system">metric</s:preference>
     </application>
-    <version created="26-4-12 09:27:45" version="2.2.20120423"/>
+    <version created="29/04/2012 08:27:18" version="2.3.20120429"/>
   </country-club>
 </golfml>

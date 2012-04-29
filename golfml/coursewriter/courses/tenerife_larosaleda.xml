@@ -13,18 +13,18 @@
       <municipality>Pueto de la Cruz</municipality>
       <region>Tenerife</region>
       <postal-code>38400</postal-code>
-      <country code="en">Spain</country>
+      <country code="ES"> Spain</country>
       <website>http://www.clubdegolfrosaleda.com</website>
     </address>
     <contact type="club-house">
       <phone>00 34 922 373 000</phone>
     </contact>
-    <amenety type="practice,">Practice Putting Green</amenety>
-    <amenety type="practice,">Practice Driving Range</amenety>
-    <amenety type="shop,">Clubhouse shop</amenety>
-    <amenety type="food,">Clubhouse bar</amenety>
-    <amenety type="food,">Clubhouse cafe/restaurant</amenety>
-    <amenety type="other,">Private parking</amenety>
+    <amenety type="practice">Practice putting green</amenety>
+    <amenety type="practice">Practice driving range</amenety>
+    <amenety type="shop">Clubhouse shop</amenety>
+    <amenety type="food">Clubhouse bar</amenety>
+    <amenety type="food">Clubhouse cafe/restaurant</amenety>
+    <amenety type="other">Private parking</amenety>
     <golf-course>
       <name>18 Holes</name>
       <tee-set name="Back" colour="white" gender="gentlemen">
@@ -404,6 +404,6 @@
       <s:preference name="handicap-method">usga</s:preference>
       <s:preference name="units-system">metric</s:preference>
     </application>
-    <version created="22-4-12 14:11:26" version="2.1.20120422"/>
+    <version created="29/04/2012 08:29:01" version="2.3.20120429"/>
   </country-club>
 </golfml>
