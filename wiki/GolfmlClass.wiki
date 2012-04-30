@@ -20,8 +20,10 @@ Var: GolfmlClass:TGolfMLClass;
 Both methods initialise all variables in the class and prepare it for use. The Function InitOK only returns TRUE if all is well.
 
 EXAMPLE:
-{{{GolfmlClass:=TGolfMLClass.Create; 
-If NOT GolfmlClass.InitOK then Halt;}}}
+{{{
+GolfmlClass:=TGolfMLClass.Create; 
+If NOT GolfmlClass.InitOK then Halt;
+}}}
 
   # function MakeGolfmlFile:Boolean;
     * Returns TRUE=Success.  Overwrites any file with the same name (set in CourseXMLPath property)
@@ -107,20 +109,25 @@ Property ClubMaxCommentsIndex:Cardinal
  
 
 // MaxIndex-type properties help when setting up a loop to read the indexed property values
-// e.g. {{{For iCount:=0 to MaxCourseIndex do
+// e.g. 
+{{{
+For iCount:=0 to MaxCourseIndex do
      begin
         CourseIndex:=iCount; // Set the course number
         sCourseListItem:=CourseName; // Read data for this course
-    end;}}}
+    end;
+}}}
  
 
 WRITING EXAMPLE:
 To set the Par of Hole 3 to the value 5 on the first course at Tee-position 1:
 
-{{{GolfmlClass.CourseIndex:=0;
+{{{
+GolfmlClass.CourseIndex:=0;
 GolfmlClass.TeeIndex:=0;
 GolfmlClass.HoleIndex:=2;
-GolfmlClass.Par:=5;}}}
+GolfmlClass.Par:=5;
+}}}
 
 How to populate the data before calling MakeGolfmlFile
 
@@ -151,7 +158,9 @@ GolfmlClass.CourseXMLPath:='C:\courses\mycourse.xml';
 GolfmlClass.GetCourseInfoFromFile;
 }}}
 Retrieve the Club properties first.
-{{{sName:=GolfmlClass.Clubname;}}}
+{{{
+sName:=GolfmlClass.Clubname;
+}}}
 ... etc. etc.
 
 Retrieve the data for each hole in each tee set in each course via a loop
