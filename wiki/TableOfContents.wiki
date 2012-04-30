@@ -19,7 +19,7 @@
    * Other
       * [Branding Branding]
       * [Links Links]
-   * Applications
+   * Software
       * [CourseWriter Golfml Course Writer]
         * [CourseWriterHelp Manual/Help]
       * [CourseReader Golfml Course Reader]
