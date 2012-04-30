@@ -30,7 +30,7 @@ On the File menu, click 'Import golfml file...'.  After a short delay, the golfm
 
 You can then add, delete, change and edit anything you like, and when you are done, click the 'Save all data to golfml file' button.
 
-Note: If you save the file under the same name you loaded it, the new file will always overwrite the old one.
+_Note: If you save the file under the same name you loaded it, the new file will always overwrite the old one._
 
 == Can I change a golfml file myself using a text editor? ==
 
