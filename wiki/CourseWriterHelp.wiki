@@ -32,9 +32,9 @@ Note: If you save the file under the same name you loaded it, the new file will 
 
 == Can I change a golfml file myself using a text editor? ==
 
-Yes.  That is one of the strengths of XML as a data format, but it is safer to edit via Golfml CourseWriter (Menu: File/Import golfml file...)
+Yes.  That is one of the strengths of XML as a data format, but it is safer to edit via Golfml !CourseWriter (Menu: File/Import golfml file...)
 
-== How can I display a scorecard on a web page using Golfml CourseWriter? ==
+== How can I display a scorecard on a web page using Golfml !CourseWriter? ==
 
  * Make or import a course (e.g. 'mycourse.xml')
  * In the Mode menu, click 'Course + Generic Scorecard stylesheet'
