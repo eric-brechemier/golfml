@@ -1,0 +1,26 @@
+#summary Information about USGA/EGA Handicap Calculator.
+#sidebar TableOfContents
+
+== USGA/EGA Handicap Calculator ==
+The USGA/EGA Handicap Calculator can import any golfml course file, and will automatically use the course data to accurately do its calculations.  It makes the job of Golf Society handicap secretary much easier!
+
+This application has 3 functions, all conforming to the official USGA/EGA handicapping rules:
+  # Refactor (make new) Course Handicap
+    * This is to calculate a new exact USGA/EGA handicap using 3 recent scorecards from the same course.  The best card is selected, and the strokes input into a form.  The calculator will then work out the correct exact USGA/EGA handicap from this data, using the published USGA/EGA formula.
+  # Calculate Course Playing Handicap
+    * Using the Course Rating, Slope Rating, Tee position and Exact USGA/EGA handicap the application will display the playing handicap for the course and tee-position.
+  # Calculate Handicap Adjustment
+    * Using the course information, and entered exact USGA/EGA handicap and Stableford score, the application will work out the correct USGA/EGA handicap adjustment (up or down) and any change in Category.  The information is clearly displayed as a summary.
+----
+=== Platforms ===
+  * Handicap Calculator is currently available on this project site as binaries for :
+    * Windows 64-bit
+    * Windows 32-bit
+    * Linux 64-bit
+    * Linux 32-bit
+  * The Lazarus/FPC source code for Handicap Calculator is also available from this project site
+  * All code is released via a [http://creativecommons.org/ Creative Commons] license, and you are free to download and compile it.
+----
+=== Screen Shots ===
+==== Opening Screen ====
+http://golfml.googlecode.com/files/egacalculator.jpg
