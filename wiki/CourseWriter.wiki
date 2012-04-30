@@ -13,7 +13,7 @@ CourseWriter can also automatically make a golfml file that will display as scor
 
 At any time, you can press F1 to see [CourseWriterHelp online help].
 
-== ScreenShots ==
+== Screen Shots ==
 === Opening Screen ===
 http://golfml.googlecode.com/files/golfmlcoursewriter.jpg
 === New course input ===
