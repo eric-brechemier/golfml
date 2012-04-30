@@ -31,10 +31,10 @@ If NOT GolfmlClass.InitOK then Halt;
     * Returns TRUE=Success.  Overwrites any file with the same name (set in CourseXMLPath property)
   # function *!GetCourseInfoFromFile*:boolean
     * Returns TRUE=Success
-
-!GolfmlClass.!MakeGolfmlFile should only be called *after* all the data has been set using the properties (see below)
-
-!GolfmlClass.!GetCourseInfoFromFile is called *before* any properties are read and after CourseXMLPath has been set.
+Reading
+  * !GolfmlClass.!GetCourseInfoFromFile is called *before* any properties are read and after CourseXMLPath has been set.
+Writing 
+  * !GolfmlClass.!MakeGolfmlFile should only be called *after* all the data has been set using the properties (see below)
 ----
 == Properties Read/Write ==
 {{{
