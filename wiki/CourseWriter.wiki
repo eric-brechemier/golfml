@@ -1,4 +1,5 @@
 #summary One-sentence summary of this page.
+#sidebar TableOfContents
 
 == Golfml CourseWriter V2.x ==
 
@@ -11,3 +12,9 @@ CourseWriter can also open, edit and save any valid golfml course file.
 CourseWriter can also automatically make a golfml file that will display as scorecard.
 
 At any time, you can press F1 to see [CourseWriterHelp online help].
+
+== ScreenShots ==
+=== Opening Screen ===
+http://golfml.googlecode.com/files/golfmlcoursewriter.jpg
+=== New course input ===
+http://golfml.googlecode.com/files/golfmlcoursewriter1.jpg
