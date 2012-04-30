@@ -1,7 +1,8 @@
 #summary Information about golfml Course Reader.
 #sidebar TableOfContents
-
-== golfml !CourseReader ==
+= golfml !CourseReader =
+This Page: <wiki:toc max_depth="4" />
+----
 This application will read any well-formed golml file and display its contents clearly.
 ----
 === Platforms ===
