@@ -23,4 +23,4 @@
       * [CourseWriter Golfml Course Writer]
         * [CourseWriterHelp Manual/Help]
       * [CourseReader Golfml Course Reader]
-      * [HandicapCalculator USGA/EGA Handicap Calculator
+      * [HandicapCalculator USGA/EGA Handicap Calculator]
