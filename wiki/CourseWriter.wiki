@@ -12,7 +12,7 @@
   * !CourseWriter can also automatically make a golfml file that will display as scorecard.
 
   * At any time, you can press F1 to see [CourseWriterHelp online help].
-
+----
 == Screen Shots ==
 === Opening Screen ===
 http://golfml.googlecode.com/files/golfmlcoursewriter.jpg
