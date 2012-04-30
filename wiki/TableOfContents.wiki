@@ -22,5 +22,5 @@
    * Applications
       * [CourseWriter Golfml Course Writer]
         * [CourseWriterHelp Manual/Help]
-      * Golfml Course Reader
+      * [CourseReader Golfml Course Reader]
       * USGA/EGA Handicap Calculator
