@@ -1,5 +1,5 @@
 #summary Information about golfml Course Reader.
-# sidebar
+#sidebar TableOfContents
 
 == golfml !CourseReader ==
 This application will read any well-formed golml file and display its contents clearly.
