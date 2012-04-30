@@ -1,7 +1,8 @@
 #summary Information about USGA/EGA Handicap Calculator.
 #sidebar TableOfContents
-
-== USGA/EGA Handicap Calculator ==
+= USGA/EGA Handicap Calculator =
+This Page: <wiki:toc max_depth="4" />
+----
 The USGA/EGA Handicap Calculator can import any golfml course file, and will automatically use the course data to accurately do its calculations.  It makes the job of Golf Society handicap secretary much easier!
 
 This application has 3 functions, all conforming to the official USGA/EGA handicapping rules:
