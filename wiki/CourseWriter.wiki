@@ -13,8 +13,17 @@
 
   * At any time, you can press F1 to see [CourseWriterHelp online help].
 ----
-== Screen Shots ==
-=== Opening Screen ===
+=== Platforms ===
+  * Golfml !CourseWriter is currently available on this project site as binaries for :
+    * Windows 64-bit
+    * Windows 32-bit
+    * Linux 64-bit
+    * Linux 32-bit
+  * The Lazarus/FPC source code for !CourseWriter is also available from this project site
+  * All code is released via a Creative Commons license
+----
+=== Screen Shots ===
+==== Opening Screen ====
 http://golfml.googlecode.com/files/golfmlcoursewriter.jpg
-=== New course input ===
+==== New course input ====
 http://golfml.googlecode.com/files/golfmlcoursewriter1.jpg
