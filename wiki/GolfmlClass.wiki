@@ -27,14 +27,14 @@ GolfmlClass:=TGolfMLClass.Create;
 If NOT GolfmlClass.InitOK then Halt;
 }}}
 
-  # function MakeGolfmlFile:Boolean;
-    * Returns TRUE=Success.  Overwrites any file with the same name (set in CourseXMLPath property)
-  # function GetCourseInfoFromFile:boolean
+  # function !MakeGolfmlFile:Boolean;
+    * Returns TRUE=Success.  Overwrites any file with the same name (set in !CourseXMLPath property)
+  # function !GetCourseInfoFromFile:boolean
     * Returns TRUE=Success
 
-GolfmlClass.MakeGolfmlFile should only be called after all the data has been set using the properties (see below)
+!GolfmlClass.MakeGolfmlFile should only be called after all the data has been set using the properties (see below)
 
-GolfmlClass.GetCourseInfoFromFile is called before any properties are read.
+!GolfmlClass.GetCourseInfoFromFile is called before any properties are read.
 
 == Properties Read/Write ==
 {{{
@@ -110,7 +110,7 @@ Property ClubMaxAmenitiesIndex:Cardinal
 Property ClubMaxCommentsIndex:Cardinal
 }}} 
 
-  * MaxIndex-type properties help when setting up a loop to read the indexed property values  e.g. 
+  * !MaxIndex-type properties help when setting up a loop to read the indexed property values  e.g. 
 {{{
 For iCount:=0 to MaxCourseIndex do
      begin
@@ -130,7 +130,7 @@ GolfmlClass.HoleIndex:=2;
 GolfmlClass.Par:=5;
 }}}
 
-How to populate the data before calling MakeGolfmlFile
+How to populate the data before calling !MakeGolfmlFile
 
 Normally you would set up 3 nested loops, and assign values to properties within the loops according to their scope.
 
@@ -150,7 +150,7 @@ For CourseLoop:=0 to ... DO
   end; // next tee position
 end; // next course
 }}}
-  * How to retrieve the data after calling GetCourseInfoFromFile
+  * How to retrieve the data after calling !GetCourseInfoFromFile
 
 READING EXAMPLE
 {{{
