@@ -8,8 +8,10 @@ It will also read a well-formed golfml XML golf information exchange file and pr
 
 You can have as many Courses and Tee positions as you like (they are stored in internal dynamic arrays) , but only one Golf Club.  Holes can be 1 up to 18.
 ----
+{{{
 Uses: ugolfmlclass
 Var: GolfmlClass:TGolfMLClass;
+}}}
 ----
 == Methods ==
 
@@ -35,7 +37,7 @@ GolfmlClass.MakeGolfmlFile should only be called after all the data has been set
 GolfmlClass.GetCourseInfoFromFile is called before any properties are read.
 
 == Properties Read/Write ==
-
+{{{
 // Club-wide Properties
 property ClubAmeneties[iIndex:Integer]: string // 0..
 property ClubComments[iIndex:Integer]: string // 0..
@@ -106,10 +108,9 @@ property MaxCourseIndex:Cardinal // Highest value for CourseIndex
 Property MaxTeeColourIndex:Cardinal
 Property ClubMaxAmenitiesIndex:Cardinal
 Property ClubMaxCommentsIndex:Cardinal
- 
+}}} 
 
-// MaxIndex-type properties help when setting up a loop to read the indexed property values
-// e.g. 
+  * MaxIndex-type properties help when setting up a loop to read the indexed property values  e.g. 
 {{{
 For iCount:=0 to MaxCourseIndex do
      begin
