@@ -1,0 +1,173 @@
+#summary Lazarus/FreePascal class for reading and writing golfml files.
+#sidebar TableOfContents
+= tgolfmlclass =
+
+A Lazarus/Free Pascal class to accept data via properties and write a well-formed golfml XML golf information exchange file.
+
+It will also read a well-formed golfml XML golf information exchange file and present the data via properties.
+
+You can have as many Courses and Tee positions as you like (they are stored in internal dynamic arrays) , but only one Golf Club.  Holes can be 1 up to 18.
+----
+Uses: ugolfmlclass
+Var: GolfmlClass:TGolfMLClass;
+----
+== Methods ==
+
+  # function InitOK: boolean
+    * Returns TRUE = Success, FALSE = Fatal Error
+  # Procedure Reset (use before re-assigning a new club and courses)
+
+Both methods initialise all variables in the class and prepare it for use. The Function InitOK only returns TRUE if all is well.
+
+EXAMPLE:
+{{{GolfmlClass:=TGolfMLClass.Create; 
+If NOT GolfmlClass.InitOK then Halt;}}}
+
+  # function MakeGolfmlFile:Boolean;
+    * Returns TRUE=Success.  Overwrites any file with the same name (set in CourseXMLPath property)
+  # function GetCourseInfoFromFile:boolean
+    * Returns TRUE=Success
+
+GolfmlClass.MakeGolfmlFile should only be called after all the data has been set using the properties (see below)
+
+GolfmlClass.GetCourseInfoFromFile is called before any properties are read.
+
+== Properties Read/Write ==
+
+// Club-wide Properties
+property ClubAmeneties[iIndex:Integer]: string // 0..
+property ClubComments[iIndex:Integer]: string // 0..
+// Both are dynamic properties that grow as assigned.  They should be assigned in order for reliable results.
+GolfmlClass.ClubAmeneties[0]:='Some String';
+GolfmlClass.ClubAmeneties[1]:='Some Other String';
+
+
+property CourseXMLPath: string // Note: THIS NOT CHECKED FOR VALIDITY by tgolfmlclass.
+property ClubName: string
+property ClubCountry: string
+property ClubCountryCode: string
+property ClubMunicipality: string
+property ClubRegion: string
+property ClubStreet: string
+property ClubPostCode: string
+property ClubWebsite: string
+property ClubPhone: string
+ 
+
+// Course-wide Properties
+// Change courses by changing the CourseIndex property (0-based)
+property CourseIndex:Cardinal  //(zero-based)
+Property CourseName:String
+Property CoursePar:Cardinal // Total Par value of the course
+Property CourseNumberOfHoles:Cardinal //(1-based, usually 1 or 18)
+ 
+
+// Tee Position-wide Properties
+// Change Tee sets by changing the TeeColourIndex property (0-based)
+// Normally, TeeColourIndex is normally from Gold (0) to Red (5) but it can be any scheme you like as long as the TeeColour and TeeGender agree.
+Property TeeColourIndex:Cardinal  //(zero-based)
+property TeeTitle: string // Can be anything: 'Competition', 'Regular', 'Ladies'
+property TeeColour: string // i.e. 'gold', 'black', 'white', 'yellow', 'blue', 'red'
+property TeeGender: string // 'gentlemen' or 'ladies'
+Property CourseRating:Single
+Property SlopeRating:Cardinal
+
+ 
+
+// Hole Properties
+// Change Hole by changing the HoleIndex property (0-17)
+property HoleIndex:Cardinal //(zero-based)
+Property Par:Cardinal
+Property StrokeIndex:Cardinal
+Property Metric:Boolean // Affects Distance conversion. Metric=TRUE means distances in meters
+Property TeeDistanceMetres:Cardinal
+Property TeeDistanceYards:Cardinal
+// Note Tee Distances are automatically converted yards->meters and meters->yards.  Only specify yards OR meters when setting Tee Distances
+
+// Stylesheet writing properties
+Property IncludeScoreCardStylesheetReference:Boolean
+Property IncludePlayerScoreCardStylesheetReference:Boolean
+Property ScoreCardPlayerName:String
+Property ScoreCardPlayerGender:String
+Property ScoreCardPlayerDateOfBirth:String
+Property ScoreCardPlayerHandicap:Single
+
+=== Properties Read Only ===
+
+Property Version:String readonly;
+Property InTeeDistance:Cardinal; // Calculated value for each course.Metric determines metres or yards
+Property OutTeeDistance:Cardinal // Calculated value for each course. Metric determines metres or yards
+Property TotalTeeDistance:Cardinal // Calculated value for each course. Metric determines metres or yards
+Property CourseTotalPar:Cardinal // Calculated value for each course.
+Property BogeyRating:Single // Calculated value for each tee position.
+property MaxCourseIndex:Cardinal // Highest value for CourseIndex
+Property MaxTeeColourIndex:Cardinal
+Property ClubMaxAmenitiesIndex:Cardinal
+Property ClubMaxCommentsIndex:Cardinal
+ 
+
+// MaxIndex-type properties help when setting up a loop to read the indexed property values
+// e.g. {{{For iCount:=0 to MaxCourseIndex do
+     begin
+        CourseIndex:=iCount; // Set the course number
+        sCourseListItem:=CourseName; // Read data for this course
+    end;}}}
+ 
+
+WRITING EXAMPLE:
+To set the Par of Hole 3 to the value 5 on the first course at Tee-position 1:
+
+{{{GolfmlClass.CourseIndex:=0;
+GolfmlClass.TeeIndex:=0;
+GolfmlClass.HoleIndex:=2;
+GolfmlClass.Par:=5;}}}
+
+How to populate the data before calling MakeGolfmlFile
+
+Normally you would set up 3 nested loops, and assign values to properties within the loops according to their scope.
+
+EXAMPLE:
+{{{
+...Set Club-wide properties...
+For CourseLoop:=0 to ... DO
+  GolfmlClass.CourseIndex:=CourseLoop; // Write data to this course
+  ...assign Course-wide properties...
+  For TeeLoop:=0 to .. DO
+    GolfmlClass.TeeColourIndex:=TeeLoop; // Write data to this Tee Position in this course
+    ...assign Tee Position-wide properties...
+    For HoleLoop:=0 to 17 (or 9) DO
+        GolfmlClass.HoleIndex:=HoleLoop; // Write data to this hole in this Tee Position in this course
+        ...assign Hole properties....
+    end; // next hole
+  end; // next tee position
+end; // next course
+}}}
+  * How to retrieve the data after calling GetCourseInfoFromFile
+
+READING EXAMPLE
+{{{
+GolfmlClass.Reset;
+GolfmlClass.CourseXMLPath:='C:\courses\mycourse.xml';
+GolfmlClass.GetCourseInfoFromFile;
+}}}
+Retrieve the Club properties first.
+{{{sName:=GolfmlClass.Clubname;}}}
+... etc. etc.
+
+Retrieve the data for each hole in each tee set in each course via a loop
+{{{
+For CourseLoop:=0 to GolfmlClass.MaxCourseIndex DO
+  GolfmlClass.CourseIndex:=CourseLoop; // Read data from this course
+  ...get Course-wide properties...
+  .. get Hole pars and strokeindexes
+  For TeeLoop:=0 to GolfmlClass.MaxTeeColourIndex DO
+    GolfmlClass.TeeColourIndex:=TeeLoop; // Read data from this Tee Position in this course
+    ...get Tee Position-wide properties for this course
+    .... get Course and Slope ratings.  Get the Tee colours, titles and genders...
+    For HoleLoop:=GolfmlClass.CourseNumberOfHoles DO
+        GolfmlClass.HoleIndex:=HoleLoop; // Read data from this hole in this Tee Position in this course
+        ...Get Hole distances in yards and metres
+    end; // next hole
+  end; // next tee position
+end; // next course
+}}}
