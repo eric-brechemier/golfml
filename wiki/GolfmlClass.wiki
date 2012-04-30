@@ -132,7 +132,7 @@ GolfmlClass.HoleIndex:=2;
 GolfmlClass.Par:=5;
 }}}
 
-How to populate the data before calling !MakeGolfmlFile
+==== How to populate the data before calling !MakeGolfmlFile ====
 
 Normally you would set up 3 nested loops, and assign values to properties within the loops according to their scope.
 
@@ -152,7 +152,7 @@ For CourseLoop:=0 to ... DO
   end; // next tee position
 end; // next course
 }}}
-  * How to retrieve the data after calling !GetCourseInfoFromFile
+==== How to retrieve the data after calling !GetCourseInfoFromFile ====
 
 READING EXAMPLE
 {{{
