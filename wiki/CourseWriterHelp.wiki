@@ -1,4 +1,5 @@
 #summary Help for Golfml CourseWriter.
+#sidebar TableOfContents
 
 == What does Golfml CourseWriter do? ==
 
@@ -92,4 +93,3 @@ amenity15=other,Private membership only
 Changing one or more the entries in this file will allow you to change the amenity list that CourseWriter uses.
 Be sure to choose an appropriate type from the list and use a comma before the amenity description.
 There is a maximum of 16 entries (0 -> 15)
-
