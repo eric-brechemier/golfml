@@ -112,11 +112,14 @@ Property ClubMaxCommentsIndex:Cardinal
 
   * !MaxIndex-type properties help when setting up a loop to read the indexed property values  e.g. 
 {{{
-For iCount:=0 to MaxCourseIndex do
+With GolfmlClass do
+  Begin
+    For iCount:=0 to MaxCourseIndex do
      begin
         CourseIndex:=iCount; // Set the course number
-        sCourseListItem:=CourseName; // Read data for this course
+        MyStringList.Add(CourseName); // Read data for this course
     end;
+  End;
 }}}
 ----
 WRITING EXAMPLE:
