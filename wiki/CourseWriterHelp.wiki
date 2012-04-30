@@ -1,6 +1,8 @@
 #summary Help for Golfml CourseWriter.
 #sidebar TableOfContents
-
+= !CourseWriter Help =
+This Page: <wiki:toc max_depth="4" />
+----
 == What does Golfml !CourseWriter do? ==
 
 The purpose of the application is to:
