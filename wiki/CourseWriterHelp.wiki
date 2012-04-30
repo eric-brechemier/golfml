@@ -26,9 +26,8 @@ You will need:
 
 == How can I edit a golfml file? ==
 
-On the File menu, click 'Import golfml file...'.  After a short delay, the golfml file data will load.
-
-You can then add, delete, change and edit anything you like, and when you are done, click the 'Save all data to golfml file' button.
+  # On the File menu, click 'Import golfml file...'.  After a short delay, the golfml file data will load.
+    * You can then add, delete, change and edit anything you like, and when you are done, click the 'Save all data to golfml file' button.
 
 _Note: If you save the file under the same name you loaded it, the new file will always overwrite the old one._
 
@@ -38,23 +37,23 @@ Yes.  That is one of the strengths of XML as a data format, but it is safer to e
 
 == How can I display a scorecard on a web page using Golfml !CourseWriter? ==
 
- * Make or import a course (e.g. 'mycourse.xml')
- * In the Mode menu, click 'Course + Generic Scorecard stylesheet'
-Click the 'Save all data to Golfml File'
-Use the suggested filename (e.g. 'scorecard_mycourse.xml') to save the golfml file to disk
- * On your website, add the saved golfml file and also the following 2 files (available in the source section):
-  # scorecard.xsl
-  # golfml.css
- * Now, your golfml file will display on your website as a scorecard.
+ # Make or import a course (e.g. 'mycourse.xml')
+ # In the Mode menu, click 'Course + Generic Scorecard stylesheet'
+ # Click the 'Save all data to Golfml File'
+    * Use the suggested filename (e.g. 'scorecard_mycourse.xml') to save the golfml file to disk
+  # On your website, add the saved golfml file and also the following 2 files (available in the source section):
+    # scorecard.xsl
+    # golfml.css
+Now, your golfml file will display on your website as a scorecard.
 
 == How can I display a personalised scorecard on a web page using Golfml !CourseWriter? ==
 
- * Make or import a course (e.g. 'mycourse.xml')
- * In the Mode menu, click 'Course + Player Scorecard stylesheet'
- * Click the 'Save all data to Golfml File'
- * Input if prompted the player's name, gender, date of birth and handicap
-Use the suggested filename (e.g. 'playerscorecard_mycourse.xml') to save the golfml file to disk
- * On your website, add the saved golfml file and also the following 2 files (available in the source section):
+  * Make or import a course (e.g. 'mycourse.xml')
+  * In the Mode menu, click 'Course + Player Scorecard stylesheet'
+  * Click the 'Save all data to Golfml File'
+  * Input if prompted the player's name, gender, date of birth and handicap
+  * Use the suggested filename (e.g. 'playerscorecard_mycourse.xml') to save the golfml file to disk
+  * On your website, add the saved golfml file and also the following 2 files (available in the source section):
   # playerscorecard.xsl
   # golfml.css
 Now, your golfml file will display on your website as a personalised scorecard.
