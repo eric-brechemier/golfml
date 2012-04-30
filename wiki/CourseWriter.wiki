@@ -1,0 +1,13 @@
+#summary One-sentence summary of this page.
+
+== Golfml CourseWriter V2.x ==
+
+This desktop application enables anyone to enter the details of a Golf Club and all its courses to produce a golfml data file.  It is laid out to resemble a typical score card so that data entry is straightforward and easy.
+
+Each golf club data file can have up to 6 courses and caters for up to 6 types of tee position per course.
+
+CourseWriter can also open, edit and save any valid golfml course file.
+
+CourseWriter can also automatically make a golfml file that will display as scorecard.
+
+At any time, you can press F1 to see [CourseWriterHelp online help].
