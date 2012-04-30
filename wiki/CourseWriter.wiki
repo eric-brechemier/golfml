@@ -20,7 +20,7 @@
     * Linux 64-bit
     * Linux 32-bit
   * The Lazarus/FPC source code for !CourseWriter is also available from this project site
-  * All code is released via a Creative Commons license
+  * All code is released via a Creative Commons license, and you are free to download and compile it.
 ----
 === Screen Shots ===
 ==== Opening Screen ====
