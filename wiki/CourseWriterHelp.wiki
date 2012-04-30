@@ -1,7 +1,7 @@
 #summary Help for Golfml CourseWriter.
 #sidebar TableOfContents
 
-== What does Golfml CourseWriter do? ==
+== What does Golfml !CourseWriter do? ==
 
 The purpose of the application is to:
 
@@ -14,7 +14,7 @@ It is a plain-text XML file designed to store information about Golf Courses, Go
 
 == How can I make a new golfml file? ==
 
-When Golfml CourseWriter starts up, the first screen gives simple instructions on how to make a new golfml file.
+When Golfml !CourseWriter starts up, the first screen gives simple instructions on how to make a new golfml file.
 
 You will need:
 
@@ -45,7 +45,7 @@ Use the suggested filename (e.g. 'scorecard_mycourse.xml') to save the golfml fi
   # golfml.css
  * Now, your golfml file will display on your website as a scorecard.
 
-== How can I display a personalised scorecard on a web page using Golfml CourseWriter? ==
+== How can I display a personalised scorecard on a web page using Golfml !CourseWriter? ==
 
  * Make or import a course (e.g. 'mycourse.xml')
  * In the Mode menu, click 'Course + Player Scorecard stylesheet'
@@ -58,7 +58,7 @@ Use the suggested filename (e.g. 'playerscorecard_mycourse.xml') to save the gol
 Now, your golfml file will display on your website as a personalised scorecard.
 
 == I want to add a new feature or amenity (advanced feature) ==
-If you click Help/About CourseWriter, on the resulting dialog you will see something like the entry:
+If you click Help/About !CourseWriter, on the resulting dialog you will see something like the entry:
 Config file: /etc/coursewriter.cfg
 (The details depend on your operating system)
 
@@ -90,6 +90,6 @@ amenity13=corporate,Corporate/group facilities
 amenity14=corporate,PGA facilities
 amenity15=other,Private membership only
 }}}
-Changing one or more the entries in this file will allow you to change the amenity list that CourseWriter uses.
+Changing one or more the entries in this file will allow you to change the amenity list that !CourseWriter uses.
 Be sure to choose an appropriate type from the list and use a comma before the amenity description.
 There is a maximum of 16 entries (0 -> 15)
