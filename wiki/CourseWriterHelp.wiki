@@ -18,7 +18,7 @@ When Golfml !CourseWriter starts up, the first screen gives simple instructions 
 
 You will need:
 
-  * A scorecard from the Golf Club with the tees and distances, StrokeIndexes and Pars for each hole.  You can sometimes see these published on the web.
+  * A scorecard from the Golf Club with the tees and distances, !StrokeIndexes and Pars for each hole.  You can sometimes see these published on the web.
   * The Course Rating and Slope Rating for each tee of each course in the club (it should be on the scorecards; look for the terms 'VC' and 'VS')
   * Details about the Club's location and facilities offered by the club.
 
