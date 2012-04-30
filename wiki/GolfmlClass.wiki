@@ -1,7 +1,7 @@
 #summary Lazarus/FreePascal class for reading and writing golfml files.
 #sidebar TableOfContents
 = tgolfmlclass =
-This Page: <wiki:toc max_depth="2" />
+This Page: <wiki:toc max_depth="5" />
 ----
 A Lazarus/Free Pascal class to accept data via properties and write a well-formed golfml XML golf information exchange file.
 
