@@ -20,7 +20,7 @@
       * [Branding Branding]
       * [Links Links]
    * Applications
-      * Golfml Course Writer
+      * [CourseWriter Golfml Course Writer]
         * [CourseWriterHelp Manual/Help]
       * Golfml Course Reader
       * USGA/EGA Handicap Calculator
