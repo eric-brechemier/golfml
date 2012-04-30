@@ -24,4 +24,4 @@
         * [CourseWriterHelp Manual/Help]
       * [CourseReader Golfml Course Reader]
       * [HandicapCalculator USGA/EGA Handicap Calculator]
-      * [GolfmlClass A Lazarus class for reading and writing golfml files]
+      * [GolfmlClass tGolfmlClass - a Pascal class]
