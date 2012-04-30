@@ -1,7 +1,7 @@
 #summary One-sentence summary of this page.
 #sidebar TableOfContents
 
-== Golfml CourseWriter V2.x ==
+== Golfml !CourseWriter V2.x ==
 
 This desktop application enables anyone to enter the details of a Golf Club and all its courses to produce a golfml data file.  It is laid out to resemble a typical score card so that data entry is straightforward and easy.
 
