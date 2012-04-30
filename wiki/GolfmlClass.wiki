@@ -17,9 +17,9 @@ Var: GolfmlClass:TGolfMLClass;
 ----
 == Methods ==
 
-  # function InitOK: boolean
+  # function *InitOK:* boolean
     * Returns TRUE = Success, FALSE = Fatal Error
-  # Procedure Reset (use before re-assigning a new club and courses)
+  # Procedure *Reset* (use before re-assigning a new club and courses)
 
 Both methods initialise all variables in the class and prepare it for use. The Function InitOK only returns TRUE if all is well.
 
@@ -29,9 +29,9 @@ GolfmlClass:=TGolfMLClass.Create;
 If NOT GolfmlClass.InitOK then Halt;
 }}}
 
-  # function !MakeGolfmlFile:Boolean;
+  # function *!MakeGolfmlFile*:Boolean;
     * Returns TRUE=Success.  Overwrites any file with the same name (set in CourseXMLPath property)
-  # function !GetCourseInfoFromFile:boolean
+  # function *!GetCourseInfoFromFile*:boolean
     * Returns TRUE=Success
 
 !GolfmlClass.!MakeGolfmlFile should only be called *after* all the data has been set using the properties (see below)
