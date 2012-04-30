@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
 <CONFIG>
   <Compiler Value="C:\lazarus\fpc\2.4.4\bin\x86_64-win64\fpc.exe" Date="1063563535"/>
-  <Params Value=" -MObjFPC -Scghi -CX -Os3 -Twin64 -Px86_64 -g -gl -gw -WG -vewnhi -l -FiC:\lazarus\golfmlsvn\golfml\coursereader\source\lib\x86_64-win64 -FuC:\lazarus\golfmlsvn\golfml\coursereader\source -FuC:\lazarus\lcl\units\x86_64-win64 -FuC:\lazarus\lcl\units\x86_64-win64\win32 -FuC:\lazarus\packager\units\x86_64-win64 -Fu. -FUC:\lazarus\golfmlsvn\golfml\coursereader\source\lib\x86_64-win64\ -ogolfmlreaderwin64.exe -dLCL -dLCLwin32 golfumlwin64.lpr"/>
+  <Params Value=" -MObjFPC -Scghi -CX -Os3 -Twin64 -Px86_64 -Xs -XX -WG -vewnhi -l -FiC:\lazarus\golfmlsvn\golfml\coursereader\source\lib\x86_64-win64 -FuC:\lazarus\golfmlsvn\golfml\coursereader\source -FuC:\lazarus\lcl\units\x86_64-win64 -FuC:\lazarus\lcl\units\x86_64-win64\win32 -FuC:\lazarus\packager\units\x86_64-win64 -Fu. -FUC:\lazarus\golfmlsvn\golfml\coursereader\source\lib\x86_64-win64\ -ogolfmlreaderwin64.exe -dLCL -dLCLwin32 golfumlwin64.lpr"/>
 </CONFIG>
