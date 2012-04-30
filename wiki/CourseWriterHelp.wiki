@@ -37,13 +37,12 @@ Yes.  That is one of the strengths of XML as a data format, but it is safer to e
 
 == How can I display a scorecard on a web page using Golfml !CourseWriter? ==
 
- # Make or import a course (e.g. 'mycourse.xml')
- # In the Mode menu, click 'Course + Generic Scorecard stylesheet'
- # Click the 'Save all data to Golfml File'
-   Use the suggested filename (e.g. 'scorecard_mycourse.xml') to save the golfml file to disk
-  # On your website, add the saved golfml file and also the following 2 files (available in the source section):
-    * scorecard.xsl
-    * golfml.css
+ * Make or import a course (e.g. 'mycourse.xml')
+ * In the Mode menu, click 'Course + Generic Scorecard stylesheet'
+ * Click the 'Save all data to Golfml File'  Use the suggested filename (e.g. 'scorecard_mycourse.xml') to save the golfml file to disk
+ * On your website, add the saved golfml file and also the following 2 files (available in the source section):
+    # scorecard.xsl
+    # golfml.css
 Now, your golfml file will display on your website as a scorecard.
 
 == How can I display a personalised scorecard on a web page using Golfml !CourseWriter? ==
