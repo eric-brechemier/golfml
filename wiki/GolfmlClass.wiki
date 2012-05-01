@@ -213,4 +213,8 @@ For CourseLoop:=0 to GolfmlClass.MaxCourseIndex DO
     end; // next hole
   end; // next tee position
 end; // next course
+// Now fetch accumulated properties (though you could do this before the loops if you wanted)
+myCardinal:=GolfmlClass.TotalTeeDistance;
+myCardinal:=GolfmlClass.CourseTotalPar;
 }}}
+..etc etc.
