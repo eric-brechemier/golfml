@@ -68,7 +68,9 @@ Property CourseNumberOfHoles:Cardinal //(1-based, usually 9 or 18)
 
 // Tee Position-wide Properties
 // Change Tee sets by changing the TeeColourIndex property (0-based)
-// Normally, TeeColourIndex is normally from Gold (0) to Red (5) but it can be any scheme you like as long as the TeeColour and TeeGender agree.
+// Normally, TeeColourIndex is normally from Gold (0) to Red (5)
+//  but it can be any scheme you like as long as the TeeColour and
+// TeeGender agree.
 Property TeeColourIndex:Cardinal  //(zero-based)
 property TeeTitle: string // Can be anything: 'Competition', 'Regular', 'Ladies'
 property TeeColour: string // i.e. 'gold', 'black', 'white', 'yellow', 'blue', 'red'
@@ -86,7 +88,8 @@ Property StrokeIndex:Cardinal
 Property Metric:Boolean // Affects Distance conversion. Metric=TRUE means distances in meters
 Property TeeDistanceMetres:Cardinal
 Property TeeDistanceYards:Cardinal
-// Note Tee Distances are automatically converted yards->meters and meters->yards.  Only specify yards OR meters when setting Tee Distances
+// Note Tee Distances are automatically converted yards->meters and meters->yards.
+// Only specify yards OR meters when setting Tee Distances
 
 // Stylesheet writing properties
 Property IncludeScoreCardStylesheetReference:Boolean
