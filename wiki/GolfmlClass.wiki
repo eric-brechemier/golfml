@@ -135,6 +135,16 @@ GolfmlClass.HoleIndex:=2;
 GolfmlClass.Par:=5;
 }}}
 ----
+SIMPLE READING EXAMPLE:
+To get the Par of Hole 3 on the first course at Tee-position 1:
+
+{{{
+GolfmlClass.CourseIndex:=0;
+GolfmlClass.TeeIndex:=0;
+GolfmlClass.HoleIndex:=2;
+cParVariable:=GolfmlClass.Par;
+}}}
+----
 ==== How to populate the data before calling !MakeGolfmlFile ====
 
 Normally you would set up 3 nested loops, and assign values to properties within the loops according to their scope.
