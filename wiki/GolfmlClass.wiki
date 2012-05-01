@@ -185,14 +185,14 @@ _Remember the amenity type and description are separated by a comma_
 {{{
 For iLoop:=0 to GolfmlClass.ClubMaxAmenitiesIndex do
   begin 
-       MyStringList.Add(GolfmlClass.ClubAmeneties[iLoop];
+       MyStringList.Add(GolfmlClass.ClubAmeneties[iLoop]);
   End;
 }}}
-... fetch the ClubComments in the same way...
+... fetch the !ClubComments in the same way...
 {{{
 For iLoop:=0 to GolfmlClass.ClubMaxCommentsIndex do
   begin 
-       MyStringList.Add(GolfmlClass.ClubComments[iLoop];
+       MyStringList.Add(GolfmlClass.ClubComments[iLoop]);
   End;
 }}}
 
