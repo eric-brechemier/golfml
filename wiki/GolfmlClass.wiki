@@ -208,7 +208,8 @@ For CourseLoop:=0 to GolfmlClass.MaxCourseIndex DO
     .... get Course and Slope ratings.  Get the Tee colours, titles and genders...
     For HoleLoop:=GolfmlClass.CourseNumberOfHoles DO
         GolfmlClass.HoleIndex:=HoleLoop; // Read data from this hole in this Tee Position in this course
-        ...Get Hole distances in yards and metres
+        GolfmlClass.Metric:=TRUE; //=FALSE would retrieve yards
+        ...Get Hole distances in metres
     end; // next hole
   end; // next tee position
 end; // next course
