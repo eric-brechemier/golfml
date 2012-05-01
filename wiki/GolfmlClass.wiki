@@ -219,4 +219,4 @@ Note: Each property has a *scope* within a Club, Course, Tee-position or Hole. .
   * Distances are for a course, tee-position and hole
   * !StrokeIndexes are for a course and hole only.
   * !CourseRating is for a course and tee-position only
-GolfmlClass tries to make this as flexible as possible for reading and writing by having 3 "master" index properties for Course, !TeePosition and Hole.  In this way, you always know the scope of the property.
+!GolfmlClass tries to make this as simple as possible for reading and writing by having 3 "master" index properties for Course, !TeePosition and Hole.  In this way, you always know the scope of the property that you are trying to read or write.
