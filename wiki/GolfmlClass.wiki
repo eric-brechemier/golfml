@@ -205,8 +205,11 @@ end;
 Var sAmenityType, sAmenityValue:String;
 For iLoop:=0 to GolfmlClass.ClubMaxAmenitiesIndex do
   begin
+       // Initialise strings to pass by value to procedure
        sAmenityType:='';
-       sAmenityValue:='';          SplitAmenety(sAmenityType,sAmenityValue,GolfmlClass.ClubAmeneties[iLoop]);
+       sAmenityValue:='';   
+
+SplitAmenety(sAmenityType,sAmenityValue,GolfmlClass.ClubAmeneties[iLoop]);
        MyAmenityTypeList.Add(sAmenityType);
        MyAmenityValueList.Add(sAmenityValue);
   End;
