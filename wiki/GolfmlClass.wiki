@@ -6,7 +6,7 @@ This Page: <wiki:toc max_depth="5" />
   * A Lazarus/Free Pascal class to accept data via properties and write a well-formed golfml XML golf information exchange file.
   * It will also read a well-formed golfml XML golf information exchange file and present the data via properties.
   * You can have as many Courses and Tee positions as you like (they are stored in internal dynamic arrays) , but only one Golf Club.  Holes can be 1 up to 18.
-  * Available [http://code.google.com/p/golfml/source/browse/#svn%2Fgolfml%2Fcoursewriter%2Fsource%2F2.x here]
+  * Available [http://code.google.com/p/golfml/source/browse/#svn%2Fgolfml%2Fcoursewriter%2Fsource%2F2.x from the repository here]
 ----
 == Declaration ==
 {{{
@@ -250,4 +250,5 @@ Each property has a *scope* within a Club, Course, Tee-position or Hole.
   * !CourseRating is for a course and tee-position only
 !GolfmlClass tries to make this as simple as possible for reading and writing by having 3 "master" index properties for Course, !TeePosition and Hole. (There is only ever one Club) In this way, you always know the scope of the property that you are trying to read or write.
 
-For a full example of how to use !GolfmlClass, see the !GolfmlWriter source code section of this project.
+For a full example of how to use !GolfmlClass, see the [[http://code.google.com/p/golfml/source/browse/#svn%2Fgolfml%2Fcoursewriter%2Fsource%2F2.x from the repository here]
+ !GolfmlWriter source code section] of this project.
