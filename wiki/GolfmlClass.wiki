@@ -177,8 +177,15 @@ GolfmlClass.GetCourseInfoFromFile;
 Retrieve the Club properties first.
 {{{
 sName:=GolfmlClass.Clubname;
+...etc
+Now get all the Club Amenities via a loop:
+{{{
+For iLoop:=0 to GolfmlClass.ClubMaxAmenitiesIndex do
+  begin 
+   MyStringList.Add(GolfmlClass.ClubAmeneties[iLoop];
+  End;
 }}}
-... etc. etc.
+... fetch the ClubComments in the same way...
 
 Retrieve the data for each hole in each tee set in each course via a loop
 {{{
