@@ -181,11 +181,34 @@ sName:=GolfmlClass.Clubname;
 }}}
 ...etc
 Now get all the Club Amenities via a loop.
+
 _Remember the amenity type and description are separated by a comma_
+
+Here's a function to separate them
 {{{
+procedure SplitAmenety(var fAmenityType,fAmenetyValue:String;Const aString:String);
+// Changes fAmenityType, fAmenetyValue
+// Uses C_AMENETYDELIMITERCHAR
+Var
+   i:Integer;
+begin
+     if Length(aString)=0 then exit;
+     i:=Pos(C_AMENETYDELIMITERCHAR,aString);
+     If i > 1 then
+     Begin
+          fAmenityType:=LeftStr(aString,i-1);
+          fAmenetyValue:=RightStr(aString,Length(aString)-i);
+     end;
+end;
+}}}
+{{{
+Var sAmenityType, sAmenityValue:String;
 For iLoop:=0 to GolfmlClass.ClubMaxAmenitiesIndex do
-  begin 
-       MyStringList.Add(GolfmlClass.ClubAmeneties[iLoop]);
+  begin
+       sAmenityType:='';
+       sAmenityValue:='';          SplitAmenety(sAmenityType,sAmenityValue,GolfmlClass.ClubAmeneties[iLoop]);
+       MyAmenityTypeList.Add(sAmenityType);
+       MyAmenityValueList.Add(sAmenityValue);
   End;
 }}}
 ... fetch the !ClubComments in the same way...
