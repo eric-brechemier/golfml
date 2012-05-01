@@ -215,7 +215,7 @@ For CourseLoop:=0 to GolfmlClass.MaxCourseIndex DO
 end; // next course
 }}}
 
-Note: Each property has a *scope* within a Club, Course, Tee-position or Hole.
-i.e. Distances are for a course, tee-position and hole
-StrokeIndexes are for a course and hole only.
-CourseRating is for a course and tee-position only
+Note: Each property has a *scope* within a Club, Course, Tee-position or Hole. ..for instance:
+  * Distances are for a course, tee-position and hole
+  * !StrokeIndexes are for a course and hole only.
+  * !CourseRating is for a course and tee-position only
