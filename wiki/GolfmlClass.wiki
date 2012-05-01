@@ -180,11 +180,12 @@ Retrieve the Club properties first.
 sName:=GolfmlClass.Clubname;
 }}}
 ...etc
-Now get all the Club Amenities via a loop:
+Now get all the Club Amenities via a loop.
+_Remember the amenity type and description are separated by a comma_
 {{{
 For iLoop:=0 to GolfmlClass.ClubMaxAmenitiesIndex do
   begin 
-   MyStringList.Add(GolfmlClass.ClubAmeneties[iLoop];
+       MyStringList.Add(GolfmlClass.ClubAmeneties[iLoop];
   End;
 }}}
 ... fetch the ClubComments in the same way...
