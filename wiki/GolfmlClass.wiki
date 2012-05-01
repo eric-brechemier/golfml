@@ -43,8 +43,8 @@ property ClubAmeneties[iIndex:Integer]: string // 0..
 property ClubComments[iIndex:Integer]: string // 0..
 // Both are dynamic properties that grow as assigned.  They should be assigned in order for reliable results.
 // The type and description are separated by a comma
-GolfmlClass.ClubAmeneties[0]:='amenity type,amenity description';
-GolfmlClass.ClubAmeneties[1]:='amenity type,amenity description';
+// GolfmlClass.ClubAmeneties[0]:='amenity type,amenity description';
+// GolfmlClass.ClubAmeneties[1]:='amenity type,amenity description';
 
 
 property CourseXMLPath: string // Note: THIS NOT CHECKED FOR VALIDITY by tgolfmlclass.
@@ -189,6 +189,12 @@ For iLoop:=0 to GolfmlClass.ClubMaxAmenitiesIndex do
   End;
 }}}
 ... fetch the ClubComments in the same way...
+{{{
+For iLoop:=0 to GolfmlClass.ClubMaxCommentsIndex do
+  begin 
+       MyStringList.Add(GolfmlClass.ClubComments[iLoop];
+  End;
+}}}
 
 Retrieve the data for each hole in each tee set in each course via a loop
 {{{
