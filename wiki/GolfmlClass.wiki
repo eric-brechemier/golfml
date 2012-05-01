@@ -250,5 +250,4 @@ Each property has a *scope* within a Club, Course, Tee-position or Hole.
   * !CourseRating is for a course and tee-position only
 !GolfmlClass tries to make this as simple as possible for reading and writing by having 3 "master" index properties for Course, !TeePosition and Hole. (There is only ever one Club) In this way, you always know the scope of the property that you are trying to read or write.
 
-For a full example of how to use !GolfmlClass, see the [http://code.google.com/p/golfml/source/browse/#svn%2Fgolfml%2Fcoursewriter%2Fsource%2F2.x
- !GolfmlWriter source code section] of this project.
+For a full example of how to use !GolfmlClass, see the [http://code.google.com/p/golfml/source/browse/#svn%2Fgolfml%2Fcoursewriter%2Fsource%2F2.x GolfmlWriter source code section] of this project.
