@@ -201,7 +201,7 @@ Retrieve the data for each hole in each tee set in each course via a loop
 For CourseLoop:=0 to GolfmlClass.MaxCourseIndex DO
   GolfmlClass.CourseIndex:=CourseLoop; // Read data from this course
   ...get Course-wide properties...
-  .. get Hole pars and strokeindexes
+  .. get Hole pars and strokeindexes (via a holeindex loop)
   For TeeLoop:=0 to GolfmlClass.MaxTeeColourIndex DO
     GolfmlClass.TeeColourIndex:=TeeLoop; // Read data from this Tee Position in this course
     ...get Tee Position-wide properties for this course
@@ -213,8 +213,9 @@ For CourseLoop:=0 to GolfmlClass.MaxCourseIndex DO
     end; // next hole
   end; // next tee position
 end; // next course
-// Now fetch accumulated properties (though you could do this before the loops if you wanted)
-myCardinal:=GolfmlClass.TotalTeeDistance;
-myCardinal:=GolfmlClass.CourseTotalPar;
 }}}
-..etc etc.
+
+Note: Each property has a *scope* within a Club, Course, Tee-position or Hole.
+i.e. Distances are for a course, tee-position and hole
+StrokeIndexes are for a course and hole only.
+CourseRating is for a course and tee-position only
