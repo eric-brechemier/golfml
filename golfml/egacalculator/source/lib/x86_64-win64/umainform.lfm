@@ -1,13 +1,14 @@
 object mainform: Tmainform
-  Left = 426
+  Left = 946
   Height = 564
-  Top = 143
+  Top = 207
   Width = 290
   BorderIcons = [biMinimize]
   BorderStyle = bsSingle
   Caption = 'EGA Calculator'
   ClientHeight = 537
   ClientWidth = 290
+  Font.Height = -12
   Menu = MainMenu1
   OnCreate = FormCreate
   OnDestroy = FormDestroy
@@ -27,7 +28,7 @@ object mainform: Tmainform
   end
   object ud_beststableford: TUpDown
     Left = 253
-    Height = 25
+    Height = 23
     Top = 80
     Width = 17
     Associate = edt_beststableford
@@ -38,7 +39,7 @@ object mainform: Tmainform
   end
   object edt_beststableford: TEdit
     Left = 173
-    Height = 25
+    Height = 23
     Top = 80
     Width = 80
     OnChange = edt_beststablefordChange
@@ -79,7 +80,7 @@ object mainform: Tmainform
   end
   object edt_exactegahandicap: TEdit
     Left = 193
-    Height = 25
+    Height = 23
     Top = 160
     Width = 80
     OnEditingDone = edt_exactegahandicapEditingDone
@@ -128,9 +129,9 @@ object mainform: Tmainform
   end
   object lbl_preciseplayinghandicap: TLabel
     Left = 32
-    Height = 18
+    Height = 16
     Top = 200
-    Width = 19
+    Width = 16
     Caption = '(0)'
     ParentColor = False
   end
@@ -220,25 +221,25 @@ object mainform: Tmainform
     end
     object lbl_CoursePar: TLabel
       Left = 112
-      Height = 18
+      Height = 16
       Top = 104
-      Width = 9
+      Width = 8
       Caption = '0'
       ParentColor = False
     end
     object lbl_CourseRating: TLabel
       Left = 112
-      Height = 18
+      Height = 16
       Top = 120
-      Width = 9
+      Width = 8
       Caption = '0'
       ParentColor = False
     end
     object lbl_SlopeRating: TLabel
       Left = 112
-      Height = 18
+      Height = 16
       Top = 135
-      Width = 9
+      Width = 8
       Caption = '0'
       ParentColor = False
     end
@@ -254,9 +255,9 @@ object mainform: Tmainform
     end
     object lbl_CourseNumHoles: TLabel
       Left = 112
-      Height = 18
+      Height = 16
       Top = 88
-      Width = 9
+      Width = 8
       Caption = '0'
       ParentColor = False
     end
@@ -272,9 +273,9 @@ object mainform: Tmainform
     end
     object lbl_CourseNumTees: TLabel
       Left = 256
-      Height = 18
+      Height = 16
       Top = 64
-      Width = 9
+      Width = 8
       Caption = '0'
       ParentColor = False
     end
@@ -291,9 +292,9 @@ object mainform: Tmainform
     end
     object lbl_TeeColour: TLabel
       Left = 16
-      Height = 18
+      Height = 16
       Top = 64
-      Width = 68
+      Width = 61
       Caption = 'Tee Colour'
       ParentColor = False
     end
@@ -449,9 +450,9 @@ object mainform: Tmainform
     end
     object lbl_TotalDistance: TLabel
       Left = 112
-      Height = 18
+      Height = 16
       Top = 168
-      Width = 9
+      Width = 8
       Caption = '0'
       ParentColor = False
     end
@@ -467,9 +468,9 @@ object mainform: Tmainform
     end
     object lbl_BogeyRating: TLabel
       Left = 112
-      Height = 18
+      Height = 16
       Top = 152
-      Width = 9
+      Width = 8
       Caption = '0'
       ParentColor = False
     end
@@ -515,7 +516,7 @@ object mainform: Tmainform
     end
     object edt_exactegahandicap1: TEdit
       Left = 144
-      Height = 25
+      Height = 23
       Top = 32
       Width = 40
       MaxLength = 4
@@ -535,7 +536,7 @@ object mainform: Tmainform
     end
     object edt_stablefordpoints: TEdit
       Left = 144
-      Height = 25
+      Height = 23
       Top = 56
       Width = 40
       MaxLength = 2
@@ -577,7 +578,7 @@ object mainform: Tmainform
       Left = 192
       Height = 21
       Top = 64
-      Width = 65
+      Width = 60
       Caption = 'Report'
       Checked = True
       State = cbChecked
