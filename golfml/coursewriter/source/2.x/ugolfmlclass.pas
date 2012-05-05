@@ -19,6 +19,8 @@ unit ugolfmlclass;
 == 2.3
 ==    Added styleshheet embedding via XML ProcessingInstruction
 ==    Added <player> tag handling
+== 2.4
+==    Added custom <application> section
 ==
 ==
 *)
@@ -32,7 +34,7 @@ uses
 //  StdCtrls, ComCtrls, ExtCtrls; // DEBUGGING ONLY
 
 const
-  C_GOLFMLCLASSVERSION = '2.3.20120429';
+  C_GOLFMLCLASSVERSION = '2.4.20120505';
 CONST C_METERS=TRUE; // fMetric
 CONST C_YARDS=FALSE; // fMetric
 CONST C_AMENETYDELIMITER = ','; // Used in SplitAmenity
@@ -124,6 +126,9 @@ type
     fScoreCardPlayerHandicap:Single;
     fScoreCardXSL:String;
     fPlayerScoreCardXSL:String;
+    fScoreCardTeeColour:String;
+    fScoreCardCourseName:String;
+    fScoreCardCSS:String;
 
     fAmenityType, fAmenetyValue:String; // Only used in local procedure SplitAmenety
     procedure SplitAmenety(aString:String); // Uses C_AMENETYDELIMITER
@@ -218,6 +223,9 @@ type
     Procedure priv_SetScoreCardPlayerHandicap(aSingle:Single);
     Procedure priv_SetPlayerScoreCardXSL(aString:String);
     Procedure priv_SetScoreCardXSL(aString:String);
+    Procedure priv_SetScoreCardTeeColour(aString:String);
+    Procedure priv_SetScoreCardCourseName(aString:String);
+
   protected
     // PROTECTED VARS AND METHODS FOR SUBCLASS USE
     // *********************************************************************
@@ -297,8 +305,15 @@ type
     Property ScoreCardPlayerHandicap:Single
              read fScoreCardPlayerHandicap
              write priv_SetScoreCardPlayerHandicap;
+    Property ScoreCardTeeColour:String
+             read fScoreCardTeeColour
+             write priv_SetScoreCardTeeColour;
+    Property ScoreCardCourseName:String
+             read fScoreCardCourseName
+             write priv_SetScoreCardCourseName;
     property ScoreCardXSL: string read fScoreCardXSL write priv_SetScoreCardXSL;
     property PlayerScoreCardXSL: string read fPlayerScoreCardXSL write priv_SetPlayerScoreCardXSL;
+    property ScoreCardCSS: string read fScoreCardCSS write fScoreCardCSS;
 
     // *********************************************************************
     // Read-only Properties
@@ -445,12 +460,16 @@ begin
 
      fIncludeScoreCardStylesheetReference:=FALSE;
      fIncludePlayerScoreCardStylesheetReference:=FALSE;
-     fScoreCardPlayerName:='Unknown Player';
-     fScoreCardPlayerGender:='male';
-     fScoreCardPlayerDateOfBirth:='01-01-1900';
+     fScoreCardPlayerName:='unknown';
+     fScoreCardPlayerGender:='unknown';
+     fScoreCardPlayerDateOfBirth:=FormatDateTime(ShortDateFormat,Now);
      fScoreCardPlayerHandicap:=36;
      fScoreCardXSL:=C_SCORECARDXSL;
      fPlayerScoreCardXSL:=C_PLAYERSCORECARDXSL;
+     fScoreCardTeeColour:='unknown';
+     fScoreCardCourseName:='unknown';
+     fScoreCardCSS:='golfml.css';
+
      Result := True;
 
 end;
@@ -524,6 +543,7 @@ TRY
        TDOMElement(RootNode).SetAttribute('xmlns', 'http://code.google.com/p/golfml');
        TDOMElement(RootNode).SetAttribute('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance');
        TDOMElement(RootNode).SetAttribute('xmlns:g', 'http://code.google.com/p/golfml');
+       TDOMElement(RootNode).SetAttribute('xmlns:golfmlclass','http://www.charcodelvalle.com/golfml');
        TDOMElement(RootNode).SetAttribute('xsi:schemaLocation', 'http://code.google.com/p/golfml/source/browse/golfml/schemas/golfml.xsd');
        TDOMElement(RootNode).SetAttribute('version', '0.9');
        // Add <golfml> to the document
@@ -564,7 +584,7 @@ TRY
 
            InnerNode:=Doc.CreateElement('comment');
            TDOMElement(InnerNode).SetAttribute('lang','en');
-           TextNode:=Doc.CreateTextNode('http://www.charcodelvalle.com/golfmlweb/');
+           TextNode:=Doc.CreateTextNode('http://code.google.com/p/golfml/');
            InnerNode.AppendChild(TextNode);
            OuterNode.AppendChild(InnerNode);
 
@@ -823,18 +843,81 @@ TRY
          TDOMElement(OuterNode).SetAttribute('dotname','com.scorecard.app');
          TDOMElement(OuterNode).SetAttribute('name','scorecard application');
          TDOMElement(OuterNode).SetAttribute('xmlns:s','http://app.scorecard.com/golfml');
+       // Preference (1)
        InnerNode:=Doc.CreateElement('s:preference');
            TDOMElement(InnerNode).SetAttribute('name','handicap-method');
            TextNode:=Doc.CreateTextNode('usga');
            InnerNode.AppendChild(TextNode);
            OuterNode.AppendChild(InnerNode);
-
+       // Preference (2)
        InnerNode:=Doc.CreateElement('s:preference');
            TDOMElement(InnerNode).SetAttribute('name','units-system');
            TextNode:=Doc.CreateTextNode('metric');
            InnerNode.AppendChild(TextNode);
            OuterNode.AppendChild(InnerNode);
        CountryClubNode.AppendChild(OuterNode);
+
+       // Custom Application section for Golfml CourseWriter
+       OuterNode:=Doc.CreateElement('application');
+         TDOMElement(OuterNode).SetAttribute('dotname','com.charcodelvalle.golfmlclass');
+         TDOMElement(OuterNode).SetAttribute('name','golfml custom scorecard');
+         TDOMElement(OuterNode).SetAttribute('xmlns:golfmlclass','http://code.google.com/p/golfml');
+         TDOMElement(OuterNode).SetAttribute('version',C_GOLFMLCLASSVERSION);
+       // Create custom golfmlclass: fields
+       InnerNode:=Doc.CreateElement('golfmlclass:scorecard-stylesheet');
+           TextNode:=Doc.CreateTextNode(fScoreCardXSL);
+       InnerNode.AppendChild(TextNode);
+       OuterNode.AppendChild(InnerNode);
+
+       InnerNode:=Doc.CreateElement('golfmlclass:playerscorecard-stylesheet');
+           TextNode:=Doc.CreateTextNode(fPlayerScoreCardXSL);
+       InnerNode.AppendChild(TextNode);
+       OuterNode.AppendChild(InnerNode);
+
+       InnerNode:=Doc.CreateElement('golfmlclass:scorecard-css');
+           TextNode:=Doc.CreateTextNode(fScoreCardCSS);
+       InnerNode.AppendChild(TextNode);
+       OuterNode.AppendChild(InnerNode);
+
+       InnerNode:=Doc.CreateElement('golfmlclass:handicap-system');
+           TextNode:=Doc.CreateTextNode('ega');
+       InnerNode.AppendChild(TextNode);
+       OuterNode.AppendChild(InnerNode);
+
+       InnerNode:=Doc.CreateElement('golfmlclass:units');
+       if fMetric=C_METERS then
+          TextNode:=Doc.CreateTextNode('meters')
+       else
+           TextNode:=Doc.CreateTextNode('yards');
+       InnerNode.AppendChild(TextNode);
+       OuterNode.AppendChild(InnerNode);
+
+       InnerNode:=Doc.CreateElement('golfmlclass:course-name');
+           TextNode:=Doc.CreateTextNode(fScoreCardCourseName);
+       InnerNode.AppendChild(TextNode);
+       OuterNode.AppendChild(InnerNode);
+
+       InnerNode:=Doc.CreateElement('golfmlclass:tee-colour');
+           TextNode:=Doc.CreateTextNode(fScoreCardTeeColour);
+       InnerNode.AppendChild(TextNode);
+       OuterNode.AppendChild(InnerNode);
+
+       InnerNode:=Doc.CreateElement('golfmlclass:player-name');
+           TextNode:=Doc.CreateTextNode(fScoreCardPlayerName);
+       InnerNode.AppendChild(TextNode);
+       OuterNode.AppendChild(InnerNode);
+
+       InnerNode:=Doc.CreateElement('golfmlclass:player-handicap');
+           TextNode:=Doc.CreateTextNode(Format('%0.1f',[fScoreCardPlayerHandicap]));
+       InnerNode.AppendChild(TextNode);
+       OuterNode.AppendChild(InnerNode);
+
+       InnerNode:=Doc.CreateElement('golfmlclass:last-updated');
+           TextNode:=Doc.CreateTextNode(DateTimeToStr(Now));
+       InnerNode.AppendChild(TextNode);
+       OuterNode.AppendChild(InnerNode);
+       CountryClubNode.AppendChild(OuterNode);
+
 
 
        // *********************************************************************
@@ -1799,9 +1882,7 @@ begin
 end;
 // *********************************************************************
 Procedure TGolfmlClass.priv_SetScoreCardPlayerName(aString:String);
-begin
-     fScoreCardPlayerName:=aString;
-end;
+begin fScoreCardPlayerName:=aString; end;
 // *********************************************************************
 Procedure TGolfmlClass.priv_SetScoreCardPlayerGender(aString:String);
 begin
@@ -1811,24 +1892,22 @@ begin
 end;
 // *********************************************************************
 Procedure TGolfmlClass.priv_SetScoreCardPlayerDateOfBirth(aString:String);
-begin
-    fScoreCardPlayerDateOfBirth:=aString;
-end;
+begin fScoreCardPlayerDateOfBirth:=aString; end;
 // *********************************************************************
 Procedure TGolfmlClass.priv_SetScoreCardPlayerHandicap(aSingle:Single);
-begin
-     fScoreCardPlayerHandicap:=aSingle;
-end;
+begin fScoreCardPlayerHandicap:=aSingle;end;
 // *********************************************************************
 Procedure TGolfmlClass.priv_SetPlayerScoreCardXSL(aString:String);
-begin
-    fPlayerScoreCardXSL:=aString;
-end;
+begin fPlayerScoreCardXSL:=aString;end;
 // *********************************************************************
 Procedure TGolfmlClass.priv_SetScoreCardXSL(aString:String);
-begin
-    fScoreCardXSL:=aString;
-end;
+begin fScoreCardXSL:=aString;end;
+// *********************************************************************
+Procedure TGolfmlClass.priv_SetScoreCardTeeColour(aString:String);
+begin fScoreCardTeeColour:=aString; end;
+// *********************************************************************
+Procedure TGolfmlClass.priv_SetScoreCardCourseName(aString:String);
+begin fScoreCardCourseName:=aString; end;
 // *********************************************************************
 end.
 

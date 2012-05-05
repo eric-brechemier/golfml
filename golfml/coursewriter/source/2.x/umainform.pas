@@ -194,6 +194,7 @@ type
 
     fPlayerName,fPlayerDateOfBirth,fPlayerGender:String;
     fPlayerHandicap:Single;
+    fScoreCardCourseName,fScoreCardTeeColour:String;
 
     Procedure ShowInstructions; // Populated the Instructions panel
     procedure PopulateCoursePage; // Creates and initialises a set of Course control arrays
@@ -309,6 +310,13 @@ begin
     fTeeColour:='';
     fTeeGender:='';
     MakeXMLMode:=C_MODECOURSEONLY;
+    fScoreCardCourseName:='unknown';
+    fScoreCardTeeColour:='unknown';
+    fPlayerName:='unknown';
+    fPlayerDateOfBirth:=FormatDateTime(ShortDateFormat,Now);
+    fPlayerGender:='unknown';
+    fPlayerHandicap:=36;
+
     mnu_modeCourseOnly.Checked:=True;
 end;
 (******************************************************************************)
@@ -1237,7 +1245,7 @@ begin
      s+=Format('Config file: %s%s%s',[ConfigFilePath,LineEnding,LineEnding]);
      s+='All code by minesadorada@charcodelvalle.com' + LineEnding;
      s+='Distribution: Creative Commons' + LineEnding;
-     s+='Updates: http://www.charcodelvalle.com/golfmlweb/' + LineEnding;
+     s+='Updates: http://code.google.com/p/golfml/' + LineEnding;
      s+='Press F1 at any time for online help';
      MessageDlg(s,mtInformation,[MBOK],0);
 end;
@@ -1396,6 +1404,8 @@ begin
                   dlg_SaveAs.Filename:='invalidfilename.xml';
              end;
           // Deal with 'Make course scorecard' mode
+          // No need to specify the xsl filename - use the golfmlclass default 'coursescorecard.xsl'
+          // GolfmlClass.ScoreCardXSL is available to set
           If MakeXMLMode = C_MODECOURSESTYLESHEET then
              // Suggest a default filename
              If Pos('scorecard_',dlg_SaveAs.Filename)=0 then
@@ -1409,9 +1419,12 @@ begin
 
                   // Use config file values if available
                   // Player Name
-                  sError:=INI.ReadString('player','name','Unknown Player');
-                  fPlayerName:=InputBox('Player name input','Type in the Player name',sError);
-                  if Length(fPlayerName)=0 then fPlayerName:='Unknown Player';
+                  sError:=INI.ReadString('player','name','unknown');
+                  Repeat
+                        s:=InputBox('Player name input','Type in the Player name',sError);
+                        sError:='Please type a valid Player name';
+                  until Length(s) > 0;
+                  fPlayerName:=s;
 
                   // Player Date of Birth
                   sError:=INI.ReadString('player','dateofbirth',FormatDateTime(ShortDateFormat,Now));
@@ -1437,17 +1450,48 @@ begin
                      else
                          fPlayerGender:='female';
 
+                  // Course name
+                  sError:=INI.ReadString('scorecard','coursename','Main Course');
+                  Repeat
+                        s:=InputBox('Course name input','Type in the name of the course',sError);
+                        sError:='Please type a valid Course name';
+                  until Length(s) > 0;
+                  fScoreCardCourseName:=s;
+
+                  // Tee Colour
+                  sError:=INI.ReadString('scorecard','teecolour','yellow');
+                  Repeat
+                        s:=LowerCase(InputBox('Tee colour input','Type in the tee colour',sError));
+                        sError:='Please type a valid tee colour (white, yellow, red etc)';
+                  until (s='gold')
+                  OR (s='black')
+                  OR (s='white')
+                  OR (s='yellow')
+                  OR (s='blue')
+                  OR (s='red');
+                  fScoreCardTeeColour:=s;
+
                   // Assign validated values to to GolfmlClass
+                  // No need to specify the xsl filename - use the golfmlclass default 'playercorecard.xsl'
+                  // GolfmlClass.PlayerScoreCardXSL is available to set
                   GolfmlClass.ScoreCardPlayerName:=fPlayerName;
                   GolfmlClass.ScoreCardPlayerGender:=fPlayerGender;
                   GolfmlClass.ScoreCardPlayerDateOfBirth:=fPlayerDateOfBirth;
                   GolfmlClass.ScoreCardPlayerHandicap:=fPlayerHandicap;
+                  GolfmlClass.ScoreCardTeeColour:=fScoreCardTeeColour;
+                  GolfmlClass.ScoreCardCourseName:=fScoreCardCourseName;
+                  GolfmlClass.ScoreCardCSS:=C_GOLFMLCSSFILE;
                   // Preserve them in the config file for next time
                   INI.WriteString('player','name',fPlayerName);
                   INI.WriteString('player','gender',fPlayerGender);
                   INI.WriteString('player','dateofbirth',fPlayerDateOfBirth);
                   INI.WriteString('player','handicap',Format('%0.1f',[fPlayerHandicap]));
                   INI.WriteString('player','LastModified',FormatDateTime(LongDateFormat,Now));
+                  INI.WriteString('scorecard','coursename',fScoreCardCourseName);
+                  INI.WriteString('scorecard','teecolour',fScoreCardTeeColour);
+                  INI.WriteString('scorecard','coursescorecardstylesheet',GolfmlClass.ScoreCardXSL);
+                  INI.WriteString('scorecard','playerscorecardstylesheet',GolfmlClass.PlayerScoreCardXSL);
+                  INI.WriteString('scorecard','golfmlcss',C_GOLFMLCSSFILE);
              end;
 
           If dlg_SaveAs.Execute then

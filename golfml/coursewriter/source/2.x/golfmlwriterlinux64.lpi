@@ -15,10 +15,14 @@
     </i18n>
     <VersionInfo>
       <UseVersionInfo Value="True"/>
-      <MajorVersionNr Value="1"/>
-      <StringTable ProductVersion=""/>
+      <AutoIncrementBuild Value="True"/>
+      <MajorVersionNr Value="2"/>
+      <MinorVersionNr Value="4"/>
+      <BuildNr Value="6"/>
+      <Language Value="0809"/>
+      <StringTable CompanyName="minesadorada" InternalName="golfmlcoursewriterlinux64" OriginalFilename="golfmlcoursewriter" ProductVersion="2.4.20120505"/>
     </VersionInfo>
-    <BuildModes Count="2" Active="Retail">
+    <BuildModes Count="2" Active="DEBUG">
       <Item1 Name="DEBUG" Default="True"/>
       <Item2 Name="Retail">
         <CompilerOptions>
@@ -97,7 +101,6 @@
         <Filename Value="golfmlwriterlinux64.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="golfmlwriterlinux64"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
@@ -113,8 +116,9 @@
         <UnitName Value="umainform"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="21" Y="11"/>
+        <TopLine Value="1238"/>
+        <CursorPos X="50" Y="1248"/>
+        <FoldState Value=" T3oL0}=1T"/>
         <UsageCount Value="216"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -131,10 +135,11 @@
         <Filename Value="ugolfmlwriter_globals.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ugolfmlwriter_globals"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="29"/>
-        <CursorPos X="30" Y="27"/>
+        <TopLine Value="1"/>
+        <CursorPos X="30" Y="15"/>
         <UsageCount Value="204"/>
         <Loaded Value="True"/>
       </Unit3>
@@ -152,12 +157,12 @@
         <UnitName Value="ugolfmlclass"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1794"/>
-        <CursorPos X="63" Y="1204"/>
+        <TopLine Value="307"/>
+        <CursorPos X="26" Y="314"/>
         <UsageCount Value="200"/>
         <Bookmarks Count="2">
-          <Item0 X="6" Y="23" ID="1"/>
-          <Item1 X="1" Y="544" ID="0"/>
+          <Item0 X="6" Y="25" ID="1"/>
+          <Item1 X="1" Y="564" ID="0"/>
         </Bookmarks>
         <Loaded Value="True"/>
       </Unit5>
@@ -179,128 +184,132 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="36" Y="21"/>
-        <UsageCount Value="90"/>
+        <UsageCount Value="95"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit7>
     </Units>
-    <JumpHistory Count="29" HistoryIndex="28">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="ugolfmlclass.pas"/>
-        <Caret Line="1240" Column="24" TopLine="1216"/>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="278" Column="1" TopLine="258"/>
       </Position1>
       <Position2>
-        <Filename Value="ugolfmlclass.pas"/>
-        <Caret Line="1576" Column="24" TopLine="1552"/>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1114" Column="36" TopLine="1107"/>
       </Position2>
       <Position3>
         <Filename Value="ugolfmlclass.pas"/>
-        <Caret Line="1578" Column="26" TopLine="228"/>
+        <Caret Line="1255" Column="46" TopLine="1238"/>
       </Position3>
       <Position4>
         <Filename Value="ugolfmlclass.pas"/>
-        <Caret Line="1" Column="9" TopLine="1"/>
+        <Caret Line="1250" Column="49" TopLine="1238"/>
       </Position4>
       <Position5>
-        <Filename Value="ugolfmlclass.pas"/>
-        <Caret Line="45" Column="20" TopLine="21"/>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="348" Column="3" TopLine="327"/>
       </Position5>
       <Position6>
         <Filename Value="ugolfmlclass.pas"/>
-        <Caret Line="353" Column="21" TopLine="329"/>
+        <Caret Line="1245" Column="58" TopLine="1238"/>
       </Position6>
       <Position7>
         <Filename Value="ugolfmlclass.pas"/>
-        <Caret Line="1194" Column="49" TopLine="1174"/>
+        <Caret Line="399" Column="24" TopLine="372"/>
       </Position7>
       <Position8>
-        <Filename Value="umainform.pas"/>
-        <Caret Line="278" Column="1" TopLine="258"/>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="383" Column="20" TopLine="368"/>
       </Position8>
       <Position9>
-        <Filename Value="umainform.pas"/>
-        <Caret Line="1114" Column="36" TopLine="1107"/>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="385" Column="18" TopLine="370"/>
       </Position9>
       <Position10>
         <Filename Value="ugolfmlclass.pas"/>
-        <Caret Line="1255" Column="46" TopLine="1238"/>
+        <Caret Line="388" Column="21" TopLine="373"/>
       </Position10>
       <Position11>
         <Filename Value="ugolfmlclass.pas"/>
-        <Caret Line="1250" Column="49" TopLine="1238"/>
+        <Caret Line="1163" Column="20" TopLine="1148"/>
       </Position11>
       <Position12>
-        <Filename Value="umainform.pas"/>
-        <Caret Line="348" Column="3" TopLine="327"/>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="1176" Column="1" TopLine="1161"/>
       </Position12>
       <Position13>
         <Filename Value="ugolfmlclass.pas"/>
-        <Caret Line="1245" Column="58" TopLine="1238"/>
+        <Caret Line="1177" Column="3" TopLine="1161"/>
       </Position13>
       <Position14>
-        <Filename Value="ugolfmlclass.pas"/>
-        <Caret Line="399" Column="24" TopLine="372"/>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="243" Column="39" TopLine="237"/>
       </Position14>
       <Position15>
         <Filename Value="ugolfmlclass.pas"/>
-        <Caret Line="383" Column="20" TopLine="368"/>
+        <Caret Line="1275" Column="51" TopLine="1270"/>
       </Position15>
       <Position16>
         <Filename Value="ugolfmlclass.pas"/>
-        <Caret Line="385" Column="18" TopLine="370"/>
+        <Caret Line="1561" Column="31" TopLine="1549"/>
       </Position16>
       <Position17>
         <Filename Value="ugolfmlclass.pas"/>
-        <Caret Line="388" Column="21" TopLine="373"/>
+        <Caret Line="1275" Column="21" TopLine="1263"/>
       </Position17>
       <Position18>
-        <Filename Value="ugolfmlclass.pas"/>
-        <Caret Line="1163" Column="20" TopLine="1148"/>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="2631" Column="34" TopLine="1375"/>
       </Position18>
       <Position19>
-        <Filename Value="ugolfmlclass.pas"/>
-        <Caret Line="1176" Column="1" TopLine="1161"/>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="2646" Column="95" TopLine="2630"/>
       </Position19>
       <Position20>
-        <Filename Value="ugolfmlclass.pas"/>
-        <Caret Line="1177" Column="3" TopLine="1161"/>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="2637" Column="55" TopLine="2620"/>
       </Position20>
       <Position21>
         <Filename Value="umainform.pas"/>
-        <Caret Line="243" Column="39" TopLine="237"/>
+        <Caret Line="2630" Column="35" TopLine="2620"/>
       </Position21>
       <Position22>
-        <Filename Value="ugolfmlclass.pas"/>
-        <Caret Line="1275" Column="51" TopLine="1270"/>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="310" Column="90" TopLine="293"/>
       </Position22>
       <Position23>
         <Filename Value="ugolfmlclass.pas"/>
-        <Caret Line="1561" Column="31" TopLine="1549"/>
+        <Caret Line="858" Column="104" TopLine="851"/>
       </Position23>
       <Position24>
         <Filename Value="ugolfmlclass.pas"/>
-        <Caret Line="1275" Column="21" TopLine="1263"/>
+        <Caret Line="870" Column="50" TopLine="853"/>
       </Position24>
       <Position25>
-        <Filename Value="umainform.pas"/>
-        <Caret Line="2631" Column="34" TopLine="1375"/>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="1864" Column="28" TopLine="1857"/>
       </Position25>
       <Position26>
-        <Filename Value="umainform.pas"/>
-        <Caret Line="2646" Column="95" TopLine="2630"/>
+        <Filename Value="ugolfmlclass.pas"/>
+        <Caret Line="867" Column="26" TopLine="849"/>
       </Position26>
       <Position27>
         <Filename Value="umainform.pas"/>
-        <Caret Line="2637" Column="55" TopLine="2620"/>
+        <Caret Line="11" Column="21" TopLine="1"/>
       </Position27>
       <Position28>
         <Filename Value="umainform.pas"/>
-        <Caret Line="2630" Column="35" TopLine="2620"/>
+        <Caret Line="316" Column="45" TopLine="304"/>
       </Position28>
       <Position29>
         <Filename Value="umainform.pas"/>
-        <Caret Line="310" Column="90" TopLine="293"/>
+        <Caret Line="1452" Column="76" TopLine="1260"/>
       </Position29>
+      <Position30>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1408" Column="58" TopLine="1398"/>
+      </Position30>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
