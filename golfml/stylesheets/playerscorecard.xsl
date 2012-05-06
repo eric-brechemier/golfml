@@ -100,7 +100,7 @@ xmlns:g="http://code.google.com/p/golfml"
 					<xsl:variable name="SR" select="g:tee-set[@colour=$TEECOLOUR]/g:qualification/g:qualification-usga/g:slope" />
 					<xsl:variable name="CP" select="sum(g:tee-set[@colour=$TEECOLOUR]/g:tee/g:par)"/>
 					<xsl:variable name="PHCP" select="round(((number($EXACTEGAHANDICAP) * number($SR div 113)) + number($CR - $CP)))"/> 
-					<table width="80%">
+					<table width="80%" align="center">
 						<caption><xsl:value-of select="$CLUBNAME"/>&#160;-&#160;<xsl:value-of select="$COURSENAME"/>&#160;&#160;&#160;&#160;Date:_____________________________</caption>
 							<thead>
 								<tr  align="right">
