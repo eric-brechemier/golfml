@@ -18,11 +18,11 @@
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="2"/>
       <MinorVersionNr Value="4"/>
-      <BuildNr Value="5"/>
+      <BuildNr Value="10"/>
       <Language Value="0809"/>
       <StringTable CompanyName="minesadorada" InternalName="golfmlcoursewriterlinux64" OriginalFilename="golfmlcoursewriter" ProductVersion="2.4.20120505"/>
     </VersionInfo>
-    <BuildModes Count="2" Active="DEBUG">
+    <BuildModes Count="2" Active="Retail">
       <Item1 Name="DEBUG" Default="True"/>
       <Item2 Name="Retail">
         <CompilerOptions>
@@ -114,11 +114,12 @@
         <ComponentName Value="mainform"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="umainform"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1238"/>
-        <CursorPos X="50" Y="1248"/>
-        <FoldState Value=" T3oL0}=1T"/>
+        <TopLine Value="1114"/>
+        <CursorPos X="41" Y="1136"/>
+        <FoldState Value=" T3mA0D1 pibjB0}=1)"/>
         <UsageCount Value="216"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -135,7 +136,6 @@
         <Filename Value="ugolfmlwriter_globals.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ugolfmlwriter_globals"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
@@ -157,8 +157,8 @@
         <UnitName Value="ugolfmlclass"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="307"/>
-        <CursorPos X="26" Y="314"/>
+        <TopLine Value="855"/>
+        <CursorPos X="49" Y="869"/>
         <UsageCount Value="200"/>
         <Bookmarks Count="2">
           <Item0 X="6" Y="25" ID="1"/>

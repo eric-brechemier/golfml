@@ -1245,7 +1245,7 @@ begin
      s+=Format('Config file: %s%s%s',[ConfigFilePath,LineEnding,LineEnding]);
      s+='All code by minesadorada@charcodelvalle.com' + LineEnding;
      s+='Distribution: Creative Commons' + LineEnding;
-     s+='Updates: http://www.charcodelvalle.com/golfmlweb/' + LineEnding;
+     s+='Updates: http://code.google.com/p/golfml/' + LineEnding;
      s+='Press F1 at any time for online help';
      MessageDlg(s,mtInformation,[MBOK],0);
 end;

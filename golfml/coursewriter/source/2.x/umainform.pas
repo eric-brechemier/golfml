@@ -1136,6 +1136,8 @@ begin
     INI.WriteString('config','GolfmlClassVersion',GolfmlClass.Version);
     INI.WriteString('config','LastRun',FormatDateTime(LongDateFormat,Now));
     INI.WriteString('config','BrowserPath',BrowserPath);
+    INI.WriteString('config','HelpAndUpdates',HTMLHelpDatabase1.BaseURL + 'CourseWriterHelp');
+    INI.WriteString('config','Contact','minesadorada@charcodelvalle.com');
     // Read or Write config file ameneties entries
     AmenetiesList:=TStringList.Create;
     TRY

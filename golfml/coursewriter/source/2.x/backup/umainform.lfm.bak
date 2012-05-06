@@ -4,7 +4,7 @@ object mainform: Tmainform
   Top = 202
   Width = 800
   HelpType = htKeyword
-  HelpKeyword = 'help_coursewritergeneralhelp.html'
+  HelpKeyword = 'help_CourseWriterHelp'
   ActiveControl = pagecontainer
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
@@ -821,7 +821,7 @@ object mainform: Tmainform
     left = 704
   end
   object HTMLHelpDatabase1: THTMLHelpDatabase
-    BaseURL = 'http://www.charcodelvalle.com/golfmlweb/'
+    BaseURL = 'http://code.google.com/p/golfml/wiki/'
     AutoRegister = True
     KeywordPrefix = 'help_'
     left = 672
