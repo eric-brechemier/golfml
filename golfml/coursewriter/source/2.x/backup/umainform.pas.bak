@@ -16,13 +16,17 @@ unit umainform;
 == Cleaned up Country List to ISO standard
 == 2.1
 == Amenity list into a configuration file
-== 2.2
+== 2.2-2.4
 == Player processing
+== Bugfix to golfmlclass golfml structure
+== Various bugfixes
 == Configuration file storage of player info
+== 2.5
+== Added regexp validation of phone number
 ==
 == TODO:
-== Option to make scorecard golfml
-== Internationalisation
+== GPS info for country-club
+== Internationalisation si vous plait/por favor?
 *)
 {$mode objfpc}{$H+}
 
@@ -30,7 +34,7 @@ interface
 uses
   Classes, SysUtils, strutils, FileUtil, Forms, Controls, Graphics, Dialogs,
   Buttons, StdCtrls, ComCtrls, Menus, ExtCtrls, LazHelpHTML,
-  ugolfmlwriter_globals, ugolfmlclass,uwaitform,INIFiles,lclintf;
+  ugolfmlwriter_globals, ugolfmlclass,uwaitform,INIFiles,lclintf,synregexpr;
 
 CONST C_TEEBACKCOLOURARRAY:Array[C_GOLD..C_RED] of LongInt =
       (clOlive,clBlack,clWhite,clYellow,clNavy,clRed);
@@ -1136,6 +1140,8 @@ begin
     INI.WriteString('config','GolfmlClassVersion',GolfmlClass.Version);
     INI.WriteString('config','LastRun',FormatDateTime(LongDateFormat,Now));
     INI.WriteString('config','BrowserPath',BrowserPath);
+    INI.WriteString('config','HelpAndUpdates',HTMLHelpDatabase1.BaseURL + 'CourseWriterHelp');
+    INI.WriteString('config','Contact','minesadorada@charcodelvalle.com');
     // Read or Write config file ameneties entries
     AmenetiesList:=TStringList.Create;
     TRY
@@ -1603,10 +1609,40 @@ begin
 end;
 
 procedure Tmainform.edt_countryclubphoneEditingDone(Sender: TObject);
+CONST C_PATTERN='[\-+]?([1-9][0-9]{0,2})(-[1-9][0-9]{0,4})?(-[1-9][0-9]{0,13})(-[0-9]+)?';
+var
+  r:tregexpr;
+  s:String;
+  sHelp:String;
 begin
-     If Length(edt_countryclubphone.Text) > 0 then
-        fCountryClubPhone:=edt_countryclubphone.Text
+    sHelp:='The telephone number %s is in the wrong format for golfml.' + LineEnding;
+    sHelp:=sHelp + 'It should be like one of the following examples:' + LineEnding;
+    sHelp:=sHelp + '1-800-1234567 (country-area-subscriber)' + LineEnding;
+	sHelp:=sHelp + '1-800-1234567-89 (country-area-subscriber-extension)' + LineEnding;
+	sHelp:=sHelp + '+34-912345678	 (country-subscriber)' + LineEnding;
+	sHelp:=sHelp + '0034-912345678	 (country-subscriber)' + LineEnding;
+	sHelp:=sHelp + '34-912345678	 (country-subscriber)' + LineEnding;
+	sHelp:=sHelp + '34-912345678-9   (country-subscriber-extension)';
+    If Length(edt_countryclubphone.Text) > 0 then
+       begin
+            s:=edt_countryclubphone.Text;
+            TRY
+               r:=TRegExpr.Create;
+               r.Expression:=C_PATTERN;
+               r.ModifierI:=true;
+               r.Exec(s);
+               if r.MatchPos[0]>=0 then
+                  fCountryClubPhone:=s
+                   //showmessage('success, found '+r.Match[0])
+               else
+                   MessageDlg(Format(sHelp,[s]),mtError,[MBOK],0);
+            finally
+               r.Free;
+            end;
+       end
      else fCountryClubPhone:='';
+
+
 end;
 
 procedure Tmainform.edt_countryclubpostcodeEditingDone(Sender: TObject);

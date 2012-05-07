@@ -36,7 +36,7 @@ uses
 //  StdCtrls, ComCtrls, ExtCtrls; // DEBUGGING ONLY
 
 const
-  C_GOLFMLCLASSVERSION = '2.5.20120506';
+  C_GOLFMLCLASSVERSION = '2.5.20120507';
 CONST C_METERS=TRUE; // fMetric
 CONST C_YARDS=FALSE; // fMetric
 CONST C_AMENETYDELIMITER = ','; // Used in SplitAmenity
@@ -74,7 +74,8 @@ type
     fMaxCountryClubCommentsIndex:Cardinal;
     fCountryClubAmenetiesArray:array of String; // Indexed Property ClubAmeneties
     fCountryClubCommentsArray: array of String; // Indexed Property ClubComments
-
+    fCountryClubGPSLatitude:Single;
+    fCountryClubGPSLongitude:Single;
 
     // For Each Country Club
     fCourseNameArray: array of String;
@@ -271,6 +272,8 @@ type
     property ClubPostCode: string read fCountryClubPostCode write priv_SetClubPostCode;
     property ClubWebsite: string read fCountryClubWebsite write priv_SetClubWebsite;
     property ClubPhone: string read fCountryClubPhone write priv_SetClubPhone;
+    property ClubGPSLongitude: Single read fCountryClubGPSLongitude write fCountryClubGPSLongitude;
+    property ClubGPSLatitude: Single read fCountryClubGPSLatitude write fCountryClubGPSLatitude;
     // Change courses by changing the CourseIndex property (0-based)
     property CourseIndex:Cardinal read fCourseIndex write priv_SetCourseIndex;
     // Change Tee sets by changing the TeeColourIndex property (0-based)
@@ -430,6 +433,9 @@ begin
      fCountryClubCommentsIndex:=0;
      fMaxCountryClubAmenetiesIndex:=0;
      fMaxCountryClubCommentsIndex:=0;
+     fCountryClubGPSLatitude:=0;
+     fCountryClubGPSLongitude:=0;
+
 
      fCountryClubName:='';
      fCountryClubCountry:='';
@@ -563,6 +569,15 @@ TRY
        OuterNode:=Doc.CreateElement('name');
        TextNode:=Doc.CreateTextNode(fCountryClubName);
        OuterNode.AppendChild(TextNode);
+       CountryClubNode.AppendChild(OuterNode);
+       // *********************************************************************
+       // <position><gps lat= lon= alt= /></position>
+       OuterNode:=Doc.CreateElement('position');
+       InnerNode:=Doc.CreateElement('gps');
+       TDOMElement(InnerNode).SetAttribute('lat',FloatToStr(fCountryClubGPSLatitude));
+       TDOMElement(InnerNode).SetAttribute('lon',FloatToStr(fCountryClubGPSLongitude));
+       TDOMElement(InnerNode).SetAttribute('alt','0');
+       OuterNode.AppendChild(InnerNode);
        CountryClubNode.AppendChild(OuterNode);
        // *********************************************************************
        // <note><comment></comment></note>
@@ -937,6 +952,8 @@ TRY
        VersionNode:=Doc.CreateElement('version');
          TDOMElement(VersionNode).SetAttribute('created',DateTimeToStr(Now));
          TDOMElement(VersionNode).SetAttribute('version',C_GOLFMLCLASSVERSION);
+       TextNode:=Doc.CreateTextNode('GolfMLClass');
+       VersionNode.AppendChild(TextNode);
        RootNode.AppendChild(VersionNode);
 
 
