@@ -9,7 +9,10 @@ The purpose of the application is to:
 
   * Write new golfml course definition files
   * Import and display course definition golfml files
-  * Import, edit and save course definition golfml files.
+  * Import, edit and save course definition golfml files
+  * Produce the files necessary to:
+    # Display a Golf Club scorecard for all courses
+    # Display a personalised scorecard for any player on any course featuring accurate USGA/EGA playing handicap and Stableford allowances.
 
 It does not:
 
