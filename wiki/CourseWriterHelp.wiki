@@ -20,6 +20,14 @@ It does _not_:
   * Read or write golfml player information
   * Read or write golfml match/score information
     * _Warning: If you import a golfml file with course, player and/or score information, and then overwrite it using !CourseWriter, only the course information will be preserved._
+== Who would use Golfml !CourseWriter? ==
+
+  * Golf course owners
+    * Using !CourseWriter, a club can make and then publish accurate data about their courses in a standard format (golfml) for customers to download, view and exchange.
+  * Golf societies
+    * Using !CourseWriter and golfml, the society can produce scorecards for it's members with accurate playing handicaps and stableford allowances for any club and course the members play.
+  * Golfers
+    * Using !CourseWriter and golfml, a golfer can produce, exchange and download golf course data for both local and remote courses.  This means that printing a personal scorecard for any course is easy and accurate.
 == What is a golfml file? ==
 
 It is a plain-text XML file designed to store information about Golf Courses, Golf Players and Golf Matches.
