@@ -51,6 +51,7 @@ Now, your golfml file will display on your website as a scorecard. ([http://www.
   * In the Mode menu, click 'Course + Player Scorecard stylesheet'
   * Click the 'Save all data to Golfml File'
   * Input if prompted the player's name, gender, date of birth and handicap
+  * When prompted enter the _exact_ golf course name and tee-colour
   * Use the suggested filename (e.g. 'playerscorecard_mycourse.xml') to save the golfml file to disk
   * On your website, add the saved golfml file and also the following 2 files (available in the source section):
   # playerscorecard.xsl
