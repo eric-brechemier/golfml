@@ -16,19 +16,32 @@ xmlns:g="http://code.google.com/p/golfml"
 -->                                
         <xsl:output method="html" indent="yes" encoding="UTF-8"/>
         <xsl:variable name="appname" select="'golfml custom scorecard'" />
-        <xsl:variable name="APPSECTION" select="g:golfml/g:country-club[1]/g:application[@name=$appname]" />
+        <xsl:variable name="APPSECTION" select="g:golfml/g:application[@name=$appname]" />
 
 		<!-- Set variables from golfmlclass <application> section -->
 		<xsl:variable name="TEECOLOUR" select="$APPSECTION/g:tee-colour" />
 		<xsl:variable name="PLAYERNAME" select="$APPSECTION/g:player-name" />
+		<xsl:variable name="PLAYERNAMESTRING"><xsl:value-of select="$PLAYERNAME"/></xsl:variable>
 		<xsl:variable name="COURSENAME" select="$APPSECTION/g:course-name" />
 		<xsl:variable name="EXACTEGAHANDICAP" select="$APPSECTION/g:player-handicap" />
 		<xsl:variable name="LENGTHUNITS" select="$APPSECTION/g:units" />
 		<xsl:variable name="HANDICAPSYSTEM" select="$APPSECTION/g:handicap-system" />
 		<xsl:variable name="CLUBNAME" select="g:golfml/g:country-club[1]/g:name" />
+        
+        <xsl:template match="g:golfml">
+			<!--
+			<xsl:apply-templates select="g:player[g:name=$PLAYERNAMESTRING]"/>
+			-->
+			<xsl:apply-templates select="g:country-club[1]"/>
+		</xsl:template>
 
+<!--
+        <xsl:template match="g:player[g:name=$PLAYERNAMESTRING]">
+				<xsl:variable name="PLAYERHANDICAP" select="g:current-handicap"/>
+		</xsl:template>
+-->			
         <!-- Only the first country club is processed -->
-        <xsl:template match="g:golfml/g:country-club[1]">
+        <xsl:template match="g:country-club[1]">
                 <html>
                         <head>
                                 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -55,7 +68,7 @@ xmlns:g="http://code.google.com/p/golfml"
 									&#160;&#160;Phone: <xsl:value-of select="g:contact/g:phone"/>	
  								</h4>
                                 <h3 align='center'>
-									Player: <xsl:value-of select="g:player[1]/g:name"/>
+									Player: <xsl:value-of select="$PLAYERNAME"/>
 									EGA Exact: <xsl:value-of select="$EXACTEGAHANDICAP"/>
 								</h3>
 								<p align='center'>
