@@ -21,6 +21,8 @@ unit ugolfmlclass;
 ==    Added <player> tag handling
 == 2.4
 ==    Added custom <application> section
+== 2.5
+==    Bugfix for bad scope
 ==
 ==
 *)
@@ -34,7 +36,7 @@ uses
 //  StdCtrls, ComCtrls, ExtCtrls; // DEBUGGING ONLY
 
 const
-  C_GOLFMLCLASSVERSION = '2.4.20120505';
+  C_GOLFMLCLASSVERSION = '2.5.20120506';
 CONST C_METERS=TRUE; // fMetric
 CONST C_YARDS=FALSE; // fMetric
 CONST C_AMENETYDELIMITER = ','; // Used in SplitAmenity
@@ -509,8 +511,9 @@ function TGolfmlClass.MakeGolfmlFile:Boolean;
 // Construct a new XML file from data in the private arrays
 var
   Doc: TXMLDocument;
-  RootNode, CountryClubNode,OuterNode,InnerNode,InnerInnerNode,TextNode: TDOMNode;
+  RootNode, CountryClubNode,PlayerNode,ApplicationNode,VersionNode: TDOMNode;
   GolfCourseNode,TeeSetNode:TDOMNode;
+  OuterNode,InnerNode,InnerInnerNode,TextNode: TDOMNode;
   cOuterLoop,cInnerLoop,cLoop:Cardinal;
   cCourseLoop,cTeePositionLoop,cHoleLoop:Cardinal;
   cInTeeDistanceMeters,cInTeeDistanceYards:Cardinal;
@@ -811,81 +814,86 @@ TRY
                 // Close Golf Course
                 CountryClubNode.AppendChild(GolfCourseNode);
            end;
+       // Write and close <country-club>
+       RootNode.AppendChild(CountryClubNode);
 
        // *********************************************************************
        // Optional Player Section
        // *********************************************************************
         If fIncludePlayerScoreCardStylesheetReference then
            begin
-                OuterNode:=Doc.CreateElement('player');
+                // Create Player section
+                PlayerNode:=Doc.CreateElement('player');
                 InnerNode:=Doc.CreateElement('name');
                 TDOMElement(InnerNode).SetAttribute('gender',fScoreCardPlayerGender);
                 TextNode:=Doc.CreateTextNode(fScoreCardPlayerName);
                 InnerNode.AppendChild(TextNode);
-                OuterNode.AppendChild(InnerNode);
+                PlayerNode.AppendChild(InnerNode);
 
                 InnerNode:=Doc.CreateElement('date-of-birth');
                 TextNode:=Doc.CreateTextNode(fScoreCardPlayerDateOfBirth);
                 InnerNode.AppendChild(TextNode);
-                OuterNode.AppendChild(InnerNode);
+                PlayerNode.AppendChild(InnerNode);
 
                 InnerNode:=Doc.CreateElement('current-handicap');
                 TDOMElement(InnerNode).SetAttribute('handicap-system','USGA');
                 TextNode:=Doc.CreateTextNode(Format('%0.1f',[fScoreCardPlayerHandicap]));
                 InnerNode.AppendChild(TextNode);
-                OuterNode.AppendChild(InnerNode);
-                CountryClubNode.AppendChild(OuterNode);
+                PlayerNode.AppendChild(InnerNode);
+                RootNode.AppendChild(PlayerNode);
            end;
        // *********************************************************************
        // Application Section
        // *********************************************************************
-       OuterNode:=Doc.CreateElement('application');
-         TDOMElement(OuterNode).SetAttribute('dotname','com.scorecard.app');
-         TDOMElement(OuterNode).SetAttribute('name','scorecard application');
-         TDOMElement(OuterNode).SetAttribute('xmlns:s','http://app.scorecard.com/golfml');
+       ApplicationNode:=Doc.CreateElement('application');
+         TDOMElement(ApplicationNode).SetAttribute('dotname','com.scorecard.app');
+         TDOMElement(ApplicationNode).SetAttribute('name','scorecard application');
+         TDOMElement(ApplicationNode).SetAttribute('xmlns:s','http://app.scorecard.com/golfml');
        // Preference (1)
        InnerNode:=Doc.CreateElement('s:preference');
            TDOMElement(InnerNode).SetAttribute('name','handicap-method');
            TextNode:=Doc.CreateTextNode('usga');
            InnerNode.AppendChild(TextNode);
-           OuterNode.AppendChild(InnerNode);
+           ApplicationNode.AppendChild(InnerNode);
        // Preference (2)
        InnerNode:=Doc.CreateElement('s:preference');
            TDOMElement(InnerNode).SetAttribute('name','units-system');
            TextNode:=Doc.CreateTextNode('metric');
            InnerNode.AppendChild(TextNode);
-           OuterNode.AppendChild(InnerNode);
-       CountryClubNode.AppendChild(OuterNode);
+           ApplicationNode.AppendChild(InnerNode);
+       RootNode.AppendChild(ApplicationNode);
 
        If fIncludePlayerScoreCardStylesheetReference then
           begin
-          // Custom Application section for Golfml CourseWriter
+          // *********************************************************************
+          // Custom Application Section
+          // *********************************************************************
           // for the use of playerscorecard.xsl
-          OuterNode:=Doc.CreateElement('application');
-          TDOMElement(OuterNode).SetAttribute('dotname','com.charcodelvalle.golfmlclass');
-          TDOMElement(OuterNode).SetAttribute('name','golfml custom scorecard');
-          TDOMElement(OuterNode).SetAttribute('xmlns:golfmlclass','http://code.google.com/p/golfml');
-          TDOMElement(OuterNode).SetAttribute('version',C_GOLFMLCLASSVERSION);
+          ApplicationNode:=Doc.CreateElement('application');
+          TDOMElement(ApplicationNode).SetAttribute('dotname','com.charcodelvalle.golfmlclass');
+          TDOMElement(ApplicationNode).SetAttribute('name','golfml custom scorecard');
+          TDOMElement(ApplicationNode).SetAttribute('xmlns:golfmlclass','http://code.google.com/p/golfml');
+          TDOMElement(ApplicationNode).SetAttribute('version',C_GOLFMLCLASSVERSION);
           // Create custom golfmlclass: fields
           InnerNode:=Doc.CreateElement('golfmlclass:scorecard-stylesheet');
             TextNode:=Doc.CreateTextNode(fScoreCardXSL);
           InnerNode.AppendChild(TextNode);
-          OuterNode.AppendChild(InnerNode);
+          ApplicationNode.AppendChild(InnerNode);
 
           InnerNode:=Doc.CreateElement('golfmlclass:playerscorecard-stylesheet');
            TextNode:=Doc.CreateTextNode(fPlayerScoreCardXSL);
            InnerNode.AppendChild(TextNode);
-           OuterNode.AppendChild(InnerNode);
+           ApplicationNode.AppendChild(InnerNode);
 
            InnerNode:=Doc.CreateElement('golfmlclass:scorecard-css');
            TextNode:=Doc.CreateTextNode(fScoreCardCSS);
            InnerNode.AppendChild(TextNode);
-           OuterNode.AppendChild(InnerNode);
+           ApplicationNode.AppendChild(InnerNode);
 
            InnerNode:=Doc.CreateElement('golfmlclass:handicap-system');
            TextNode:=Doc.CreateTextNode('ega');
            InnerNode.AppendChild(TextNode);
-           OuterNode.AppendChild(InnerNode);
+           ApplicationNode.AppendChild(InnerNode);
 
            InnerNode:=Doc.CreateElement('golfmlclass:units');
            if fMetric=C_METERS then
@@ -893,47 +901,45 @@ TRY
            else
                TextNode:=Doc.CreateTextNode('yards');
            InnerNode.AppendChild(TextNode);
-           OuterNode.AppendChild(InnerNode);
+           ApplicationNode.AppendChild(InnerNode);
 
            InnerNode:=Doc.CreateElement('golfmlclass:course-name');
            TextNode:=Doc.CreateTextNode(fScoreCardCourseName);
            InnerNode.AppendChild(TextNode);
-           OuterNode.AppendChild(InnerNode);
+           ApplicationNode.AppendChild(InnerNode);
 
            InnerNode:=Doc.CreateElement('golfmlclass:tee-colour');
            TextNode:=Doc.CreateTextNode(fScoreCardTeeColour);
            InnerNode.AppendChild(TextNode);
-           OuterNode.AppendChild(InnerNode);
+           ApplicationNode.AppendChild(InnerNode);
 
            InnerNode:=Doc.CreateElement('golfmlclass:player-name');
            TextNode:=Doc.CreateTextNode(fScoreCardPlayerName);
            InnerNode.AppendChild(TextNode);
-           OuterNode.AppendChild(InnerNode);
-
+           ApplicationNode.AppendChild(InnerNode);
+(*
            InnerNode:=Doc.CreateElement('golfmlclass:player-handicap');
            TextNode:=Doc.CreateTextNode(Format('%0.1f',[fScoreCardPlayerHandicap]));
            InnerNode.AppendChild(TextNode);
-           OuterNode.AppendChild(InnerNode);
-
+           ApplicationNode.AppendChild(InnerNode);
+*)
            InnerNode:=Doc.CreateElement('golfmlclass:last-updated');
            TextNode:=Doc.CreateTextNode(DateTimeToStr(Now));
            InnerNode.AppendChild(TextNode);
-           OuterNode.AppendChild(InnerNode);
-           CountryClubNode.AppendChild(OuterNode);
+           ApplicationNode.AppendChild(InnerNode);
+           RootNode.AppendChild(ApplicationNode);
        end;
 
 
        // *********************************************************************
        // Version Section
        // *********************************************************************
-       OuterNode:=Doc.CreateElement('version');
-         TDOMElement(OuterNode).SetAttribute('created',DateTimeToStr(Now));
-         TDOMElement(OuterNode).SetAttribute('version',C_GOLFMLCLASSVERSION);
-       CountryClubNode.AppendChild(OuterNode);
+       VersionNode:=Doc.CreateElement('version');
+         TDOMElement(VersionNode).SetAttribute('created',DateTimeToStr(Now));
+         TDOMElement(VersionNode).SetAttribute('version',C_GOLFMLCLASSVERSION);
+       RootNode.AppendChild(VersionNode);
 
 
-       // Write and close <country-club>
-       RootNode.AppendChild(CountryClubNode);
 
 
        WriteXMLFile(Doc,fCourseXMLPath);

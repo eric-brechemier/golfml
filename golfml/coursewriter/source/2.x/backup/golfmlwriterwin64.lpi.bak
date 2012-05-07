@@ -21,7 +21,7 @@
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="2"/>
       <MinorVersionNr Value="3"/>
-      <BuildNr Value="23"/>
+      <BuildNr Value="27"/>
       <StringTable CompanyName="minesadorada@charcodelvalle.com" FileDescription="golfm course writer and editor" InternalName="golfmlcoursewriter{OSVERSION}" OriginalFilename="golfmlcoursewriter" ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="2" Active="Retail">
@@ -109,7 +109,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -122,7 +122,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
@@ -133,7 +133,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
@@ -143,9 +143,10 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="29" Y="35"/>
-        <UsageCount Value="20"/>
+        <TopLine Value="903"/>
+        <CursorPos X="3" Y="925"/>
+        <FoldState Value=" TK10Q T7i5H~Y T3oc052 pk0kC042;"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
@@ -159,7 +160,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="39" Y="8"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit4>
