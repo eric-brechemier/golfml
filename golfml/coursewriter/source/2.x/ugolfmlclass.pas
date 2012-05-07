@@ -917,12 +917,12 @@ TRY
            TextNode:=Doc.CreateTextNode(fScoreCardPlayerName);
            InnerNode.AppendChild(TextNode);
            ApplicationNode.AppendChild(InnerNode);
-(*
+
            InnerNode:=Doc.CreateElement('golfmlclass:player-handicap');
            TextNode:=Doc.CreateTextNode(Format('%0.1f',[fScoreCardPlayerHandicap]));
            InnerNode.AppendChild(TextNode);
            ApplicationNode.AppendChild(InnerNode);
-*)
+
            InnerNode:=Doc.CreateElement('golfmlclass:last-updated');
            TextNode:=Doc.CreateTextNode(DateTimeToStr(Now));
            InnerNode.AppendChild(TextNode);

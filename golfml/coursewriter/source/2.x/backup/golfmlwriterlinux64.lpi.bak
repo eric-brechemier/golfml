@@ -18,7 +18,7 @@
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="2"/>
       <MinorVersionNr Value="4"/>
-      <BuildNr Value="10"/>
+      <BuildNr Value="11"/>
       <Language Value="0809"/>
       <StringTable CompanyName="minesadorada" InternalName="golfmlcoursewriterlinux64" OriginalFilename="golfmlcoursewriter" ProductVersion="2.4.20120505"/>
     </VersionInfo>
@@ -114,7 +114,6 @@
         <ComponentName Value="mainform"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="umainform"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1114"/>
@@ -155,10 +154,11 @@
         <Filename Value="ugolfmlclass.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ugolfmlclass"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="855"/>
-        <CursorPos X="49" Y="869"/>
+        <TopLine Value="910"/>
+        <CursorPos X="1" Y="925"/>
         <UsageCount Value="200"/>
         <Bookmarks Count="2">
           <Item0 X="6" Y="25" ID="1"/>
