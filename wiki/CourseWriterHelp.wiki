@@ -32,7 +32,7 @@ It does _not_:
 
 It is a plain-text XML file designed to store information about Golf Courses, Golf Players and Golf Matches.
 
-== How can I make a new golfml file? ==
+== How can I make a golfml data file for any course? ==
 
 When Golfml !CourseWriter starts up, the first screen gives simple instructions on how to make a new golfml file.
 
