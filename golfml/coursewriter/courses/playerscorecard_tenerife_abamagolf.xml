@@ -1,4 +1,5 @@
 <?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="playerscorecard.xsl"?>
 <golfml xmlns="http://code.google.com/p/golfml" version="0.9" xmlns:g="http://code.google.com/p/golfml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:golfmlclass="http://www.charcodelvalle.com/golfml" xsi:schemaLocation="http://code.google.com/p/golfml/source/browse/golfml/schemas/golfml.xsd">
   <country-club>
     <name>Abama Golf and Spa resort</name>
@@ -531,9 +532,26 @@
       </tee-set>
     </golf-course>
   </country-club>
+  <player>
+    <name gender="male">Mines A. Dorada</name>
+    <date-of-birth>25/12/1954</date-of-birth>
+    <current-handicap handicap-system="USGA">26.3</current-handicap>
+  </player>
   <application name="scorecard application" dotname="com.scorecard.app" xmlns:s="http://app.scorecard.com/golfml">
     <s:preference name="handicap-method">usga</s:preference>
     <s:preference name="units-system">metric</s:preference>
   </application>
-  <version created="07/05/2012 13:19:15" version="2.5.20120506"/>
+  <application name="golfml custom scorecard" dotname="com.charcodelvalle.golfmlclass" version="2.5.20120506" xmlns:golfmlclass="http://code.google.com/p/golfml">
+    <golfmlclass:scorecard-stylesheet>coursescorecard.xsl</golfmlclass:scorecard-stylesheet>
+    <golfmlclass:playerscorecard-stylesheet>playerscorecard.xsl</golfmlclass:playerscorecard-stylesheet>
+    <golfmlclass:scorecard-css>golfml.css</golfmlclass:scorecard-css>
+    <golfmlclass:handicap-system>ega</golfmlclass:handicap-system>
+    <golfmlclass:units>meters</golfmlclass:units>
+    <golfmlclass:course-name>Main Course</golfmlclass:course-name>
+    <golfmlclass:tee-colour>yellow</golfmlclass:tee-colour>
+    <golfmlclass:player-name>Mines A. Dorada</golfmlclass:player-name>
+    <golfmlclass:player-handicap>26.3</golfmlclass:player-handicap>
+    <golfmlclass:last-updated>07/05/2012 13:20:35</golfmlclass:last-updated>
+  </application>
+  <version created="07/05/2012 13:20:35" version="2.5.20120506"/>
 </golfml>
