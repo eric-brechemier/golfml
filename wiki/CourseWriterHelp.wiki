@@ -7,9 +7,15 @@ This Page: <wiki:toc max_depth="4" />
 
 The purpose of the application is to:
 
-  * Write new golfml files
-  * Import and display golfml files
-  * Import, edit and save golfml files.
+  * Write new golfml course definition files
+  * Import and display course definition golfml files
+  * Import, edit and save course definition golfml files.
+
+It does not:
+
+  * Read or write golfml player information
+  * Read or write golfml match/score information
+    * _Warning: If you import a golfml file with course, player and/or score information, and then overwrite it using !CourseWriter, only the course information will be preserved._
 == What is a golfml file? ==
 
 It is a plain-text XML file designed to store information about Golf Courses, Golf Players and Golf Matches.
