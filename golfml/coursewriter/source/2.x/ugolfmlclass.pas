@@ -23,6 +23,8 @@ unit ugolfmlclass;
 ==    Added custom <application> section
 == 2.5
 ==    Bugfix for bad scope
+== 2.6
+==    Added GPS Lat and Long
 ==
 ==
 *)
@@ -36,7 +38,7 @@ uses
 //  StdCtrls, ComCtrls, ExtCtrls; // DEBUGGING ONLY
 
 const
-  C_GOLFMLCLASSVERSION = '2.5.20120507';
+  C_GOLFMLCLASSVERSION = '2.6.20120507';
 CONST C_METERS=TRUE; // fMetric
 CONST C_YARDS=FALSE; // fMetric
 CONST C_AMENETYDELIMITER = ','; // Used in SplitAmenity
@@ -153,6 +155,7 @@ type
     procedure priv_ProcessXMLCountryClubContact(aNode:TDomNode);
     procedure priv_ProcessXMLCountryClubAmenety(aNode:TDomNode);
     procedure priv_ProcessXMLCountryClubNote(aNode:TDomNode);
+    procedure priv_ProcessXMLCountryClubPosition(aNode:TDomNode);
     Procedure priv_ProcessNoTeeSetsInCourse(cCourseIndex:Cardinal); // Called from priv_SetCurrentCourse
 
 
@@ -205,6 +208,9 @@ type
     procedure priv_SetClubPostCode(aString:String);
     procedure priv_SetClubWebsite(aString:String);
     procedure priv_SetClubPhone(aString:String);
+    procedure priv_SetClubGPSLongitude(aSingle:Single);
+    procedure priv_SetClubGPSLatitude(aSingle:Single);
+
 
     Function priv_GetClubAmeneties(iIndex:Integer):String;
     procedure priv_SetClubAmeneties(Const iIndex:Integer;aString:String);
@@ -272,8 +278,8 @@ type
     property ClubPostCode: string read fCountryClubPostCode write priv_SetClubPostCode;
     property ClubWebsite: string read fCountryClubWebsite write priv_SetClubWebsite;
     property ClubPhone: string read fCountryClubPhone write priv_SetClubPhone;
-    property ClubGPSLongitude: Single read fCountryClubGPSLongitude write fCountryClubGPSLongitude;
-    property ClubGPSLatitude: Single read fCountryClubGPSLatitude write fCountryClubGPSLatitude;
+    property ClubGPSLongitude: Single read fCountryClubGPSLongitude write priv_SetClubGPSLongitude;
+    property ClubGPSLatitude: Single read fCountryClubGPSLatitude write priv_SetClubGPSLatitude;
     // Change courses by changing the CourseIndex property (0-based)
     property CourseIndex:Cardinal read fCourseIndex write priv_SetCourseIndex;
     // Change Tee sets by changing the TeeColourIndex property (0-based)
@@ -1411,6 +1417,43 @@ begin
        end;
 end;
 // *********************************************************************
+procedure TGolfmlClass.priv_ProcessXMLCountryClubPosition(aNode:TDomNode);
+Var
+   CurrentNode:TDOMNode;
+   iAttributeCount:Cardinal;
+   aString:String;
+   fTryFloat:Single;
+begin
+     CurrentNode:=ANode; // <position>
+     CurrentNode:=CurrentNode.FirstChild; // Look at children of <position>
+     While Assigned(CurrentNode) do
+       begin
+           if CurrentNode.NodeName='gps' then
+              if CurrentNode.HasAttributes and (CurrentNode.Attributes.Length > 0) then
+               For iAttributeCount:=0 to CurrentNode.Attributes.Length-1 do
+                 begin
+                      If CurrentNode.Attributes[iAttributeCount].NodeName='lat' then
+                       begin
+                            aString:=CurrentNode.Attributes[iAttributeCount].NodeValue;
+                            If TryStrToFloat(aString,fTryFloat) then
+                               fCountryClubGPSLatitude:=fTryFloat
+                            else
+                              fCountryClubGPSLatitude:=0;
+                       end;
+                      If CurrentNode.Attributes[iAttributeCount].NodeName='lon' then
+                       begin
+                            aString:=CurrentNode.Attributes[iAttributeCount].NodeValue;
+                            If TryStrToFloat(aString,fTryFloat) then
+                               fCountryClubGPSLongitude:=fTryFloat
+                            else
+                              fCountryClubGPSLongitude:=0;
+                       end;
+                 end;
+           CurrentNode:=CurrentNode.NextSibling;
+       end;
+end;
+
+// *********************************************************************
 procedure TGolfmlClass.priv_ProcessXMLCountryClubAmenety(aNode:TDomNode);
 Var
    CurrentNode:TDOMNode;
@@ -1453,6 +1496,7 @@ begin
      While Assigned(CurrentNode) do
        begin
            if CurrentNode.NodeName='name' then fCountryClubName:=CurrentNode.TextContent;
+           if CurrentNode.NodeName='position' then priv_ProcessXMLCountryClubPosition(CurrentNode);
            if CurrentNode.NodeName='address' then priv_ProcessXMLCountryClubAddress(CurrentNode);
            if CurrentNode.NodeName='contact' then priv_ProcessXMLCountryClubContact(CurrentNode);
            if CurrentNode.NodeName='amenety' then priv_ProcessXMLCountryClubAmenety(CurrentNode);
@@ -1730,6 +1774,12 @@ begin fCountryClubWebsite:=aString; end;
 // *********************************************************************
 procedure TGolfmlClass.priv_SetClubPhone(aString:String);
 begin fCountryClubPhone:=aString; end;
+// *********************************************************************
+procedure TGolfmlClass.priv_SetClubGPSLongitude(aSingle:Single);
+begin fCountryClubGPSLongitude:=aSingle; end;
+// *********************************************************************
+procedure TGolfmlClass.priv_SetClubGPSLatitude(aSingle:Single);
+begin fCountryClubGPSLatitude:=aSingle; end;
 // *********************************************************************
 Function TGolfmlClass.priv_GetCourseName:String;
 begin

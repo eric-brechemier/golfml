@@ -166,21 +166,18 @@ object mainform: Tmainform
           Left = 15
           Height = 15
           Top = 162
-          Width = 120
+          Width = 64
           AutoSize = False
-          Caption = 'Country: '
+          Caption = 'GPS Lat:'
           ParentColor = False
         end
-        object edt_countryclubcountry: TEdit
-          Left = 143
+        object edt_countryclubgpslat: TEdit
+          Left = 77
           Height = 21
           Top = 159
-          Width = 184
-          Enabled = False
-          OnEditingDone = edt_countryclubcountryEditingDone
-          ReadOnly = True
-          TabStop = False
+          Width = 88
           TabOrder = 5
+          Text = '0'
         end
         object Label6: TLabel
           Left = 15
@@ -559,6 +556,23 @@ object mainform: Tmainform
           Top = 206
           Width = 333
           TabOrder = 11
+        end
+        object Label13: TLabel
+          Left = 173
+          Height = 15
+          Top = 162
+          Width = 64
+          AutoSize = False
+          Caption = 'GPS Long:'
+          ParentColor = False
+        end
+        object edt_countryclubgpslong: TEdit
+          Left = 237
+          Height = 21
+          Top = 159
+          Width = 86
+          TabOrder = 12
+          Text = '0'
         end
       end
     end

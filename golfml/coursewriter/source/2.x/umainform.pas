@@ -21,7 +21,7 @@ unit umainform;
 == Bugfix to golfmlclass golfml structure
 == Various bugfixes
 == Configuration file storage of player info
-== 2.5
+== 2.6
 == Added regexp validation of phone number
 == Added gps capability in golfmlclass
 ==
@@ -49,6 +49,7 @@ type
     bitbtn1: tbitbtn;
     edt_comment1: TEdit;
     edt_comment2: TEdit;
+    edt_countryclubgpslong: TEdit;
     grp_amenities: TCheckGroup;
     cmd_newcourse: TBitBtn;
     cmd_makexml: TBitBtn;
@@ -57,7 +58,7 @@ type
     edt_countryclubphone: TEdit;
     edt_countryclubwebsite: TEdit;
     edt_countryclubregion: TEdit;
-    edt_countryclubcountry: TEdit;
+    edt_countryclubgpslat: TEdit;
     edt_countryclubpostcode: TEdit;
     edt_countryclubstreet: TEdit;
     edt_CountryClubName: TEdit;
@@ -71,6 +72,7 @@ type
     Label10: TLabel;
     Label11: TLabel;
     label12: tlabel;
+    label13: tlabel;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
@@ -102,7 +104,6 @@ type
     procedure cmd_closeClick(Sender: TObject);
     procedure cmd_makexmlClick(Sender: TObject);
     procedure cmd_newcourseClick(Sender: TObject);
-    procedure edt_countryclubcountryEditingDone(Sender: TObject);
     procedure edt_countryclubmunicipalityEditingDone(Sender: TObject);
     procedure edt_CountryClubNameEditingDone(Sender: TObject);
     procedure edt_countryclubphoneEditingDone(Sender: TObject);
@@ -141,6 +142,8 @@ type
     fCountryClubPhone:String; //  ClubPhone
     fCountryClubAmeneties:String; //  ClubAmeneties
     fCountryClubComments:String; //  ClubComments
+    fCountryClubGPSLat:String;
+    fCountryClubGPSLong:String;
     fCourseNumberOfHoles:Cardinal; //  CourseNumberOfHoles
     fCourseCount:Cardinal; //  CourseCount
     fTeeColourCount:Cardinal; //  TeeColourCount
@@ -268,14 +271,14 @@ begin
     edt_countryclubmunicipality.Text:='';
     edt_countryclubregion.Text:='';
     edt_countryclubpostcode.Text:='';
-    edt_countryclubcountry.Text:='';
     edt_countryclubphone.Text:='';
     edt_countryclubwebsite.Text:='http://www.';
     cmb_CountryClubcountrycode.ItemIndex:=0;
     s:=cmb_CountryClubcountrycode.Items[cmb_CountryClubcountrycode.ItemIndex];
     sCode:=LeftStr(s,2);
     sCountry:=RightStr(s,Length(s)-4);
-    edt_countryclubcountry.Text:=sCountry;
+    edt_countryclubgpslat.Text:='0';
+    edt_countryclubgpslong.Text:='0';
 
     edt_comment1.Text:='';
     edt_comment2.Text:='';
@@ -321,6 +324,8 @@ begin
     fPlayerDateOfBirth:=FormatDateTime(ShortDateFormat,Now);
     fPlayerGender:='unknown';
     fPlayerHandicap:=36;
+    fCountryClubGPSLat:='0';
+    fCountryClubGPSLong:='0';
 
     mnu_modeCourseOnly.Checked:=True;
 end;
@@ -366,7 +371,8 @@ TRY //..EXCEPT
          edt_countryclubmunicipality.Text:=ClubMunicipality;
          edt_countryclubregion.Text:=ClubRegion;
          edt_countryclubpostcode.Text:=ClubPostCode;
-         edt_countryclubcountry.Text:=ClubCountry;
+         edt_countryclubgpslat.Text:=FloatToStr(ClubGPSLatitude);
+         edt_countryclubgpslong.Text:=FloatToStr(ClubGPSLongitude);
          edt_countryclubphone.Text:=ClubPhone;
          edt_countryclubwebsite.Text:=ClubWebsite;
          // Only the first 2 comments are imported.  The 'Created By' and 'charcodelvalle' comments are ignored.
@@ -573,19 +579,27 @@ Var
    bUseMetres:Boolean;
    iAmenityIndex:Integer;
    s,sComment1,sComment2:String;
+   sCode,sCountry:String;
 begin
   Result:=False;  // assume failure; look for success
 
   fCountryClubName:=edt_CountryClubName.Text;
-  fCountryClubCountry:=edt_countryclubcountry.Text;
   fCountryClubMunicipality:=edt_countryclubmunicipality.Text;
   fCountryClubRegion:=edt_countryclubregion.Text;
   fCountryClubStreet:=edt_countryclubstreet.Text;
   fCountryClubPostCode:=edt_countryclubpostcode.Text;
   fCountryClubPhone:=edt_countryclubphone.Text;
   fCountryClubWebsite:=edt_countryclubwebsite.Text;
-  s:=LeftStr(cmb_CountryClubcountrycode.Items[cmb_CountryClubcountrycode.ItemIndex],2);
-  fCountryClubCountryCode:=UPPERCase(s);
+  fCountryClubGPSLat:=edt_countryclubgpslat.Text;
+  fCountryClubGPSLong:=edt_countryclubgpslong.Text;
+  s:=cmb_CountryClubcountrycode.Items[cmb_CountryClubcountrycode.ItemIndex];
+  sCode:=LeftStr(s,2);
+  fCountryClubCountryCode:=UPPERCase(sCode);
+  sCountry:=RightStr(s,Length(s)-4);
+  //Strip leading spaces
+  While (LeftStr(sCountry,1)=' ') do
+        sCountry:=RightStr(s,Length(sCountry)-1);
+  fCountryClubCountry:=sCountry;
   TRY
     With GolfmlClass do // Just reference property names from here
      begin
@@ -610,6 +624,10 @@ begin
           ClubPostCode:=fCountryClubPostCode; // Property ClubPostCode
           ClubWebsite:=fCountryClubWebsite; // Property ClubWebsite
           ClubPhone:=fCountryClubPhone; // Property ClubPhone
+          If TryStrToFloat(fCountryClubGPSLat,sTryFloat) then
+             ClubGPSLatitude:=sTryFloat;
+          If TryStrToFloat(fCountryClubGPSLong,sTryFloat) then
+             ClubGPSLongitude:=sTryFloat;
           // Deal with CountryClub Comments
           sComment1:=edt_comment1.Text;
           sComment2:=edt_comment2.Text;
@@ -1131,8 +1149,10 @@ begin
     s:=cmb_CountryClubcountrycode.Items[cmb_CountryClubcountrycode.ItemIndex];
     sCode:=LeftStr(s,2);
     sCountry:=RightStr(s,Length(s)-4);
-    edt_countryclubcountry.Text:=sCountry;
+    edt_countryclubgpslat.Text:='0';
+    edt_countryclubgpslong.Text:='0';
     fCountryClubCountryCode:=sCode;
+    fCountryClubCountry:=sCountry;
     ShowInstructions; // Populate instructions label
     HTMLBrowserHelpViewer1.FindDefaultBrowser(BrowserPath,BrowserParams);
     HTMLBrowserHelpViewer1.BrowserPath:=BrowserPath;
@@ -1190,7 +1210,7 @@ end;
 
 procedure tmainform.label12click(sender: tobject);
 begin
-  OpenURL('http://www.charcodelvalle.com/golfmlweb/golfcoursewriter.html');
+  OpenURL('http://code.google.com/p/golfml/wiki/CourseWriterHelp');
 end;
 
 procedure Tmainform.mnu_fileImportGolfmlClick(Sender: TObject);
@@ -1334,7 +1354,7 @@ begin
      sCode:=LeftStr(s,2);
      fCountryClubCountryCode:=UPPERCase(sCode);
      sCountry:=RightStr(s,Length(s)-4);
-     edt_countryclubcountry.Text:=sCountry;
+     fCountryClubCountry:=sCountry;
 end;
 (******************************************************************************)
 procedure Tmainform.cmd_makexmlClick(Sender: TObject);
@@ -1573,13 +1593,6 @@ begin
               HALT;
          end;
     END;
-end;
-
-procedure Tmainform.edt_countryclubcountryEditingDone(Sender: TObject);
-begin
-    If Length(edt_countryclubcountry.Text) > 0 then
-       fCountryClubCountry:=edt_countryclubcountry.Text
-    else fCountryClubCountry:='';
 end;
 
 procedure Tmainform.edt_countryclubmunicipalityEditingDone(Sender: TObject);
