@@ -16,6 +16,7 @@ The purpose of the application is to:
 
 It does _not_:
 
+  * Read or write golfml graphical information (SVG yardage books)
   * Read or write golfml player information
   * Read or write golfml match/score information
     * _Warning: If you import a golfml file with course, player and/or score information, and then overwrite it using !CourseWriter, only the course information will be preserved._
