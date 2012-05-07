@@ -43,7 +43,7 @@ Yes.  That is one of the strengths of XML as a data format, but it is safer to e
  * On your website, add the saved golfml file and also the following 2 files (available in the source section):
     # coursescorecard.xsl
     # golfml.css
-Now, your golfml file will display on your website as a scorecard.
+Now, your golfml file will display on your website as a scorecard. [http://www.charcodelvalle.com/golfmlweb/files/scorecard_tenerife_abamagolf.xml Click Here] to see an example)
 
 == How can I display a personalised scorecard on a web page using Golfml !CourseWriter? ==
 
@@ -53,9 +53,10 @@ Now, your golfml file will display on your website as a scorecard.
   * Input if prompted the player's name, gender, date of birth and handicap
   * Use the suggested filename (e.g. 'playerscorecard_mycourse.xml') to save the golfml file to disk
   * On your website, add the saved golfml file and also the following 2 files (available in the source section):
-  # playerscorecard.xsl (still at V0.9 - watch this space)
+  # playerscorecard.xsl
   # golfml.css
-Now, your golfml file will display on your website as a personalised scorecard.
+Now, your golfml file will display on your website as a personalised scorecard.  [http://www.charcodelvalle.com/golfmlweb/files/playerscorecard_tenerife_abamagolf.xml Click Here] to see an example)
+
 
 == I want to add a new feature or amenity (advanced feature) ==
 If you click Help/About !CourseWriter, on the resulting dialog you will see something like the entry:
