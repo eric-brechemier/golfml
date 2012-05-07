@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
-<golfml xmlns="http://code.google.com/p/golfml" version="0.9" xmlns:g="http://code.google.com/p/golfml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://code.google.com/p/golfml/source/browse/golfml/schemas/golfml.xsd">
+<golfml xmlns="http://code.google.com/p/golfml" version="0.9" xmlns:g="http://code.google.com/p/golfml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:golfmlclass="http://www.charcodelvalle.com/golfml" xsi:schemaLocation="http://code.google.com/p/golfml/source/browse/golfml/schemas/golfml.xsd">
   <country-club>
     <name>Amarilla Golf</name>
     <note>
       <comment lang="en">English Spoken</comment>
       <comment lang="en">Los Golfos golf society based here</comment>
       <comment lang="en">Created by Golfml Coursewriter</comment>
-      <comment lang="en">http://www.charcodelvalle.com/golfmlweb/</comment>
+      <comment lang="en">http://code.google.com/p/golfml/</comment>
     </note>
     <address>
       <street>San Miguel de Abona</street>
@@ -537,7 +537,7 @@
       </tee-set>
     </golf-course>
     <golf-course>
-      <name>Pitch and Put 9 holes</name>
+      <name>Pitch and Putt 9 holes</name>
       <tee-set name="Regular" colour="yellow" gender="gentlemen">
         <qualification>
           <qualification-usga>
@@ -609,10 +609,10 @@
         </tee>
       </tee-set>
     </golf-course>
-    <application name="scorecard application" dotname="com.scorecard.app" xmlns:s="http://app.scorecard.com/golfml">
-      <s:preference name="handicap-method">usga</s:preference>
-      <s:preference name="units-system">metric</s:preference>
-    </application>
-    <version created="29/04/2012 08:27:29" version="2.3.20120429"/>
   </country-club>
+  <application name="scorecard application" dotname="com.scorecard.app" xmlns:s="http://app.scorecard.com/golfml">
+    <s:preference name="handicap-method">usga</s:preference>
+    <s:preference name="units-system">metric</s:preference>
+  </application>
+  <version created="07/05/2012 09:00:14" version="2.5.20120506"/>
 </golfml>
