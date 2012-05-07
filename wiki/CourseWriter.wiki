@@ -10,7 +10,7 @@ This Page: <wiki:toc max_depth="4" />
   * !CourseWriter can also open, edit and save any valid golfml course file.
 
   * !CourseWriter can also automatically make a golfml file that will display as a general scorecard: ([http://www.charcodelvalle.com/golfmlweb/files/scorecard_tenerife_abamagolf.xml click here] to see an example) or a personalised scorecard with correct Playing handicap and Stableford allowances ([http://www.charcodelvalle.com/golfmlweb/files/playerscorecard_tenerife_abamagolf.xml click here] to see an example) depending on the stylesheet used.
-    * CourseWriter remembers your Name, Course, Tee-Colour and Handicap, making it easy to update the Personal Scorecard.
+    * !CourseWriter remembers your Name, Course, Tee-Colour and Handicap, making it easy to update your Personal Scorecard for other courses and changes in handicap.
     * The Personal Scorecard is formatted to print and take with you to the course.  Marking your Stableford score as you go is easy!
 
   * At any time, you can press F1 to see [CourseWriterHelp online help].
