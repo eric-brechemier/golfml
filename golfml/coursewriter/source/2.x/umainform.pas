@@ -1646,7 +1646,7 @@ begin
                r.ModifierI:=true;
                r.Exec(s);
                if r.MatchPos[0]>=0 then
-                  fCountryClubPhone:=s
+                  fCountryClubPhone:=DelSpace(s)
                    //showmessage('success, found '+r.Match[0])
                else
                    MessageDlg(Format(sHelp,[s]),mtError,[MBOK],0);

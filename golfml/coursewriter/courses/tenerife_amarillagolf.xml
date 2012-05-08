@@ -2,6 +2,9 @@
 <golfml xmlns="http://code.google.com/p/golfml" version="0.9" xmlns:g="http://code.google.com/p/golfml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:golfmlclass="http://www.charcodelvalle.com/golfml" xsi:schemaLocation="http://code.google.com/p/golfml/source/browse/golfml/schemas/golfml.xsd">
   <country-club>
     <name>Amarilla Golf</name>
+    <position>
+      <gps alt="0" lat="28.02669907" lon="-16.61660004"/>
+    </position>
     <note>
       <comment lang="en">English Spoken</comment>
       <comment lang="en">Los Golfos golf society based here</comment>
@@ -17,7 +20,7 @@
       <website>http://www.amarillagolf.es</website>
     </address>
     <contact type="club-house">
-      <phone>00 34 922 730 319</phone>
+      <phone>0034-922730319</phone>
     </contact>
     <amenety type="practice">Practice putting green</amenety>
     <amenety type="practice">Practice driving range</amenety>
@@ -614,5 +617,5 @@
     <s:preference name="handicap-method">usga</s:preference>
     <s:preference name="units-system">metric</s:preference>
   </application>
-  <version created="07/05/2012 09:00:14" version="2.5.20120506"/>
+  <version created="08/05/2012 09:10:29" version="2.6.20120507">GolfMLClass</version>
 </golfml>

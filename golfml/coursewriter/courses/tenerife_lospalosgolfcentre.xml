@@ -2,6 +2,9 @@
 <golfml xmlns="http://code.google.com/p/golfml" version="0.9" xmlns:g="http://code.google.com/p/golfml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:golfmlclass="http://www.charcodelvalle.com/golfml" xsi:schemaLocation="http://code.google.com/p/golfml/source/browse/golfml/schemas/golfml.xsd">
   <country-club>
     <name>Los Palos Golf Centre</name>
+    <position>
+      <gps alt="0" lat="28.03730011" lon="-16.68129921"/>
+    </position>
     <note>
       <comment lang="en">English Spoken</comment>
       <comment lang="en">All par-3</comment>
@@ -16,7 +19,7 @@
       <website>http://www.golflospalos.com</website>
     </address>
     <contact type="club-house">
-      <phone>922 169 238</phone>
+      <phone>+34-922 169 238</phone>
     </contact>
     <amenety type="practice">Practice putting green</amenety>
     <amenety type="practice">Practice driving range</amenety>
@@ -175,5 +178,5 @@
     <s:preference name="handicap-method">usga</s:preference>
     <s:preference name="units-system">metric</s:preference>
   </application>
-  <version created="07/05/2012 09:01:39" version="2.5.20120506"/>
+  <version created="08/05/2012 09:20:40" version="2.6.20120507">GolfMLClass</version>
 </golfml>

@@ -2,6 +2,9 @@
 <golfml xmlns="http://code.google.com/p/golfml" version="0.9" xmlns:g="http://code.google.com/p/golfml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:golfmlclass="http://www.charcodelvalle.com/golfml" xsi:schemaLocation="http://code.google.com/p/golfml/source/browse/golfml/schemas/golfml.xsd">
   <country-club>
     <name>Buenavista Golf</name>
+    <position>
+      <gps alt="0" lat="28.37260056" lon="-16.86310005"/>
+    </position>
     <note>
       <comment lang="en">Public course, scenic views but can be windy in winter</comment>
       <comment lang="en">English spoken</comment>
@@ -17,7 +20,7 @@
       <website>http://www.buenavistagolf.es/</website>
     </address>
     <contact type="club-house">
-      <phone>00 34 922 12 90 34</phone>
+      <phone>0034-922129034</phone>
     </contact>
     <amenety type="practice">Practice putting green</amenety>
     <amenety type="practice">Practice driving range</amenety>
@@ -532,5 +535,5 @@
     <s:preference name="handicap-method">usga</s:preference>
     <s:preference name="units-system">metric</s:preference>
   </application>
-  <version created="07/05/2012 09:00:24" version="2.5.20120506"/>
+  <version created="08/05/2012 09:11:57" version="2.6.20120507">GolfMLClass</version>
 </golfml>

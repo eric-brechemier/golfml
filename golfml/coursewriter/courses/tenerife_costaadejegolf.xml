@@ -2,6 +2,9 @@
 <golfml xmlns="http://code.google.com/p/golfml" version="0.9" xmlns:g="http://code.google.com/p/golfml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:golfmlclass="http://www.charcodelvalle.com/golfml" xsi:schemaLocation="http://code.google.com/p/golfml/source/browse/golfml/schemas/golfml.xsd">
   <country-club>
     <name>Costa Adeje Golf</name>
+    <position>
+      <gps alt="0" lat="28.1140995" lon="-16.75279999"/>
+    </position>
     <note>
       <comment lang="en">Los Lagos (Adeje C) has a separate clubhouse</comment>
       <comment lang="en">English spoken</comment>
@@ -15,7 +18,7 @@
       <website>http://www.golfcostaadeje.com/</website>
     </address>
     <contact type="club-house">
-      <phone>00 34 922 710 000</phone>
+      <phone>0034-922 710 000</phone>
     </contact>
     <amenety type="practice">Practice putting green</amenety>
     <amenety type="practice">Practice driving range</amenety>
@@ -806,5 +809,5 @@
     <s:preference name="handicap-method">usga</s:preference>
     <s:preference name="units-system">metric</s:preference>
   </application>
-  <version created="07/05/2012 09:00:36" version="2.5.20120506"/>
+  <version created="08/05/2012 09:13:09" version="2.6.20120507">GolfMLClass</version>
 </golfml>
