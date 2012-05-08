@@ -3,6 +3,9 @@
 <golfml xmlns="http://code.google.com/p/golfml" version="0.9" xmlns:g="http://code.google.com/p/golfml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:golfmlclass="http://www.charcodelvalle.com/golfml" xsi:schemaLocation="http://code.google.com/p/golfml/source/browse/golfml/schemas/golfml.xsd">
   <country-club>
     <name>Abama Golf and Spa resort</name>
+    <position>
+      <gps alt="0" lat="28.17141914" lon="-16.79093933"/>
+    </position>
     <note>
       <comment lang="en">Beautiful and exclusive</comment>
       <comment lang="en">English spoken</comment>
