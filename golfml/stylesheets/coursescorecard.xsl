@@ -41,6 +41,9 @@ HISTORY
                 <xsl:apply-templates select="g:address"/>
        			<br/>Phone: <xsl:apply-templates select="g:contact"/>
        			</p>
+                <p align="center">
+       			<xsl:apply-templates select="g:position/g:gps"/>
+       			</p>
                 <hr/>
                 <xsl:apply-templates select="g:golf-course"/>
         </xsl:template>
@@ -59,8 +62,23 @@ HISTORY
 
         <xsl:template match="g:contact">
         	<xsl:value-of select="g:phone"/>
-	</xsl:template>
+		</xsl:template>
 		
+        <xsl:template match="g:position/g:gps">
+        	<xsl:if test="@alt=0">
+        		<xsl:element name="img">
+        			<xsl:attribute name="border">2</xsl:attribute>
+        			<xsl:attribute name="src">
+						<xsl:text>http://maps.googleapis.com/maps/api/staticmap?center=</xsl:text>
+						<xsl:value-of select="@lat"/>
+						<xsl:text>,</xsl:text>
+						<xsl:value-of select="@lon"/>
+						<xsl:text>&amp;zoom=14&amp;size=400x400&amp;maptype=roadmap&amp;style=feature:poi.sports_complex%7Celement:all&amp;sensor=false</xsl:text>
+					</xsl:attribute>
+        		</xsl:element>
+        	</xsl:if>
+		</xsl:template>
+
         <xsl:template match="g:golf-course">
                 <table class="course-data">
                         <caption><xsl:value-of select="g:name"/></caption>
@@ -229,4 +247,4 @@ HISTORY
                 </xsl:element>
         </xsl:template>
 
-</xsl:stylesheet>
+</xsl:stylesheet>
