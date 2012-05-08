@@ -18,7 +18,7 @@
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="2"/>
       <MinorVersionNr Value="4"/>
-      <BuildNr Value="12"/>
+      <BuildNr Value="13"/>
       <Language Value="0809"/>
       <StringTable CompanyName="minesadorada" InternalName="golfmlcoursewriterlinux64" OriginalFilename="golfmlcoursewriter" ProductVersion="2.4.20120505"/>
     </VersionInfo>
@@ -118,7 +118,6 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1114"/>
         <CursorPos X="41" Y="1136"/>
-        <FoldState Value=" T3mA0D1 pibjB0}=1)"/>
         <UsageCount Value="216"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
