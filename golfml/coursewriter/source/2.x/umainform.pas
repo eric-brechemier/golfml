@@ -1163,19 +1163,38 @@ begin
     INI.WriteString('config','BrowserPath',BrowserPath);
     INI.WriteString('config','HelpAndUpdates',HTMLHelpDatabase1.BaseURL + 'CourseWriterHelp');
     INI.WriteString('config','Contact','minesadorada@charcodelvalle.com');
+    If INI.ReadString('Country Codes','CountryCode0','unknown')='unknown' then
+       begin
+            For iCount:=0 to cmb_CountryClubcountrycode.Items.Count-1 do
+            begin
+                 INI.WriteString('Country Codes',Format('CountryCode%d',[iCount]),cmb_CountryClubcountrycode.Items[iCount]);
+            end;
+       end
+       else
+       begin
+            cmb_CountryClubcountrycode.Items.Clear;
+            iCount:=0;
+            While (INI.ReadString('Country Codes',Format('CountryCode%d',[iCount]),'unknown') <> 'unknown') do
+                  begin
+                       cmb_CountryClubcountrycode.Items.Add(INI.ReadString('Country Codes',Format('CountryCode%d',[iCount]),'unknown'));
+                       Inc(iCount,1);
+                  end;
+       end;
     // Read or Write config file ameneties entries
     AmenetiesList:=TStringList.Create;
     TRY
     If INI.ReadString('ameneties','amenity0','unknown')='unknown' then
     // No config file entries, so Read from CONST Array
-       For iCount:=0 to C_MAXAMENITIES-1 do
-           begin
+       begin
+            For iCount:=0 to C_MAXAMENITIES-1 do
+            begin
                 INI.WriteString('ameneties',Format('amenity%d',[iCount]),
                 AmenetyDefaultCategories[iCount] + C_AMENETYDELIMITERCHAR + AmenetyDefaultValues[iCount]);
                 AmenetiesList.Add(AmenetyDefaultValues[iCount]);
                 AmenetyCategoriesArray[iCount]:=AmenetyDefaultCategories[iCount];
                 AmenetyValuesArray[iCount]:=AmenetyDefaultValues[iCount];
-           end
+            end;
+       end
     else // Read from INI file
         begin
              // We have to make a string list then assign it to the group control Items

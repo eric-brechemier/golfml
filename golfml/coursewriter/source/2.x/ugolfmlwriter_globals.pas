@@ -12,7 +12,7 @@ interface
 
 uses
   Classes, SysUtils;
-CONST C_VERSION='2.6.20120507';
+CONST C_VERSION='2.7.20120507';
 
 CONST C_GOLD=0;
 CONST C_BLACK=1;
