@@ -7,13 +7,13 @@ This Page: <wiki:toc max_depth="4" />
 == Purpose ==
 The configuration file is not required for Golfml !CourseWriter to function, and it is not included in the distribution package.
 
-It is for information (config section), temporary storage (player and scorecard sections) and user customisation (ameneties and Country Codes sections)
+It is for information (config section), temporary storage (player and scorecard sections) and user customisation (ameneties and Country Codes sections).
  
 It is created when !CourseWriter is first run, using default values for amenety list and Country Code list.  The player and scorecard sections are written when !CourseWriter saves a golfml file to disk in 'make player scorecard' mode.
 ----
 == Location ==
 The location of the configuration file depends on the operating system.
-For Windows, it is in C:\GolfmlCourseWriter; for Linux it is in /etc
+For Windows, it is in C:\!GolfmlCourseWriter; for Linux it is in /etc
 
 In !CourseWriter click the Help/About !CourseWriter menu, and the locaton of your config file is displayed in the resulting dialog.
 ----
@@ -34,6 +34,16 @@ This is an information section.
     * For enquiries to the developer of !CourseWriter
 ----
 === ameneties ===
+This is for user customisation.
+On the main page is a group of check-boxes for various ameneties and features a Country Club has to offer.
+You can alter this by editing the ameneties section of the configuration file.
+Each entry is in 3 parts:
+amenity_nn_=_type_,_description_
+  # amenety_nn_
+    * Where _nn_ is the amenity number.  Available numbers are 1 -> 15
+  # type
+    * Available types are:
+
 === Country Codes ===
 === player and scorecard ===
 ----
