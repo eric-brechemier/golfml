@@ -13,6 +13,9 @@ interface
 uses
   Classes, SysUtils;
 CONST C_VERSION='2.7.20120507';
+CONST WINDOWSCONFIGPATH='C:\GolfmlCourseWriter\';
+CONST WINDOWSCOURSESPATH='C:\GolfmlCourseWriter\';
+CONST LINUXCOURSESPATH='/usr/share/doc/golfml';
 
 CONST C_GOLD=0;
 CONST C_BLACK=1;

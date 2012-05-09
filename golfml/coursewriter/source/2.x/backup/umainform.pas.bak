@@ -24,6 +24,8 @@ unit umainform;
 == 2.6
 == Added regexp validation of phone number
 == Added gps capability in golfmlclass
+== 2.7
+== Added saves/loads country codes in config file
 ==
 == TODO:
 == GPS info for country-club
@@ -1113,13 +1115,13 @@ begin
             //FALSE=/<username>/.config/golfmlcoursewriter.cfg
     {$ENDIF}
     {$IFDEF WINDOWS}
-            ForceDirectoriesUTF8('C:\GolfmlCourseWriter');
-            ConfigFilePath:='C:\GolfmlCourseWriter\GolfmlCourseWriter.cfg';
+            ForceDirectoriesUTF8(WINDOWSCONFIGPATH);
+            ConfigFilePath:=WINDOWSCONFIGPATH + GolfmlCourseWriter.cfg';
     {$ENDIF}
     INI:=TINIFile.Create(ConfigFilePath);
     INI.CacheUpdates:=False;
 
-    // Form initialisations
+    // Set the Application Title
     {$IFDEF LINUX}
             Application.Title:=Application.Title + ' (Linux';
     {$ENDIF}
@@ -1132,20 +1134,24 @@ begin
     {$ifdef CPU64}
             Application.Title:=Application.Title + ' 64-bit)';
     {$ENDIF}
+    // Set form title and icon
     Caption:=Application.Title;
     Icon:=Application.Icon;
     // Local initialisations
     PageLastIndex:=-1; // First increment is to Zero
     iNumCourses:=0; // 1-based local var
+    // Initialise the golfml read/write class
     GolfmlClass:=TGolfmlClass.Create;
     If NOT GolfmlClass.InitOK then
        begin
           ShowMessage('Fatal error: Unable to initialise GolfML Class.' + LineEnding + 'Click OK to quit.');
           Halt;
        end;
-    cmb_CountryClubcountrycode.ItemIndex:=0;
+    // Mode
     MakeXMLMode:=C_MODECOURSEONLY;
     mnu_modeCourseOnly.Checked:=True;
+    // Country Code Combo Box
+    cmb_CountryClubcountrycode.ItemIndex:=0;
     s:=cmb_CountryClubcountrycode.Items[cmb_CountryClubcountrycode.ItemIndex];
     sCode:=LeftStr(s,2);
     sCountry:=RightStr(s,Length(s)-4);
@@ -1153,16 +1159,20 @@ begin
     edt_countryclubgpslong.Text:='0';
     fCountryClubCountryCode:=sCode;
     fCountryClubCountry:=sCountry;
-    ShowInstructions; // Populate instructions label
+    // Populate instructions label
+    ShowInstructions;
+    // Set up HTML Help system
     HTMLBrowserHelpViewer1.FindDefaultBrowser(BrowserPath,BrowserParams);
     HTMLBrowserHelpViewer1.BrowserPath:=BrowserPath;
     HTMLBrowserHelpViewer1.BrowserParams:=BrowserParams;
+    // Write current values into config file
     INI.WriteString('config','AppVersion',C_VERSION);
     INI.WriteString('config','GolfmlClassVersion',GolfmlClass.Version);
     INI.WriteString('config','LastRun',FormatDateTime(LongDateFormat,Now));
     INI.WriteString('config','BrowserPath',BrowserPath);
     INI.WriteString('config','HelpAndUpdates',HTMLHelpDatabase1.BaseURL + 'CourseWriterHelp');
     INI.WriteString('config','Contact','minesadorada@charcodelvalle.com');
+    // Country Codes. 1st-time run: Write entries.  Subsequent: Read entries
     If INI.ReadString('Country Codes','CountryCode0','unknown')='unknown' then
        begin
             For iCount:=0 to cmb_CountryClubcountrycode.Items.Count-1 do
@@ -1176,11 +1186,11 @@ begin
             iCount:=0;
             While (INI.ReadString('Country Codes',Format('CountryCode%d',[iCount]),'unknown') <> 'unknown') do
                   begin
-                       cmb_CountryClubcountrycode.Items.Add(INI.ReadString('Country Codes',Format('CountryCode%d',[iCount]),'unknown');
+                       cmb_CountryClubcountrycode.Items.Add(INI.ReadString('Country Codes',Format('CountryCode%d',[iCount]),'unknown'));
                        Inc(iCount,1);
                   end;
        end;
-    // Read or Write config file ameneties entries
+    // Ameneties. 1st-time run: Write entries.  Subsequent: Read entries
     AmenetiesList:=TStringList.Create;
     TRY
     If INI.ReadString('ameneties','amenity0','unknown')='unknown' then
@@ -1242,12 +1252,12 @@ TRY
    If s='unknown' then
       begin
            {$IFDEF WINDOWS}
-                   ForceDirectoriesUTF8('C:\GolfmlCourseWriter\');
-                   dlg_open.InitialDir:='C:\GolfmlCourseWriter\';
+                   ForceDirectoriesUTF8(WINDOWSCOURSESPATH);
+                   dlg_open.InitialDir:=WINDOWSCOURSESPATH;
            {$ENDIF}
            {$IFDEF LINUX}
-                   ForceDirectoriesUTF8('/usr/share/doc/golfml');
-                   dlg_open.InitialDir:='/usr/share/doc/golfml/';
+                   ForceDirectoriesUTF8(LINUXCOURSESPATH);
+                   dlg_open.InitialDir:=LINUXCOURSESPATH;
            {$ENDIF}
       end
       else
