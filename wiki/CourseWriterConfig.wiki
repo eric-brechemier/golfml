@@ -67,8 +67,8 @@ Example: amenity9=food,Bananas and water on every tee
 From time to time, this list is updated (as politics changes) and so this list can be updated via the configuation file.
 
 _Note:_ Duplicate entries are allowed.  There is no limit to the number of entries.
-  * Each entry starts with CountryCodenn where nn is a sequential number in the list
-  * Each entry has 2 parts, separated by 2 or more spaces:
+  * Each entry starts with !CountryCodenn where nn is a sequential number in the list
+  * Each CountryCode has 2 parts, separated by 2 or more spaces:
   # 2-letter code
     * This _must_ be 2 letters and in UPPERCASE
   # Country name
