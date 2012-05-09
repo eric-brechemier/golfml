@@ -85,6 +85,8 @@ If you click Help/About !CourseWriter, on the resulting dialog you will see some
 Config file: /etc/coursewriter.cfg
 (The details depend on your operating system)
 
+* Note: See [CourseWriterConfig this page] for a detailed explanation of the !CourseWriter configuation file*
+
 If you open this config file in a plain text editor (not a word processor), you will see something like:
 {{{
 [config]
