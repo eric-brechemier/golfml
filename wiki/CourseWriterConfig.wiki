@@ -91,13 +91,14 @@ It is used as the default choices when saving a player scorecard next time.
   * _Note:_ you can change the coursescorecardstylesheet=,playerscorecardstylesheet= and golfmlcss= entries if you want to write and use different ones, and !CourseWriter will use the altered entries. 
 ----
 == Typical !GolfmlCourseWriter.cfg file ==
+(This is created and updated by !CourseWriter)
 {{{
 [config]
-AppVersion=2.6.20120507
+AppVersion=2.7.20120508
 GolfmlClassVersion=2.6.20120507
 LastRun=09 May 2012
 BrowserPath=C:\Windows\system32\rundll32.exe
-golfmlFilesLocation=C:\lazarus\golfmlsvn\golfml\coursewriter\courses\
+golfmlFilesLocation=C:\golfmlcoursewriter\courses\
 HelpAndUpdates=http://code.google.com/p/golfml/wiki/CourseWriterHelp
 Contact=minesadorada@charcodelvalle.com
 
