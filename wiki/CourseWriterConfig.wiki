@@ -20,15 +20,15 @@ In !CourseWriter click the Help/About !CourseWriter menu, and the locaton of you
 == Sections ==
 === config ===
 This is an information section.
-  # AppVersion and GolfmlClassVersion
+  # !AppVersion and !GolfmlClassVersion
     * The application uses a module (golfmlclass) to read and write golfml files.  These can have different version numbers.
-  # LastRun
+  # !LastRun
     * Updated on every start up of the application
-  # BrowserPath
+  # !BrowserPath
     * This is detected by !CourseWriter at start-up.  For diagnostic purposes only.
   # golfmlFilesLocation
     * This is the saved location on your computer for the 'Import' and 'Save to golfml' dialogs.
-  # HelpAndUpdate
+  # !HelpAndUpdate
     * This is the URL for online help
   # Contact
     * For enquiries to the developer of !CourseWriter
@@ -43,7 +43,15 @@ amenity_nn_=_type_,_description_
     * Where _nn_ is the amenity number.  Available numbers are 1 -> 15
   # type
     * Available types are:
-
+      # practice
+      # store
+      # food
+      # corporate
+      # golfers
+      # bathroom
+      # water
+      # other
+    No other types are allowed.
 === Country Codes ===
 === player and scorecard ===
 ----
