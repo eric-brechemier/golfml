@@ -54,6 +54,7 @@ You can alter this by editing the ameneties section of the configuration file.
     No other types are allowed.
   # amenity description
     * This can be any text that accords with the amenity type
+  * _Important_ : type and amenity description _must_ be separated by a comma.
 ----
 === Country Codes section ===
 !CourseWriter comes with a built-in list of ISO 3166-1 country codes.
