@@ -59,7 +59,7 @@ You can alter this by editing the ameneties section of the configuration file.
     * This can be any text that accords with the amenity type
   * _Important_ : type and amenity description _must_ be separated by a comma.
 
-Example: amenity9=food,Bananas and water on every tee
+Example: {{{amenity9=food,Bananas and water on every tee}}}
 ----
 === Country Codes section ===
 !CourseWriter comes with a built-in list of ISO 3166-1 country codes.
@@ -75,7 +75,7 @@ _Note:_ Duplicate entries are allowed (the first 7 default entries are duplicate
     * This is ther recognised name of the country.
 For more information [http://www.iso.org/iso/iso-3166-1_decoding_table] this website] is useful.
 
-Example: !CountryCode0=BE   Belgium (This replaces United States with Belgium at the top of the list)
+Example: {{{!CountryCode0=BE   Belgium}}} (This replaces United States with Belgium at the top of the list)
 ----
 === player and scorecard sections ===
 This section is local storage for user information entered when saving a player scorecard.
