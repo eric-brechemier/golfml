@@ -5,11 +5,14 @@
 This Page: <wiki:toc max_depth="4" />
 ----
 == Purpose ==
-The configuration file is not required for Golfml !CourseWriter to function, and it is not included in the distribution package.
+The configuration file is not required for Golfml !CourseWriter to function, and it is therefore not included in the distribution package.
 
 It is for information (config section), temporary storage (player and scorecard sections) and user customisation (ameneties and Country Codes sections).
  
 It is created when !CourseWriter is first run, using default values for amenety list and Country Code list.  The player and scorecard sections are written when !CourseWriter saves a golfml file to disk in 'make player scorecard' mode.
+
+Editing the configuation file is for advanced users only.
+
 ----
 == Location ==
 The location of the configuration file depends on the operating system.
