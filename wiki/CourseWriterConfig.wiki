@@ -37,8 +37,8 @@ This is an information section.
 This is for user customisation.
 On the main page is a group of check-boxes for various ameneties and features a Country Club has to offer.
 You can alter this by editing the ameneties section of the configuration file.
-Each entry is in 3 parts:
-amenity_nn_=_type_,_description_
+  * Each entry is in 3 parts:
+    amenity_nn_=_type_,_amenity description_
   # amenety_nn_
     * Where _nn_ is the amenity number.  Available numbers are 1 -> 15
   # type
@@ -52,8 +52,24 @@ amenity_nn_=_type_,_description_
       # water
       # other
     No other types are allowed.
+  # amenity description
+    * This can be any text that accords with the amenity type
+----
 === Country Codes ===
+!CourseWriter comes with a built-in list of ISO 3166-1 country codes.
+
+From time to time, this list is updated (as politics changes) and so this list can be updated via the configuation file.
+  * Each entry has 2 parts, separated by 2 or more spaces:
+  # 2-letter code
+    * This _must_ be 2 letters and in UPPERCASE
+  # Country name
+    * This is ther recognised name of the country.
+For more information [http://www.iso.org/iso/iso-3166-1_decoding_table] this website] is useful.
+----
 === player and scorecard ===
+This section is local storage for user information entered when saving a player scorecard.
+
+It is used as the default choices when saving a player scorecard next time.
 ----
 == Typical !GolfmlCourseWriter.cfg file ==
 {{{
