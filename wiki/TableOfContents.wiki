@@ -22,6 +22,7 @@
    * Software
       * [CourseWriter Golfml Course Writer]
         * [CourseWriterHelp Manual/Help]
+        * [CourseWriterConfig Configuration File]
       * [CourseReader Golfml Course Reader]
       * [HandicapCalculator USGA/EGA Handicap Calculator]
       * [GolfmlClass tGolfmlClass for Lazarus developers]
