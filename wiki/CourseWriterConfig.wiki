@@ -1,10 +1,18 @@
 #summary Golfml CourseWriter Configuration File
 #labels Phase-Implementation
 #sidebar TableOfContents
-= !GolfmlCourseWriter.cfg =
+= Golfml !CourseWriter Configuration File =
 This Page: <wiki:toc max_depth="4" />
 ----
-
+== Location ==
+----
+== Sections ==
+=== [config] ===
+=== [ameneties] ===
+=== [Country Codes ===
+=== [player] and [scorecard] ===
+----
+== Typical !GolfmlCourseWriter.cfg file ==
 {{{
 [config]
 AppVersion=2.6.20120507
