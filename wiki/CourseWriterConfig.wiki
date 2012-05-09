@@ -66,7 +66,7 @@ Example: amenity9=food,Bananas and water on every tee
 
 From time to time, this list is updated (as politics changes) and so this list can be updated via the configuation file.
 
-_Note:_ Duplicate entries are allowed.  There is no limit to the number of entries.
+_Note:_ Duplicate entries are allowed (the first 7 default entries are duplicates).  There is no limit to the number of entries.
   * Each entry starts with !CountryCodenn where nn is a sequential number in the list
   * Each !CountryCode has 2 parts, separated by 2 or more spaces:
   # 2-letter code
@@ -75,7 +75,7 @@ _Note:_ Duplicate entries are allowed.  There is no limit to the number of entri
     * This is ther recognised name of the country.
 For more information [http://www.iso.org/iso/iso-3166-1_decoding_table] this website] is useful.
 
-Example: CountryCode0=BE   Belgium (This replaces United States with Belgium at the top of the list)
+Example: !CountryCode0=BE   Belgium (This replaces United States with Belgium at the top of the list)
 ----
 === player and scorecard sections ===
 This section is local storage for user information entered when saving a player scorecard.
