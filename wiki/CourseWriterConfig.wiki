@@ -88,7 +88,7 @@ CountryCode0=BE   Belgium
 This section is local storage for user information entered when saving a player scorecard.
 
 It is used as the default choices when saving a player scorecard next time.
-  * _Note: you can change the coursescorecardstyleshee=t,playerscorecardstylesheet= and golfmlcss= entries if you want to write different ones, and !CourseWriter will pick them up._ 
+  * _Note:_ you can change the coursescorecardstylesheet=,playerscorecardstylesheet= and golfmlcss= entries if you want to write and use different ones, and !CourseWriter will use the altered entries. 
 ----
 == Typical !GolfmlCourseWriter.cfg file ==
 {{{
