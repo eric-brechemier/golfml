@@ -18,7 +18,7 @@ For Windows, it is in C:\!GolfmlCourseWriter; for Linux it is in /etc
 In !CourseWriter click the Help/About !CourseWriter menu, and the locaton of your config file is displayed in the resulting dialog.
 ----
 == Sections ==
-=== config ===
+=== config section ===
 This is an information section.
   # !AppVersion and !GolfmlClassVersion
     * The application uses a module (golfmlclass) to read and write golfml files.  These can have different version numbers.
@@ -33,16 +33,16 @@ This is an information section.
   # Contact
     * For enquiries to the developer of !CourseWriter
 ----
-=== ameneties ===
+=== ameneties section ===
 This is for user customisation.
 On the main page is a group of check-boxes for various ameneties and features a Country Club has to offer.
 You can alter this by editing the ameneties section of the configuration file.
   * Each entry is in 3 parts:
-    amenity_nn_=_type_,_amenity description_
-  # amenety_nn_
-    * Where _nn_ is the amenity number.  Available numbers are 1 -> 15
+    amenitynn=type,amenity description
+  # amenetynn
+    * Where nn is the amenity number.  Available numbers are 0 -> 15
   # type
-    * Available types are:
+    * The only available types are:
       # practice
       # store
       # food
@@ -55,7 +55,7 @@ You can alter this by editing the ameneties section of the configuration file.
   # amenity description
     * This can be any text that accords with the amenity type
 ----
-=== Country Codes ===
+=== Country Codes section ===
 !CourseWriter comes with a built-in list of ISO 3166-1 country codes.
 
 From time to time, this list is updated (as politics changes) and so this list can be updated via the configuation file.
@@ -66,7 +66,7 @@ From time to time, this list is updated (as politics changes) and so this list c
     * This is ther recognised name of the country.
 For more information [http://www.iso.org/iso/iso-3166-1_decoding_table] this website] is useful.
 ----
-=== player and scorecard ===
+=== player and scorecard sections ===
 This section is local storage for user information entered when saving a player scorecard.
 
 It is used as the default choices when saving a player scorecard next time.
