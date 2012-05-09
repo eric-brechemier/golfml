@@ -4,10 +4,33 @@
 = Golfml !CourseWriter Configuration File =
 This Page: <wiki:toc max_depth="4" />
 ----
+== Purpose ==
+The configuration file is not required for Golfml !CourseWriter to function, and it is not included in the distribution package.  It is for information (config section), temporary storage (player and scorecard sections) and user customisation (ameneties and Country Codes sections)
+ 
+It is created when !CourseWriter is first run, using default values for amenety list and Country Code list.  The player and scorecard sections are written when !CourseWriter saves a golfml file to disk in 'make player scorecard' mode.
+----
 == Location ==
+The location of the configuration file depends on the operating system.
+For Windows, it is in C:\GolfmlCourseWriter; for Linux it is in /etc
+
+In !CourseWriter click the Help/About !CourseWriter menu, and the locaton of your config file is displayed in the resulting dialog.
 ----
 == Sections ==
 === config ===
+This is an information section.
+  # AppVersion and GolfmlClassVersion
+    * The application uses a module (golfmlclass) to read and write golfml files.  These can have different version numbers.
+  # LastRun
+    * Updated on every start up of the application
+  # BrowserPath
+    * This is detected by !CourseWriter at start-up.  For diagnostic purposes only.
+  # golfmlFilesLocation
+    * This is the saved location on your computer for the 'Import' and 'Save to golfml' dialogs.
+  # HelpAndUpdate
+    * This is the URL for online help
+  # Contact
+    * For enquiries to the developer of !CourseWriter
+----
 === ameneties ===
 === Country Codes ===
 === player and scorecard ===
