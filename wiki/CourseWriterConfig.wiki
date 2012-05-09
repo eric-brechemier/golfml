@@ -76,7 +76,7 @@ _Note:_ Duplicate entries are allowed (the first 7 default entries are duplicate
     * This _must_ be 2 letters and in UPPERCASE
   # Country name
     * This is ther recognised name of the country.
-For more information [http://www.iso.org/iso/iso-3166-1_decoding_table  this website] is useful.
+For more information [http://www.iso.org/iso/country_codes/iso_3166_code_lists.htm  this website] is useful.
 
 Example: 
 {{{
