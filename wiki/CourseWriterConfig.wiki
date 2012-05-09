@@ -7,10 +7,10 @@ This Page: <wiki:toc max_depth="4" />
 == Location ==
 ----
 == Sections ==
-=== [config] ===
-=== [ameneties] ===
-=== [Country Codes ===
-=== [player] and [scorecard] ===
+=== ![config] ===
+=== ![ameneties] ===
+=== ![Country Codes ===
+=== ![player] and ![scorecard] ===
 ----
 == Typical !GolfmlCourseWriter.cfg file ==
 {{{
