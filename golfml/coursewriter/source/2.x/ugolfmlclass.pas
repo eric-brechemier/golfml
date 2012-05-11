@@ -2,8 +2,8 @@ unit ugolfmlclass;
 (*
 == Author: minesadorada@charcodelvalle.com
 ==
-== Lazarus: 0.9.30-0
-== FPC: 2.4.4
+== Lazarus: 1.1
+== FPC: 2.6.1
 ==
 == golfml XML Reader and Writer class
 ==
@@ -27,6 +27,7 @@ unit ugolfmlclass;
 ==    Added GPS Lat and Long
 ==
 ==
+$Revision$
 *)
 {$mode objfpc}{$H+}
 

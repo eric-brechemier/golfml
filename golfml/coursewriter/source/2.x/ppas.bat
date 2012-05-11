@@ -1,9 +1,7 @@
 @echo off
-SET THEFILE=golfmlcoursewriterwin32.exe
+SET THEFILE=golfmlcoursewriterwin64.exe
 echo Linking %THEFILE%
-e:\lazarus\fpc\2.4.4\bin\i386-win32\ld.exe -b pei-i386 -m i386pe  --gc-sections  -s --subsystem windows --entry=_WinMainCRTStartup    -o golfmlcoursewriterwin32.exe link.res
-if errorlevel 1 goto linkend
-e:\lazarus\fpc\2.4.4\bin\i386-win32\postw32.exe --subsystem gui --input golfmlcoursewriterwin32.exe --stack 16777216
+C:\lazarus32\fpc\2.6.1\bin\x86_64-win64\ld.exe -b pei-x86-64  --gc-sections  -s --subsystem windows --entry=_WinMainCRTStartup    -o golfmlcoursewriterwin64.exe link.res
 if errorlevel 1 goto linkend
 goto end
 :asmend

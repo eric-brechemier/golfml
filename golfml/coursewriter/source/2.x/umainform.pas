@@ -2,8 +2,8 @@ unit umainform;
 (*
 == Author: minesadorada@charcodelvalle.com
 ==
-== Lazarus: 0.9.30-0
-== FPC: 2.4.4
+== Lazarus: 1.1
+== FPC: 2.6.1
 ==
 == golfml XML Writer/Editor GUI
 ==
@@ -26,11 +26,13 @@ unit umainform;
 == Added gps capability in golfmlclass
 == 2.7
 == Added saves/loads country codes in config file
+== Win64 build in Lazarus v1.1.fpcv2.6.1
 ==
 == TODO:
-== GPS info for country-club
 == Internationalisation si vous plait/por favor?
+$Revision$
 *)
+
 {$mode objfpc}{$H+}
 
 interface

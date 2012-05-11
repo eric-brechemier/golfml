@@ -16,7 +16,7 @@ object mainform: Tmainform
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '0.9.30.2'
+  LCLVersion = '1.1'
   object cmd_close: TBitBtn
     Left = 712
     Height = 30
@@ -50,7 +50,6 @@ object mainform: Tmainform
     TabIndex = 0
     TabOrder = 3
     OnCloseTabClicked = pagecontainerCloseTabClicked
-    OnPageChanged = pagecontainerPageChanged
     object tab_countryclub: TTabSheet
       Caption = 'My Golf Club'
       ClientHeight = 478
