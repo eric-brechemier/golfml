@@ -26,6 +26,7 @@ unit umainform;
 == Added gps capability in golfmlclass
 == 2.7
 == Added saves/loads country codes in config file
+== Win64 build in Lazarus v1.1.fpcv2.6.1
 ==
 == TODO:
 == Internationalisation si vous plait/por favor?

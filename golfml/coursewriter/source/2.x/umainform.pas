@@ -30,7 +30,6 @@ unit umainform;
 ==
 == TODO:
 == Internationalisation si vous plait/por favor?
-$Revision$
 *)
 
 {$mode objfpc}{$H+}
