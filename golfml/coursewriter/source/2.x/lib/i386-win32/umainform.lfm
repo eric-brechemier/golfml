@@ -1,7 +1,7 @@
 object mainform: Tmainform
-  Left = 284
+  Left = 529
   Height = 600
-  Top = 202
+  Top = 168
   Width = 800
   HelpType = htKeyword
   HelpKeyword = 'help_CourseWriterHelp'
@@ -9,14 +9,14 @@ object mainform: Tmainform
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'mainform'
-  ClientHeight = 573
+  ClientHeight = 580
   ClientWidth = 800
   Font.Height = -11
   Menu = MainMenu1
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '0.9.30.4'
+  LCLVersion = '1.1'
   object cmd_close: TBitBtn
     Left = 712
     Height = 30
@@ -50,27 +50,26 @@ object mainform: Tmainform
     TabIndex = 0
     TabOrder = 3
     OnCloseTabClicked = pagecontainerCloseTabClicked
-    OnPageChanged = pagecontainerPageChanged
     object tab_countryclub: TTabSheet
       Caption = 'My Golf Club'
-      ClientHeight = 473
-      ClientWidth = 796
+      ClientHeight = 478
+      ClientWidth = 792
       object grp_instructions: TGroupBox
         Left = 5
         Height = 209
         Top = 5
-        Width = 786
+        Width = 782
         Align = alTop
         BorderSpacing.Around = 5
         Caption = 'Getting Started'
-        ClientHeight = 193
-        ClientWidth = 782
+        ClientHeight = 191
+        ClientWidth = 778
         TabOrder = 0
         object lbl_instructions: TLabel
           Left = 10
-          Height = 173
+          Height = 171
           Top = 10
-          Width = 762
+          Width = 758
           Align = alClient
           AutoSize = False
           BorderSpacing.Around = 10
@@ -82,15 +81,15 @@ object mainform: Tmainform
       end
       object grp_countryclub: TGroupBox
         Left = 5
-        Height = 249
+        Height = 254
         Top = 219
-        Width = 786
+        Width = 782
         HelpType = htKeyword
         Align = alClient
         BorderSpacing.Around = 5
         Caption = 'Country Club'
-        ClientHeight = 233
-        ClientWidth = 782
+        ClientHeight = 236
+        ClientWidth = 778
         TabOrder = 1
         object Label1: TLabel
           Left = 15
@@ -103,7 +102,7 @@ object mainform: Tmainform
         end
         object edt_CountryClubName: TEdit
           Left = 143
-          Height = 22
+          Height = 21
           Top = 10
           Width = 184
           HelpType = htKeyword
@@ -122,7 +121,7 @@ object mainform: Tmainform
         end
         object edt_countryclubstreet: TEdit
           Left = 143
-          Height = 22
+          Height = 21
           Top = 38
           Width = 184
           OnEditingDone = edt_countryclubstreetEditingDone
@@ -139,7 +138,7 @@ object mainform: Tmainform
         end
         object edt_countryclubmunicipality: TEdit
           Left = 143
-          Height = 22
+          Height = 21
           Top = 61
           Width = 184
           OnEditingDone = edt_countryclubmunicipalityEditingDone
@@ -156,7 +155,7 @@ object mainform: Tmainform
         end
         object edt_countryclubregion: TEdit
           Left = 143
-          Height = 22
+          Height = 21
           Top = 85
           Width = 184
           OnEditingDone = edt_countryclubregionEditingDone
@@ -166,21 +165,18 @@ object mainform: Tmainform
           Left = 15
           Height = 15
           Top = 162
-          Width = 120
+          Width = 64
           AutoSize = False
-          Caption = 'Country: '
+          Caption = 'GPS Lat:'
           ParentColor = False
         end
-        object edt_countryclubcountry: TEdit
-          Left = 143
-          Height = 22
+        object edt_countryclubgpslat: TEdit
+          Left = 77
+          Height = 21
           Top = 159
-          Width = 184
-          Enabled = False
-          OnEditingDone = edt_countryclubcountryEditingDone
-          ReadOnly = True
-          TabStop = False
+          Width = 88
           TabOrder = 5
+          Text = '0'
         end
         object Label6: TLabel
           Left = 15
@@ -193,7 +189,7 @@ object mainform: Tmainform
         end
         object edt_countryclubpostcode: TEdit
           Left = 143
-          Height = 22
+          Height = 21
           Top = 109
           Width = 184
           OnEditingDone = edt_countryclubpostcodeEditingDone
@@ -210,7 +206,7 @@ object mainform: Tmainform
         end
         object edt_countryclubphone: TEdit
           Left = 143
-          Height = 22
+          Height = 21
           Top = 184
           Width = 184
           OnEditingDone = edt_countryclubphoneEditingDone
@@ -227,7 +223,7 @@ object mainform: Tmainform
         end
         object edt_countryclubwebsite: TEdit
           Left = 143
-          Height = 22
+          Height = 21
           Top = 208
           Width = 184
           OnEditingDone = edt_countryclubwebsiteEditingDone
@@ -245,10 +241,10 @@ object mainform: Tmainform
         end
         object cmb_CountryClubcountrycode: TComboBox
           Left = 143
-          Height = 29
+          Height = 21
           Top = 135
           Width = 184
-          ItemHeight = 0
+          ItemHeight = 13
           ItemIndex = 0
           Items.Strings = (
             'US   United States'
@@ -548,17 +544,34 @@ object mainform: Tmainform
         end
         object edt_comment1: TEdit
           Left = 439
-          Height = 22
+          Height = 21
           Top = 181
           Width = 333
           TabOrder = 10
         end
         object edt_comment2: TEdit
           Left = 439
-          Height = 22
+          Height = 21
           Top = 206
           Width = 333
           TabOrder = 11
+        end
+        object Label13: TLabel
+          Left = 173
+          Height = 15
+          Top = 162
+          Width = 64
+          AutoSize = False
+          Caption = 'GPS Long:'
+          ParentColor = False
+        end
+        object edt_countryclubgpslong: TEdit
+          Left = 237
+          Height = 21
+          Top = 159
+          Width = 86
+          TabOrder = 12
+          Text = '0'
         end
       end
     end
@@ -737,9 +750,9 @@ object mainform: Tmainform
   object Label12: TLabel
     Cursor = crHandPoint
     Left = 352
-    Height = 15
+    Height = 14
     Top = 544
-    Width = 162
+    Width = 148
     Caption = 'GolfmlCourseWriter Website'
     Font.Color = clHotLight
     Font.Height = -11
