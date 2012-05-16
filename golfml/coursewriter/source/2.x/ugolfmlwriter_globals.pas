@@ -12,7 +12,7 @@ interface
 
 uses
   Classes, SysUtils;
-CONST C_VERSION='2.7.20120507';
+CONST C_VERSION='2.8.20120516';
 CONST WINDOWSCONFIGPATH='C:\GolfmlCourseWriter\';
 CONST WINDOWSCOURSESPATH='C:\GolfmlCourseWriter\';
 CONST LINUXCOURSESPATH='/usr/share/doc/golfml';

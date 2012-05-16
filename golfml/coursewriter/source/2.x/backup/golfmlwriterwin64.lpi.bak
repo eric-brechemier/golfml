@@ -21,7 +21,7 @@
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="2"/>
       <MinorVersionNr Value="7"/>
-      <BuildNr Value="47"/>
+      <BuildNr Value="48"/>
       <StringTable CompanyName="minesadorada@charcodelvalle.com" FileDescription="golfm course writer and editor" InternalName="golfmlcoursewriter{OSVERSION}" OriginalFilename="golfmlcoursewriter" ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="2" Active="Retail">
@@ -120,11 +120,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="umainform"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="9"/>
-        <CursorPos X="64" Y="31"/>
+        <CursorPos X="25" Y="12"/>
         <FoldState Value=" T7i9E}8 T3mN0D1 pidjD0}*]AtByb0{n01219v"/>
         <UsageCount Value="78"/>
         <Loaded Value="True"/>
@@ -134,10 +133,11 @@
         <Filename Value="ugolfmlwriter_globals.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ugolfmlwriter_globals"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="20"/>
-        <CursorPos X="34" Y="65"/>
+        <TopLine Value="5"/>
+        <CursorPos X="30" Y="15"/>
         <UsageCount Value="78"/>
         <Loaded Value="True"/>
       </Unit2>
@@ -149,7 +149,6 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1920"/>
         <CursorPos X="1" Y="1933"/>
-        <FoldState Value=" T3t60#U5"/>
         <UsageCount Value="78"/>
         <Loaded Value="True"/>
       </Unit3>
@@ -180,6 +179,7 @@
         <Filename Value="ucourseteepicker.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="courseteepicker"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ucourseteepicker"/>
         <EditorIndex Value="4"/>
