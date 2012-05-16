@@ -17,7 +17,7 @@ begin
   Application.Initialize;
   Application.CreateForm(Tmainform,mainform);
   Application.CreateForm(Twaitform,waitform);
-  application.createform(tcourseteepicker, courseteepicker);
+  application.createform(tform1, form1);
   Application.Run;
 end.
 

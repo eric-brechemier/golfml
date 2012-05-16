@@ -27,6 +27,8 @@ unit umainform;
 == 2.7
 == Added saves/loads country codes in config file
 == Win64 build in Lazarus v1.1.fpcv2.6.1
+== 2.8
+== Added Coursepicker/Teepicker dialog for playerscorecard mode
 ==
 == TODO:
 == Internationalisation si vous plait/por favor?
@@ -38,7 +40,7 @@ interface
 uses
   Classes, SysUtils, strutils, FileUtil, Forms, Controls, Graphics, Dialogs,
   Buttons, StdCtrls, ComCtrls, Menus, ExtCtrls, LazHelpHTML,
-  ugolfmlwriter_globals, ugolfmlclass,uwaitform,INIFiles,lclintf,synregexpr;
+  ugolfmlwriter_globals, ugolfmlclass,uwaitform,ucourseteepicker,INIFiles,lclintf,synregexpr;
 
 CONST C_TEEBACKCOLOURARRAY:Array[C_GOLD..C_RED] of LongInt =
       (clOlive,clBlack,clWhite,clYellow,clNavy,clRed);
@@ -129,7 +131,6 @@ type
   private
     { private declarations }
     // DYNAMIC ARRAYS
-    GolfmlClass:TGolfmlClass;
     fCourseArray:Array of String;
     pages:Array of TTabSheet;
     iNumCourses:Integer;
@@ -223,6 +224,7 @@ type
 
   public
     { public declarations }
+    GolfmlClass:TGolfmlClass;
   end;
 
 var
@@ -1436,12 +1438,12 @@ begin
      begin
           {$IFDEF WINDOWS}
                   // Default is folder with write permissions
-                  ForceDirectoriesUTF8('C:\GolfmlCourseWriter\');
-                  dlg_SaveAs.InitialDir:='C:\GolfmlCourseWriter\';
+                  ForceDirectoriesUTF8(WINDOWSCOURSESPATH);
+                  dlg_SaveAs.InitialDir:=WINDOWSCOURSESPATH;
           {$ENDIF}
           {$IFDEF LINUX}
-                  ForceDirectoriesUTF8('/usr/share/doc/golfml');
-                  dlg_SaveAs.InitialDir:='/usr/share/doc/golfml/';
+                  ForceDirectoriesUTF8(LINUXCOURSESPATH);
+                  dlg_SaveAs.InitialDir:=LINUXCOURSESPATH;
           {$ENDIF}
      end
      else
@@ -1507,26 +1509,34 @@ begin
                      else
                          fPlayerGender:='female';
 
-                  // Course name
-                  sError:=INI.ReadString('scorecard','coursename','Main Course');
-                  Repeat
-                        s:=InputBox('Course name input','Type in the name of the course',sError);
-                        sError:='Please type a valid Course name';
-                  until Length(s) > 0;
-                  fScoreCardCourseName:=s;
+                  If courseteepicker.ShowModal=mrOK then
+                     begin
+                          fScoreCardCourseName:=sCoursePicker;
+                          fScoreCardTeeColour:=sTeePicker;
+                     end
+                     else
+                     begin
+                          // Course name
+                          sError:=INI.ReadString('scorecard','coursename','Main Course');
+                          Repeat
+                                s:=InputBox('Course name input','Type in the name of the course',sError);
+                                sError:='Please type a valid Course name';
+                          until Length(s) > 0;
+                          fScoreCardCourseName:=s;
 
-                  // Tee Colour
-                  sError:=INI.ReadString('scorecard','teecolour','yellow');
-                  Repeat
-                        s:=LowerCase(InputBox('Tee colour input','Type in the tee colour',sError));
-                        sError:='Please type a valid tee colour (white, yellow, red etc)';
-                  until (s='gold')
-                  OR (s='black')
-                  OR (s='white')
-                  OR (s='yellow')
-                  OR (s='blue')
-                  OR (s='red');
-                  fScoreCardTeeColour:=s;
+                          // Tee Colour
+                          sError:=INI.ReadString('scorecard','teecolour','yellow');
+                          Repeat
+                                s:=LowerCase(InputBox('Tee colour input','Type in the tee colour',sError));
+                                sError:='Please type a valid tee colour (white, yellow, red etc)';
+                          until (s='gold')
+                          OR (s='black')
+                          OR (s='white')
+                          OR (s='yellow')
+                          OR (s='blue')
+                          OR (s='red');
+                          fScoreCardTeeColour:=s;
+                     end;
 
                   // Assign validated values to to GolfmlClass
                   // No need to specify the xsl filename - use the golfmlclass default 'playercorecard.xsl'

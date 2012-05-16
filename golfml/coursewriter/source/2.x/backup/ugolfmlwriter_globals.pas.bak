@@ -62,7 +62,6 @@ Var
   AmenetyValuesArray:Array[0..C_MAXAMENITIES-1] of STRING;
   ConfigFilePath:String;
   MakeXMLMode:Word;
-  sCoursePicker,sTeePicker:String;
 implementation
 
 Uses uMainForm;
