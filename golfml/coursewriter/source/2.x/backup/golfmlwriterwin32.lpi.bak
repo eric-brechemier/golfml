@@ -94,7 +94,7 @@
         <PackageName Value="LCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="10">
+    <Units Count="11">
       <Unit0>
         <Filename Value="golfmlwriterwin32.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -103,7 +103,7 @@
         <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="47" Y="13"/>
+        <CursorPos X="42" Y="20"/>
         <UsageCount Value="216"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -115,7 +115,7 @@
         <UnitName Value="umainform"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="107"/>
+        <TopLine Value="24"/>
         <CursorPos X="11" Y="119"/>
         <UsageCount Value="216"/>
         <Loaded Value="True"/>
@@ -133,7 +133,7 @@
         <Filename Value="ugolfmlwriter_globals.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ugolfmlwriter_globals"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="30" Y="19"/>
@@ -143,18 +143,16 @@
       <Unit4>
         <Filename Value="../exactega/thandicapgolfumlclass.pas"/>
         <UnitName Value="thandicapgolfumlclass"/>
-        <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="28"/>
         <UsageCount Value="103"/>
-        <Loaded Value="True"/>
       </Unit4>
       <Unit5>
         <Filename Value="ugolfmlclass.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ugolfmlclass"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="199"/>
         <CursorPos X="35" Y="209"/>
@@ -195,7 +193,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uwaitform"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="37" Y="12"/>
@@ -203,6 +201,21 @@
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit9>
+      <Unit10>
+        <Filename Value="ucourseteepicker.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="courseteepicker"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="ucourseteepicker"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="20" Y="18"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit10>
     </Units>
     <JumpHistory Count="29" HistoryIndex="28">
       <Position1>

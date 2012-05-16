@@ -65,7 +65,7 @@ end;
 
 procedure tcourseteepicker.cmb_teepickerchange(sender: tobject);
 begin
-     sTeePicker:=cmb_TeePicker.Items(cmb_TeePicker.ItemIndex);
+     sTeePicker:=cmb_TeePicker.Items[cmb_TeePicker.ItemIndex];
 end;
 
 procedure tcourseteepicker.formshow(sender: tobject);
@@ -91,8 +91,8 @@ begin
      If cmb_teepicker.Items.Count > 0 then
         cmb_teepicker.ItemIndex:=0;
      // Set Globals
-     sCoursePicker:=cmb_coursePicker.Items(cmb_coursePicker.ItemIndex);
-     sTeePicker:=cmb_TeePicker.Items(cmb_TeePicker.ItemIndex);
+     sCoursePicker:=cmb_coursePicker.Items[cmb_coursePicker.ItemIndex];
+     sTeePicker:=cmb_TeePicker.Items[cmb_TeePicker.ItemIndex];
 
 end;
 

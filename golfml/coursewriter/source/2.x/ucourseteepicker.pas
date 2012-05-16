@@ -13,7 +13,7 @@ type
   { Tcourseteepicker }
 
   Tcourseteepicker = class(tform)
-    cmd_close: tbitbtn;
+    cmd_close: TBitBtn;
     cmb_coursepicker: tcombobox;
     cmb_teepicker: tcombobox;
     grp_main: TGroupBox;
