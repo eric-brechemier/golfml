@@ -31,5 +31,14 @@ You have a personal player scorecard golfml file for your home course and wish t
 
 That's it!
 ----
+=== Platforms ===
+Lazarus/fpc source code and binaries are available on this project site via the repository or in the downloads section.
+
+The application compiles to:
+  * Windows XP and up (both 64 and 32-bit)
+  * Linux 64 and 32-bit
+
+It is untested on other platforms.
+----
 === Screen Shot ===
 http://golfml.googlecode.com/files/playerscorecardupdater.jpg
