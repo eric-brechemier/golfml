@@ -11,7 +11,7 @@ Once a player scorecard golfml file has been made by !CourseWriter, it is for a 
 Any of these parameters can change often (especially the handicap) so !PlayerScorecard Updater is a quick utility that enables you to change any of these parameters quickly and easily.
 ----
 ==== Why a separate application? ====
-It is true that you could use !CourseWriter to do this, but Updater is designed for bulk operation.
+It is true that you could use !CourseWriter to do this, but Updater is designed for bulk operation (see below: Scenario 1).
 ----
 === Operation Scenarios ===
 ==== Scenario 1 ====
