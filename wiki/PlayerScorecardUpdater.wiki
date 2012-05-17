@@ -1,0 +1,32 @@
+#summary Information about golfml Player Scorecard Updater.
+#sidebar TableOfContents
+== Golfml !PlayerScorecard Updater ==
+This Page: <wiki:toc max_depth="4" />
+----
+=== Purpose ===
+This application is a utility that works in collaboration with !CourseWriter's "Make Player Scorecard" mode.
+
+Once a player scorecard golfml file has been made by !CourseWriter, it is for a particular player at a particular handicap on a named course and tee position.
+
+Any of these parameters can change often (especially the handicap) so !PlayerScorecard Updater is a quick utility that enables you to change any of these parameters quickly and easily.
+
+==== Why a separate application? ====
+It is true that you could use !CourseWriter to do this, but Updater is designed for bulk operation.
+
+=== Operation Scenarios ===
+==== Scenario 1 ====
+
+You wish to produce printable online scorecards for 50 golfers for a competition.
+  # Use !CourseWriter to make or import the golfml course file.
+  # In !CourseWriter "player scorecard" mode, save the golfml course using a meaningful filename e.g. _playerscorecard_coursename_playername.xml_
+  # Using Updater, import the file, and update the player name and player handicap
+  # In Updater export the golfml file using the player name in the filename
+  # *Without closing Updater*, repeat steps (3) and (4) until you have the 50 golfml files
+
+==== Scenario 2 ====
+You have a personal player scorecard golfml file for your home course and wish to update the handicap.
+
+  # Using Updater, import the file, and update the handicap only
+  # Export (save) the updated file
+
+That's it!
