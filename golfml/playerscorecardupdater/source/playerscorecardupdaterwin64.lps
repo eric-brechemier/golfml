@@ -3,13 +3,19 @@
   <ProjectSession>
     <PathDelim Value="\"/>
     <Version Value="9"/>
-    <BuildModes Active="Debug"/>
+    <BuildModes Active="Retail"/>
     <Units Count="5">
       <Unit0>
         <Filename Value="playerscorecardupdaterwin64.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="playerscorecardupdaterwin64"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
         <UsageCount Value="20"/>
+        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="umainform.pas"/>
@@ -18,11 +24,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="umainform"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="33" Y="8"/>
+        <CursorPos X="8" Y="6"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -30,32 +35,26 @@
       <Unit2>
         <Filename Value="..\..\coursewriter\source\2.x\ugolfmlclass.pas"/>
         <UnitName Value="ugolfmlclass"/>
-        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="933"/>
         <CursorPos X="41" Y="969"/>
         <UsageCount Value="10"/>
-        <Loaded Value="True"/>
       </Unit2>
       <Unit3>
         <Filename Value="..\..\coursewriter\source\2.x\umainform.pas"/>
         <UnitName Value="umainform"/>
-        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1248"/>
         <CursorPos X="1" Y="1268"/>
         <UsageCount Value="10"/>
-        <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="..\..\coursewriter\source\2.x\ugolfmlwriter_globals.pas"/>
         <UnitName Value="ugolfmlwriter_globals"/>
-        <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="19"/>
         <UsageCount Value="10"/>
-        <Loaded Value="True"/>
       </Unit4>
     </Units>
     <General>
