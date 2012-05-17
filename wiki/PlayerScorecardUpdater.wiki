@@ -19,14 +19,15 @@ It is true that you could use !CourseWriter to do this, but Updater is designed 
 You wish to produce printable online scorecards for 50 golfers for a competition.
   # Use !CourseWriter to make or import the golfml course file.
   # In !CourseWriter "player scorecard" mode, save the golfml course using a meaningful filename e.g. _playerscorecard_coursename_playername.xml_
-  # Using Updater, import the file, and update the player name and player handicap
+  # Using Updater, import the file.
+  # Update the player name and player handicap and tick 'update' for only those 2 items
   # In Updater export the golfml file using the player name in the filename
-  # *Without closing Updater*, repeat steps (3) and (4) until you have the 50 golfml files
+  # *Without closing Updater*, repeat steps (4) and (5) until you have the 50 golfml files
 
 ==== Scenario 2 ====
 You have a personal player scorecard golfml file for your home course and wish to update the handicap.
 
-  # Using Updater, import the file, and update the handicap only
+  # Using Updater, import the file, and change the handicap.  Tick 'update' only for the handicap.
   # Export (save) the updated file
 
 That's it!
