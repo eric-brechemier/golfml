@@ -23,6 +23,7 @@ You wish to produce printable online scorecards for 50 golfers for a competition
   # Update the player name and player handicap and tick 'update' for only those 2 items
   # In Updater export the golfml file using the player name in the filename
   # *Without closing Updater*, repeat steps (4) and (5) until you have the 50 golfml files
+  # Deploy them on your website with the playerscorecard.xls and golfml.css files.  They will appear as customised scorecards ( [http://www.charcodelvalle.com/golfmlweb/files/playerscorecard_tenerife_abamagolf.xml click here to see an example])
 
 ==== Scenario 2 ====
 You have a personal player scorecard golfml file for your home course and wish to update the handicap.
