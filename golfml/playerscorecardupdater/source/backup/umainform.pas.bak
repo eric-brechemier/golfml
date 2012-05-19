@@ -1,4 +1,23 @@
 unit umainform;
+{ golfml Player Scorecard Updater
+
+  Copyright (C)2012 minesadorada minesadorada@charcodelvalle.com
+
+  This source is free software; you can redistribute it and/or modify it under
+  the terms of the GNU General Public License as published by the Free
+  Software Foundation; either version 2 of the License, or (at your option)
+  any later version.
+
+  This code is distributed in the hope that it will be useful, but WITHOUT ANY
+  WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+  FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+  details.
+
+  A copy of the GNU General Public License is available on the World Wide Web
+  at <http://www.gnu.org/copyleft/gpl.html>. You can also obtain it by writing
+  to the Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+  MA 02111-1307, USA.
+}
 
 {$mode objfpc}{$H+}
 
@@ -141,17 +160,22 @@ begin
 
   // Fetch values from golfml file
   If dlg_open.Execute then
-     if ParseXML(dlg_open.Filename) then
-        begin
-             cmd_export.Enabled:=True;
-             chk_coursename.Checked:=false;
-             chk_teecolour.Checked:=false;
-             chk_playername.Checked:=false;
-             chk_playerhandicap.Checked:=false;
-             ShowmessageFmt('%s import successful',[dlg_open.Filename]);
-        end
-        else
-            ShowmessageFmt('Unable to import %s',[dlg_open.Filename]);
+     begin
+	       if ParseXML(dlg_open.Filename) then
+	          begin
+	               cmd_export.Enabled:=True;
+	               chk_coursename.Checked:=false;
+	               chk_teecolour.Checked:=false;
+	               chk_playername.Checked:=false;
+	               chk_playerhandicap.Checked:=false;
+	               // ShowmessageFmt('%s import successful',[dlg_open.Filename]);
+	          end
+	          else
+			        ShowmessageFmt('Unable to import %s',[dlg_open.Filename]);
+     end
+     else
+         ShowMessage('Import Cancelled');
+
 end;
 
 procedure tmainform.cmd_exportclick(sender: tobject);
@@ -187,7 +211,7 @@ begin
       // Write values to golfml file
       If dlg_save.Execute then
          if ParseXML(dlg_save.Filename) then
-           ShowMessageFmt('%s saved successfully',[dlg_save.Filename]);
+           ShowMessageFmt('%s updated successfully',[dlg_save.Filename]);
 
 end;
 
@@ -235,6 +259,7 @@ Var
 
 begin
       Result:=False;
+      TRY
       CurrentNode:=aNode.FirstChild;
       While Assigned(CurrentNode) do
          begin
@@ -249,6 +274,9 @@ begin
               CurrentNode:=CurrentNode.NextSibling;
               Result:=True;
          end;
+      EXCEPT
+         on E: Exception do ShowMessage('Error in ImportGolfmlApplicationSection')
+      end;
 end;
 Function Tmainform.ExportGolfmlApplicationSection(aNode:TDomNode):Boolean;
 Var
@@ -256,6 +284,7 @@ Var
 
 begin
       Result:=False;
+      TRY
       CurrentNode:=aNode.FirstChild;
       While Assigned(CurrentNode) do
          begin
@@ -274,6 +303,9 @@ begin
               CurrentNode:=CurrentNode.NextSibling;
               Result:=True;
          end;
+      EXCEPT
+         on E: Exception do ShowMessage('Error in ImportGolfmlApplicationSection')
+      end;
 end;
 end.
 

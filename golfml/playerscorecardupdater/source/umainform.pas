@@ -27,7 +27,7 @@ uses
   classes, sysutils, fileutil, forms, controls, graphics, dialogs, StdCtrls,
   Menus, ExtCtrls, XMLRead, XMLWrite, DOM, INIFiles;
 
-CONST C_VERSION='0.1.20120517';
+CONST C_VERSION='0.2.20120517';
 CONST WINDOWSCONFIGPATH='C:\GolfmlCourseWriter\';
 CONST WINDOWSCOURSESPATH='C:\GolfmlCourseWriter\';
 CONST LINUXCOURSESPATH='/usr/share/doc/golfml';
@@ -160,17 +160,22 @@ begin
 
   // Fetch values from golfml file
   If dlg_open.Execute then
-     if ParseXML(dlg_open.Filename) then
-        begin
-             cmd_export.Enabled:=True;
-             chk_coursename.Checked:=false;
-             chk_teecolour.Checked:=false;
-             chk_playername.Checked:=false;
-             chk_playerhandicap.Checked:=false;
-             ShowmessageFmt('%s import successful',[dlg_open.Filename]);
-        end
-        else
-            ShowmessageFmt('Unable to import %s',[dlg_open.Filename]);
+     begin
+	       if ParseXML(dlg_open.Filename) then
+	          begin
+	               cmd_export.Enabled:=True;
+	               chk_coursename.Checked:=false;
+	               chk_teecolour.Checked:=false;
+	               chk_playername.Checked:=false;
+	               chk_playerhandicap.Checked:=false;
+	               // ShowmessageFmt('%s import successful',[dlg_open.Filename]);
+	          end
+	          else
+			        ShowmessageFmt('Unable to import %s',[dlg_open.Filename]);
+     end
+     else
+         ShowMessage('Import Cancelled');
+
 end;
 
 procedure tmainform.cmd_exportclick(sender: tobject);
@@ -206,7 +211,7 @@ begin
       // Write values to golfml file
       If dlg_save.Execute then
          if ParseXML(dlg_save.Filename) then
-           ShowMessageFmt('%s saved successfully',[dlg_save.Filename]);
+           ShowMessageFmt('%s updated successfully',[dlg_save.Filename]);
 
 end;
 
@@ -254,6 +259,7 @@ Var
 
 begin
       Result:=False;
+      TRY
       CurrentNode:=aNode.FirstChild;
       While Assigned(CurrentNode) do
          begin
@@ -268,6 +274,9 @@ begin
               CurrentNode:=CurrentNode.NextSibling;
               Result:=True;
          end;
+      EXCEPT
+         on E: Exception do ShowMessage('Error in ImportGolfmlApplicationSection')
+      end;
 end;
 Function Tmainform.ExportGolfmlApplicationSection(aNode:TDomNode):Boolean;
 Var
@@ -275,6 +284,7 @@ Var
 
 begin
       Result:=False;
+      TRY
       CurrentNode:=aNode.FirstChild;
       While Assigned(CurrentNode) do
          begin
@@ -293,6 +303,9 @@ begin
               CurrentNode:=CurrentNode.NextSibling;
               Result:=True;
          end;
+      EXCEPT
+         on E: Exception do ShowMessage('Error in ImportGolfmlApplicationSection')
+      end;
 end;
 end.
 
