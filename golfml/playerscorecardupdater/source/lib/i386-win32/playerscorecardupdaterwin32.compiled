@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <Compiler Value="e:\lazarus\fpc\2.4.4\bin\i386-win32\fpc.exe" Date="1063563491"/>
+  <Params Value=" -MObjFPC -Scghi -CirotR -OoREGVAR -Twin32 -Pi386 -gl -Xs -WG -vewnhi -l -FiE:\lazarus\golmlsvn\golfml\golfml\playerscorecardupdater\source\lib\i386-win32 -Fue:\lazarus\lcl\units\i386-win32 -Fue:\lazarus\lcl\units\i386-win32\win32 -Fue:\lazarus\packager\units\i386-win32 -FuE:\lazarus\golmlsvn\golfml\golfml\playerscorecardupdater\source\ -Fu. -FUE:\lazarus\golmlsvn\golfml\golfml\playerscorecardupdater\source\lib\i386-win32\ -oplayerscorecardupdaterwin32.exe -dLCL -dLCLwin32 playerscorecardupdaterwin32.lpr"/>
+</CONFIG>
