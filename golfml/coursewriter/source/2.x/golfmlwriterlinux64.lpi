@@ -18,7 +18,7 @@
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="2"/>
       <MinorVersionNr Value="4"/>
-      <BuildNr Value="13"/>
+      <BuildNr Value="14"/>
       <Language Value="0809"/>
       <StringTable CompanyName="minesadorada" InternalName="golfmlcoursewriterlinux64" OriginalFilename="golfmlcoursewriter" ProductVersion="2.4.20120505"/>
     </VersionInfo>
