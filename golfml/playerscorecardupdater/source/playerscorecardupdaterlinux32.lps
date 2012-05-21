@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Retail"/>
+    <Units Count="7">
+      <Unit0>
+        <Filename Value="playerscorecardupdaterlinux32.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="playerscorecardupdaterlinux32"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="3" Y="15"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="umainform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="mainform"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="umainform"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="226"/>
+        <CursorPos X="1" Y="265"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="..\..\coursewriter\source\2.x\ugolfmlclass.pas"/>
+        <UnitName Value="ugolfmlclass"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="933"/>
+        <CursorPos X="41" Y="969"/>
+        <UsageCount Value="10"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="..\..\coursewriter\source\2.x\umainform.pas"/>
+        <UnitName Value="umainform"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1248"/>
+        <CursorPos X="1" Y="1268"/>
+        <UsageCount Value="10"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="..\..\coursewriter\source\2.x\ugolfmlwriter_globals.pas"/>
+        <UnitName Value="ugolfmlwriter_globals"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="19"/>
+        <UsageCount Value="10"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="..\..\..\..\lazarus-ccr\components\geckoport\version2\nsXPCOM.pas"/>
+        <UnitName Value="nsXPCOM"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="2" Y="19"/>
+        <UsageCount Value="10"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="..\..\..\..\lazarus-ccr\components\geckoport\version2\Components\GeckoChromeWindow.pas"/>
+        <ComponentName Value="GeckoChromeForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="GeckoChromeWindow"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="148"/>
+        <CursorPos X="32" Y="175"/>
+        <UsageCount Value="10"/>
+      </Unit6>
+    </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <JumpHistory Count="3" HistoryIndex="2">
+      <Position1>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="261" Column="24" TopLine="250"/>
+      </Position1>
+      <Position2>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="29" Column="58" TopLine="12"/>
+      </Position2>
+      <Position3>
+        <Filename Value="playerscorecardupdaterlinux32.lpr"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position3>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>
