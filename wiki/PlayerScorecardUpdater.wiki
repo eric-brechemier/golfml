@@ -38,6 +38,7 @@ Lazarus/fpc source code and binaries are available on this project site via the 
 
 The application compiles to:
   * Windows XP and up (both 64 and 32-bit)
+    *  (Installers available in Downloads section)
   * Linux 64 and 32-bit
 
 It is untested on other platforms.
