@@ -1,0 +1,75 @@
+object courseteepicker: Tcourseteepicker
+  Left = 432
+  Height = 165
+  Top = 342
+  Width = 409
+  BorderIcons = []
+  BorderStyle = bsSingle
+  Caption = 'Choose Course and Tee Position'
+  ClientHeight = 165
+  ClientWidth = 409
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '0.9.30.2'
+  object grp_main: TGroupBox
+    Left = 0
+    Height = 165
+    Top = 0
+    Width = 409
+    Align = alClient
+    Caption = 'Available Course and Tee Positions'
+    ClientHeight = 147
+    ClientWidth = 405
+    TabOrder = 0
+    object cmb_coursepicker: TComboBox
+      Left = 166
+      Height = 21
+      Top = 16
+      Width = 224
+      ItemHeight = 13
+      OnChange = cmb_coursepickerChange
+      Style = csDropDownList
+      TabOrder = 0
+    end
+    object lbl_coursepicker: TLabel
+      Left = 14
+      Height = 23
+      Top = 16
+      Width = 139
+      AutoSize = False
+      Caption = 'Choose Course:'
+      ParentColor = False
+    end
+    object lbl_teepicker: TLabel
+      Left = 14
+      Height = 23
+      Top = 56
+      Width = 139
+      AutoSize = False
+      Caption = 'Choose Tee Position:'
+      ParentColor = False
+    end
+    object cmb_teepicker: TComboBox
+      Left = 166
+      Height = 21
+      Top = 56
+      Width = 224
+      ItemHeight = 13
+      OnChange = cmb_teepickerChange
+      Style = csDropDownList
+      TabOrder = 1
+    end
+    object cmd_close: TBitBtn
+      Left = 166
+      Height = 30
+      Top = 104
+      Width = 75
+      Caption = '&OK'
+      Default = True
+      Kind = bkOK
+      ModalResult = 1
+      TabOrder = 2
+    end
+  end
+end
