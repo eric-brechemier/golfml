@@ -15,7 +15,7 @@
     <VersionInfo>
       <StringTable ProductVersion=""/>
     </VersionInfo>
-    <BuildModes Count="2" Active="DEBUG">
+    <BuildModes Count="2" Active="Retail">
       <Item1 Name="DEBUG" Default="True"/>
       <Item2 Name="Retail">
         <CompilerOptions>
@@ -114,7 +114,7 @@
         <UnitName Value="umainform"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1091"/>
+        <TopLine Value="15"/>
         <CursorPos X="36" Y="1112"/>
         <ComponentState Value="1"/>
         <UsageCount Value="216"/>
@@ -152,9 +152,10 @@
         <Filename Value="ugolfmlclass.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ugolfmlclass"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1793"/>
+        <TopLine Value="1"/>
         <CursorPos X="45" Y="1827"/>
         <UsageCount Value="200"/>
         <Bookmarks Count="2">
@@ -244,15 +245,17 @@
       <Unit15>
         <Filename Value="ucourseteepicker.pas"/>
         <IsPartOfProject Value="True"/>
+        <ComponentName Value="courseteepicker"/>
         <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
         <UnitName Value="ucourseteepicker"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="17" Y="10"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit15>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
