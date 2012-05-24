@@ -13,7 +13,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="22"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -26,9 +26,9 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="153"/>
-        <CursorPos X="42" Y="177"/>
-        <UsageCount Value="20"/>
+        <TopLine Value="26"/>
+        <CursorPos X="30" Y="30"/>
+        <UsageCount Value="22"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -79,11 +79,27 @@
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="1" HistoryIndex="0">
+    <JumpHistory Count="5" HistoryIndex="4">
       <Position1>
         <Filename Value="umainform.pas"/>
         <Caret Line="261" Column="24" TopLine="250"/>
       </Position1>
+      <Position2>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="258" Column="83" TopLine="213"/>
+      </Position2>
+      <Position3>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="249" Column="61" TopLine="225"/>
+      </Position3>
+      <Position4>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="178" Column="38" TopLine="163"/>
+      </Position4>
+      <Position5>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="28" Column="70" TopLine="1"/>
+      </Position5>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

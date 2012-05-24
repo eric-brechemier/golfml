@@ -6,12 +6,12 @@ object mainform: Tmainform
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'mainform'
-  ClientHeight = 242
+  ClientHeight = 249
   ClientWidth = 396
   Menu = MainMenu1
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '0.9.30.4'
+  LCLVersion = '1.1'
   object cmd_close: TButton
     Left = 303
     Height = 25
@@ -32,7 +32,7 @@ object mainform: Tmainform
   end
   object edt_playername: TEdit
     Left = 119
-    Height = 25
+    Height = 23
     Top = 104
     Width = 192
     TabOrder = 2
@@ -40,23 +40,23 @@ object mainform: Tmainform
   end
   object Label1: TLabel
     Left = 15
-    Height = 18
+    Height = 16
     Top = 104
-    Width = 83
+    Width = 68
     Caption = 'Player Name'
     ParentColor = False
   end
   object Label2: TLabel
     Left = 16
-    Height = 18
+    Height = 16
     Top = 48
-    Width = 88
+    Width = 73
     Caption = 'Course Name'
     ParentColor = False
   end
   object edt_coursename: TEdit
     Left = 119
-    Height = 25
+    Height = 23
     Top = 48
     Width = 192
     TabOrder = 3
@@ -64,7 +64,7 @@ object mainform: Tmainform
   end
   object edt_teecolour: TEdit
     Left = 119
-    Height = 25
+    Height = 23
     Top = 76
     Width = 192
     TabOrder = 4
@@ -72,23 +72,23 @@ object mainform: Tmainform
   end
   object Label3: TLabel
     Left = 16
-    Height = 18
+    Height = 16
     Top = 76
-    Width = 68
+    Width = 59
     Caption = 'Tee Colour'
     ParentColor = False
   end
   object Label4: TLabel
     Left = 16
-    Height = 18
+    Height = 16
     Top = 132
-    Width = 104
+    Width = 87
     Caption = 'Player Handicap'
     ParentColor = False
   end
   object edt_playerhandicap: TEdit
     Left = 119
-    Height = 25
+    Height = 23
     Top = 132
     Width = 192
     TabOrder = 5
@@ -106,33 +106,33 @@ object mainform: Tmainform
   end
   object chk_coursename: TCheckBox
     Left = 320
-    Height = 21
+    Height = 19
     Top = 48
-    Width = 69
+    Width = 58
     Caption = 'Update'
     TabOrder = 7
   end
   object chk_teecolour: TCheckBox
     Left = 320
-    Height = 21
+    Height = 19
     Top = 76
-    Width = 69
+    Width = 58
     Caption = 'Update'
     TabOrder = 8
   end
   object chk_playername: TCheckBox
     Left = 320
-    Height = 21
+    Height = 19
     Top = 104
-    Width = 69
+    Width = 58
     Caption = 'Update'
     TabOrder = 9
   end
   object chk_playerhandicap: TCheckBox
     Left = 320
-    Height = 21
+    Height = 19
     Top = 132
-    Width = 69
+    Width = 58
     Caption = 'Update'
     TabOrder = 10
   end
@@ -320,4 +320,4 @@ object mainform: Tmainform
       end
     end
   end
-end
+end

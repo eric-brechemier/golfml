@@ -25,7 +25,7 @@ interface
 
 uses
   classes, sysutils, fileutil, forms, controls, graphics, dialogs, StdCtrls,
-  Menus, ExtCtrls, XMLRead, XMLWrite, DOM, INIFiles;
+  Menus, ExtCtrls, XMLRead, XMLWrite, DOM, INIFiles,strutils;
 
 CONST C_VERSION='0.2.20120517';
 CONST WINDOWSCONFIGPATH='C:\GolfmlCourseWriter\';
@@ -72,6 +72,9 @@ type
     INI:TIniFile;
     ConfigFilePath:String;
     WorkingMode:TWorkingMode;
+    sPlayerName:String;
+    sBaseFilename:String;
+
     function ParseXML(Const docpath:String):Boolean;
     Function ImportGolfmlApplicationSection(aNode:TDomNode):Boolean;
     Function ExportGolfmlApplicationSection(aNode:TDomNode):Boolean;
@@ -136,7 +139,9 @@ begin
 end;
 
 procedure tmainform.cmd_importClick(sender: tobject);
-Var s:String;
+Var
+   s:String;
+   i:Integer;
 begin
    // Fetch config file last saved location of courses
    s:=INI.ReadString('config','golfmlFilesLocation','unknown');
@@ -169,6 +174,10 @@ begin
 	               chk_playername.Checked:=false;
 	               chk_playerhandicap.Checked:=false;
 	               // ShowmessageFmt('%s import successful',[dlg_open.Filename]);
+                   if AnsiContainsText(ExtractFilename(dlg_open.Filename),'playerscorecard') then
+                      sBaseFilename:=ExtractFileNameOnly(dlg_open.Filename) + '_'
+                   else sBaseFilename:='playerscorecard_';
+
 	          end
 	          else
 			        ShowmessageFmt('Unable to import %s',[dlg_open.Filename]);
@@ -205,13 +214,21 @@ begin
          end
          else
              dlg_open.InitialDir:=s;
-
-      dlg_save.Filename:=ExtractFileName(dlg_open.Filename);
+      If chk_playername.Checked then
+         begin
+              sPlayerName:=Lowercase(DelSpace(edt_playername.Text));
+              // Alternative below is first name only
+              // sPlayerName:=Lowercase(Copy2Space(edt_playername.Text));
+              dlg_save.Filename:=sBaseFilename + sPlayerName;
+         end
+         else  dlg_save.Filename:=ExtractFileName(dlg_save.Filename);
       WorkingMode:=EXPORTMODE;
       // Write values to golfml file
       If dlg_save.Execute then
-         if ParseXML(dlg_save.Filename) then
-           ShowMessageFmt('%s updated successfully',[dlg_save.Filename]);
+         if ParseXML(dlg_open.Filename) then
+           ShowMessageFmt('%s updated successfully',[ExtractFileName(dlg_save.Filename)])
+         else
+           ShowMessageFmt('%s failed to update',[ExtractFileName(dlg_save.Filename)]);
 
 end;
 
@@ -242,8 +259,9 @@ begin
                                      If WorkingMode=EXPORTMODE then
                                        begin
                                         Result:=ExportGolfmlApplicationSection(CurrentNode);
-                                        If Result=TRUE then WriteXMLFile(Doc,docpath);
+                                        If Result=TRUE then WriteXMLFile(Doc,dlg_save.Filename);
                                        end;
+                                     FreeAndNil(CurrentNode);
                                      Exit; // no more to do
                                 end;
                         CurrentNode:=CurrentNode.NextSibling;
@@ -253,7 +271,7 @@ begin
             Doc.Free;
          END;
      EXCEPT
-          on E: Exception do ShowMessage(E:Message);
+          on E: Exception do ShowMessageFmt('Exception %s in ParseXML',[E.Message]);
      END;
 end;
 Function Tmainform.ImportGolfmlApplicationSection(aNode:TDomNode):Boolean;
@@ -311,4 +329,4 @@ begin
       end;
 end;
 end.
-
+
