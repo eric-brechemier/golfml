@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Golfml Player Scorecard Updater"
-#define MyAppVersion "0.2"
+#define MyAppVersion "0.3"
 #define MyAppPublisher "minesadorada"
 #define MyAppURL "http://code.google.com/p/golfml/"
 #define MyAppExeName "playerscorecardupdaterwin32.exe"
@@ -22,7 +22,7 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf32}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 OutputDir=C:\lazarus\golfmlsvn\golfml\playerscorecardupdater\setup
-OutputBaseFilename=GolfmlPlayerScorecardUpdaterSetupv0_2Win32
+OutputBaseFilename=GolfmlPlayerScorecardUpdaterSetupv0_3Win32
 Compression=lzma
 SolidCompression=yes
 
