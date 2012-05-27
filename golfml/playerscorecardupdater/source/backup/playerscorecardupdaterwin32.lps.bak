@@ -9,10 +9,11 @@
         <Filename Value="playerscorecardupdaterwin32.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="playerscorecardupdaterwin32"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="1" Y="1"/>
+        <CursorPos X="3" Y="15"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -23,7 +24,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="umainform"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
         <TopLine Value="12"/>
@@ -79,11 +79,15 @@
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="1" HistoryIndex="0">
+    <JumpHistory Count="2" HistoryIndex="1">
       <Position1>
         <Filename Value="umainform.pas"/>
         <Caret Line="261" Column="24" TopLine="250"/>
       </Position1>
+      <Position2>
+        <Filename Value="playerscorecardupdaterwin32.lpr"/>
+        <Caret Line="1" Column="1" TopLine="1"/>
+      </Position2>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>
