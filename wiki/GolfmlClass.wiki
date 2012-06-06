@@ -153,6 +153,7 @@ Normally you would set up 3 nested loops, and assign values to properties within
 
 MULTIPLE WRITING EXAMPLE:
 {{{
+GolfmlClass.Reset;
 ...Set Club-wide properties...
 For CourseLoop:=0 to ... DO
   GolfmlClass.CourseIndex:=CourseLoop; // Write data to this course
@@ -166,6 +167,8 @@ For CourseLoop:=0 to ... DO
     end; // next hole
   end; // next tee position
 end; // next course
+GolfmlClass.CourseXMLPath:='C:\courses\mycourse.xml';
+GolfmlClass.MakeGolfmlFile;
 }}}
 ----
 ==== How to retrieve the data after calling !GetCourseInfoFromFile ====
