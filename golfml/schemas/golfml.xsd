@@ -1982,7 +1982,7 @@
 	
 	<!-- Country clubs -->
 	
-	<xs:simpleType name="AmenetyTypeEnum">
+	<xs:simpleType name="AmenityTypeEnum">
 		<xs:annotation>
 			<xs:documentation xml:lang="en">
 				List of value to document facilities available at the country club premises.
@@ -2639,13 +2639,13 @@
 	<!-- Country Club -->
 	<xs:complexType name="Amenity">
 		<xs:annotation><xs:documentation xml:lang="en">
-			Amenety available at the country club premises.
-			Ameneties have a type attribute to help identify the amenity.
+			Amenity available at the country club premises.
+			Amenities have a type attribute to help identify the amenity.
 			LATER: May be store the position (gps or other) inside the amenity.
 		</xs:documentation></xs:annotation> 	
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
-				<xs:attribute name="type" type="golfml:AmenetyTypeEnum"/>
+				<xs:attribute name="type" type="golfml:AmenityTypeEnum"/>
 				<xs:attributeGroup ref="golfml:Other"/>
 			</xs:extension>
 		</xs:simpleContent>
@@ -2685,7 +2685,7 @@
 			</xs:element>
 			<xs:element name="amenity" type="golfml:Amenity" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation><xs:documentation xml:lang="en">
-					Amenety available at the contry club. Ameneties includes practice facilities, club-house facilities for golfers,
+					Amenity available at the contry club. Amenities includes practice facilities, club-house facilities for golfers,
 					including bar, restaurant, locker rooms, showers, pro-shop... but also "corporate" facilities such as meeting rooms and more.
 				</xs:documentation></xs:annotation>
 			</xs:element>
