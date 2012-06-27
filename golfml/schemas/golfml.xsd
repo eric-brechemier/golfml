@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="../stylesheets/genwiki.xsl"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		   xmlns:golfml="http://code.google.com/p/golfml"
 		   targetNamespace="http://code.google.com/p/golfml"
@@ -1867,7 +1866,8 @@
 		
 	<xs:complexType name="TeeSetSummary">
 		<xs:annotation><xs:documentation xml:lang="en">
-			Stores denormalized parameters for a set of tees.
+			Stores denormalized parameters for a set of tees: partial and total par, length,
+			and any additional statistics like "average par for each hole", etc.
 		</xs:documentation></xs:annotation>
 		<xs:sequence>
 			<xs:element name="holes" type="xs:nonNegativeInteger" minOccurs="0">
@@ -1875,24 +1875,39 @@
 					Denormalisation: Number of holes.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="par" type="xs:positiveInteger" minOccurs="0">
+			<xs:element name="front-par" type="xs:positiveInteger" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
-					Denormalisation: Total number of strokes for set of tees.
+					Denormalisation: Total par of first nine holes.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="front" type="golfml:LengthWithUnits" minOccurs="0">
+			<xs:element name="back-par" type="xs:positiveInteger" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Denormalisation: Total par of last nine holes.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="par" type="xs:positiveInteger" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Denormalisation: Total par for set of tees.
+				</xs:documentation></xs:annotation>
+			</xs:element>
+			<xs:element name="front-length" type="golfml:LengthWithUnits" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Denormalisation: Total length of first nine holes.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="back" type="golfml:LengthWithUnits" minOccurs="0">
+			<xs:element name="back-length" type="golfml:LengthWithUnits" minOccurs="0">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Denormalisation: Total length for last nine holes.
 				</xs:documentation></xs:annotation>
 			</xs:element>
+			<xs:element name="length" type="golfml:LengthWithUnits" minOccurs="0">
+				<xs:annotation><xs:documentation xml:lang="en">
+					Denormalisation: Total length for set of tees.
+				</xs:documentation></xs:annotation>
+			</xs:element>
 			<xs:element name="statistic" type="golfml:StatisticValue" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation><xs:documentation xml:lang="en">
-					Denormalisation: Statistic for the round of golf.
+					Denormalisation: Statistic for this set of tees.
 				</xs:documentation></xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -2622,11 +2637,11 @@
 	</xs:complexType>
 	
 	<!-- Country Club -->
-	<xs:complexType name="Amenety">
+	<xs:complexType name="Amenity">
 		<xs:annotation><xs:documentation xml:lang="en">
 			Amenety available at the country club premises.
-			Ameneties have a type attribute to help identify the amenety.
-			LATER: May be store the position (gps or other) inside the amenety.
+			Ameneties have a type attribute to help identify the amenity.
+			LATER: May be store the position (gps or other) inside the amenity.
 		</xs:documentation></xs:annotation> 	
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
@@ -2668,7 +2683,7 @@
 					Contact for the golf course. Contacts have a contact type to further identify it.
 				</xs:documentation></xs:annotation>
 			</xs:element>
-			<xs:element name="amenety" type="golfml:Amenety" minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="amenity" type="golfml:Amenity" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation><xs:documentation xml:lang="en">
 					Amenety available at the contry club. Ameneties includes practice facilities, club-house facilities for golfers,
 					including bar, restaurant, locker rooms, showers, pro-shop... but also "corporate" facilities such as meeting rooms and more.
