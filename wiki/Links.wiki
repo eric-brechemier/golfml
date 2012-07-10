@@ -8,3 +8,14 @@ SportML is a markup language used to communicate sports results. It is not used 
 [http://www.microformats.org/ Microformats]
 
 Designed for humans first and machines second, microformats are a set of simple, open data formats built upon existing and widely adopted standards.
+
+[http://www.openstreetmap.org/ OpenStreetMap]
+
+OpenStreetMap is the free wiki world map. It is a natural place to store and retrieve position data for golf courses.
+
+Have a look at the following initiatives:
+
+  * [http://wiki.openstreetmap.org/wiki/Proposed_features/Golf_course OpenStreetMap effort to include golf data in its layers of information]
+  * [http://code.google.com/p/osmgolf The skeleton of a golf application built on top of the above]
+  * [https://sites.google.com/site/maps4locus/home/ A tool to build and incorporate golf data into OSM]
+ 
