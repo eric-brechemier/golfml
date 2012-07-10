@@ -11,7 +11,7 @@ Designed for humans first and machines second, microformats are a set of simple,
 
 [http://www.openstreetmap.org/ OpenStreetMap]
 
-OpenStreetMap is the free wiki world map. It is a natural place to store and retrieve position data for golf courses.
+[http://www.openstreetmap.org/ OpenStreetMap] is the free wiki world map. It is a natural place to store and retrieve position data for golf courses.
 
 Have a look at the following initiatives:
 
