@@ -17,6 +17,10 @@ The GolfML to Open Streep Map transformation convert the above structure into so
 
 http://golfml.googlecode.com/files/golf-course-osm.png
 
+Please note that in the above picture, boxes with a dashed line contour do not really exist in the Open Street Map XML document structure.
+They are added to easy the reading of the document.
+In the XML document, they appears as XML comments.
+
 = Open Street Map to GolfML =
 
 The transformation from Open Street Map to GolfML is being developed. More information soon.
