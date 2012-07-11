@@ -1,0 +1,10 @@
+#summary GolfML and Open Street Map.
+
+= Introduction =
+
+The GolfML project includes several sample transformations to interact with related projects.
+
+The Open Street Map initiative is indeed a project of interest as it allows golfer to store golf course information directly in Open Street Map layers of information.
+
+
+= GolfML to Open Street Map =
