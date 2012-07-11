@@ -17,6 +17,8 @@ The GolfML to Open Streep Map transformation convert the above structure into so
 
 http://golfml.googlecode.com/files/golf-course-osm.png
 
+Boxes with the same colour contain the same information.
+
 Please note that in the above picture, boxes with a dashed line contour do not really exist in the Open Street Map XML document structure.
 They are added to easy the reading of the document.
 In the XML document, they appears as XML comments.
