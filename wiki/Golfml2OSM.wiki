@@ -1,4 +1,5 @@
 #summary GolfML and Open Street Map.
+#sidebar TableOfContents
 
 = Introduction =
 
