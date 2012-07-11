@@ -8,3 +8,15 @@ The Open Street Map initiative is indeed a project of interest as it allows golf
 
 
 = GolfML to Open Street Map =
+
+The overall structure of golf course information in a GolfML document looks very much like this:
+
+http://golfml.googlecode.com/files/golf-course-golfml.png
+
+The GolfML to Open Streep Map transformation convert the above structure into something like this:
+
+http://golfml.googlecode.com/files/golf-course-osm.png
+
+= Open Street Map to GolfML =
+
+The transformation from Open Street Map to GolfML is being developed. More information soon.
