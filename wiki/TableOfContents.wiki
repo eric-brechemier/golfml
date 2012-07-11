@@ -10,7 +10,7 @@
       * [Issues Issues]
    * Examples
       * [Workflow Typical workflows]
-      * [GolfML2OSM GolfML and Open Street Map]
+      * [Golfml2OSM GolfML and Open Street Map]
       * [SimpleDocumentGolfCourse Simple GolfML Golf Course]
       * [SimpleDocumentScorecard Simple GolfML Scorecard]
       * [CasesStudy Case studies]
