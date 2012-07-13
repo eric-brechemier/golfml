@@ -595,6 +595,7 @@ begin
       end; // ..of with golfmlclass do
       pagecontainer.ActivePage := tab_countryclub;
       iNumCourses := PageLastIndex + 1; // Set local 1-based var
+      PageLastIndex:=-1;
       lbl_numCourses.Caption := Format('Courses attached to %s: %d',
         [tab_countryclub.Caption, iNumCourses]);
     finally
@@ -3022,6 +3023,7 @@ procedure Tmainform.EnableTeePositionDisplay(const iCourse, iTeePosition: intege
 var
   wCount: word;
 begin
+  // showmessagefmt('Course=%d',[iCourse]);
   lbl_ParInfo[iCourse, 0].Visible := True;
   lbl_SIInfo[iCourse, 0].Visible := True;
   if Full18 then
@@ -3206,6 +3208,7 @@ begin
     Exit;
   // The Tag property is the TeeColour (C_GOLD to C_RED)
   tempCheckBox := Sender as TCheckBox;
+  CourseIndex:=pagecontainer.ActivePageIndex-1;
 
   // Make sure that at least one Tee Colour is checked for this course
   bAtLeastOneChecked := False;
