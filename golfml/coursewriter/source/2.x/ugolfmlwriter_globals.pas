@@ -15,7 +15,7 @@ uses
   Classes, SysUtils;
 
 const
-  C_VERSION = '2.8.20120516';
+  C_VERSION = '2.9.20120713';
 
 const
   WINDOWSCONFIGPATH = 'C:\GolfmlCourseWriter\';

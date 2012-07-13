@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Golfml CourseWriter"
-#define MyAppVersion "2.8"
+#define MyAppVersion "2.9"
 #define MyAppPublisher "minesadorada"
 #define MyAppURL "http://code.google.com/p/golfml/"
 #define MyAppExeName "golfmlcoursewriterwin64.exe"
@@ -22,7 +22,7 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf64}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 OutputDir=C:\lazarus\golfmlsvn\golfml\coursewriter\setup
-OutputBaseFilename=GolfmlCourseWriterSetupv2_8Win64
+OutputBaseFilename=GolfmlCourseWriterSetupv2_9Win64
 Compression=lzma
 SolidCompression=yes
 

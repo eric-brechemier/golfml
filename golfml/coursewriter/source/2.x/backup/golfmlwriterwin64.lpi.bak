@@ -24,7 +24,7 @@
       <BuildNr Value="49"/>
       <StringTable CompanyName="minesadorada@charcodelvalle.com" FileDescription="golfm course writer and editor" InternalName="golfmlcoursewriter{OSVERSION}" OriginalFilename="golfmlcoursewriter" ProductVersion=""/>
     </VersionInfo>
-    <BuildModes Count="2" Active="DEBUG">
+    <BuildModes Count="2" Active="Retail">
       <Item1 Name="DEBUG" Default="True"/>
       <Item2 Name="Retail">
         <CompilerOptions>
@@ -123,11 +123,11 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="3202"/>
-        <CursorPos X="19" Y="3211"/>
+        <TopLine Value="3401"/>
+        <CursorPos X="1" Y="3211"/>
         <UsageCount Value="79"/>
         <Bookmarks Count="2">
-          <Item0 X="3" Y="3212" ID="0"/>
+          <Item0 X="1" Y="3212" ID="0"/>
           <Item1 X="35" Y="620" ID="1"/>
         </Bookmarks>
         <Loaded Value="True"/>
