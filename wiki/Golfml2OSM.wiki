@@ -84,6 +84,11 @@ P A R T   1 :   G O L F   C O U R S E   D A T A
 	</way>
 	...
 <!--
+P A R T   2 :   H O L E   R E L A T I O N S
+This section is no longer generated.
+Golf-specific information is added in 'way' element after each hole. (See Section 1.1.(hole number).b.)	
+-->
+<!--
 P A R T   3 :   G O L F   C O U R S E   R E L A T I O N
 -->
 <!--3.1. Golf course data for "Golf de la Bruyère".-->
@@ -136,13 +141,23 @@ Middle points are generated for POI of type `dogleg`.
 The last node represents the hole. If a Point of Interest (poi) of type `flag` exists, it is used (the first one found if there are several of them).  If no Point of interest (aoi) of type `flag` exists, the first point of the first Area of Interest of type `green` is used. If no AOI of type `green` is found, no point is generated.
 
 All golf-specific data related to this hole are added with `tag` elements to the Ideal Line `way` element. (See Section 1.1.<hole number>.b in example.)
+{{{
+	  <tag k="golf" v="hole"/>
+	  <tag k="ref" v="1"/>
+	  <tag k="par:red" v="5"/>
+	  <tag k="handicap:red" v="12"/>
+	  <tag k="dist:red" v="470"/>
+	  <tag k="par:blue" v="5"/>
+	  <tag k="handicap:blue" v="12"/>
+	  <tag k="dist:blue" v="470"/>
+}}}
 
 For the Ideal Line to be drawn, the conversion requires:
   * Either a POI or an AOI of type `tee`.
   * And a POI of type `flag` or `green` and an AOI of type `green`.
 This is the minimum requirement.
 
-==== Golf Data ====
+==== Global Golf Course Data ====
 
 For the entire course, we add an additional  `relation` element to group all nodes and ways that belong to this golf course together. In this final element, we also add some global golf course tags. (See Section 3. in example.)
 
