@@ -173,23 +173,7 @@ This is the minimum requirement.
 
 ==== Golf Data ====
 
-For each hole, we add a `relation` element to group all nodes and ways together and to specify golf course information as recommended in [http://wiki.openstreetmap.org/wiki/Proposed_features/Golf_course Open Street Map for Golf]. (See Section 2.<hole number>. in example.)
-
-{{{
-	<relation id="d0e287">
-		<tag k="golf" v="hole"/>
-		<tag k="ref" v="1"/>
-		<tag k="par:red" v="5"/>
-		<tag k="handicap:red" v="12"/>
-		<tag k="dist:red" v="450"/>
-		<tag k="par:blue" v="5"/>
-		<tag k="handicap:blue" v="12"/>
-		<tag k="dist:blue" v="470"/>
-		<member
-		...
-}}}
-
-Finally, for the entire course, we add an additional  `relation` element to group all nodes and ways that belong to this golf course together. In this final element, we also add some global golf course tags. (See Section 3. in example.)
+For the entire course, we add an additional  `relation` element to group all nodes and ways that belong to this golf course together. In this final element, we also add some global golf course tags. (See Section 3. in example.)
 
 {{{
 	<relation id="d0e39">
