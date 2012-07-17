@@ -1,0 +1,17 @@
+#summary One-sentence summary of this page.
+#sidebar TableOfContents
+
+= Notes =
+
+The Open Streep Map to GolfML conversion requires the respect of Open Street Map for Golf convention.
+
+The algorithm works as follow:
+
+1. Search and locate a relation with both
+
+{{{
+      <tag k="leisure" v="golf_course"/>
+      <tag k="type" v="golf_course"/>
+}}}
+
+The first one ensure we have a golf course, the second one ensure contributors have added golfing data.
