@@ -16,7 +16,7 @@ http://golfml.googlecode.com/files/golf-course-golfml.png
 
 The GolfML to Open Streep Map transformation convert the above structure into something like this:
 
-http://golfml.googlecode.com/files/golf-course-osm.png
+http://golfml.googlecode.com/files/golf-course-osm2.png
 
 Boxes with the same colour contain the same information.
 
