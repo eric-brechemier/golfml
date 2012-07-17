@@ -1,7 +1,7 @@
 #summary One-sentence summary of this page.
 #sidebar TableOfContents
 
-= Notes =
+= Algorithm =
 
 The Open Streep Map to GolfML conversion requires the respect of Open Street Map for Golf convention.
 
@@ -31,3 +31,20 @@ Recurse and interpret.
 4. Organise all collected items per hole (GolfML's driving entity).
 
 5. Generate GolfML.
+
+= Notes =
+
+== Golf Course Data ==
+
+The golf course's name has the structure:
+
+"Country club name, Golf course name"
+
+From tags
+
+sr:* and cr:*
+
+we deduce not only the course's USGA rating and slope, but also all possible tee sets (word after the `: `).
+
+
+
