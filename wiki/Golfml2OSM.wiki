@@ -142,6 +142,7 @@ The last node represents the hole. If a Point of Interest (poi) of type `flag` e
 
 All golf-specific data related to this hole are added with `tag` elements to the Ideal Line `way` element. (See Section 1.1.<hole number>.b in example.)
 {{{
+	<way id="d0e287">
 	  <tag k="golf" v="hole"/>
 	  <tag k="ref" v="1"/>
 	  <tag k="par:red" v="5"/>
@@ -150,6 +151,9 @@ All golf-specific data related to this hole are added with `tag` elements to the
 	  <tag k="par:blue" v="5"/>
 	  <tag k="handicap:blue" v="12"/>
 	  <tag k="dist:blue" v="470"/>
+ 	  <member ref="d0e300" type="node"><!--tee--></member>
+	  <member ref="d0e408" type="node"><!--aim--></member>
+	  <member ref="d0e482" type="node"><!--pin--></member>
 }}}
 
 For the Ideal Line to be drawn, the conversion requires:
