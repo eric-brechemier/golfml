@@ -154,6 +154,7 @@ All golf-specific data related to this hole are added with `tag` elements to the
  	  <member ref="d0e300" type="node"><!--tee--></member>
 	  <member ref="d0e408" type="node"><!--aim--></member>
 	  <member ref="d0e482" type="node"><!--pin--></member>
+	</way>
 }}}
 
 For the Ideal Line to be drawn, the conversion requires:
@@ -181,6 +182,7 @@ In this final relation element, we add global golf course tags. (See Section 2. 
 		<tag k="sr:blue" v="113"/>
 		<member
 		...
+	</relation>
 }}}
 
 
