@@ -84,38 +84,9 @@ P A R T   1 :   G O L F   C O U R S E   D A T A
 	</way>
 	...
 <!--
-P A R T   2 :   H O L E   R E L A T I O N S
--->
-<!--2.1. Hole relation for hole 1.-->
-	<relation id="d0e287">
-		<tag k="golf" v="hole"/>
-		<tag k="ref" v="1"/>
-		<tag k="par:red" v="5"/>
-		<tag k="handicap:red" v="12"/>
-		<tag k="dist:red" v="470"/>
-		<tag k="par:blue" v="5"/>
-		<tag k="handicap:blue" v="12"/>
-		<tag k="dist:blue" v="470"/>
-		<member ref="d0e291" type="way" userid="golfml"><!--tee--></member>
-		<member ref="d0e324" type="way" userid="golfml"><!--tee--></member>
-		<member ref="d0e357" type="way" userid="golfml"><!--greenside-trap--></member>
-		<member ref="d0e415" type="way" userid="golfml"><!--greenside-trap--></member>
-		<member ref="d0e473" type="way" userid="golfml"><!--green--></member>
-		<member ref="d0e556" type="way" userid="golfml"><!--fairway--></member>
-		<member ref="d0e674" type="way" userid="golfml"><!--fairway--></member>
-		<member ref="d0e882" type="way" userid="golfml"><!--fairway-trap--></member>
-		<member ref="d0e930" type="way" userid="golfml"><!--hole-contour--></member>
-		<member ref="d0e1008" type="way" userid="golfml"><!--trees--></member>
-		<member ref="d0e1051" type="way" userid="golfml"><!--trees--></member>
-		<member ref="d0e1109" type="way" userid="golfml"><!--trees--></member>
-		<member ref="d0e1157" type="way" userid="golfml"><!--trees--></member>
-	</relation>
-<!--2.2. Hole relation for hole 2.-->
-	...
-<!--
 P A R T   3 :   G O L F   C O U R S E   R E L A T I O N
 -->
-<!--3.1. Golf course data for Golf de la Bruyère.-->
+<!--3.1. Golf course data for "Golf de la Bruyère".-->
 	<relation id="d0e39">
 		<tag k="type" v="golf_course"/>
 		<tag k="name" v="Golf de la Bruyère"/>
@@ -130,7 +101,7 @@ P A R T   3 :   G O L F   C O U R S E   R E L A T I O N
 		...
 		<!--3.2.2. Members for hole 2.-->
 		...
-<!--3.3. Members for facilities.-->
+<!--3.3. Members for other objects and facilities.-->
 		<member ref="d0e50" type="way" userid="golfml"><!--hole19th--></member>
 		...
 	</relation>
