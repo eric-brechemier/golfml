@@ -189,4 +189,5 @@ In this final relation element, we add global golf course tags. (See Section 2. 
 = See Also =
 
   * [GolfML2OSMNotes Open Street Map Tag Notes.]
+  * [OSM2GolfMLNotes Open Street Map to GolfML Conversion Notes.]
   * Open Street Map to GolfML: The transformation from Open Street Map to GolfML is being developed. More information soon.
