@@ -46,5 +46,5 @@ sr:* and cr:*
 
 we deduce not only the course's USGA rating and slope, but also all possible tee sets (word after the `: `).
 
-
+(WORK IN PROGRESS.)
 
