@@ -141,11 +141,35 @@ P A R T   3 :   G O L F   C O U R S E   R E L A T I O N
 
 For a given golf course, GolfML isolates GPS positions (WSG84) in a `<holes>` element.
 
+=== Point of Interest for a Golf Hole ===
+
 Points of interest (`<poi>`) are converted to *nodes*. Tags are added to specify the hole to which the node belongs to and to qualify the node (what it represents): golf flag (pin), tee, a tree...
 
+=== Areas of Interest  for a Golf Hole (surfaces) ===
 Areas of interest (`<aoi>`) are converted to *ways*. We used the same structure as Open Street Map: We first lists nodes (without any other information), and then references these nodes in a way element. Tags are added to specify the hole to which the way belongs to and to qualify the way (what it represents): fairway, green, rough...
 
-Points and areas of interest that do not belong to a specific hole (for instance cart path, lakes, woods...) are added after, without any reference to any hole but with tags to qualify what they represent (example: natural=water, highway=footpath...)
+=== Other Points and Areas Interest not for a specific Golf Hole ===
+Points and areas of interest that do not belong to a specific hole (for instance cart path, lakes, woods...) are added after hole specific elements, without any reference to any hole but with tags to qualify what they represent (example: natural=water, highway=footpath...)
+
+=== Golf Data ===
+
+==== Ideal Line ====
+
+For each hole, we generate a way (line) from tee to hole/flag.
+Each point of the line is a node. All nodes of the line a collected into a way element.
+
+The first node represents a tee. If a Point of Interest (poi) of type `tee` exists, it is used (the first one found if there are several of them).  If no Point of interest (aoi) of type `tee` exists, the first point of the first Area of Interest of type `tee` is used. If no POI or AOI of type tee is found, no point is generated.
+
+Middle points are generated for POI of type `dogleg`.
+
+The last node represents the hole. If a Point of Interest (poi) of type `flag` exists, it is used (the first one found if there are several of them).  If no Point of interest (aoi) of type `flag` exists, the first point of the first Area of Interest of type `green` is used. If no AOI of type `green` is found, no point is generated.
+
+For the Ideal Line to be drawn, the conversion requires:
+  * Either a POI or an AOI of type `tee`.
+  * And a POI of type `flag` or `green` and an AOI of type `green`.
+This is the minimum requirement.
+
+==== Golf Data ====
 
 For each hole, we add a `relation` element to group all nodes and ways together and to specify golf course information as recommended in [http://wiki.openstreetmap.org/wiki/Proposed_features/Golf_course Open Street Map for Golf].
 
