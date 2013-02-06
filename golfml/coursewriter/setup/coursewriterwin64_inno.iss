@@ -46,7 +46,7 @@ Source: "E:\lazarus\golfml\coursewriter\courses\tenerife_golfdelsur.xml"; DestDi
 Source: "E:\lazarus\golfml\coursewriter\courses\tenerife_golflasamericas.xml"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
 Source: "E:\lazarus\golfml\coursewriter\courses\tenerife_larosaleda.xml"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
 Source: "E:\lazarus\golfml\coursewriter\courses\tenerife_lospalosgolfcentre.xml"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
-Source: "C:\lazarus\golfmlsvn\golfml\stylesheets\playerscorecard.xsl"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
+Source: "E:\lazarus\golfml\stylesheets\playerscorecard.xsl"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
