@@ -595,8 +595,14 @@ begin
       end; // ..of with golfmlclass do
       pagecontainer.ActivePage := tab_countryclub;
       iNumCourses := PageLastIndex + 1; // Set local 1-based var
-      PageLastIndex:=-1;
-      lbl_numCourses.Caption := Format('Courses attached to %s: %d',
+      // ======================================================================
+      // EDIT 20130206
+      // Line below disabled as it disabled saving an unaltered imported golfml file
+      // PageLastIndex is set correctly by the import routine
+      //      PageLastIndex:=-1;
+      // ======================================================================
+
+        lbl_numCourses.Caption := Format('Courses attached to %s: %d',
         [tab_countryclub.Caption, iNumCourses]);
     finally
       // Just for show...

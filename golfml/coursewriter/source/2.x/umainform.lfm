@@ -16,7 +16,7 @@ object mainform: Tmainform
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '1.1'
+  LCLVersion = '1.0.4.0'
   object cmd_close: TBitBtn
     Left = 712
     Height = 30

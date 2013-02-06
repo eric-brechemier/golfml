@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <golfml xmlns="http://code.google.com/p/golfml" version="0.9" xmlns:g="http://code.google.com/p/golfml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:golfmlclass="http://www.charcodelvalle.com/golfml" xsi:schemaLocation="http://code.google.com/p/golfml/source/browse/golfml/schemas/golfml.xsd">
   <country-club>
     <name>Golf del Sur</name>
@@ -810,7 +810,7 @@
         </tee>
         <tee number="2">
           <par>3</par>
-          <handicap-stroke>13</handicap-stroke>
+          <handicap-stroke>11</handicap-stroke>
           <length units="meters">196</length>
           <length units="yards">214</length>
         </tee>
@@ -934,7 +934,7 @@
         </tee>
         <tee number="2">
           <par>3</par>
-          <handicap-stroke>13</handicap-stroke>
+          <handicap-stroke>11</handicap-stroke>
           <length units="meters">180</length>
           <length units="yards">197</length>
         </tee>
@@ -1058,7 +1058,7 @@
         </tee>
         <tee number="2">
           <par>3</par>
-          <handicap-stroke>13</handicap-stroke>
+          <handicap-stroke>11</handicap-stroke>
           <length units="meters">160</length>
           <length units="yards">175</length>
         </tee>
@@ -1804,5 +1804,5 @@
     <s:preference name="handicap-method">usga</s:preference>
     <s:preference name="units-system">metric</s:preference>
   </application>
-  <version created="08/05/2012 09:14:10" version="2.6.20120507">GolfMLClass</version>
+  <version created="06/02/2013 10:36:05" version="2.6.20120507">GolfMLClass</version>
 </golfml>
