@@ -114,7 +114,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="umainform"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="584"/>
@@ -135,10 +134,11 @@
         <Filename Value="ugolfmlwriter_globals.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ugolfmlwriter_globals"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="30" Y="19"/>
+        <TopLine Value="25"/>
+        <CursorPos X="33" Y="18"/>
         <UsageCount Value="204"/>
         <Loaded Value="True"/>
       </Unit3>
@@ -219,7 +219,7 @@
         <LoadedDesigner Value="True"/>
       </Unit10>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="28" HistoryIndex="27">
       <Position1>
         <Filename Value="ugolfmlclass.pas"/>
         <Caret Line="9" Column="39" TopLine="1"/>
@@ -322,24 +322,16 @@
       </Position25>
       <Position26>
         <Filename Value="umainform.pas"/>
-        <Caret Line="1461" Column="3" TopLine="1469"/>
+        <Caret Line="1646" Column="28" TopLine="1640"/>
       </Position26>
       <Position27>
         <Filename Value="umainform.pas"/>
-        <Caret Line="1646" Column="28" TopLine="1640"/>
+        <Caret Line="1646" Column="19" TopLine="1631"/>
       </Position27>
       <Position28>
         <Filename Value="umainform.pas"/>
-        <Caret Line="1844" Column="3" TopLine="1849"/>
-      </Position28>
-      <Position29>
-        <Filename Value="umainform.pas"/>
-        <Caret Line="1646" Column="19" TopLine="1631"/>
-      </Position29>
-      <Position30>
-        <Filename Value="umainform.pas"/>
         <Caret Line="227" Column="24" TopLine="213"/>
-      </Position30>
+      </Position28>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>

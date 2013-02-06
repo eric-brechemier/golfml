@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Golfml CourseWriter"
-#define MyAppVersion "2.8"
+#define MyAppVersion "2.9"
 #define MyAppPublisher "minesadorada"
 #define MyAppURL "http://code.google.com/p/golfml/"
 #define MyAppExeName "golfmlcoursewriterwin32.exe"
@@ -21,8 +21,8 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf32}\{#MyAppName}
 DefaultGroupName={#MyAppName}
-OutputDir=C:\lazarus\golfmlsvn\golfml\coursewriter\setup
-OutputBaseFilename=GolfmlCourseWriterSetupv2_8Win32
+OutputDir=E:\lazarus\golfml\coursewriter\setup
+OutputBaseFilename=GolfmlCourseWriterSetupv2_9Win32
 Compression=lzma
 SolidCompression=yes
 
@@ -36,17 +36,17 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "C:\GolfmlCourseWriter"
 
 [Files]
-Source: "C:\lazarus\golfmlsvn\golfml\coursewriter\source\2.x\golfmlcoursewriterwin32.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\lazarus\golfmlsvn\golfml\stylesheets\coursescorecard.xsl"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
-Source: "C:\lazarus\golfmlsvn\golfml\coursewriter\courses\tenerife_abamagolf.xml"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
-Source: "C:\lazarus\golfmlsvn\golfml\coursewriter\courses\tenerife_amarillagolf.xml"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
-Source: "C:\lazarus\golfmlsvn\golfml\coursewriter\courses\tenerife_buenavistagolf.xml"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
-Source: "C:\lazarus\golfmlsvn\golfml\coursewriter\courses\tenerife_costaadejegolf.xml"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
-Source: "C:\lazarus\golfmlsvn\golfml\coursewriter\courses\tenerife_golfdelsur.xml"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
-Source: "C:\lazarus\golfmlsvn\golfml\coursewriter\courses\tenerife_golflasamericas.xml"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
-Source: "C:\lazarus\golfmlsvn\golfml\coursewriter\courses\tenerife_larosaleda.xml"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
-Source: "C:\lazarus\golfmlsvn\golfml\coursewriter\courses\tenerife_lospalosgolfcentre.xml"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
-Source: "C:\lazarus\golfmlsvn\golfml\stylesheets\playerscorecard.xsl"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
+Source: "E:\lazarus\golfml\coursewriter\source\2.x\golfmlcoursewriterwin32.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\lazarus\golfml\stylesheets\coursescorecard.xsl"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
+Source: "E:\lazarus\golfml\coursewriter\courses\tenerife_abamagolf.xml"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
+Source: "E:\lazarus\golfml\coursewriter\courses\tenerife_amarillagolf.xml"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
+Source: "E:\lazarus\golfml\coursewriter\courses\tenerife_buenavistagolf.xml"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
+Source: "E:\lazarus\golfml\coursewriter\courses\tenerife_costaadejegolf.xml"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
+Source: "E:\lazarus\golfml\coursewriter\courses\tenerife_golfdelsur.xml"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
+Source: "E:\lazarus\golfml\coursewriter\courses\tenerife_golflasamericas.xml"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
+Source: "E:\lazarus\golfml\coursewriter\courses\tenerife_larosaleda.xml"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
+Source: "E:\lazarus\golfml\coursewriter\courses\tenerife_lospalosgolfcentre.xml"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
+Source: "E:\lazarus\golfml\stylesheets\playerscorecard.xsl"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
