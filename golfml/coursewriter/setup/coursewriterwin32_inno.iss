@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Golfml CourseWriter"
-#define MyAppVersion "2.9"
+#define MyAppVersion "2.10"
 #define MyAppPublisher "minesadorada"
 #define MyAppURL "http://code.google.com/p/golfml/"
 #define MyAppExeName "golfmlcoursewriterwin32.exe"
@@ -22,7 +22,7 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf32}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 OutputDir=E:\lazarus\golfml\coursewriter\setup
-OutputBaseFilename=GolfmlCourseWriterSetupv2_9Win32
+OutputBaseFilename=GolfmlCourseWriterSetupv2_10Win32
 Compression=lzma
 SolidCompression=yes
 
@@ -47,6 +47,7 @@ Source: "E:\lazarus\golfml\coursewriter\courses\tenerife_golflasamericas.xml"; D
 Source: "E:\lazarus\golfml\coursewriter\courses\tenerife_larosaleda.xml"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
 Source: "E:\lazarus\golfml\coursewriter\courses\tenerife_lospalosgolfcentre.xml"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
 Source: "E:\lazarus\golfml\stylesheets\playerscorecard.xsl"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
+Source: "E:\lazarus\golfml\stylesheets\golfml.css"; DestDir: "C:\GolfmlCourseWriter"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

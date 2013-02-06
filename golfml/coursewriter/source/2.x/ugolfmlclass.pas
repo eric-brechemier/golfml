@@ -26,6 +26,10 @@ unit ugolfmlclass;
 ==    Bugfix for bad scope
 == 2.6
 ==    Added GPS Lat and Long
+== 2.7
+==    Added ErrorCode,ErrorString
+==    Added FileExists check on loading XML file
+==    Added default values for some missing XML elements
 ==
 ==
 $Revision$
@@ -40,7 +44,7 @@ uses
 //  StdCtrls, ComCtrls, ExtCtrls; // DEBUGGING ONLY
 
 const
-  C_GOLFMLCLASSVERSION = '2.6.20120507';
+  C_GOLFMLCLASSVERSION = '2.7.20130206.1';
 
 const
   C_METERS = True; // fMetric
@@ -59,6 +63,14 @@ const
 
 const
   C_PLAYERSCORECARDXSL = 'playerscorecard.xsl';
+
+// ERROR CODE CONSTANTS FOR ErrorCode property (fErrorCode)
+// and ErrorString property (fErrorString)
+// Add more Error Codes and Error Strings as needed in Get/Set routines
+CONST C_ERROR_NOERROR = 0;
+
+CONST C_ERROR_BADPATH = 1;
+CONST C_ERRORSTRING_BADPATH = 'Bad CourseXMLPath';
 
 type
   TAmenetyType = (practice, store, food, corporate, golfers, bathroom, water, other);
@@ -151,6 +163,9 @@ type
     fScoreCardTeeColour: string;
     fScoreCardCourseName: string;
     fScoreCardCSS: string;
+
+    fErrorCode:Cardinal; // Initially=0
+    fErrorString:String; // Initially Empty String
 
     fAmenityType, fAmenetyValue: string; // Only used in local procedure SplitAmenety
     procedure SplitAmenety(aString: string); // Uses C_AMENETYDELIMITER
@@ -273,6 +288,7 @@ type
     // The main methods
     function MakeGolfmlFile: boolean;
     function GetCourseInfoFromFile: boolean;
+    // Returns ErrorCode=C_ERROR_BADPATH and ErrorString=C_ERRORSTRING_BADPATH if path invalid;
 
     // Indexed properties cannot be published in a visual component
     property ClubAmeneties[iIndex: integer]: string
@@ -293,7 +309,8 @@ type
     property CourseNumberOfHoles: cardinal read priv_GetCourseNumberOfHoles
       write priv_SetCourseNumberOfHoles;
     property CourseXMLPath: string read fCourseXMLPath write priv_SetCourseXMLPath;
-    // NO CHECKING
+    // Fileexists(CourseXMLPath) is not checked when getting or setting this property
+
     property CourseLoaded: boolean read fCourseLoaded write fCourseLoaded;
 
     property ClubName: string read fCountryClubName write priv_SetClubName;
@@ -374,6 +391,9 @@ type
     property ClubMaxAmenitiesIndex: cardinal read fMaxCountryClubAmenetiesIndex;
     property ClubMaxCommentsIndex: cardinal read fMaxCountryClubCommentsIndex;
 
+    // Error Conditions
+    property ErrorCode:Cardinal read fErrorCode; // Initially 0
+    property ErrorString:String read fErrorString; // Initially Empty String;
   end;
 
 implementation
@@ -517,7 +537,8 @@ begin
   fScoreCardTeeColour := 'unknown';
   fScoreCardCourseName := 'unknown';
   fScoreCardCSS := 'golfml.css';
-
+  fErrorCode:=C_ERROR_NOERROR; // Everything OK
+  fErrorString:='';
   Result := True;
 
 end;
@@ -1035,9 +1056,17 @@ begin
 
 
 
-
-      WriteXMLFile(Doc, fCourseXMLPath);
-      Result := True;
+      If FileExists(fCourseXMLPath) then
+         begin
+              WriteXMLFile(Doc, fCourseXMLPath);
+              Result := True;
+         end
+         else
+         begin
+              fErrorCode:=C_ERROR_BADPATH;
+              fErrorString:=C_ERRORSTRING_BADPATH;
+              Result:=False;
+         end;
     finally
       Doc.Free;
     end;
@@ -1061,10 +1090,19 @@ begin
   try
     Result := False; // assume failure
     // Reset;
-    fCourseIndex := 0;
-    fTeeColourIndex := 0;
-    fHoleIndex := 0;
-    ReadXMLFile(Doc, fCourseXMLPath);
+    If FileExists(fCourseXMLPath) then
+      begin
+            fCourseIndex := 0;
+            fTeeColourIndex := 0;
+            fHoleIndex := 0;
+            ReadXMLFile(Doc, fCourseXMLPath);
+      end
+    else
+      begin
+        fErrorCode:=C_ERROR_BADPATH;
+        fErrorString:=C_ERRORSTRING_BADPATH;
+        Exit;
+      end;
     CurrentNode := Doc.DocumentElement.FirstChild;
     // CurrentNode.NodeName=<country-club>
     priv_ProcessXMLCountryClub(CurrentNode);
@@ -1447,7 +1485,9 @@ begin
   begin
     if CurrentNode.NodeName = 'name' then
     begin
-      sCourseName := CurrentNode.TextContent;
+      if Length(CurrentNode.TextContent) > 0 then
+              sCourseName := CurrentNode.TextContent
+      else sCourseName := 'Unknown Course Name';
       fCourseNameArray[fCourseIndex] := sCourseName;  // Golf course name
     end;
     if CurrentNode.NodeName = 'tee-set' then
@@ -1491,22 +1531,28 @@ begin
   begin
     if CurrentNode.NodeName = 'street' then
       if Length(CurrentNode.TextContent) > 0 then
-        fCountryClubStreet := CurrentNode.TextContent;
+        fCountryClubStreet := CurrentNode.TextContent
+      else fCountryClubStreet := 'Unknown';
     if CurrentNode.NodeName = 'postal-code' then
       if Length(CurrentNode.TextContent) > 0 then
-        fCountryClubPostCode := CurrentNode.TextContent;
+        fCountryClubPostCode := CurrentNode.TextContent
+      else fCountryClubPostCode := 'Unknown';
     if CurrentNode.NodeName = 'municipality' then
       if Length(CurrentNode.TextContent) > 0 then
-        fCountryClubMunicipality := CurrentNode.TextContent;
+        fCountryClubMunicipality := CurrentNode.TextContent
+      else fCountryClubMunicipality := 'Unknown';
     if CurrentNode.NodeName = 'region' then
       if Length(CurrentNode.TextContent) > 0 then
-        fCountryClubRegion := CurrentNode.TextContent;
+        fCountryClubRegion := CurrentNode.TextContent
+      else fCountryClubRegion := 'Unknown';
     if CurrentNode.NodeName = 'website' then
       if Length(CurrentNode.TextContent) > 0 then
-        fCountryClubWebsite := CurrentNode.TextContent;
+        fCountryClubWebsite := CurrentNode.TextContent
+      else fCountryClubWebsite := 'Unknown';
     if CurrentNode.NodeName = 'country' then
       if Length(CurrentNode.TextContent) > 0 then
-        fCountryClubcountry := CurrentNode.TextContent;
+        fCountryClubcountry := CurrentNode.TextContent
+      else fCountryClubcountry := 'Unknown';
     if CurrentNode.HasAttributes and (CurrentNode.Attributes.Length > 0) then
       for iAttributeCount := 0 to CurrentNode.Attributes.Length - 1 do
       begin

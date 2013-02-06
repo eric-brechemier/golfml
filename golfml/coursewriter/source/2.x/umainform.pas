@@ -229,7 +229,8 @@ type
       const Full18: boolean);
     procedure EnableTeePositionDisplay(const iCourse, iTeePosition: integer;
       const Full18: boolean);
-    procedure SplitAmenety(var fAmenityType, fAmenetyValue: string; const aString: string);
+    procedure SplitAmenety(var fAmenityType, fAmenetyValue: string;
+      const aString: string);
 
 
   public
@@ -363,7 +364,8 @@ begin
     try // ..FINALLY
       waitform.loadprogress.max := integer(GolfmlClass.MaxCourseIndex);
       waitform.loadprogress.Position := 0;
-      s := 'Importing ' + ExtractFilename(GolfmlClass.CourseXMLPath) + '...' + LineEnding;
+      s := 'Importing ' + ExtractFilename(GolfmlClass.CourseXMLPath) +
+        '...' + LineEnding;
       waitform.lbl_info.Caption := s;
       waitform.Show;
       Application.ProcessMessages;
@@ -598,12 +600,12 @@ begin
       // ======================================================================
       // EDIT 20130206
       // Line below disabled as it disabled saving an unaltered imported golfml file
-      // PageLastIndex is set correctly by the import routine
+      // PageLastIndex is set correctly by the import routine so no need to change it here
       //      PageLastIndex:=-1;
       // ======================================================================
 
-        lbl_numCourses.Caption := Format('Courses attached to %s: %d',
-        [tab_countryclub.Caption, iNumCourses]);
+      lbl_numCourses.Caption :=
+        Format('Courses attached to %s: %d', [tab_countryclub.Caption, iNumCourses]);
     finally
       // Just for show...
       waitform.lbl_info.Caption := 'Processing golfml data...';
@@ -708,7 +710,8 @@ begin
         begin
           // Only increment property arry if there is something to put in it
           ClubAmeneties[iAmenityIndex] :=
-            AmenetyCategoriesArray[cCount] + C_AMENETYDELIMITERCHAR + AmenetyValuesArray[cCount];
+            AmenetyCategoriesArray[cCount] + C_AMENETYDELIMITERCHAR +
+            AmenetyValuesArray[cCount];
           Inc(iAmenityIndex);
         end;
       end;
@@ -746,20 +749,22 @@ begin
           for cHoleCount := 0 to 8 do
           begin
             HoleIndex := cHoleCount;
-            if TryStrToInt(
-              edt_Par[cCourseCount, cHoleCount].Text, iTryInt) then
+            if TryStrToInt(edt_Par[cCourseCount, cHoleCount].Text,
+              iTryInt) then
               Par := ABS(iTryInt)
             else
             begin
               ShowMessageFmt(
                 'Invalid Par value "%s" in Course %d, Hole %d',
-                [edt_Par[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                [edt_Par[cCourseCount, cHoleCount].Text, cCourseCount +
+                1, cHoleCount + 1]);
               Exit;
             end;
             if ((iTryInt < 1) or (iTryInt > 6)) then
             begin
               ShowMessageFmt(
-                'Invalid Par value "%d" in Course %d, Hole %d', [iTryInt, cCourseCount + 1, cHoleCount + 1]);
+                'Invalid Par value "%d" in Course %d, Hole %d',
+                [iTryInt, cCourseCount + 1, cHoleCount + 1]);
               Exit;
             end;
           end;
@@ -767,20 +772,22 @@ begin
             for cHoleCount := 9 to 17 do
             begin
               HoleIndex := cHoleCount;
-              if TryStrToInt(
-                edt_Par[cCourseCount, cHoleCount].Text, iTryInt) then
+              if TryStrToInt(edt_Par[cCourseCount, cHoleCount].Text,
+                iTryInt) then
                 Par := ABS(iTryInt)
               else
               begin
                 ShowMessageFmt(
                   'Invalid Par value "%s" in Course %d, Hole %d',
-                  [edt_Par[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                  [edt_Par[cCourseCount, cHoleCount].Text, cCourseCount +
+                  1, cHoleCount + 1]);
                 Exit;
               end;
               if ((iTryInt < 1) or (iTryInt > 6)) then
               begin
                 ShowMessageFmt(
-                  'Invalid Par value "%d" in Course %d, Hole %d', [iTryInt, cCourseCount + 1, cHoleCount + 1]);
+                  'Invalid Par value "%d" in Course %d, Hole %d',
+                  [iTryInt, cCourseCount + 1, cHoleCount + 1]);
                 Exit;
               end;
             end;
@@ -789,14 +796,15 @@ begin
           for cHoleCount := 0 to 8 do
           begin
             HoleIndex := cHoleCount;
-            if TryStrToInt(
-              edt_SI[cCourseCount, cHoleCount].Text, iTryInt) then
+            if TryStrToInt(edt_SI[cCourseCount, cHoleCount].Text,
+              iTryInt) then
               StrokeIndex := ABS(iTryInt)
             else
             begin
               ShowMessageFmt(
                 'Invalid Stroke Index value "%s" in Course %d, Hole %d',
-                [edt_SI[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                [edt_SI[cCourseCount, cHoleCount].Text, cCourseCount +
+                1, cHoleCount + 1]);
               Exit;
             end;
             if ((iTryInt < 1) or (iTryInt > 18)) then
@@ -811,14 +819,15 @@ begin
             for cHoleCount := 9 to 17 do
             begin
               HoleIndex := cHoleCount;
-              if TryStrToInt(
-                edt_SI[cCourseCount, cHoleCount].Text, iTryInt) then
+              if TryStrToInt(edt_SI[cCourseCount, cHoleCount].Text,
+                iTryInt) then
                 StrokeIndex := iTryInt
               else
               begin
                 ShowMessageFmt(
                   'Invalid Stroke Index value "%s" in Course %d, Hole %d',
-                  [edt_SI[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                  [edt_SI[cCourseCount, cHoleCount].Text, cCourseCount + 1,
+                  cHoleCount + 1]);
                 Exit;
               end;
               if ((iTryInt < 1) or (iTryInt > 18)) then
@@ -842,8 +851,8 @@ begin
               // Set Title, Colour and Gender of each valid tee
               TeeColourIndex := cValidTeePositionCount;
               // TeeTitle
-              if Length(
-                edt_TeeTitle[cCourseCount, cValidTeePositionCount].Text) > 0 then
+              if Length(edt_TeeTitle[cCourseCount,
+                cValidTeePositionCount].Text) > 0 then
                 TeeTitle :=
                   edt_TeeTitle[cCourseCount, cValidTeePositionCount].Text;
               // TeeGender
@@ -863,27 +872,28 @@ begin
               end;
               // Course Rating for this tee
               if TryStrToFloat(
-                edt_CourseRating[cCourseCount, cValidTeePositionCount].Text, sTryFloat) then
+                edt_CourseRating[cCourseCount, cValidTeePositionCount].Text,
+                sTryFloat) then
                 CourseRating := sTryFloat
               else
               begin
                 ShowMessageFmt(
                   'Invalid Course Rating value "%s" in Course %d, %s Tees',
-                  [edt_CourseRating[cCourseCount, cValidTeePositionCount].Text, cCourseCount + 1,
-                  C_TEECOLOURSTRINGARRAY[cValidTeePositionCount]]);
+                  [edt_CourseRating[cCourseCount, cValidTeePositionCount].Text,
+                  cCourseCount + 1, C_TEECOLOURSTRINGARRAY[cValidTeePositionCount]]);
                 Exit;
               end;
 
               // Slope rating for this tee
-              if TryStrToInt(
-                edt_SlopeRating[cCourseCount, cValidTeePositionCount].Text, iTryInt) then
+              if TryStrToInt(edt_SlopeRating[cCourseCount,
+                cValidTeePositionCount].Text, iTryInt) then
                 SlopeRating := ABS(iTryInt)
               else
               begin
                 ShowMessageFmt(
                   'Invalid Slope Rating value "%s" in Course %d, %s Tees',
-                  [edt_SlopeRating[cCourseCount, cValidTeePositionCount].Text, cCourseCount +
-                  1, C_TEECOLOURSTRINGARRAY[cValidTeePositionCount]]);
+                  [edt_SlopeRating[cCourseCount, cValidTeePositionCount].Text,
+                  cCourseCount + 1, C_TEECOLOURSTRINGARRAY[cValidTeePositionCount]]);
                 Exit;
               end;
               // Set Distances for each hole
@@ -895,31 +905,31 @@ begin
                   begin
                     if bUseMetres then
                     begin
-                      if
-                      TryStrToInt(edt_TeeGold[cCourseCount, cHoleCount].Text, iTryInt) then
-                        TeeDistanceMetres
-                        :=
+                      if TryStrToInt(
+                        edt_TeeGold[cCourseCount, cHoleCount].Text, iTryInt) then
+                        TeeDistanceMetres :=
                           StrToInt(edt_TeeGold[cCourseCount, cHoleCount].Text)
                       else
                       begin
                         ShowMessageFmt(
                           'Invalid Tee Distance "%s" metres value in Course %d, Gold Tees, Hole %d',
-                          [edt_TeeGold[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                          [edt_TeeGold[cCourseCount, cHoleCount].Text,
+                          cCourseCount + 1, cHoleCount + 1]);
                         exit;
                       end;
                     end
                     else
                     begin
-                      if
-                      TryStrToInt(edt_TeeGold[cCourseCount, cHoleCount].Text, iTryInt) then
-                        TeeDistanceYards
-                        :=
+                      if TryStrToInt(
+                        edt_TeeGold[cCourseCount, cHoleCount].Text, iTryInt) then
+                        TeeDistanceYards :=
                           StrToInt(edt_TeeGold[cCourseCount, cHoleCount].Text)
                       else
                       begin
                         ShowMessageFmt(
                           'Invalid Tee Distance "%s" yards value in Course %d, Gold Tees, Hole %d',
-                          [edt_TeeGold[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                          [edt_TeeGold[cCourseCount, cHoleCount].Text,
+                          cCourseCount + 1, cHoleCount + 1]);
                       end;
                     end;
                   end;
@@ -927,31 +937,31 @@ begin
                   begin
                     if bUseMetres then
                     begin
-                      if
-                      TryStrToInt(edt_TeeBlack[cCourseCount, cHoleCount].Text, iTryInt) then
-                        TeeDistanceMetres
-                        :=
+                      if TryStrToInt(
+                        edt_TeeBlack[cCourseCount, cHoleCount].Text, iTryInt) then
+                        TeeDistanceMetres :=
                           StrToInt(edt_TeeBlack[cCourseCount, cHoleCount].Text)
                       else
                       begin
                         ShowMessageFmt(
                           'Invalid Tee Distance "%s" metres value in Course %d, Black Tees, Hole %d',
-                          [edt_TeeBlack[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                          [edt_TeeBlack[cCourseCount, cHoleCount].Text,
+                          cCourseCount + 1, cHoleCount + 1]);
                         exit;
                       end;
                     end
                     else
                     begin
-                      if
-                      TryStrToInt(edt_TeeBlack[cCourseCount, cHoleCount].Text, iTryInt) then
-                        TeeDistanceYards
-                        :=
+                      if TryStrToInt(
+                        edt_TeeBlack[cCourseCount, cHoleCount].Text, iTryInt) then
+                        TeeDistanceYards :=
                           StrToInt(edt_TeeBlack[cCourseCount, cHoleCount].Text)
                       else
                       begin
                         ShowMessageFmt(
                           'Invalid Tee Distance "%s" yards value in Course %d, Black Tees, Hole %d',
-                          [edt_TeeBlack[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                          [edt_TeeBlack[cCourseCount, cHoleCount].Text,
+                          cCourseCount + 1, cHoleCount + 1]);
                         exit;
                       end;
                     end;
@@ -960,31 +970,31 @@ begin
                   begin
                     if bUseMetres then
                     begin
-                      if
-                      TryStrToInt(edt_TeeWhite[cCourseCount, cHoleCount].Text, iTryInt) then
-                        TeeDistanceMetres
-                        :=
+                      if TryStrToInt(
+                        edt_TeeWhite[cCourseCount, cHoleCount].Text, iTryInt) then
+                        TeeDistanceMetres :=
                           StrToInt(edt_TeeWhite[cCourseCount, cHoleCount].Text)
                       else
                       begin
                         ShowMessageFmt(
                           'Invalid Tee Distance "%s" metres value in Course %d, White Tees, Hole %d',
-                          [edt_TeeWhite[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                          [edt_TeeWhite[cCourseCount, cHoleCount].Text,
+                          cCourseCount + 1, cHoleCount + 1]);
                         exit;
                       end;
                     end
                     else
                     begin
-                      if
-                      TryStrToInt(edt_TeeWhite[cCourseCount, cHoleCount].Text, iTryInt) then
-                        TeeDistanceYards
-                        :=
+                      if TryStrToInt(
+                        edt_TeeWhite[cCourseCount, cHoleCount].Text, iTryInt) then
+                        TeeDistanceYards :=
                           StrToInt(edt_TeeWhite[cCourseCount, cHoleCount].Text)
                       else
                       begin
                         ShowMessageFmt(
                           'Invalid Tee Distance "%s" yards value in Course %d, White Tees, Hole %d',
-                          [edt_TeeWhite[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                          [edt_TeeWhite[cCourseCount, cHoleCount].Text,
+                          cCourseCount + 1, cHoleCount + 1]);
                         exit;
                       end;
                     end;
@@ -993,31 +1003,31 @@ begin
                   begin
                     if bUseMetres then
                     begin
-                      if
-                      TryStrToInt(edt_TeeYellow[cCourseCount, cHoleCount].Text, iTryInt) then
-                        TeeDistanceMetres
-                        :=
+                      if TryStrToInt(
+                        edt_TeeYellow[cCourseCount, cHoleCount].Text, iTryInt) then
+                        TeeDistanceMetres :=
                           StrToInt(edt_TeeYellow[cCourseCount, cHoleCount].Text)
                       else
                       begin
                         ShowMessageFmt(
-                          'Invalid Tee Distance "%s" metres value in Course %d, Yellow Tees, Hole %d', [edt_TeeYellow
-                          [cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                          'Invalid Tee Distance "%s" metres value in Course %d, Yellow Tees, Hole %d',
+                          [edt_TeeYellow[cCourseCount, cHoleCount].Text,
+                          cCourseCount + 1, cHoleCount + 1]);
                         exit;
                       end;
                     end
                     else
                     begin
-                      if
-                      TryStrToInt(edt_TeeYellow[cCourseCount, cHoleCount].Text, iTryInt) then
-                        TeeDistanceYards
-                        :=
+                      if TryStrToInt(
+                        edt_TeeYellow[cCourseCount, cHoleCount].Text, iTryInt) then
+                        TeeDistanceYards :=
                           StrToInt(edt_TeeYellow[cCourseCount, cHoleCount].Text)
                       else
                       begin
                         ShowMessageFmt(
                           'Invalid Tee Distance "%s" yards value in Course %d, Yellow Tees, Hole %d',
-                          [edt_TeeYellow[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                          [edt_TeeYellow[cCourseCount, cHoleCount].Text,
+                          cCourseCount + 1, cHoleCount + 1]);
                         exit;
                       end;
                     end;
@@ -1026,31 +1036,31 @@ begin
                   begin
                     if bUseMetres then
                     begin
-                      if
-                      TryStrToInt(edt_TeeBlue[cCourseCount, cHoleCount].Text, iTryInt) then
-                        TeeDistanceMetres
-                        :=
+                      if TryStrToInt(
+                        edt_TeeBlue[cCourseCount, cHoleCount].Text, iTryInt) then
+                        TeeDistanceMetres :=
                           StrToInt(edt_TeeBlue[cCourseCount, cHoleCount].Text)
                       else
                       begin
                         ShowMessageFmt(
                           'Invalid Tee Distance "%s" metres value in Course %d, Blue Tees, Hole %d',
-                          [edt_TeeBlue[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                          [edt_TeeBlue[cCourseCount, cHoleCount].Text,
+                          cCourseCount + 1, cHoleCount + 1]);
                         exit;
                       end;
                     end
                     else
                     begin
-                      if
-                      TryStrToInt(edt_TeeBlue[cCourseCount, cHoleCount].Text, iTryInt) then
-                        TeeDistanceYards
-                        :=
+                      if TryStrToInt(
+                        edt_TeeBlue[cCourseCount, cHoleCount].Text, iTryInt) then
+                        TeeDistanceYards :=
                           StrToInt(edt_TeeBlue[cCourseCount, cHoleCount].Text)
                       else
                       begin
                         ShowMessageFmt(
                           'Invalid Tee Distance "%s" yards value in Course %d, Blue Tees, Hole %d',
-                          [edt_TeeBlue[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                          [edt_TeeBlue[cCourseCount, cHoleCount].Text,
+                          cCourseCount + 1, cHoleCount + 1]);
                         exit;
                       end;
                     end;
@@ -1059,31 +1069,31 @@ begin
                   begin
                     if bUseMetres then
                     begin
-                      if
-                      TryStrToInt(edt_TeeRed[cCourseCount, cHoleCount].Text, iTryInt) then
-                        TeeDistanceMetres
-                        :=
+                      if TryStrToInt(
+                        edt_TeeRed[cCourseCount, cHoleCount].Text, iTryInt) then
+                        TeeDistanceMetres :=
                           StrToInt(edt_TeeRed[cCourseCount, cHoleCount].Text)
                       else
                       begin
                         ShowMessageFmt(
                           'Invalid Tee Distance "%s" metres value in Course %d, Red Tees, Hole %d',
-                          [edt_TeeRed[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                          [edt_TeeRed[cCourseCount, cHoleCount].Text,
+                          cCourseCount + 1, cHoleCount + 1]);
                         exit;
                       end;
                     end
                     else
                     begin
-                      if
-                      TryStrToInt(edt_TeeRed[cCourseCount, cHoleCount].Text, iTryInt) then
-                        TeeDistanceYards
-                        :=
+                      if TryStrToInt(
+                        edt_TeeRed[cCourseCount, cHoleCount].Text, iTryInt) then
+                        TeeDistanceYards :=
                           StrToInt(edt_TeeRed[cCourseCount, cHoleCount].Text)
                       else
                       begin
                         ShowMessageFmt(
                           'Invalid Tee Distance "%s" yards value in Course %d, Red Tees, Hole %d',
-                          [edt_TeeRed[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                          [edt_TeeRed[cCourseCount, cHoleCount].Text,
+                          cCourseCount + 1, cHoleCount + 1]);
                         exit;
                       end;
                     end;
@@ -1099,31 +1109,31 @@ begin
                     begin
                       if bUseMetres then
                       begin
-                        if
-                        TryStrToInt(edt_TeeGold[cCourseCount, cHoleCount].Text, iTryInt) then
-                          TeeDistanceMetres
-                          :=
+                        if TryStrToInt(
+                          edt_TeeGold[cCourseCount, cHoleCount].Text, iTryInt) then
+                          TeeDistanceMetres :=
                             StrToInt(edt_TeeGold[cCourseCount, cHoleCount].Text)
                         else
                         begin
                           ShowMessageFmt(
                             'Invalid Tee Distance "%s" metres value in Course %d, Gold Tees, Hole %d',
-                            [edt_TeeGold[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                            [edt_TeeGold[cCourseCount, cHoleCount].Text,
+                            cCourseCount + 1, cHoleCount + 1]);
                           exit;
                         end;
                       end
                       else
                       begin
-                        if
-                        TryStrToInt(edt_TeeGold[cCourseCount, cHoleCount].Text, iTryInt) then
-                          TeeDistanceYards
-                          :=
+                        if TryStrToInt(
+                          edt_TeeGold[cCourseCount, cHoleCount].Text, iTryInt) then
+                          TeeDistanceYards :=
                             StrToInt(edt_TeeGold[cCourseCount, cHoleCount].Text)
                         else
                         begin
                           ShowMessageFmt(
                             'Invalid Tee Distance "%s" yards value in Course %d, Gold Tees, Hole %d',
-                            [edt_TeeGold[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                            [edt_TeeGold[cCourseCount, cHoleCount].Text,
+                            cCourseCount + 1, cHoleCount + 1]);
                           exit;
                         end;
                       end;
@@ -1132,31 +1142,31 @@ begin
                     begin
                       if bUseMetres then
                       begin
-                        if
-                        TryStrToInt(edt_TeeBlack[cCourseCount, cHoleCount].Text, iTryInt) then
-                          TeeDistanceMetres
-                          :=
+                        if TryStrToInt(
+                          edt_TeeBlack[cCourseCount, cHoleCount].Text, iTryInt) then
+                          TeeDistanceMetres :=
                             StrToInt(edt_TeeBlack[cCourseCount, cHoleCount].Text)
                         else
                         begin
                           ShowMessageFmt(
                             'Invalid Tee Distance "%s" metres value in Course %d, Black Tees, Hole %d',
-                            [edt_TeeBlack[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                            [edt_TeeBlack[cCourseCount, cHoleCount].Text,
+                            cCourseCount + 1, cHoleCount + 1]);
                           exit;
                         end;
                       end
                       else
                       begin
-                        if
-                        TryStrToInt(edt_TeeBlack[cCourseCount, cHoleCount].Text, iTryInt) then
-                          TeeDistanceYards
-                          :=
+                        if TryStrToInt(
+                          edt_TeeBlack[cCourseCount, cHoleCount].Text, iTryInt) then
+                          TeeDistanceYards :=
                             StrToInt(edt_TeeBlack[cCourseCount, cHoleCount].Text)
                         else
                         begin
                           ShowMessageFmt(
                             'Invalid Tee Distance "%s" yards value in Course %d, Black Tees, Hole %d',
-                            [edt_TeeBlack[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                            [edt_TeeBlack[cCourseCount, cHoleCount].Text,
+                            cCourseCount + 1, cHoleCount + 1]);
                           exit;
                         end;
                       end;
@@ -1165,31 +1175,31 @@ begin
                     begin
                       if bUseMetres then
                       begin
-                        if
-                        TryStrToInt(edt_TeeWhite[cCourseCount, cHoleCount].Text, iTryInt) then
-                          TeeDistanceMetres
-                          :=
+                        if TryStrToInt(
+                          edt_TeeWhite[cCourseCount, cHoleCount].Text, iTryInt) then
+                          TeeDistanceMetres :=
                             StrToInt(edt_TeeWhite[cCourseCount, cHoleCount].Text)
                         else
                         begin
                           ShowMessageFmt(
                             'Invalid Tee Distance "%s" metres value in Course %d, White Tees, Hole %d',
-                            [edt_TeeWhite[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                            [edt_TeeWhite[cCourseCount, cHoleCount].Text,
+                            cCourseCount + 1, cHoleCount + 1]);
                           exit;
                         end;
                       end
                       else
                       begin
-                        if
-                        TryStrToInt(edt_TeeWhite[cCourseCount, cHoleCount].Text, iTryInt) then
-                          TeeDistanceYards
-                          :=
+                        if TryStrToInt(
+                          edt_TeeWhite[cCourseCount, cHoleCount].Text, iTryInt) then
+                          TeeDistanceYards :=
                             StrToInt(edt_TeeWhite[cCourseCount, cHoleCount].Text)
                         else
                         begin
                           ShowMessageFmt(
                             'Invalid Tee Distance "%s" yards value in Course %d, White Tees, Hole %d',
-                            [edt_TeeWhite[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                            [edt_TeeWhite[cCourseCount, cHoleCount].Text,
+                            cCourseCount + 1, cHoleCount + 1]);
                           exit;
                         end;
                       end;
@@ -1198,31 +1208,31 @@ begin
                     begin
                       if bUseMetres then
                       begin
-                        if
-                        TryStrToInt(edt_TeeYellow[cCourseCount, cHoleCount].Text, iTryInt) then
-                          TeeDistanceMetres
-                          :=
+                        if TryStrToInt(
+                          edt_TeeYellow[cCourseCount, cHoleCount].Text, iTryInt) then
+                          TeeDistanceMetres :=
                             StrToInt(edt_TeeYellow[cCourseCount, cHoleCount].Text)
                         else
                         begin
                           ShowMessageFmt(
-                            'Invalid Tee Distance "%s" metres value in Course %d, Yellow Tees, Hole %d', [edt_TeeYellow
-                            [cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                            'Invalid Tee Distance "%s" metres value in Course %d, Yellow Tees, Hole %d',
+                            [edt_TeeYellow[cCourseCount, cHoleCount].Text,
+                            cCourseCount + 1, cHoleCount + 1]);
                           exit;
                         end;
                       end
                       else
                       begin
-                        if
-                        TryStrToInt(edt_TeeYellow[cCourseCount, cHoleCount].Text, iTryInt) then
-                          TeeDistanceYards
-                          :=
+                        if TryStrToInt(
+                          edt_TeeYellow[cCourseCount, cHoleCount].Text, iTryInt) then
+                          TeeDistanceYards :=
                             StrToInt(edt_TeeYellow[cCourseCount, cHoleCount].Text)
                         else
                         begin
                           ShowMessageFmt(
                             'Invalid Tee Distance "%s" yards value in Course %d, Yellow Tees, Hole %d',
-                            [edt_TeeYellow[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                            [edt_TeeYellow[cCourseCount, cHoleCount].Text,
+                            cCourseCount + 1, cHoleCount + 1]);
                           exit;
                         end;
                       end;
@@ -1231,31 +1241,31 @@ begin
                     begin
                       if bUseMetres then
                       begin
-                        if
-                        TryStrToInt(edt_TeeBlue[cCourseCount, cHoleCount].Text, iTryInt) then
-                          TeeDistanceMetres
-                          :=
+                        if TryStrToInt(
+                          edt_TeeBlue[cCourseCount, cHoleCount].Text, iTryInt) then
+                          TeeDistanceMetres :=
                             StrToInt(edt_TeeBlue[cCourseCount, cHoleCount].Text)
                         else
                         begin
                           ShowMessageFmt(
                             'Invalid Tee Distance "%s" metres value in Course %d, Blue Tees, Hole %d',
-                            [edt_TeeBlue[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                            [edt_TeeBlue[cCourseCount, cHoleCount].Text,
+                            cCourseCount + 1, cHoleCount + 1]);
                           exit;
                         end;
                       end
                       else
                       begin
-                        if
-                        TryStrToInt(edt_TeeBlue[cCourseCount, cHoleCount].Text, iTryInt) then
-                          TeeDistanceYards
-                          :=
+                        if TryStrToInt(
+                          edt_TeeBlue[cCourseCount, cHoleCount].Text, iTryInt) then
+                          TeeDistanceYards :=
                             StrToInt(edt_TeeBlue[cCourseCount, cHoleCount].Text)
                         else
                         begin
                           ShowMessageFmt(
                             'Invalid Tee Distance "%s" yards value in Course %d, Blue Tees, Hole %d',
-                            [edt_TeeBlue[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                            [edt_TeeBlue[cCourseCount, cHoleCount].Text,
+                            cCourseCount + 1, cHoleCount + 1]);
                           exit;
                         end;
                       end;
@@ -1264,31 +1274,31 @@ begin
                     begin
                       if bUseMetres then
                       begin
-                        if
-                        TryStrToInt(edt_TeeRed[cCourseCount, cHoleCount].Text, iTryInt) then
-                          TeeDistanceMetres
-                          :=
+                        if TryStrToInt(
+                          edt_TeeRed[cCourseCount, cHoleCount].Text, iTryInt) then
+                          TeeDistanceMetres :=
                             StrToInt(edt_TeeRed[cCourseCount, cHoleCount].Text)
                         else
                         begin
                           ShowMessageFmt(
                             'Invalid Tee Distance "%s" metres value in Course %d, Red Tees, Hole %d',
-                            [edt_TeeRed[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                            [edt_TeeRed[cCourseCount, cHoleCount].Text,
+                            cCourseCount + 1, cHoleCount + 1]);
                           exit;
                         end;
                       end
                       else
                       begin
-                        if
-                        TryStrToInt(edt_TeeRed[cCourseCount, cHoleCount].Text, iTryInt) then
-                          TeeDistanceYards
-                          :=
+                        if TryStrToInt(
+                          edt_TeeRed[cCourseCount, cHoleCount].Text, iTryInt) then
+                          TeeDistanceYards :=
                             StrToInt(edt_TeeRed[cCourseCount, cHoleCount].Text)
                         else
                         begin
                           ShowMessageFmt(
                             'Invalid Tee Distance "%s" yards value in Course %d, Red Tees, Hole %d',
-                            [edt_TeeRed[cCourseCount, cHoleCount].Text, cCourseCount + 1, cHoleCount + 1]);
+                            [edt_TeeRed[cCourseCount, cHoleCount].Text,
+                            cCourseCount + 1, cHoleCount + 1]);
                           exit;
                         end;
                       end;
@@ -1427,8 +1437,8 @@ begin
       begin
         fAmenityType := '';
         fAmenetyValue := '';
-        s := INI.ReadString('ameneties', Format(
-          'amenity%d', [iCount]), 'unknown');
+        s := INI.ReadString('ameneties', Format('amenity%d', [iCount]),
+          'unknown');
         if (s <> 'unknown') then
         begin // INI entry is valid
           SplitAmenety(fAmenityType, fAmenetyValue, s);
@@ -1491,8 +1501,8 @@ begin
         if ImportData = True then // Returns FALSE if there was a problem
         begin
           ShowMessageFmt('%s%sloaded OK.%s%d course(s) imported.',
-            [ExtractFileName(GolfmlClass.CourseXMLPath),
-            LineEnding, LineEnding, GolfmlClass.MaxCourseIndex + 1]);
+            [ExtractFileName(GolfmlClass.CourseXMLPath), LineEnding,
+            LineEnding, GolfmlClass.MaxCourseIndex + 1]);
           dlg_SaveAs.InitialDir := ExtractFilePath(dlg_open.Filename);
           dlg_SaveAs.Filename := ExtractFilename(dlg_open.Filename);
           INI.WriteString(
@@ -1501,8 +1511,15 @@ begin
         else
           MessageDlg(C_ERRORAPOLOGY +
             'The application was unable to import for editing the file:' +
-            LineEnding + GolfmlClass.CourseXMLPath + ' successfully', mtError, [mbOK], 0);
-      end;
+            LineEnding + GolfmlClass.CourseXMLPath + ' successfully',
+            mtError, [mbOK], 0);
+      end
+      else
+          If GolfmlClass.ErrorCode=C_ERROR_BADPATH then
+             MessageDlg('GolfmlClass Error: ' + GolfmlClass.ErrorString + LineEnding +
+             'Unable to import: The file ' +
+            LineEnding + GolfmlClass.CourseXMLPath + ' does not seem to exist!',
+            mtError, [mbOK], 0);
     end;
   except
     raise Exception.Create(C_ERRORAPOLOGY);
@@ -1621,8 +1638,7 @@ procedure Tmainform.cmd_makexmlClick(Sender: TObject);
 const
   { for short 8.3 file names }
   ShortForbiddenChars: set of char =
-    [';', '=', '+', '<', '>', '|', '"',
-    '[', ']', '\', '/', ''''];
+    [';', '=', '+', '<', '>', '|', '"', '[', ']', '\', '/', ''''];
   { for long file names }
   LongForbiddenChars: set of char = ['<', '>', '|', '"', '\', '/', ':', '*', '?'];
   // Inline Function
@@ -1690,8 +1706,7 @@ begin
     // Validate the filename for illegal characters
     if not TestFilename(dlg_SaveAs.Filename, True) then
     begin
-      MessageDlg('Suggested golfml filename "' +
-        dlg_SaveAs.Filename +
+      MessageDlg('Suggested golfml filename "' + dlg_SaveAs.Filename +
         '" would not be a valid.  Please choose a better one in the following dialog.',
         mtWarning, [mbOK], 0);
       dlg_SaveAs.Filename := 'invalidfilename.xml';
@@ -1714,8 +1729,7 @@ begin
       // Player Name
       sError := INI.ReadString('player', 'name', 'unknown');
       repeat
-        s := InputBox('Player name input',
-          'Type in the Player name', sError);
+        s := InputBox('Player name input', 'Type in the Player name', sError);
         sError := 'Please type a valid Player name';
       until Length(s) > 0;
       fPlayerName := s;
@@ -1726,16 +1740,15 @@ begin
       repeat
         s := InputBox('Player date of birth input',
           'Type in the Player date of birth', sError);
-        sError := 'It must be a valid date ' +
-          ShortDateFormat + ' e.g. ' + FormatDateTime(ShortDateFormat, Now);
+        sError := 'It must be a valid date ' + ShortDateFormat +
+          ' e.g. ' + FormatDateTime(ShortDateFormat, Now);
       until TryStrToDate(s, dtTryDate) = True;
       fPlayerDateOfBirth := DateToStr(dtTryDate);
 
       // Player Handicap
       sError := INI.ReadString('player', 'handicap', '36.0');
       repeat
-        s := InputBox('Player Handicap',
-          'Type in the Player Handicap', sError);
+        s := InputBox('Player Handicap', 'Type in the Player Handicap', sError);
         sError := 'It must be a valid handicap number e.g. 36.0  Try again.';
       until TryStrToFloat(s, fTryFloat) = True;
       fPlayerHandicap := fTryFloat;
@@ -1772,10 +1785,8 @@ begin
             LowerCase(InputBox('Tee colour input', 'Type in the tee colour', sError));
           sError :=
             'Please type a valid tee colour (white, yellow, red etc)';
-        until (s = 'gold') or
-          (s = 'black') or (s = 'white') or
-          (s = 'yellow') or (s = 'blue') or
-          (s = 'red');
+        until (s = 'gold') or (s = 'black') or (s = 'white') or
+          (s = 'yellow') or (s = 'blue') or (s = 'red');
         fScoreCardTeeColour := s;
       end;
 
@@ -1816,22 +1827,23 @@ begin
         if MakeXMLMode = C_MODECOURSESTYLESHEET then
         begin
           s :=
-            Format('Note: To display as a scorecard, you will need the files%s"%s" and "%s" in the same folder as "%s"',
-            [LineEnding, GolfmlClass.ScoreCardXSL,
-            C_GOLFMLCSSFILE, ExtractFileName(GolfmlClass.CourseXMLPath)]);
+            Format(
+            'Note: To display as a scorecard, you will need the files%s"%s" and "%s" in the same folder as "%s"',
+            [LineEnding, GolfmlClass.ScoreCardXSL, C_GOLFMLCSSFILE,
+            ExtractFileName(GolfmlClass.CourseXMLPath)]);
           MessageDlg(s, mtInformation, [mbOK], 0);
         end;
         if MakeXMLMode = C_MODECOURSEPLAYERSTYLESHEET then
         begin
           s :=
-            Format('Note: To display as a scorecard, you will need the files%s"%s" and "%s" in the same folder as "%s"',
+            Format(
+            'Note: To display as a scorecard, you will need the files%s"%s" and "%s" in the same folder as "%s"',
             [LineEnding, GolfmlClass.PlayerScoreCardXSL,
             C_GOLFMLCSSFILE, ExtractFileName(GolfmlClass.CourseXMLPath)]);
           MessageDlg(s, mtInformation, [mbOK], 0);
         end;
         s :=
-          Format('golfml file successfully created at%s"%s"%s Would you like to start again with a new Club?',
-          [LineEnding, GolfmlClass.CourseXMLPath, LineEnding]);
+          Format('golfml file successfully created at%s"%s"%s Would you like to start again with a new Club?', [LineEnding, GolfmlClass.CourseXMLPath, LineEnding]);
         if MessageDlg(s, mtConfirmation, [mbYes, mbNo], 0) = mrYes then
           DeleteAllCoursePages;
       end
@@ -1881,8 +1893,8 @@ begin
         edt_courseName[PageLastIndex].SetFocus;
       iNumCourses := PageLastIndex + 1; // Set local 1-based var
       lbl_numCourses.Caption :=
-        Format('Courses attached to %s: %d',
-        [tab_countryclub.Caption, iNumCourses]);
+        Format('Courses attached to %s: %d', [tab_countryclub.Caption,
+        iNumCourses]);
     end;
   except
     // Failed on making new course and/or controls! Fatal error.
@@ -3214,7 +3226,7 @@ begin
     Exit;
   // The Tag property is the TeeColour (C_GOLD to C_RED)
   tempCheckBox := Sender as TCheckBox;
-  CourseIndex:=pagecontainer.ActivePageIndex-1;
+  CourseIndex := pagecontainer.ActivePageIndex - 1;
 
   // Make sure that at least one Tee Colour is checked for this course
   bAtLeastOneChecked := False;
@@ -3282,18 +3294,15 @@ begin
   begin // Convert Metres to Yards
     for wHoleCount := 0 to 17 do
     begin
-      if TryStrToInt(edt_TeeGold[tempCourseIndex, wHoleCount].Text,
-        iTryInt) then
+      if TryStrToInt(edt_TeeGold[tempCourseIndex, wHoleCount].Text, iTryInt) then
         if iTryInt > 0 then
           edt_TeeGold[tempCourseIndex, wHoleCount].Text :=
             IntToStr(TRUNC((iTryInt * 1.0936133) + 0.5));
-      if TryStrToInt(edt_TeeBlack[tempCourseIndex, wHoleCount].Text,
-        iTryInt) then
+      if TryStrToInt(edt_TeeBlack[tempCourseIndex, wHoleCount].Text, iTryInt) then
         if iTryInt > 0 then
           edt_TeeBlack[tempCourseIndex, wHoleCount].Text :=
             IntToStr(TRUNC((iTryInt * 1.0936133) + 0.5));
-      if TryStrToInt(edt_TeeWhite[tempCourseIndex, wHoleCount].Text,
-        iTryInt) then
+      if TryStrToInt(edt_TeeWhite[tempCourseIndex, wHoleCount].Text, iTryInt) then
         if iTryInt > 0 then
           edt_TeeWhite[tempCourseIndex, wHoleCount].Text :=
             IntToStr(TRUNC((iTryInt * 1.0936133) + 0.5));
@@ -3302,13 +3311,11 @@ begin
         if iTryInt > 0 then
           edt_TeeYellow[tempCourseIndex, wHoleCount].Text :=
             IntToStr(TRUNC((iTryInt * 1.0936133) + 0.5));
-      if TryStrToInt(edt_TeeBlue[tempCourseIndex, wHoleCount].Text,
-        iTryInt) then
+      if TryStrToInt(edt_TeeBlue[tempCourseIndex, wHoleCount].Text, iTryInt) then
         if iTryInt > 0 then
           edt_TeeBlue[tempCourseIndex, wHoleCount].Text :=
             IntToStr(TRUNC((iTryInt * 1.0936133) + 0.5));
-      if TryStrToInt(edt_TeeRed[tempCourseIndex, wHoleCount].Text,
-        iTryInt) then
+      if TryStrToInt(edt_TeeRed[tempCourseIndex, wHoleCount].Text, iTryInt) then
         if iTryInt > 0 then
           edt_TeeRed[tempCourseIndex, wHoleCount].Text :=
             IntToStr(TRUNC((iTryInt * 1.0936133) + 0.5));
@@ -3318,18 +3325,15 @@ begin
   begin // Convert Yards to Metres
     for wHoleCount := 0 to 17 do
     begin
-      if TryStrToInt(edt_TeeGold[tempCourseIndex, wHoleCount].Text,
-        iTryInt) then
+      if TryStrToInt(edt_TeeGold[tempCourseIndex, wHoleCount].Text, iTryInt) then
         if iTryInt > 0 then
           edt_TeeGold[tempCourseIndex, wHoleCount].Text :=
             IntToStr(TRUNC((iTryInt * 0.9144) + 0.5));
-      if TryStrToInt(edt_TeeBlack[tempCourseIndex, wHoleCount].Text,
-        iTryInt) then
+      if TryStrToInt(edt_TeeBlack[tempCourseIndex, wHoleCount].Text, iTryInt) then
         if iTryInt > 0 then
           edt_TeeBlack[tempCourseIndex, wHoleCount].Text :=
             IntToStr(TRUNC((iTryInt * 0.9144) + 0.5));
-      if TryStrToInt(edt_TeeWhite[tempCourseIndex, wHoleCount].Text,
-        iTryInt) then
+      if TryStrToInt(edt_TeeWhite[tempCourseIndex, wHoleCount].Text, iTryInt) then
         if iTryInt > 0 then
           edt_TeeWhite[tempCourseIndex, wHoleCount].Text :=
             IntToStr(TRUNC((iTryInt * 0.9144) + 0.5));
@@ -3338,13 +3342,15 @@ begin
         if iTryInt > 0 then
           edt_TeeYellow[tempCourseIndex, wHoleCount].Text :=
             IntToStr(TRUNC((iTryInt * 0.9144) + 0.5));
-      if TryStrToInt(edt_TeeBlue[tempCourseIndex, wHoleCount].Text,
-        iTryInt) then
+      if TryStrToInt(edt_TeeBlue[tempCourseIndex, wHoleCount].Text, iTryInt) then
         if iTryInt > 0 then
           edt_TeeBlue[tempCourseIndex, wHoleCount].Text :=
             IntToStr(TRUNC((iTryInt * 0.9144) + 0.5));
-      if TryStrToInt(edt_TeeRed[tempCourseIndex, wHoleCount].Text,
-        iTryInt) then
+      if TryStrToInt(edt_TeeRed[tempCourseIndex, wHoleCount].Text, iTryInt) then
+
+
+
+
         if iTryInt > 0 then
           edt_TeeRed[tempCourseIndex, wHoleCount].Text :=
             IntToStr(TRUNC((iTryInt * 0.9144) + 0.5));

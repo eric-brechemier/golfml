@@ -1,7 +1,7 @@
 object mainform: Tmainform
-  Left = 602
+  Left = 622
   Height = 600
-  Top = 117
+  Top = 159
   Width = 800
   HelpType = htKeyword
   HelpKeyword = 'help_CourseWriterHelp'

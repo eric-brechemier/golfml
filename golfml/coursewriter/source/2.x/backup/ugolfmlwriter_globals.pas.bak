@@ -15,7 +15,7 @@ uses
   Classes, SysUtils;
 
 const
-  C_VERSION = '2.9.20120713';
+  C_VERSION = '2.9.20130206';
 
 const
   WINDOWSCONFIGPATH = 'C:\GolfmlCourseWriter\';
@@ -53,6 +53,7 @@ const
 
 const
   C_COUNTRYCLUBINDEX = 99; // So we know when it is selected
+
 // Preceed fatal errors with a grovelling apology!
 const
   C_ERRORAPOLOGY = 'An error has occurred that was not your fault.' + LineEnding;

@@ -3,8 +3,8 @@ unit ugolfmlwriter_globals;
 (*
 == Author: minesadorada@charcodelvalle.com
 ==
-== Lazarus: 0.9.30-0
-== FPC: 2.4.4
+== Lazarus: 1.0.4
+== FPC: 2.6.0
 ==
 ==
 *)
@@ -15,7 +15,7 @@ uses
   Classes, SysUtils;
 
 const
-  C_VERSION = '2.9.20130206';
+  C_VERSION = '2.10.20130206';
 
 const
   WINDOWSCONFIGPATH = 'C:\GolfmlCourseWriter\';
@@ -53,6 +53,7 @@ const
 
 const
   C_COUNTRYCLUBINDEX = 99; // So we know when it is selected
+
 // Preceed fatal errors with a grovelling apology!
 const
   C_ERRORAPOLOGY = 'An error has occurred that was not your fault.' + LineEnding;
