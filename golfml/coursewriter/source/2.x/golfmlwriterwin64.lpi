@@ -25,7 +25,7 @@
       <BuildNr Value="53"/>
       <StringTable CompanyName="minesadorada@charcodelvalle.com" FileDescription="golfm course writer and editor" InternalName="golfmlcoursewriter{OSVERSION}" OriginalFilename="golfmlcoursewriter" ProductVersion=""/>
     </VersionInfo>
-    <BuildModes Count="2" Active="Retail">
+    <BuildModes Count="2" Active="DEBUG">
       <Item1 Name="DEBUG" Default="True"/>
       <Item2 Name="Retail">
         <CompilerOptions>
@@ -111,7 +111,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="5" Y="15"/>
-        <UsageCount Value="83"/>
+        <UsageCount Value="85"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -124,11 +124,11 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="19"/>
-        <CursorPos X="54" Y="31"/>
-        <UsageCount Value="83"/>
+        <TopLine Value="1463"/>
+        <CursorPos X="93" Y="1486"/>
+        <UsageCount Value="85"/>
         <Bookmarks Count="2">
-          <Item0 X="1" Y="3218" ID="0"/>
+          <Item0 X="1" Y="3246" ID="0"/>
           <Item1 X="1" Y="620" ID="1"/>
         </Bookmarks>
         <Loaded Value="True"/>
@@ -142,7 +142,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="15" Y="7"/>
-        <UsageCount Value="83"/>
+        <UsageCount Value="85"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
@@ -153,7 +153,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="426"/>
         <CursorPos X="42" Y="438"/>
-        <UsageCount Value="83"/>
+        <UsageCount Value="85"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
@@ -167,7 +167,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="16" Y="12"/>
-        <UsageCount Value="83"/>
+        <UsageCount Value="85"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit4>
@@ -190,128 +190,132 @@
         <WindowIndex Value="0"/>
         <TopLine Value="38"/>
         <CursorPos X="29" Y="80"/>
-        <UsageCount Value="72"/>
+        <UsageCount Value="74"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit6>
     </Units>
-    <JumpHistory Count="29" HistoryIndex="28">
+    <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="umainform.pas"/>
-        <Caret Line="34" Column="1" TopLine="1"/>
+        <Caret Line="1480" Column="112" TopLine="1468"/>
       </Position1>
       <Position2>
-        <Filename Value="ucourseteepicker.pas"/>
-        <Caret Line="1" Column="1" TopLine="1"/>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1329" Column="38" TopLine="1325"/>
       </Position2>
       <Position3>
-        <Filename Value="ucourseteepicker.pas"/>
-        <Caret Line="34" Column="15" TopLine="1"/>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="3468" Column="1" TopLine="3425"/>
       </Position3>
       <Position4>
-        <Filename Value="ucourseteepicker.pas"/>
-        <Caret Line="35" Column="7" TopLine="1"/>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1331" Column="6" TopLine="1321"/>
       </Position4>
       <Position5>
-        <Filename Value="ucourseteepicker.pas"/>
-        <Caret Line="42" Column="26" TopLine="1"/>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="3468" Column="1" TopLine="3425"/>
       </Position5>
       <Position6>
-        <Filename Value="ucourseteepicker.pas"/>
-        <Caret Line="52" Column="70" TopLine="4"/>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1329" Column="1" TopLine="1321"/>
       </Position6>
       <Position7>
-        <Filename Value="ucourseteepicker.pas"/>
-        <Caret Line="57" Column="1" TopLine="4"/>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="3468" Column="1" TopLine="3425"/>
       </Position7>
       <Position8>
-        <Filename Value="ucourseteepicker.pas"/>
-        <Caret Line="61" Column="62" TopLine="16"/>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1332" Column="1" TopLine="1321"/>
       </Position8>
       <Position9>
-        <Filename Value="ucourseteepicker.pas"/>
-        <Caret Line="47" Column="21" TopLine="25"/>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="3486" Column="1" TopLine="3443"/>
       </Position9>
       <Position10>
-        <Filename Value="ucourseteepicker.pas"/>
-        <Caret Line="49" Column="1" TopLine="28"/>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1353" Column="1" TopLine="1321"/>
       </Position10>
       <Position11>
-        <Filename Value="ucourseteepicker.pas"/>
-        <Caret Line="64" Column="1" TopLine="36"/>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="3488" Column="1" TopLine="3445"/>
       </Position11>
       <Position12>
-        <Filename Value="ucourseteepicker.pas"/>
-        <Caret Line="69" Column="1" TopLine="47"/>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1330" Column="23" TopLine="1321"/>
       </Position12>
       <Position13>
-        <Filename Value="ucourseteepicker.pas"/>
-        <Caret Line="9" Column="11" TopLine="1"/>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="3489" Column="1" TopLine="3446"/>
       </Position13>
       <Position14>
-        <Filename Value="ucourseteepicker.pas"/>
-        <Caret Line="63" Column="62" TopLine="41"/>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1328" Column="25" TopLine="1321"/>
       </Position14>
       <Position15>
         <Filename Value="umainform.pas"/>
-        <Caret Line="1537" Column="26" TopLine="1499"/>
+        <Caret Line="3488" Column="1" TopLine="3445"/>
       </Position15>
       <Position16>
         <Filename Value="umainform.pas"/>
-        <Caret Line="3025" Column="40" TopLine="3020"/>
+        <Caret Line="1332" Column="3" TopLine="1321"/>
       </Position16>
       <Position17>
         <Filename Value="umainform.pas"/>
-        <Caret Line="1343" Column="16" TopLine="1327"/>
+        <Caret Line="46" Column="41" TopLine="11"/>
       </Position17>
       <Position18>
         <Filename Value="umainform.pas"/>
-        <Caret Line="621" Column="35" TopLine="587"/>
+        <Caret Line="1353" Column="31" TopLine="1324"/>
       </Position18>
       <Position19>
         <Filename Value="umainform.pas"/>
-        <Caret Line="3212" Column="1" TopLine="3185"/>
+        <Caret Line="1349" Column="58" TopLine="1330"/>
       </Position19>
       <Position20>
         <Filename Value="umainform.pas"/>
-        <Caret Line="3455" Column="1" TopLine="3402"/>
+        <Caret Line="1492" Column="3" TopLine="1489"/>
       </Position20>
       <Position21>
         <Filename Value="umainform.pas"/>
-        <Caret Line="3212" Column="3" TopLine="3185"/>
+        <Caret Line="1359" Column="1" TopLine="1328"/>
       </Position21>
       <Position22>
         <Filename Value="umainform.pas"/>
-        <Caret Line="598" Column="25" TopLine="594"/>
+        <Caret Line="1510" Column="1" TopLine="1484"/>
       </Position22>
       <Position23>
         <Filename Value="umainform.pas"/>
-        <Caret Line="3455" Column="1" TopLine="3402"/>
+        <Caret Line="1354" Column="10" TopLine="1321"/>
       </Position23>
       <Position24>
         <Filename Value="umainform.pas"/>
-        <Caret Line="599" Column="1" TopLine="572"/>
+        <Caret Line="1488" Column="1" TopLine="1482"/>
       </Position24>
       <Position25>
-        <Filename Value="ugolfmlclass.pas"/>
-        <Caret Line="1045" Column="28" TopLine="1031"/>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="3514" Column="1" TopLine="3471"/>
       </Position25>
       <Position26>
-        <Filename Value="ugolfmlclass.pas"/>
-        <Caret Line="1050" Column="15" TopLine="1041"/>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1486" Column="11" TopLine="1485"/>
       </Position26>
       <Position27>
         <Filename Value="umainform.pas"/>
-        <Caret Line="3347" Column="1" TopLine="1"/>
+        <Caret Line="3514" Column="1" TopLine="3471"/>
       </Position27>
       <Position28>
         <Filename Value="umainform.pas"/>
-        <Caret Line="1507" Column="113" TopLine="1495"/>
+        <Caret Line="1511" Column="11" TopLine="1483"/>
       </Position28>
       <Position29>
         <Filename Value="umainform.pas"/>
-        <Caret Line="24" Column="7" TopLine="19"/>
+        <Caret Line="1498" Column="17" TopLine="1485"/>
       </Position29>
+      <Position30>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1338" Column="13" TopLine="1321"/>
+      </Position30>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>

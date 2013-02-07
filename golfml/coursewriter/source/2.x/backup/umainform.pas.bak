@@ -43,7 +43,7 @@ uses
   Classes, SysUtils, strutils, FileUtil, Forms, Controls, Graphics, Dialogs,
   Buttons, StdCtrls, ComCtrls, Menus, ExtCtrls, LazHelpHTML,
   ugolfmlwriter_globals, ugolfmlclass, uwaitform, ucourseteepicker,
-  INIFiles, lclintf, synregexpr;
+  INIFiles, lclintf, synregexpr,registry;
 
 const
   C_TEEBACKCOLOURARRAY: array[C_GOLD..C_RED] of longint =
@@ -600,7 +600,7 @@ begin
       // ======================================================================
       // EDIT 20130206
       // Line below disabled as it disabled saving an unaltered imported golfml file
-      // PageLastIndex is set correctly by the import routine
+      // PageLastIndex is set correctly by the import routine so no need to change it here
       //      PageLastIndex:=-1;
       // ======================================================================
 
@@ -1322,11 +1322,12 @@ end;
 procedure Tmainform.FormCreate(Sender: TObject);
 var
   BrowserPath, BrowserParams: string;
-  s, sCode, sCountry: string;
+  s, sCode, sCountry,key1,key2: string;
   iCount: integer;
   AmenetiesList: TStrings;
   fAmenityType, fAmenetyValue: string;
-begin
+  ARegistry:TRegistry;
+   begin
   // Get/Set the config file path
     {$IFDEF LINUX}
   ConfigFilePath := TrimFilename(DelSpace(GetAppConfigFile(True)));
@@ -1334,6 +1335,27 @@ begin
   //FALSE=/<username>/.config/golfmlcoursewriter.cfg
     {$ENDIF}
     {$IFDEF WINDOWS}
+    // Fetch user's default browser path and assign it to the help viewer
+    ARegistry := TRegistry.Create;
+    TRY
+       ARegistry.RootKey := HKEY_CURRENT_USER;
+       key1:='\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.html\UserChoice';
+       ARegistry.OpenKeyReadOnly(key1);
+       s:=Aregistry.ReadString('Progid');
+       ARegistry.CloseKey;
+       ARegistry.RootKey := HKEY_CLASSES_ROOT;
+       key2:='\' + s + '\shell\open\command';
+       ARegistry.OpenKeyReadOnly(key2);
+       s:=Aregistry.ReadString('');
+       ARegistry.CloseKey;
+       s:=RightStr(s,Length(s)-1);
+       iCount:=Pos('"',s);
+       s:=LeftStr(s,iCount-1);
+       If Length(s) > 1 then
+            HTMLBrowserHelpViewer1.BrowserPath:=s;
+    FINALLY
+      ARegistry.Free;
+    END;
   ForceDirectoriesUTF8(WINDOWSCONFIGPATH);
   ConfigFilePath := WINDOWSCONFIGPATH + 'GolfmlCourseWriter.cfg';
     {$ENDIF}
@@ -1461,8 +1483,36 @@ begin
 end;
 
 procedure Tmainform.FormShow(Sender: TObject);
+Var
+   s,key1,key2:String;
+   iCount:Integer;
+   ARegistry:TRegistry;
+
 begin
   edt_CountryClubName.SetFocus;
+  {$IFDEF WINDOWS}
+  // Fetch user's default browser path and assign it to the help viewer
+  ARegistry := TRegistry.Create;
+  TRY
+     ARegistry.RootKey := HKEY_CURRENT_USER;
+     key1:='\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.html\UserChoice';
+     ARegistry.OpenKeyReadOnly(key1);
+     s:=Aregistry.ReadString('Progid');
+     ARegistry.CloseKey;
+     ARegistry.RootKey := HKEY_CLASSES_ROOT;
+     key2:='\' + s + '\shell\open\command';
+     ARegistry.OpenKeyReadOnly(key2);
+     s:=Aregistry.ReadString('');
+     ARegistry.CloseKey;
+     s:=RightStr(s,Length(s)-1);
+     iCount:=Pos('"',s);
+     s:=LeftStr(s,iCount-1);
+     If Length(s) > 1 then
+          HTMLBrowserHelpViewer1.BrowserPath:=s;
+  FINALLY
+    ARegistry.Free;
+  END;
+  {$ENDIF}
 end;
 
 procedure tmainform.label12click(Sender: TObject);
