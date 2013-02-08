@@ -22,7 +22,7 @@
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="2"/>
       <MinorVersionNr Value="10"/>
-      <BuildNr Value="54"/>
+      <BuildNr Value="55"/>
       <StringTable CompanyName="minesadorada@charcodelvalle.com" FileDescription="golfm course writer and editor" InternalName="golfmlcoursewriter{OSVERSION}" OriginalFilename="golfmlcoursewriter" ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="2" Active="Retail">

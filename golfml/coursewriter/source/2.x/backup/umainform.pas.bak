@@ -1470,7 +1470,7 @@ begin
   edt_CountryClubName.SetFocus;
   {$IFDEF WINDOWS}
   // Fetch user's default browser path and assign it to the help viewer
-  // Routine relocated to FormShow
+  // Routine relocated to FormShow as FormCreate routine unreliable in Windows 7
   ARegistry := TRegistry.Create;
   TRY
      ARegistry.RootKey := HKEY_CURRENT_USER;
@@ -1483,6 +1483,7 @@ begin
      ARegistry.OpenKeyReadOnly(key2);
      s:=Aregistry.ReadString('');
      ARegistry.CloseKey;
+     // Trim quotes and params
      s:=RightStr(s,Length(s)-1);
      iCount:=Pos('"',s);
      s:=LeftStr(s,iCount-1);
