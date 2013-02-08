@@ -1465,11 +1465,12 @@ Var
    s,key1,key2:String;
    iCount:Integer;
    ARegistry:TRegistry;
-
+   BrowserPath,BrowserParams:String;
 begin
   edt_CountryClubName.SetFocus;
   {$IFDEF WINDOWS}
   // Fetch user's default browser path and assign it to the help viewer
+  // Routine relocated to FormShow as FormCreate routine unreliable in Windows 7
   ARegistry := TRegistry.Create;
   TRY
      ARegistry.RootKey := HKEY_CURRENT_USER;
@@ -1482,15 +1483,26 @@ begin
      ARegistry.OpenKeyReadOnly(key2);
      s:=Aregistry.ReadString('');
      ARegistry.CloseKey;
+     // Trim quotes and params
      s:=RightStr(s,Length(s)-1);
      iCount:=Pos('"',s);
      s:=LeftStr(s,iCount-1);
      If Length(s) > 1 then
+        begin
           HTMLBrowserHelpViewer1.BrowserPath:=s;
+          INI.WriteString('config', 'BrowserPath', s);
+          grp_Instructions.Caption:='Getting Started (F1 for online help)';
+        end;
   FINALLY
     ARegistry.Free;
   END;
   {$ENDIF}
+  {$IFDEF LINUX}
+          HTMLBrowserHelpViewer1.FindDefaultBrowser(BrowserPath, BrowserParams);
+          HTMLBrowserHelpViewer1.BrowserPath := BrowserPath;
+          HTMLBrowserHelpViewer1.BrowserParams := BrowserParams;
+          INI.WriteString('config', 'BrowserPath', s);
+   {$ENDIF}
 end;
 
 procedure tmainform.label12click(Sender: TObject);

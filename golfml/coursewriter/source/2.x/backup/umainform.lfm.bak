@@ -61,7 +61,7 @@ object mainform: Tmainform
         Width = 782
         Align = alTop
         BorderSpacing.Around = 5
-        Caption = 'Getting Started'
+        Caption = 'Getting Started (F1 for online help)'
         ClientHeight = 191
         ClientWidth = 778
         TabOrder = 0
