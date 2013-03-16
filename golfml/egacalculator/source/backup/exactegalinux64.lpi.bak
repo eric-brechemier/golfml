@@ -20,7 +20,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="1"/>
-      <BuildNr Value="36"/>
+      <BuildNr Value="37"/>
       <StringTable CompanyName="Lazarus" FileDescription="EGA Calculator" InternalName="egacalc" OriginalFilename="egacalc" ProductVersion="9.30.2/2.4.4"/>
     </VersionInfo>
     <BuildModes Count="1" Active="Default">
@@ -56,7 +56,6 @@
         <Filename Value="exactegalinux64.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="exactegalinux64"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
@@ -68,11 +67,13 @@
         <Filename Value="umainform.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="mainform"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="umainform"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="199"/>
+        <TopLine Value="214"/>
         <CursorPos X="18" Y="128"/>
         <UsageCount Value="129"/>
         <Loaded Value="True"/>
@@ -82,6 +83,7 @@
         <Filename Value="uscoreform.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="scoreform"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uscoreform"/>
         <EditorIndex Value="2"/>
@@ -127,6 +129,7 @@
         <Filename Value="usplashform.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="splashform"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="usplashform"/>
         <EditorIndex Value="1"/>
@@ -168,8 +171,8 @@
         <UnitName Value="thandicapclassunit"/>
         <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="575"/>
-        <CursorPos X="20" Y="588"/>
+        <TopLine Value="1"/>
+        <CursorPos X="81" Y="589"/>
         <UsageCount Value="92"/>
         <Loaded Value="True"/>
       </Unit11>
@@ -362,7 +365,7 @@
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
-    <Version Value="9"/>
+    <Version Value="11"/>
     <Target>
       <Filename Value="exactegalinux64"/>
     </Target>

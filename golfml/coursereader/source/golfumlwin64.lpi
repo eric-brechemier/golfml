@@ -21,7 +21,7 @@
       <Item1 Name="Debugging" Default="True"/>
       <Item2 Name="Retail">
         <CompilerOptions>
-          <Version Value="9"/>
+          <Version Value="11"/>
           <PathDelim Value="\"/>
           <Target>
             <Filename Value="golfmlreaderwin64"/>
@@ -42,6 +42,7 @@
           </CodeGeneration>
           <Linking>
             <Debugging>
+              <GenerateDebugInfo Value="False"/>
               <UseLineInfoUnit Value="False"/>
               <StripSymbols Value="True"/>
             </Debugging>
@@ -89,11 +90,13 @@
         <Filename Value="ugolfmainform.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="mainform"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ugolfmainform"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
+        <TopLine Value="91"/>
         <CursorPos X="1" Y="1"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
@@ -103,10 +106,9 @@
         <Filename Value="thandicapgolfumlclass.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="thandicapgolfumlclass"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
+        <TopLine Value="190"/>
         <CursorPos X="48" Y="25"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
@@ -120,7 +122,7 @@
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
-    <Version Value="9"/>
+    <Version Value="11"/>
     <PathDelim Value="\"/>
     <Target>
       <Filename Value="golfmlreaderwin64"/>
@@ -141,8 +143,7 @@
     </CodeGeneration>
     <Linking>
       <Debugging>
-        <GenerateDebugInfo Value="True"/>
-        <GenerateDwarf Value="True"/>
+        <DebugInfoType Value="dsDwarf2Set"/>
       </Debugging>
       <Options>
         <Win32>
