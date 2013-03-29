@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
 <CONFIG>
-  <Compiler Value="E:\PASCAL64\fpc\2.6.0\bin\x86_64-win64\fpc.exe" Date="1098816497"/>
-  <Params Value=" -MObjFPC -Scghi -CX -Os3 -Twin64 -Px86_64 -Xs -XX -WG -FiE:\LAZARUS\golfml\coursewriter\source\2.x\lib\x86_64-win64 -FuE:\PASCAL64\components\synedit\units\x86_64-win64\win32 -FuE:\PASCAL64\ideintf\units\x86_64-win64\win32 -FuE:\PASCAL64\lcl\units\x86_64-win64\win32 -FuE:\PASCAL64\lcl\units\x86_64-win64 -FuE:\PASCAL64\components\lazutils\lib\x86_64-win64 -FuE:\PASCAL64\packager\units\x86_64-win64 -FuE:\LAZARUS\golfml\coursewriter\source\2.x\ -FUE:\LAZARUS\golfml\coursewriter\source\2.x\lib\x86_64-win64\ -ogolfmlcoursewriterwin64.exe -dLCL -dLCLwin32 golfmlwriterwin64.lpr"/>
+  <Compiler Value="E:\PASCAL64\fpc\2.6.0\bin\x86_64-win64\fpc.exe" Date="1111689048"/>
+  <Params Value=" -MObjFPC -Scghi -CX -Cirot -O3 -Twin64 -Px86_64 -gw2 -godwarfsets -gl -WG -vewnhil -FiE:\LAZARUS\golfml\coursewriter\source\2.x\lib\x86_64-win64 -FuE:\PASCAL64\components\synedit\units\x86_64-win64\win32 -FuE:\PASCAL64\ideintf\units\x86_64-win64\win32 -FuE:\PASCAL64\lcl\units\x86_64-win64\win32 -FuE:\PASCAL64\lcl\units\x86_64-win64 -FuE:\PASCAL64\components\lazutils\lib\x86_64-win64 -FuE:\PASCAL64\packager\units\x86_64-win64 -FuE:\LAZARUS\golfml\coursewriter\source\2.x\ -FUE:\LAZARUS\golfml\coursewriter\source\2.x\lib\x86_64-win64\ -ogolfmlcoursewriterwin64.exe -dLCL -dLCLwin32 golfmlwriterwin64.lpr"/>
 </CONFIG>

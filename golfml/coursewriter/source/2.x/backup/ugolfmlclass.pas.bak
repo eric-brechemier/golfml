@@ -29,21 +29,24 @@ unit ugolfmlclass;
 == 2.7
 ==    Added ErrorCode,ErrorString
 ==    Added FileExists check on loading XML file
+==    Added default values for some missing XML elements
 ==
 ==
-$Revision$
+== 2.11
+== Subclass THCPClass (thandicapclassunit.pas)
+== Note InitOK function (Reset method) also calls inherited function
 *)
 {$mode objfpc}{$H+}
 
 interface
 
 uses
-  Classes, SysUtils, XMLRead, XMLWrite, DOM;
+  Classes, SysUtils, XMLRead, XMLWrite, DOM,thandicapclassunit;
 //  Forms, Controls, Graphics, Dialogs, Buttons, // DEBUGGING ONLY
 //  StdCtrls, ComCtrls, ExtCtrls; // DEBUGGING ONLY
 
 const
-  C_GOLFMLCLASSVERSION = '2.7.20130206.1';
+  C_GOLFMLCLASSVERSION = '2.11.20130318.0';
 
 const
   C_METERS = True; // fMetric
@@ -76,7 +79,11 @@ type
 // Unused V1.0
 
 type
+  {
+  // Use this if you do not need the Handicap adjustment code
   TGolfmlClass = class(TObject) // A Subclass of the generic TObject
+  }
+  TGolfmlClass = class(THCPClass) // A Subclass of the THandicapClass
   private
     // These 3 indexing vars allow us to index into the dynamic arrays
     // to pull out properties as single values
@@ -275,8 +282,9 @@ type
   protected
     // PROTECTED VARS AND METHODS FOR SUBCLASS USE
     // *********************************************************************
-    pVersion: string; // Version String for this class
-    function prot_InitObj: boolean; // Initialises variables and arrays etc.
+    pVersion: string; // Version String
+    function prot_InitObj: boolean; override; // Initialises variables and arrays etc.
+    // Uncomment if descending from TObject
   public
     // PUBLIC VARS METHODS AND PROPERTIES
     constructor Create; // Note no override for Constructor
@@ -286,7 +294,7 @@ type
 
     // The main methods
     function MakeGolfmlFile: boolean;
-    function GetCourseInfoFromFile: boolean;
+    function GetCourseInfoFromFile: boolean; // Implements virtual method
     // Returns ErrorCode=C_ERROR_BADPATH and ErrorString=C_ERRORSTRING_BADPATH if path invalid;
 
     // Indexed properties cannot be published in a visual component
@@ -399,7 +407,7 @@ implementation
 // *********************************************************************
 constructor TGolfmlClass.Create;
 begin
-  // First we call the existing TObject.Create code
+  // First we call ancestor.Create code
   inherited Create;
   // Create class objects etc here...
 end;
@@ -421,6 +429,7 @@ var
   cCourseCount, cTeeCount, cHoleCount, cCount: cardinal;
   s: string;
 begin
+  Inherited;
   SetLength(fCountryClubAmenetiesArray, 1);
   SetLength(fCountryClubCommentsArray, 1);
 

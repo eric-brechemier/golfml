@@ -43,7 +43,7 @@ uses
   Classes, SysUtils, strutils, FileUtil, Forms, Controls, Graphics, Dialogs,
   Buttons, StdCtrls, ComCtrls, Menus, ExtCtrls, LazHelpHTML,
   ugolfmlwriter_globals, ugolfmlclass, uwaitform, ucourseteepicker,
-  INIFiles, lclintf, synregexpr,registry;
+  INIFiles, lclintf, synregexpr, registry;
 
 const
   C_TEEBACKCOLOURARRAY: array[C_GOLD..C_RED] of longint =
@@ -1322,11 +1322,11 @@ end;
 procedure Tmainform.FormCreate(Sender: TObject);
 var
   BrowserPath, BrowserParams: string;
-  s, sCode, sCountry,key1,key2: string;
+  s, sCode, sCountry, key1, key2: string;
   iCount: integer;
   AmenetiesList: TStrings;
   fAmenityType, fAmenetyValue: string;
-   begin
+begin
   // Get/Set the config file path
     {$IFDEF LINUX}
   ConfigFilePath := TrimFilename(DelSpace(GetAppConfigFile(True)));
@@ -1334,8 +1334,8 @@ var
   //FALSE=/<username>/.config/golfmlcoursewriter.cfg
     {$ENDIF}
     {$IFDEF WINDOWS}
-            ForceDirectoriesUTF8(WINDOWSCONFIGPATH);
-            ConfigFilePath := WINDOWSCONFIGPATH + 'GolfmlCourseWriter.cfg';
+  ForceDirectoriesUTF8(WINDOWSCONFIGPATH);
+  ConfigFilePath := WINDOWSCONFIGPATH + 'GolfmlCourseWriter.cfg';
     {$ENDIF}
   INI := TINIFile.Create(ConfigFilePath);
   INI.CacheUpdates := False;
@@ -1461,47 +1461,47 @@ var
 end;
 
 procedure Tmainform.FormShow(Sender: TObject);
-Var
-   s,key1,key2:String;
-   iCount:Integer;
-   ARegistry:TRegistry;
-   BrowserPath,BrowserParams:String;
+var
+  s, key1, key2: string;
+  iCount: integer;
+  ARegistry: TRegistry;
+  BrowserPath, BrowserParams: string;
 begin
   edt_CountryClubName.SetFocus;
   {$IFDEF WINDOWS}
   // Fetch user's default browser path and assign it to the help viewer
   // Routine relocated to FormShow as FormCreate routine unreliable in Windows 7
   ARegistry := TRegistry.Create;
-  TRY
-     ARegistry.RootKey := HKEY_CURRENT_USER;
-     key1:='\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.html\UserChoice';
-     ARegistry.OpenKeyReadOnly(key1);
-     s:=Aregistry.ReadString('Progid');
-     ARegistry.CloseKey;
-     ARegistry.RootKey := HKEY_CLASSES_ROOT;
-     key2:='\' + s + '\shell\open\command';
-     ARegistry.OpenKeyReadOnly(key2);
-     s:=Aregistry.ReadString('');
-     ARegistry.CloseKey;
-     // Trim quotes and params
-     s:=RightStr(s,Length(s)-1);
-     iCount:=Pos('"',s);
-     s:=LeftStr(s,iCount-1);
-     If Length(s) > 1 then
-        begin
-          HTMLBrowserHelpViewer1.BrowserPath:=s;
-          INI.WriteString('config', 'BrowserPath', s);
-          grp_Instructions.Caption:='Getting Started (F1 for online help)';
-        end;
-  FINALLY
+  try
+    ARegistry.RootKey := HKEY_CURRENT_USER;
+    key1 := '\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.html\UserChoice';
+    ARegistry.OpenKeyReadOnly(key1);
+    s := Aregistry.ReadString('Progid');
+    ARegistry.CloseKey;
+    ARegistry.RootKey := HKEY_CLASSES_ROOT;
+    key2 := '\' + s + '\shell\open\command';
+    ARegistry.OpenKeyReadOnly(key2);
+    s := Aregistry.ReadString('');
+    ARegistry.CloseKey;
+    // Trim quotes and params
+    s := RightStr(s, Length(s) - 1);
+    iCount := Pos('"', s);
+    s := LeftStr(s, iCount - 1);
+    if Length(s) > 1 then
+    begin
+      HTMLBrowserHelpViewer1.BrowserPath := s;
+      INI.WriteString('config', 'BrowserPath', s);
+      grp_Instructions.Caption := 'Getting Started (F1 for online help)';
+    end;
+  finally
     ARegistry.Free;
-  END;
+  end;
   {$ENDIF}
   {$IFDEF LINUX}
-          HTMLBrowserHelpViewer1.FindDefaultBrowser(BrowserPath, BrowserParams);
-          HTMLBrowserHelpViewer1.BrowserPath := BrowserPath;
-          HTMLBrowserHelpViewer1.BrowserParams := BrowserParams;
-          INI.WriteString('config', 'BrowserPath', s);
+  HTMLBrowserHelpViewer1.FindDefaultBrowser(BrowserPath, BrowserParams);
+  HTMLBrowserHelpViewer1.BrowserPath := BrowserPath;
+  HTMLBrowserHelpViewer1.BrowserParams := BrowserParams;
+  INI.WriteString('config', 'BrowserPath', s);
    {$ENDIF}
 end;
 
@@ -1555,11 +1555,11 @@ begin
             mtError, [mbOK], 0);
       end
       else
-          If GolfmlClass.ErrorCode=C_ERROR_BADPATH then
-             MessageDlg('GolfmlClass Error: ' + GolfmlClass.ErrorString + LineEnding +
-             'Unable to import: The file ' +
-            LineEnding + GolfmlClass.CourseXMLPath + ' does not seem to exist!',
-            mtError, [mbOK], 0);
+      if GolfmlClass.ErrorCode = C_ERROR_BADPATH then
+        MessageDlg('GolfmlClass Error: ' + GolfmlClass.ErrorString +
+          LineEnding + 'Unable to import: The file ' + LineEnding +
+          GolfmlClass.CourseXMLPath + ' does not seem to exist!',
+          mtError, [mbOK], 0);
     end;
   except
     raise Exception.Create(C_ERRORAPOLOGY);

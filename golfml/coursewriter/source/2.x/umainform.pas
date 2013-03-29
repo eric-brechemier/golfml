@@ -96,6 +96,7 @@ type
     lbl_instructions: TLabel;
     lbl_numCourses: TLabel;
     MainMenu1: TMainMenu;
+    mnu_helpAboutHCPClass: TMenuItem;
     mnu_Mode_PlayerScorecard: TMenuItem;
     mnu_mode_CourseStylesheet: TMenuItem;
     mnu_modeCourseOnly: TMenuItem;
@@ -130,6 +131,7 @@ type
     procedure mnu_filenewclubClick(Sender: TObject);
     procedure mnu_helpaboutappClick(Sender: TObject);
     procedure mnu_helpaboutgolfmlclick(Sender: TObject);
+    procedure mnu_helpAboutHCPClassClick(Sender: TObject);
     procedure mnu_modecourseonlyclick(Sender: TObject);
     procedure mnu_mode_coursestylesheetclick(Sender: TObject);
     procedure mnu_mode_playerscorecardclick(Sender: TObject);
@@ -1598,6 +1600,11 @@ begin
     + LineEnding;
   s += 'Website: http://code.google.com/p/golfml/wiki/Welcome';
   MessageDlg(s, mtInformation, [mbOK], 0);
+end;
+
+procedure Tmainform.mnu_helpAboutHCPClassClick(Sender: TObject);
+begin
+  GolfmlClass.ShowHelp;
 end;
 
 procedure tmainform.mnu_modecourseonlyclick(Sender: TObject);

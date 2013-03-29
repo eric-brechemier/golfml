@@ -16,7 +16,7 @@ object mainform: Tmainform
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '1.0.4.0'
+  LCLVersion = '1.0.6.0'
   object cmd_close: TBitBtn
     Left = 712
     Height = 30
@@ -813,6 +813,10 @@ object mainform: Tmainform
       object mnu_helpAboutGolfml: TMenuItem
         Caption = 'About golfml...'
         OnClick = mnu_helpAboutGolfmlClick
+      end
+      object mnu_helpAboutHCPClass: TMenuItem
+        Caption = 'About HcpClass..'
+        OnClick = mnu_helpAboutHCPClassClick
       end
       object mnu_helpHintsOnOff: TMenuItem
         Caption = 'Show Hints'

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
 <CONFIG>
-  <Compiler Value="E:\PASCAL64\fpc\2.6.0\bin\x86_64-win64\fpc.exe" Date="1098816497"/>
+  <Compiler Value="E:\PASCAL64\fpc\2.6.0\bin\x86_64-win64\fpc.exe" Date="1111689048"/>
   <Params Value=" -MObjFPC -Scghi -CX -Os3 -Twin64 -Px86_64 -Xs -XX -WG -vewnhi -FiE:\LAZARUS\golfml\egacalculator\source\lib\x86_64-win64 -FuE:\PASCAL64\components\lazcontrols\lib\x86_64-win64\win32 -FuE:\PASCAL64\lcl\units\x86_64-win64\win32 -FuE:\PASCAL64\lcl\units\x86_64-win64 -FuE:\PASCAL64\components\lazutils\lib\x86_64-win64 -FuE:\PASCAL64\packager\units\x86_64-win64 -FuE:\LAZARUS\golfml\egacalculator\source\ -FUE:\LAZARUS\golfml\egacalculator\source\lib\x86_64-win64\ -l -dLCL -dLCLwin32 exactegawin64.lpr"/>
 </CONFIG>
