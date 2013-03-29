@@ -1,0 +1,1366 @@
+object mainform: Tmainform
+  Left = 526
+  Height = 698
+  Top = 173
+  Width = 703
+  AllowDropFiles = True
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Application Title'
+  ClientHeight = 678
+  ClientWidth = 703
+  Font.Height = -12
+  Font.Name = 'Arial'
+  Menu = topmenu
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDropFiles = FormDropFiles
+  Position = poDesktopCenter
+  LCLVersion = '1.0.8.0'
+  object cmd_close: TBitBtn
+    Left = 616
+    Height = 30
+    Hint = 'Click to close Golf Helper'
+    Top = 605
+    Width = 80
+    DefaultCaption = True
+    Kind = bkClose
+    ModalResult = 11
+    OnClick = cmd_closeClick
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 0
+  end
+  object page_container: TPageControl
+    Left = 0
+    Height = 600
+    Top = 0
+    Width = 703
+    ActivePage = page_congu
+    Align = alTop
+    TabIndex = 3
+    TabOrder = 1
+    OnChange = page_containerChange
+    object page_information: TTabSheet
+      Hint = 'General Information Page'
+      Caption = 'General Information'
+      ClientHeight = 572
+      ClientWidth = 695
+      ParentShowHint = False
+      ShowHint = True
+      object Image1: TImage
+        Left = 0
+        Height = 572
+        Top = 0
+        Width = 695
+        Align = alClient
+        ParentShowHint = False
+        Picture.Data = {
+          0A544A706567496D616765031E0000FFD8FFE000104A46494600010100000100
+          010000FFDB008400090607141212141413141614141715141418141517171716
+          15141515161714171814181C2820181C251B151521312125292B2E2E2E171F33
+          38332C37282D2E2C010A0A0A0E0D0E1A10101B2C2420242C2C2C2C2C2C2C2C2C
+          2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C2C
+          2C2C2C2C2C342C2C2CFFC000110800D200F003012200021101031101FFC4001B
+          00000203010101000000000000000000000304010205000607FFC40040100001
+          0302040404030603070305000000010002110321041231410522516113327181
+          4291A106145272B1F02362C115335382D1E1F11692B207243473A2FFC4001A01
+          0003010101010000000000000000000001020300040506FFC4002E1100020200
+          040502050403000000000000000102110321314104051213513291143342A1C1
+          156181F02271D1FFDA000C03010002110311003F00F9C00AE1AAC1AAE1ABEAA8
+          F26CA06AB86ABB55C044160C354E5456B158B113582CAA72A206A90D44160F2A
+          ECA8C1ABB22D40B05954E545C8A722C0B05954862306AB6558D62F955DA15F2A
+          90D58D64342971956CA98C3E17320C29894282D5A1530846C9634D6BB30183D4
+          A9972242885A836525CBA4F556CAAA42D46B21B5611E862EF7F9A59C15084AE2
+          98533506284CCCA31C634889F9AC49552E5378498FD46A56A23504259B4FBA48
+          D43D550BCA3D0CD6400AE1AACD622062A08543558355C0570D4D42940D56CAAE
+          1AAE1AB02C164560C450D521A8801E55229A2862B06AC603917654E0D915D4DA
+          7682859A8CF0D446519EC8C289985BB84E1B4C001DAC5D24F11450D18D9E7AA6
+          1C0DE55994217A6AD84A6360216162603B94A586275681946856BD18D34B2A32
+          DBC233892AB95550965D98A3A1BAE739AED4421E4566D2250A41B20D01B10A7E
+          EFDC2BF851B223706489280455D4875086EA61335F0D952C5A8A058270084E08
+          E5AA85A89AC5DCD542D4C16AA96214358B10A84268D3557525824B5AAE1AA5AD
+          446B511480D570D566B55C3510150D570D560D570D5805035583510355835600
+          20D560C450D560D58C5A850075BFA2D3A3C3987E23F359AD576BC8DD4E516F46
+          329246B60B87B43A4DE344D62B14C6ED27F7BAC418974429A6D26E549E15BB93
+          1D6252A4462AA39E4DB5B4744BBB0A4094C3991BFC9778845B50AAB2D09DF913
+          F04AB8A08F52A4A9174D6C001987947661EC99C3524FD0A00A9CA543C5599D4F
+          0D3AA9FBA77B2D0AB873B4219A44C02A7D43D1978BA04D869F356A5C09CE13A2
+          DD6501AE545A662D0A72C77590EB0D6E64E1FECCB639CDFB2CAC7F082C24FC33
+          6EABD79A842C7E28F2E3034430F166E419C2291E51D4D0CB169BE92AFDD3AD97
+          67510A334B54655A5F74BC0B945C2F0B7BAE4651B25738AD4749B329A111A173
+          422B5AAA4C8015C0560D576B560101AAE1AAC188818B00A06AB06AB862B06AC0
+          B281AA4351035486A00281AACD0AD95583563160C1D910B89194216546A2E212
+          B414CA0A0543B0E46C9E6568D75506B66D52DB1A90933084EC99A7C38947A13D
+          FB264E21C3542527B0525B8A53C3652990C853F7D69D75EB0A5E0904CA9B6F71
+          D56C0CBC7547A7863A849B3313A05A386C447994F1134B21E0D3D42E58087288
+          FAC0A1BCCE8B9A996B42B88AD165978830497446C3AAD4AF8471B9B7740A7C27
+          36AEB6D65D187D3144A56CF3EEAA765D4D85C6F2BD70E134C011165D86C28922
+          02A3C78D6480B0DEE6351C201046DF55AB4D1EA61DA018174978905724EE5997
+          8E478D6B515AD5CD09CC1BC022745EAB6708BB5A8AC62D2FBBB0E97556D28D92
+          A919A03470E4A2BE946A9AA7563D54C83A89F4210B66A426D011006A3E46F42B
+          886F746C00C35AA7C36F55680BB2AC62B91BFB950E8DA513215229F65800837B
+          2BE58466D352292D66162B814573157C34404788573AA93AA3D0C39D7E89B6D1
+          9D92B690C93623428CDF44FB30266C4FFAA31C398B00BA90A834B28CA57A328A
+          35A823C3EA4A619C2C183BF64CB2AB8FAAE3548EAA2E7365145007E10348373E
+          A8ECA13E5556B8937466D58D2C924D8EA8A54A4620EA9675123409B35CABD261
+          3FF092DA1A8529B4CCC7CD382848908E2801757350294A77A0E91995B0A652B5
+          3849371A2D97D508152BF7594A46A4780A4D69EDEAB4F09C283FE259F4AB7512
+          9CC35477C323785EB4BAAB23862D6E335782B9BA3825DCD7B352568E16B54D63
+          34A3D56E6D5B1EC5494E49D4B31DC53D0C96D63BC156CDD968B78783A0FAAB9E
+          169FB9017A246642B062D36F0EEAA0E0C8EE8AC48F903833385257F0CA73C0F4
+          5534FD3E68F558B42C2994414D107B287144050AA92A61465468160C8521CAD9
+          577868D0A478CEEAAEDC4954CABA16A41B65FEF0762AEDC5BBAA010A21071415
+          263ADC6754CB31A216415D98A9BC24C7588D1B94EB052E74AC2F15DD577DE1C9
+          1E01458C6E88EA8E3161A179938A7203EB38EE52FC35EAC3DF3D257E2AD1BACB
+          C4718E8B39D42D33ECABF73EA9E3810881E2C986A9C61C93ADC51C51DD80B68A
+          3EE6C84E9416C0B90B619D9483AC2D9A58AA44C9B1F45901AAED09A50521149A
+          3D361B1B49BA27A9E3699EFECBC835A8D4C91A123D1425C2C5EE3AC768F5ADC7
+          533F09F922F894CED0BCFE15AF3F17CD6BD3A2E8B96BBB42E69E1463B968CDBD
+          875B4D8ED0FD52D8CC0923950601B7847D41507301A3C0EE41FEA8462D3C9FF7
+          DCCE49EC26FC1B87C284EA246C13352BFE61F24BBDE3BFCD7641CB739E5D20EF
+          D02882AF13FEE8C30B6546D2D44AB00DA64E8159B872763F246661DC34FA2D0C
+          257205C29CF11A590F18A7A82A3856B60912612B8B68D8273155C3D2AE7CD924
+          3AAED8D2AD1081A6B8502744E65DFF0044DE10B7A2ACB11A564D42D98B911B0D
+          8173CC05EAA852A67E11F24D330ED1A340F45CD3E33C22D1E1FF0073C756C216
+          C88FDF455A3C39CED97B2FBAB07C2119AD1D029BE35D648A7C32BCCF274B80B8
+          F65D5B81386817AC738205474A9FC5E258DD881E26AF0E70D42AFDD00D57B334
+          9BBFD5278AE1CC72B478BBD447815A1E5F2807AAE7D53D216A3F8591A149D4C0
+          CCF337F5FA2B2C483DC4E99233CB86E4A0562DF74E3B0ACFF13DA2E83E0309B3
+          5C7BAAA685A626D6A2B6995C023532A9648A86A235A8A0FA2B47A2D66A2F42B9
+          6AD2A1C59DA10216606AB86A9CB0E32D5063392D0DBA7C586EDF75CFC78DA121
+          40B62FF257A993A15CFDA85E85BB92AD4354C5B5DAB47CFF00D950643F0FD52E
+          40510AAB0D2D09B9BDC75B8569D02E7D070D0A5A9076C9AA78C7B75BFAA56A4B
+          47614D14A5520DC2D2C3C1F865069E3587CC08F64DD2C633677CC286236F6290
+          AF21060987E1842A9C286C04F74DD3AC0EE158D71D42E6EB9A65BA62CC97F067
+          F51ED643ABC35CDB8216D7DE06EA952B348D55163E26E2BC38188C7BDA8E38A1
+          08B5A933ACFBACFAB90690ACBA67AA26DB8E8C7871AEAB9DC59A77FA2CC3566C
+          60FAA03DADEBFBF927F8787807765E4D67E3C1F8929531E7672CF7342190A91E
+          1E08478AC7AA7127FE21F24B55E2750FC5F20977043705458505B0AF125E49A9
+          56A1B973BE6AACA00DCBBDD54CA13894FD3E009F91AA25ADB5BD54D4C5347956
+          7B909C12F6D376C653A343C01B1501AB15BC65C7468FAA352E2E4DB2895E52E7
+          5C2ADDFB0FDA91B0D47A601D562B78B3BF08446F153D07D50FD6B847BBF666ED
+          48F41F75691CA6EA9E010B2471270DBF55A5C2E8E2311FDDD22E1D6E1BFF0071
+          B7D508737E1DBA526FF8637664F6081A9E6D10E1DD32DFB2F8A892290EC5E67E
+          8D49E378762A8824D3CC06A58737D05FE8A93E6383579FB30AC09AD51268C744
+          2735661E2AFDDA17378B3B60D3EEA2B9C70CB593F662BC19334DAD4E51AA0752
+          B0BFB61DF85BF352DE367F034A59738E165BBF60AC2923D3B5CC76A3E6B9DC3D
+          874742F39FDBA7FC36FD554F1D76CC03DD49735E1D6927EC53B6F747A41C30EC
+          7EA9AA582035D579267DA0A8340887ED4541B04B2E6B82FEAFB30C6096C7AE75
+          2234290C4D270DBE4579EFFA9EAF41FBF755FF00A96A6E01F5FF009423CCF016
+          FF00661946CD4A8C3DD2EE62447DA171F85BEF2AC3ED0B87C0CFAAE85CEB875B
+          FD893C06C6FC02AA681421F689DFE1B506A71D71F840F44573BC0F3F607C38DF
+          DD8A1BA890917F1B77454FED776E3F7F34CB9DF0DE7ECC1D863EFA51AC14B39D
+          D927578A1E83F7EEAA7889FE54EB9D709BC9FB315E0486CA196A49D8F776556F
+          12703A04DFADF09E5FB33762636E62139A87FDA84ECDFAA8FED423E16FBA1FAE
+          70BE5FB0DD891814EA906353ACFCF79D55A9380177492237827DF7BFEF654104
+          38B41DC08D5D716075D7F7628CD6B60380CCECC2FB34E5303DE4EFDFA2F8EE93
+          A50C34F5B13B13B45AF21169D373409D20DAF79302DD0CEFD12CCAD394905A72
+          8869E99AC3B1911DA7B2DAFB3D8215F114A865F33AE6E61AD00B88DA7282B24D
+          B496E3289EBBEC17D96F1C0AF8969CBF032E33DFCCEDE3F5BEDAFD29AC0D0000
+          0016005801D0054A61AC680043400D006800B00875B1206E2D733B7FBAF6B0B0
+          541523A15451775617DE3F7090C4D630045DC7A898091C7F111CADE77171CD00
+          4405878DE2A017BFC27430650498B8FF0072BAA302729A15FB49856D4CEF0087
+          E70C102CE235CD16D8DD791738B4C111049D0FA5B6DBDD3D5F17CAD1948325C4
+          E63799D9649783535CA0659804CCC9DBA44FF45C3CC3844A1DD8EAB539E33B74
+          38E062E26403DAE3A1F65763AE2DD34DCF6F6093151D24449226FD40CAE3EF0E
+          3F2846C3628C0B3A72939809CB62D2663526CBC3B6550C6219604D89277F5311
+          16B200AED02674D24EF6B4A96899106222648CA4BA0CC588B0BFAFAA86D51300
+          7C23988B1801D73DEC8DBB0D1D51B0011BFD74D3DCAB5169DF5CB304EBB0FA9F
+          A25DF55D2D2E04F35EFB01727F7A94526E660196C1260E5703DF588E9E6F65AD
+          828BBAD00EB7D48BC09FEA15636300C4C12018DFF44AE23140E601A4121D60D3
+          0C19858C6A604C7A7708789C4B699689D0122CE05C40D20F67447507547300EF
+          873274E9277B6BF5416B20C5E3B9F9DFD552AE232BA096820124589DF63D6DEB
+          DA141AAE1E6B1CDA020C4920CEBDF4B5BD16CC51CF15A604DC9FFF0036BAA550
+          4181ADADEE3FD5736BD8960883A1B4E6DC7B000FAAA5273B3C10492D0011F88E
+          969D6DDB542D8F41C3091DE63B88D77EA40F9A1B8CCC5CDAD226F79F92A32AC3
+          6601395C4B41B920C36DBEC7F72977546BC86898CC65D95D060082003303AFF5
+          B239B00C403D0C1B8913BA1BE8F2DF59BDEE440D12E315350B59E63232DEC20B
+          AE3AEA147DE64B8372926C0023A5EFB40F4E9DD1A602C1A7A4C49D7A2E63413D
+          0C684EBACC1ED0A86A1900937B1CA45B4DE0C6FD3443AB886B00B7F3083B41B7
+          B991AF55B31463C2993A5AD277B6BF54BF870604C773FBDD4D6C465741CA0804
+          91209DF63D76EBDA10DF51C3CD639B4041D67B1EFA022DE88E61620EACE690E7
+          650492001F0B013AE806BF2F927462E492D801A437391ABEF3CCD17224753749
+          863887641A41734982620C0FD7ADD43CB9BE21739A04070323CD90888DC89234
+          B6BA42A6A8C8D0E1EE1966C66019CD98924490746D84F799DE17AAFF00D367B0
+          62C4384B68B9D7DCB8B608DB491BFAAF0FE35301A1C4B5A0348061D3A876B3AE
+          D266F681046DFD96E22598BA1503016F865954E8DFE21E4ECD8B5BB954C1AEEA
+          6FC8C99F6FAD8A201399A62D78F315978DC53E4303980F99F3131B7B2C8C663A
+          4B43A898E67B883D0C05E5F17C518E151DE1BB33CC0BD80FF85EFC6209621AF8
+          FE2EF9A953C6680258C6B63DA1799AF8C25A1A5E4C9922491EE95AB5B401BA5C
+          A55F88DED7D13392441C9B18AB56675E8BB0A2F613324E9061A759EB61EB0B3D
+          F8B8F882AE171EC73F217C4EB78B00E76FF967D9737153BC29060B3359CF0D60
+          6DAE43AD721BE5DC190645A6201992127877BB30875859D3168205EF79B5F483
+          1B2152C6E7CED0FCA01C8C70971731A1A492F16CD774900412748440F8CB05A1
+          CD69E51B02EB6770E927E7BC2F9E7964CE863B82C49700D398102F176DCF9AE4
+          6CE300EF1D828C23817070314C8101C22799D98C6904DC7EB69407F861D67130
+          25F2D873B354932C26C4C30771234522A0EA3335840738D84F332DA02394F6F6
+          45AD8C5DB54B0093208C80E524792FFA93F3D6EA98821C090E25C18496E5D438
+          3A0020FE5D94BCC8A6E26203A48883302003D43469B92AB543799CE2592E34F6
+          7F3672F9810034658B49E6F5412F002F87696B9B97981026C03486DC9993D4F5
+          EBA0857A740BC482D71CE4B73CEED13B4033B9B7EA52AACCA483721C2D900CC5
+          AD11724C4DEDDB54C61EC7CC6244064E5E7008719B18302DA66D5602673DD99D
+          04E5E5399900E63D0BBE21B0FCAA6A512333406EB239BCD90490409CAE86EF69
+          8EB2BB3B60EA5F78899E5DE34F303EB27DBA6453738B9C003302082E96831205
+          8827A7C8226C8353101C1CEBE626FA81E20B69D08FA5BA0C6208E524E6203FCB
+          B990089FCD1EC74547571773328717CCB8CE68B1D4686C7FCA3DE6A001CF37BB
+          7CB22F929B84CBB43026FB94B90D7E01D6602643A5A5E05D9111984D9D704003
+          6D47557A45CD0E0672FE280082F3F0C5888CC3E5D0AAF862400E2D719A81B19F
+          964020BA4192185DA68E1DD2B4980E51B968065A006E63693726E32CFD1116E8
+          78D0700D70CA4E568719874735DAE70800020C6B6F540A4D0F2EBC8CD219101B
+          01C7D5A7504FEAAD4DFCA65CE98EF940162D00C1DA7BE755AD55AD12D273482F
+          20130665C0CFA7D4F5451B2290F104068CBAF34801D304116239488EEDEA5751
+          A0492016070B86BAF9844024891A0B1369267B30C0055E67799CD687104B7949
+          0E044D811277D348BA5DD5478C79C9B3440104380D605B2826351AF64D791B2D
+          41D4399D04C7290E640398F42ED1C35023F0AEA941C333406F51CDE6C8248204
+          96986EF698EB2AD9DB1372FBC44CF2DE634F303EB3F28CC229BDE5CE68049B69
+          32D9CA0816209DBD514CD919ECC54366679C00473493B3644823AEC15A910799
+          CDCCF7B5CE7C8061A351F204DEF292E12E756CC001E1B410D6BF40E719907637
+          0AEEA46273737962258D378BEE0906DD1338A56855683537073FC4E5C995D91A
+          EB027CA0F4B8931D8764D3A8B8D568696F84D041166B4130D060981E517FE559
+          CEA4DCD0F927921B24372E825A2D3AAD06BDA61A58DCBE51AC01103449261B46
+          857E2351AE731C4B20465CD79301D31DC131B4AA3F19312486804C936FA6AB29
+          95467707325EF7793CC04092E83F31EAA3866574D70DC992A9699322402E023A
+          030BBB0F8A9C634C5714F30F5B19624CC931736F49DD66E378B86CC1D068058F
+          A94963705541A65D199F6619969CC0BA7B1E693DDA8980C11FBB56CE0E479641
+          1BB1A643C74F8A157E22926D8CA096A2438BBDD0D033BC826C263780074012B8
+          0A8F2E7543AC0026F0E790D6F29EC49F65B9C3B84B0168687F8BE5CD394657F2
+          CCE93198DA512A709CA18D74345C8221D392089FF2CDFBA49F1317FE23A715A2
+          270D88C8EA61ADCF500735A6F2EA8E74C800DC925A6E4A2F06AE08753688796D
+          CC49B10643B506C47B8936851816361F5260B9B0D7E5CDE19A8031A45EE4340B
+          ED995F83E10073E93330AB55AD399D2D8630B5D0D133783F45CADA69F9FEFF00
+          D153B34B84572CCED0D876EE225C22733CB8998971D349B23D77B1D4E4071A64
+          8739C6D99ED303731B5B70DBA0F0AC3C547B5E208B0BB4BF2883063CA753BEA3
+          A29C652606536B4D80796340F31901EE24033E5691F9573BD5842D4780E6B8BC
+          4E5CC46EE7121B0D01B61127D8F65CDAAD875332E39E406C4B49260071377733
+          8DF5B5D6780C9667A8672C4589D4CE5746B008DAEAF86AA24B0B2347C820CDC8
+          6025BAB88E593A003B209520234F0544B1CC7BE25AF6C3873487F958EF5249F7
+          EC875F11981665876768CB94C01E770D79401200D6FD91F1EEE4692E680E7E62
+          34CA5AF3007516FDE890A18C7526BC93130E275CC6D76BB7B336D8947603A271
+          81EF6919036482D6BB70EB90418244926748F65A78B7B1CD96B65C496C40BB58
+          40361D083EA163624C56CC5C1C0D3061A37312013F87293EBE8BB0B8FE621AD9
+          743D8E16232BEA669F58B488B8F93240C872BB80732016C48A79B40D3049DE64
+          45F6830A87282F68703399B13CCD0D00E6718DCCDB7836B840E24D1E23A1DCC0
+          B5A60656B181ADCBB1119409F4280724BCB5E5CE9300C34C88CB24DA264F7B25
+          ACC6BCC78D4155AC0D92FCA46710D0648067F949740DEC131876640E9682EA94
+          882D0243C870CD5011BC999DA3B247015C1B860696676069F2C006488B00D3A0
+          F4E89BE2D2D7C0782435C1A672C873813D81807A228CEAAC13B13E2163834BF9
+          4E610E125E72883B9F31B5AE86C2E1529BDE1BCA1CE78812203AF9660191A7AA
+          9C3E34B453A64E51397291960697DC0E5247BACF1C82A82739CCF00811B44927
+          63AFB42CBC8ACDAC73013FC368B37313125AECB3CA06E4CC7A959D5435E7364F
+          E217340BEADB39E4B5B698004EBAAEC3F10241F081CB9BC4040BB5C03440D480
+          20FD129478839B56A43C646014E46A48E69D3F326E96B430CE35AF7B48C81B24
+          16B5DF1075C820C1224933A47B2D1C5B9AF68CAD05C496C1162D6100C81D0837
+          DC2C9C4DAAE62E0E069830D1A1312013F872CFAFA28C2E3B9886B65D0F63858F
+          2BEA669F5DA445C7C8A4632F07891E1B985C60449BC900C832B8621CECCD6189
+          BE6FC2DDE63D617622A53659C034EA46F94F7DB654E15CCD7968CA1A009BF334
+          9303BC2B74E4E5467E4B611999EE890D6B3202771A9326FD4CF74FE15CD7F287
+          6604804C65008034EA2DAAC37F10739C5AC31CA449D2D63F495A185AEC05B904
+          C6536DC81FEA86241EACCD6EC2D320BC92D201805C49E682341B69A2D67453C1
+          1653072B5CD827CCE21C4B9DF3489A81E33549F30200EA67FE51EA625C4546B9
+          9394B04883958D93F592A6E4ECD657178763CF8C5C03C9072B4400DA80B4F60E
+          BCA17DA4C6416D2B96B430385EF1B6554FBE0186303989060FE11A5FE4BCFC3D
+          D55B06738107F98DB7EEA98707279BD02B33D3F11A64D3AAE78021C1D959121E
+          32BA32ECD0264A133123C3776B4F77B208F9069F74A623055B98BDED25D989D8
+          40B071FE531F45A181C130B5AC7924970CDB344DF7E90123514AACCD1D87F088
+          C8D2091E565C860A6D0038BB79DA6D609A661FC3752AB9C9ACF71273126196CA
+          D076D344BB295360395C4BAA3CB40DF2B4F283F44461FE2B73CC82009F2E56F7
+          EAA579E40D0B61F174DD5DEEBB1B948CD6264F2823BC0295E08F7CC3E0D3A1E5
+          734F9BCC05B7FD855E2B418D0C34C65CF9F9667E23963FCA9FE174A8E4F09848
+          A8435DCC7CCD91200D8EA9DFA5A5B8DBD09D1A4F2FA8F90C7373B9AD804B81F3
+          0B693257612A96BE416C115248D0879CC047B812898FA0EA6EAF50379A5AC0E3
+          70244BA1BBEC91E1945CC073480080091A9DBE7645ACAC199AEDA6D2CA62A4CD
+          669162269E42E16FF7EEB3F8631C6A34B9B998D2E806CDBEC4EF3D13383E27E2
+          E7A4FD6990E0E1732D331F290AF89E2A45DAC2E63B29102CD26D25669E86DCAF
+          11C53AB5504931679BC656E6D0769942F04871CA6726619B486BC837205C14BE
+          26A16787721AE24991324587D116B1221C5C2E728A6DF3446AEEA8662B761703
+          5AA3A93EA5468CEF69A61AD3221B3783A7EFAA052A2E14892F00BF91ED22CD24
+          1CA4BBD4AD8C253A751AD1467933B5CD264CC6B3D355838BC339B49AC6B60D42
+          E7BA799CE832D81B59A8A56DFEEC619A788706BC5A096B837D00048E9602C99E
+          2D4580546492FA7CD9E473E6D9DFF77D123847398C06ED765240D2C3532764F6
+          138AB6AB5B55C20B659004C87684FB84127A981F04A8EA65F51ED974001C4680
+          82DCCD6EF198DD0329AAFA85CE3073B334DCBA24C8DCCCA26271EE3FC32C3B80
+          FDA05C0052C6A16D52C3F0B46507E733EBBA39E6C0DE5415B4C90E7662D0F9E6
+          698E6681A340D40D50784E00537873887974923E1244874FAF455C4E21D46798
+          3CC02E0D272806C476FEAAF478B1203B217406B60360349B5845AD74D53A75B9
+          95A0FC4712EAD54124C59E44C656E6D0769943140E63067212330B10D7B81B90
+          2F3364BE25E59E1DC86B892644CC587D15EBB8B61F985CC369B4F3446AEEA853
+          0376794E20E25E64CAF47C28FF00EDCFA05CB975E3FCB8969FA51920436AC7E2
+          1FA2D4FB277CD3DFFF0015CB92E37CB7FC7E01B0E711F2B3D07EABAAF919DDD7
+          EFCDBAE5CB9568892D4262980B9C204469B68565E244546C5A0DA2D0B9726C13
+          47409C5DC4BE9C99FEE85FA469E89DA260D48B40A91DB9765CB96FA623CB5413
+          11AE1BFF00AEA9F790ADC5CFF059F9D9FA2E5C95FCC880CDA4E334EE7CE7F44C
+          52FF00E433D5DFA050B933FC3FC816C6871012E137E67EBF955A89FE146D9BFA
+          A85CB9FE98865EA25AC030B448001388AB24589BBB53BA4B373D21B41B7F9972
+          E57DFDC69EA52A9B54ED11DB556E186E7F2152B96D847A93C0BFBCABF95BFA2B
+          6207338EF9597DF7DD72E48FD6FF00D20BF485E286695FF03BF447E36C0D7B43
+          4003EEF4EC2C3E4172E5A1E9437D267B5C7C4ADE93FA25B10E395A77937DFCC5
+          72E545A8AF463543FBA7FA9FD1254AA1F1E24C179913AD82E5C9A3A336C16B1B
+          54ED11DB556E19A9FC8572E4BF499EA7FFD9
+        }
+        ShowHint = True
+        Stretch = True
+        Transparent = True
+      end
+      object lbl_GeneralInformationHeading: TLabel
+        Left = 20
+        Height = 24
+        Top = 24
+        Width = 648
+        Alignment = taCenter
+        AutoSize = False
+        Caption = 'Welcome to Golf Helper.'
+        Font.Color = clYellow
+        Font.Height = -19
+        Font.Name = 'Arial'
+        ParentColor = False
+        ParentFont = False
+        WordWrap = True
+      end
+      object lbl_GeneralInformationParagraph: TLabel
+        Left = 20
+        Height = 296
+        Hint = 'General Instructions'
+        Top = 64
+        Width = 648
+        AutoSize = False
+        Caption = 'Paragraph of information'
+        Font.Color = clYellow
+        Font.Height = -15
+        Font.Name = 'Arial'
+        ParentColor = False
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+        WordWrap = True
+      end
+    end
+    object page_Course: TTabSheet
+      Hint = 'Information about the current loaded Club'
+      Caption = 'Course Info'
+      ClientHeight = 572
+      ClientWidth = 695
+      ParentShowHint = False
+      ShowHint = True
+      TabVisible = False
+      object lbl_pageCourseClubName: TLabel
+        Left = 4
+        Height = 24
+        Hint = 'Current Course and Tee (use menus to change)'
+        Top = 16
+        Width = 680
+        AutoSize = False
+        Caption = 'lbl_pageCourseClubName'
+        Font.Height = -13
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
+      end
+      object grp_ClubInformation: TGroupBox
+        Left = 4
+        Height = 145
+        Top = 40
+        Width = 328
+        Caption = 'Location'
+        ClientHeight = 127
+        ClientWidth = 324
+        TabOrder = 0
+        object lbl_ClubCountry: TLabel
+          Left = 6
+          Height = 16
+          Top = 8
+          Width = 89
+          Caption = 'AddressCountry'
+          ParentColor = False
+        end
+        object lbl_ClubMunicipality: TLabel
+          Left = 6
+          Height = 16
+          Top = 24
+          Width = 107
+          Caption = 'AddressMunicpality'
+          ParentColor = False
+        end
+        object lbl_ClubRegion: TLabel
+          Left = 6
+          Height = 16
+          Top = 40
+          Width = 87
+          Caption = 'AddressRegion'
+          ParentColor = False
+        end
+        object lbl_ClubStreet: TLabel
+          Left = 6
+          Height = 16
+          Top = 56
+          Width = 79
+          Caption = 'AddressStreet'
+          ParentColor = False
+        end
+        object lbl_ClubPostcode: TLabel
+          Left = 7
+          Height = 16
+          Top = 72
+          Width = 99
+          Caption = 'AddressPostcode'
+          ParentColor = False
+        end
+        object lbl_ClubPhone: TLabel
+          Left = 6
+          Height = 16
+          Top = 88
+          Width = 83
+          Caption = 'AddressPhone'
+          ParentColor = False
+        end
+        object lbl_ClubWebsite: TLabel
+          Left = 7
+          Height = 16
+          Top = 104
+          Width = 92
+          Caption = 'AddressWebsite'
+          ParentColor = False
+          OnClick = lbl_ClubWebsiteClick
+        end
+      end
+      object grp_ClubAmenities: TGroupBox
+        Left = 339
+        Height = 145
+        Top = 40
+        Width = 345
+        Caption = 'Club Amenities'
+        ClientHeight = 127
+        ClientWidth = 341
+        TabOrder = 1
+        object Memo_amenities: TMemo
+          Left = 0
+          Height = 119
+          Top = 8
+          Width = 341
+          Align = alBottom
+          BorderStyle = bsNone
+          Lines.Strings = (
+            'Memo_amenities'
+          )
+          ReadOnly = True
+          TabOrder = 0
+        end
+      end
+      object grp_CourseAndTeeInfo: TGroupBox
+        Left = 4
+        Height = 112
+        Top = 192
+        Width = 680
+        Caption = 'General Course and Tee information'
+        ClientHeight = 94
+        ClientWidth = 676
+        ParentColor = False
+        TabOrder = 2
+        object lbl_CourseLength: TLabel
+          Left = 6
+          Height = 16
+          Top = 8
+          Width = 100
+          Caption = 'lbl_CourseLength'
+          Color = clDefault
+          ParentColor = False
+          Transparent = False
+        end
+        object lbl_CourseCourseIndex: TLabel
+          Left = 7
+          Height = 16
+          Top = 56
+          Width = 132
+          Caption = 'lbl_CourseCourseIndex'
+          Color = clDefault
+          ParentColor = False
+          Transparent = False
+        end
+        object lbl_CourseSlopeIndex: TLabel
+          Left = 6
+          Height = 16
+          Top = 72
+          Width = 123
+          Caption = 'lbl_CourseSlopeIndex'
+          Color = clDefault
+          ParentColor = False
+          Transparent = False
+        end
+        object lbl_CoursePar: TLabel
+          Left = 6
+          Height = 16
+          Top = 40
+          Width = 81
+          Caption = 'lbl_CoursePar'
+          Color = clDefault
+          ParentColor = False
+          Transparent = False
+        end
+        object lbl_CourseNumberOfHoles: TLabel
+          Left = 6
+          Height = 16
+          Top = 24
+          Width = 152
+          Caption = 'lbl_CourseNumberOfHoles'
+          Color = clDefault
+          ParentColor = False
+          Transparent = False
+        end
+      end
+      object grp_CourseHoles: TGroupBox
+        Left = 0
+        Height = 268
+        Top = 304
+        Width = 695
+        Align = alBottom
+        Caption = 'Course'
+        TabOrder = 3
+      end
+    end
+    object page_handicap: TTabSheet
+      Hint = 'EGA Handicap tools and information'
+      Caption = 'EGA/USGA Handicap'
+      ClientHeight = 572
+      ClientWidth = 695
+      ParentShowHint = False
+      ShowHint = True
+      TabVisible = False
+      object lbl_pageHandicapClubName: TLabel
+        Left = 4
+        Height = 24
+        Top = 16
+        Width = 680
+        AutoSize = False
+        Caption = 'lbl_pageHandicapClubName'
+        Font.Height = -13
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object grp_playerinfo: TGroupBox
+        Left = 4
+        Height = 88
+        Top = 48
+        Width = 680
+        Caption = 'Player Information'
+        ClientHeight = 70
+        ClientWidth = 676
+        TabOrder = 0
+        object lbl_playername: TLabel
+          Left = 6
+          Height = 16
+          Top = 16
+          Width = 38
+          Caption = 'Name:'
+          FocusControl = edt_playername
+          ParentColor = False
+        end
+        object edt_playername: TEdit
+          Left = 70
+          Height = 23
+          Top = 9
+          Width = 240
+          AutoSize = False
+          TabOrder = 0
+          Text = 'Type your name here'
+        end
+        object lbl_playerhandicap: TLabel
+          Left = 6
+          Height = 16
+          Top = 44
+          Width = 115
+          Caption = 'Exact EGA Handicap:'
+          ParentColor = False
+        end
+        object edt_playerhandicap: TEdit
+          Left = 151
+          Height = 23
+          Top = 37
+          Width = 24
+          ReadOnly = True
+          TabOrder = 1
+          Text = '28'
+        end
+        object ud_playerhandicap0: TUpDown
+          Left = 134
+          Height = 23
+          Hint = 'Change your handicap here'
+          Top = 37
+          Width = 17
+          AlignButton = udLeft
+          Associate = edt_playerhandicap
+          Min = 0
+          Max = 54
+          ParentShowHint = False
+          Position = 28
+          ShowHint = True
+          TabOrder = 2
+          Wrap = False
+          OnClick = ud_playerhandicap0Click
+        end
+        object lbl_decimal: TLabel
+          Left = 179
+          Height = 22
+          Top = 40
+          Width = 5
+          Caption = '.'
+          Font.Height = -16
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object edt_playerhandicap0: TEdit
+          Left = 191
+          Height = 23
+          Top = 37
+          Width = 24
+          ReadOnly = True
+          TabOrder = 3
+          Text = '0'
+        end
+        object ud_playerhandicap1: TUpDown
+          Left = 215
+          Height = 23
+          Hint = 'Change your handicap here'
+          Top = 37
+          Width = 17
+          Associate = edt_playerhandicap0
+          Min = 0
+          Max = 9
+          ParentShowHint = False
+          Position = 0
+          ShowHint = True
+          TabOrder = 4
+          Wrap = False
+          OnClick = ud_playerhandicap1Click
+        end
+        object lbl_playinghandicap: TLabel
+          Left = 239
+          Height = 16
+          Top = 40
+          Width = 103
+          Caption = 'Playing Handicap: '
+          FocusControl = edt_playername
+          ParentColor = False
+        end
+        object lbl_Category: TLabel
+          Left = 334
+          Height = 16
+          Top = 9
+          Width = 145
+          Caption = 'EGA Handicap Category: 0'
+          ParentColor = False
+        end
+      end
+      object grp_Stableford: TGroupBox
+        Left = 4
+        Height = 104
+        Top = 136
+        Width = 680
+        Caption = 'Stableford Handicap Adjustment (EGA)'
+        ClientHeight = 86
+        ClientWidth = 676
+        TabOrder = 1
+        object lbl_StablefordPoints: TLabel
+          Left = 6
+          Height = 16
+          Top = 15
+          Width = 36
+          Caption = 'Points'
+          ParentColor = False
+        end
+        object ud_stablefordpoints: TUpDown
+          Left = 53
+          Height = 23
+          Hint = 'Change your Stableford score here'
+          Top = 16
+          Width = 17
+          AlignButton = udLeft
+          Associate = edt_stablefordpoints
+          Min = 0
+          ParentShowHint = False
+          Position = 36
+          ShowHint = True
+          TabOrder = 0
+          Wrap = False
+          OnClick = ud_stablefordpointsClick
+        end
+        object edt_stablefordpoints: TEdit
+          Left = 70
+          Height = 23
+          Top = 16
+          Width = 24
+          ReadOnly = True
+          TabOrder = 1
+          Text = '36'
+        end
+        object lbl_playinghandicap1: TLabel
+          Left = 110
+          Height = 16
+          Top = 16
+          Width = 97
+          Caption = 'Playing Handicap'
+          ParentColor = False
+        end
+        object lbl_playinghandicap2: TLabel
+          Left = 215
+          Height = 16
+          Hint = 'Your calculated playing handicap for this course and tee'
+          Top = 16
+          Width = 8
+          Caption = '0'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object lbl_adjustedHandicap: TLabel
+          Left = 7
+          Height = 16
+          Top = 48
+          Width = 143
+          Caption = 'New Exact EGA Handicap:'
+          ParentColor = False
+        end
+        object lbl_adjustedHandicap1: TLabel
+          Left = 215
+          Height = 16
+          Hint = 'Adjusted handicap based on your score'
+          Top = 48
+          Width = 8
+          Caption = '0'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+      end
+      object grp_HandicapScore: TGroupBox
+        Left = 4
+        Height = 280
+        Hint = 'Input a scorecard here'
+        Top = 240
+        Width = 680
+        Caption = 'Input scores'
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 2
+      end
+      object grp_StablefordSummary: TGroupBox
+        Left = 4
+        Height = 49
+        Top = 520
+        Width = 680
+        Caption = 'Stableford Score Summary'
+        ClientHeight = 31
+        ClientWidth = 676
+        TabOrder = 3
+        object cmd_resetScores: TBitBtn
+          Left = 558
+          Height = 30
+          Top = -1
+          Width = 112
+          Caption = 'Reset Scores'
+          Kind = bkRetry
+          ModalResult = 4
+          OnClick = cmd_resetScoresClick
+          TabOrder = 0
+        end
+        object lbl_StablefordScoreFirst9: TLabel
+          Left = 7
+          Height = 16
+          Top = 7
+          Width = 48
+          Caption = 'In:   0pts'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object lbl_StablefordScoreLast9: TLabel
+          Left = 69
+          Height = 16
+          Top = 7
+          Width = 58
+          Caption = 'Out:   0pts'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object lbl_StablefordScoreTotal: TLabel
+          Left = 179
+          Height = 16
+          Top = 7
+          Width = 65
+          Caption = 'Total:   0pts'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object cmd_UpdateHandicap: TBitBtn
+          Left = 366
+          Height = 30
+          Top = -1
+          Width = 171
+          Caption = 'Calculate new handicap'
+          Kind = bkYes
+          ModalResult = 6
+          OnClick = cmd_UpdateHandicapClick
+          TabOrder = 1
+        end
+      end
+    end
+    object page_congu: TTabSheet
+      Hint = 'CONGU Handicap tools and information'
+      Caption = 'CONGU Handicap'
+      ClientHeight = 572
+      ClientWidth = 695
+      ParentShowHint = False
+      ShowHint = True
+      TabVisible = False
+      object lbl_pageGameClubName: TLabel
+        Left = 4
+        Height = 24
+        Top = 16
+        Width = 680
+        AutoSize = False
+        Caption = 'lbl_pageGameClubName'
+        Font.Height = -13
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object grp_CONGUplayerinfo: TGroupBox
+        Left = 4
+        Height = 88
+        Top = 48
+        Width = 680
+        Caption = 'Player Information'
+        ClientHeight = 70
+        ClientWidth = 676
+        TabOrder = 0
+        object lbl_CONGUplayername: TLabel
+          Left = 6
+          Height = 16
+          Top = 16
+          Width = 38
+          Caption = 'Name:'
+          FocusControl = edt_CONGUplayername
+          ParentColor = False
+        end
+        object edt_CONGUplayername: TEdit
+          Left = 70
+          Height = 23
+          Hint = 'Type your name here'
+          Top = 9
+          Width = 240
+          AutoSize = False
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 0
+          Text = 'Type your name here'
+        end
+        object lbl_CONGUplayerhandicap: TLabel
+          Left = 6
+          Height = 16
+          Top = 44
+          Width = 105
+          Caption = 'CONGU Handicap:'
+          ParentColor = False
+        end
+        object edt_CONGUplayerhandicap0: TEdit
+          Left = 151
+          Height = 23
+          Top = 37
+          Width = 24
+          ReadOnly = True
+          TabOrder = 1
+          Text = '28'
+        end
+        object ud_CONGUplayerhandicap0: TUpDown
+          Left = 134
+          Height = 23
+          Hint = 'Change your handicap here'
+          Top = 37
+          Width = 17
+          AlignButton = udLeft
+          Associate = edt_CONGUplayerhandicap0
+          Min = 0
+          Max = 28
+          ParentShowHint = False
+          Position = 28
+          ShowHint = True
+          TabOrder = 2
+          Wrap = False
+          OnClick = ud_CONGUplayerhandicap0Click
+        end
+        object lbl_decimal1: TLabel
+          Left = 179
+          Height = 22
+          Top = 40
+          Width = 5
+          Caption = '.'
+          Font.Height = -16
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object edt_CONGUplayerhandicap1: TEdit
+          Left = 191
+          Height = 23
+          Top = 37
+          Width = 24
+          ReadOnly = True
+          TabOrder = 3
+          Text = '0'
+        end
+        object ud_CONGUplayerhandicap1: TUpDown
+          Left = 215
+          Height = 23
+          Hint = 'Change your handicap here'
+          Top = 37
+          Width = 17
+          Associate = edt_CONGUplayerhandicap1
+          Min = 0
+          Max = 9
+          ParentShowHint = False
+          Position = 0
+          ShowHint = True
+          TabOrder = 4
+          Wrap = False
+          OnClick = ud_CONGUplayerhandicap1Click
+        end
+        object lbl_CONGUCategory: TLabel
+          Left = 334
+          Height = 16
+          Top = 9
+          Width = 167
+          Caption = 'CONGU Handicap Category: 0'
+          ParentColor = False
+        end
+      end
+      object grp_CONGUHandicapScore: TGroupBox
+        Left = 4
+        Height = 280
+        Top = 240
+        Width = 680
+        Caption = 'Input scores'
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 1
+      end
+      object grp_CONGUScoreSummary: TGroupBox
+        Left = 4
+        Height = 49
+        Top = 521
+        Width = 680
+        Caption = 'Raw And (Stableford/StrokeIndex adjusted) Score Summary'
+        ClientHeight = 31
+        ClientWidth = 676
+        TabOrder = 2
+        object cmd_CONGUresetScores: TBitBtn
+          Left = 590
+          Height = 26
+          Top = -1
+          Width = 78
+          AutoSize = True
+          Caption = 'Reset'
+          Kind = bkRetry
+          ModalResult = 4
+          OnClick = cmd_resetScoresClick
+          TabOrder = 0
+        end
+        object lbl_CONGUGrossScoreFirst9: TLabel
+          Left = 7
+          Height = 16
+          Top = 7
+          Width = 31
+          Caption = 'In:   0'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object lbl_CONGUGrossScoreLast9: TLabel
+          Left = 54
+          Height = 16
+          Top = 7
+          Width = 41
+          Caption = 'Out:   0'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object lbl_CONGUGrossScoreTotal: TLabel
+          Left = 110
+          Height = 16
+          Top = 7
+          Width = 48
+          Caption = 'Total:   0'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object cmd_CONGUUpdateHandicap: TBitBtn
+          Left = 454
+          Height = 26
+          Top = -1
+          Width = 133
+          AutoSize = True
+          Caption = 'Adjust handicap'
+          Default = True
+          Kind = bkYes
+          ModalResult = 6
+          OnClick = cmd_CONGUUpdateHandicapClick
+          TabOrder = 1
+        end
+        object lbl_CONGUNettScoreFirst9: TLabel
+          Left = 182
+          Height = 16
+          Top = 7
+          Width = 39
+          Caption = '(In:   0)'
+          Font.Style = [fsBold, fsItalic]
+          ParentColor = False
+          ParentFont = False
+        end
+        object lbl_CONGUNettScoreLast9: TLabel
+          Left = 229
+          Height = 16
+          Top = 7
+          Width = 49
+          Caption = '(Out:   0)'
+          Font.Style = [fsBold, fsItalic]
+          ParentColor = False
+          ParentFont = False
+        end
+        object lbl_CONGUNettScoreTotal: TLabel
+          Left = 285
+          Height = 16
+          Top = 7
+          Width = 58
+          Caption = '(Total:   0)'
+          Font.Style = [fsBold, fsItalic]
+          ParentColor = False
+          ParentFont = False
+        end
+        object lbl_GrossScore: TLabel
+          Left = 390
+          Height = 16
+          Top = 7
+          Width = 48
+          Caption = 'Gross: 0'
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+      end
+      object grp_CONGUStableford: TGroupBox
+        Left = 4
+        Height = 104
+        Top = 136
+        Width = 680
+        Caption = 'Handicap Adjustment (CONGU)'
+        ClientHeight = 86
+        ClientWidth = 676
+        TabOrder = 3
+        object lbl_CONGUGross: TLabel
+          Left = 6
+          Height = 16
+          Top = 15
+          Width = 35
+          Caption = 'Gross'
+          ParentColor = False
+        end
+        object ud_CONGUGross: TUpDown
+          Left = 53
+          Height = 23
+          Hint = 'Change your Stableford score here'
+          Top = 16
+          Width = 17
+          AlignButton = udLeft
+          Associate = edt_CONGUGross
+          Min = -50
+          ParentShowHint = False
+          Position = 0
+          ShowHint = True
+          TabOrder = 0
+          Wrap = False
+          OnChanging = ud_CONGUGrossChanging
+          OnClick = ud_CONGUGrossClick
+        end
+        object edt_CONGUGross: TEdit
+          Left = 70
+          Height = 23
+          Top = 16
+          Width = 24
+          ReadOnly = True
+          TabOrder = 1
+          Text = '0'
+        end
+        object lbl_CONGIadjustedHandicap: TLabel
+          Left = 7
+          Height = 16
+          Top = 48
+          Width = 133
+          Caption = 'New CONGU Handicap:'
+          ParentColor = False
+        end
+        object lbl_CONGUadjustedHandicap1: TLabel
+          Left = 180
+          Height = 16
+          Top = 48
+          Width = 8
+          Caption = '0'
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object lbl_CONGUNett: TLabel
+          Left = 117
+          Height = 16
+          Top = 16
+          Width = 71
+          Caption = 'Net Score : 0'
+          ParentColor = False
+        end
+      end
+    end
+  end
+  object ssbar: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 655
+    Width = 703
+    Panels = <    
+      item
+        Text = 'Golf Helper'
+        Width = 400
+      end    
+      item
+        Alignment = taRightJustify
+        Width = 50
+      end>
+    SimplePanel = False
+  end
+  object Image2: TImage
+    Cursor = crHandPoint
+    Left = 616
+    Height = 15
+    Hint = 'Visit the golml web site'
+    Top = 635
+    Width = 80
+    AutoSize = True
+    OnClick = Image2Click
+    ParentShowHint = False
+    Picture.Data = {
+      1754506F727461626C654E6574776F726B477261706869631810000089504E47
+      0D0A1A0A0000000D49484452000000500000000F080600000073C9488F000000
+      097048597300000B1300000B1301009A9C1800000A4F6943435050686F746F73
+      686F70204943432070726F66696C65000078DA9D53675453E9163DF7DEF4424B
+      8880944B6F5215082052428B801491262A2109104A8821A1D91551C111454504
+      1BC8A088038E8E808C15512C0C8A0AD807E421A28E83A3888ACAFBE17BA36BD6
+      BCF7E6CDFEB5D73EE7ACF39DB3CF07C0080C9648335135800CA9421E11E083C7
+      C4C6E1E42E40810A2470001008B3642173FD230100F87E3C3C2B22C007BE0001
+      78D30B0800C04D9BC0301C87FF0FEA42995C01808401C07491384B0880140040
+      7A8E42A600404601809D98265300A0040060CB6362E300502D0060277FE6D300
+      809DF8997B01005B94211501A09100201365884400683B00ACCF568A45005830
+      0014664BC43900D82D00304957664800B0B700C0CE100BB200080C0030518885
+      2900047B0060C8232378008499001446F2573CF12BAE10E72A00007899B23CB9
+      243945815B082D710757572E1E28CE49172B14366102619A402EC27999193281
+      340FE0F3CC0000A0911511E083F3FD78CE0EAECECE368EB60E5F2DEABF06FF22
+      6262E3FEE5CFAB70400000E1747ED1FE2C2FB31A803B06806DFEA225EE04685E
+      0BA075F78B66B20F40B500A0E9DA57F370F87E3C3C45A190B9D9D9E5E4E4D84A
+      C4425B61CA577DFE67C25FC057FD6CF97E3CFCF7F5E0BEE22481325D814704F8
+      E0C2CCF44CA51CCF92098462DCE68F47FCB70BFFFC1DD322C44962B9582A14E3
+      5112718E449A8CF332A52289429229C525D2FF64E2DF2CFB033EDF3500B06A3E
+      017B912DA85D6303F64B27105874C0E2F70000F2BB6FC1D4280803806883E1CF
+      77FFEF3FFD47A02500806649927100005E44242E54CAB33FC708000044A0812A
+      B0411BF4C1182CC0061CC105DCC10BFC6036844224C4C24210420A64801C7260
+      29AC82422886CDB01D2A602FD4401D34C051688693700E2EC255B80E3D700FFA
+      61089EC128BC81090441C808136121DA8801628A58238E08179985F821C14804
+      128B2420C9881451224B91354831528A542055481DF23D720239875C46BA913B
+      C8003282FC86BC47319481B2513DD40CB543B9A8371A8446A20BD06474319A8F
+      16A09BD072B41A3D8C36A1E7D0AB680FDA8F3E43C730C0E8180733C46C302EC6
+      C342B1382C099363CBB122AC0CABC61AB056AC03BB89F563CFB17704128145C0
+      093604774220611E4148584C584ED848A8201C243411DA093709038451C22722
+      93A84BB426BA11F9C4186232318758482C23D6128F132F107B8843C437241289
+      433227B9900249B1A454D212D246D26E5223E92CA99B34481A2393C9DA646BB2
+      0739942C202BC885E49DE4C3E433E41BE421F25B0A9D624071A4F853E22852CA
+      6A4A19E510E534E5066598324155A39A52DDA8A15411358F5A42ADA1B652AF51
+      87A81334759A39CD8316494BA5ADA295D31A681768F769AFE874BA11DD951E4E
+      97D057D2CBE947E897E803F4770C0D861583C7886728199B18071867197718AF
+      984CA619D38B19C754303731EB98E7990F996F55582AB62A7C1591CA0A954A95
+      26951B2A2F54A9AAA6AADEAA0B55F355CB548FA95E537DAE46553353E3A909D4
+      96AB55AA9D50EB531B5367A93BA887AA67A86F543FA47E59FD890659C34CC34F
+      43A451A0B15FE3BCC6200B6319B3782C216B0DAB86758135C426B1CDD97C762A
+      BB98FD1DBB8B3DAAA9A13943334A3357B352F394663F07E39871F89C744E09E7
+      28A797F37E8ADE14EF29E2291BA6344CB931655C6BAA96979658AB48AB51AB47
+      EBBD36AEEDA79DA6BD45BB59FB810E41C74A275C2747678FCE059DE753D953DD
+      A70AA7164D3D3AF5AE2EAA6BA51BA1BB4477BF6EA7EE989EBE5E809E4C6FA7DE
+      79BDE7FA1C7D2FFD54FD6DFAA7F5470C5806B30C2406DB0CCE183CC535716F3C
+      1D2FC7DBF151435DC34043A561956197E18491B9D13CA3D5468D460F8C69C65C
+      E324E36DC66DC6A326062621264B4DEA4DEE9A524DB9A629A63B4C3B4CC7CDCC
+      CDA2CDD699359B3D31D732E79BE79BD79BDFB7605A785A2CB6A8B6B86549B2E4
+      5AA659EEB6BC6E855A3959A558555A5DB346AD9DAD25D6BBADBBA711A7B94E93
+      4EAB9ED667C3B0F1B6C9B6A9B719B0E5D806DBAEB66DB67D6167621767B7C5AE
+      C3EE93BD937DBA7D8DFD3D070D87D90EAB1D5A1D7E73B472143A563ADE9ACE9C
+      EE3F7DC5F496E92F6758CF10CFD833E3B613CB29C4699D539BD347671767B973
+      83F3888B894B82CB2E973E2E9B1BC6DDC8BDE44A74F5715DE17AD2F59D9BB39B
+      C2EDA8DBAFEE36EE69EE87DC9FCC349F299E593373D0C3C843E051E5D13F0B9F
+      95306BDFAC7E4F434F8167B5E7232F632F9157ADD7B0B7A577AAF761EF173EF6
+      3E729FE33EE33C37DE32DE595FCC37C0B7C8B7CB4FC36F9E5F85DF437F23FF64
+      FF7AFFD100A78025016703898141815B02FBF87A7C21BF8E3F3ADB65F6B2D9ED
+      418CA0B94115418F82AD82E5C1AD2168C8EC90AD21F7E798CE91CE690E85507E
+      E8D6D00761E6618BC37E0C2785878557863F8E7088581AD131973577D1DC4373
+      DF44FA449644DE9B67314F39AF2D4A352A3EAA2E6A3CDA37BA34BA3FC62E6659
+      CCD5589D58496C4B1C392E2AAE366E6CBEDFFCEDF387E29DE20BE37B17982FC8
+      5D7079A1CEC2F485A716A92E122C3A96404C884E3894F041102AA8168C25F213
+      77258E0A79C21DC267222FD136D188D8435C2A1E4EF2482A4D7A92EC91BC3579
+      24C533A52CE5B98427A990BC4C0D4CDD9B3A9E169A76206D323D3ABD31839291
+      907142AA214D93B667EA67E66676CBAC6585B2FEC56E8BB72F1E9507C96BB390
+      AC05592D0AB642A6E8545A28D72A07B267655766BFCD89CA3996AB9E2BCDEDCC
+      B3CADB90379CEF9FFFED12C212E192B6A5864B572D1D58E6BDAC6A39B23C7179
+      DB0AE315052B865606AC3CB88AB62A6DD54FABED5797AE7EBD267A4D6B815EC1
+      CA82C1B5016BEB0B550AE5857DEBDCD7ED5D4F582F59DFB561FA869D1B3E1589
+      8AAE14DB1797157FD828DC78E51B876FCABF99DC94B4A9ABC4B964CF66D266E9
+      E6DE2D9E5B0E96AA97E6970E6E0DD9DAB40DDF56B4EDF5F645DB2F97CD28DBBB
+      83B643B9A3BF3CB8BC65A7C9CECD3B3F54A454F454FA5436EED2DDB561D7F86E
+      D1EE1B7BBCF634ECD5DB5BBCF7FD3EC9BEDB5501554DD566D565FB49FBB3F73F
+      AE89AAE9F896FB6D5DAD4E6D71EDC703D203FD07230EB6D7B9D4D51DD23D5452
+      8FD62BEB470EC71FBEFE9DEF772D0D360D558D9CC6E223704479E4E9F709DFF7
+      1E0D3ADA768C7BACE107D31F761D671D2F6A429AF29A469B539AFB5B625BBA4F
+      CC3ED1D6EADE7AFC47DB1F0F9C343C59794AF354C969DAE982D39367F2CF8C9D
+      959D7D7E2EF9DC60DBA2B67BE763CEDF6A0F6FEFBA1074E1D245FF8BE73BBC3B
+      CE5CF2B874F2B2DBE51357B8579AAF3A5F6DEA74EA3CFE93D34FC7BB9CBB9AAE
+      B95C6BB9EE7ABDB57B66F7E91B9E37CEDDF4BD79F116FFD6D59E393DDDBDF37A
+      6FF7C5F7F5DF16DD7E7227FDCECBBBD97727EEADBC4FBC5FF440ED41D943DD87
+      D53F5BFEDCD8EFDC7F6AC077A0F3D1DC47F7068583CFFE91F58F0F43058F998F
+      CB860D86EB9E383E3939E23F72FDE9FCA743CF64CF269E17FEA2FECBAE17162F
+      7EF8D5EBD7CED198D1A197F29793BF6D7CA5FDEAC0EB19AFDBC6C2C61EBEC978
+      33315EF456FBEDC177DC771DEFA3DF0F4FE47C207F28FF68F9B1F553D0A7FB93
+      199393FF040398F3FC63332DDB000000206348524D00007A25000080830000F9
+      FF000080E9000075300000EA6000003A980000176F925FC54600000543494441
+      5478DAE498CB8F154514C67F5FD585E12524063411C306220B171A0D108C0451
+      C4C4680C182046F7B310EE7FC2662624FA17880B896E31BC11820AFB4190383E
+      1021260E880CDCAEE3A21E5DDD7313495CD2C9BDDDA71EA7CFF9EA3BA74EB5CC
+      8CEA5A9DEE4F4A9AC98D66B611F83389B7012627273B131FD76BD0074FD2AD04
+      DAA7C0646A9B496D6BD2B8DB00375F3A0A4AB325E488B20C9CD233E0D2427850
+      96AB3E3930D7CAE6D2181FDB4C80B7F8EC539F8BED514E7DD55C7356740667E5
+      1DA6D4EE8CE0A23D218D6975A46759B13394BBA164D30B073E2C0016F02A464E
+      560CA4EA5F533195B9954F4547048625B0A271A650BDDC8A53412182E28C901C
+      3297E718E6427136EBB1028A11D2AF0524E9758609820BA05A5F7E6F7C26E9CC
+      FDC8084AFAD5CEA9410CD9BFE4CBE6D17268B9B100BCB1979915864E4C4CF43B
+      23BB488C21EAB2442C0486300CA122670A5BFA53ADB2FA8FE38B9404EBC9D149
+      4503CA7B49F6A80C8D56C4C9CAB7F49E649529BD42E51DD2424CDCA382370EC4
+      CA3DBC35F8907F23064DC320C45F94472C6A1A163781454D83808966C4446858
+      D2342C1D05968486254D605913D1581E022B9AC08A60AC18192B9BE85C6BA990
+      AC80D282669D452C37756564F512A726B5CCEBF4B40B5923E9FE6F1215E09B06
+      0C8EEF9FE1C4BE194EEEFD8144324EEFB9CA99DDD710421867DFFD31530510E7
+      DFFA89F3BB66B9F0E62C32B8B8E36700963586197CF7CA0D002E6DB941C75DA9
+      D563290757948B0C52CFD2FAB1024ED6E5BD893A7CF2F0A2AF1A3E906466F631
+      70F851001B0E879985BCF7C9EA68BFE0F80733BC7164639547E0D4FB5779EDE8
+      064C707AF735B67DB5BEF5406D6EDD7A6C5DCA4BD1C08BDB7F61F3D9B57CFFEA
+      6F7DFE17A795E2DD50619B59621F460712B5A1DD324BED2853C91F3907CADAB4
+      5140B73ED82D030FFF1768F99A9A9AEAC8FDEBC4BE2B9CDC7B058D4F0075CA2C
+      D7855DB35CD8395BE66C39FD2CDF6EFB954DE79EE9B15D0BC2B2E4376BF39D6A
+      BEC53D2201565B620B43A9453BE56BCA62A868E832DB3D0A7053535363E55E60
+      80E0F5CF9FA39BB25B6F55B52D0EA1CCDE7A6C1D5BBF5ED7716AF399B58C5B85
+      950D3C31324CC292B3EABC46D54656EF247DD735666DAB5EA55FB5C959BD2219
+      40339352E8D4CC1A0E871C3A74680170C3E110491C3C78B0F3FE9D4736C61CB8
+      FF4AB168C7171B38B5E72AA7775F63FB97EB8B09E7DEB9CE376F5FEF70E29F81
+      EB24EC7BDED127C9A54DBF73F9E59B89616D49D1D949AD1F7B99455692BF16A4
+      442B23D59D58ED37316DA930D472BB91F26007BC9A7519B8DC96019C7DFE33E6
+      56C53AD08551CC63E47ACA50AAAFB2A3A6B6AFD485A9EDFEC0314113FB1CDC5D
+      2496862615CD56DACD0582606E71AA1D53BD97F50517EB40ABEACB584FC6F921
+      D77D555FB7264D72B697A427E748171768D368292F1EF82895BD666B6A16F6C1
+      ABC356523E9174B26BE33D8D1C8DF304E769DC80876E40E33C23E779E83D0FBC
+      E381F33CF09E0703CFBCF7CCA73B827F9CE7BEF7DCF30E19DCF38EBF07E2AE17
+      77BC98F330E7C59D019DCD289728396C95ECAC435363EACCB20376EA4BA16AC7
+      B5EAA4659D865E0ECC208E032F87700DDEFCFC7C090F954CA12A3F58953BAC53
+      42A9CA8AF56E228DD970AC14FA6940557C9B61A636B7595B24DB980C6CD003C5
+      AA5A707C01AF05593345579206D50782D509C45BF5F16D381C323D3DCDF4F474
+      CDBCDB59E9AABFFE6897C1A55A4C29DFB8EE59389F6DF3595654E7DEFA0CACEE
+      582BB2C5B36F7D66F67143C109F3F55997F66CEBDBB00CBE6DA70A73E89E9573
+      3953F490CFC8EAB0BDFE985040AC3F2A541F11E883F7F4E53D8FFDD7987F0700
+      2B6F16F79F3DC4820000000049454E44AE426082
+    }
+    ShowHint = True
+    Transparent = True
+  end
+  object topmenu: TMainMenu
+    left = 8
+    top = 600
+    object mnu_File: TMenuItem
+      Caption = '&File'
+      object mnu_fileImportGolfml: TMenuItem
+        Caption = '&Import Golf Course from file...'
+        Hint = 'You can also Drag-Drop a golfml file onto the main window'
+        OnClick = mnu_fileImportGolfmlClick
+      end
+      object mnu_fileRecentCourses: TMenuItem
+        Caption = 'Import &Recent Courses'
+        Enabled = False
+        Hint = 'You can also Drag-Drop a golfml file onto the main window'
+      end
+      object mnu_fileExit: TMenuItem
+        Caption = 'E&xit'
+        Hint = 'Close the Application'
+        OnClick = mnu_fileExitClick
+      end
+    end
+    object mnu_course: TMenuItem
+      Caption = '&Course'
+      Hint = 'Choose from the available courses'
+      OnClick = mnu_courseClick
+    end
+    object mnu_tee: TMenuItem
+      Caption = '&Tee'
+      Hint = 'Choose from the available tees'
+      OnClick = mnu_teeClick
+    end
+    object mnu_Options: TMenuItem
+      Caption = '&Options'
+      Hint = 'Metric=metres, Imperial=yards'
+      object mnu_optionsMetric: TMenuItem
+        AutoCheck = True
+        Caption = 'Metric'
+        GroupIndex = 1
+        Hint = 'All distances in Metres'
+        RadioItem = True
+        OnClick = mnu_optionsMetricClick
+      end
+      object mnu_optionsImperial: TMenuItem
+        AutoCheck = True
+        Caption = 'Imperial'
+        GroupIndex = 1
+        Hint = 'All distances in Yards'
+        RadioItem = True
+        OnClick = mnu_optionsImperialClick
+      end
+    end
+    object mnu_help: TMenuItem
+      Caption = '&Help'
+      object mnu_helpAboutHCPClass: TMenuItem
+        Caption = 'About HCPClass...'
+        Hint = '(c)2013 Gordon Bamber'
+        OnClick = mnu_helpAboutHCPClassClick
+      end
+      object mnu_helpAboutgolfml: TMenuItem
+        Caption = 'About golfml...'
+        OnClick = mnu_helpAboutgolfmlClick
+      end
+      object mnu_helpAbout: TMenuItem
+        Caption = 'About...'
+        Hint = '(c)2013 Gordon Bamber'
+        OnClick = mnu_helpAboutClick
+      end
+    end
+  end
+  object dlg_Import: TOpenDialog
+    Title = 'Open Golfml File'
+    Filter = 'Golfml Files|*.xml'
+    left = 40
+    top = 600
+  end
+end

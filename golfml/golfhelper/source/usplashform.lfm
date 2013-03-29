@@ -1,0 +1,10 @@
+object Splashform: TSplashform
+  Left = 718
+  Height = 240
+  Top = 362
+  Width = 320
+  BorderStyle = bsNone
+  Caption = 'Splashform'
+  FormStyle = fsSplash
+  LCLVersion = '1.0.6.0'
+end
