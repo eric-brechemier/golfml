@@ -20,6 +20,10 @@ unit umainform;
   MA 02111-1307, USA.
 
   Uses VersionSupport Mike Thompson - mike.cornflake@gmail.com
+  $Header$
+
+  $Revision$
+
 }
 
 {$mode objfpc}{$H+}
@@ -1710,4 +1714,4 @@ begin
 end;
 
 
-end.
+end.

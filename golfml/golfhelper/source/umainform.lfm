@@ -7,7 +7,7 @@ object mainform: Tmainform
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Application Title'
-  ClientHeight = 674
+  ClientHeight = 678
   ClientWidth = 703
   Font.Height = -12
   Font.Name = 'System'
@@ -16,7 +16,7 @@ object mainform: Tmainform
   OnCreate = FormCreate
   OnDropFiles = FormDropFiles
   Position = poDesktopCenter
-  LCLVersion = '0.9.30'
+  LCLVersion = '1.0.8.0'
   object cmd_close: TBitBtn
     Left = 616
     Height = 30
@@ -47,14 +47,14 @@ object mainform: Tmainform
       Hint = 'General Information Page'
       Caption = 'General Information'
       ClientHeight = 572
-      ClientWidth = 699
+      ClientWidth = 695
       ParentShowHint = False
       ShowHint = True
       object Image1: TImage
         Left = 0
         Height = 572
         Top = 0
-        Width = 699
+        Width = 695
         Align = alClient
         ParentShowHint = False
         Picture.Data = {
@@ -364,7 +364,7 @@ object mainform: Tmainform
         Top = 40
         Width = 328
         Caption = 'Location'
-        ClientHeight = 128
+        ClientHeight = 127
         ClientWidth = 324
         TabOrder = 0
         object lbl_ClubCountry: TLabel
@@ -431,7 +431,7 @@ object mainform: Tmainform
         Top = 40
         Width = 345
         Caption = 'Club Amenities'
-        ClientHeight = 128
+        ClientHeight = 127
         ClientWidth = 341
         TabOrder = 1
         object Memo_amenities: TMemo
@@ -454,7 +454,7 @@ object mainform: Tmainform
         Top = 192
         Width = 680
         Caption = 'General Course and Tee information'
-        ClientHeight = 95
+        ClientHeight = 94
         ClientWidth = 676
         ParentColor = False
         TabOrder = 2
@@ -545,7 +545,7 @@ object mainform: Tmainform
         Top = 48
         Width = 680
         Caption = 'Player Information'
-        ClientHeight = 71
+        ClientHeight = 70
         ClientWidth = 676
         TabOrder = 0
         object lbl_playername: TLabel
@@ -660,7 +660,7 @@ object mainform: Tmainform
         Top = 136
         Width = 680
         Caption = 'Stableford Handicap Adjustment (EGA)'
-        ClientHeight = 87
+        ClientHeight = 86
         ClientWidth = 676
         TabOrder = 1
         object lbl_StablefordPoints: TLabel
@@ -752,7 +752,7 @@ object mainform: Tmainform
         Top = 520
         Width = 680
         Caption = 'Stableford Score Summary'
-        ClientHeight = 32
+        ClientHeight = 31
         ClientWidth = 676
         TabOrder = 3
         object cmd_resetScores: TBitBtn
@@ -837,7 +837,7 @@ object mainform: Tmainform
         Top = 48
         Width = 680
         Caption = 'Player Information'
-        ClientHeight = 71
+        ClientHeight = 70
         ClientWidth = 676
         TabOrder = 0
         object lbl_CONGUplayername: TLabel
@@ -956,7 +956,7 @@ object mainform: Tmainform
         Top = 521
         Width = 680
         Caption = 'Raw And (Stableford/StrokeIndex adjusted) Score Summary'
-        ClientHeight = 32
+        ClientHeight = 31
         ClientWidth = 676
         TabOrder = 2
         object cmd_CONGUresetScores: TBitBtn
@@ -1060,7 +1060,7 @@ object mainform: Tmainform
         Top = 136
         Width = 680
         Caption = 'Handicap Adjustment (CONGU)'
-        ClientHeight = 87
+        ClientHeight = 86
         ClientWidth = 676
         TabOrder = 3
         object lbl_CONGUGross: TLabel
@@ -1128,8 +1128,8 @@ object mainform: Tmainform
   end
   object ssbar: TStatusBar
     Left = 0
-    Height = 18
-    Top = 656
+    Height = 23
+    Top = 655
     Width = 703
     Panels = <    
       item
@@ -1362,4 +1362,4 @@ object mainform: Tmainform
     left = 40
     top = 600
   end
-end
+end
