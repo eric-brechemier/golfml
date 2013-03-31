@@ -1068,6 +1068,7 @@ begin
       Tag := f; // This is used to identify which menu is clicked
       AutoCheck := True;
       RadioItem := True;
+      GroupIndex:=1;
       OnClick := @CourseMenuClick; // common handler for all Courses
     end;
     mnu_Course.Enabled := True;
@@ -1097,6 +1098,7 @@ begin
       Tag := f; // This is used to identify which menu is clicked
       AutoCheck := True;
       RadioItem := True;
+      GroupIndex:=1;
       OnClick := @TeeMenuClick; // common handler for all Tees
     end;
     mnu_Tee.Enabled := True;
@@ -1429,6 +1431,20 @@ begin
   // Set up mainform
   Caption := Application.Title;
   Icon := Application.Icon;
+  {$IFDEF WINDOWS}
+    font.name:='Arial';
+    With lbl_GeneralInformationParagraph do begin
+       font.name:='Arial';
+       font.size:=10;
+    end;
+  {$ENDIF}
+  {$IFDEF LINUX}
+    font.name:='Default';
+    With lbl_GeneralInformationParagraph do begin
+       font.name:='Default';
+       font.size:=8;
+    end;
+  {$ENDIF}
   mnu_helpAbout.Caption := 'About ' + Application.Title + '...';
   ssbar.Panels[0].Text := Application.Title;
   Application.OnHint := @ShowHint;
@@ -1463,7 +1479,7 @@ begin
     GetOS + '.ini';
   {$endif}
   {$ifdef Unix}
-  ConfigFilePath := GetAppConfigFile(False) + '.conf';
+  ConfigFilePath := GetAppConfigFile(False);
   {$endif}
   INI := TIniFile.Create(ConfigFilePath);
   INI.WriteString('ProgramInfo', 'Application', Application.Title);
@@ -1694,4 +1710,4 @@ begin
 end;
 
 
-end.
+end.

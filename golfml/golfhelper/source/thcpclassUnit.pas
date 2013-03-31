@@ -196,7 +196,7 @@ type
     // Property Vars for Exact EGA Handicap
     fTotalStablefordPoints: cardinal; // Property 'TotalStablefordPoints'
     fScoreArray: array[0..17] of cardinal; // Property 'ScoreArray'
-    fAdjustedScoreArray: array[0..17] of cardinal;
+    fAdjustedScoreArray: array[0..17] of integer;
     fAdjustedScore:Cardinal;
     fNetScore:Integer;
 
@@ -936,13 +936,13 @@ begin
   // Calculate Adjusted Score
   for iHole := cFromHoleNumber to cToHoleNumber do
   begin
-    Inc(cGrossScore,fScoreArray[iHole]);
     fAdjustedScoreArray[iHole] := fScoreArray[iHole];
     // Take away any strokes due to Handicap and StrokeIndex
     if iRoundedHandicap > pStrokeIndexArray[iHole] then
       Dec(fAdjustedScoreArray[iHole], 1);
     if (iRoundedHandicap - 18) > pStrokeIndexArray[iHole] then
       Dec(fAdjustedScoreArray[iHole], 1);
+
     // Stableford Adjustment (max score is a double-bogey)
     // Also zero scores count as a double-bogey
     If (fAdjustedScoreArray[iHole] > (pParArray[iHole] + 3))
@@ -952,6 +952,12 @@ begin
 
     if (fScoreArray[iHole] >= (pParArray[iHole] + 3)) then
        fAdjustedScoreArray[iHole] := (pParArray[iHole] + 3);
+
+    // Zero Score counts as double-bogey in GrossScore, too.
+    if (fScoreArray[iHole] < 1) then
+       Inc(cGrossScore,(pParArray[iHole] + 3))
+    else
+        Inc(cGrossScore,fScoreArray[iHole]);
 
     Inc(cAdjustedTotalScore,fAdjustedScoreArray[iHole]);
   end;

@@ -1,29 +1,29 @@
 object mainform: Tmainform
-  Left = 526
+  Left = 704
   Height = 698
-  Top = 173
+  Top = 162
   Width = 703
   AllowDropFiles = True
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Application Title'
-  ClientHeight = 678
+  ClientHeight = 674
   ClientWidth = 703
   Font.Height = -12
-  Font.Name = 'Arial'
+  Font.Name = 'System'
   Menu = topmenu
   OnClose = FormClose
   OnCreate = FormCreate
   OnDropFiles = FormDropFiles
   Position = poDesktopCenter
-  LCLVersion = '1.0.8.0'
+  LCLVersion = '0.9.30'
   object cmd_close: TBitBtn
     Left = 616
     Height = 30
     Hint = 'Click to close Golf Helper'
     Top = 605
     Width = 80
-    DefaultCaption = True
+    Caption = 'Close'
     Kind = bkClose
     ModalResult = 11
     OnClick = cmd_closeClick
@@ -36,23 +36,25 @@ object mainform: Tmainform
     Height = 600
     Top = 0
     Width = 703
-    ActivePage = page_congu
+    ActivePage = page_information
     Align = alTop
-    TabIndex = 3
+    Font.Height = -12
+    ParentFont = False
+    TabIndex = 0
     TabOrder = 1
     OnChange = page_containerChange
     object page_information: TTabSheet
       Hint = 'General Information Page'
       Caption = 'General Information'
       ClientHeight = 572
-      ClientWidth = 695
+      ClientWidth = 699
       ParentShowHint = False
       ShowHint = True
       object Image1: TImage
         Left = 0
         Height = 572
         Top = 0
-        Width = 695
+        Width = 699
         Align = alClient
         ParentShowHint = False
         Picture.Data = {
@@ -312,7 +314,6 @@ object mainform: Tmainform
         Caption = 'Welcome to Golf Helper.'
         Font.Color = clYellow
         Font.Height = -19
-        Font.Name = 'Arial'
         ParentColor = False
         ParentFont = False
         WordWrap = True
@@ -326,8 +327,7 @@ object mainform: Tmainform
         AutoSize = False
         Caption = 'Paragraph of information'
         Font.Color = clYellow
-        Font.Height = -15
-        Font.Name = 'Arial'
+        Font.Height = -12
         ParentColor = False
         ParentFont = False
         ParentShowHint = False
@@ -339,7 +339,7 @@ object mainform: Tmainform
       Hint = 'Information about the current loaded Club'
       Caption = 'Course Info'
       ClientHeight = 572
-      ClientWidth = 695
+      ClientWidth = 699
       ParentShowHint = False
       ShowHint = True
       TabVisible = False
@@ -364,14 +364,14 @@ object mainform: Tmainform
         Top = 40
         Width = 328
         Caption = 'Location'
-        ClientHeight = 127
+        ClientHeight = 128
         ClientWidth = 324
         TabOrder = 0
         object lbl_ClubCountry: TLabel
           Left = 6
           Height = 16
           Top = 8
-          Width = 89
+          Width = 86
           Caption = 'AddressCountry'
           ParentColor = False
         end
@@ -379,7 +379,7 @@ object mainform: Tmainform
           Left = 6
           Height = 16
           Top = 24
-          Width = 107
+          Width = 106
           Caption = 'AddressMunicpality'
           ParentColor = False
         end
@@ -387,7 +387,7 @@ object mainform: Tmainform
           Left = 6
           Height = 16
           Top = 40
-          Width = 87
+          Width = 80
           Caption = 'AddressRegion'
           ParentColor = False
         end
@@ -395,7 +395,7 @@ object mainform: Tmainform
           Left = 6
           Height = 16
           Top = 56
-          Width = 79
+          Width = 73
           Caption = 'AddressStreet'
           ParentColor = False
         end
@@ -403,7 +403,7 @@ object mainform: Tmainform
           Left = 7
           Height = 16
           Top = 72
-          Width = 99
+          Width = 92
           Caption = 'AddressPostcode'
           ParentColor = False
         end
@@ -411,7 +411,7 @@ object mainform: Tmainform
           Left = 6
           Height = 16
           Top = 88
-          Width = 83
+          Width = 77
           Caption = 'AddressPhone'
           ParentColor = False
         end
@@ -419,7 +419,7 @@ object mainform: Tmainform
           Left = 7
           Height = 16
           Top = 104
-          Width = 92
+          Width = 85
           Caption = 'AddressWebsite'
           ParentColor = False
           OnClick = lbl_ClubWebsiteClick
@@ -431,7 +431,7 @@ object mainform: Tmainform
         Top = 40
         Width = 345
         Caption = 'Club Amenities'
-        ClientHeight = 127
+        ClientHeight = 128
         ClientWidth = 341
         TabOrder = 1
         object Memo_amenities: TMemo
@@ -454,7 +454,7 @@ object mainform: Tmainform
         Top = 192
         Width = 680
         Caption = 'General Course and Tee information'
-        ClientHeight = 94
+        ClientHeight = 95
         ClientWidth = 676
         ParentColor = False
         TabOrder = 2
@@ -462,7 +462,7 @@ object mainform: Tmainform
           Left = 6
           Height = 16
           Top = 8
-          Width = 100
+          Width = 93
           Caption = 'lbl_CourseLength'
           Color = clDefault
           ParentColor = False
@@ -472,7 +472,7 @@ object mainform: Tmainform
           Left = 7
           Height = 16
           Top = 56
-          Width = 132
+          Width = 121
           Caption = 'lbl_CourseCourseIndex'
           Color = clDefault
           ParentColor = False
@@ -482,7 +482,7 @@ object mainform: Tmainform
           Left = 6
           Height = 16
           Top = 72
-          Width = 123
+          Width = 113
           Caption = 'lbl_CourseSlopeIndex'
           Color = clDefault
           ParentColor = False
@@ -492,7 +492,7 @@ object mainform: Tmainform
           Left = 6
           Height = 16
           Top = 40
-          Width = 81
+          Width = 73
           Caption = 'lbl_CoursePar'
           Color = clDefault
           ParentColor = False
@@ -502,7 +502,7 @@ object mainform: Tmainform
           Left = 6
           Height = 16
           Top = 24
-          Width = 152
+          Width = 143
           Caption = 'lbl_CourseNumberOfHoles'
           Color = clDefault
           ParentColor = False
@@ -523,7 +523,7 @@ object mainform: Tmainform
       Hint = 'EGA Handicap tools and information'
       Caption = 'EGA/USGA Handicap'
       ClientHeight = 572
-      ClientWidth = 695
+      ClientWidth = 699
       ParentShowHint = False
       ShowHint = True
       TabVisible = False
@@ -545,14 +545,14 @@ object mainform: Tmainform
         Top = 48
         Width = 680
         Caption = 'Player Information'
-        ClientHeight = 70
+        ClientHeight = 71
         ClientWidth = 676
         TabOrder = 0
         object lbl_playername: TLabel
           Left = 6
           Height = 16
           Top = 16
-          Width = 38
+          Width = 36
           Caption = 'Name:'
           FocusControl = edt_playername
           ParentColor = False
@@ -570,7 +570,7 @@ object mainform: Tmainform
           Left = 6
           Height = 16
           Top = 44
-          Width = 115
+          Width = 110
           Caption = 'Exact EGA Handicap:'
           ParentColor = False
         end
@@ -640,7 +640,7 @@ object mainform: Tmainform
           Left = 239
           Height = 16
           Top = 40
-          Width = 103
+          Width = 100
           Caption = 'Playing Handicap: '
           FocusControl = edt_playername
           ParentColor = False
@@ -649,7 +649,7 @@ object mainform: Tmainform
           Left = 334
           Height = 16
           Top = 9
-          Width = 145
+          Width = 140
           Caption = 'EGA Handicap Category: 0'
           ParentColor = False
         end
@@ -660,14 +660,14 @@ object mainform: Tmainform
         Top = 136
         Width = 680
         Caption = 'Stableford Handicap Adjustment (EGA)'
-        ClientHeight = 86
+        ClientHeight = 87
         ClientWidth = 676
         TabOrder = 1
         object lbl_StablefordPoints: TLabel
           Left = 6
           Height = 16
           Top = 15
-          Width = 36
+          Width = 34
           Caption = 'Points'
           ParentColor = False
         end
@@ -700,7 +700,7 @@ object mainform: Tmainform
           Left = 110
           Height = 16
           Top = 16
-          Width = 97
+          Width = 94
           Caption = 'Playing Handicap'
           ParentColor = False
         end
@@ -719,7 +719,7 @@ object mainform: Tmainform
           Left = 7
           Height = 16
           Top = 48
-          Width = 143
+          Width = 137
           Caption = 'New Exact EGA Handicap:'
           ParentColor = False
         end
@@ -752,14 +752,15 @@ object mainform: Tmainform
         Top = 520
         Width = 680
         Caption = 'Stableford Score Summary'
-        ClientHeight = 31
+        ClientHeight = 32
         ClientWidth = 676
         TabOrder = 3
         object cmd_resetScores: TBitBtn
           Left = 558
-          Height = 30
+          Height = 26
           Top = -1
-          Width = 112
+          Width = 110
+          AutoSize = True
           Caption = 'Reset Scores'
           Kind = bkRetry
           ModalResult = 4
@@ -798,9 +799,10 @@ object mainform: Tmainform
         end
         object cmd_UpdateHandicap: TBitBtn
           Left = 366
-          Height = 30
+          Height = 26
           Top = -1
           Width = 171
+          AutoSize = True
           Caption = 'Calculate new handicap'
           Kind = bkYes
           ModalResult = 6
@@ -813,7 +815,7 @@ object mainform: Tmainform
       Hint = 'CONGU Handicap tools and information'
       Caption = 'CONGU Handicap'
       ClientHeight = 572
-      ClientWidth = 695
+      ClientWidth = 699
       ParentShowHint = False
       ShowHint = True
       TabVisible = False
@@ -835,14 +837,14 @@ object mainform: Tmainform
         Top = 48
         Width = 680
         Caption = 'Player Information'
-        ClientHeight = 70
+        ClientHeight = 71
         ClientWidth = 676
         TabOrder = 0
         object lbl_CONGUplayername: TLabel
           Left = 6
           Height = 16
           Top = 16
-          Width = 38
+          Width = 39
           Caption = 'Name:'
           FocusControl = edt_CONGUplayername
           ParentColor = False
@@ -863,13 +865,13 @@ object mainform: Tmainform
           Left = 6
           Height = 16
           Top = 44
-          Width = 105
+          Width = 109
           Caption = 'CONGU Handicap:'
           ParentColor = False
         end
         object edt_CONGUplayerhandicap0: TEdit
           Left = 151
-          Height = 23
+          Height = 25
           Top = 37
           Width = 24
           ReadOnly = True
@@ -878,7 +880,7 @@ object mainform: Tmainform
         end
         object ud_CONGUplayerhandicap0: TUpDown
           Left = 134
-          Height = 23
+          Height = 25
           Hint = 'Change your handicap here'
           Top = 37
           Width = 17
@@ -895,9 +897,9 @@ object mainform: Tmainform
         end
         object lbl_decimal1: TLabel
           Left = 179
-          Height = 22
+          Height = 20
           Top = 40
-          Width = 5
+          Width = 8
           Caption = '.'
           Font.Height = -16
           Font.Style = [fsBold]
@@ -906,7 +908,7 @@ object mainform: Tmainform
         end
         object edt_CONGUplayerhandicap1: TEdit
           Left = 191
-          Height = 23
+          Height = 25
           Top = 37
           Width = 24
           ReadOnly = True
@@ -915,7 +917,7 @@ object mainform: Tmainform
         end
         object ud_CONGUplayerhandicap1: TUpDown
           Left = 215
-          Height = 23
+          Height = 25
           Hint = 'Change your handicap here'
           Top = 37
           Width = 17
@@ -933,7 +935,7 @@ object mainform: Tmainform
           Left = 334
           Height = 16
           Top = 9
-          Width = 167
+          Width = 179
           Caption = 'CONGU Handicap Category: 0'
           ParentColor = False
         end
@@ -954,14 +956,14 @@ object mainform: Tmainform
         Top = 521
         Width = 680
         Caption = 'Raw And (Stableford/StrokeIndex adjusted) Score Summary'
-        ClientHeight = 31
+        ClientHeight = 32
         ClientWidth = 676
         TabOrder = 2
         object cmd_CONGUresetScores: TBitBtn
           Left = 590
-          Height = 26
+          Height = 32
           Top = -1
-          Width = 78
+          Width = 68
           AutoSize = True
           Caption = 'Reset'
           Kind = bkRetry
@@ -971,39 +973,36 @@ object mainform: Tmainform
         end
         object lbl_CONGUGrossScoreFirst9: TLabel
           Left = 7
-          Height = 16
+          Height = 15
           Top = 7
-          Width = 31
-          Caption = 'In:   0'
-          Font.Style = [fsBold]
+          Width = 24
+          Caption = 'In: 0'
           ParentColor = False
           ParentFont = False
         end
         object lbl_CONGUGrossScoreLast9: TLabel
           Left = 54
-          Height = 16
+          Height = 15
           Top = 7
-          Width = 41
-          Caption = 'Out:   0'
-          Font.Style = [fsBold]
+          Width = 34
+          Caption = 'Out: 0'
           ParentColor = False
           ParentFont = False
         end
         object lbl_CONGUGrossScoreTotal: TLabel
           Left = 110
-          Height = 16
+          Height = 15
           Top = 7
-          Width = 48
-          Caption = 'Total:   0'
-          Font.Style = [fsBold]
+          Width = 36
+          Caption = 'Total:  '
           ParentColor = False
           ParentFont = False
         end
         object cmd_CONGUUpdateHandicap: TBitBtn
           Left = 454
-          Height = 26
+          Height = 32
           Top = -1
-          Width = 133
+          Width = 130
           AutoSize = True
           Caption = 'Adjust handicap'
           Default = True
@@ -1014,39 +1013,39 @@ object mainform: Tmainform
         end
         object lbl_CONGUNettScoreFirst9: TLabel
           Left = 182
-          Height = 16
+          Height = 15
           Top = 7
           Width = 39
           Caption = '(In:   0)'
-          Font.Style = [fsBold, fsItalic]
+          Font.Style = [fsItalic]
           ParentColor = False
           ParentFont = False
         end
         object lbl_CONGUNettScoreLast9: TLabel
-          Left = 229
-          Height = 16
+          Left = 240
+          Height = 15
           Top = 7
           Width = 49
           Caption = '(Out:   0)'
-          Font.Style = [fsBold, fsItalic]
+          Font.Style = [fsItalic]
           ParentColor = False
           ParentFont = False
         end
         object lbl_CONGUNettScoreTotal: TLabel
-          Left = 285
-          Height = 16
-          Top = 7
-          Width = 58
+          Left = 304
+          Height = 15
+          Top = 8
+          Width = 56
           Caption = '(Total:   0)'
-          Font.Style = [fsBold, fsItalic]
+          Font.Style = [fsItalic]
           ParentColor = False
           ParentFont = False
         end
         object lbl_GrossScore: TLabel
-          Left = 390
+          Left = 384
           Height = 16
           Top = 7
-          Width = 48
+          Width = 61
           Caption = 'Gross: 0'
           Font.Height = -12
           Font.Name = 'Arial'
@@ -1061,20 +1060,20 @@ object mainform: Tmainform
         Top = 136
         Width = 680
         Caption = 'Handicap Adjustment (CONGU)'
-        ClientHeight = 86
+        ClientHeight = 87
         ClientWidth = 676
         TabOrder = 3
         object lbl_CONGUGross: TLabel
           Left = 6
           Height = 16
           Top = 15
-          Width = 35
+          Width = 37
           Caption = 'Gross'
           ParentColor = False
         end
         object ud_CONGUGross: TUpDown
           Left = 53
-          Height = 23
+          Height = 25
           Hint = 'Change your Stableford score here'
           Top = 16
           Width = 17
@@ -1091,7 +1090,7 @@ object mainform: Tmainform
         end
         object edt_CONGUGross: TEdit
           Left = 70
-          Height = 23
+          Height = 25
           Top = 16
           Width = 24
           ReadOnly = True
@@ -1102,13 +1101,13 @@ object mainform: Tmainform
           Left = 7
           Height = 16
           Top = 48
-          Width = 133
+          Width = 139
           Caption = 'New CONGU Handicap:'
           ParentColor = False
         end
         object lbl_CONGUadjustedHandicap1: TLabel
           Left = 180
-          Height = 16
+          Height = 15
           Top = 48
           Width = 8
           Caption = '0'
@@ -1120,7 +1119,7 @@ object mainform: Tmainform
           Left = 117
           Height = 16
           Top = 16
-          Width = 71
+          Width = 81
           Caption = 'Net Score : 0'
           ParentColor = False
         end
@@ -1129,8 +1128,8 @@ object mainform: Tmainform
   end
   object ssbar: TStatusBar
     Left = 0
-    Height = 23
-    Top = 655
+    Height = 18
+    Top = 656
     Width = 703
     Panels = <    
       item
@@ -1363,4 +1362,4 @@ object mainform: Tmainform
     left = 40
     top = 600
   end
-end
+end

@@ -18,7 +18,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MinorVersionNr Value="9"/>
-      <BuildNr Value="10"/>
+      <BuildNr Value="11"/>
       <StringTable CompanyName="Gordon Bamber" FileDescription="Golf Helper using golfml" InternalName="Golf Helper" LegalCopyright="Creative Commons" OriginalFilename="golfhelper32" ProductVersion="0.9"/>
     </VersionInfo>
     <BuildModes Count="2">
