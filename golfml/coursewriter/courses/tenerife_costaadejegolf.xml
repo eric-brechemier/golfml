@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <golfml xmlns="http://code.google.com/p/golfml" version="0.9" xmlns:g="http://code.google.com/p/golfml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:golfmlclass="http://www.charcodelvalle.com/golfml" xsi:schemaLocation="http://code.google.com/p/golfml/source/browse/golfml/schemas/golfml.xsd">
   <country-club>
     <name>Costa Adeje Golf</name>
@@ -50,7 +50,7 @@
           <back units="meters">3144</back>
           <back units="yards">3437</back>
           <holes>18</holes>
-          <par>70</par>
+          <par>72</par>
         </summary>
         <tee number="1">
           <par>5</par>
@@ -65,7 +65,7 @@
           <length units="yards">129</length>
         </tee>
         <tee number="3">
-          <par>3</par>
+          <par>5</par>
           <handicap-stroke>13</handicap-stroke>
           <length units="meters">519</length>
           <length units="yards">568</length>
@@ -174,7 +174,7 @@
           <back units="meters">2975</back>
           <back units="yards">3253</back>
           <holes>18</holes>
-          <par>70</par>
+          <par>72</par>
         </summary>
         <tee number="1">
           <par>5</par>
@@ -189,7 +189,7 @@
           <length units="yards">117</length>
         </tee>
         <tee number="3">
-          <par>3</par>
+          <par>5</par>
           <handicap-stroke>13</handicap-stroke>
           <length units="meters">496</length>
           <length units="yards">542</length>
@@ -298,7 +298,7 @@
           <back units="meters">2577</back>
           <back units="yards">2818</back>
           <holes>18</holes>
-          <par>70</par>
+          <par>72</par>
         </summary>
         <tee number="1">
           <par>5</par>
@@ -313,7 +313,7 @@
           <length units="yards">107</length>
         </tee>
         <tee number="3">
-          <par>3</par>
+          <par>5</par>
           <handicap-stroke>13</handicap-stroke>
           <length units="meters">452</length>
           <length units="yards">494</length>
@@ -809,5 +809,5 @@
     <s:preference name="handicap-method">usga</s:preference>
     <s:preference name="units-system">metric</s:preference>
   </application>
-  <version created="08/05/2012 09:13:09" version="2.6.20120507">GolfMLClass</version>
+  <version created="02/04/2013 11:33:04" version="2.7.20130206.1">GolfMLClass</version>
 </golfml>
