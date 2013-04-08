@@ -17,6 +17,10 @@
       <EnableI18N LFM="False"/>
     </i18n>
     <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <AutoIncrementBuild Value="True"/>
+      <MajorVersionNr Value="2"/>
+      <MinorVersionNr Value="11"/>
       <StringTable ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="2" Active="Retail">
@@ -95,12 +99,12 @@
         <PackageName Value="LCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="11">
+    <Units Count="12">
       <Unit0>
         <Filename Value="golfmlwriterwin32.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="golfmlwriterwin32"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="6"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="42" Y="14"/>
@@ -116,8 +120,8 @@
         <UnitName Value="umainform"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="584"/>
-        <CursorPos X="3" Y="599"/>
+        <TopLine Value="40"/>
+        <CursorPos X="37" Y="1464"/>
         <UsageCount Value="216"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -135,10 +139,10 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="ugolfmlwriter_globals"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="5"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="25"/>
-        <CursorPos X="33" Y="18"/>
+        <TopLine Value="13"/>
+        <CursorPos X="24" Y="18"/>
         <UsageCount Value="204"/>
         <Loaded Value="True"/>
       </Unit3>
@@ -154,7 +158,7 @@
         <Filename Value="ugolfmlclass.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ugolfmlclass"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
         <TopLine Value="199"/>
         <CursorPos X="35" Y="209"/>
@@ -195,7 +199,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uwaitform"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="37" Y="12"/>
@@ -210,7 +214,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="ucourseteepicker"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="20" Y="18"/>
@@ -218,8 +222,18 @@
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit10>
+      <Unit11>
+        <Filename Value="usplashabout.pas"/>
+        <UnitName Value="usplashabout"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="27"/>
+        <CursorPos X="45" Y="45"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit11>
     </Units>
-    <JumpHistory Count="28" HistoryIndex="27">
+    <JumpHistory Count="29" HistoryIndex="28">
       <Position1>
         <Filename Value="ugolfmlclass.pas"/>
         <Caret Line="9" Column="39" TopLine="1"/>
@@ -332,6 +346,10 @@
         <Filename Value="umainform.pas"/>
         <Caret Line="227" Column="24" TopLine="213"/>
       </Position28>
+      <Position29>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="121" Column="11" TopLine="119"/>
+      </Position29>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>

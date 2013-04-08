@@ -43,7 +43,7 @@ uses
   Classes, SysUtils, strutils, FileUtil, Forms, Controls, Graphics, Dialogs,
   Buttons, StdCtrls, ComCtrls, Menus, ExtCtrls, LazHelpHTML,
   ugolfmlwriter_globals, ugolfmlclass, uwaitform, ucourseteepicker,
-  INIFiles, lclintf, synregexpr, registry;
+  INIFiles, lclintf, synregexpr, registry,usplashabout;
 
 const
   C_TEEBACKCOLOURARRAY: array[C_GOLD..C_RED] of longint =
@@ -139,6 +139,7 @@ type
     procedure pagecontainerPageChanged(Sender: TObject);
   private
     { private declarations }
+    splash:TSplashAbout;
     // DYNAMIC ARRAYS
     fCourseArray: array of string;
     pages: array of TTabSheet;
@@ -1460,6 +1461,18 @@ begin
   finally
     FreeAndNil(AmenetiesList);
   end;
+  splash:=TSplashAbout.Create(Self);
+splash.DelaySeconds:=3; // OPTIONAL. Default is 2 Seconds
+// splash.Title:='My Superb App'; // OPTIONAL. Default is Application Title of Form Caption
+// splash.IconFilePath:='ski.ico'; // OPTIONAL.  Default is Application.Icon or Form.Icon
+splash.BackGroundImageFilePath:='splash.jpg'; // OPTIONAL.  Default is no Background Image. Optimal size=320 x 240
+splash.LicenseFilePath:='gpl.txt'; // OPTIONAL.  Default is for Licence button to be absent on ShowAbout method
+splash.LicenseType:='Public GPL License'; // OPTIONAL.  Default is no text
+splash.CreditString:='Golfml application by minesadorada'; // OPTIONAL.  Default is no text
+splash.Author:='Mines A. Dorada'; // OPTIONAL.  Default is boilerplate text in LicenseFilePath
+splash.SupportContact:='minesadorada@charcodelvalle.com'; // OPTIONAL.  Default is boilerplate text in LicenseFilePath
+splash.ShowSplash;
+
 end;
 
 procedure Tmainform.FormShow(Sender: TObject);
