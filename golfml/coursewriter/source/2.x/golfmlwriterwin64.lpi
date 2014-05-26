@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
     <Version Value="9"/>
@@ -39,12 +39,12 @@
           </SearchPaths>
           <CodeGeneration>
             <SmartLinkUnit Value="True"/>
-            <SmallerCode Value="True"/>
             <TargetCPU Value="x86_64"/>
             <TargetOS Value="win64"/>
             <Optimizations>
               <OptimizationLevel Value="3"/>
             </Optimizations>
+            <SmallerCode Value="True"/>
           </CodeGeneration>
           <Linking>
             <Debugging>
@@ -111,7 +111,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="50" Y="23"/>
-        <UsageCount Value="87"/>
+        <UsageCount Value="91"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -124,14 +124,15 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="431"/>
-        <CursorPos X="20" Y="162"/>
-        <UsageCount Value="87"/>
+        <TopLine Value="1434"/>
+        <CursorPos X="3" Y="1333"/>
+        <UsageCount Value="91"/>
         <Bookmarks Count="2">
           <Item0 X="1" Y="3265" ID="0"/>
           <Item1 X="1" Y="622" ID="1"/>
         </Bookmarks>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="ugolfmlwriter_globals.pas"/>
@@ -141,7 +142,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="15" Y="7"/>
-        <UsageCount Value="87"/>
+        <UsageCount Value="91"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
@@ -150,9 +151,9 @@
         <UnitName Value="ugolfmlclass"/>
         <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="27" Y="1890"/>
-        <UsageCount Value="87"/>
+        <TopLine Value="1043"/>
+        <CursorPos X="27" Y="1075"/>
+        <UsageCount Value="91"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
@@ -166,7 +167,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="16" Y="12"/>
-        <UsageCount Value="87"/>
+        <UsageCount Value="91"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
@@ -188,7 +189,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="38"/>
         <CursorPos X="23" Y="51"/>
-        <UsageCount Value="76"/>
+        <UsageCount Value="80"/>
         <Loaded Value="True"/>
       </Unit6>
       <Unit7>
@@ -230,11 +231,11 @@
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
         <CursorPos X="46" Y="136"/>
-        <UsageCount Value="10"/>
+        <UsageCount Value="12"/>
         <Loaded Value="True"/>
       </Unit11>
     </Units>
-    <JumpHistory Count="15" HistoryIndex="14">
+    <JumpHistory Count="16" HistoryIndex="15">
       <Position1>
         <Filename Value="ugolfmlclass.pas"/>
         <Caret Line="80" Column="33" TopLine="52"/>
@@ -295,6 +296,10 @@
         <Filename Value="umainform.pas"/>
         <Caret Line="1607" Column="24" TopLine="1604"/>
       </Position15>
+      <Position16>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1911" Column="76" TopLine="1877"/>
+      </Position16>
     </JumpHistory>
   </ProjectOptions>
   <CompilerOptions>
@@ -342,4 +347,5 @@
       <CompilerPath Value="$(CompPath)"/>
     </Other>
   </CompilerOptions>
+  <EditorMacros Count="0"/>
 </CONFIG>

@@ -1,7 +1,7 @@
 object mainform: Tmainform
-  Left = 622
+  Left = 567
   Height = 600
-  Top = 159
+  Top = 165
   Width = 800
   HelpType = htKeyword
   HelpKeyword = 'help_CourseWriterHelp'
@@ -16,7 +16,7 @@ object mainform: Tmainform
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poScreenCenter
-  LCLVersion = '1.0.8.0'
+  LCLVersion = '1.2.2.0'
   object cmd_close: TBitBtn
     Left = 712
     Height = 30
@@ -750,9 +750,9 @@ object mainform: Tmainform
   object Label12: TLabel
     Cursor = crHandPoint
     Left = 352
-    Height = 14
+    Height = 13
     Top = 544
-    Width = 148
+    Width = 147
     Caption = 'GolfmlCourseWriter Website'
     Font.Color = clHotLight
     Font.Height = -11

@@ -1908,8 +1908,8 @@ begin
           DeleteAllCoursePages;
       end
       else
-        ShowMessageFmt('%sUnable to create new golfml file%s"%s"',
-          [C_ERRORAPOLOGY, LineEnding, GolfmlClass.CourseXMLPath]);
+        ShowMessageFmt('%sUnable to create new golfml file%s"%s"%sError: %s',
+          [C_ERRORAPOLOGY, LineEnding, GolfmlClass.CourseXMLPath,LineEnding,GolfmlClass.ErrorString]);
     end
     else
       ShowMessage('Save golfml file cancelled');

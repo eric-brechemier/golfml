@@ -1462,7 +1462,7 @@ begin
     FreeAndNil(AmenetiesList);
   end;
   splash:=TSplashAbout.Create(Self);
-splash.DelaySeconds:=2; // OPTIONAL. Default is 2 Seconds
+splash.DelaySeconds:=3; // OPTIONAL. Default is 2 Seconds
 // splash.Title:='My Superb App'; // OPTIONAL. Default is Application Title of Form Caption
 // splash.IconFilePath:='ski.ico'; // OPTIONAL.  Default is Application.Icon or Form.Icon
 splash.BackGroundImageFilePath:='splash.jpg'; // OPTIONAL.  Default is no Background Image. Optimal size=320 x 240
@@ -1908,8 +1908,8 @@ begin
           DeleteAllCoursePages;
       end
       else
-        ShowMessageFmt('%sUnable to create new golfml file%s"%s"',
-          [C_ERRORAPOLOGY, LineEnding, GolfmlClass.CourseXMLPath]);
+        ShowMessageFmt('%sUnable to create new golfml file%s"%s"%sError: %s',
+          [C_ERRORAPOLOGY, LineEnding, GolfmlClass.CourseXMLPath,LineEnding,GolfmlClass.ErrorString]);
     end
     else
       ShowMessage('Save golfml file cancelled');

@@ -1749,6 +1749,7 @@ begin
   begin
     fCourseNumberOfHoles := 0;
     fCourseTotalPar := 0;
+    fCourseTotalParArray[fCourseIndex]:=0;
     // Set fCourseNumberOfHoles here by testing for StokeIndex > 0 for each hole
     // Set fCourseTotalParArray here by adding up the pars for this Course
     for cHoleCount := 0 to 17 do
