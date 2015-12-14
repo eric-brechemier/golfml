@@ -15,6 +15,21 @@ We have exported this project to preserve it in GitHub,
 pending the [announced closing of Google Code on January 15th, 2016]
 (http://google-opensource.blogspot.fr/2015/03/farewell-to-google-code.html).
 
+## Code License
+
+[Mozilla Public License 1.1](http://www.mozilla.org/MPL/)
+
+## Labels
+
+golf, xml, scorecard, golfcard, statistics, score, golfcourse, golfhole
+
+## Links
+
+* [Start Here]
+  (https://github.com/eric-brechemier/golfml/wiki/Welcome)
+* [GolfML Discussion Group]
+  (https://groups.google.com/forum/#!forum/golf-markup-language)
+
 ## Original Description
 
 The purpose of GolfML is to provide a [XML](http://en.wikipedia.org/wiki/XML)-based file format for the exchange of golf-related data.
