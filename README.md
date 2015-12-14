@@ -52,4 +52,5 @@ The second part of the project defines a data format to allow golfer to record s
 This project will not deliver software code. It will deliver a vocabulary, XML specifications and references to allow for data exchange between golf software applications.
 
 [Start Here](https://github.com/eric-brechemier/golfml/wiki)
-or look at [Typical Uses of GolfML](wiki/Workflow)
+or look at [Typical Uses of GolfML]
+(https://github.com/eric-brechemier/golfml/wiki/Workflow)
