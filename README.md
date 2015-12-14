@@ -25,7 +25,7 @@ golf, xml, scorecard, golfcard, statistics, score, golfcourse, golfhole
 
 ## Links
 
-* [Start Here](wiki/Home)
+* <a href="wiki/Home">Start Here</a>
 * [GolfML Discussion Group]
   (https://groups.google.com/forum/#!forum/golf-markup-language)
 
@@ -50,4 +50,4 @@ The second part of the project defines a data format to allow golfer to record s
 
 This project will not deliver software code. It will deliver a vocabulary, XML specifications and references to allow for data exchange between golf software applications.
 
-[Start Here](wiki/Home) or look at [Typical Uses of GolfML](wiki/Workflow)
+<a href="wiki/Home">Start Here</a> or look at [Typical Uses of GolfML](wiki/Workflow)
