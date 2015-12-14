@@ -1,3 +1,22 @@
+# golfml
+
+XML Specifications for Golf Courses and Score Data Exchange
+
+## Attribution
+
+This project has been exported from [Google Code]
+(https://code.google.com/p/golfml/).
+
+The original project has been created by
+[Pierre Mareschal](mailto:pierre.mareschal@gmail.com)
+and [other contributors](https://code.google.com/p/golfml/people/list).
+
+We have exported this project to preserve it in GitHub,
+pending the [announced closing of Google Code on January 15th, 2016]
+(http://google-opensource.blogspot.fr/2015/03/farewell-to-google-code.html).
+
+## Original Description
+
 The purpose of GolfML is to provide a [XML](http://en.wikipedia.org/wiki/XML)-based file format for the exchange of golf-related data.
 
 There are numerous golf scorecard programs and online web sites that allow golfers to browse course information, print scorecards, keep track of scores, and analyze statistics, or view a Google Earth fly-over of each hole.
