@@ -1,4 +1,0 @@
-#summary GolfML to Open Street Map Notes
-#sidebar TableOfContents
-
-= Notes =
